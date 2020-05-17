@@ -1,11 +1,8 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * This header file defines the ISR function
+ * prototypes and the finite state machines
+ * variables to enable all project features.
  *
  * ========================================
 */
@@ -17,10 +14,18 @@
     
     /* Include project dependencies. */
     #include "project.h"
+    #include "stdbool.h"
     
     /* ISR functions prototypes. */
     CY_ISR_PROTO(CUSTOM_ISR_CONFIG);
     CY_ISR_PROTO(CUSTOM_ISR_START);
+    
+    /* State machine variables. */
+    volatile bool start_flag;
+    volatile bool config_flag;
+    
+    /* Button press counter. */
+    volatile uint8_t press_counter;
     
 #endif
 
