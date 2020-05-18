@@ -1,0 +1,2010 @@
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"TIMER_BUTTON.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.TIMER_BUTTON_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	TIMER_BUTTON_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	TIMER_BUTTON_Enable, %function
+  25              	TIMER_BUTTON_Enable:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC5\\TIMER_BUTTON.c"
+   1:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/TIMER_BUTTON.c **** * File Name: TIMER_BUTTON.c
+   3:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Version 2.80
+   4:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+   5:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Description:
+   6:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The Timer component consists of a 8, 16, 24 or 32-bit timer with
+   7:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  a selectable period between 2 and 2^Width - 1.  The timer may free run
+   8:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  or be used as a capture timer as well.  The capture can be initiated
+   9:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  by a positive or negative edge signal as well as via software.
+  10:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  A trigger input can be programmed to enable the timer on rising edge
+  11:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  falling edge, either edge or continous run.
+  12:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Interrupts may be generated due to a terminal count condition
+  13:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  or a capture event.
+  14:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  15:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Note:
+  16:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  17:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+  18:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Copyright 2008-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  19:Generated_Source\PSoC5/TIMER_BUTTON.c **** * You may use this file only in accordance with the license, terms, conditions,
+  20:Generated_Source\PSoC5/TIMER_BUTTON.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  21:Generated_Source\PSoC5/TIMER_BUTTON.c **** * the software package with which this file was provided.
+  22:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************/
+  23:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  24:Generated_Source\PSoC5/TIMER_BUTTON.c **** #include "TIMER_BUTTON.h"
+  25:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  26:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8 TIMER_BUTTON_initVar = 0u;
+  27:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  28:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  29:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+  30:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_Init
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 2
+
+
+  31:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+  32:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  33:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+  34:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Initialize to the schematic state
+  35:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  36:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+  37:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+  38:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  39:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+  40:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+  41:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+  42:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+  43:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_Init(void) 
+  44:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+  45:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(!TIMER_BUTTON_UsingFixedFunction)
+  46:Generated_Source\PSoC5/TIMER_BUTTON.c ****             /* Interrupt State Backup for Critical Region*/
+  47:Generated_Source\PSoC5/TIMER_BUTTON.c ****             uint8 TIMER_BUTTON_interruptState;
+  48:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Interrupt state back up for Fixed Function only */
+  49:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  50:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (TIMER_BUTTON_UsingFixedFunction)
+  51:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Clear all bits but the enable bit (if it's already set) for Timer operation */
+  52:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CONTROL &= TIMER_BUTTON_CTRL_ENABLE;
+  53:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  54:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Clear the mode bits for continuous run mode */
+  55:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (CY_PSOC5A)
+  56:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_CONTROL2 &= ((uint8)(~TIMER_BUTTON_CTRL_MODE_MASK));
+  57:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Clear bits in CONTROL2 only in PSOC5A */
+  58:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  59:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (CY_PSOC3 || CY_PSOC5LP)
+  60:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_MODE_MASK));
+  61:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* CONTROL3 register exists only in PSoC3 OR PSoC5LP */
+  62:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  63:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  64:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_RunModeUsed != 0x0u)
+  65:Generated_Source\PSoC5/TIMER_BUTTON.c ****             /* Set 3rd bit of Control register to enable one shot mode */
+  66:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_CONTROL |= 0x04u;
+  67:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* One Shot enabled only when RunModeUsed is not Continuous*/
+  68:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  69:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_RunModeUsed == 2)
+  70:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #if (CY_PSOC5A)
+  71:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Set last 2 bits of control2 register if one shot(halt on
+  72:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 interrupt) is enabled*/
+  73:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL2 |= 0x03u;
+  74:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL2 for PSoC5A */
+  75:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  76:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  77:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Set last 2 bits of control3 register if one shot(halt on
+  78:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 interrupt) is enabled*/
+  79:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= 0x03u;
+  80:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL3 for PSoC3 or PSoC5LP */
+  81:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  82:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Remove section if One Shot Halt on Interrupt is not enabled */
+  83:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  84:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_UsingHWEnable != 0)
+  85:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #if (CY_PSOC5A)
+  86:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Set the default Run Mode of the Timer to Continuous */
+  87:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL2 |= TIMER_BUTTON_CTRL_MODE_PULSEWIDTH;
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 3
+
+
+  88:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* Set Continuous Run Mode in CONTROL2 for PSoC5A */
+  89:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  90:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+  91:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Clear and Set ROD and COD bits of CFG2 register */
+  92:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_RCOD_MASK));
+  93:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_RCOD;
+  94:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  95:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Clear and Enable the HW enable bit in CFG2 register */
+  96:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_ENBL_MASK));
+  97:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_ENBL;
+  98:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+  99:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 /* Set the default Run Mode of the Timer to Continuous */
+ 100:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_MODE_CONTINUOUS;
+ 101:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* Set Continuous Run Mode in CONTROL3 for PSoC3ES3 or PSoC5A */
+ 102:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 103:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Configure Run Mode with hardware enable */
+ 104:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 105:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+ 106:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 &= ((uint8)(~TIMER_BUTTON_RT1_MASK));
+ 107:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNC;
+ 108:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 109:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /*Enable DSI Sync all all inputs of the Timer*/
+ 110:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 &= ((uint8)(~TIMER_BUTTON_SYNCDSI_MASK));
+ 111:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNCDSI_EN;
+ 112:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 113:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Set the IRQ to use the status register interrupts */
+ 114:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CONTROL2 |= TIMER_BUTTON_CTRL2_IRQ_SEL;
+ 115:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Configuring registers of fixed function implementation */
+ 116:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 117:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Set Initial values from Configuration */
+ 118:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_WritePeriod(TIMER_BUTTON_INIT_PERIOD);
+ 119:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_WriteCounter(TIMER_BUTTON_INIT_PERIOD);
+ 120:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 121:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (TIMER_BUTTON_UsingHWCaptureCounter)/* Capture counter is enabled */
+ 122:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CAPTURE_COUNT_CTRL |= TIMER_BUTTON_CNTR_ENABLE;
+ 123:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_SetCaptureCount(TIMER_BUTTON_INIT_CAPTURE_COUNT);
+ 124:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Configure capture counter value */
+ 125:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 126:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (!TIMER_BUTTON_UsingFixedFunction)
+ 127:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_SoftwareCaptureMode)
+ 128:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_SetCaptureMode(TIMER_BUTTON_INIT_CAPTURE_MODE);
+ 129:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Set Capture Mode for UDB implementation if capture mode is software controlled */
+ 130:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 131:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_SoftwareTriggerMode)
+ 132:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
+ 133:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 if (0u == (TIMER_BUTTON_CONTROL & TIMER_BUTTON__B_TIMER__TM_SOFTWARE))
+ 134:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 {
+ 135:Generated_Source\PSoC5/TIMER_BUTTON.c ****                     TIMER_BUTTON_SetTriggerMode(TIMER_BUTTON_INIT_TRIGGER_MODE);
+ 136:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 }
+ 137:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+ 138:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Set trigger mode for UDB Implementation if trigger mode is software controlled */
+ 139:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 140:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critica
+ 141:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Enter Critical Region*/
+ 142:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_interruptState = CyEnterCriticalSection();
+ 143:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 144:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Use the interrupt output of the status register for IRQ output */
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 4
+
+
+ 145:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_STATUS_AUX_CTRL |= TIMER_BUTTON_STATUS_ACTL_INT_EN_MASK;
+ 146:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 147:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* Exit Critical Region*/
+ 148:Generated_Source\PSoC5/TIMER_BUTTON.c ****         CyExitCriticalSection(TIMER_BUTTON_interruptState);
+ 149:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 150:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_EnableTriggerMode)
+ 151:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_EnableTrigger();
+ 152:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Set Trigger enable bit for UDB implementation in the control register*/
+ 153:Generated_Source\PSoC5/TIMER_BUTTON.c **** 		
+ 154:Generated_Source\PSoC5/TIMER_BUTTON.c **** 		
+ 155:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #if (TIMER_BUTTON_InterruptOnCaptureCount && !TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
+ 156:Generated_Source\PSoC5/TIMER_BUTTON.c ****             TIMER_BUTTON_SetInterruptCount(TIMER_BUTTON_INIT_INT_CAPTURE_COUNT);
+ 157:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* Set interrupt count in UDB implementation if interrupt count feature is checked.*
+ 158:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 159:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_ClearFIFO();
+ 160:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Configure additional features of UDB implementation */
+ 161:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 162:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_SetInterruptMode(TIMER_BUTTON_INIT_INTERRUPT_MODE);
+ 163:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 164:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 165:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 166:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 167:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_Enable
+ 168:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 169:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 170:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 171:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Enable the Timer
+ 172:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 173:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 174:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 175:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 176:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 177:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 178:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 179:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 180:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_Enable(void) 
+ 181:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+  28              		.loc 1 181 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 182:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 183:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (TIMER_BUTTON_UsingFixedFunction)
+ 184:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_GLOBAL_ENABLE |= TIMER_BUTTON_BLOCK_EN_MASK;
+  33              		.loc 1 184 0
+  34 0000 084A     		ldr	r2, .L2
+  35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  36 0004 43F00103 		orr	r3, r3, #1
+  37 0008 1370     		strb	r3, [r2]
+ 185:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_GLOBAL_STBY_ENABLE |= TIMER_BUTTON_BLOCK_STBY_EN_MASK;
+  38              		.loc 1 185 0
+  39 000a 1032     		adds	r2, r2, #16
+  40 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  41 000e 43F00103 		orr	r3, r3, #1
+  42 0012 1370     		strb	r3, [r2]
+ 186:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Set Enable bit for enabling Fixed function timer*/
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 5
+
+
+ 187:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 188:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Remove assignment if control register is removed */
+ 189:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED || TIMER_BUTTON_UsingFixedFunction)
+ 190:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CONTROL |= TIMER_BUTTON_CTRL_ENABLE;
+  43              		.loc 1 190 0
+  44 0014 02F64D32 		addw	r2, r2, #2893
+  45 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  46 001a 43F00103 		orr	r3, r3, #1
+  47 001e 1370     		strb	r3, [r2]
+  48 0020 7047     		bx	lr
+  49              	.L3:
+  50 0022 00BF     		.align	2
+  51              	.L2:
+  52 0024 A3430040 		.word	1073759139
+  53              		.cfi_endproc
+  54              	.LFE1:
+  55              		.size	TIMER_BUTTON_Enable, .-TIMER_BUTTON_Enable
+  56              		.section	.text.TIMER_BUTTON_Stop,"ax",%progbits
+  57              		.align	2
+  58              		.global	TIMER_BUTTON_Stop
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	TIMER_BUTTON_Stop, %function
+  62              	TIMER_BUTTON_Stop:
+  63              	.LFB3:
+ 191:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Remove assignment if control register is removed */
+ 192:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 193:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 194:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 195:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 196:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_Start
+ 197:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 198:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 199:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 200:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The start function initializes the timer with the default values, the
+ 201:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  enables the timerto begin counting.  It does not enable interrupts,
+ 202:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  the EnableInt command should be called if interrupt generation is required.
+ 203:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 204:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 205:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 206:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 207:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 208:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 209:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 210:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Global variables:
+ 211:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  TIMER_BUTTON_initVar: Is modified when this function is called for the
+ 212:Generated_Source\PSoC5/TIMER_BUTTON.c **** *   first time. Is used to ensure that initialization happens only once.
+ 213:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 214:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 215:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_Start(void) 
+ 216:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 217:Generated_Source\PSoC5/TIMER_BUTTON.c ****     if(TIMER_BUTTON_initVar == 0u)
+ 218:Generated_Source\PSoC5/TIMER_BUTTON.c ****     {
+ 219:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_Init();
+ 220:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 221:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_initVar = 1u;   /* Clear this bit for Initialization */
+ 222:Generated_Source\PSoC5/TIMER_BUTTON.c ****     }
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 6
+
+
+ 223:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 224:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Enable the Timer */
+ 225:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_Enable();
+ 226:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 227:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 228:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 229:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 230:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_Stop
+ 231:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 232:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 233:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 234:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The stop function halts the timer, but does not change any modes or disable
+ 235:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  interrupts.
+ 236:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 237:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 238:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 239:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 240:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 241:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 242:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 243:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 244:Generated_Source\PSoC5/TIMER_BUTTON.c **** *               has no effect on the operation of the timer.
+ 245:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 246:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 247:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_Stop(void) 
+ 248:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+  64              		.loc 1 248 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+ 249:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Disable Timer */
+ 250:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED || TIMER_BUTTON_UsingFixedFunction)
+ 251:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_ENABLE));
+  69              		.loc 1 251 0
+  70 0000 084A     		ldr	r2, .L5
+  71 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  72 0004 03F0FE03 		and	r3, r3, #254
+  73 0008 1370     		strb	r3, [r2]
+ 252:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Remove assignment if control register is removed */
+ 253:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 254:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Globally disable the Fixed Function Block chosen */
+ 255:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (TIMER_BUTTON_UsingFixedFunction)
+ 256:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_GLOBAL_ENABLE &= ((uint8)(~TIMER_BUTTON_BLOCK_EN_MASK));
+  74              		.loc 1 256 0
+  75 000a A2F65D32 		subw	r2, r2, #2909
+  76 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  77 0010 03F0FE03 		and	r3, r3, #254
+  78 0014 1370     		strb	r3, [r2]
+ 257:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_GLOBAL_STBY_ENABLE &= ((uint8)(~TIMER_BUTTON_BLOCK_STBY_EN_MASK));
+  79              		.loc 1 257 0
+  80 0016 1032     		adds	r2, r2, #16
+  81 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  82 001a 03F0FE03 		and	r3, r3, #254
+  83 001e 1370     		strb	r3, [r2]
+  84 0020 7047     		bx	lr
+  85              	.L6:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 7
+
+
+  86 0022 00BF     		.align	2
+  87              	.L5:
+  88 0024 004F0040 		.word	1073762048
+  89              		.cfi_endproc
+  90              	.LFE3:
+  91              		.size	TIMER_BUTTON_Stop, .-TIMER_BUTTON_Stop
+  92              		.section	.text.TIMER_BUTTON_SetInterruptMode,"ax",%progbits
+  93              		.align	2
+  94              		.global	TIMER_BUTTON_SetInterruptMode
+  95              		.thumb
+  96              		.thumb_func
+  97              		.type	TIMER_BUTTON_SetInterruptMode, %function
+  98              	TIMER_BUTTON_SetInterruptMode:
+  99              	.LFB4:
+ 258:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
+ 259:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 260:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 261:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 262:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 263:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_SetInterruptMode
+ 264:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 265:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 266:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 267:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function selects which of the interrupt inputs may cause an interrupt.
+ 268:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The twosources are caputure and terminal.  One, both or neither may
+ 269:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  be selected.
+ 270:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 271:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 272:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  interruptMode:   This parameter is used to enable interrups on either/or
+ 273:Generated_Source\PSoC5/TIMER_BUTTON.c **** *                   terminal count or capture.
+ 274:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 275:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 276:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 277:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 278:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 279:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_SetInterruptMode(uint8 interruptMode) 
+ 280:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 100              		.loc 1 280 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              		@ link register save eliminated.
+ 105              	.LVL0:
+ 281:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_STATUS_MASK = interruptMode;
+ 106              		.loc 1 281 0
+ 107 0000 014B     		ldr	r3, .L8
+ 108 0002 1870     		strb	r0, [r3]
+ 109 0004 7047     		bx	lr
+ 110              	.L9:
+ 111 0006 00BF     		.align	2
+ 112              	.L8:
+ 113 0008 034F0040 		.word	1073762051
+ 114              		.cfi_endproc
+ 115              	.LFE4:
+ 116              		.size	TIMER_BUTTON_SetInterruptMode, .-TIMER_BUTTON_SetInterruptMode
+ 117              		.section	.text.TIMER_BUTTON_SoftwareCapture,"ax",%progbits
+ 118              		.align	2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 8
+
+
+ 119              		.global	TIMER_BUTTON_SoftwareCapture
+ 120              		.thumb
+ 121              		.thumb_func
+ 122              		.type	TIMER_BUTTON_SoftwareCapture, %function
+ 123              	TIMER_BUTTON_SoftwareCapture:
+ 124              	.LFB5:
+ 282:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 283:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 284:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 285:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 286:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_SoftwareCapture
+ 287:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 288:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 289:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 290:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function forces a capture independent of the capture signal.
+ 291:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 292:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 293:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 294:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 295:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 296:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 297:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 298:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Side Effects:
+ 299:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  An existing hardware capture could be overwritten.
+ 300:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 301:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 302:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_SoftwareCapture(void) 
+ 303:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 125              		.loc 1 303 0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
+ 304:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Generate a software capture by reading the counter register */
+ 305:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(TIMER_BUTTON_UsingFixedFunction)
+ 306:Generated_Source\PSoC5/TIMER_BUTTON.c ****         (void)CY_GET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR);
+ 130              		.loc 1 306 0
+ 131 0000 014B     		ldr	r3, .L11
+ 132 0002 1B88     		ldrh	r3, [r3]
+ 133 0004 7047     		bx	lr
+ 134              	.L12:
+ 135 0006 00BF     		.align	2
+ 136              	.L11:
+ 137 0008 064F0040 		.word	1073762054
+ 138              		.cfi_endproc
+ 139              	.LFE5:
+ 140              		.size	TIMER_BUTTON_SoftwareCapture, .-TIMER_BUTTON_SoftwareCapture
+ 141              		.section	.text.TIMER_BUTTON_ReadStatusRegister,"ax",%progbits
+ 142              		.align	2
+ 143              		.global	TIMER_BUTTON_ReadStatusRegister
+ 144              		.thumb
+ 145              		.thumb_func
+ 146              		.type	TIMER_BUTTON_ReadStatusRegister, %function
+ 147              	TIMER_BUTTON_ReadStatusRegister:
+ 148              	.LFB6:
+ 307:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 308:Generated_Source\PSoC5/TIMER_BUTTON.c ****         (void)CY_GET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR_8BIT);
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 9
+
+
+ 309:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif/* (TIMER_BUTTON_UsingFixedFunction) */
+ 310:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Capture Data is now in the FIFO */
+ 311:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 312:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 313:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 314:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 315:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_ReadStatusRegister
+ 316:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 317:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 318:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 319:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Reads the status register and returns it's state. This function should use
+ 320:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  defined types for the bit-field information as the bits in this register may
+ 321:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  be permuteable.
+ 322:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 323:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 324:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 325:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 326:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 327:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The contents of the status register
+ 328:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 329:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Side Effects:
+ 330:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Status register bits may be clear on read.
+ 331:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 332:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 333:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8   TIMER_BUTTON_ReadStatusRegister(void) 
+ 334:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 149              		.loc 1 334 0
+ 150              		.cfi_startproc
+ 151              		@ args = 0, pretend = 0, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+ 153              		@ link register save eliminated.
+ 335:Generated_Source\PSoC5/TIMER_BUTTON.c ****     return (TIMER_BUTTON_STATUS);
+ 154              		.loc 1 335 0
+ 155 0000 014B     		ldr	r3, .L14
+ 156 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 336:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 157              		.loc 1 336 0
+ 158 0004 7047     		bx	lr
+ 159              	.L15:
+ 160 0006 00BF     		.align	2
+ 161              	.L14:
+ 162 0008 034F0040 		.word	1073762051
+ 163              		.cfi_endproc
+ 164              	.LFE6:
+ 165              		.size	TIMER_BUTTON_ReadStatusRegister, .-TIMER_BUTTON_ReadStatusRegister
+ 166              		.section	.text.TIMER_BUTTON_ReadControlRegister,"ax",%progbits
+ 167              		.align	2
+ 168              		.global	TIMER_BUTTON_ReadControlRegister
+ 169              		.thumb
+ 170              		.thumb_func
+ 171              		.type	TIMER_BUTTON_ReadControlRegister, %function
+ 172              	TIMER_BUTTON_ReadControlRegister:
+ 173              	.LFB7:
+ 337:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 338:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 339:Generated_Source\PSoC5/TIMER_BUTTON.c **** #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
+ 340:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 10
+
+
+ 341:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 342:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 343:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_ReadControlRegister
+ 344:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 345:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 346:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 347:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Reads the control register and returns it's value.
+ 348:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 349:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 350:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 351:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 352:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 353:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The contents of the control register
+ 354:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 355:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 356:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8 TIMER_BUTTON_ReadControlRegister(void) 
+ 357:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 174              		.loc 1 357 0
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178              		@ link register save eliminated.
+ 358:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) 
+ 359:Generated_Source\PSoC5/TIMER_BUTTON.c ****         return ((uint8)TIMER_BUTTON_CONTROL);
+ 179              		.loc 1 359 0
+ 180 0000 014B     		ldr	r3, .L17
+ 181 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 360:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 361:Generated_Source\PSoC5/TIMER_BUTTON.c ****         return (0);
+ 362:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+ 363:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 182              		.loc 1 363 0
+ 183 0004 7047     		bx	lr
+ 184              	.L18:
+ 185 0006 00BF     		.align	2
+ 186              	.L17:
+ 187 0008 004F0040 		.word	1073762048
+ 188              		.cfi_endproc
+ 189              	.LFE7:
+ 190              		.size	TIMER_BUTTON_ReadControlRegister, .-TIMER_BUTTON_ReadControlRegister
+ 191              		.section	.text.TIMER_BUTTON_WriteControlRegister,"ax",%progbits
+ 192              		.align	2
+ 193              		.global	TIMER_BUTTON_WriteControlRegister
+ 194              		.thumb
+ 195              		.thumb_func
+ 196              		.type	TIMER_BUTTON_WriteControlRegister, %function
+ 197              	TIMER_BUTTON_WriteControlRegister:
+ 198              	.LFB8:
+ 364:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 365:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 366:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 367:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_WriteControlRegister
+ 368:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 369:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 370:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 371:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Sets the bit-field of the control register.
+ 372:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 11
+
+
+ 373:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 374:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  control: The contents of the control register
+ 375:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 376:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 377:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 378:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 379:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_WriteControlRegister(uint8 control) 
+ 380:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 199              		.loc 1 380 0
+ 200              		.cfi_startproc
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204              	.LVL1:
+ 381:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) 
+ 382:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_CONTROL = control;
+ 205              		.loc 1 382 0
+ 206 0000 014B     		ldr	r3, .L20
+ 207 0002 1870     		strb	r0, [r3]
+ 208 0004 7047     		bx	lr
+ 209              	.L21:
+ 210 0006 00BF     		.align	2
+ 211              	.L20:
+ 212 0008 004F0040 		.word	1073762048
+ 213              		.cfi_endproc
+ 214              	.LFE8:
+ 215              		.size	TIMER_BUTTON_WriteControlRegister, .-TIMER_BUTTON_WriteControlRegister
+ 216              		.section	.text.TIMER_BUTTON_ReadPeriod,"ax",%progbits
+ 217              		.align	2
+ 218              		.global	TIMER_BUTTON_ReadPeriod
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.type	TIMER_BUTTON_ReadPeriod, %function
+ 222              	TIMER_BUTTON_ReadPeriod:
+ 223              	.LFB9:
+ 383:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 384:Generated_Source\PSoC5/TIMER_BUTTON.c ****         control = 0u;
+ 385:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+ 386:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 387:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 388:Generated_Source\PSoC5/TIMER_BUTTON.c **** #endif /* Remove API if control register is unused */
+ 389:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 390:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 391:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 392:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_ReadPeriod
+ 393:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 394:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 395:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 396:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function returns the current value of the Period.
+ 397:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 398:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 399:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 400:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 401:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 402:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  The present value of the counter.
+ 403:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 404:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 12
+
+
+ 405:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8 TIMER_BUTTON_ReadPeriod(void) 
+ 406:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 224              		.loc 1 406 0
+ 225              		.cfi_startproc
+ 226              		@ args = 0, pretend = 0, frame = 0
+ 227              		@ frame_needed = 0, uses_anonymous_args = 0
+ 228              		@ link register save eliminated.
+ 407:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #if(TIMER_BUTTON_UsingFixedFunction)
+ 408:Generated_Source\PSoC5/TIMER_BUTTON.c ****        return ((uint8)CY_GET_REG16(TIMER_BUTTON_PERIOD_LSB_PTR));
+ 229              		.loc 1 408 0
+ 230 0000 014B     		ldr	r3, .L23
+ 231 0002 1888     		ldrh	r0, [r3]
+ 409:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #else
+ 410:Generated_Source\PSoC5/TIMER_BUTTON.c ****        return (CY_GET_REG8(TIMER_BUTTON_PERIOD_LSB_PTR));
+ 411:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+ 412:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 232              		.loc 1 412 0
+ 233 0004 C0B2     		uxtb	r0, r0
+ 234 0006 7047     		bx	lr
+ 235              	.L24:
+ 236              		.align	2
+ 237              	.L23:
+ 238 0008 044F0040 		.word	1073762052
+ 239              		.cfi_endproc
+ 240              	.LFE9:
+ 241              		.size	TIMER_BUTTON_ReadPeriod, .-TIMER_BUTTON_ReadPeriod
+ 242              		.section	.text.TIMER_BUTTON_WritePeriod,"ax",%progbits
+ 243              		.align	2
+ 244              		.global	TIMER_BUTTON_WritePeriod
+ 245              		.thumb
+ 246              		.thumb_func
+ 247              		.type	TIMER_BUTTON_WritePeriod, %function
+ 248              	TIMER_BUTTON_WritePeriod:
+ 249              	.LFB10:
+ 413:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 414:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 415:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 416:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_WritePeriod
+ 417:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 418:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 419:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 420:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function is used to change the period of the counter.  The new period
+ 421:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  will be loaded the next time terminal count is detected.
+ 422:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 423:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 424:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  period: This value may be between 1 and (2^Resolution)-1.  A value of 0 will
+ 425:Generated_Source\PSoC5/TIMER_BUTTON.c **** *          result in the counter remaining at zero.
+ 426:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 427:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 428:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 429:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 430:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 431:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_WritePeriod(uint8 period) 
+ 432:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 250              		.loc 1 432 0
+ 251              		.cfi_startproc
+ 252              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 13
+
+
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254              		@ link register save eliminated.
+ 255              	.LVL2:
+ 433:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(TIMER_BUTTON_UsingFixedFunction)
+ 434:Generated_Source\PSoC5/TIMER_BUTTON.c ****         uint16 period_temp = (uint16)period;
+ 435:Generated_Source\PSoC5/TIMER_BUTTON.c ****         CY_SET_REG16(TIMER_BUTTON_PERIOD_LSB_PTR, period_temp);
+ 256              		.loc 1 435 0
+ 257 0000 014B     		ldr	r3, .L26
+ 258 0002 1880     		strh	r0, [r3]	@ movhi
+ 259 0004 7047     		bx	lr
+ 260              	.L27:
+ 261 0006 00BF     		.align	2
+ 262              	.L26:
+ 263 0008 044F0040 		.word	1073762052
+ 264              		.cfi_endproc
+ 265              	.LFE10:
+ 266              		.size	TIMER_BUTTON_WritePeriod, .-TIMER_BUTTON_WritePeriod
+ 267              		.section	.text.TIMER_BUTTON_ReadCapture,"ax",%progbits
+ 268              		.align	2
+ 269              		.global	TIMER_BUTTON_ReadCapture
+ 270              		.thumb
+ 271              		.thumb_func
+ 272              		.type	TIMER_BUTTON_ReadCapture, %function
+ 273              	TIMER_BUTTON_ReadCapture:
+ 274              	.LFB11:
+ 436:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 437:Generated_Source\PSoC5/TIMER_BUTTON.c ****         CY_SET_REG8(TIMER_BUTTON_PERIOD_LSB_PTR, period);
+ 438:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed functi
+ 439:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 440:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 441:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 442:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 443:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_ReadCapture
+ 444:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 445:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 446:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 447:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function returns the last value captured.
+ 448:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 449:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 450:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 451:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 452:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 453:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Present Capture value.
+ 454:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 455:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 456:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8 TIMER_BUTTON_ReadCapture(void) 
+ 457:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 275              		.loc 1 457 0
+ 276              		.cfi_startproc
+ 277              		@ args = 0, pretend = 0, frame = 0
+ 278              		@ frame_needed = 0, uses_anonymous_args = 0
+ 279              		@ link register save eliminated.
+ 458:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #if(TIMER_BUTTON_UsingFixedFunction)
+ 459:Generated_Source\PSoC5/TIMER_BUTTON.c ****        return ((uint8)CY_GET_REG16(TIMER_BUTTON_CAPTURE_LSB_PTR));
+ 280              		.loc 1 459 0
+ 281 0000 014B     		ldr	r3, .L29
+ 282 0002 1888     		ldrh	r0, [r3]
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 14
+
+
+ 460:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #else
+ 461:Generated_Source\PSoC5/TIMER_BUTTON.c ****        return (CY_GET_REG8(TIMER_BUTTON_CAPTURE_LSB_PTR));
+ 462:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+ 463:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 283              		.loc 1 463 0
+ 284 0004 C0B2     		uxtb	r0, r0
+ 285 0006 7047     		bx	lr
+ 286              	.L30:
+ 287              		.align	2
+ 288              	.L29:
+ 289 0008 084F0040 		.word	1073762056
+ 290              		.cfi_endproc
+ 291              	.LFE11:
+ 292              		.size	TIMER_BUTTON_ReadCapture, .-TIMER_BUTTON_ReadCapture
+ 293              		.section	.text.TIMER_BUTTON_WriteCounter,"ax",%progbits
+ 294              		.align	2
+ 295              		.global	TIMER_BUTTON_WriteCounter
+ 296              		.thumb
+ 297              		.thumb_func
+ 298              		.type	TIMER_BUTTON_WriteCounter, %function
+ 299              	TIMER_BUTTON_WriteCounter:
+ 300              	.LFB12:
+ 464:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 465:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 466:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ 467:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_WriteCounter
+ 468:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 469:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 470:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 471:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This funtion is used to set the counter to a specific value
+ 472:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 473:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 474:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  counter:  New counter value.
+ 475:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 476:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 477:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 478:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 479:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 480:Generated_Source\PSoC5/TIMER_BUTTON.c **** void TIMER_BUTTON_WriteCounter(uint8 counter) 
+ 481:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 301              		.loc 1 481 0
+ 302              		.cfi_startproc
+ 303              		@ args = 0, pretend = 0, frame = 0
+ 304              		@ frame_needed = 0, uses_anonymous_args = 0
+ 305              		@ link register save eliminated.
+ 306              	.LVL3:
+ 482:Generated_Source\PSoC5/TIMER_BUTTON.c ****    #if(TIMER_BUTTON_UsingFixedFunction)
+ 483:Generated_Source\PSoC5/TIMER_BUTTON.c ****         /* This functionality is removed until a FixedFunction HW update to
+ 484:Generated_Source\PSoC5/TIMER_BUTTON.c ****          * allow this register to be written
+ 485:Generated_Source\PSoC5/TIMER_BUTTON.c ****          */
+ 486:Generated_Source\PSoC5/TIMER_BUTTON.c ****         CY_SET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR, (uint16)counter);
+ 307              		.loc 1 486 0
+ 308 0000 014B     		ldr	r3, .L32
+ 309 0002 1880     		strh	r0, [r3]	@ movhi
+ 310 0004 7047     		bx	lr
+ 311              	.L33:
+ 312 0006 00BF     		.align	2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 15
+
+
+ 313              	.L32:
+ 314 0008 064F0040 		.word	1073762054
+ 315              		.cfi_endproc
+ 316              	.LFE12:
+ 317              		.size	TIMER_BUTTON_WriteCounter, .-TIMER_BUTTON_WriteCounter
+ 318              		.section	.text.TIMER_BUTTON_Init,"ax",%progbits
+ 319              		.align	2
+ 320              		.global	TIMER_BUTTON_Init
+ 321              		.thumb
+ 322              		.thumb_func
+ 323              		.type	TIMER_BUTTON_Init, %function
+ 324              	TIMER_BUTTON_Init:
+ 325              	.LFB0:
+  44:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(!TIMER_BUTTON_UsingFixedFunction)
+ 326              		.loc 1 44 0
+ 327              		.cfi_startproc
+ 328              		@ args = 0, pretend = 0, frame = 0
+ 329              		@ frame_needed = 0, uses_anonymous_args = 0
+ 330 0000 08B5     		push	{r3, lr}
+ 331              		.cfi_def_cfa_offset 8
+ 332              		.cfi_offset 3, -8
+ 333              		.cfi_offset 14, -4
+  52:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 334              		.loc 1 52 0
+ 335 0002 1E4A     		ldr	r2, .L36
+ 336 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 337 0006 03F00103 		and	r3, r3, #1
+ 338 000a 1370     		strb	r3, [r2]
+  60:Generated_Source\PSoC5/TIMER_BUTTON.c ****         #endif /* CONTROL3 register exists only in PSoC3 OR PSoC5LP */
+ 339              		.loc 1 60 0
+ 340 000c 1C4B     		ldr	r3, .L36+4
+ 341 000e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 342 0010 02F0FC02 		and	r2, r2, #252
+ 343 0014 1A70     		strb	r2, [r3]
+  92:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_RCOD;
+ 344              		.loc 1 92 0
+ 345 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 346 0018 02F0F302 		and	r2, r2, #243
+ 347 001c 1A70     		strb	r2, [r3]
+  93:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 348              		.loc 1 93 0
+ 349 001e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 350 0020 42F00C02 		orr	r2, r2, #12
+ 351 0024 1A70     		strb	r2, [r3]
+  96:Generated_Source\PSoC5/TIMER_BUTTON.c ****                 TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_ENBL;
+ 352              		.loc 1 96 0
+ 353 0026 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 354 0028 02F07F02 		and	r2, r2, #127
+ 355 002c 1A70     		strb	r2, [r3]
+  97:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 356              		.loc 1 97 0
+ 357 002e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 358 0030 42F08002 		orr	r2, r2, #128
+ 359 0034 1A70     		strb	r2, [r3]
+ 100:Generated_Source\PSoC5/TIMER_BUTTON.c ****             #endif /* Set Continuous Run Mode in CONTROL3 for PSoC3ES3 or PSoC5A */
+ 360              		.loc 1 100 0
+ 361 0036 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 16
+
+
+ 362 0038 D2B2     		uxtb	r2, r2
+ 363 003a 1A70     		strb	r2, [r3]
+ 106:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNC;
+ 364              		.loc 1 106 0
+ 365 003c 0933     		adds	r3, r3, #9
+ 366 003e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 367 0040 02F0CF02 		and	r2, r2, #207
+ 368 0044 1A70     		strb	r2, [r3]
+ 107:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 369              		.loc 1 107 0
+ 370 0046 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 371 0048 42F03002 		orr	r2, r2, #48
+ 372 004c 1A70     		strb	r2, [r3]
+ 110:Generated_Source\PSoC5/TIMER_BUTTON.c ****         TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNCDSI_EN;
+ 373              		.loc 1 110 0
+ 374 004e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 375 0050 02F0F002 		and	r2, r2, #240
+ 376 0054 1A70     		strb	r2, [r3]
+ 111:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 377              		.loc 1 111 0
+ 378 0056 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 379 0058 42F00F02 		orr	r2, r2, #15
+ 380 005c 1A70     		strb	r2, [r3]
+ 114:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Configuring registers of fixed function implementation */
+ 381              		.loc 1 114 0
+ 382 005e 094A     		ldr	r2, .L36+8
+ 383 0060 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 384 0062 43F00103 		orr	r3, r3, #1
+ 385 0066 1370     		strb	r3, [r2]
+ 118:Generated_Source\PSoC5/TIMER_BUTTON.c ****     TIMER_BUTTON_WriteCounter(TIMER_BUTTON_INIT_PERIOD);
+ 386              		.loc 1 118 0
+ 387 0068 9520     		movs	r0, #149
+ 388 006a FFF7FEFF 		bl	TIMER_BUTTON_WritePeriod
+ 389              	.LVL4:
+ 119:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 390              		.loc 1 119 0
+ 391 006e 9520     		movs	r0, #149
+ 392 0070 FFF7FEFF 		bl	TIMER_BUTTON_WriteCounter
+ 393              	.LVL5:
+ 162:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 394              		.loc 1 162 0
+ 395 0074 0820     		movs	r0, #8
+ 396 0076 FFF7FEFF 		bl	TIMER_BUTTON_SetInterruptMode
+ 397              	.LVL6:
+ 398 007a 08BD     		pop	{r3, pc}
+ 399              	.L37:
+ 400              		.align	2
+ 401              	.L36:
+ 402 007c 004F0040 		.word	1073762048
+ 403 0080 024F0040 		.word	1073762050
+ 404 0084 014F0040 		.word	1073762049
+ 405              		.cfi_endproc
+ 406              	.LFE0:
+ 407              		.size	TIMER_BUTTON_Init, .-TIMER_BUTTON_Init
+ 408              		.section	.text.TIMER_BUTTON_Start,"ax",%progbits
+ 409              		.align	2
+ 410              		.global	TIMER_BUTTON_Start
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 17
+
+
+ 411              		.thumb
+ 412              		.thumb_func
+ 413              		.type	TIMER_BUTTON_Start, %function
+ 414              	TIMER_BUTTON_Start:
+ 415              	.LFB2:
+ 216:Generated_Source\PSoC5/TIMER_BUTTON.c ****     if(TIMER_BUTTON_initVar == 0u)
+ 416              		.loc 1 216 0
+ 417              		.cfi_startproc
+ 418              		@ args = 0, pretend = 0, frame = 0
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420 0000 08B5     		push	{r3, lr}
+ 421              		.cfi_def_cfa_offset 8
+ 422              		.cfi_offset 3, -8
+ 423              		.cfi_offset 14, -4
+ 217:Generated_Source\PSoC5/TIMER_BUTTON.c ****     {
+ 424              		.loc 1 217 0
+ 425 0002 054B     		ldr	r3, .L41
+ 426 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 427 0006 23B9     		cbnz	r3, .L39
+ 219:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 428              		.loc 1 219 0
+ 429 0008 FFF7FEFF 		bl	TIMER_BUTTON_Init
+ 430              	.LVL7:
+ 221:Generated_Source\PSoC5/TIMER_BUTTON.c ****     }
+ 431              		.loc 1 221 0
+ 432 000c 0122     		movs	r2, #1
+ 433 000e 024B     		ldr	r3, .L41
+ 434 0010 1A70     		strb	r2, [r3]
+ 435              	.L39:
+ 225:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 436              		.loc 1 225 0
+ 437 0012 FFF7FEFF 		bl	TIMER_BUTTON_Enable
+ 438              	.LVL8:
+ 439 0016 08BD     		pop	{r3, pc}
+ 440              	.L42:
+ 441              		.align	2
+ 442              	.L41:
+ 443 0018 00000000 		.word	.LANCHOR0
+ 444              		.cfi_endproc
+ 445              	.LFE2:
+ 446              		.size	TIMER_BUTTON_Start, .-TIMER_BUTTON_Start
+ 447              		.section	.text.TIMER_BUTTON_ReadCounter,"ax",%progbits
+ 448              		.align	2
+ 449              		.global	TIMER_BUTTON_ReadCounter
+ 450              		.thumb
+ 451              		.thumb_func
+ 452              		.type	TIMER_BUTTON_ReadCounter, %function
+ 453              	TIMER_BUTTON_ReadCounter:
+ 454              	.LFB13:
+ 487:Generated_Source\PSoC5/TIMER_BUTTON.c ****         
+ 488:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 489:Generated_Source\PSoC5/TIMER_BUTTON.c ****         CY_SET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR, counter);
+ 490:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fix
+ 491:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 492:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 493:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 494:Generated_Source\PSoC5/TIMER_BUTTON.c **** /*******************************************************************************
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 18
+
+
+ 495:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Function Name: TIMER_BUTTON_ReadCounter
+ 496:Generated_Source\PSoC5/TIMER_BUTTON.c **** ********************************************************************************
+ 497:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 498:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Summary:
+ 499:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  This function returns the current counter value.
+ 500:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 501:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Parameters:
+ 502:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  void
+ 503:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 504:Generated_Source\PSoC5/TIMER_BUTTON.c **** * Return:
+ 505:Generated_Source\PSoC5/TIMER_BUTTON.c **** *  Present compare value.
+ 506:Generated_Source\PSoC5/TIMER_BUTTON.c **** *
+ 507:Generated_Source\PSoC5/TIMER_BUTTON.c **** *******************************************************************************/
+ 508:Generated_Source\PSoC5/TIMER_BUTTON.c **** uint8 TIMER_BUTTON_ReadCounter(void) 
+ 509:Generated_Source\PSoC5/TIMER_BUTTON.c **** {
+ 455              		.loc 1 509 0
+ 456              		.cfi_startproc
+ 457              		@ args = 0, pretend = 0, frame = 0
+ 458              		@ frame_needed = 0, uses_anonymous_args = 0
+ 459              		@ link register save eliminated.
+ 510:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Force capture by reading Accumulator */
+ 511:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Must first do a software capture to be able to read the counter */
+ 512:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 513:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(TIMER_BUTTON_UsingFixedFunction)
+ 514:Generated_Source\PSoC5/TIMER_BUTTON.c ****         (void)CY_GET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR);
+ 460              		.loc 1 514 0
+ 461 0000 024B     		ldr	r3, .L44
+ 462 0002 1B88     		ldrh	r3, [r3]
+ 515:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 516:Generated_Source\PSoC5/TIMER_BUTTON.c ****         (void)CY_GET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR_8BIT);
+ 517:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif/* (TIMER_BUTTON_UsingFixedFunction) */
+ 518:Generated_Source\PSoC5/TIMER_BUTTON.c **** 
+ 519:Generated_Source\PSoC5/TIMER_BUTTON.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 520:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #if(TIMER_BUTTON_UsingFixedFunction)
+ 521:Generated_Source\PSoC5/TIMER_BUTTON.c ****         return ((uint8)CY_GET_REG16(TIMER_BUTTON_CAPTURE_LSB_PTR));
+ 463              		.loc 1 521 0
+ 464 0004 024B     		ldr	r3, .L44+4
+ 465 0006 1888     		ldrh	r0, [r3]
+ 522:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #else
+ 523:Generated_Source\PSoC5/TIMER_BUTTON.c ****         return (CY_GET_REG8(TIMER_BUTTON_CAPTURE_LSB_PTR));
+ 524:Generated_Source\PSoC5/TIMER_BUTTON.c ****     #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+ 525:Generated_Source\PSoC5/TIMER_BUTTON.c **** }
+ 466              		.loc 1 525 0
+ 467 0008 C0B2     		uxtb	r0, r0
+ 468 000a 7047     		bx	lr
+ 469              	.L45:
+ 470              		.align	2
+ 471              	.L44:
+ 472 000c 064F0040 		.word	1073762054
+ 473 0010 084F0040 		.word	1073762056
+ 474              		.cfi_endproc
+ 475              	.LFE13:
+ 476              		.size	TIMER_BUTTON_ReadCounter, .-TIMER_BUTTON_ReadCounter
+ 477              		.global	TIMER_BUTTON_initVar
+ 478              		.bss
+ 479              		.set	.LANCHOR0,. + 0
+ 480              		.type	TIMER_BUTTON_initVar, %object
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 19
+
+
+ 481              		.size	TIMER_BUTTON_initVar, 1
+ 482              	TIMER_BUTTON_initVar:
+ 483 0000 00       		.space	1
+ 484              		.text
+ 485              	.Letext0:
+ 486              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 487              		.section	.debug_info,"",%progbits
+ 488              	.Ldebug_info0:
+ 489 0000 8F020000 		.4byte	0x28f
+ 490 0004 0400     		.2byte	0x4
+ 491 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 492 000a 04       		.byte	0x4
+ 493 000b 01       		.uleb128 0x1
+ 494 000c 04010000 		.4byte	.LASF36
+ 495 0010 0C       		.byte	0xc
+ 496 0011 EF010000 		.4byte	.LASF37
+ 497 0015 0D000000 		.4byte	.LASF38
+ 498 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 499 001d 00000000 		.4byte	0
+ 500 0021 00000000 		.4byte	.Ldebug_line0
+ 501 0025 02       		.uleb128 0x2
+ 502 0026 01       		.byte	0x1
+ 503 0027 06       		.byte	0x6
+ 504 0028 33030000 		.4byte	.LASF0
+ 505 002c 02       		.uleb128 0x2
+ 506 002d 01       		.byte	0x1
+ 507 002e 08       		.byte	0x8
+ 508 002f F6000000 		.4byte	.LASF1
+ 509 0033 02       		.uleb128 0x2
+ 510 0034 02       		.byte	0x2
+ 511 0035 05       		.byte	0x5
+ 512 0036 F1020000 		.4byte	.LASF2
+ 513 003a 02       		.uleb128 0x2
+ 514 003b 02       		.byte	0x2
+ 515 003c 07       		.byte	0x7
+ 516 003d 3F030000 		.4byte	.LASF3
+ 517 0041 02       		.uleb128 0x2
+ 518 0042 04       		.byte	0x4
+ 519 0043 05       		.byte	0x5
+ 520 0044 19030000 		.4byte	.LASF4
+ 521 0048 02       		.uleb128 0x2
+ 522 0049 04       		.byte	0x4
+ 523 004a 07       		.byte	0x7
+ 524 004b 97010000 		.4byte	.LASF5
+ 525 004f 02       		.uleb128 0x2
+ 526 0050 08       		.byte	0x8
+ 527 0051 05       		.byte	0x5
+ 528 0052 A8020000 		.4byte	.LASF6
+ 529 0056 02       		.uleb128 0x2
+ 530 0057 08       		.byte	0x8
+ 531 0058 07       		.byte	0x7
+ 532 0059 7C020000 		.4byte	.LASF7
+ 533 005d 03       		.uleb128 0x3
+ 534 005e 04       		.byte	0x4
+ 535 005f 05       		.byte	0x5
+ 536 0060 696E7400 		.ascii	"int\000"
+ 537 0064 02       		.uleb128 0x2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 20
+
+
+ 538 0065 04       		.byte	0x4
+ 539 0066 07       		.byte	0x7
+ 540 0067 6F020000 		.4byte	.LASF8
+ 541 006b 04       		.uleb128 0x4
+ 542 006c A9010000 		.4byte	.LASF9
+ 543 0070 02       		.byte	0x2
+ 544 0071 E401     		.2byte	0x1e4
+ 545 0073 2C000000 		.4byte	0x2c
+ 546 0077 04       		.uleb128 0x4
+ 547 0078 56020000 		.4byte	.LASF10
+ 548 007c 02       		.byte	0x2
+ 549 007d E501     		.2byte	0x1e5
+ 550 007f 3A000000 		.4byte	0x3a
+ 551 0083 02       		.uleb128 0x2
+ 552 0084 04       		.byte	0x4
+ 553 0085 04       		.byte	0x4
+ 554 0086 B8000000 		.4byte	.LASF11
+ 555 008a 02       		.uleb128 0x2
+ 556 008b 08       		.byte	0x8
+ 557 008c 04       		.byte	0x4
+ 558 008d 15020000 		.4byte	.LASF12
+ 559 0091 02       		.uleb128 0x2
+ 560 0092 01       		.byte	0x1
+ 561 0093 08       		.byte	0x8
+ 562 0094 22030000 		.4byte	.LASF13
+ 563 0098 04       		.uleb128 0x4
+ 564 0099 92010000 		.4byte	.LASF14
+ 565 009d 02       		.byte	0x2
+ 566 009e 8E02     		.2byte	0x28e
+ 567 00a0 A4000000 		.4byte	0xa4
+ 568 00a4 05       		.uleb128 0x5
+ 569 00a5 6B000000 		.4byte	0x6b
+ 570 00a9 04       		.uleb128 0x4
+ 571 00aa 00000000 		.4byte	.LASF15
+ 572 00ae 02       		.byte	0x2
+ 573 00af 8F02     		.2byte	0x28f
+ 574 00b1 B5000000 		.4byte	0xb5
+ 575 00b5 05       		.uleb128 0x5
+ 576 00b6 77000000 		.4byte	0x77
+ 577 00ba 02       		.uleb128 0x2
+ 578 00bb 08       		.byte	0x8
+ 579 00bc 04       		.byte	0x4
+ 580 00bd 27030000 		.4byte	.LASF16
+ 581 00c1 02       		.uleb128 0x2
+ 582 00c2 04       		.byte	0x4
+ 583 00c3 07       		.byte	0x7
+ 584 00c4 9F020000 		.4byte	.LASF17
+ 585 00c8 06       		.uleb128 0x6
+ 586 00c9 C4020000 		.4byte	.LASF18
+ 587 00cd 01       		.byte	0x1
+ 588 00ce B4       		.byte	0xb4
+ 589 00cf 00000000 		.4byte	.LFB1
+ 590 00d3 28000000 		.4byte	.LFE1-.LFB1
+ 591 00d7 01       		.uleb128 0x1
+ 592 00d8 9C       		.byte	0x9c
+ 593 00d9 06       		.uleb128 0x6
+ 594 00da 5D020000 		.4byte	.LASF19
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 21
+
+
+ 595 00de 01       		.byte	0x1
+ 596 00df F7       		.byte	0xf7
+ 597 00e0 00000000 		.4byte	.LFB3
+ 598 00e4 28000000 		.4byte	.LFE3-.LFB3
+ 599 00e8 01       		.uleb128 0x1
+ 600 00e9 9C       		.byte	0x9c
+ 601 00ea 07       		.uleb128 0x7
+ 602 00eb FB020000 		.4byte	.LASF23
+ 603 00ef 01       		.byte	0x1
+ 604 00f0 1701     		.2byte	0x117
+ 605 00f2 00000000 		.4byte	.LFB4
+ 606 00f6 0C000000 		.4byte	.LFE4-.LFB4
+ 607 00fa 01       		.uleb128 0x1
+ 608 00fb 9C       		.byte	0x9c
+ 609 00fc 0F010000 		.4byte	0x10f
+ 610 0100 08       		.uleb128 0x8
+ 611 0101 B6020000 		.4byte	.LASF25
+ 612 0105 01       		.byte	0x1
+ 613 0106 1701     		.2byte	0x117
+ 614 0108 6B000000 		.4byte	0x6b
+ 615 010c 01       		.uleb128 0x1
+ 616 010d 50       		.byte	0x50
+ 617 010e 00       		.byte	0
+ 618 010f 09       		.uleb128 0x9
+ 619 0110 CA010000 		.4byte	.LASF20
+ 620 0114 01       		.byte	0x1
+ 621 0115 2E01     		.2byte	0x12e
+ 622 0117 00000000 		.4byte	.LFB5
+ 623 011b 0C000000 		.4byte	.LFE5-.LFB5
+ 624 011f 01       		.uleb128 0x1
+ 625 0120 9C       		.byte	0x9c
+ 626 0121 0A       		.uleb128 0xa
+ 627 0122 D6000000 		.4byte	.LASF21
+ 628 0126 01       		.byte	0x1
+ 629 0127 4D01     		.2byte	0x14d
+ 630 0129 6B000000 		.4byte	0x6b
+ 631 012d 00000000 		.4byte	.LFB6
+ 632 0131 0C000000 		.4byte	.LFE6-.LFB6
+ 633 0135 01       		.uleb128 0x1
+ 634 0136 9C       		.byte	0x9c
+ 635 0137 0A       		.uleb128 0xa
+ 636 0138 35020000 		.4byte	.LASF22
+ 637 013c 01       		.byte	0x1
+ 638 013d 6401     		.2byte	0x164
+ 639 013f 6B000000 		.4byte	0x6b
+ 640 0143 00000000 		.4byte	.LFB7
+ 641 0147 0C000000 		.4byte	.LFE7-.LFB7
+ 642 014b 01       		.uleb128 0x1
+ 643 014c 9C       		.byte	0x9c
+ 644 014d 07       		.uleb128 0x7
+ 645 014e 6C030000 		.4byte	.LASF24
+ 646 0152 01       		.byte	0x1
+ 647 0153 7B01     		.2byte	0x17b
+ 648 0155 00000000 		.4byte	.LFB8
+ 649 0159 0C000000 		.4byte	.LFE8-.LFB8
+ 650 015d 01       		.uleb128 0x1
+ 651 015e 9C       		.byte	0x9c
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 22
+
+
+ 652 015f 72010000 		.4byte	0x172
+ 653 0163 08       		.uleb128 0x8
+ 654 0164 AF010000 		.4byte	.LASF26
+ 655 0168 01       		.byte	0x1
+ 656 0169 7B01     		.2byte	0x17b
+ 657 016b 6B000000 		.4byte	0x6b
+ 658 016f 01       		.uleb128 0x1
+ 659 0170 50       		.byte	0x50
+ 660 0171 00       		.byte	0
+ 661 0172 0A       		.uleb128 0xa
+ 662 0173 BE000000 		.4byte	.LASF27
+ 663 0177 01       		.byte	0x1
+ 664 0178 9501     		.2byte	0x195
+ 665 017a 6B000000 		.4byte	0x6b
+ 666 017e 00000000 		.4byte	.LFB9
+ 667 0182 0C000000 		.4byte	.LFE9-.LFB9
+ 668 0186 01       		.uleb128 0x1
+ 669 0187 9C       		.byte	0x9c
+ 670 0188 07       		.uleb128 0x7
+ 671 0189 8E030000 		.4byte	.LASF28
+ 672 018d 01       		.byte	0x1
+ 673 018e AF01     		.2byte	0x1af
+ 674 0190 00000000 		.4byte	.LFB10
+ 675 0194 0C000000 		.4byte	.LFE10-.LFB10
+ 676 0198 01       		.uleb128 0x1
+ 677 0199 9C       		.byte	0x9c
+ 678 019a BB010000 		.4byte	0x1bb
+ 679 019e 08       		.uleb128 0x8
+ 680 019f 06000000 		.4byte	.LASF29
+ 681 01a3 01       		.byte	0x1
+ 682 01a4 AF01     		.2byte	0x1af
+ 683 01a6 6B000000 		.4byte	0x6b
+ 684 01aa 01       		.uleb128 0x1
+ 685 01ab 50       		.byte	0x50
+ 686 01ac 0B       		.uleb128 0xb
+ 687 01ad 93020000 		.4byte	.LASF39
+ 688 01b1 01       		.byte	0x1
+ 689 01b2 B201     		.2byte	0x1b2
+ 690 01b4 77000000 		.4byte	0x77
+ 691 01b8 01       		.uleb128 0x1
+ 692 01b9 50       		.byte	0x50
+ 693 01ba 00       		.byte	0
+ 694 01bb 0A       		.uleb128 0xa
+ 695 01bc 1C020000 		.4byte	.LASF30
+ 696 01c0 01       		.byte	0x1
+ 697 01c1 C801     		.2byte	0x1c8
+ 698 01c3 6B000000 		.4byte	0x6b
+ 699 01c7 00000000 		.4byte	.LFB11
+ 700 01cb 0C000000 		.4byte	.LFE11-.LFB11
+ 701 01cf 01       		.uleb128 0x1
+ 702 01d0 9C       		.byte	0x9c
+ 703 01d1 07       		.uleb128 0x7
+ 704 01d2 52030000 		.4byte	.LASF31
+ 705 01d6 01       		.byte	0x1
+ 706 01d7 E001     		.2byte	0x1e0
+ 707 01d9 00000000 		.4byte	.LFB12
+ 708 01dd 0C000000 		.4byte	.LFE12-.LFB12
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 23
+
+
+ 709 01e1 01       		.uleb128 0x1
+ 710 01e2 9C       		.byte	0x9c
+ 711 01e3 F6010000 		.4byte	0x1f6
+ 712 01e7 08       		.uleb128 0x8
+ 713 01e8 E7010000 		.4byte	.LASF32
+ 714 01ec 01       		.byte	0x1
+ 715 01ed E001     		.2byte	0x1e0
+ 716 01ef 6B000000 		.4byte	0x6b
+ 717 01f3 01       		.uleb128 0x1
+ 718 01f4 50       		.byte	0x50
+ 719 01f5 00       		.byte	0
+ 720 01f6 0C       		.uleb128 0xc
+ 721 01f7 A6000000 		.4byte	.LASF33
+ 722 01fb 01       		.byte	0x1
+ 723 01fc 2B       		.byte	0x2b
+ 724 01fd 00000000 		.4byte	.LFB0
+ 725 0201 88000000 		.4byte	.LFE0-.LFB0
+ 726 0205 01       		.uleb128 0x1
+ 727 0206 9C       		.byte	0x9c
+ 728 0207 43020000 		.4byte	0x243
+ 729 020b 0D       		.uleb128 0xd
+ 730 020c 6E000000 		.4byte	.LVL4
+ 731 0210 88010000 		.4byte	0x188
+ 732 0214 1F020000 		.4byte	0x21f
+ 733 0218 0E       		.uleb128 0xe
+ 734 0219 01       		.uleb128 0x1
+ 735 021a 50       		.byte	0x50
+ 736 021b 02       		.uleb128 0x2
+ 737 021c 09       		.byte	0x9
+ 738 021d 95       		.byte	0x95
+ 739 021e 00       		.byte	0
+ 740 021f 0D       		.uleb128 0xd
+ 741 0220 74000000 		.4byte	.LVL5
+ 742 0224 D1010000 		.4byte	0x1d1
+ 743 0228 33020000 		.4byte	0x233
+ 744 022c 0E       		.uleb128 0xe
+ 745 022d 01       		.uleb128 0x1
+ 746 022e 50       		.byte	0x50
+ 747 022f 02       		.uleb128 0x2
+ 748 0230 09       		.byte	0x9
+ 749 0231 95       		.byte	0x95
+ 750 0232 00       		.byte	0
+ 751 0233 0F       		.uleb128 0xf
+ 752 0234 7A000000 		.4byte	.LVL6
+ 753 0238 EA000000 		.4byte	0xea
+ 754 023c 0E       		.uleb128 0xe
+ 755 023d 01       		.uleb128 0x1
+ 756 023e 50       		.byte	0x50
+ 757 023f 01       		.uleb128 0x1
+ 758 0240 38       		.byte	0x38
+ 759 0241 00       		.byte	0
+ 760 0242 00       		.byte	0
+ 761 0243 0C       		.uleb128 0xc
+ 762 0244 B7010000 		.4byte	.LASF34
+ 763 0248 01       		.byte	0x1
+ 764 0249 D7       		.byte	0xd7
+ 765 024a 00000000 		.4byte	.LFB2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 24
+
+
+ 766 024e 1C000000 		.4byte	.LFE2-.LFB2
+ 767 0252 01       		.uleb128 0x1
+ 768 0253 9C       		.byte	0x9c
+ 769 0254 6B020000 		.4byte	0x26b
+ 770 0258 10       		.uleb128 0x10
+ 771 0259 0C000000 		.4byte	.LVL7
+ 772 025d F6010000 		.4byte	0x1f6
+ 773 0261 10       		.uleb128 0x10
+ 774 0262 16000000 		.4byte	.LVL8
+ 775 0266 C8000000 		.4byte	0xc8
+ 776 026a 00       		.byte	0
+ 777 026b 0A       		.uleb128 0xa
+ 778 026c D8020000 		.4byte	.LASF35
+ 779 0270 01       		.byte	0x1
+ 780 0271 FC01     		.2byte	0x1fc
+ 781 0273 6B000000 		.4byte	0x6b
+ 782 0277 00000000 		.4byte	.LFB13
+ 783 027b 14000000 		.4byte	.LFE13-.LFB13
+ 784 027f 01       		.uleb128 0x1
+ 785 0280 9C       		.byte	0x9c
+ 786 0281 11       		.uleb128 0x11
+ 787 0282 91000000 		.4byte	.LASF40
+ 788 0286 01       		.byte	0x1
+ 789 0287 1A       		.byte	0x1a
+ 790 0288 6B000000 		.4byte	0x6b
+ 791 028c 05       		.uleb128 0x5
+ 792 028d 03       		.byte	0x3
+ 793 028e 00000000 		.4byte	TIMER_BUTTON_initVar
+ 794 0292 00       		.byte	0
+ 795              		.section	.debug_abbrev,"",%progbits
+ 796              	.Ldebug_abbrev0:
+ 797 0000 01       		.uleb128 0x1
+ 798 0001 11       		.uleb128 0x11
+ 799 0002 01       		.byte	0x1
+ 800 0003 25       		.uleb128 0x25
+ 801 0004 0E       		.uleb128 0xe
+ 802 0005 13       		.uleb128 0x13
+ 803 0006 0B       		.uleb128 0xb
+ 804 0007 03       		.uleb128 0x3
+ 805 0008 0E       		.uleb128 0xe
+ 806 0009 1B       		.uleb128 0x1b
+ 807 000a 0E       		.uleb128 0xe
+ 808 000b 55       		.uleb128 0x55
+ 809 000c 17       		.uleb128 0x17
+ 810 000d 11       		.uleb128 0x11
+ 811 000e 01       		.uleb128 0x1
+ 812 000f 10       		.uleb128 0x10
+ 813 0010 17       		.uleb128 0x17
+ 814 0011 00       		.byte	0
+ 815 0012 00       		.byte	0
+ 816 0013 02       		.uleb128 0x2
+ 817 0014 24       		.uleb128 0x24
+ 818 0015 00       		.byte	0
+ 819 0016 0B       		.uleb128 0xb
+ 820 0017 0B       		.uleb128 0xb
+ 821 0018 3E       		.uleb128 0x3e
+ 822 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 25
+
+
+ 823 001a 03       		.uleb128 0x3
+ 824 001b 0E       		.uleb128 0xe
+ 825 001c 00       		.byte	0
+ 826 001d 00       		.byte	0
+ 827 001e 03       		.uleb128 0x3
+ 828 001f 24       		.uleb128 0x24
+ 829 0020 00       		.byte	0
+ 830 0021 0B       		.uleb128 0xb
+ 831 0022 0B       		.uleb128 0xb
+ 832 0023 3E       		.uleb128 0x3e
+ 833 0024 0B       		.uleb128 0xb
+ 834 0025 03       		.uleb128 0x3
+ 835 0026 08       		.uleb128 0x8
+ 836 0027 00       		.byte	0
+ 837 0028 00       		.byte	0
+ 838 0029 04       		.uleb128 0x4
+ 839 002a 16       		.uleb128 0x16
+ 840 002b 00       		.byte	0
+ 841 002c 03       		.uleb128 0x3
+ 842 002d 0E       		.uleb128 0xe
+ 843 002e 3A       		.uleb128 0x3a
+ 844 002f 0B       		.uleb128 0xb
+ 845 0030 3B       		.uleb128 0x3b
+ 846 0031 05       		.uleb128 0x5
+ 847 0032 49       		.uleb128 0x49
+ 848 0033 13       		.uleb128 0x13
+ 849 0034 00       		.byte	0
+ 850 0035 00       		.byte	0
+ 851 0036 05       		.uleb128 0x5
+ 852 0037 35       		.uleb128 0x35
+ 853 0038 00       		.byte	0
+ 854 0039 49       		.uleb128 0x49
+ 855 003a 13       		.uleb128 0x13
+ 856 003b 00       		.byte	0
+ 857 003c 00       		.byte	0
+ 858 003d 06       		.uleb128 0x6
+ 859 003e 2E       		.uleb128 0x2e
+ 860 003f 00       		.byte	0
+ 861 0040 3F       		.uleb128 0x3f
+ 862 0041 19       		.uleb128 0x19
+ 863 0042 03       		.uleb128 0x3
+ 864 0043 0E       		.uleb128 0xe
+ 865 0044 3A       		.uleb128 0x3a
+ 866 0045 0B       		.uleb128 0xb
+ 867 0046 3B       		.uleb128 0x3b
+ 868 0047 0B       		.uleb128 0xb
+ 869 0048 27       		.uleb128 0x27
+ 870 0049 19       		.uleb128 0x19
+ 871 004a 11       		.uleb128 0x11
+ 872 004b 01       		.uleb128 0x1
+ 873 004c 12       		.uleb128 0x12
+ 874 004d 06       		.uleb128 0x6
+ 875 004e 40       		.uleb128 0x40
+ 876 004f 18       		.uleb128 0x18
+ 877 0050 9742     		.uleb128 0x2117
+ 878 0052 19       		.uleb128 0x19
+ 879 0053 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 26
+
+
+ 880 0054 00       		.byte	0
+ 881 0055 07       		.uleb128 0x7
+ 882 0056 2E       		.uleb128 0x2e
+ 883 0057 01       		.byte	0x1
+ 884 0058 3F       		.uleb128 0x3f
+ 885 0059 19       		.uleb128 0x19
+ 886 005a 03       		.uleb128 0x3
+ 887 005b 0E       		.uleb128 0xe
+ 888 005c 3A       		.uleb128 0x3a
+ 889 005d 0B       		.uleb128 0xb
+ 890 005e 3B       		.uleb128 0x3b
+ 891 005f 05       		.uleb128 0x5
+ 892 0060 27       		.uleb128 0x27
+ 893 0061 19       		.uleb128 0x19
+ 894 0062 11       		.uleb128 0x11
+ 895 0063 01       		.uleb128 0x1
+ 896 0064 12       		.uleb128 0x12
+ 897 0065 06       		.uleb128 0x6
+ 898 0066 40       		.uleb128 0x40
+ 899 0067 18       		.uleb128 0x18
+ 900 0068 9742     		.uleb128 0x2117
+ 901 006a 19       		.uleb128 0x19
+ 902 006b 01       		.uleb128 0x1
+ 903 006c 13       		.uleb128 0x13
+ 904 006d 00       		.byte	0
+ 905 006e 00       		.byte	0
+ 906 006f 08       		.uleb128 0x8
+ 907 0070 05       		.uleb128 0x5
+ 908 0071 00       		.byte	0
+ 909 0072 03       		.uleb128 0x3
+ 910 0073 0E       		.uleb128 0xe
+ 911 0074 3A       		.uleb128 0x3a
+ 912 0075 0B       		.uleb128 0xb
+ 913 0076 3B       		.uleb128 0x3b
+ 914 0077 05       		.uleb128 0x5
+ 915 0078 49       		.uleb128 0x49
+ 916 0079 13       		.uleb128 0x13
+ 917 007a 02       		.uleb128 0x2
+ 918 007b 18       		.uleb128 0x18
+ 919 007c 00       		.byte	0
+ 920 007d 00       		.byte	0
+ 921 007e 09       		.uleb128 0x9
+ 922 007f 2E       		.uleb128 0x2e
+ 923 0080 00       		.byte	0
+ 924 0081 3F       		.uleb128 0x3f
+ 925 0082 19       		.uleb128 0x19
+ 926 0083 03       		.uleb128 0x3
+ 927 0084 0E       		.uleb128 0xe
+ 928 0085 3A       		.uleb128 0x3a
+ 929 0086 0B       		.uleb128 0xb
+ 930 0087 3B       		.uleb128 0x3b
+ 931 0088 05       		.uleb128 0x5
+ 932 0089 27       		.uleb128 0x27
+ 933 008a 19       		.uleb128 0x19
+ 934 008b 11       		.uleb128 0x11
+ 935 008c 01       		.uleb128 0x1
+ 936 008d 12       		.uleb128 0x12
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 27
+
+
+ 937 008e 06       		.uleb128 0x6
+ 938 008f 40       		.uleb128 0x40
+ 939 0090 18       		.uleb128 0x18
+ 940 0091 9742     		.uleb128 0x2117
+ 941 0093 19       		.uleb128 0x19
+ 942 0094 00       		.byte	0
+ 943 0095 00       		.byte	0
+ 944 0096 0A       		.uleb128 0xa
+ 945 0097 2E       		.uleb128 0x2e
+ 946 0098 00       		.byte	0
+ 947 0099 3F       		.uleb128 0x3f
+ 948 009a 19       		.uleb128 0x19
+ 949 009b 03       		.uleb128 0x3
+ 950 009c 0E       		.uleb128 0xe
+ 951 009d 3A       		.uleb128 0x3a
+ 952 009e 0B       		.uleb128 0xb
+ 953 009f 3B       		.uleb128 0x3b
+ 954 00a0 05       		.uleb128 0x5
+ 955 00a1 27       		.uleb128 0x27
+ 956 00a2 19       		.uleb128 0x19
+ 957 00a3 49       		.uleb128 0x49
+ 958 00a4 13       		.uleb128 0x13
+ 959 00a5 11       		.uleb128 0x11
+ 960 00a6 01       		.uleb128 0x1
+ 961 00a7 12       		.uleb128 0x12
+ 962 00a8 06       		.uleb128 0x6
+ 963 00a9 40       		.uleb128 0x40
+ 964 00aa 18       		.uleb128 0x18
+ 965 00ab 9742     		.uleb128 0x2117
+ 966 00ad 19       		.uleb128 0x19
+ 967 00ae 00       		.byte	0
+ 968 00af 00       		.byte	0
+ 969 00b0 0B       		.uleb128 0xb
+ 970 00b1 34       		.uleb128 0x34
+ 971 00b2 00       		.byte	0
+ 972 00b3 03       		.uleb128 0x3
+ 973 00b4 0E       		.uleb128 0xe
+ 974 00b5 3A       		.uleb128 0x3a
+ 975 00b6 0B       		.uleb128 0xb
+ 976 00b7 3B       		.uleb128 0x3b
+ 977 00b8 05       		.uleb128 0x5
+ 978 00b9 49       		.uleb128 0x49
+ 979 00ba 13       		.uleb128 0x13
+ 980 00bb 02       		.uleb128 0x2
+ 981 00bc 18       		.uleb128 0x18
+ 982 00bd 00       		.byte	0
+ 983 00be 00       		.byte	0
+ 984 00bf 0C       		.uleb128 0xc
+ 985 00c0 2E       		.uleb128 0x2e
+ 986 00c1 01       		.byte	0x1
+ 987 00c2 3F       		.uleb128 0x3f
+ 988 00c3 19       		.uleb128 0x19
+ 989 00c4 03       		.uleb128 0x3
+ 990 00c5 0E       		.uleb128 0xe
+ 991 00c6 3A       		.uleb128 0x3a
+ 992 00c7 0B       		.uleb128 0xb
+ 993 00c8 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 28
+
+
+ 994 00c9 0B       		.uleb128 0xb
+ 995 00ca 27       		.uleb128 0x27
+ 996 00cb 19       		.uleb128 0x19
+ 997 00cc 11       		.uleb128 0x11
+ 998 00cd 01       		.uleb128 0x1
+ 999 00ce 12       		.uleb128 0x12
+ 1000 00cf 06       		.uleb128 0x6
+ 1001 00d0 40       		.uleb128 0x40
+ 1002 00d1 18       		.uleb128 0x18
+ 1003 00d2 9742     		.uleb128 0x2117
+ 1004 00d4 19       		.uleb128 0x19
+ 1005 00d5 01       		.uleb128 0x1
+ 1006 00d6 13       		.uleb128 0x13
+ 1007 00d7 00       		.byte	0
+ 1008 00d8 00       		.byte	0
+ 1009 00d9 0D       		.uleb128 0xd
+ 1010 00da 898201   		.uleb128 0x4109
+ 1011 00dd 01       		.byte	0x1
+ 1012 00de 11       		.uleb128 0x11
+ 1013 00df 01       		.uleb128 0x1
+ 1014 00e0 31       		.uleb128 0x31
+ 1015 00e1 13       		.uleb128 0x13
+ 1016 00e2 01       		.uleb128 0x1
+ 1017 00e3 13       		.uleb128 0x13
+ 1018 00e4 00       		.byte	0
+ 1019 00e5 00       		.byte	0
+ 1020 00e6 0E       		.uleb128 0xe
+ 1021 00e7 8A8201   		.uleb128 0x410a
+ 1022 00ea 00       		.byte	0
+ 1023 00eb 02       		.uleb128 0x2
+ 1024 00ec 18       		.uleb128 0x18
+ 1025 00ed 9142     		.uleb128 0x2111
+ 1026 00ef 18       		.uleb128 0x18
+ 1027 00f0 00       		.byte	0
+ 1028 00f1 00       		.byte	0
+ 1029 00f2 0F       		.uleb128 0xf
+ 1030 00f3 898201   		.uleb128 0x4109
+ 1031 00f6 01       		.byte	0x1
+ 1032 00f7 11       		.uleb128 0x11
+ 1033 00f8 01       		.uleb128 0x1
+ 1034 00f9 31       		.uleb128 0x31
+ 1035 00fa 13       		.uleb128 0x13
+ 1036 00fb 00       		.byte	0
+ 1037 00fc 00       		.byte	0
+ 1038 00fd 10       		.uleb128 0x10
+ 1039 00fe 898201   		.uleb128 0x4109
+ 1040 0101 00       		.byte	0
+ 1041 0102 11       		.uleb128 0x11
+ 1042 0103 01       		.uleb128 0x1
+ 1043 0104 31       		.uleb128 0x31
+ 1044 0105 13       		.uleb128 0x13
+ 1045 0106 00       		.byte	0
+ 1046 0107 00       		.byte	0
+ 1047 0108 11       		.uleb128 0x11
+ 1048 0109 34       		.uleb128 0x34
+ 1049 010a 00       		.byte	0
+ 1050 010b 03       		.uleb128 0x3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 29
+
+
+ 1051 010c 0E       		.uleb128 0xe
+ 1052 010d 3A       		.uleb128 0x3a
+ 1053 010e 0B       		.uleb128 0xb
+ 1054 010f 3B       		.uleb128 0x3b
+ 1055 0110 0B       		.uleb128 0xb
+ 1056 0111 49       		.uleb128 0x49
+ 1057 0112 13       		.uleb128 0x13
+ 1058 0113 3F       		.uleb128 0x3f
+ 1059 0114 19       		.uleb128 0x19
+ 1060 0115 02       		.uleb128 0x2
+ 1061 0116 18       		.uleb128 0x18
+ 1062 0117 00       		.byte	0
+ 1063 0118 00       		.byte	0
+ 1064 0119 00       		.byte	0
+ 1065              		.section	.debug_aranges,"",%progbits
+ 1066 0000 84000000 		.4byte	0x84
+ 1067 0004 0200     		.2byte	0x2
+ 1068 0006 00000000 		.4byte	.Ldebug_info0
+ 1069 000a 04       		.byte	0x4
+ 1070 000b 00       		.byte	0
+ 1071 000c 0000     		.2byte	0
+ 1072 000e 0000     		.2byte	0
+ 1073 0010 00000000 		.4byte	.LFB1
+ 1074 0014 28000000 		.4byte	.LFE1-.LFB1
+ 1075 0018 00000000 		.4byte	.LFB3
+ 1076 001c 28000000 		.4byte	.LFE3-.LFB3
+ 1077 0020 00000000 		.4byte	.LFB4
+ 1078 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1079 0028 00000000 		.4byte	.LFB5
+ 1080 002c 0C000000 		.4byte	.LFE5-.LFB5
+ 1081 0030 00000000 		.4byte	.LFB6
+ 1082 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1083 0038 00000000 		.4byte	.LFB7
+ 1084 003c 0C000000 		.4byte	.LFE7-.LFB7
+ 1085 0040 00000000 		.4byte	.LFB8
+ 1086 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1087 0048 00000000 		.4byte	.LFB9
+ 1088 004c 0C000000 		.4byte	.LFE9-.LFB9
+ 1089 0050 00000000 		.4byte	.LFB10
+ 1090 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1091 0058 00000000 		.4byte	.LFB11
+ 1092 005c 0C000000 		.4byte	.LFE11-.LFB11
+ 1093 0060 00000000 		.4byte	.LFB12
+ 1094 0064 0C000000 		.4byte	.LFE12-.LFB12
+ 1095 0068 00000000 		.4byte	.LFB0
+ 1096 006c 88000000 		.4byte	.LFE0-.LFB0
+ 1097 0070 00000000 		.4byte	.LFB2
+ 1098 0074 1C000000 		.4byte	.LFE2-.LFB2
+ 1099 0078 00000000 		.4byte	.LFB13
+ 1100 007c 14000000 		.4byte	.LFE13-.LFB13
+ 1101 0080 00000000 		.4byte	0
+ 1102 0084 00000000 		.4byte	0
+ 1103              		.section	.debug_ranges,"",%progbits
+ 1104              	.Ldebug_ranges0:
+ 1105 0000 00000000 		.4byte	.LFB1
+ 1106 0004 28000000 		.4byte	.LFE1
+ 1107 0008 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 30
+
+
+ 1108 000c 28000000 		.4byte	.LFE3
+ 1109 0010 00000000 		.4byte	.LFB4
+ 1110 0014 0C000000 		.4byte	.LFE4
+ 1111 0018 00000000 		.4byte	.LFB5
+ 1112 001c 0C000000 		.4byte	.LFE5
+ 1113 0020 00000000 		.4byte	.LFB6
+ 1114 0024 0C000000 		.4byte	.LFE6
+ 1115 0028 00000000 		.4byte	.LFB7
+ 1116 002c 0C000000 		.4byte	.LFE7
+ 1117 0030 00000000 		.4byte	.LFB8
+ 1118 0034 0C000000 		.4byte	.LFE8
+ 1119 0038 00000000 		.4byte	.LFB9
+ 1120 003c 0C000000 		.4byte	.LFE9
+ 1121 0040 00000000 		.4byte	.LFB10
+ 1122 0044 0C000000 		.4byte	.LFE10
+ 1123 0048 00000000 		.4byte	.LFB11
+ 1124 004c 0C000000 		.4byte	.LFE11
+ 1125 0050 00000000 		.4byte	.LFB12
+ 1126 0054 0C000000 		.4byte	.LFE12
+ 1127 0058 00000000 		.4byte	.LFB0
+ 1128 005c 88000000 		.4byte	.LFE0
+ 1129 0060 00000000 		.4byte	.LFB2
+ 1130 0064 1C000000 		.4byte	.LFE2
+ 1131 0068 00000000 		.4byte	.LFB13
+ 1132 006c 14000000 		.4byte	.LFE13
+ 1133 0070 00000000 		.4byte	0
+ 1134 0074 00000000 		.4byte	0
+ 1135              		.section	.debug_line,"",%progbits
+ 1136              	.Ldebug_line0:
+ 1137 0000 5B010000 		.section	.debug_str,"MS",%progbits,1
+ 1137      02004900 
+ 1137      00000201 
+ 1137      FB0E0D00 
+ 1137      01010101 
+ 1138              	.LASF15:
+ 1139 0000 72656731 		.ascii	"reg16\000"
+ 1139      3600
+ 1140              	.LASF29:
+ 1141 0006 70657269 		.ascii	"period\000"
+ 1141      6F6400
+ 1142              	.LASF38:
+ 1143 000d 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 1143      73657273 
+ 1143      5C4D616E 
+ 1143      755C4465 
+ 1143      736B746F 
+ 1144 003b 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 1144      31393230 
+ 1144      5F49495F 
+ 1144      48575F46 
+ 1144      494E414C 
+ 1145 006c 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 1145      5F46494E 
+ 1145      414C5F43 
+ 1145      41525A41 
+ 1145      4E494741 
+ 1146              	.LASF40:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 31
+
+
+ 1147 0091 54494D45 		.ascii	"TIMER_BUTTON_initVar\000"
+ 1147      525F4255 
+ 1147      54544F4E 
+ 1147      5F696E69 
+ 1147      74566172 
+ 1148              	.LASF33:
+ 1149 00a6 54494D45 		.ascii	"TIMER_BUTTON_Init\000"
+ 1149      525F4255 
+ 1149      54544F4E 
+ 1149      5F496E69 
+ 1149      7400
+ 1150              	.LASF11:
+ 1151 00b8 666C6F61 		.ascii	"float\000"
+ 1151      7400
+ 1152              	.LASF27:
+ 1153 00be 54494D45 		.ascii	"TIMER_BUTTON_ReadPeriod\000"
+ 1153      525F4255 
+ 1153      54544F4E 
+ 1153      5F526561 
+ 1153      64506572 
+ 1154              	.LASF21:
+ 1155 00d6 54494D45 		.ascii	"TIMER_BUTTON_ReadStatusRegister\000"
+ 1155      525F4255 
+ 1155      54544F4E 
+ 1155      5F526561 
+ 1155      64537461 
+ 1156              	.LASF1:
+ 1157 00f6 756E7369 		.ascii	"unsigned char\000"
+ 1157      676E6564 
+ 1157      20636861 
+ 1157      7200
+ 1158              	.LASF36:
+ 1159 0104 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1159      43313120 
+ 1159      352E342E 
+ 1159      31203230 
+ 1159      31363036 
+ 1160 0137 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1160      20726576 
+ 1160      6973696F 
+ 1160      6E203233 
+ 1160      37373135 
+ 1161 016a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1161      66756E63 
+ 1161      74696F6E 
+ 1161      2D736563 
+ 1161      74696F6E 
+ 1162              	.LASF14:
+ 1163 0192 72656738 		.ascii	"reg8\000"
+ 1163      00
+ 1164              	.LASF5:
+ 1165 0197 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1165      20756E73 
+ 1165      69676E65 
+ 1165      6420696E 
+ 1165      7400
+ 1166              	.LASF9:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 32
+
+
+ 1167 01a9 75696E74 		.ascii	"uint8\000"
+ 1167      3800
+ 1168              	.LASF26:
+ 1169 01af 636F6E74 		.ascii	"control\000"
+ 1169      726F6C00 
+ 1170              	.LASF34:
+ 1171 01b7 54494D45 		.ascii	"TIMER_BUTTON_Start\000"
+ 1171      525F4255 
+ 1171      54544F4E 
+ 1171      5F537461 
+ 1171      727400
+ 1172              	.LASF20:
+ 1173 01ca 54494D45 		.ascii	"TIMER_BUTTON_SoftwareCapture\000"
+ 1173      525F4255 
+ 1173      54544F4E 
+ 1173      5F536F66 
+ 1173      74776172 
+ 1174              	.LASF32:
+ 1175 01e7 636F756E 		.ascii	"counter\000"
+ 1175      74657200 
+ 1176              	.LASF37:
+ 1177 01ef 47656E65 		.ascii	"Generated_Source\\PSoC5\\TIMER_BUTTON.c\000"
+ 1177      72617465 
+ 1177      645F536F 
+ 1177      75726365 
+ 1177      5C50536F 
+ 1178              	.LASF12:
+ 1179 0215 646F7562 		.ascii	"double\000"
+ 1179      6C6500
+ 1180              	.LASF30:
+ 1181 021c 54494D45 		.ascii	"TIMER_BUTTON_ReadCapture\000"
+ 1181      525F4255 
+ 1181      54544F4E 
+ 1181      5F526561 
+ 1181      64436170 
+ 1182              	.LASF22:
+ 1183 0235 54494D45 		.ascii	"TIMER_BUTTON_ReadControlRegister\000"
+ 1183      525F4255 
+ 1183      54544F4E 
+ 1183      5F526561 
+ 1183      64436F6E 
+ 1184              	.LASF10:
+ 1185 0256 75696E74 		.ascii	"uint16\000"
+ 1185      313600
+ 1186              	.LASF19:
+ 1187 025d 54494D45 		.ascii	"TIMER_BUTTON_Stop\000"
+ 1187      525F4255 
+ 1187      54544F4E 
+ 1187      5F53746F 
+ 1187      7000
+ 1188              	.LASF8:
+ 1189 026f 756E7369 		.ascii	"unsigned int\000"
+ 1189      676E6564 
+ 1189      20696E74 
+ 1189      00
+ 1190              	.LASF7:
+ 1191 027c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 33
+
+
+ 1191      206C6F6E 
+ 1191      6720756E 
+ 1191      7369676E 
+ 1191      65642069 
+ 1192              	.LASF39:
+ 1193 0293 70657269 		.ascii	"period_temp\000"
+ 1193      6F645F74 
+ 1193      656D7000 
+ 1194              	.LASF17:
+ 1195 029f 73697A65 		.ascii	"sizetype\000"
+ 1195      74797065 
+ 1195      00
+ 1196              	.LASF6:
+ 1197 02a8 6C6F6E67 		.ascii	"long long int\000"
+ 1197      206C6F6E 
+ 1197      6720696E 
+ 1197      7400
+ 1198              	.LASF25:
+ 1199 02b6 696E7465 		.ascii	"interruptMode\000"
+ 1199      72727570 
+ 1199      744D6F64 
+ 1199      6500
+ 1200              	.LASF18:
+ 1201 02c4 54494D45 		.ascii	"TIMER_BUTTON_Enable\000"
+ 1201      525F4255 
+ 1201      54544F4E 
+ 1201      5F456E61 
+ 1201      626C6500 
+ 1202              	.LASF35:
+ 1203 02d8 54494D45 		.ascii	"TIMER_BUTTON_ReadCounter\000"
+ 1203      525F4255 
+ 1203      54544F4E 
+ 1203      5F526561 
+ 1203      64436F75 
+ 1204              	.LASF2:
+ 1205 02f1 73686F72 		.ascii	"short int\000"
+ 1205      7420696E 
+ 1205      7400
+ 1206              	.LASF23:
+ 1207 02fb 54494D45 		.ascii	"TIMER_BUTTON_SetInterruptMode\000"
+ 1207      525F4255 
+ 1207      54544F4E 
+ 1207      5F536574 
+ 1207      496E7465 
+ 1208              	.LASF4:
+ 1209 0319 6C6F6E67 		.ascii	"long int\000"
+ 1209      20696E74 
+ 1209      00
+ 1210              	.LASF13:
+ 1211 0322 63686172 		.ascii	"char\000"
+ 1211      00
+ 1212              	.LASF16:
+ 1213 0327 6C6F6E67 		.ascii	"long double\000"
+ 1213      20646F75 
+ 1213      626C6500 
+ 1214              	.LASF0:
+ 1215 0333 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPeL66O.s 			page 34
+
+
+ 1215      65642063 
+ 1215      68617200 
+ 1216              	.LASF3:
+ 1217 033f 73686F72 		.ascii	"short unsigned int\000"
+ 1217      7420756E 
+ 1217      7369676E 
+ 1217      65642069 
+ 1217      6E7400
+ 1218              	.LASF31:
+ 1219 0352 54494D45 		.ascii	"TIMER_BUTTON_WriteCounter\000"
+ 1219      525F4255 
+ 1219      54544F4E 
+ 1219      5F577269 
+ 1219      7465436F 
+ 1220              	.LASF24:
+ 1221 036c 54494D45 		.ascii	"TIMER_BUTTON_WriteControlRegister\000"
+ 1221      525F4255 
+ 1221      54544F4E 
+ 1221      5F577269 
+ 1221      7465436F 
+ 1222              	.LASF28:
+ 1223 038e 54494D45 		.ascii	"TIMER_BUTTON_WritePeriod\000"
+ 1223      525F4255 
+ 1223      54544F4E 
+ 1223      5F577269 
+ 1223      74655065 
+ 1224              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

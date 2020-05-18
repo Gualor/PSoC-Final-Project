@@ -1,0 +1,1172 @@
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * This file contains the main function which
+   4:main.c        ****  * is designed to enable all ISR and setup
+   5:main.c        ****  * all communication protocols to interface
+   6:main.c        ****  * the PSoC board with the LIS3DH accelerometer
+   7:main.c        ****  * and the EEPROM.
+   8:main.c        ****  *
+   9:main.c        ****  * ========================================
+  10:main.c        **** */
+  11:main.c        **** 
+  12:main.c        **** /* Include project dependencies. */
+  13:main.c        **** #include "InterruptRoutines.h"
+  14:main.c        **** #include "SPI_Interface.h"
+  15:main.c        **** #include <stdio.h>
+  16:main.c        **** #include <string.h>
+  17:main.c        **** 
+  18:main.c        **** #define UART_PutBuffer UART_PutString(bufferUART)
+  19:main.c        **** char bufferUART[100];
+  20:main.c        **** 
+  21:main.c        **** /*
+  22:main.c        ****  * Main function designated to setup stuff.
+  23:main.c        ****  */
+  24:main.c        **** int main(void)
+  25:main.c        **** {
+  28              		.loc 1 25 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 38B5     		push	{r3, r4, r5, lr}
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 2
+
+
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 3, -16
+  35              		.cfi_offset 4, -12
+  36              		.cfi_offset 5, -8
+  37              		.cfi_offset 14, -4
+  26:main.c        ****     /* Enable global interrupts. */
+  27:main.c        ****     CyGlobalIntEnable; 
+  38              		.loc 1 27 0
+  39              		.syntax unified
+  40              	@ 27 "main.c" 1
+  41 0002 62B6     		CPSIE   i
+  42              	@ 0 "" 2
+  28:main.c        ****     
+  29:main.c        ****     /* Enable configuration mode ISR. */
+  30:main.c        ****     ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
+  43              		.loc 1 30 0
+  44              		.thumb
+  45              		.syntax unified
+  46 0004 1E48     		ldr	r0, .L4
+  47 0006 FFF7FEFF 		bl	ISR_CONFIG_StartEx
+  48              	.LVL0:
+  31:main.c        ****     
+  32:main.c        ****     /* Enable start/stop mode ISR. */
+  33:main.c        ****     ISR_START_StartEx(CUSTOM_ISR_START);
+  49              		.loc 1 33 0
+  50 000a 1E48     		ldr	r0, .L4+4
+  51 000c FFF7FEFF 		bl	ISR_START_StartEx
+  52              	.LVL1:
+  34:main.c        ****     
+  35:main.c        ****     /* Start UART */
+  36:main.c        ****     UART_Start();
+  53              		.loc 1 36 0
+  54 0010 FFF7FEFF 		bl	UART_Start
+  55              	.LVL2:
+  37:main.c        ****     
+  38:main.c        ****     /* Start SPI Master */
+  39:main.c        ****     SPIM_Start();
+  56              		.loc 1 39 0
+  57 0014 FFF7FEFF 		bl	SPIM_Start
+  58              	.LVL3:
+  40:main.c        ****     
+  41:main.c        ****     CyDelay(10);
+  59              		.loc 1 41 0
+  60 0018 0A20     		movs	r0, #10
+  61 001a FFF7FEFF 		bl	CyDelay
+  62              	.LVL4:
+  42:main.c        ****     
+  43:main.c        ****     UART_PutString("*********    LIS3DH TEST    *********\r\n");
+  63              		.loc 1 43 0
+  64 001e 1A48     		ldr	r0, .L4+8
+  65 0020 FFF7FEFF 		bl	UART_PutString
+  66              	.LVL5:
+  44:main.c        ****     
+  45:main.c        ****     // Read WHO_AM_I Register
+  46:main.c        ****     uint8_t who_am_i = SPI_Interface_ReadByte(LIS3DH_SPI_WHO_AM_I_REG);
+  67              		.loc 1 46 0
+  68 0024 8F20     		movs	r0, #143
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 3
+
+
+  69 0026 FFF7FEFF 		bl	SPI_Interface_ReadByte
+  70              	.LVL6:
+  47:main.c        ****     
+  48:main.c        ****     sprintf(bufferUART, "WHO AM I REG: 0x%02X [Expected: 0x33]\r\n", who_am_i);
+  71              		.loc 1 48 0
+  72 002a 184C     		ldr	r4, .L4+12
+  73 002c 0246     		mov	r2, r0
+  74 002e 1849     		ldr	r1, .L4+16
+  75 0030 2046     		mov	r0, r4
+  76              	.LVL7:
+  77 0032 FFF7FEFF 		bl	sprintf
+  78              	.LVL8:
+  49:main.c        ****     UART_PutBuffer;
+  79              		.loc 1 49 0
+  80 0036 2046     		mov	r0, r4
+  81 0038 FFF7FEFF 		bl	UART_PutString
+  82              	.LVL9:
+  50:main.c        ****     
+  51:main.c        ****     UART_PutString("*************************************\r\n");
+  83              		.loc 1 51 0
+  84 003c 154D     		ldr	r5, .L4+20
+  85 003e 2846     		mov	r0, r5
+  86 0040 FFF7FEFF 		bl	UART_PutString
+  87              	.LVL10:
+  52:main.c        ****     
+  53:main.c        ****     
+  54:main.c        ****     // Read Status Register
+  55:main.c        ****     uint8_t status_reg = SPI_Interface_ReadByte(LIS3DH_SPI_STATUS_REG);
+  88              		.loc 1 55 0
+  89 0044 A720     		movs	r0, #167
+  90 0046 FFF7FEFF 		bl	SPI_Interface_ReadByte
+  91              	.LVL11:
+  56:main.c        ****     
+  57:main.c        ****     sprintf(bufferUART, "STATUS REG: 0x%02X \r\n", status_reg);
+  92              		.loc 1 57 0
+  93 004a 0246     		mov	r2, r0
+  94 004c 1249     		ldr	r1, .L4+24
+  95 004e 2046     		mov	r0, r4
+  96              	.LVL12:
+  97 0050 FFF7FEFF 		bl	sprintf
+  98              	.LVL13:
+  58:main.c        ****     UART_PutBuffer;
+  99              		.loc 1 58 0
+ 100 0054 2046     		mov	r0, r4
+ 101 0056 FFF7FEFF 		bl	UART_PutString
+ 102              	.LVL14:
+  59:main.c        ****     
+  60:main.c        ****     UART_PutString("*************************************\r\n");
+ 103              		.loc 1 60 0
+ 104 005a 2846     		mov	r0, r5
+ 105 005c FFF7FEFF 		bl	UART_PutString
+ 106              	.LVL15:
+  61:main.c        ****     
+  62:main.c        ****     
+  63:main.c        ****     // Read Control Register 1
+  64:main.c        ****     uint8_t ctrl_reg1 = SPI_Interface_ReadByte(LIS3DH_SPI_CTRL_REG1);
+ 107              		.loc 1 64 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 4
+
+
+ 108 0060 A020     		movs	r0, #160
+ 109 0062 FFF7FEFF 		bl	SPI_Interface_ReadByte
+ 110              	.LVL16:
+  65:main.c        ****     
+  66:main.c        ****     sprintf(bufferUART, "CTRL REG1: 0x%02X \r\n", ctrl_reg1);
+ 111              		.loc 1 66 0
+ 112 0066 0246     		mov	r2, r0
+ 113 0068 0C49     		ldr	r1, .L4+28
+ 114 006a 2046     		mov	r0, r4
+ 115              	.LVL17:
+ 116 006c FFF7FEFF 		bl	sprintf
+ 117              	.LVL18:
+  67:main.c        ****     UART_PutBuffer;
+ 118              		.loc 1 67 0
+ 119 0070 2046     		mov	r0, r4
+ 120 0072 FFF7FEFF 		bl	UART_PutString
+ 121              	.LVL19:
+  68:main.c        ****     
+  69:main.c        ****     UART_PutString("*************************************\r\n");
+ 122              		.loc 1 69 0
+ 123 0076 2846     		mov	r0, r5
+ 124 0078 FFF7FEFF 		bl	UART_PutString
+ 125              	.LVL20:
+ 126              	.L2:
+ 127 007c FEE7     		b	.L2
+ 128              	.L5:
+ 129 007e 00BF     		.align	2
+ 130              	.L4:
+ 131 0080 00000000 		.word	CUSTOM_ISR_CONFIG
+ 132 0084 00000000 		.word	CUSTOM_ISR_START
+ 133 0088 00000000 		.word	.LC0
+ 134 008c 00000000 		.word	bufferUART
+ 135 0090 28000000 		.word	.LC1
+ 136 0094 50000000 		.word	.LC2
+ 137 0098 78000000 		.word	.LC3
+ 138 009c 90000000 		.word	.LC4
+ 139              		.cfi_endproc
+ 140              	.LFE64:
+ 141              		.size	main, .-main
+ 142              		.comm	bufferUART,100,4
+ 143              		.comm	press_counter,1,1
+ 144              		.comm	config_flag,1,1
+ 145              		.comm	start_flag,1,1
+ 146              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 147              		.align	2
+ 148              	.LC0:
+ 149 0000 2A2A2A2A 		.ascii	"*********    LIS3DH TEST    *********\015\012\000"
+ 149      2A2A2A2A 
+ 149      2A202020 
+ 149      204C4953 
+ 149      33444820 
+ 150              	.LC1:
+ 151 0028 57484F20 		.ascii	"WHO AM I REG: 0x%02X [Expected: 0x33]\015\012\000"
+ 151      414D2049 
+ 151      20524547 
+ 151      3A203078 
+ 151      25303258 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 5
+
+
+ 152              	.LC2:
+ 153 0050 2A2A2A2A 		.ascii	"*************************************\015\012\000"
+ 153      2A2A2A2A 
+ 153      2A2A2A2A 
+ 153      2A2A2A2A 
+ 153      2A2A2A2A 
+ 154              	.LC3:
+ 155 0078 53544154 		.ascii	"STATUS REG: 0x%02X \015\012\000"
+ 155      55532052 
+ 155      45473A20 
+ 155      30782530 
+ 155      3258200D 
+ 156 008e 0000     		.space	2
+ 157              	.LC4:
+ 158 0090 4354524C 		.ascii	"CTRL REG1: 0x%02X \015\012\000"
+ 158      20524547 
+ 158      313A2030 
+ 158      78253032 
+ 158      58200D0A 
+ 159              		.text
+ 160              	.Letext0:
+ 161              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 162              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 163              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 164              		.file 5 "InterruptRoutines.h"
+ 165              		.file 6 "Generated_Source\\PSoC5/ISR_CONFIG.h"
+ 166              		.file 7 "Generated_Source\\PSoC5/ISR_START.h"
+ 167              		.file 8 "Generated_Source\\PSoC5/UART.h"
+ 168              		.file 9 "Generated_Source\\PSoC5/SPIM.h"
+ 169              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
+ 170              		.file 11 "SPI_Interface.h"
+ 171              		.file 12 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4
+ 172              		.section	.debug_info,"",%progbits
+ 173              	.Ldebug_info0:
+ 174 0000 21030000 		.4byte	0x321
+ 175 0004 0400     		.2byte	0x4
+ 176 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 177 000a 04       		.byte	0x4
+ 178 000b 01       		.uleb128 0x1
+ 179 000c E0000000 		.4byte	.LASF35
+ 180 0010 0C       		.byte	0xc
+ 181 0011 43020000 		.4byte	.LASF36
+ 182 0015 1F000000 		.4byte	.LASF37
+ 183 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 184 001d 00000000 		.4byte	0
+ 185 0021 00000000 		.4byte	.Ldebug_line0
+ 186 0025 02       		.uleb128 0x2
+ 187 0026 01       		.byte	0x1
+ 188 0027 06       		.byte	0x6
+ 189 0028 83020000 		.4byte	.LASF0
+ 190 002c 03       		.uleb128 0x3
+ 191 002d 00000000 		.4byte	.LASF4
+ 192 0031 02       		.byte	0x2
+ 193 0032 1D       		.byte	0x1d
+ 194 0033 37000000 		.4byte	0x37
+ 195 0037 02       		.uleb128 0x2
+ 196 0038 01       		.byte	0x1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 6
+
+
+ 197 0039 08       		.byte	0x8
+ 198 003a D2000000 		.4byte	.LASF1
+ 199 003e 02       		.uleb128 0x2
+ 200 003f 02       		.byte	0x2
+ 201 0040 05       		.byte	0x5
+ 202 0041 64020000 		.4byte	.LASF2
+ 203 0045 02       		.uleb128 0x2
+ 204 0046 02       		.byte	0x2
+ 205 0047 07       		.byte	0x7
+ 206 0048 80010000 		.4byte	.LASF3
+ 207 004c 03       		.uleb128 0x3
+ 208 004d 15000000 		.4byte	.LASF5
+ 209 0051 02       		.byte	0x2
+ 210 0052 3F       		.byte	0x3f
+ 211 0053 57000000 		.4byte	0x57
+ 212 0057 02       		.uleb128 0x2
+ 213 0058 04       		.byte	0x4
+ 214 0059 05       		.byte	0x5
+ 215 005a 6E020000 		.4byte	.LASF6
+ 216 005e 02       		.uleb128 0x2
+ 217 005f 04       		.byte	0x4
+ 218 0060 07       		.byte	0x7
+ 219 0061 6E010000 		.4byte	.LASF7
+ 220 0065 02       		.uleb128 0x2
+ 221 0066 08       		.byte	0x8
+ 222 0067 05       		.byte	0x5
+ 223 0068 35020000 		.4byte	.LASF8
+ 224 006c 02       		.uleb128 0x2
+ 225 006d 08       		.byte	0x8
+ 226 006e 07       		.byte	0x7
+ 227 006f CE010000 		.4byte	.LASF9
+ 228 0073 04       		.uleb128 0x4
+ 229 0074 04       		.byte	0x4
+ 230 0075 05       		.byte	0x5
+ 231 0076 696E7400 		.ascii	"int\000"
+ 232 007a 02       		.uleb128 0x2
+ 233 007b 04       		.byte	0x4
+ 234 007c 07       		.byte	0x7
+ 235 007d C1010000 		.4byte	.LASF10
+ 236 0081 03       		.uleb128 0x3
+ 237 0082 E5010000 		.4byte	.LASF11
+ 238 0086 03       		.byte	0x3
+ 239 0087 18       		.byte	0x18
+ 240 0088 2C000000 		.4byte	0x2c
+ 241 008c 03       		.uleb128 0x3
+ 242 008d 24020000 		.4byte	.LASF12
+ 243 0091 03       		.byte	0x3
+ 244 0092 2C       		.byte	0x2c
+ 245 0093 4C000000 		.4byte	0x4c
+ 246 0097 02       		.uleb128 0x2
+ 247 0098 04       		.byte	0x4
+ 248 0099 04       		.byte	0x4
+ 249 009a A3000000 		.4byte	.LASF13
+ 250 009e 02       		.uleb128 0x2
+ 251 009f 08       		.byte	0x8
+ 252 00a0 04       		.byte	0x4
+ 253 00a1 AB010000 		.4byte	.LASF14
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 7
+
+
+ 254 00a5 02       		.uleb128 0x2
+ 255 00a6 01       		.byte	0x1
+ 256 00a7 08       		.byte	0x8
+ 257 00a8 4A020000 		.4byte	.LASF15
+ 258 00ac 02       		.uleb128 0x2
+ 259 00ad 08       		.byte	0x8
+ 260 00ae 04       		.byte	0x4
+ 261 00af 77020000 		.4byte	.LASF16
+ 262 00b3 02       		.uleb128 0x2
+ 263 00b4 04       		.byte	0x4
+ 264 00b5 07       		.byte	0x7
+ 265 00b6 2C020000 		.4byte	.LASF17
+ 266 00ba 05       		.uleb128 0x5
+ 267 00bb 81000000 		.4byte	0x81
+ 268 00bf 06       		.uleb128 0x6
+ 269 00c0 B2010000 		.4byte	.LASF38
+ 270 00c4 01       		.byte	0x1
+ 271 00c5 18       		.byte	0x18
+ 272 00c6 73000000 		.4byte	0x73
+ 273 00ca 00000000 		.4byte	.LFB64
+ 274 00ce A0000000 		.4byte	.LFE64-.LFB64
+ 275 00d2 01       		.uleb128 0x1
+ 276 00d3 9C       		.byte	0x9c
+ 277 00d4 5B020000 		.4byte	0x25b
+ 278 00d8 07       		.uleb128 0x7
+ 279 00d9 5B020000 		.4byte	.LASF18
+ 280 00dd 01       		.byte	0x1
+ 281 00de 2E       		.byte	0x2e
+ 282 00df 81000000 		.4byte	0x81
+ 283 00e3 00000000 		.4byte	.LLST0
+ 284 00e7 07       		.uleb128 0x7
+ 285 00e8 0A000000 		.4byte	.LASF19
+ 286 00ec 01       		.byte	0x1
+ 287 00ed 37       		.byte	0x37
+ 288 00ee 81000000 		.4byte	0x81
+ 289 00f2 13000000 		.4byte	.LLST1
+ 290 00f6 07       		.uleb128 0x7
+ 291 00f7 B7010000 		.4byte	.LASF20
+ 292 00fb 01       		.byte	0x1
+ 293 00fc 40       		.byte	0x40
+ 294 00fd 81000000 		.4byte	0x81
+ 295 0101 26000000 		.4byte	.LLST2
+ 296 0105 08       		.uleb128 0x8
+ 297 0106 0A000000 		.4byte	.LVL0
+ 298 010a CC020000 		.4byte	0x2cc
+ 299 010e 08       		.uleb128 0x8
+ 300 010f 10000000 		.4byte	.LVL1
+ 301 0113 D7020000 		.4byte	0x2d7
+ 302 0117 08       		.uleb128 0x8
+ 303 0118 14000000 		.4byte	.LVL2
+ 304 011c E2020000 		.4byte	0x2e2
+ 305 0120 08       		.uleb128 0x8
+ 306 0121 18000000 		.4byte	.LVL3
+ 307 0125 ED020000 		.4byte	0x2ed
+ 308 0129 09       		.uleb128 0x9
+ 309 012a 1E000000 		.4byte	.LVL4
+ 310 012e F8020000 		.4byte	0x2f8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 8
+
+
+ 311 0132 3C010000 		.4byte	0x13c
+ 312 0136 0A       		.uleb128 0xa
+ 313 0137 01       		.uleb128 0x1
+ 314 0138 50       		.byte	0x50
+ 315 0139 01       		.uleb128 0x1
+ 316 013a 3A       		.byte	0x3a
+ 317 013b 00       		.byte	0
+ 318 013c 09       		.uleb128 0x9
+ 319 013d 24000000 		.4byte	.LVL5
+ 320 0141 03030000 		.4byte	0x303
+ 321 0145 53010000 		.4byte	0x153
+ 322 0149 0A       		.uleb128 0xa
+ 323 014a 01       		.uleb128 0x1
+ 324 014b 50       		.byte	0x50
+ 325 014c 05       		.uleb128 0x5
+ 326 014d 03       		.byte	0x3
+ 327 014e 00000000 		.4byte	.LC0
+ 328 0152 00       		.byte	0
+ 329 0153 09       		.uleb128 0x9
+ 330 0154 2A000000 		.4byte	.LVL6
+ 331 0158 0E030000 		.4byte	0x30e
+ 332 015c 67010000 		.4byte	0x167
+ 333 0160 0A       		.uleb128 0xa
+ 334 0161 01       		.uleb128 0x1
+ 335 0162 50       		.byte	0x50
+ 336 0163 02       		.uleb128 0x2
+ 337 0164 09       		.byte	0x9
+ 338 0165 8F       		.byte	0x8f
+ 339 0166 00       		.byte	0
+ 340 0167 09       		.uleb128 0x9
+ 341 0168 36000000 		.4byte	.LVL8
+ 342 016c 19030000 		.4byte	0x319
+ 343 0170 84010000 		.4byte	0x184
+ 344 0174 0A       		.uleb128 0xa
+ 345 0175 01       		.uleb128 0x1
+ 346 0176 50       		.byte	0x50
+ 347 0177 02       		.uleb128 0x2
+ 348 0178 74       		.byte	0x74
+ 349 0179 00       		.sleb128 0
+ 350 017a 0A       		.uleb128 0xa
+ 351 017b 01       		.uleb128 0x1
+ 352 017c 51       		.byte	0x51
+ 353 017d 05       		.uleb128 0x5
+ 354 017e 03       		.byte	0x3
+ 355 017f 28000000 		.4byte	.LC1
+ 356 0183 00       		.byte	0
+ 357 0184 09       		.uleb128 0x9
+ 358 0185 3C000000 		.4byte	.LVL9
+ 359 0189 03030000 		.4byte	0x303
+ 360 018d 98010000 		.4byte	0x198
+ 361 0191 0A       		.uleb128 0xa
+ 362 0192 01       		.uleb128 0x1
+ 363 0193 50       		.byte	0x50
+ 364 0194 02       		.uleb128 0x2
+ 365 0195 74       		.byte	0x74
+ 366 0196 00       		.sleb128 0
+ 367 0197 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 9
+
+
+ 368 0198 09       		.uleb128 0x9
+ 369 0199 44000000 		.4byte	.LVL10
+ 370 019d 03030000 		.4byte	0x303
+ 371 01a1 AC010000 		.4byte	0x1ac
+ 372 01a5 0A       		.uleb128 0xa
+ 373 01a6 01       		.uleb128 0x1
+ 374 01a7 50       		.byte	0x50
+ 375 01a8 02       		.uleb128 0x2
+ 376 01a9 75       		.byte	0x75
+ 377 01aa 00       		.sleb128 0
+ 378 01ab 00       		.byte	0
+ 379 01ac 09       		.uleb128 0x9
+ 380 01ad 4A000000 		.4byte	.LVL11
+ 381 01b1 0E030000 		.4byte	0x30e
+ 382 01b5 C0010000 		.4byte	0x1c0
+ 383 01b9 0A       		.uleb128 0xa
+ 384 01ba 01       		.uleb128 0x1
+ 385 01bb 50       		.byte	0x50
+ 386 01bc 02       		.uleb128 0x2
+ 387 01bd 09       		.byte	0x9
+ 388 01be A7       		.byte	0xa7
+ 389 01bf 00       		.byte	0
+ 390 01c0 09       		.uleb128 0x9
+ 391 01c1 54000000 		.4byte	.LVL13
+ 392 01c5 19030000 		.4byte	0x319
+ 393 01c9 DD010000 		.4byte	0x1dd
+ 394 01cd 0A       		.uleb128 0xa
+ 395 01ce 01       		.uleb128 0x1
+ 396 01cf 50       		.byte	0x50
+ 397 01d0 02       		.uleb128 0x2
+ 398 01d1 74       		.byte	0x74
+ 399 01d2 00       		.sleb128 0
+ 400 01d3 0A       		.uleb128 0xa
+ 401 01d4 01       		.uleb128 0x1
+ 402 01d5 51       		.byte	0x51
+ 403 01d6 05       		.uleb128 0x5
+ 404 01d7 03       		.byte	0x3
+ 405 01d8 78000000 		.4byte	.LC3
+ 406 01dc 00       		.byte	0
+ 407 01dd 09       		.uleb128 0x9
+ 408 01de 5A000000 		.4byte	.LVL14
+ 409 01e2 03030000 		.4byte	0x303
+ 410 01e6 F1010000 		.4byte	0x1f1
+ 411 01ea 0A       		.uleb128 0xa
+ 412 01eb 01       		.uleb128 0x1
+ 413 01ec 50       		.byte	0x50
+ 414 01ed 02       		.uleb128 0x2
+ 415 01ee 74       		.byte	0x74
+ 416 01ef 00       		.sleb128 0
+ 417 01f0 00       		.byte	0
+ 418 01f1 09       		.uleb128 0x9
+ 419 01f2 60000000 		.4byte	.LVL15
+ 420 01f6 03030000 		.4byte	0x303
+ 421 01fa 05020000 		.4byte	0x205
+ 422 01fe 0A       		.uleb128 0xa
+ 423 01ff 01       		.uleb128 0x1
+ 424 0200 50       		.byte	0x50
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 10
+
+
+ 425 0201 02       		.uleb128 0x2
+ 426 0202 75       		.byte	0x75
+ 427 0203 00       		.sleb128 0
+ 428 0204 00       		.byte	0
+ 429 0205 09       		.uleb128 0x9
+ 430 0206 66000000 		.4byte	.LVL16
+ 431 020a 0E030000 		.4byte	0x30e
+ 432 020e 19020000 		.4byte	0x219
+ 433 0212 0A       		.uleb128 0xa
+ 434 0213 01       		.uleb128 0x1
+ 435 0214 50       		.byte	0x50
+ 436 0215 02       		.uleb128 0x2
+ 437 0216 09       		.byte	0x9
+ 438 0217 A0       		.byte	0xa0
+ 439 0218 00       		.byte	0
+ 440 0219 09       		.uleb128 0x9
+ 441 021a 70000000 		.4byte	.LVL18
+ 442 021e 19030000 		.4byte	0x319
+ 443 0222 36020000 		.4byte	0x236
+ 444 0226 0A       		.uleb128 0xa
+ 445 0227 01       		.uleb128 0x1
+ 446 0228 50       		.byte	0x50
+ 447 0229 02       		.uleb128 0x2
+ 448 022a 74       		.byte	0x74
+ 449 022b 00       		.sleb128 0
+ 450 022c 0A       		.uleb128 0xa
+ 451 022d 01       		.uleb128 0x1
+ 452 022e 51       		.byte	0x51
+ 453 022f 05       		.uleb128 0x5
+ 454 0230 03       		.byte	0x3
+ 455 0231 90000000 		.4byte	.LC4
+ 456 0235 00       		.byte	0
+ 457 0236 09       		.uleb128 0x9
+ 458 0237 76000000 		.4byte	.LVL19
+ 459 023b 03030000 		.4byte	0x303
+ 460 023f 4A020000 		.4byte	0x24a
+ 461 0243 0A       		.uleb128 0xa
+ 462 0244 01       		.uleb128 0x1
+ 463 0245 50       		.byte	0x50
+ 464 0246 02       		.uleb128 0x2
+ 465 0247 74       		.byte	0x74
+ 466 0248 00       		.sleb128 0
+ 467 0249 00       		.byte	0
+ 468 024a 0B       		.uleb128 0xb
+ 469 024b 7C000000 		.4byte	.LVL20
+ 470 024f 03030000 		.4byte	0x303
+ 471 0253 0A       		.uleb128 0xa
+ 472 0254 01       		.uleb128 0x1
+ 473 0255 50       		.byte	0x50
+ 474 0256 02       		.uleb128 0x2
+ 475 0257 75       		.byte	0x75
+ 476 0258 00       		.sleb128 0
+ 477 0259 00       		.byte	0
+ 478 025a 00       		.byte	0
+ 479 025b 0C       		.uleb128 0xc
+ 480 025c 9E010000 		.4byte	.LASF21
+ 481 0260 04       		.byte	0x4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 11
+
+
+ 482 0261 1207     		.2byte	0x712
+ 483 0263 67020000 		.4byte	0x267
+ 484 0267 05       		.uleb128 0x5
+ 485 0268 8C000000 		.4byte	0x8c
+ 486 026c 0D       		.uleb128 0xd
+ 487 026d 0B020000 		.4byte	.LASF22
+ 488 0271 05       		.byte	0x5
+ 489 0272 18       		.byte	0x18
+ 490 0273 84020000 		.4byte	0x284
+ 491 0277 05       		.uleb128 0x5
+ 492 0278 03       		.byte	0x3
+ 493 0279 00000000 		.4byte	start_flag
+ 494 027d 02       		.uleb128 0x2
+ 495 027e 01       		.byte	0x1
+ 496 027f 02       		.byte	0x2
+ 497 0280 9E020000 		.4byte	.LASF23
+ 498 0284 05       		.uleb128 0x5
+ 499 0285 7D020000 		.4byte	0x27d
+ 500 0289 0D       		.uleb128 0xd
+ 501 028a 4F020000 		.4byte	.LASF24
+ 502 028e 05       		.byte	0x5
+ 503 028f 19       		.byte	0x19
+ 504 0290 84020000 		.4byte	0x284
+ 505 0294 05       		.uleb128 0x5
+ 506 0295 03       		.byte	0x3
+ 507 0296 00000000 		.4byte	config_flag
+ 508 029a 0D       		.uleb128 0xd
+ 509 029b 16020000 		.4byte	.LASF25
+ 510 029f 05       		.byte	0x5
+ 511 02a0 1C       		.byte	0x1c
+ 512 02a1 BA000000 		.4byte	0xba
+ 513 02a5 05       		.uleb128 0x5
+ 514 02a6 03       		.byte	0x3
+ 515 02a7 00000000 		.4byte	press_counter
+ 516 02ab 0E       		.uleb128 0xe
+ 517 02ac A5000000 		.4byte	0xa5
+ 518 02b0 BB020000 		.4byte	0x2bb
+ 519 02b4 0F       		.uleb128 0xf
+ 520 02b5 B3000000 		.4byte	0xb3
+ 521 02b9 63       		.byte	0x63
+ 522 02ba 00       		.byte	0
+ 523 02bb 0D       		.uleb128 0xd
+ 524 02bc B4020000 		.4byte	.LASF26
+ 525 02c0 01       		.byte	0x1
+ 526 02c1 13       		.byte	0x13
+ 527 02c2 AB020000 		.4byte	0x2ab
+ 528 02c6 05       		.uleb128 0x5
+ 529 02c7 03       		.byte	0x3
+ 530 02c8 00000000 		.4byte	bufferUART
+ 531 02cc 10       		.uleb128 0x10
+ 532 02cd F8010000 		.4byte	.LASF27
+ 533 02d1 F8010000 		.4byte	.LASF27
+ 534 02d5 06       		.byte	0x6
+ 535 02d6 18       		.byte	0x18
+ 536 02d7 10       		.uleb128 0x10
+ 537 02d8 C0000000 		.4byte	.LASF28
+ 538 02dc C0000000 		.4byte	.LASF28
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 12
+
+
+ 539 02e0 07       		.byte	0x7
+ 540 02e1 18       		.byte	0x18
+ 541 02e2 10       		.uleb128 0x10
+ 542 02e3 93010000 		.4byte	.LASF29
+ 543 02e7 93010000 		.4byte	.LASF29
+ 544 02eb 08       		.byte	0x8
+ 545 02ec 54       		.byte	0x54
+ 546 02ed 10       		.uleb128 0x10
+ 547 02ee ED010000 		.4byte	.LASF30
+ 548 02f2 ED010000 		.4byte	.LASF30
+ 549 02f6 09       		.byte	0x9
+ 550 02f7 4D       		.byte	0x4d
+ 551 02f8 10       		.uleb128 0x10
+ 552 02f9 AC020000 		.4byte	.LASF31
+ 553 02fd AC020000 		.4byte	.LASF31
+ 554 0301 0A       		.byte	0xa
+ 555 0302 76       		.byte	0x76
+ 556 0303 10       		.uleb128 0x10
+ 557 0304 8F020000 		.4byte	.LASF32
+ 558 0308 8F020000 		.4byte	.LASF32
+ 559 030c 08       		.byte	0x8
+ 560 030d 8B       		.byte	0x8b
+ 561 030e 10       		.uleb128 0x10
+ 562 030f A9000000 		.4byte	.LASF33
+ 563 0313 A9000000 		.4byte	.LASF33
+ 564 0317 0B       		.byte	0xb
+ 565 0318 51       		.byte	0x51
+ 566 0319 10       		.uleb128 0x10
+ 567 031a A4020000 		.4byte	.LASF34
+ 568 031e A4020000 		.4byte	.LASF34
+ 569 0322 0C       		.byte	0xc
+ 570 0323 E7       		.byte	0xe7
+ 571 0324 00       		.byte	0
+ 572              		.section	.debug_abbrev,"",%progbits
+ 573              	.Ldebug_abbrev0:
+ 574 0000 01       		.uleb128 0x1
+ 575 0001 11       		.uleb128 0x11
+ 576 0002 01       		.byte	0x1
+ 577 0003 25       		.uleb128 0x25
+ 578 0004 0E       		.uleb128 0xe
+ 579 0005 13       		.uleb128 0x13
+ 580 0006 0B       		.uleb128 0xb
+ 581 0007 03       		.uleb128 0x3
+ 582 0008 0E       		.uleb128 0xe
+ 583 0009 1B       		.uleb128 0x1b
+ 584 000a 0E       		.uleb128 0xe
+ 585 000b 55       		.uleb128 0x55
+ 586 000c 17       		.uleb128 0x17
+ 587 000d 11       		.uleb128 0x11
+ 588 000e 01       		.uleb128 0x1
+ 589 000f 10       		.uleb128 0x10
+ 590 0010 17       		.uleb128 0x17
+ 591 0011 00       		.byte	0
+ 592 0012 00       		.byte	0
+ 593 0013 02       		.uleb128 0x2
+ 594 0014 24       		.uleb128 0x24
+ 595 0015 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 13
+
+
+ 596 0016 0B       		.uleb128 0xb
+ 597 0017 0B       		.uleb128 0xb
+ 598 0018 3E       		.uleb128 0x3e
+ 599 0019 0B       		.uleb128 0xb
+ 600 001a 03       		.uleb128 0x3
+ 601 001b 0E       		.uleb128 0xe
+ 602 001c 00       		.byte	0
+ 603 001d 00       		.byte	0
+ 604 001e 03       		.uleb128 0x3
+ 605 001f 16       		.uleb128 0x16
+ 606 0020 00       		.byte	0
+ 607 0021 03       		.uleb128 0x3
+ 608 0022 0E       		.uleb128 0xe
+ 609 0023 3A       		.uleb128 0x3a
+ 610 0024 0B       		.uleb128 0xb
+ 611 0025 3B       		.uleb128 0x3b
+ 612 0026 0B       		.uleb128 0xb
+ 613 0027 49       		.uleb128 0x49
+ 614 0028 13       		.uleb128 0x13
+ 615 0029 00       		.byte	0
+ 616 002a 00       		.byte	0
+ 617 002b 04       		.uleb128 0x4
+ 618 002c 24       		.uleb128 0x24
+ 619 002d 00       		.byte	0
+ 620 002e 0B       		.uleb128 0xb
+ 621 002f 0B       		.uleb128 0xb
+ 622 0030 3E       		.uleb128 0x3e
+ 623 0031 0B       		.uleb128 0xb
+ 624 0032 03       		.uleb128 0x3
+ 625 0033 08       		.uleb128 0x8
+ 626 0034 00       		.byte	0
+ 627 0035 00       		.byte	0
+ 628 0036 05       		.uleb128 0x5
+ 629 0037 35       		.uleb128 0x35
+ 630 0038 00       		.byte	0
+ 631 0039 49       		.uleb128 0x49
+ 632 003a 13       		.uleb128 0x13
+ 633 003b 00       		.byte	0
+ 634 003c 00       		.byte	0
+ 635 003d 06       		.uleb128 0x6
+ 636 003e 2E       		.uleb128 0x2e
+ 637 003f 01       		.byte	0x1
+ 638 0040 3F       		.uleb128 0x3f
+ 639 0041 19       		.uleb128 0x19
+ 640 0042 03       		.uleb128 0x3
+ 641 0043 0E       		.uleb128 0xe
+ 642 0044 3A       		.uleb128 0x3a
+ 643 0045 0B       		.uleb128 0xb
+ 644 0046 3B       		.uleb128 0x3b
+ 645 0047 0B       		.uleb128 0xb
+ 646 0048 27       		.uleb128 0x27
+ 647 0049 19       		.uleb128 0x19
+ 648 004a 49       		.uleb128 0x49
+ 649 004b 13       		.uleb128 0x13
+ 650 004c 8701     		.uleb128 0x87
+ 651 004e 19       		.uleb128 0x19
+ 652 004f 11       		.uleb128 0x11
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 14
+
+
+ 653 0050 01       		.uleb128 0x1
+ 654 0051 12       		.uleb128 0x12
+ 655 0052 06       		.uleb128 0x6
+ 656 0053 40       		.uleb128 0x40
+ 657 0054 18       		.uleb128 0x18
+ 658 0055 9742     		.uleb128 0x2117
+ 659 0057 19       		.uleb128 0x19
+ 660 0058 01       		.uleb128 0x1
+ 661 0059 13       		.uleb128 0x13
+ 662 005a 00       		.byte	0
+ 663 005b 00       		.byte	0
+ 664 005c 07       		.uleb128 0x7
+ 665 005d 34       		.uleb128 0x34
+ 666 005e 00       		.byte	0
+ 667 005f 03       		.uleb128 0x3
+ 668 0060 0E       		.uleb128 0xe
+ 669 0061 3A       		.uleb128 0x3a
+ 670 0062 0B       		.uleb128 0xb
+ 671 0063 3B       		.uleb128 0x3b
+ 672 0064 0B       		.uleb128 0xb
+ 673 0065 49       		.uleb128 0x49
+ 674 0066 13       		.uleb128 0x13
+ 675 0067 02       		.uleb128 0x2
+ 676 0068 17       		.uleb128 0x17
+ 677 0069 00       		.byte	0
+ 678 006a 00       		.byte	0
+ 679 006b 08       		.uleb128 0x8
+ 680 006c 898201   		.uleb128 0x4109
+ 681 006f 00       		.byte	0
+ 682 0070 11       		.uleb128 0x11
+ 683 0071 01       		.uleb128 0x1
+ 684 0072 31       		.uleb128 0x31
+ 685 0073 13       		.uleb128 0x13
+ 686 0074 00       		.byte	0
+ 687 0075 00       		.byte	0
+ 688 0076 09       		.uleb128 0x9
+ 689 0077 898201   		.uleb128 0x4109
+ 690 007a 01       		.byte	0x1
+ 691 007b 11       		.uleb128 0x11
+ 692 007c 01       		.uleb128 0x1
+ 693 007d 31       		.uleb128 0x31
+ 694 007e 13       		.uleb128 0x13
+ 695 007f 01       		.uleb128 0x1
+ 696 0080 13       		.uleb128 0x13
+ 697 0081 00       		.byte	0
+ 698 0082 00       		.byte	0
+ 699 0083 0A       		.uleb128 0xa
+ 700 0084 8A8201   		.uleb128 0x410a
+ 701 0087 00       		.byte	0
+ 702 0088 02       		.uleb128 0x2
+ 703 0089 18       		.uleb128 0x18
+ 704 008a 9142     		.uleb128 0x2111
+ 705 008c 18       		.uleb128 0x18
+ 706 008d 00       		.byte	0
+ 707 008e 00       		.byte	0
+ 708 008f 0B       		.uleb128 0xb
+ 709 0090 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 15
+
+
+ 710 0093 01       		.byte	0x1
+ 711 0094 11       		.uleb128 0x11
+ 712 0095 01       		.uleb128 0x1
+ 713 0096 31       		.uleb128 0x31
+ 714 0097 13       		.uleb128 0x13
+ 715 0098 00       		.byte	0
+ 716 0099 00       		.byte	0
+ 717 009a 0C       		.uleb128 0xc
+ 718 009b 34       		.uleb128 0x34
+ 719 009c 00       		.byte	0
+ 720 009d 03       		.uleb128 0x3
+ 721 009e 0E       		.uleb128 0xe
+ 722 009f 3A       		.uleb128 0x3a
+ 723 00a0 0B       		.uleb128 0xb
+ 724 00a1 3B       		.uleb128 0x3b
+ 725 00a2 05       		.uleb128 0x5
+ 726 00a3 49       		.uleb128 0x49
+ 727 00a4 13       		.uleb128 0x13
+ 728 00a5 3F       		.uleb128 0x3f
+ 729 00a6 19       		.uleb128 0x19
+ 730 00a7 3C       		.uleb128 0x3c
+ 731 00a8 19       		.uleb128 0x19
+ 732 00a9 00       		.byte	0
+ 733 00aa 00       		.byte	0
+ 734 00ab 0D       		.uleb128 0xd
+ 735 00ac 34       		.uleb128 0x34
+ 736 00ad 00       		.byte	0
+ 737 00ae 03       		.uleb128 0x3
+ 738 00af 0E       		.uleb128 0xe
+ 739 00b0 3A       		.uleb128 0x3a
+ 740 00b1 0B       		.uleb128 0xb
+ 741 00b2 3B       		.uleb128 0x3b
+ 742 00b3 0B       		.uleb128 0xb
+ 743 00b4 49       		.uleb128 0x49
+ 744 00b5 13       		.uleb128 0x13
+ 745 00b6 3F       		.uleb128 0x3f
+ 746 00b7 19       		.uleb128 0x19
+ 747 00b8 02       		.uleb128 0x2
+ 748 00b9 18       		.uleb128 0x18
+ 749 00ba 00       		.byte	0
+ 750 00bb 00       		.byte	0
+ 751 00bc 0E       		.uleb128 0xe
+ 752 00bd 01       		.uleb128 0x1
+ 753 00be 01       		.byte	0x1
+ 754 00bf 49       		.uleb128 0x49
+ 755 00c0 13       		.uleb128 0x13
+ 756 00c1 01       		.uleb128 0x1
+ 757 00c2 13       		.uleb128 0x13
+ 758 00c3 00       		.byte	0
+ 759 00c4 00       		.byte	0
+ 760 00c5 0F       		.uleb128 0xf
+ 761 00c6 21       		.uleb128 0x21
+ 762 00c7 00       		.byte	0
+ 763 00c8 49       		.uleb128 0x49
+ 764 00c9 13       		.uleb128 0x13
+ 765 00ca 2F       		.uleb128 0x2f
+ 766 00cb 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 16
+
+
+ 767 00cc 00       		.byte	0
+ 768 00cd 00       		.byte	0
+ 769 00ce 10       		.uleb128 0x10
+ 770 00cf 2E       		.uleb128 0x2e
+ 771 00d0 00       		.byte	0
+ 772 00d1 3F       		.uleb128 0x3f
+ 773 00d2 19       		.uleb128 0x19
+ 774 00d3 3C       		.uleb128 0x3c
+ 775 00d4 19       		.uleb128 0x19
+ 776 00d5 6E       		.uleb128 0x6e
+ 777 00d6 0E       		.uleb128 0xe
+ 778 00d7 03       		.uleb128 0x3
+ 779 00d8 0E       		.uleb128 0xe
+ 780 00d9 3A       		.uleb128 0x3a
+ 781 00da 0B       		.uleb128 0xb
+ 782 00db 3B       		.uleb128 0x3b
+ 783 00dc 0B       		.uleb128 0xb
+ 784 00dd 00       		.byte	0
+ 785 00de 00       		.byte	0
+ 786 00df 00       		.byte	0
+ 787              		.section	.debug_loc,"",%progbits
+ 788              	.Ldebug_loc0:
+ 789              	.LLST0:
+ 790 0000 2A000000 		.4byte	.LVL6
+ 791 0004 32000000 		.4byte	.LVL7
+ 792 0008 0100     		.2byte	0x1
+ 793 000a 50       		.byte	0x50
+ 794 000b 00000000 		.4byte	0
+ 795 000f 00000000 		.4byte	0
+ 796              	.LLST1:
+ 797 0013 4A000000 		.4byte	.LVL11
+ 798 0017 50000000 		.4byte	.LVL12
+ 799 001b 0100     		.2byte	0x1
+ 800 001d 50       		.byte	0x50
+ 801 001e 00000000 		.4byte	0
+ 802 0022 00000000 		.4byte	0
+ 803              	.LLST2:
+ 804 0026 66000000 		.4byte	.LVL16
+ 805 002a 6C000000 		.4byte	.LVL17
+ 806 002e 0100     		.2byte	0x1
+ 807 0030 50       		.byte	0x50
+ 808 0031 00000000 		.4byte	0
+ 809 0035 00000000 		.4byte	0
+ 810              		.section	.debug_aranges,"",%progbits
+ 811 0000 1C000000 		.4byte	0x1c
+ 812 0004 0200     		.2byte	0x2
+ 813 0006 00000000 		.4byte	.Ldebug_info0
+ 814 000a 04       		.byte	0x4
+ 815 000b 00       		.byte	0
+ 816 000c 0000     		.2byte	0
+ 817 000e 0000     		.2byte	0
+ 818 0010 00000000 		.4byte	.LFB64
+ 819 0014 A0000000 		.4byte	.LFE64-.LFB64
+ 820 0018 00000000 		.4byte	0
+ 821 001c 00000000 		.4byte	0
+ 822              		.section	.debug_ranges,"",%progbits
+ 823              	.Ldebug_ranges0:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 17
+
+
+ 824 0000 00000000 		.4byte	.LFB64
+ 825 0004 A0000000 		.4byte	.LFE64
+ 826 0008 00000000 		.4byte	0
+ 827 000c 00000000 		.4byte	0
+ 828              		.section	.debug_line,"",%progbits
+ 829              	.Ldebug_line0:
+ 830 0000 42020000 		.section	.debug_str,"MS",%progbits,1
+ 830      02001A02 
+ 830      00000201 
+ 830      FB0E0D00 
+ 830      01010101 
+ 831              	.LASF4:
+ 832 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 832      6E74385F 
+ 832      7400
+ 833              	.LASF19:
+ 834 000a 73746174 		.ascii	"status_reg\000"
+ 834      75735F72 
+ 834      656700
+ 835              	.LASF5:
+ 836 0015 5F5F696E 		.ascii	"__int32_t\000"
+ 836      7433325F 
+ 836      7400
+ 837              	.LASF37:
+ 838 001f 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 838      73657273 
+ 838      5C4D616E 
+ 838      755C4465 
+ 838      736B746F 
+ 839 004d 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 839      31393230 
+ 839      5F49495F 
+ 839      48575F46 
+ 839      494E414C 
+ 840 007e 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 840      5F46494E 
+ 840      414C5F43 
+ 840      41525A41 
+ 840      4E494741 
+ 841              	.LASF13:
+ 842 00a3 666C6F61 		.ascii	"float\000"
+ 842      7400
+ 843              	.LASF33:
+ 844 00a9 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
+ 844      496E7465 
+ 844      72666163 
+ 844      655F5265 
+ 844      61644279 
+ 845              	.LASF28:
+ 846 00c0 4953525F 		.ascii	"ISR_START_StartEx\000"
+ 846      53544152 
+ 846      545F5374 
+ 846      61727445 
+ 846      7800
+ 847              	.LASF1:
+ 848 00d2 756E7369 		.ascii	"unsigned char\000"
+ 848      676E6564 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 18
+
+
+ 848      20636861 
+ 848      7200
+ 849              	.LASF35:
+ 850 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 850      43313120 
+ 850      352E342E 
+ 850      31203230 
+ 850      31363036 
+ 851 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 851      20726576 
+ 851      6973696F 
+ 851      6E203233 
+ 851      37373135 
+ 852 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 852      66756E63 
+ 852      74696F6E 
+ 852      2D736563 
+ 852      74696F6E 
+ 853              	.LASF7:
+ 854 016e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 854      20756E73 
+ 854      69676E65 
+ 854      6420696E 
+ 854      7400
+ 855              	.LASF3:
+ 856 0180 73686F72 		.ascii	"short unsigned int\000"
+ 856      7420756E 
+ 856      7369676E 
+ 856      65642069 
+ 856      6E7400
+ 857              	.LASF29:
+ 858 0193 55415254 		.ascii	"UART_Start\000"
+ 858      5F537461 
+ 858      727400
+ 859              	.LASF21:
+ 860 019e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 860      52784275 
+ 860      66666572 
+ 860      00
+ 861              	.LASF14:
+ 862 01ab 646F7562 		.ascii	"double\000"
+ 862      6C6500
+ 863              	.LASF38:
+ 864 01b2 6D61696E 		.ascii	"main\000"
+ 864      00
+ 865              	.LASF20:
+ 866 01b7 6374726C 		.ascii	"ctrl_reg1\000"
+ 866      5F726567 
+ 866      3100
+ 867              	.LASF10:
+ 868 01c1 756E7369 		.ascii	"unsigned int\000"
+ 868      676E6564 
+ 868      20696E74 
+ 868      00
+ 869              	.LASF9:
+ 870 01ce 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 870      206C6F6E 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 19
+
+
+ 870      6720756E 
+ 870      7369676E 
+ 870      65642069 
+ 871              	.LASF11:
+ 872 01e5 75696E74 		.ascii	"uint8_t\000"
+ 872      385F7400 
+ 873              	.LASF30:
+ 874 01ed 5350494D 		.ascii	"SPIM_Start\000"
+ 874      5F537461 
+ 874      727400
+ 875              	.LASF27:
+ 876 01f8 4953525F 		.ascii	"ISR_CONFIG_StartEx\000"
+ 876      434F4E46 
+ 876      49475F53 
+ 876      74617274 
+ 876      457800
+ 877              	.LASF22:
+ 878 020b 73746172 		.ascii	"start_flag\000"
+ 878      745F666C 
+ 878      616700
+ 879              	.LASF25:
+ 880 0216 70726573 		.ascii	"press_counter\000"
+ 880      735F636F 
+ 880      756E7465 
+ 880      7200
+ 881              	.LASF12:
+ 882 0224 696E7433 		.ascii	"int32_t\000"
+ 882      325F7400 
+ 883              	.LASF17:
+ 884 022c 73697A65 		.ascii	"sizetype\000"
+ 884      74797065 
+ 884      00
+ 885              	.LASF8:
+ 886 0235 6C6F6E67 		.ascii	"long long int\000"
+ 886      206C6F6E 
+ 886      6720696E 
+ 886      7400
+ 887              	.LASF36:
+ 888 0243 6D61696E 		.ascii	"main.c\000"
+ 888      2E6300
+ 889              	.LASF15:
+ 890 024a 63686172 		.ascii	"char\000"
+ 890      00
+ 891              	.LASF24:
+ 892 024f 636F6E66 		.ascii	"config_flag\000"
+ 892      69675F66 
+ 892      6C616700 
+ 893              	.LASF18:
+ 894 025b 77686F5F 		.ascii	"who_am_i\000"
+ 894      616D5F69 
+ 894      00
+ 895              	.LASF2:
+ 896 0264 73686F72 		.ascii	"short int\000"
+ 896      7420696E 
+ 896      7400
+ 897              	.LASF6:
+ 898 026e 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccPM88VU.s 			page 20
+
+
+ 898      20696E74 
+ 898      00
+ 899              	.LASF16:
+ 900 0277 6C6F6E67 		.ascii	"long double\000"
+ 900      20646F75 
+ 900      626C6500 
+ 901              	.LASF0:
+ 902 0283 7369676E 		.ascii	"signed char\000"
+ 902      65642063 
+ 902      68617200 
+ 903              	.LASF32:
+ 904 028f 55415254 		.ascii	"UART_PutString\000"
+ 904      5F507574 
+ 904      53747269 
+ 904      6E6700
+ 905              	.LASF23:
+ 906 029e 5F426F6F 		.ascii	"_Bool\000"
+ 906      6C00
+ 907              	.LASF34:
+ 908 02a4 73707269 		.ascii	"sprintf\000"
+ 908      6E746600 
+ 909              	.LASF31:
+ 910 02ac 43794465 		.ascii	"CyDelay\000"
+ 910      6C617900 
+ 911              	.LASF26:
+ 912 02b4 62756666 		.ascii	"bufferUART\000"
+ 912      65725541 
+ 912      525400
+ 913              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
