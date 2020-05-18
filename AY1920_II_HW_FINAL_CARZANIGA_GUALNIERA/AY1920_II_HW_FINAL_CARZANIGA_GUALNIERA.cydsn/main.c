@@ -9,9 +9,11 @@
  * ========================================
 */
 
-/* Include project dependencies. */
+/* Project dependencies. */
 #include "InterruptRoutines.h"
 #include "SPI_Interface.h"
+#include "LED_Driver.h"
+
 #include <stdio.h>
 #include <string.h>
 

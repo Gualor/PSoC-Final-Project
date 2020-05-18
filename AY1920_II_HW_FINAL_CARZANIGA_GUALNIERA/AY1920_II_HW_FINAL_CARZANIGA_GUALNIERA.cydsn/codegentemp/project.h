@@ -48,6 +48,8 @@
 #include "RX_PIN.h"
 #include "CS_aliases.h"
 #include "CS.h"
+#include "ONBOARD_LED_aliases.h"
+#include "ONBOARD_LED.h"
 #include "UART_IntClock.h"
 #include "SPIM_IntClock.h"
 #include "core_cm3_psoc5.h"
