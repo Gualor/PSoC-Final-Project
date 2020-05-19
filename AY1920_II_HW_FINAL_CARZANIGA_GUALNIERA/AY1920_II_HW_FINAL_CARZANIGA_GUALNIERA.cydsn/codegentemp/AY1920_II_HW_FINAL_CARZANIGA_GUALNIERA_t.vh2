@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Lory\Desktop\info_projects\git_repositories\PSoC-Final-Project\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.cyprj
--- Generated: 05/19/2020 15:40:14
+-- Generated: 05/19/2020 17:31:10
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -57,24 +57,24 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL Net_17855 : bit;
     ATTRIBUTE placement_force OF Net_17855 : SIGNAL IS "U(2,4,A)0";
     SIGNAL Net_18028 : bit;
-    SIGNAL Net_18050 : bit;
-    ATTRIBUTE placement_force OF Net_18050 : SIGNAL IS "U(2,3,B)2";
-    SIGNAL Net_18052 : bit;
-    ATTRIBUTE placement_force OF Net_18052 : SIGNAL IS "U(2,2,A)3";
-    SIGNAL Net_18119 : bit;
-    ATTRIBUTE udbclken_assigned OF Net_18119 : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_18119 : SIGNAL IS true;
-    SIGNAL Net_18119_local : bit;
     SIGNAL Net_18120 : bit;
+    SIGNAL Net_18158 : bit;
+    ATTRIBUTE udbclken_assigned OF Net_18158 : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_18158 : SIGNAL IS true;
+    SIGNAL Net_18158_local : bit;
+    SIGNAL Net_18162 : bit;
+    ATTRIBUTE placement_force OF Net_18162 : SIGNAL IS "U(2,2,A)3";
+    SIGNAL Net_18163 : bit;
+    ATTRIBUTE placement_force OF Net_18163 : SIGNAL IS "U(2,3,B)2";
+    SIGNAL Net_18164 : bit;
+    ATTRIBUTE udbclken_assigned OF Net_18164 : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_18164 : SIGNAL IS true;
+    SIGNAL Net_18164_local : bit;
     SIGNAL Net_19 : bit;
     SIGNAL Net_2111 : bit;
     ATTRIBUTE placement_force OF Net_2111 : SIGNAL IS "U(2,3,A)2";
     SIGNAL Net_23 : bit;
     ATTRIBUTE placement_force OF Net_23 : SIGNAL IS "U(3,3,B)1";
-    SIGNAL Net_247 : bit;
-    ATTRIBUTE udbclken_assigned OF Net_247 : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_247 : SIGNAL IS true;
-    SIGNAL Net_247_local : bit;
     SIGNAL Net_25 : bit;
     ATTRIBUTE placement_force OF Net_25 : SIGNAL IS "U(3,3,A)2";
     SIGNAL Net_9807 : bit;
@@ -351,10 +351,10 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE Location OF \PWM_RG:PWMUDB:status_0\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_1\ : LABEL IS "macrocell24";
     ATTRIBUTE Location OF \PWM_RG:PWMUDB:status_1\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF Net_18052 : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF Net_18052 : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF Net_18050 : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF Net_18050 : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF Net_18162 : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF Net_18162 : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF Net_18163 : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF Net_18163 : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell27";
     ATTRIBUTE Location OF \PWM_B:PWMUDB:runmode_enable\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell28";
@@ -743,12 +743,12 @@ BEGIN
             dsi_glb_div => open,
             dclk_glb_0 => \SPIM:Net_276\,
             dclk_0 => \SPIM:Net_276_local\,
-            dclk_glb_1 => Net_247,
-            dclk_1 => Net_247_local,
+            dclk_glb_1 => Net_18164,
+            dclk_1 => Net_18164_local,
             dclk_glb_2 => \UART:Net_9\,
             dclk_2 => \UART:Net_9_local\,
-            dclk_glb_3 => Net_18119,
-            dclk_3 => Net_18119_local,
+            dclk_glb_3 => Net_18158,
+            dclk_3 => Net_18158_local,
             dclk_glb_ff_3 => \ClockBlock.dclk_glb_ff_3__sig\);
 
     GREEN_PIN:logicalport
@@ -833,7 +833,7 @@ BEGIN
         PORT MAP(
             pa_out => GREEN_PIN(0)__PA,
             oe => open,
-            pin_input => Net_18050,
+            pin_input => Net_18163,
             pad_out => GREEN_PIN(0)_PAD,
             pad_in => GREEN_PIN(0)_PAD,
             in_clock => open,
@@ -925,7 +925,7 @@ BEGIN
         PORT MAP(
             pa_out => RED_PIN(0)__PA,
             oe => open,
-            pin_input => Net_18052,
+            pin_input => Net_18162,
             pad_out => RED_PIN(0)_PAD,
             pad_in => RED_PIN(0)_PAD,
             in_clock => open,
@@ -1946,7 +1946,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             control_7 => \PWM_RG:PWMUDB:control_7\,
             control_6 => \PWM_RG:PWMUDB:control_6\,
             control_5 => \PWM_RG:PWMUDB:control_5\,
@@ -1965,7 +1965,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             status_6 => open,
             status_5 => open,
             status_4 => open,
@@ -2002,7 +2002,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             cs_addr_2 => \PWM_RG:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_RG:PWMUDB:runmode_enable\,
             cl0_comb => \PWM_RG:PWMUDB:cmp1_less\,
@@ -2021,7 +2021,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             control_7 => \PWM_B:PWMUDB:control_7\,
             control_6 => \PWM_B:PWMUDB:control_6\,
             control_5 => \PWM_B:PWMUDB:control_5\,
@@ -2040,7 +2040,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             status_6 => open,
             status_5 => open,
             status_4 => open,
@@ -2077,7 +2077,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_247,
+            clock => Net_18164,
             cs_addr_2 => \PWM_B:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_B:PWMUDB:runmode_enable\,
             cl0_comb => \PWM_B:PWMUDB:cmp1_less\,
@@ -2421,7 +2421,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_17852,
-            clock_0 => Net_18119,
+            clock_0 => Net_18158,
             main_0 => Net_18120);
 
     \DEBOUNCER:DEBOUNCER[0]:d_sync_1\:macrocell
@@ -2432,7 +2432,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \DEBOUNCER:DEBOUNCER[0]:d_sync_1\,
-            clock_0 => Net_18119,
+            clock_0 => Net_18158,
             main_0 => Net_17852);
 
     Net_17679:macrocell
@@ -2443,7 +2443,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_17679,
-            clock_0 => Net_18119,
+            clock_0 => Net_18158,
             main_0 => \DEBOUNCER:DEBOUNCER[0]:d_sync_1\,
             main_1 => Net_17852);
 
@@ -2455,7 +2455,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_RG:PWMUDB:runmode_enable\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:control_7\);
 
     \PWM_RG:PWMUDB:prevCompare1\:macrocell
@@ -2466,7 +2466,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_RG:PWMUDB:prevCompare1\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:cmp1_less\);
 
     \PWM_RG:PWMUDB:prevCompare2\:macrocell
@@ -2477,7 +2477,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_RG:PWMUDB:prevCompare2\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:cmp2_less\);
 
     \PWM_RG:PWMUDB:status_0\:macrocell
@@ -2488,7 +2488,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_RG:PWMUDB:status_0\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:prevCompare1\,
             main_1 => \PWM_RG:PWMUDB:cmp1_less\);
 
@@ -2500,31 +2500,31 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_RG:PWMUDB:status_1\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:prevCompare2\,
             main_1 => \PWM_RG:PWMUDB:cmp2_less\);
 
-    Net_18052:macrocell
+    Net_18162:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_18052,
-            clock_0 => Net_247,
+            q => Net_18162,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:runmode_enable\,
             main_1 => \PWM_RG:PWMUDB:cmp1_less\);
 
-    Net_18050:macrocell
+    Net_18163:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_18050,
-            clock_0 => Net_247,
+            q => Net_18163,
+            clock_0 => Net_18164,
             main_0 => \PWM_RG:PWMUDB:runmode_enable\,
             main_1 => \PWM_RG:PWMUDB:cmp2_less\);
 
@@ -2536,7 +2536,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_B:PWMUDB:runmode_enable\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_B:PWMUDB:control_7\);
 
     \PWM_B:PWMUDB:prevCompare1\:macrocell
@@ -2547,7 +2547,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_B:PWMUDB:prevCompare1\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_B:PWMUDB:cmp1_less\);
 
     \PWM_B:PWMUDB:status_0\:macrocell
@@ -2558,7 +2558,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_B:PWMUDB:status_0\,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_B:PWMUDB:prevCompare1\,
             main_1 => \PWM_B:PWMUDB:cmp1_less\);
 
@@ -2570,7 +2570,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_2111,
-            clock_0 => Net_247,
+            clock_0 => Net_18164,
             main_0 => \PWM_B:PWMUDB:runmode_enable\,
             main_1 => \PWM_B:PWMUDB:cmp1_less\);
 

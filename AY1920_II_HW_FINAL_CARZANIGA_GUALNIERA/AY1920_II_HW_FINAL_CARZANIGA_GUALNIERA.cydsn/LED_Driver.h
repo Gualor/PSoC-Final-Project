@@ -15,10 +15,11 @@
     #include "project.h"
     
     /* Function prototypes. */
+    void RGB_Init(void);
     void RGB_Driver(uint8_t *dataPtr);
-    void PWM_Driver(uint8_t *compPtr);
-    void Process_Channels(uint8_t *chPtr);
-    uint8_t Absolute_Value(uint8_t val);
+    void PWM_Driver(uint8_t *dataPtr);
+    void IMU_Data_Process(uint8_t *dataPtr);
+    uint8_t Absolute_Value(uint8_t value);
     
 #endif    
 

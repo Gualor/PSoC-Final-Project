@@ -2,7 +2,7 @@
 --	Conversion of AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue May 19 15:40:07 2020
+--	Tue May 19 17:31:03 2020
 --
 
 USE cypress.cypress.all;
@@ -71,7 +71,7 @@ TERMINAL Net_17621 : bit;
 TERMINAL Net_17645 : bit;
 TERMINAL Net_17647_1 : bit;
 TERMINAL Net_17647_0 : bit;
-SIGNAL Net_18119 : bit;
+SIGNAL Net_18158 : bit;
 SIGNAL one : bit;
 SIGNAL \DEBOUNCER:op_clk\ : bit;
 SIGNAL \DEBOUNCER:DEBOUNCER[0]:d_sync_0\ : bit;
@@ -82,7 +82,7 @@ SIGNAL Net_17679 : bit;
 SIGNAL Net_18124 : bit;
 SIGNAL Net_18125 : bit;
 SIGNAL Net_17683 : bit;
-SIGNAL Net_247 : bit;
+SIGNAL Net_18164 : bit;
 SIGNAL \PWM_RG:PWMUDB:km_run\ : bit;
 SIGNAL \PWM_RG:PWMUDB:min_kill_reg\ : bit;
 SIGNAL \PWM_RG:PWMUDB:ClockOutFromEnBlock\ : bit;
@@ -113,6 +113,7 @@ SIGNAL \PWM_RG:PWMUDB:trig_fall\ : bit;
 SIGNAL \PWM_RG:PWMUDB:trig_out\ : bit;
 SIGNAL \PWM_RG:PWMUDB:runmode_enable\ : bit;
 SIGNAL \PWM_RG:PWMUDB:runmode_enable\\R\ : bit;
+SIGNAL Net_17093 : bit;
 SIGNAL \PWM_RG:PWMUDB:runmode_enable\\S\ : bit;
 SIGNAL \PWM_RG:PWMUDB:final_enable\ : bit;
 SIGNAL \PWM_RG:PWMUDB:sc_kill_tmp\ : bit;
@@ -136,7 +137,6 @@ SIGNAL \PWM_RG:PWMUDB:dith_count_1\\S\ : bit;
 SIGNAL \PWM_RG:PWMUDB:dith_count_0\\R\ : bit;
 SIGNAL \PWM_RG:PWMUDB:dith_count_0\\S\ : bit;
 SIGNAL \PWM_RG:PWMUDB:dith_sel\ : bit;
-SIGNAL \PWM_RG:PWMUDB:reset\ : bit;
 SIGNAL \PWM_RG:PWMUDB:status_6\ : bit;
 SIGNAL \PWM_RG:PWMUDB:status_5\ : bit;
 SIGNAL \PWM_RG:PWMUDB:status_4\ : bit;
@@ -231,8 +231,8 @@ SIGNAL \PWM_RG:PWMUDB:pwm2_i\ : bit;
 SIGNAL \PWM_RG:PWMUDB:tc_i_reg\ : bit;
 SIGNAL \PWM_RG:Net_101\ : bit;
 SIGNAL \PWM_RG:Net_96\ : bit;
-SIGNAL Net_18052 : bit;
-SIGNAL Net_18050 : bit;
+SIGNAL Net_18162 : bit;
+SIGNAL Net_18163 : bit;
 SIGNAL \PWM_RG:PWMUDB:pwm_temp\ : bit;
 SIGNAL \PWM_RG:PWMUDB:MODULE_1:b_31\ : bit;
 SIGNAL \PWM_RG:PWMUDB:MODULE_1:b_30\ : bit;
@@ -430,9 +430,9 @@ SIGNAL \PWM_RG:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : bit;
 SIGNAL \PWM_RG:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : bit;
 SIGNAL \PWM_RG:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_0\ : bit;
 SIGNAL \PWM_RG:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\ : bit;
-SIGNAL Net_17101 : bit;
-SIGNAL Net_17095 : bit;
-SIGNAL Net_17094 : bit;
+SIGNAL Net_18333 : bit;
+SIGNAL Net_18327 : bit;
+SIGNAL Net_18326 : bit;
 SIGNAL \PWM_RG:Net_113\ : bit;
 SIGNAL \PWM_RG:Net_107\ : bit;
 SIGNAL \PWM_RG:Net_114\ : bit;
@@ -465,6 +465,7 @@ SIGNAL \PWM_B:PWMUDB:trig_fall\ : bit;
 SIGNAL \PWM_B:PWMUDB:trig_out\ : bit;
 SIGNAL \PWM_B:PWMUDB:runmode_enable\ : bit;
 SIGNAL \PWM_B:PWMUDB:runmode_enable\\R\ : bit;
+SIGNAL Net_17104 : bit;
 SIGNAL \PWM_B:PWMUDB:runmode_enable\\S\ : bit;
 SIGNAL \PWM_B:PWMUDB:final_enable\ : bit;
 SIGNAL \PWM_B:PWMUDB:sc_kill_tmp\ : bit;
@@ -488,7 +489,6 @@ SIGNAL \PWM_B:PWMUDB:dith_count_1\\S\ : bit;
 SIGNAL \PWM_B:PWMUDB:dith_count_0\\R\ : bit;
 SIGNAL \PWM_B:PWMUDB:dith_count_0\\S\ : bit;
 SIGNAL \PWM_B:PWMUDB:dith_sel\ : bit;
-SIGNAL \PWM_B:PWMUDB:reset\ : bit;
 SIGNAL \PWM_B:PWMUDB:status_6\ : bit;
 SIGNAL \PWM_B:PWMUDB:status_5\ : bit;
 SIGNAL \PWM_B:PWMUDB:status_4\ : bit;
@@ -1821,11 +1821,11 @@ BUTTON_CLOCK:cy_clock_v1_0
 		period=>"10000000000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_18119,
+	PORT MAP(clock_out=>Net_18158,
 		dig_domain_out=>open);
 \DEBOUNCER:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
-	PORT MAP(clock_in=>Net_18119,
+	PORT MAP(clock_in=>Net_18158,
 		enable=>one,
 		clock_out=>\DEBOUNCER:op_clk\);
 ISR_CONFIG:cy_isr_v1_0
@@ -1840,11 +1840,11 @@ PWM_CLOCK:cy_clock_v1_0
 		period=>"10000000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_247,
+	PORT MAP(clock_out=>Net_18164,
 		dig_domain_out=>open);
 \PWM_RG:PWMUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
-	PORT MAP(clock_in=>Net_247,
+	PORT MAP(clock_in=>Net_18164,
 		enable=>one,
 		clock_out=>\PWM_RG:PWMUDB:ClockOutFromEnBlock\);
 \PWM_RG:PWMUDB:genblk1:ctrlreg\:cy_psoc3_control
@@ -1963,7 +1963,7 @@ PWM_CLOCK:cy_clock_v1_0
 		y=>\PWM_RG:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_8\);
 \PWM_B:PWMUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
-	PORT MAP(clock_in=>Net_247,
+	PORT MAP(clock_in=>Net_18164,
 		enable=>one,
 		clock_out=>\PWM_B:PWMUDB:ClockOutFromEnBlock\);
 \PWM_B:PWMUDB:genblk1:ctrlreg\:cy_psoc3_control
@@ -2176,7 +2176,7 @@ GREEN_PIN:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
-		y=>Net_18050,
+		y=>Net_18163,
 		fb=>(tmpFB_0__GREEN_PIN_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__GREEN_PIN_net_0),
@@ -2261,7 +2261,7 @@ RED_PIN:cy_psoc3_pins_v1_10
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
-		y=>Net_18052,
+		y=>Net_18162,
 		fb=>(tmpFB_0__RED_PIN_net_0),
 		analog=>(open),
 		io=>(tmpIO_0__RED_PIN_net_0),
@@ -2834,7 +2834,7 @@ TX_PIN:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__TX_PIN_net_0);
 \BUTTON_TIMER:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_18119,
+	PORT MAP(clock=>Net_18158,
 		kill=>zero,
 		enable=>Net_17855,
 		capture=>zero,
@@ -3423,7 +3423,7 @@ ONBOARD_LED:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__ONBOARD_LED_net_0);
 \NOTIFY_TIMER:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_18119,
+	PORT MAP(clock=>Net_18158,
 		kill=>zero,
 		enable=>one,
 		capture=>zero,
@@ -3530,11 +3530,11 @@ Net_18125:cy_dff
 \PWM_RG:PWMUDB:pwm1_i_reg\:cy_dff
 	PORT MAP(d=>\PWM_RG:PWMUDB:pwm1_i\,
 		clk=>\PWM_RG:PWMUDB:ClockOutFromEnBlock\,
-		q=>Net_18052);
+		q=>Net_18162);
 \PWM_RG:PWMUDB:pwm2_i_reg\:cy_dff
 	PORT MAP(d=>\PWM_RG:PWMUDB:pwm2_i\,
 		clk=>\PWM_RG:PWMUDB:ClockOutFromEnBlock\,
-		q=>Net_18050);
+		q=>Net_18163);
 \PWM_RG:PWMUDB:tc_i_reg\:cy_dff
 	PORT MAP(d=>\PWM_RG:PWMUDB:status_2\,
 		clk=>\PWM_RG:PWMUDB:ClockOutFromEnBlock\,

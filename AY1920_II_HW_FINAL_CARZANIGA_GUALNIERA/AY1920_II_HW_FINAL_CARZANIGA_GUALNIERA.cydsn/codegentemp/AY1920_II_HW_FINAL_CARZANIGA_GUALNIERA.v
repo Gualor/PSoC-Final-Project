@@ -1,6 +1,6 @@
 // ======================================================================
 // AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v generated from TopDesign.cysch
-// 05/19/2020 at 15:40
+// 05/19/2020 at 17:31
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -980,18 +980,16 @@ module top ;
           wire  Net_17107;
           wire  Net_17106;
           wire  Net_17105;
-          wire  Net_17104;
-          wire  Net_17103;
-          wire  Net_17102;
-          wire  Net_17101;
-          wire  Net_17100;
-          wire  Net_17099;
-          wire  Net_17098;
-          wire  Net_17097;
-          wire  Net_17096;
-          wire  Net_17095;
-          wire  Net_17094;
-          wire  Net_17093;
+          wire  Net_18335;
+          wire  Net_18334;
+          wire  Net_18333;
+          wire  Net_18332;
+          wire  Net_18331;
+          wire  Net_18330;
+          wire  Net_18329;
+          wire  Net_18328;
+          wire  Net_18327;
+          wire  Net_18326;
           wire  Net_562;
           wire  Net_18125;
           wire  Net_18124;
@@ -1053,18 +1051,21 @@ module top ;
     electrical  Net_17598;
     electrical  Net_17597;
     electrical  Net_17596;
+          wire  Net_18163;
+          wire  Net_18162;
+          wire  Net_17093;
+          wire  Net_18164;
+          wire  Net_17104;
+    electrical  Net_17870;
           wire  Net_18120;
           wire  Net_17679;
           wire  Net_17683;
           wire  Net_18028;
     electrical  Net_18112;
-          wire  Net_18050;
-          wire  Net_18052;
     electrical  Net_7443;
-    electrical  Net_17870;
           wire  Net_17855;
           wire  Net_17852;
-          wire  Net_18119;
+          wire  Net_18158;
     electrical  Net_191;
     electrical  Net_17268;
     electrical  Net_117;
@@ -1077,7 +1078,6 @@ module top ;
           wire  Net_9807;
     electrical  Net_123;
     electrical  Net_18048;
-          wire  Net_247;
     electrical  Net_18047;
     electrical  Net_18049;
           wire  Net_2111;
@@ -1157,12 +1157,12 @@ module top ;
 		  .is_direct(0),
 		  .is_digital(1))
 		BUTTON_CLOCK
-		 (.clock_out(Net_18119));
+		 (.clock_out(Net_18158));
 
 
     Debouncer_v1_0 DEBOUNCER (
         .d(Net_18120),
-        .clock(Net_18119),
+        .clock(Net_18158),
         .q(Net_17852),
         .neg(Net_18124),
         .either(Net_18125),
@@ -1188,29 +1188,29 @@ module top ;
 		  .is_direct(0),
 		  .is_digital(1))
 		PWM_CLOCK
-		 (.clock_out(Net_247));
+		 (.clock_out(Net_18164));
 
 
     PWM_v3_30_0 PWM_RG (
-        .reset(1'b0),
-        .clock(Net_247),
-        .tc(Net_17094),
-        .pwm1(Net_18052),
-        .pwm2(Net_18050),
-        .interrupt(Net_17095),
+        .reset(Net_17093),
+        .clock(Net_18164),
+        .tc(Net_18326),
+        .pwm1(Net_18162),
+        .pwm2(Net_18163),
+        .interrupt(Net_18327),
         .capture(1'b0),
         .kill(1'b1),
         .enable(1'b1),
         .trigger(1'b0),
         .cmp_sel(1'b0),
-        .pwm(Net_17101),
-        .ph1(Net_17102),
-        .ph2(Net_17103));
+        .pwm(Net_18333),
+        .ph1(Net_18334),
+        .ph2(Net_18335));
     defparam PWM_RG.Resolution = 8;
 
     PWM_v3_30_1 PWM_B (
-        .reset(1'b0),
-        .clock(Net_247),
+        .reset(Net_17104),
+        .clock(Net_18164),
         .tc(Net_17105),
         .pwm1(Net_17106),
         .pwm2(Net_17107),
@@ -1392,7 +1392,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		GREEN_PIN
 		 (.oe(tmpOE__GREEN_PIN_net),
-		  .y({Net_18050}),
+		  .y({Net_18163}),
 		  .fb({tmpFB_0__GREEN_PIN_net[0:0]}),
 		  .io({tmpIO_0__GREEN_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__GREEN_PIN_net),
@@ -1497,7 +1497,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		RED_PIN
 		 (.oe(tmpOE__RED_PIN_net),
-		  .y({Net_18052}),
+		  .y({Net_18162}),
 		  .fb({tmpFB_0__RED_PIN_net[0:0]}),
 		  .io({tmpIO_0__RED_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__RED_PIN_net),
@@ -1887,7 +1887,7 @@ module top ;
         .capture(1'b0),
         .capture_out(Net_17682),
         .tc(Net_17683),
-        .clock(Net_18119));
+        .clock(Net_18158));
     defparam BUTTON_TIMER.CaptureCount = 2;
     defparam BUTTON_TIMER.CaptureCounterEnabled = 0;
     defparam BUTTON_TIMER.DeviceFamily = "PSoC5";
@@ -2439,7 +2439,7 @@ module top ;
         .capture(1'b0),
         .capture_out(Net_18027),
         .tc(Net_18028),
-        .clock(Net_18119));
+        .clock(Net_18158));
     defparam NOTIFY_TIMER.CaptureCount = 2;
     defparam NOTIFY_TIMER.CaptureCounterEnabled = 0;
     defparam NOTIFY_TIMER.DeviceFamily = "PSoC5";
@@ -2456,6 +2456,10 @@ module top ;
 
 
     assign Net_18127 = 1'h0;
+
+    assign Net_17093 = 1'h0;
+
+    assign Net_17104 = 1'h0;
 
 
 

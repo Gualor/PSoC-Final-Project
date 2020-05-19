@@ -15,13 +15,20 @@
     /* Project dependencies. */
     #include "project.h"
     
-    /* Contains LED duty cycle information. */
+    /* 
+     * Contains LED duty cycle information.
+     * -> compare_val: compare value within period
+     * -> period: period length (1 = 100ms)
+     */
     typedef struct {
-        uint8_t compare_val;
+        uint8_t compare_val;    
         uint8_t period;
     } blink_t;
     
-    /* Contains dynamic LED state infornation. */
+    /* Contains dynamic LED state information.
+     * mode: blink_t type mode
+     * counter: current duty cycle time
+     */
     typedef struct {
         blink_t mode;
         uint8_t counter;

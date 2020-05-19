@@ -1,10 +1,12 @@
 /* ========================================
  *
  * This file contains the main function which
- * is designed to enable all ISR and setup
+ * is designed to enable all ISRs and setup
  * all communication protocols to interface
- * the PSoC board with the LIS3DH accelerometer
- * and the EEPROM.
+ * the PSoC board with: 
+ * -> 25LC256 EEPROM
+ * -> LIS3DH accelerometer
+ * -> Serial monitor (UART)
  *
  * ========================================
 */
@@ -13,10 +15,9 @@
 #include "InterruptRoutines.h"
 #include "SPI_Interface.h"
 #include "LED_Driver.h"
+#include "stdio.h"
 
-#include <stdio.h>
-#include <string.h>
-
+/* Global variables. */
 char bufferUART[100];
 
 /*
@@ -24,72 +25,79 @@ char bufferUART[100];
  */
 int main(void)
 {
-    /* Enable global interrupts. */
+    // Enable global interrupts
     CyGlobalIntEnable; 
     
-    /* Enable configuration mode ISR. */
+    // Enable configuration mode ISR
     ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
     
-    /* Enable start/stop mode ISR. */
+    // Enable start/stop mode ISR
     ISR_START_StartEx(CUSTOM_ISR_START);
     
-    /* Enable notification LED ISR. */
+    // Enable notification ISR
     ISR_NOTIFY_StartEx(CUSTOM_ISR_NOTIFY);
     
-    // timer 
-    NOTIFY_TIMER_Start();
-    
-    BUTTON_TIMER_Start();
-    
-    /* Start UART */
+    // Enable UART communication
     UART_Start();
     
-    /* Start SPI Master */
+    // Enable SPI Master
     SPIM_Start();
     
-    CyDelay(10);
-    
-    /*
-    UART_PutString("*********    LIS3DH TEST    *********\r\n");
-    
-    // Read WHO_AM_I Register
-    uint8_t who_am_i = SPI_Interface_ReadByte(LIS3DH_SPI_WHO_AM_I_REG);
-    
-    sprintf(bufferUART, "WHO AM I REG: 0x%02X [Expected: 0x33]\r\n", who_am_i);
-    UART_PutBuffer;
-    
-    UART_PutString("*************************************\r\n");
-    
-    
-    // Read Status Register
-    uint8_t status_reg = SPI_Interface_ReadByte(LIS3DH_SPI_STATUS_REG);
-    
-    sprintf(bufferUART, "STATUS REG: 0x%02X \r\n", status_reg);
-    UART_PutBuffer;
-    
-    UART_PutString("*************************************\r\n");
-    
-    
-    // Read Control Register 1
-    uint8_t ctrl_reg1 = SPI_Interface_ReadByte(LIS3DH_SPI_CTRL_REG1);
-    
-    sprintf(bufferUART, "CTRL REG1: 0x%02X \r\n", ctrl_reg1);
-    UART_PutBuffer;
-    
-    UART_PutString("*************************************\r\n");
-    */
+    // Initialize HW timers 
+    NOTIFY_TIMER_Start();
+    BUTTON_TIMER_Start();
     
     // Initialize button state
     button_state = STOP_MODE;
     
-    // Initialize notification led state
+    // Initialize notifications
     Notify_Init(&notify_led);
     
-    /* Main loop. */
+    CyDelay(10);
+    
+    // Initialize LED driver
+    RGB_Init();
+    
+    int8_t x=-128;
+    int8_t y=-128;
+    int8_t z=-128;
+    
+    // Main loop
     for(;;)
     {
-
+        if (x<126)
+        {
+            x++;
+            CyDelay(10);
+        }
+        else
+        {
+            if (y<126)
+            {
+                y++;
+                CyDelay(10);
+            }
+            else
+            {
+                if (z<126)
+                {
+                    z++;
+                    CyDelay(10);
+                }
+                else
+                {
+                    x = -128;
+                    y = -128;
+                    z = -128;
+                }
+            }
+        }
+        
+        int8_t imu_data[3] = {x, y, z};
+        RGB_Driver((uint8_t*)imu_data);
     }
+    
+    return 0;
 }
 
 /* [] END OF FILE */

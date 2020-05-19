@@ -6,12 +6,14 @@
  * RGB_Driver: high level function that enable
  * LED driving based on IMU data coming from LIS3DH.
  *
- * PWM_Driver: set the PWM compare values to change
- * the duty cycles of all LED channels.
+ * PWM_Driver: set the PWM compare values 
+ * to change the duty cycles of all LED channels.
  *
- * Process_Channels: map raw IMU data to cover
+ * IMU_Data_Process: map raw IMU data to cover
  * the full range of the LED by taking the
- * absolute value of each axis and doubling it.
+ * absolute value of each axis, doubling it
+ * and negate the RGB value to drive common
+ * anode LED.
  *
  * Absolute_value: light weight abs function
  * that does not use conditional statements.
@@ -24,15 +26,30 @@
 
 /*
  * Drive LED RGB by setting PWM duty cycles based
- * on xyz-axes IMU data.
+ * on xyz-axes IMU data so that:
+ * -> X value drives RED channel
+ * -> Y value drives GREEN channel
+ * -> Z value drives BLUE channel
  */
 void RGB_Driver(uint8_t *dataPtr)
 {
     // Process IMU data in place
-    Process_Channels(dataPtr);
+    IMU_Data_Process(dataPtr);
     
     // Set PWM compare values
     PWM_Driver(dataPtr);
+}
+
+/*
+ * Initialize pulse width modulators.
+ */
+void RGB_Init(void)
+{
+    // Enable red/green PWM
+    PWM_RG_Start();
+    
+    // Enable blue PWM
+    PWM_B_Start();
 }
 
 /*
@@ -53,16 +70,22 @@ void PWM_Driver(uint8_t *dataPtr)
 /*
  * Process IMU data in place to map full LED range.
  */
-void Process_Channels(uint8_t *dataPtr)
+void IMU_Data_Process(uint8_t *dataPtr)
 {    
     // For all 3 channels
     for (uint8_t i=0; i<3; i++)
-    {
-        // Get absolute value
-        int8_t tmp = Absolute_Value(dataPtr[i]);
-    
-        // Scale value to use full range
-        dataPtr[0] = tmp*2;
+    {   
+        // Get absolute value and multiply by 2 to use full range
+        uint16_t tmp = (int16_t)Absolute_Value(dataPtr[i])*2;
+        
+        // Avoid uint8_t variable overflow
+        if (tmp > 255)
+        {
+            tmp = 255;
+        }
+        
+        // Get negated value to drive common anode LED
+        dataPtr[i] = ~((uint8_t)tmp);
     }
 }
 
@@ -70,11 +93,13 @@ void Process_Channels(uint8_t *dataPtr)
  * Get absolute value of int8_t variable without
  * conditional jumps.
  */
-uint8_t Absolute_Value(uint8_t val)
+uint8_t Absolute_Value(uint8_t value)
 {
     // Get sign of val
-    uint8_t mask = (val >> 7);
-    return (val ^ mask) - mask;
+    uint8_t mask = (value >> 7);
+    
+    // XOR mask and subtract mask
+    return (value ^ mask) - mask;
 }
 
 /* [] END OF FILE */
