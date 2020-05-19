@@ -1,0 +1,1116 @@
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"LED_Driver.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.PWM_Driver,"ax",%progbits
+  20              		.align	2
+  21              		.global	PWM_Driver
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	PWM_Driver, %function
+  25              	PWM_Driver:
+  26              	.LFB64:
+  27              		.file 1 "LED_Driver.c"
+   1:LED_Driver.c  **** /* ========================================
+   2:LED_Driver.c  ****  *
+   3:LED_Driver.c  ****  * This file contains utility functions used
+   4:LED_Driver.c  ****  * to drive the RGB LED based on IMU data.
+   5:LED_Driver.c  ****  *
+   6:LED_Driver.c  ****  * RGB_Driver: high level function that enable
+   7:LED_Driver.c  ****  * LED driving based on IMU data coming from LIS3DH.
+   8:LED_Driver.c  ****  *
+   9:LED_Driver.c  ****  * PWM_Driver: set the PWM compare values to change
+  10:LED_Driver.c  ****  * the duty cycles of all LED channels.
+  11:LED_Driver.c  ****  *
+  12:LED_Driver.c  ****  * Process_Channels: map raw IMU data to cover
+  13:LED_Driver.c  ****  * the full range of the LED by taking the
+  14:LED_Driver.c  ****  * absolute value of each axis and doubling it.
+  15:LED_Driver.c  ****  *
+  16:LED_Driver.c  ****  * Absolute_value: light weight abs function
+  17:LED_Driver.c  ****  * that does not use conditional statements.
+  18:LED_Driver.c  ****  *
+  19:LED_Driver.c  ****  * ========================================
+  20:LED_Driver.c  **** */
+  21:LED_Driver.c  **** 
+  22:LED_Driver.c  **** /* Project dependencies. */
+  23:LED_Driver.c  **** #include "LED_Driver.h"
+  24:LED_Driver.c  **** 
+  25:LED_Driver.c  **** /*
+  26:LED_Driver.c  ****  * Drive LED RGB by setting PWM duty cycles based
+  27:LED_Driver.c  ****  * on xyz-axes IMU data.
+  28:LED_Driver.c  ****  */
+  29:LED_Driver.c  **** void RGB_Driver(uint8_t *dataPtr)
+  30:LED_Driver.c  **** {
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 2
+
+
+  31:LED_Driver.c  ****     // Process IMU data in place
+  32:LED_Driver.c  ****     Process_Channels(dataPtr);
+  33:LED_Driver.c  ****     
+  34:LED_Driver.c  ****     // Set PWM compare values
+  35:LED_Driver.c  ****     PWM_Driver(dataPtr);
+  36:LED_Driver.c  **** }
+  37:LED_Driver.c  **** 
+  38:LED_Driver.c  **** /*
+  39:LED_Driver.c  ****  * Write PWM_RG and PWM_B compare values.
+  40:LED_Driver.c  ****  */
+  41:LED_Driver.c  **** void PWM_Driver(uint8_t *dataPtr)
+  42:LED_Driver.c  **** {
+  28              		.loc 1 42 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 0446     		mov	r4, r0
+  43:LED_Driver.c  ****     // Set red channel PWM compare value
+  44:LED_Driver.c  ****     PWM_RG_WriteCompare1(dataPtr[0]);
+  38              		.loc 1 44 0
+  39 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  40              	.LVL1:
+  41 0006 FFF7FEFF 		bl	PWM_RG_WriteCompare1
+  42              	.LVL2:
+  45:LED_Driver.c  ****     
+  46:LED_Driver.c  ****     // Set green channel PWM compare value
+  47:LED_Driver.c  ****     PWM_RG_WriteCompare2(dataPtr[1]);
+  43              		.loc 1 47 0
+  44 000a 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+  45 000c FFF7FEFF 		bl	PWM_RG_WriteCompare2
+  46              	.LVL3:
+  48:LED_Driver.c  ****     
+  49:LED_Driver.c  ****     //Set blue channel PWM compare value
+  50:LED_Driver.c  ****     PWM_B_WriteCompare(dataPtr[2]);
+  47              		.loc 1 50 0
+  48 0010 A078     		ldrb	r0, [r4, #2]	@ zero_extendqisi2
+  49 0012 FFF7FEFF 		bl	PWM_B_WriteCompare
+  50              	.LVL4:
+  51 0016 10BD     		pop	{r4, pc}
+  52              		.cfi_endproc
+  53              	.LFE64:
+  54              		.size	PWM_Driver, .-PWM_Driver
+  55              		.section	.text.Absolute_Value,"ax",%progbits
+  56              		.align	2
+  57              		.global	Absolute_Value
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	Absolute_Value, %function
+  61              	Absolute_Value:
+  62              	.LFB66:
+  51:LED_Driver.c  **** }
+  52:LED_Driver.c  **** 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 3
+
+
+  53:LED_Driver.c  **** /*
+  54:LED_Driver.c  ****  * Process IMU data in place to map full LED range.
+  55:LED_Driver.c  ****  */
+  56:LED_Driver.c  **** void Process_Channels(uint8_t *dataPtr)
+  57:LED_Driver.c  **** {    
+  58:LED_Driver.c  ****     // For all 3 channels
+  59:LED_Driver.c  ****     for (uint8_t i=0; i<3; i++)
+  60:LED_Driver.c  ****     {
+  61:LED_Driver.c  ****         // Get absolute value
+  62:LED_Driver.c  ****         int8_t tmp = Absolute_Value(dataPtr[i]);
+  63:LED_Driver.c  ****     
+  64:LED_Driver.c  ****         // Scale value to use full range
+  65:LED_Driver.c  ****         dataPtr[0] = tmp*2;
+  66:LED_Driver.c  ****     }
+  67:LED_Driver.c  **** }
+  68:LED_Driver.c  **** 
+  69:LED_Driver.c  **** /*
+  70:LED_Driver.c  ****  * Get absolute value of int8_t variable without
+  71:LED_Driver.c  ****  * conditional jumps.
+  72:LED_Driver.c  ****  */
+  73:LED_Driver.c  **** uint8_t Absolute_Value(uint8_t val)
+  74:LED_Driver.c  **** {
+  63              		.loc 1 74 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68              	.LVL5:
+  75:LED_Driver.c  ****     // Get sign of val
+  76:LED_Driver.c  ****     uint8_t mask = (val >> 7);
+  69              		.loc 1 76 0
+  70 0000 C309     		lsrs	r3, r0, #7
+  71              	.LVL6:
+  77:LED_Driver.c  ****     return (val ^ mask) - mask;
+  72              		.loc 1 77 0
+  73 0002 5840     		eors	r0, r0, r3
+  74              	.LVL7:
+  75 0004 C01A     		subs	r0, r0, r3
+  78:LED_Driver.c  **** }
+  76              		.loc 1 78 0
+  77 0006 C0B2     		uxtb	r0, r0
+  78 0008 7047     		bx	lr
+  79              		.cfi_endproc
+  80              	.LFE66:
+  81              		.size	Absolute_Value, .-Absolute_Value
+  82 000a 00BF     		.section	.text.Process_Channels,"ax",%progbits
+  83              		.align	2
+  84              		.global	Process_Channels
+  85              		.thumb
+  86              		.thumb_func
+  87              		.type	Process_Channels, %function
+  88              	Process_Channels:
+  89              	.LFB65:
+  57:LED_Driver.c  ****     // For all 3 channels
+  90              		.loc 1 57 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 4
+
+
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              	.LVL8:
+  95 0000 38B5     		push	{r3, r4, r5, lr}
+  96              		.cfi_def_cfa_offset 16
+  97              		.cfi_offset 3, -16
+  98              		.cfi_offset 4, -12
+  99              		.cfi_offset 5, -8
+ 100              		.cfi_offset 14, -4
+ 101 0002 0546     		mov	r5, r0
+ 102              	.LVL9:
+ 103              	.LBB2:
+  59:LED_Driver.c  ****     {
+ 104              		.loc 1 59 0
+ 105 0004 0024     		movs	r4, #0
+ 106 0006 06E0     		b	.L5
+ 107              	.LVL10:
+ 108              	.L6:
+ 109              	.LBB3:
+  62:LED_Driver.c  ****     
+ 110              		.loc 1 62 0 discriminator 3
+ 111 0008 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 112 000a FFF7FEFF 		bl	Absolute_Value
+ 113              	.LVL11:
+  65:LED_Driver.c  ****     }
+ 114              		.loc 1 65 0 discriminator 3
+ 115 000e 4000     		lsls	r0, r0, #1
+ 116              	.LVL12:
+ 117 0010 2870     		strb	r0, [r5]
+ 118              	.LBE3:
+  59:LED_Driver.c  ****     {
+ 119              		.loc 1 59 0 discriminator 3
+ 120 0012 0134     		adds	r4, r4, #1
+ 121              	.LVL13:
+ 122 0014 E4B2     		uxtb	r4, r4
+ 123              	.LVL14:
+ 124              	.L5:
+  59:LED_Driver.c  ****     {
+ 125              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 126 0016 022C     		cmp	r4, #2
+ 127 0018 F6D9     		bls	.L6
+ 128              	.LBE2:
+  67:LED_Driver.c  **** 
+ 129              		.loc 1 67 0 is_stmt 1
+ 130 001a 38BD     		pop	{r3, r4, r5, pc}
+ 131              		.cfi_endproc
+ 132              	.LFE65:
+ 133              		.size	Process_Channels, .-Process_Channels
+ 134              		.section	.text.RGB_Driver,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	RGB_Driver
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	RGB_Driver, %function
+ 140              	RGB_Driver:
+ 141              	.LFB63:
+  30:LED_Driver.c  ****     // Process IMU data in place
+ 142              		.loc 1 30 0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 5
+
+
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              	.LVL15:
+ 147 0000 10B5     		push	{r4, lr}
+ 148              		.cfi_def_cfa_offset 8
+ 149              		.cfi_offset 4, -8
+ 150              		.cfi_offset 14, -4
+ 151 0002 0446     		mov	r4, r0
+  32:LED_Driver.c  ****     
+ 152              		.loc 1 32 0
+ 153 0004 FFF7FEFF 		bl	Process_Channels
+ 154              	.LVL16:
+  35:LED_Driver.c  **** }
+ 155              		.loc 1 35 0
+ 156 0008 2046     		mov	r0, r4
+ 157 000a FFF7FEFF 		bl	PWM_Driver
+ 158              	.LVL17:
+ 159 000e 10BD     		pop	{r4, pc}
+ 160              		.cfi_endproc
+ 161              	.LFE63:
+ 162              		.size	RGB_Driver, .-RGB_Driver
+ 163              		.text
+ 164              	.Letext0:
+ 165              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 166              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 167              		.file 4 "Generated_Source\\PSoC5/PWM_RG.h"
+ 168              		.file 5 "Generated_Source\\PSoC5/PWM_B.h"
+ 169              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 170              		.section	.debug_info,"",%progbits
+ 171              	.Ldebug_info0:
+ 172 0000 22020000 		.4byte	0x222
+ 173 0004 0400     		.2byte	0x4
+ 174 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 175 000a 04       		.byte	0x4
+ 176 000b 01       		.uleb128 0x1
+ 177 000c 4F000000 		.4byte	.LASF28
+ 178 0010 0C       		.byte	0xc
+ 179 0011 17010000 		.4byte	.LASF29
+ 180 0015 D7010000 		.4byte	.LASF30
+ 181 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 182 001d 00000000 		.4byte	0
+ 183 0021 00000000 		.4byte	.Ldebug_line0
+ 184 0025 02       		.uleb128 0x2
+ 185 0026 00000000 		.4byte	.LASF0
+ 186 002a 02       		.byte	0x2
+ 187 002b 1B       		.byte	0x1b
+ 188 002c 30000000 		.4byte	0x30
+ 189 0030 03       		.uleb128 0x3
+ 190 0031 01       		.byte	0x1
+ 191 0032 06       		.byte	0x6
+ 192 0033 97020000 		.4byte	.LASF2
+ 193 0037 02       		.uleb128 0x2
+ 194 0038 09000000 		.4byte	.LASF1
+ 195 003c 02       		.byte	0x2
+ 196 003d 1D       		.byte	0x1d
+ 197 003e 42000000 		.4byte	0x42
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 6
+
+
+ 198 0042 03       		.uleb128 0x3
+ 199 0043 01       		.byte	0x1
+ 200 0044 08       		.byte	0x8
+ 201 0045 41000000 		.4byte	.LASF3
+ 202 0049 03       		.uleb128 0x3
+ 203 004a 02       		.byte	0x2
+ 204 004b 05       		.byte	0x5
+ 205 004c CD010000 		.4byte	.LASF4
+ 206 0050 03       		.uleb128 0x3
+ 207 0051 02       		.byte	0x2
+ 208 0052 07       		.byte	0x7
+ 209 0053 F7000000 		.4byte	.LASF5
+ 210 0057 02       		.uleb128 0x2
+ 211 0058 13000000 		.4byte	.LASF6
+ 212 005c 02       		.byte	0x2
+ 213 005d 3F       		.byte	0x3f
+ 214 005e 62000000 		.4byte	0x62
+ 215 0062 03       		.uleb128 0x3
+ 216 0063 04       		.byte	0x4
+ 217 0064 05       		.byte	0x5
+ 218 0065 82020000 		.4byte	.LASF7
+ 219 0069 03       		.uleb128 0x3
+ 220 006a 04       		.byte	0x4
+ 221 006b 07       		.byte	0x7
+ 222 006c E5000000 		.4byte	.LASF8
+ 223 0070 03       		.uleb128 0x3
+ 224 0071 08       		.byte	0x8
+ 225 0072 05       		.byte	0x5
+ 226 0073 96010000 		.4byte	.LASF9
+ 227 0077 03       		.uleb128 0x3
+ 228 0078 08       		.byte	0x8
+ 229 0079 07       		.byte	0x7
+ 230 007a 66010000 		.4byte	.LASF10
+ 231 007e 04       		.uleb128 0x4
+ 232 007f 04       		.byte	0x4
+ 233 0080 05       		.byte	0x5
+ 234 0081 696E7400 		.ascii	"int\000"
+ 235 0085 03       		.uleb128 0x3
+ 236 0086 04       		.byte	0x4
+ 237 0087 07       		.byte	0x7
+ 238 0088 4E010000 		.4byte	.LASF11
+ 239 008c 02       		.uleb128 0x2
+ 240 008d 29000000 		.4byte	.LASF12
+ 241 0091 03       		.byte	0x3
+ 242 0092 14       		.byte	0x14
+ 243 0093 25000000 		.4byte	0x25
+ 244 0097 02       		.uleb128 0x2
+ 245 0098 7D010000 		.4byte	.LASF13
+ 246 009c 03       		.byte	0x3
+ 247 009d 18       		.byte	0x18
+ 248 009e 37000000 		.4byte	0x37
+ 249 00a2 02       		.uleb128 0x2
+ 250 00a3 85010000 		.4byte	.LASF14
+ 251 00a7 03       		.byte	0x3
+ 252 00a8 2C       		.byte	0x2c
+ 253 00a9 57000000 		.4byte	0x57
+ 254 00ad 03       		.uleb128 0x3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 7
+
+
+ 255 00ae 04       		.byte	0x4
+ 256 00af 04       		.byte	0x4
+ 257 00b0 30000000 		.4byte	.LASF15
+ 258 00b4 03       		.uleb128 0x3
+ 259 00b5 08       		.byte	0x8
+ 260 00b6 04       		.byte	0x4
+ 261 00b7 22000000 		.4byte	.LASF16
+ 262 00bb 03       		.uleb128 0x3
+ 263 00bc 01       		.byte	0x1
+ 264 00bd 08       		.byte	0x8
+ 265 00be A4010000 		.4byte	.LASF17
+ 266 00c2 03       		.uleb128 0x3
+ 267 00c3 08       		.byte	0x8
+ 268 00c4 04       		.byte	0x4
+ 269 00c5 8B020000 		.4byte	.LASF18
+ 270 00c9 03       		.uleb128 0x3
+ 271 00ca 04       		.byte	0x4
+ 272 00cb 07       		.byte	0x7
+ 273 00cc 8D010000 		.4byte	.LASF19
+ 274 00d0 05       		.uleb128 0x5
+ 275 00d1 5B010000 		.4byte	.LASF21
+ 276 00d5 01       		.byte	0x1
+ 277 00d6 29       		.byte	0x29
+ 278 00d7 00000000 		.4byte	.LFB64
+ 279 00db 18000000 		.4byte	.LFE64-.LFB64
+ 280 00df 01       		.uleb128 0x1
+ 281 00e0 9C       		.byte	0x9c
+ 282 00e1 10010000 		.4byte	0x110
+ 283 00e5 06       		.uleb128 0x6
+ 284 00e6 DD000000 		.4byte	.LASF20
+ 285 00ea 01       		.byte	0x1
+ 286 00eb 29       		.byte	0x29
+ 287 00ec 10010000 		.4byte	0x110
+ 288 00f0 00000000 		.4byte	.LLST0
+ 289 00f4 07       		.uleb128 0x7
+ 290 00f5 0A000000 		.4byte	.LVL2
+ 291 00f9 04020000 		.4byte	0x204
+ 292 00fd 07       		.uleb128 0x7
+ 293 00fe 10000000 		.4byte	.LVL3
+ 294 0102 0F020000 		.4byte	0x20f
+ 295 0106 07       		.uleb128 0x7
+ 296 0107 16000000 		.4byte	.LVL4
+ 297 010b 1A020000 		.4byte	0x21a
+ 298 010f 00       		.byte	0
+ 299 0110 08       		.uleb128 0x8
+ 300 0111 04       		.byte	0x4
+ 301 0112 97000000 		.4byte	0x97
+ 302 0116 09       		.uleb128 0x9
+ 303 0117 73020000 		.4byte	.LASF31
+ 304 011b 01       		.byte	0x1
+ 305 011c 49       		.byte	0x49
+ 306 011d 97000000 		.4byte	0x97
+ 307 0121 00000000 		.4byte	.LFB66
+ 308 0125 0A000000 		.4byte	.LFE66-.LFB66
+ 309 0129 01       		.uleb128 0x1
+ 310 012a 9C       		.byte	0x9c
+ 311 012b 4C010000 		.4byte	0x14c
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 8
+
+
+ 312 012f 0A       		.uleb128 0xa
+ 313 0130 76616C00 		.ascii	"val\000"
+ 314 0134 01       		.byte	0x1
+ 315 0135 49       		.byte	0x49
+ 316 0136 97000000 		.4byte	0x97
+ 317 013a 1E000000 		.4byte	.LLST1
+ 318 013e 0B       		.uleb128 0xb
+ 319 013f 1D000000 		.4byte	.LASF23
+ 320 0143 01       		.byte	0x1
+ 321 0144 4C       		.byte	0x4c
+ 322 0145 97000000 		.4byte	0x97
+ 323 0149 01       		.uleb128 0x1
+ 324 014a 53       		.byte	0x53
+ 325 014b 00       		.byte	0
+ 326 014c 05       		.uleb128 0x5
+ 327 014d A9010000 		.4byte	.LASF22
+ 328 0151 01       		.byte	0x1
+ 329 0152 38       		.byte	0x38
+ 330 0153 00000000 		.4byte	.LFB65
+ 331 0157 1C000000 		.4byte	.LFE65-.LFB65
+ 332 015b 01       		.uleb128 0x1
+ 333 015c 9C       		.byte	0x9c
+ 334 015d AA010000 		.4byte	0x1aa
+ 335 0161 06       		.uleb128 0x6
+ 336 0162 DD000000 		.4byte	.LASF20
+ 337 0166 01       		.byte	0x1
+ 338 0167 38       		.byte	0x38
+ 339 0168 10010000 		.4byte	0x110
+ 340 016c 3F000000 		.4byte	.LLST2
+ 341 0170 0C       		.uleb128 0xc
+ 342 0171 04000000 		.4byte	.LBB2
+ 343 0175 16000000 		.4byte	.LBE2-.LBB2
+ 344 0179 0D       		.uleb128 0xd
+ 345 017a 6900     		.ascii	"i\000"
+ 346 017c 01       		.byte	0x1
+ 347 017d 3B       		.byte	0x3b
+ 348 017e 97000000 		.4byte	0x97
+ 349 0182 5D000000 		.4byte	.LLST3
+ 350 0186 0C       		.uleb128 0xc
+ 351 0187 08000000 		.4byte	.LBB3
+ 352 018b 0A000000 		.4byte	.LBE3-.LBB3
+ 353 018f 0D       		.uleb128 0xd
+ 354 0190 746D7000 		.ascii	"tmp\000"
+ 355 0194 01       		.byte	0x1
+ 356 0195 3E       		.byte	0x3e
+ 357 0196 8C000000 		.4byte	0x8c
+ 358 019a 87000000 		.4byte	.LLST4
+ 359 019e 07       		.uleb128 0x7
+ 360 019f 0E000000 		.4byte	.LVL11
+ 361 01a3 16010000 		.4byte	0x116
+ 362 01a7 00       		.byte	0
+ 363 01a8 00       		.byte	0
+ 364 01a9 00       		.byte	0
+ 365 01aa 05       		.uleb128 0x5
+ 366 01ab 36000000 		.4byte	.LASF24
+ 367 01af 01       		.byte	0x1
+ 368 01b0 1D       		.byte	0x1d
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 9
+
+
+ 369 01b1 00000000 		.4byte	.LFB63
+ 370 01b5 10000000 		.4byte	.LFE63-.LFB63
+ 371 01b9 01       		.uleb128 0x1
+ 372 01ba 9C       		.byte	0x9c
+ 373 01bb F3010000 		.4byte	0x1f3
+ 374 01bf 06       		.uleb128 0x6
+ 375 01c0 DD000000 		.4byte	.LASF20
+ 376 01c4 01       		.byte	0x1
+ 377 01c5 1D       		.byte	0x1d
+ 378 01c6 10010000 		.4byte	0x110
+ 379 01ca 9A000000 		.4byte	.LLST5
+ 380 01ce 0E       		.uleb128 0xe
+ 381 01cf 08000000 		.4byte	.LVL16
+ 382 01d3 4C010000 		.4byte	0x14c
+ 383 01d7 E2010000 		.4byte	0x1e2
+ 384 01db 0F       		.uleb128 0xf
+ 385 01dc 01       		.uleb128 0x1
+ 386 01dd 50       		.byte	0x50
+ 387 01de 02       		.uleb128 0x2
+ 388 01df 74       		.byte	0x74
+ 389 01e0 00       		.sleb128 0
+ 390 01e1 00       		.byte	0
+ 391 01e2 10       		.uleb128 0x10
+ 392 01e3 0E000000 		.4byte	.LVL17
+ 393 01e7 D0000000 		.4byte	0xd0
+ 394 01eb 0F       		.uleb128 0xf
+ 395 01ec 01       		.uleb128 0x1
+ 396 01ed 50       		.byte	0x50
+ 397 01ee 02       		.uleb128 0x2
+ 398 01ef 74       		.byte	0x74
+ 399 01f0 00       		.sleb128 0
+ 400 01f1 00       		.byte	0
+ 401 01f2 00       		.byte	0
+ 402 01f3 11       		.uleb128 0x11
+ 403 01f4 0A010000 		.4byte	.LASF32
+ 404 01f8 06       		.byte	0x6
+ 405 01f9 1207     		.2byte	0x712
+ 406 01fb FF010000 		.4byte	0x1ff
+ 407 01ff 12       		.uleb128 0x12
+ 408 0200 A2000000 		.4byte	0xa2
+ 409 0204 13       		.uleb128 0x13
+ 410 0205 24010000 		.4byte	.LASF25
+ 411 0209 24010000 		.4byte	.LASF25
+ 412 020d 04       		.byte	0x4
+ 413 020e C7       		.byte	0xc7
+ 414 020f 13       		.uleb128 0x13
+ 415 0210 39010000 		.4byte	.LASF26
+ 416 0214 39010000 		.4byte	.LASF26
+ 417 0218 04       		.byte	0x4
+ 418 0219 CA       		.byte	0xca
+ 419 021a 13       		.uleb128 0x13
+ 420 021b BA010000 		.4byte	.LASF27
+ 421 021f BA010000 		.4byte	.LASF27
+ 422 0223 05       		.byte	0x5
+ 423 0224 C3       		.byte	0xc3
+ 424 0225 00       		.byte	0
+ 425              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 10
+
+
+ 426              	.Ldebug_abbrev0:
+ 427 0000 01       		.uleb128 0x1
+ 428 0001 11       		.uleb128 0x11
+ 429 0002 01       		.byte	0x1
+ 430 0003 25       		.uleb128 0x25
+ 431 0004 0E       		.uleb128 0xe
+ 432 0005 13       		.uleb128 0x13
+ 433 0006 0B       		.uleb128 0xb
+ 434 0007 03       		.uleb128 0x3
+ 435 0008 0E       		.uleb128 0xe
+ 436 0009 1B       		.uleb128 0x1b
+ 437 000a 0E       		.uleb128 0xe
+ 438 000b 55       		.uleb128 0x55
+ 439 000c 17       		.uleb128 0x17
+ 440 000d 11       		.uleb128 0x11
+ 441 000e 01       		.uleb128 0x1
+ 442 000f 10       		.uleb128 0x10
+ 443 0010 17       		.uleb128 0x17
+ 444 0011 00       		.byte	0
+ 445 0012 00       		.byte	0
+ 446 0013 02       		.uleb128 0x2
+ 447 0014 16       		.uleb128 0x16
+ 448 0015 00       		.byte	0
+ 449 0016 03       		.uleb128 0x3
+ 450 0017 0E       		.uleb128 0xe
+ 451 0018 3A       		.uleb128 0x3a
+ 452 0019 0B       		.uleb128 0xb
+ 453 001a 3B       		.uleb128 0x3b
+ 454 001b 0B       		.uleb128 0xb
+ 455 001c 49       		.uleb128 0x49
+ 456 001d 13       		.uleb128 0x13
+ 457 001e 00       		.byte	0
+ 458 001f 00       		.byte	0
+ 459 0020 03       		.uleb128 0x3
+ 460 0021 24       		.uleb128 0x24
+ 461 0022 00       		.byte	0
+ 462 0023 0B       		.uleb128 0xb
+ 463 0024 0B       		.uleb128 0xb
+ 464 0025 3E       		.uleb128 0x3e
+ 465 0026 0B       		.uleb128 0xb
+ 466 0027 03       		.uleb128 0x3
+ 467 0028 0E       		.uleb128 0xe
+ 468 0029 00       		.byte	0
+ 469 002a 00       		.byte	0
+ 470 002b 04       		.uleb128 0x4
+ 471 002c 24       		.uleb128 0x24
+ 472 002d 00       		.byte	0
+ 473 002e 0B       		.uleb128 0xb
+ 474 002f 0B       		.uleb128 0xb
+ 475 0030 3E       		.uleb128 0x3e
+ 476 0031 0B       		.uleb128 0xb
+ 477 0032 03       		.uleb128 0x3
+ 478 0033 08       		.uleb128 0x8
+ 479 0034 00       		.byte	0
+ 480 0035 00       		.byte	0
+ 481 0036 05       		.uleb128 0x5
+ 482 0037 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 11
+
+
+ 483 0038 01       		.byte	0x1
+ 484 0039 3F       		.uleb128 0x3f
+ 485 003a 19       		.uleb128 0x19
+ 486 003b 03       		.uleb128 0x3
+ 487 003c 0E       		.uleb128 0xe
+ 488 003d 3A       		.uleb128 0x3a
+ 489 003e 0B       		.uleb128 0xb
+ 490 003f 3B       		.uleb128 0x3b
+ 491 0040 0B       		.uleb128 0xb
+ 492 0041 27       		.uleb128 0x27
+ 493 0042 19       		.uleb128 0x19
+ 494 0043 11       		.uleb128 0x11
+ 495 0044 01       		.uleb128 0x1
+ 496 0045 12       		.uleb128 0x12
+ 497 0046 06       		.uleb128 0x6
+ 498 0047 40       		.uleb128 0x40
+ 499 0048 18       		.uleb128 0x18
+ 500 0049 9742     		.uleb128 0x2117
+ 501 004b 19       		.uleb128 0x19
+ 502 004c 01       		.uleb128 0x1
+ 503 004d 13       		.uleb128 0x13
+ 504 004e 00       		.byte	0
+ 505 004f 00       		.byte	0
+ 506 0050 06       		.uleb128 0x6
+ 507 0051 05       		.uleb128 0x5
+ 508 0052 00       		.byte	0
+ 509 0053 03       		.uleb128 0x3
+ 510 0054 0E       		.uleb128 0xe
+ 511 0055 3A       		.uleb128 0x3a
+ 512 0056 0B       		.uleb128 0xb
+ 513 0057 3B       		.uleb128 0x3b
+ 514 0058 0B       		.uleb128 0xb
+ 515 0059 49       		.uleb128 0x49
+ 516 005a 13       		.uleb128 0x13
+ 517 005b 02       		.uleb128 0x2
+ 518 005c 17       		.uleb128 0x17
+ 519 005d 00       		.byte	0
+ 520 005e 00       		.byte	0
+ 521 005f 07       		.uleb128 0x7
+ 522 0060 898201   		.uleb128 0x4109
+ 523 0063 00       		.byte	0
+ 524 0064 11       		.uleb128 0x11
+ 525 0065 01       		.uleb128 0x1
+ 526 0066 31       		.uleb128 0x31
+ 527 0067 13       		.uleb128 0x13
+ 528 0068 00       		.byte	0
+ 529 0069 00       		.byte	0
+ 530 006a 08       		.uleb128 0x8
+ 531 006b 0F       		.uleb128 0xf
+ 532 006c 00       		.byte	0
+ 533 006d 0B       		.uleb128 0xb
+ 534 006e 0B       		.uleb128 0xb
+ 535 006f 49       		.uleb128 0x49
+ 536 0070 13       		.uleb128 0x13
+ 537 0071 00       		.byte	0
+ 538 0072 00       		.byte	0
+ 539 0073 09       		.uleb128 0x9
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 12
+
+
+ 540 0074 2E       		.uleb128 0x2e
+ 541 0075 01       		.byte	0x1
+ 542 0076 3F       		.uleb128 0x3f
+ 543 0077 19       		.uleb128 0x19
+ 544 0078 03       		.uleb128 0x3
+ 545 0079 0E       		.uleb128 0xe
+ 546 007a 3A       		.uleb128 0x3a
+ 547 007b 0B       		.uleb128 0xb
+ 548 007c 3B       		.uleb128 0x3b
+ 549 007d 0B       		.uleb128 0xb
+ 550 007e 27       		.uleb128 0x27
+ 551 007f 19       		.uleb128 0x19
+ 552 0080 49       		.uleb128 0x49
+ 553 0081 13       		.uleb128 0x13
+ 554 0082 11       		.uleb128 0x11
+ 555 0083 01       		.uleb128 0x1
+ 556 0084 12       		.uleb128 0x12
+ 557 0085 06       		.uleb128 0x6
+ 558 0086 40       		.uleb128 0x40
+ 559 0087 18       		.uleb128 0x18
+ 560 0088 9742     		.uleb128 0x2117
+ 561 008a 19       		.uleb128 0x19
+ 562 008b 01       		.uleb128 0x1
+ 563 008c 13       		.uleb128 0x13
+ 564 008d 00       		.byte	0
+ 565 008e 00       		.byte	0
+ 566 008f 0A       		.uleb128 0xa
+ 567 0090 05       		.uleb128 0x5
+ 568 0091 00       		.byte	0
+ 569 0092 03       		.uleb128 0x3
+ 570 0093 08       		.uleb128 0x8
+ 571 0094 3A       		.uleb128 0x3a
+ 572 0095 0B       		.uleb128 0xb
+ 573 0096 3B       		.uleb128 0x3b
+ 574 0097 0B       		.uleb128 0xb
+ 575 0098 49       		.uleb128 0x49
+ 576 0099 13       		.uleb128 0x13
+ 577 009a 02       		.uleb128 0x2
+ 578 009b 17       		.uleb128 0x17
+ 579 009c 00       		.byte	0
+ 580 009d 00       		.byte	0
+ 581 009e 0B       		.uleb128 0xb
+ 582 009f 34       		.uleb128 0x34
+ 583 00a0 00       		.byte	0
+ 584 00a1 03       		.uleb128 0x3
+ 585 00a2 0E       		.uleb128 0xe
+ 586 00a3 3A       		.uleb128 0x3a
+ 587 00a4 0B       		.uleb128 0xb
+ 588 00a5 3B       		.uleb128 0x3b
+ 589 00a6 0B       		.uleb128 0xb
+ 590 00a7 49       		.uleb128 0x49
+ 591 00a8 13       		.uleb128 0x13
+ 592 00a9 02       		.uleb128 0x2
+ 593 00aa 18       		.uleb128 0x18
+ 594 00ab 00       		.byte	0
+ 595 00ac 00       		.byte	0
+ 596 00ad 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 13
+
+
+ 597 00ae 0B       		.uleb128 0xb
+ 598 00af 01       		.byte	0x1
+ 599 00b0 11       		.uleb128 0x11
+ 600 00b1 01       		.uleb128 0x1
+ 601 00b2 12       		.uleb128 0x12
+ 602 00b3 06       		.uleb128 0x6
+ 603 00b4 00       		.byte	0
+ 604 00b5 00       		.byte	0
+ 605 00b6 0D       		.uleb128 0xd
+ 606 00b7 34       		.uleb128 0x34
+ 607 00b8 00       		.byte	0
+ 608 00b9 03       		.uleb128 0x3
+ 609 00ba 08       		.uleb128 0x8
+ 610 00bb 3A       		.uleb128 0x3a
+ 611 00bc 0B       		.uleb128 0xb
+ 612 00bd 3B       		.uleb128 0x3b
+ 613 00be 0B       		.uleb128 0xb
+ 614 00bf 49       		.uleb128 0x49
+ 615 00c0 13       		.uleb128 0x13
+ 616 00c1 02       		.uleb128 0x2
+ 617 00c2 17       		.uleb128 0x17
+ 618 00c3 00       		.byte	0
+ 619 00c4 00       		.byte	0
+ 620 00c5 0E       		.uleb128 0xe
+ 621 00c6 898201   		.uleb128 0x4109
+ 622 00c9 01       		.byte	0x1
+ 623 00ca 11       		.uleb128 0x11
+ 624 00cb 01       		.uleb128 0x1
+ 625 00cc 31       		.uleb128 0x31
+ 626 00cd 13       		.uleb128 0x13
+ 627 00ce 01       		.uleb128 0x1
+ 628 00cf 13       		.uleb128 0x13
+ 629 00d0 00       		.byte	0
+ 630 00d1 00       		.byte	0
+ 631 00d2 0F       		.uleb128 0xf
+ 632 00d3 8A8201   		.uleb128 0x410a
+ 633 00d6 00       		.byte	0
+ 634 00d7 02       		.uleb128 0x2
+ 635 00d8 18       		.uleb128 0x18
+ 636 00d9 9142     		.uleb128 0x2111
+ 637 00db 18       		.uleb128 0x18
+ 638 00dc 00       		.byte	0
+ 639 00dd 00       		.byte	0
+ 640 00de 10       		.uleb128 0x10
+ 641 00df 898201   		.uleb128 0x4109
+ 642 00e2 01       		.byte	0x1
+ 643 00e3 11       		.uleb128 0x11
+ 644 00e4 01       		.uleb128 0x1
+ 645 00e5 31       		.uleb128 0x31
+ 646 00e6 13       		.uleb128 0x13
+ 647 00e7 00       		.byte	0
+ 648 00e8 00       		.byte	0
+ 649 00e9 11       		.uleb128 0x11
+ 650 00ea 34       		.uleb128 0x34
+ 651 00eb 00       		.byte	0
+ 652 00ec 03       		.uleb128 0x3
+ 653 00ed 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 14
+
+
+ 654 00ee 3A       		.uleb128 0x3a
+ 655 00ef 0B       		.uleb128 0xb
+ 656 00f0 3B       		.uleb128 0x3b
+ 657 00f1 05       		.uleb128 0x5
+ 658 00f2 49       		.uleb128 0x49
+ 659 00f3 13       		.uleb128 0x13
+ 660 00f4 3F       		.uleb128 0x3f
+ 661 00f5 19       		.uleb128 0x19
+ 662 00f6 3C       		.uleb128 0x3c
+ 663 00f7 19       		.uleb128 0x19
+ 664 00f8 00       		.byte	0
+ 665 00f9 00       		.byte	0
+ 666 00fa 12       		.uleb128 0x12
+ 667 00fb 35       		.uleb128 0x35
+ 668 00fc 00       		.byte	0
+ 669 00fd 49       		.uleb128 0x49
+ 670 00fe 13       		.uleb128 0x13
+ 671 00ff 00       		.byte	0
+ 672 0100 00       		.byte	0
+ 673 0101 13       		.uleb128 0x13
+ 674 0102 2E       		.uleb128 0x2e
+ 675 0103 00       		.byte	0
+ 676 0104 3F       		.uleb128 0x3f
+ 677 0105 19       		.uleb128 0x19
+ 678 0106 3C       		.uleb128 0x3c
+ 679 0107 19       		.uleb128 0x19
+ 680 0108 6E       		.uleb128 0x6e
+ 681 0109 0E       		.uleb128 0xe
+ 682 010a 03       		.uleb128 0x3
+ 683 010b 0E       		.uleb128 0xe
+ 684 010c 3A       		.uleb128 0x3a
+ 685 010d 0B       		.uleb128 0xb
+ 686 010e 3B       		.uleb128 0x3b
+ 687 010f 0B       		.uleb128 0xb
+ 688 0110 00       		.byte	0
+ 689 0111 00       		.byte	0
+ 690 0112 00       		.byte	0
+ 691              		.section	.debug_loc,"",%progbits
+ 692              	.Ldebug_loc0:
+ 693              	.LLST0:
+ 694 0000 00000000 		.4byte	.LVL0
+ 695 0004 06000000 		.4byte	.LVL1
+ 696 0008 0100     		.2byte	0x1
+ 697 000a 50       		.byte	0x50
+ 698 000b 06000000 		.4byte	.LVL1
+ 699 000f 18000000 		.4byte	.LFE64
+ 700 0013 0100     		.2byte	0x1
+ 701 0015 54       		.byte	0x54
+ 702 0016 00000000 		.4byte	0
+ 703 001a 00000000 		.4byte	0
+ 704              	.LLST1:
+ 705 001e 00000000 		.4byte	.LVL5
+ 706 0022 04000000 		.4byte	.LVL7
+ 707 0026 0100     		.2byte	0x1
+ 708 0028 50       		.byte	0x50
+ 709 0029 04000000 		.4byte	.LVL7
+ 710 002d 0A000000 		.4byte	.LFE66
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 15
+
+
+ 711 0031 0400     		.2byte	0x4
+ 712 0033 F3       		.byte	0xf3
+ 713 0034 01       		.uleb128 0x1
+ 714 0035 50       		.byte	0x50
+ 715 0036 9F       		.byte	0x9f
+ 716 0037 00000000 		.4byte	0
+ 717 003b 00000000 		.4byte	0
+ 718              	.LLST2:
+ 719 003f 00000000 		.4byte	.LVL8
+ 720 0043 08000000 		.4byte	.LVL10
+ 721 0047 0100     		.2byte	0x1
+ 722 0049 50       		.byte	0x50
+ 723 004a 08000000 		.4byte	.LVL10
+ 724 004e 1C000000 		.4byte	.LFE65
+ 725 0052 0100     		.2byte	0x1
+ 726 0054 55       		.byte	0x55
+ 727 0055 00000000 		.4byte	0
+ 728 0059 00000000 		.4byte	0
+ 729              	.LLST3:
+ 730 005d 04000000 		.4byte	.LVL9
+ 731 0061 08000000 		.4byte	.LVL10
+ 732 0065 0200     		.2byte	0x2
+ 733 0067 30       		.byte	0x30
+ 734 0068 9F       		.byte	0x9f
+ 735 0069 08000000 		.4byte	.LVL10
+ 736 006d 14000000 		.4byte	.LVL13
+ 737 0071 0100     		.2byte	0x1
+ 738 0073 54       		.byte	0x54
+ 739 0074 16000000 		.4byte	.LVL14
+ 740 0078 1C000000 		.4byte	.LFE65
+ 741 007c 0100     		.2byte	0x1
+ 742 007e 54       		.byte	0x54
+ 743 007f 00000000 		.4byte	0
+ 744 0083 00000000 		.4byte	0
+ 745              	.LLST4:
+ 746 0087 0E000000 		.4byte	.LVL11
+ 747 008b 10000000 		.4byte	.LVL12
+ 748 008f 0100     		.2byte	0x1
+ 749 0091 50       		.byte	0x50
+ 750 0092 00000000 		.4byte	0
+ 751 0096 00000000 		.4byte	0
+ 752              	.LLST5:
+ 753 009a 00000000 		.4byte	.LVL15
+ 754 009e 07000000 		.4byte	.LVL16-1
+ 755 00a2 0100     		.2byte	0x1
+ 756 00a4 50       		.byte	0x50
+ 757 00a5 07000000 		.4byte	.LVL16-1
+ 758 00a9 10000000 		.4byte	.LFE63
+ 759 00ad 0100     		.2byte	0x1
+ 760 00af 54       		.byte	0x54
+ 761 00b0 00000000 		.4byte	0
+ 762 00b4 00000000 		.4byte	0
+ 763              		.section	.debug_aranges,"",%progbits
+ 764 0000 34000000 		.4byte	0x34
+ 765 0004 0200     		.2byte	0x2
+ 766 0006 00000000 		.4byte	.Ldebug_info0
+ 767 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 16
+
+
+ 768 000b 00       		.byte	0
+ 769 000c 0000     		.2byte	0
+ 770 000e 0000     		.2byte	0
+ 771 0010 00000000 		.4byte	.LFB64
+ 772 0014 18000000 		.4byte	.LFE64-.LFB64
+ 773 0018 00000000 		.4byte	.LFB66
+ 774 001c 0A000000 		.4byte	.LFE66-.LFB66
+ 775 0020 00000000 		.4byte	.LFB65
+ 776 0024 1C000000 		.4byte	.LFE65-.LFB65
+ 777 0028 00000000 		.4byte	.LFB63
+ 778 002c 10000000 		.4byte	.LFE63-.LFB63
+ 779 0030 00000000 		.4byte	0
+ 780 0034 00000000 		.4byte	0
+ 781              		.section	.debug_ranges,"",%progbits
+ 782              	.Ldebug_ranges0:
+ 783 0000 00000000 		.4byte	.LFB64
+ 784 0004 18000000 		.4byte	.LFE64
+ 785 0008 00000000 		.4byte	.LFB66
+ 786 000c 0A000000 		.4byte	.LFE66
+ 787 0010 00000000 		.4byte	.LFB65
+ 788 0014 1C000000 		.4byte	.LFE65
+ 789 0018 00000000 		.4byte	.LFB63
+ 790 001c 10000000 		.4byte	.LFE63
+ 791 0020 00000000 		.4byte	0
+ 792 0024 00000000 		.4byte	0
+ 793              		.section	.debug_line,"",%progbits
+ 794              	.Ldebug_line0:
+ 795 0000 C1010000 		.section	.debug_str,"MS",%progbits,1
+ 795      02005C01 
+ 795      00000201 
+ 795      FB0E0D00 
+ 795      01010101 
+ 796              	.LASF0:
+ 797 0000 5F5F696E 		.ascii	"__int8_t\000"
+ 797      74385F74 
+ 797      00
+ 798              	.LASF1:
+ 799 0009 5F5F7569 		.ascii	"__uint8_t\000"
+ 799      6E74385F 
+ 799      7400
+ 800              	.LASF6:
+ 801 0013 5F5F696E 		.ascii	"__int32_t\000"
+ 801      7433325F 
+ 801      7400
+ 802              	.LASF23:
+ 803 001d 6D61736B 		.ascii	"mask\000"
+ 803      00
+ 804              	.LASF16:
+ 805 0022 646F7562 		.ascii	"double\000"
+ 805      6C6500
+ 806              	.LASF12:
+ 807 0029 696E7438 		.ascii	"int8_t\000"
+ 807      5F7400
+ 808              	.LASF15:
+ 809 0030 666C6F61 		.ascii	"float\000"
+ 809      7400
+ 810              	.LASF24:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 17
+
+
+ 811 0036 5247425F 		.ascii	"RGB_Driver\000"
+ 811      44726976 
+ 811      657200
+ 812              	.LASF3:
+ 813 0041 756E7369 		.ascii	"unsigned char\000"
+ 813      676E6564 
+ 813      20636861 
+ 813      7200
+ 814              	.LASF28:
+ 815 004f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 815      43313120 
+ 815      352E342E 
+ 815      31203230 
+ 815      31363036 
+ 816 0082 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 816      20726576 
+ 816      6973696F 
+ 816      6E203233 
+ 816      37373135 
+ 817 00b5 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 817      66756E63 
+ 817      74696F6E 
+ 817      2D736563 
+ 817      74696F6E 
+ 818              	.LASF20:
+ 819 00dd 64617461 		.ascii	"dataPtr\000"
+ 819      50747200 
+ 820              	.LASF8:
+ 821 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 821      20756E73 
+ 821      69676E65 
+ 821      6420696E 
+ 821      7400
+ 822              	.LASF5:
+ 823 00f7 73686F72 		.ascii	"short unsigned int\000"
+ 823      7420756E 
+ 823      7369676E 
+ 823      65642069 
+ 823      6E7400
+ 824              	.LASF32:
+ 825 010a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 825      52784275 
+ 825      66666572 
+ 825      00
+ 826              	.LASF29:
+ 827 0117 4C45445F 		.ascii	"LED_Driver.c\000"
+ 827      44726976 
+ 827      65722E63 
+ 827      00
+ 828              	.LASF25:
+ 829 0124 50574D5F 		.ascii	"PWM_RG_WriteCompare1\000"
+ 829      52475F57 
+ 829      72697465 
+ 829      436F6D70 
+ 829      61726531 
+ 830              	.LASF26:
+ 831 0139 50574D5F 		.ascii	"PWM_RG_WriteCompare2\000"
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 18
+
+
+ 831      52475F57 
+ 831      72697465 
+ 831      436F6D70 
+ 831      61726532 
+ 832              	.LASF11:
+ 833 014e 756E7369 		.ascii	"unsigned int\000"
+ 833      676E6564 
+ 833      20696E74 
+ 833      00
+ 834              	.LASF21:
+ 835 015b 50574D5F 		.ascii	"PWM_Driver\000"
+ 835      44726976 
+ 835      657200
+ 836              	.LASF10:
+ 837 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 837      206C6F6E 
+ 837      6720756E 
+ 837      7369676E 
+ 837      65642069 
+ 838              	.LASF13:
+ 839 017d 75696E74 		.ascii	"uint8_t\000"
+ 839      385F7400 
+ 840              	.LASF14:
+ 841 0185 696E7433 		.ascii	"int32_t\000"
+ 841      325F7400 
+ 842              	.LASF19:
+ 843 018d 73697A65 		.ascii	"sizetype\000"
+ 843      74797065 
+ 843      00
+ 844              	.LASF9:
+ 845 0196 6C6F6E67 		.ascii	"long long int\000"
+ 845      206C6F6E 
+ 845      6720696E 
+ 845      7400
+ 846              	.LASF17:
+ 847 01a4 63686172 		.ascii	"char\000"
+ 847      00
+ 848              	.LASF22:
+ 849 01a9 50726F63 		.ascii	"Process_Channels\000"
+ 849      6573735F 
+ 849      4368616E 
+ 849      6E656C73 
+ 849      00
+ 850              	.LASF27:
+ 851 01ba 50574D5F 		.ascii	"PWM_B_WriteCompare\000"
+ 851      425F5772 
+ 851      69746543 
+ 851      6F6D7061 
+ 851      726500
+ 852              	.LASF4:
+ 853 01cd 73686F72 		.ascii	"short int\000"
+ 853      7420696E 
+ 853      7400
+ 854              	.LASF30:
+ 855 01d7 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 855      73657273 
+ 855      5C4C6F72 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccCDXTpg.s 			page 19
+
+
+ 855      795C4465 
+ 855      736B746F 
+ 856 0205 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 856      65735C50 
+ 856      536F432D 
+ 856      46696E61 
+ 856      6C2D5072 
+ 857 0236 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 857      415F4755 
+ 857      414C4E49 
+ 857      4552415C 
+ 857      41593139 
+ 858 0268 49455241 		.ascii	"IERA.cydsn\000"
+ 858      2E637964 
+ 858      736E00
+ 859              	.LASF31:
+ 860 0273 4162736F 		.ascii	"Absolute_Value\000"
+ 860      6C757465 
+ 860      5F56616C 
+ 860      756500
+ 861              	.LASF7:
+ 862 0282 6C6F6E67 		.ascii	"long int\000"
+ 862      20696E74 
+ 862      00
+ 863              	.LASF18:
+ 864 028b 6C6F6E67 		.ascii	"long double\000"
+ 864      20646F75 
+ 864      626C6500 
+ 865              	.LASF2:
+ 866 0297 7369676E 		.ascii	"signed char\000"
+ 866      65642063 
+ 866      68617200 
+ 867              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

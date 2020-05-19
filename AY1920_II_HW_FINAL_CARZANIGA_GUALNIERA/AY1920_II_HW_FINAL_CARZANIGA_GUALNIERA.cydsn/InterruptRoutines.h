@@ -14,18 +14,33 @@
     
     /* Include project dependencies. */
     #include "project.h"
-    #include "stdbool.h"
+    #include "Notifications.h"
+    
+    /* Constants definition. */
+    #define DOUBLE_CLICK_RESET_TIME 10
+    
+    /* State machine type. */
+    typedef enum {
+        STOP_MODE,
+        START_MODE,
+        CONFIG_MODE
+    } button_t;
     
     /* ISR functions prototypes. */
     CY_ISR_PROTO(CUSTOM_ISR_CONFIG);
     CY_ISR_PROTO(CUSTOM_ISR_START);
-    
-    /* State machine variables. */
-    volatile bool start_flag;
-    volatile bool config_flag;
-    
-    /* Button press counter. */
+    CY_ISR_PROTO(CUSTOM_ISR_NOTIFY);
+
+    /* Button press variables. */
     volatile uint8_t press_counter;
+    volatile uint8_t press_timer;
+    
+    /* Finite state machine variables. */
+    volatile button_t button_state;
+    volatile button_t old_button_state;
+    
+    /* Current on-board LED state. */
+    volatile led_t notify_led;
     
 #endif
 

@@ -168,14 +168,14 @@ void TIMER_BUTTON_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define TIMER_BUTTON_INIT_PERIOD             149u
-#define TIMER_BUTTON_INIT_CAPTURE_MODE       ((uint8)((uint8)1u << TIMER_BUTTON_CTRL_CAP_MODE_SHIFT))
+#define TIMER_BUTTON_INIT_PERIOD             199u
+#define TIMER_BUTTON_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << TIMER_BUTTON_CTRL_CAP_MODE_SHIFT))
 #define TIMER_BUTTON_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << TIMER_BUTTON_CTRL_TRIG_MODE_SHIFT))
 #if (TIMER_BUTTON_UsingFixedFunction)
-    #define TIMER_BUTTON_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << TIMER_BUTTON_STATUS_TC_INT_MASK_SHIFT)) | \
+    #define TIMER_BUTTON_INIT_INTERRUPT_MODE (((uint8)((uint8)0u << TIMER_BUTTON_STATUS_TC_INT_MASK_SHIFT)) | \
                                                   ((uint8)((uint8)0 << TIMER_BUTTON_STATUS_CAPTURE_INT_MASK_SHIFT)))
 #else
-    #define TIMER_BUTTON_INIT_INTERRUPT_MODE (((uint8)((uint8)1u << TIMER_BUTTON_STATUS_TC_INT_MASK_SHIFT)) | \
+    #define TIMER_BUTTON_INIT_INTERRUPT_MODE (((uint8)((uint8)0u << TIMER_BUTTON_STATUS_TC_INT_MASK_SHIFT)) | \
                                                  ((uint8)((uint8)0 << TIMER_BUTTON_STATUS_CAPTURE_INT_MASK_SHIFT)) | \
                                                  ((uint8)((uint8)0 << TIMER_BUTTON_STATUS_FIFOFULL_INT_MASK_SHIFT)))
 #endif /* (TIMER_BUTTON_UsingFixedFunction) */

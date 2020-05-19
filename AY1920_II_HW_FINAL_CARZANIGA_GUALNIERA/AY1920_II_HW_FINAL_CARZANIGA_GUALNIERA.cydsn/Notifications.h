@@ -28,15 +28,17 @@
     } led_t;
     
     /* Function prototypes. */
-    void Notify_Status(led_t *state);
+    void Notify_Init(volatile led_t *state);
+    void Notify_Status(volatile led_t *state);
     
-    /* Blinking pattern constants. */
-    const blink_t START_NOTIFY  = {100, 100};
-    const blink_t STOP_NOTIFY   = {0,   100};
-    const blink_t CONFIG_NOTIFY = {20,  100};
+    /* Definition of blinking pattern constants. */
+    #define STOP_NOTIFY     (blink_t){0,  10}
+    #define START_NOTIFY    (blink_t){10, 10}
+    #define CONFIG_NOTIFY   (blink_t){2,  10}
     
-    /* On-board led state. */
-    volatile led_t notify_led; 
+    /* 
+     * New LED patterns can be added here... 
+     */
        
 #endif
 

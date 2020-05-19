@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: TIMER_BUTTON.c
+* File Name: BUTTON_TIMER.c
 * Version 2.80
 *
 * Description:
@@ -21,13 +21,13 @@
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#include "TIMER_BUTTON.h"
+#include "BUTTON_TIMER.h"
 
-uint8 TIMER_BUTTON_initVar = 0u;
+uint8 BUTTON_TIMER_initVar = 0u;
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Init
+* Function Name: BUTTON_TIMER_Init
 ********************************************************************************
 *
 * Summary:
@@ -40,131 +40,131 @@ uint8 TIMER_BUTTON_initVar = 0u;
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_Init(void) 
+void BUTTON_TIMER_Init(void) 
 {
-    #if(!TIMER_BUTTON_UsingFixedFunction)
+    #if(!BUTTON_TIMER_UsingFixedFunction)
             /* Interrupt State Backup for Critical Region*/
-            uint8 TIMER_BUTTON_interruptState;
+            uint8 BUTTON_TIMER_interruptState;
     #endif /* Interrupt state back up for Fixed Function only */
 
-    #if (TIMER_BUTTON_UsingFixedFunction)
+    #if (BUTTON_TIMER_UsingFixedFunction)
         /* Clear all bits but the enable bit (if it's already set) for Timer operation */
-        TIMER_BUTTON_CONTROL &= TIMER_BUTTON_CTRL_ENABLE;
+        BUTTON_TIMER_CONTROL &= BUTTON_TIMER_CTRL_ENABLE;
 
         /* Clear the mode bits for continuous run mode */
         #if (CY_PSOC5A)
-            TIMER_BUTTON_CONTROL2 &= ((uint8)(~TIMER_BUTTON_CTRL_MODE_MASK));
+            BUTTON_TIMER_CONTROL2 &= ((uint8)(~BUTTON_TIMER_CTRL_MODE_MASK));
         #endif /* Clear bits in CONTROL2 only in PSOC5A */
 
         #if (CY_PSOC3 || CY_PSOC5LP)
-            TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_MODE_MASK));
+            BUTTON_TIMER_CONTROL3 &= ((uint8)(~BUTTON_TIMER_CTRL_MODE_MASK));
         #endif /* CONTROL3 register exists only in PSoC3 OR PSoC5LP */
 
         /* Check if One Shot mode is enabled i.e. RunMode !=0*/
-        #if (TIMER_BUTTON_RunModeUsed != 0x0u)
+        #if (BUTTON_TIMER_RunModeUsed != 0x0u)
             /* Set 3rd bit of Control register to enable one shot mode */
-            TIMER_BUTTON_CONTROL |= 0x04u;
+            BUTTON_TIMER_CONTROL |= 0x04u;
         #endif /* One Shot enabled only when RunModeUsed is not Continuous*/
 
-        #if (TIMER_BUTTON_RunModeUsed == 2)
+        #if (BUTTON_TIMER_RunModeUsed == 2)
             #if (CY_PSOC5A)
                 /* Set last 2 bits of control2 register if one shot(halt on
                 interrupt) is enabled*/
-                TIMER_BUTTON_CONTROL2 |= 0x03u;
+                BUTTON_TIMER_CONTROL2 |= 0x03u;
             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL2 for PSoC5A */
 
             #if (CY_PSOC3 || CY_PSOC5LP)
                 /* Set last 2 bits of control3 register if one shot(halt on
                 interrupt) is enabled*/
-                TIMER_BUTTON_CONTROL3 |= 0x03u;
+                BUTTON_TIMER_CONTROL3 |= 0x03u;
             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL3 for PSoC3 or PSoC5LP */
 
         #endif /* Remove section if One Shot Halt on Interrupt is not enabled */
 
-        #if (TIMER_BUTTON_UsingHWEnable != 0)
+        #if (BUTTON_TIMER_UsingHWEnable != 0)
             #if (CY_PSOC5A)
                 /* Set the default Run Mode of the Timer to Continuous */
-                TIMER_BUTTON_CONTROL2 |= TIMER_BUTTON_CTRL_MODE_PULSEWIDTH;
+                BUTTON_TIMER_CONTROL2 |= BUTTON_TIMER_CTRL_MODE_PULSEWIDTH;
             #endif /* Set Continuous Run Mode in CONTROL2 for PSoC5A */
 
             #if (CY_PSOC3 || CY_PSOC5LP)
                 /* Clear and Set ROD and COD bits of CFG2 register */
-                TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_RCOD_MASK));
-                TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_RCOD;
+                BUTTON_TIMER_CONTROL3 &= ((uint8)(~BUTTON_TIMER_CTRL_RCOD_MASK));
+                BUTTON_TIMER_CONTROL3 |= BUTTON_TIMER_CTRL_RCOD;
 
                 /* Clear and Enable the HW enable bit in CFG2 register */
-                TIMER_BUTTON_CONTROL3 &= ((uint8)(~TIMER_BUTTON_CTRL_ENBL_MASK));
-                TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_ENBL;
+                BUTTON_TIMER_CONTROL3 &= ((uint8)(~BUTTON_TIMER_CTRL_ENBL_MASK));
+                BUTTON_TIMER_CONTROL3 |= BUTTON_TIMER_CTRL_ENBL;
 
                 /* Set the default Run Mode of the Timer to Continuous */
-                TIMER_BUTTON_CONTROL3 |= TIMER_BUTTON_CTRL_MODE_CONTINUOUS;
+                BUTTON_TIMER_CONTROL3 |= BUTTON_TIMER_CTRL_MODE_CONTINUOUS;
             #endif /* Set Continuous Run Mode in CONTROL3 for PSoC3ES3 or PSoC5A */
 
         #endif /* Configure Run Mode with hardware enable */
 
         /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
-        TIMER_BUTTON_RT1 &= ((uint8)(~TIMER_BUTTON_RT1_MASK));
-        TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNC;
+        BUTTON_TIMER_RT1 &= ((uint8)(~BUTTON_TIMER_RT1_MASK));
+        BUTTON_TIMER_RT1 |= BUTTON_TIMER_SYNC;
 
         /*Enable DSI Sync all all inputs of the Timer*/
-        TIMER_BUTTON_RT1 &= ((uint8)(~TIMER_BUTTON_SYNCDSI_MASK));
-        TIMER_BUTTON_RT1 |= TIMER_BUTTON_SYNCDSI_EN;
+        BUTTON_TIMER_RT1 &= ((uint8)(~BUTTON_TIMER_SYNCDSI_MASK));
+        BUTTON_TIMER_RT1 |= BUTTON_TIMER_SYNCDSI_EN;
 
         /* Set the IRQ to use the status register interrupts */
-        TIMER_BUTTON_CONTROL2 |= TIMER_BUTTON_CTRL2_IRQ_SEL;
+        BUTTON_TIMER_CONTROL2 |= BUTTON_TIMER_CTRL2_IRQ_SEL;
     #endif /* Configuring registers of fixed function implementation */
 
     /* Set Initial values from Configuration */
-    TIMER_BUTTON_WritePeriod(TIMER_BUTTON_INIT_PERIOD);
-    TIMER_BUTTON_WriteCounter(TIMER_BUTTON_INIT_PERIOD);
+    BUTTON_TIMER_WritePeriod(BUTTON_TIMER_INIT_PERIOD);
+    BUTTON_TIMER_WriteCounter(BUTTON_TIMER_INIT_PERIOD);
 
-    #if (TIMER_BUTTON_UsingHWCaptureCounter)/* Capture counter is enabled */
-        TIMER_BUTTON_CAPTURE_COUNT_CTRL |= TIMER_BUTTON_CNTR_ENABLE;
-        TIMER_BUTTON_SetCaptureCount(TIMER_BUTTON_INIT_CAPTURE_COUNT);
+    #if (BUTTON_TIMER_UsingHWCaptureCounter)/* Capture counter is enabled */
+        BUTTON_TIMER_CAPTURE_COUNT_CTRL |= BUTTON_TIMER_CNTR_ENABLE;
+        BUTTON_TIMER_SetCaptureCount(BUTTON_TIMER_INIT_CAPTURE_COUNT);
     #endif /* Configure capture counter value */
 
-    #if (!TIMER_BUTTON_UsingFixedFunction)
-        #if (TIMER_BUTTON_SoftwareCaptureMode)
-            TIMER_BUTTON_SetCaptureMode(TIMER_BUTTON_INIT_CAPTURE_MODE);
+    #if (!BUTTON_TIMER_UsingFixedFunction)
+        #if (BUTTON_TIMER_SoftwareCaptureMode)
+            BUTTON_TIMER_SetCaptureMode(BUTTON_TIMER_INIT_CAPTURE_MODE);
         #endif /* Set Capture Mode for UDB implementation if capture mode is software controlled */
 
-        #if (TIMER_BUTTON_SoftwareTriggerMode)
-            #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
-                if (0u == (TIMER_BUTTON_CONTROL & TIMER_BUTTON__B_TIMER__TM_SOFTWARE))
+        #if (BUTTON_TIMER_SoftwareTriggerMode)
+            #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)
+                if (0u == (BUTTON_TIMER_CONTROL & BUTTON_TIMER__B_TIMER__TM_SOFTWARE))
                 {
-                    TIMER_BUTTON_SetTriggerMode(TIMER_BUTTON_INIT_TRIGGER_MODE);
+                    BUTTON_TIMER_SetTriggerMode(BUTTON_TIMER_INIT_TRIGGER_MODE);
                 }
-            #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+            #endif /* (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) */
         #endif /* Set trigger mode for UDB Implementation if trigger mode is software controlled */
 
         /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critical*/
         /* Enter Critical Region*/
-        TIMER_BUTTON_interruptState = CyEnterCriticalSection();
+        BUTTON_TIMER_interruptState = CyEnterCriticalSection();
 
         /* Use the interrupt output of the status register for IRQ output */
-        TIMER_BUTTON_STATUS_AUX_CTRL |= TIMER_BUTTON_STATUS_ACTL_INT_EN_MASK;
+        BUTTON_TIMER_STATUS_AUX_CTRL |= BUTTON_TIMER_STATUS_ACTL_INT_EN_MASK;
 
         /* Exit Critical Region*/
-        CyExitCriticalSection(TIMER_BUTTON_interruptState);
+        CyExitCriticalSection(BUTTON_TIMER_interruptState);
 
-        #if (TIMER_BUTTON_EnableTriggerMode)
-            TIMER_BUTTON_EnableTrigger();
+        #if (BUTTON_TIMER_EnableTriggerMode)
+            BUTTON_TIMER_EnableTrigger();
         #endif /* Set Trigger enable bit for UDB implementation in the control register*/
 		
 		
-        #if (TIMER_BUTTON_InterruptOnCaptureCount && !TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
-            TIMER_BUTTON_SetInterruptCount(TIMER_BUTTON_INIT_INT_CAPTURE_COUNT);
+        #if (BUTTON_TIMER_InterruptOnCaptureCount && !BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)
+            BUTTON_TIMER_SetInterruptCount(BUTTON_TIMER_INIT_INT_CAPTURE_COUNT);
         #endif /* Set interrupt count in UDB implementation if interrupt count feature is checked.*/
 
-        TIMER_BUTTON_ClearFIFO();
+        BUTTON_TIMER_ClearFIFO();
     #endif /* Configure additional features of UDB implementation */
 
-    TIMER_BUTTON_SetInterruptMode(TIMER_BUTTON_INIT_INTERRUPT_MODE);
+    BUTTON_TIMER_SetInterruptMode(BUTTON_TIMER_INIT_INTERRUPT_MODE);
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Enable
+* Function Name: BUTTON_TIMER_Enable
 ********************************************************************************
 *
 * Summary:
@@ -177,23 +177,23 @@ void TIMER_BUTTON_Init(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_Enable(void) 
+void BUTTON_TIMER_Enable(void) 
 {
     /* Globally Enable the Fixed Function Block chosen */
-    #if (TIMER_BUTTON_UsingFixedFunction)
-        TIMER_BUTTON_GLOBAL_ENABLE |= TIMER_BUTTON_BLOCK_EN_MASK;
-        TIMER_BUTTON_GLOBAL_STBY_ENABLE |= TIMER_BUTTON_BLOCK_STBY_EN_MASK;
+    #if (BUTTON_TIMER_UsingFixedFunction)
+        BUTTON_TIMER_GLOBAL_ENABLE |= BUTTON_TIMER_BLOCK_EN_MASK;
+        BUTTON_TIMER_GLOBAL_STBY_ENABLE |= BUTTON_TIMER_BLOCK_STBY_EN_MASK;
     #endif /* Set Enable bit for enabling Fixed function timer*/
 
     /* Remove assignment if control register is removed */
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED || TIMER_BUTTON_UsingFixedFunction)
-        TIMER_BUTTON_CONTROL |= TIMER_BUTTON_CTRL_ENABLE;
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED || BUTTON_TIMER_UsingFixedFunction)
+        BUTTON_TIMER_CONTROL |= BUTTON_TIMER_CTRL_ENABLE;
     #endif /* Remove assignment if control register is removed */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Start
+* Function Name: BUTTON_TIMER_Start
 ********************************************************************************
 *
 * Summary:
@@ -208,26 +208,26 @@ void TIMER_BUTTON_Enable(void)
 *  void
 *
 * Global variables:
-*  TIMER_BUTTON_initVar: Is modified when this function is called for the
+*  BUTTON_TIMER_initVar: Is modified when this function is called for the
 *   first time. Is used to ensure that initialization happens only once.
 *
 *******************************************************************************/
-void TIMER_BUTTON_Start(void) 
+void BUTTON_TIMER_Start(void) 
 {
-    if(TIMER_BUTTON_initVar == 0u)
+    if(BUTTON_TIMER_initVar == 0u)
     {
-        TIMER_BUTTON_Init();
+        BUTTON_TIMER_Init();
 
-        TIMER_BUTTON_initVar = 1u;   /* Clear this bit for Initialization */
+        BUTTON_TIMER_initVar = 1u;   /* Clear this bit for Initialization */
     }
 
     /* Enable the Timer */
-    TIMER_BUTTON_Enable();
+    BUTTON_TIMER_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Stop
+* Function Name: BUTTON_TIMER_Stop
 ********************************************************************************
 *
 * Summary:
@@ -244,23 +244,23 @@ void TIMER_BUTTON_Start(void)
 *               has no effect on the operation of the timer.
 *
 *******************************************************************************/
-void TIMER_BUTTON_Stop(void) 
+void BUTTON_TIMER_Stop(void) 
 {
     /* Disable Timer */
-    #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED || TIMER_BUTTON_UsingFixedFunction)
-        TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_ENABLE));
+    #if(!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED || BUTTON_TIMER_UsingFixedFunction)
+        BUTTON_TIMER_CONTROL &= ((uint8)(~BUTTON_TIMER_CTRL_ENABLE));
     #endif /* Remove assignment if control register is removed */
 
     /* Globally disable the Fixed Function Block chosen */
-    #if (TIMER_BUTTON_UsingFixedFunction)
-        TIMER_BUTTON_GLOBAL_ENABLE &= ((uint8)(~TIMER_BUTTON_BLOCK_EN_MASK));
-        TIMER_BUTTON_GLOBAL_STBY_ENABLE &= ((uint8)(~TIMER_BUTTON_BLOCK_STBY_EN_MASK));
+    #if (BUTTON_TIMER_UsingFixedFunction)
+        BUTTON_TIMER_GLOBAL_ENABLE &= ((uint8)(~BUTTON_TIMER_BLOCK_EN_MASK));
+        BUTTON_TIMER_GLOBAL_STBY_ENABLE &= ((uint8)(~BUTTON_TIMER_BLOCK_STBY_EN_MASK));
     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SetInterruptMode
+* Function Name: BUTTON_TIMER_SetInterruptMode
 ********************************************************************************
 *
 * Summary:
@@ -276,14 +276,14 @@ void TIMER_BUTTON_Stop(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_SetInterruptMode(uint8 interruptMode) 
+void BUTTON_TIMER_SetInterruptMode(uint8 interruptMode) 
 {
-    TIMER_BUTTON_STATUS_MASK = interruptMode;
+    BUTTON_TIMER_STATUS_MASK = interruptMode;
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SoftwareCapture
+* Function Name: BUTTON_TIMER_SoftwareCapture
 ********************************************************************************
 *
 * Summary:
@@ -299,20 +299,20 @@ void TIMER_BUTTON_SetInterruptMode(uint8 interruptMode)
 *  An existing hardware capture could be overwritten.
 *
 *******************************************************************************/
-void TIMER_BUTTON_SoftwareCapture(void) 
+void BUTTON_TIMER_SoftwareCapture(void) 
 {
     /* Generate a software capture by reading the counter register */
-    #if(TIMER_BUTTON_UsingFixedFunction)
-        (void)CY_GET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR);
+    #if(BUTTON_TIMER_UsingFixedFunction)
+        (void)CY_GET_REG16(BUTTON_TIMER_COUNTER_LSB_PTR);
     #else
-        (void)CY_GET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR_8BIT);
-    #endif/* (TIMER_BUTTON_UsingFixedFunction) */
+        (void)CY_GET_REG8(BUTTON_TIMER_COUNTER_LSB_PTR_8BIT);
+    #endif/* (BUTTON_TIMER_UsingFixedFunction) */
     /* Capture Data is now in the FIFO */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadStatusRegister
+* Function Name: BUTTON_TIMER_ReadStatusRegister
 ********************************************************************************
 *
 * Summary:
@@ -330,17 +330,17 @@ void TIMER_BUTTON_SoftwareCapture(void)
 *  Status register bits may be clear on read.
 *
 *******************************************************************************/
-uint8   TIMER_BUTTON_ReadStatusRegister(void) 
+uint8   BUTTON_TIMER_ReadStatusRegister(void) 
 {
-    return (TIMER_BUTTON_STATUS);
+    return (BUTTON_TIMER_STATUS);
 }
 
 
-#if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
+#if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadControlRegister
+* Function Name: BUTTON_TIMER_ReadControlRegister
 ********************************************************************************
 *
 * Summary:
@@ -353,18 +353,18 @@ uint8   TIMER_BUTTON_ReadStatusRegister(void)
 *  The contents of the control register
 *
 *******************************************************************************/
-uint8 TIMER_BUTTON_ReadControlRegister(void) 
+uint8 BUTTON_TIMER_ReadControlRegister(void) 
 {
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) 
-        return ((uint8)TIMER_BUTTON_CONTROL);
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) 
+        return ((uint8)BUTTON_TIMER_CONTROL);
     #else
         return (0);
-    #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+    #endif /* (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_WriteControlRegister
+* Function Name: BUTTON_TIMER_WriteControlRegister
 ********************************************************************************
 *
 * Summary:
@@ -376,20 +376,20 @@ uint8 TIMER_BUTTON_ReadControlRegister(void)
 * Return:
 *
 *******************************************************************************/
-void TIMER_BUTTON_WriteControlRegister(uint8 control) 
+void BUTTON_TIMER_WriteControlRegister(uint8 control) 
 {
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) 
-        TIMER_BUTTON_CONTROL = control;
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) 
+        BUTTON_TIMER_CONTROL = control;
     #else
         control = 0u;
-    #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+    #endif /* (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 
 #endif /* Remove API if control register is unused */
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadPeriod
+* Function Name: BUTTON_TIMER_ReadPeriod
 ********************************************************************************
 *
 * Summary:
@@ -402,18 +402,18 @@ void TIMER_BUTTON_WriteControlRegister(uint8 control)
 *  The present value of the counter.
 *
 *******************************************************************************/
-uint8 TIMER_BUTTON_ReadPeriod(void) 
+uint8 BUTTON_TIMER_ReadPeriod(void) 
 {
-   #if(TIMER_BUTTON_UsingFixedFunction)
-       return ((uint8)CY_GET_REG16(TIMER_BUTTON_PERIOD_LSB_PTR));
+   #if(BUTTON_TIMER_UsingFixedFunction)
+       return ((uint8)CY_GET_REG16(BUTTON_TIMER_PERIOD_LSB_PTR));
    #else
-       return (CY_GET_REG8(TIMER_BUTTON_PERIOD_LSB_PTR));
-   #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+       return (CY_GET_REG8(BUTTON_TIMER_PERIOD_LSB_PTR));
+   #endif /* (BUTTON_TIMER_UsingFixedFunction) */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_WritePeriod
+* Function Name: BUTTON_TIMER_WritePeriod
 ********************************************************************************
 *
 * Summary:
@@ -428,19 +428,19 @@ uint8 TIMER_BUTTON_ReadPeriod(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_WritePeriod(uint8 period) 
+void BUTTON_TIMER_WritePeriod(uint8 period) 
 {
-    #if(TIMER_BUTTON_UsingFixedFunction)
+    #if(BUTTON_TIMER_UsingFixedFunction)
         uint16 period_temp = (uint16)period;
-        CY_SET_REG16(TIMER_BUTTON_PERIOD_LSB_PTR, period_temp);
+        CY_SET_REG16(BUTTON_TIMER_PERIOD_LSB_PTR, period_temp);
     #else
-        CY_SET_REG8(TIMER_BUTTON_PERIOD_LSB_PTR, period);
+        CY_SET_REG8(BUTTON_TIMER_PERIOD_LSB_PTR, period);
     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed function implementation */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadCapture
+* Function Name: BUTTON_TIMER_ReadCapture
 ********************************************************************************
 *
 * Summary:
@@ -453,18 +453,18 @@ void TIMER_BUTTON_WritePeriod(uint8 period)
 *  Present Capture value.
 *
 *******************************************************************************/
-uint8 TIMER_BUTTON_ReadCapture(void) 
+uint8 BUTTON_TIMER_ReadCapture(void) 
 {
-   #if(TIMER_BUTTON_UsingFixedFunction)
-       return ((uint8)CY_GET_REG16(TIMER_BUTTON_CAPTURE_LSB_PTR));
+   #if(BUTTON_TIMER_UsingFixedFunction)
+       return ((uint8)CY_GET_REG16(BUTTON_TIMER_CAPTURE_LSB_PTR));
    #else
-       return (CY_GET_REG8(TIMER_BUTTON_CAPTURE_LSB_PTR));
-   #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+       return (CY_GET_REG8(BUTTON_TIMER_CAPTURE_LSB_PTR));
+   #endif /* (BUTTON_TIMER_UsingFixedFunction) */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_WriteCounter
+* Function Name: BUTTON_TIMER_WriteCounter
 ********************************************************************************
 *
 * Summary:
@@ -477,22 +477,22 @@ uint8 TIMER_BUTTON_ReadCapture(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_WriteCounter(uint8 counter) 
+void BUTTON_TIMER_WriteCounter(uint8 counter) 
 {
-   #if(TIMER_BUTTON_UsingFixedFunction)
+   #if(BUTTON_TIMER_UsingFixedFunction)
         /* This functionality is removed until a FixedFunction HW update to
          * allow this register to be written
          */
-        CY_SET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR, (uint16)counter);
+        CY_SET_REG16(BUTTON_TIMER_COUNTER_LSB_PTR, (uint16)counter);
         
     #else
-        CY_SET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR, counter);
+        CY_SET_REG8(BUTTON_TIMER_COUNTER_LSB_PTR, counter);
     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fixed function Timer */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadCounter
+* Function Name: BUTTON_TIMER_ReadCounter
 ********************************************************************************
 *
 * Summary:
@@ -505,27 +505,27 @@ void TIMER_BUTTON_WriteCounter(uint8 counter)
 *  Present compare value.
 *
 *******************************************************************************/
-uint8 TIMER_BUTTON_ReadCounter(void) 
+uint8 BUTTON_TIMER_ReadCounter(void) 
 {
     /* Force capture by reading Accumulator */
     /* Must first do a software capture to be able to read the counter */
     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
-    #if(TIMER_BUTTON_UsingFixedFunction)
-        (void)CY_GET_REG16(TIMER_BUTTON_COUNTER_LSB_PTR);
+    #if(BUTTON_TIMER_UsingFixedFunction)
+        (void)CY_GET_REG16(BUTTON_TIMER_COUNTER_LSB_PTR);
     #else
-        (void)CY_GET_REG8(TIMER_BUTTON_COUNTER_LSB_PTR_8BIT);
-    #endif/* (TIMER_BUTTON_UsingFixedFunction) */
+        (void)CY_GET_REG8(BUTTON_TIMER_COUNTER_LSB_PTR_8BIT);
+    #endif/* (BUTTON_TIMER_UsingFixedFunction) */
 
     /* Read the data from the FIFO (or capture register for Fixed Function)*/
-    #if(TIMER_BUTTON_UsingFixedFunction)
-        return ((uint8)CY_GET_REG16(TIMER_BUTTON_CAPTURE_LSB_PTR));
+    #if(BUTTON_TIMER_UsingFixedFunction)
+        return ((uint8)CY_GET_REG16(BUTTON_TIMER_CAPTURE_LSB_PTR));
     #else
-        return (CY_GET_REG8(TIMER_BUTTON_CAPTURE_LSB_PTR));
-    #endif /* (TIMER_BUTTON_UsingFixedFunction) */
+        return (CY_GET_REG8(BUTTON_TIMER_CAPTURE_LSB_PTR));
+    #endif /* (BUTTON_TIMER_UsingFixedFunction) */
 }
 
 
-#if(!TIMER_BUTTON_UsingFixedFunction) /* UDB Specific Functions */
+#if(!BUTTON_TIMER_UsingFixedFunction) /* UDB Specific Functions */
 
     
 /*******************************************************************************
@@ -534,11 +534,11 @@ uint8 TIMER_BUTTON_ReadCounter(void)
  ******************************************************************************/
 
 
-#if (TIMER_BUTTON_SoftwareCaptureMode)
+#if (BUTTON_TIMER_SoftwareCaptureMode)
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SetCaptureMode
+* Function Name: BUTTON_TIMER_SetCaptureMode
 ********************************************************************************
 *
 * Summary:
@@ -547,44 +547,44 @@ uint8 TIMER_BUTTON_ReadCounter(void)
 * Parameters:
 *  captureMode: This parameter sets the capture mode of the UDB capture feature
 *  The parameter values are defined using the
-*  #define TIMER_BUTTON__B_TIMER__CM_NONE 0
-#define TIMER_BUTTON__B_TIMER__CM_RISINGEDGE 1
-#define TIMER_BUTTON__B_TIMER__CM_FALLINGEDGE 2
-#define TIMER_BUTTON__B_TIMER__CM_EITHEREDGE 3
-#define TIMER_BUTTON__B_TIMER__CM_SOFTWARE 4
+*  #define BUTTON_TIMER__B_TIMER__CM_NONE 0
+#define BUTTON_TIMER__B_TIMER__CM_RISINGEDGE 1
+#define BUTTON_TIMER__B_TIMER__CM_FALLINGEDGE 2
+#define BUTTON_TIMER__B_TIMER__CM_EITHEREDGE 3
+#define BUTTON_TIMER__B_TIMER__CM_SOFTWARE 4
  identifiers
 *  The following are the possible values of the parameter
-*  TIMER_BUTTON__B_TIMER__CM_NONE        - Set Capture mode to None
-*  TIMER_BUTTON__B_TIMER__CM_RISINGEDGE  - Rising edge of Capture input
-*  TIMER_BUTTON__B_TIMER__CM_FALLINGEDGE - Falling edge of Capture input
-*  TIMER_BUTTON__B_TIMER__CM_EITHEREDGE  - Either edge of Capture input
+*  BUTTON_TIMER__B_TIMER__CM_NONE        - Set Capture mode to None
+*  BUTTON_TIMER__B_TIMER__CM_RISINGEDGE  - Rising edge of Capture input
+*  BUTTON_TIMER__B_TIMER__CM_FALLINGEDGE - Falling edge of Capture input
+*  BUTTON_TIMER__B_TIMER__CM_EITHEREDGE  - Either edge of Capture input
 *
 * Return:
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_SetCaptureMode(uint8 captureMode) 
+void BUTTON_TIMER_SetCaptureMode(uint8 captureMode) 
 {
     /* This must only set to two bits of the control register associated */
-    captureMode = ((uint8)((uint8)captureMode << TIMER_BUTTON_CTRL_CAP_MODE_SHIFT));
-    captureMode &= (TIMER_BUTTON_CTRL_CAP_MODE_MASK);
+    captureMode = ((uint8)((uint8)captureMode << BUTTON_TIMER_CTRL_CAP_MODE_SHIFT));
+    captureMode &= (BUTTON_TIMER_CTRL_CAP_MODE_MASK);
 
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)
         /* Clear the Current Setting */
-        TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_CAP_MODE_MASK));
+        BUTTON_TIMER_CONTROL &= ((uint8)(~BUTTON_TIMER_CTRL_CAP_MODE_MASK));
 
         /* Write The New Setting */
-        TIMER_BUTTON_CONTROL |= captureMode;
-    #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+        BUTTON_TIMER_CONTROL |= captureMode;
+    #endif /* (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 #endif /* Remove API if Capture Mode is not Software Controlled */
 
 
-#if (TIMER_BUTTON_SoftwareTriggerMode)
+#if (BUTTON_TIMER_SoftwareTriggerMode)
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SetTriggerMode
+* Function Name: BUTTON_TIMER_SetTriggerMode
 ********************************************************************************
 *
 * Summary:
@@ -592,37 +592,37 @@ void TIMER_BUTTON_SetCaptureMode(uint8 captureMode)
 *
 * Parameters:
 *  triggerMode: Pass one of the pre-defined Trigger Modes (except Software)
-    #define TIMER_BUTTON__B_TIMER__TM_NONE 0x00u
-    #define TIMER_BUTTON__B_TIMER__TM_RISINGEDGE 0x04u
-    #define TIMER_BUTTON__B_TIMER__TM_FALLINGEDGE 0x08u
-    #define TIMER_BUTTON__B_TIMER__TM_EITHEREDGE 0x0Cu
-    #define TIMER_BUTTON__B_TIMER__TM_SOFTWARE 0x10u
+    #define BUTTON_TIMER__B_TIMER__TM_NONE 0x00u
+    #define BUTTON_TIMER__B_TIMER__TM_RISINGEDGE 0x04u
+    #define BUTTON_TIMER__B_TIMER__TM_FALLINGEDGE 0x08u
+    #define BUTTON_TIMER__B_TIMER__TM_EITHEREDGE 0x0Cu
+    #define BUTTON_TIMER__B_TIMER__TM_SOFTWARE 0x10u
 *
 * Return:
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_SetTriggerMode(uint8 triggerMode) 
+void BUTTON_TIMER_SetTriggerMode(uint8 triggerMode) 
 {
     /* This must only set to two bits of the control register associated */
-    triggerMode &= TIMER_BUTTON_CTRL_TRIG_MODE_MASK;
+    triggerMode &= BUTTON_TIMER_CTRL_TRIG_MODE_MASK;
 
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
     
         /* Clear the Current Setting */
-        TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_TRIG_MODE_MASK));
+        BUTTON_TIMER_CONTROL &= ((uint8)(~BUTTON_TIMER_CTRL_TRIG_MODE_MASK));
 
         /* Write The New Setting */
-        TIMER_BUTTON_CONTROL |= (triggerMode | TIMER_BUTTON__B_TIMER__TM_SOFTWARE);
+        BUTTON_TIMER_CONTROL |= (triggerMode | BUTTON_TIMER__B_TIMER__TM_SOFTWARE);
     #endif /* Remove code section if control register is not used */
 }
 #endif /* Remove API if Trigger Mode is not Software Controlled */
 
-#if (TIMER_BUTTON_EnableTriggerMode)
+#if (BUTTON_TIMER_EnableTriggerMode)
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_EnableTrigger
+* Function Name: BUTTON_TIMER_EnableTrigger
 ********************************************************************************
 *
 * Summary:
@@ -635,16 +635,16 @@ void TIMER_BUTTON_SetTriggerMode(uint8 triggerMode)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_EnableTrigger(void) 
+void BUTTON_TIMER_EnableTrigger(void) 
 {
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
-        TIMER_BUTTON_CONTROL |= TIMER_BUTTON_CTRL_TRIG_EN;
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
+        BUTTON_TIMER_CONTROL |= BUTTON_TIMER_CTRL_TRIG_EN;
     #endif /* Remove code section if control register is not used */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_DisableTrigger
+* Function Name: BUTTON_TIMER_DisableTrigger
 ********************************************************************************
 *
 * Summary:
@@ -657,19 +657,19 @@ void TIMER_BUTTON_EnableTrigger(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_DisableTrigger(void) 
+void BUTTON_TIMER_DisableTrigger(void) 
 {
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED )   /* Remove assignment if control register is removed */
-        TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_TRIG_EN));
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED )   /* Remove assignment if control register is removed */
+        BUTTON_TIMER_CONTROL &= ((uint8)(~BUTTON_TIMER_CTRL_TRIG_EN));
     #endif /* Remove code section if control register is not used */
 }
 #endif /* Remove API is Trigger Mode is set to None */
 
-#if(TIMER_BUTTON_InterruptOnCaptureCount)
+#if(BUTTON_TIMER_InterruptOnCaptureCount)
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SetInterruptCount
+* Function Name: BUTTON_TIMER_SetInterruptCount
 ********************************************************************************
 *
 * Summary:
@@ -685,26 +685,26 @@ void TIMER_BUTTON_DisableTrigger(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_SetInterruptCount(uint8 interruptCount) 
+void BUTTON_TIMER_SetInterruptCount(uint8 interruptCount) 
 {
     /* This must only set to two bits of the control register associated */
-    interruptCount &= TIMER_BUTTON_CTRL_INTCNT_MASK;
+    interruptCount &= BUTTON_TIMER_CTRL_INTCNT_MASK;
 
-    #if (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
+    #if (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED)
         /* Clear the Current Setting */
-        TIMER_BUTTON_CONTROL &= ((uint8)(~TIMER_BUTTON_CTRL_INTCNT_MASK));
+        BUTTON_TIMER_CONTROL &= ((uint8)(~BUTTON_TIMER_CTRL_INTCNT_MASK));
         /* Write The New Setting */
-        TIMER_BUTTON_CONTROL |= interruptCount;
-    #endif /* (!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED) */
+        BUTTON_TIMER_CONTROL |= interruptCount;
+    #endif /* (!BUTTON_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
-#endif /* TIMER_BUTTON_InterruptOnCaptureCount */
+#endif /* BUTTON_TIMER_InterruptOnCaptureCount */
 
 
-#if (TIMER_BUTTON_UsingHWCaptureCounter)
+#if (BUTTON_TIMER_UsingHWCaptureCounter)
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SetCaptureCount
+* Function Name: BUTTON_TIMER_SetCaptureCount
 ********************************************************************************
 *
 * Summary:
@@ -719,14 +719,14 @@ void TIMER_BUTTON_SetInterruptCount(uint8 interruptCount)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_SetCaptureCount(uint8 captureCount) 
+void BUTTON_TIMER_SetCaptureCount(uint8 captureCount) 
 {
-    TIMER_BUTTON_CAP_COUNT = captureCount;
+    BUTTON_TIMER_CAP_COUNT = captureCount;
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ReadCaptureCount
+* Function Name: BUTTON_TIMER_ReadCaptureCount
 ********************************************************************************
 *
 * Summary:
@@ -739,15 +739,15 @@ void TIMER_BUTTON_SetCaptureCount(uint8 captureCount)
 *  Returns the Capture Count Setting
 *
 *******************************************************************************/
-uint8 TIMER_BUTTON_ReadCaptureCount(void) 
+uint8 BUTTON_TIMER_ReadCaptureCount(void) 
 {
-    return ((uint8)TIMER_BUTTON_CAP_COUNT);
+    return ((uint8)BUTTON_TIMER_CAP_COUNT);
 }
-#endif /* TIMER_BUTTON_UsingHWCaptureCounter */
+#endif /* BUTTON_TIMER_UsingHWCaptureCounter */
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_ClearFIFO
+* Function Name: BUTTON_TIMER_ClearFIFO
 ********************************************************************************
 *
 * Summary:
@@ -760,11 +760,11 @@ uint8 TIMER_BUTTON_ReadCaptureCount(void)
 *  void
 *
 *******************************************************************************/
-void TIMER_BUTTON_ClearFIFO(void) 
+void BUTTON_TIMER_ClearFIFO(void) 
 {
-    while(0u != (TIMER_BUTTON_ReadStatusRegister() & TIMER_BUTTON_STATUS_FIFONEMP))
+    while(0u != (BUTTON_TIMER_ReadStatusRegister() & BUTTON_TIMER_STATUS_FIFONEMP))
     {
-        (void)TIMER_BUTTON_ReadCapture();
+        (void)BUTTON_TIMER_ReadCapture();
     }
 }
 

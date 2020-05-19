@@ -1,6 +1,6 @@
 // ======================================================================
 // AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v generated from TopDesign.cysch
-// 05/18/2020 at 15:14
+// 05/19/2020 at 15:40
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -519,7 +519,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v"
 `endif
 
-// Timer_v2_80(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=true, CaptureMode=1, CONTROL3=1, ControlRegRemoved=0, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DeviceFamily=PSoC5, EnableMode=2, FF16=false, FF8=true, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=149, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, Resolution=8, RstStatusReplacementString=rstSts, RunMode=0, SiliconRevision=0, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UsesHWEnable=1, VerilogSectionReplacementString=sT8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=Timer_v2_80, CY_CONFIG_TITLE=TIMER_BUTTON, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=TIMER_BUTTON, CY_INSTANCE_SHORT_NAME=TIMER_BUTTON, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=80, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=TIMER_BUTTON, )
+// Timer_v2_80(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=false, CaptureMode=0, CONTROL3=1, ControlRegRemoved=0, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DeviceFamily=PSoC5, EnableMode=2, FF16=false, FF8=true, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=199, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, Resolution=8, RstStatusReplacementString=rstSts, RunMode=1, SiliconRevision=0, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UsesHWEnable=1, VerilogSectionReplacementString=sT8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=Timer_v2_80, CY_CONFIG_TITLE=BUTTON_TIMER, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=BUTTON_TIMER, CY_INSTANCE_SHORT_NAME=BUTTON_TIMER, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=80, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=BUTTON_TIMER, )
 module Timer_v2_80_3 (
     reset,
     interrupt,
@@ -691,9 +691,93 @@ module SPI_Master_v2_50_4 (
 
 endmodule
 
+// Timer_v2_80(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=false, CaptureMode=0, CONTROL3=1, ControlRegRemoved=0, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DeviceFamily=PSoC5, EnableMode=0, FF16=false, FF8=true, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=9, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, Resolution=8, RstStatusReplacementString=rstSts, RunMode=0, SiliconRevision=0, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UDBControlReg=false, UsesHWEnable=0, VerilogSectionReplacementString=sT8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=Timer_v2_80, CY_CONFIG_TITLE=NOTIFY_TIMER, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=NOTIFY_TIMER, CY_INSTANCE_SHORT_NAME=NOTIFY_TIMER, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=80, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=NOTIFY_TIMER, )
+module Timer_v2_80_5 (
+    reset,
+    interrupt,
+    enable,
+    trigger,
+    capture,
+    capture_out,
+    tc,
+    clock);
+    input       reset;
+    output      interrupt;
+    input       enable;
+    input       trigger;
+    input       capture;
+    output      capture_out;
+    output      tc;
+    input       clock;
+
+    parameter CaptureCount = 2;
+    parameter CaptureCounterEnabled = 0;
+    parameter DeviceFamily = "PSoC5";
+    parameter InterruptOnCapture = 0;
+    parameter InterruptOnTC = 1;
+    parameter Resolution = 8;
+    parameter SiliconRevision = "0";
+
+          wire  Net_261;
+          wire  Net_260;
+          wire  Net_266;
+          wire  Net_102;
+          wire  Net_55;
+          wire  Net_57;
+          wire  Net_53;
+          wire  Net_51;
+
+    cy_psoc3_timer_v1_0 TimerHW (
+        .timer_reset(reset),
+        .capture(capture),
+        .enable(Net_266),
+        .kill(Net_260),
+        .clock(clock),
+        .tc(Net_51),
+        .compare(Net_261),
+        .interrupt(Net_57));
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_260));
+
+	// VirtualMux_2 (cy_virtualmux_v1_0)
+	assign interrupt = Net_57;
+
+	// VirtualMux_3 (cy_virtualmux_v1_0)
+	assign tc = Net_51;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_102));
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_266 = Net_102;
+
+
+
+endmodule
+
+// Component: cy_constant_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v"
+`endif
+
 // top
 module top ;
 
+          wire  Net_18027;
+          wire  Net_18026;
+          wire  Net_18025;
+          wire  Net_18024;
+          wire  Net_17904;
+          wire  Net_18127;
           wire  Net_17342;
           wire  Net_17341;
           wire  Net_17340;
@@ -754,10 +838,10 @@ module top ;
     electrical  Net_17531;
     electrical  Net_17530;
     electrical  Net_17529;
-          wire  Net_15517;
-          wire  Net_15516;
-          wire  Net_15515;
-          wire  Net_15514;
+          wire  Net_17682;
+          wire  Net_17681;
+          wire  Net_17680;
+          wire  Net_17811;
           wire  Net_10177;
           wire  Net_10176;
           wire  Net_10175;
@@ -829,60 +913,60 @@ module top ;
     electrical  Net_453;
     electrical  Net_3543;
     electrical  Net_138;
-    electrical  Net_17472;
-    electrical  Net_17471;
-    electrical  Net_17470;
-    electrical  Net_17469;
-    electrical  Net_17468;
-    electrical [1:0] Net_17467;
-    electrical  Net_17466;
-    electrical  Net_17465;
-    electrical  Net_17464;
-    electrical  Net_17463;
-    electrical  Net_17462;
-    electrical  Net_17461;
-    electrical  Net_17460;
-    electrical  Net_17459;
-    electrical  Net_17458;
-    electrical  Net_17457;
-    electrical  Net_17456;
-    electrical  Net_17455;
-    electrical  Net_17454;
-    electrical  Net_17453;
-    electrical  Net_17452;
-    electrical  Net_17451;
-    electrical  Net_17450;
-    electrical  Net_17449;
-    electrical  Net_17448;
-    electrical  Net_17446;
-    electrical  Net_17445;
-    electrical  Net_17444;
-    electrical  Net_17443;
-    electrical  Net_17442;
-    electrical  Net_17441;
-    electrical  Net_17440;
-    electrical  Net_17439;
-    electrical  Net_17438;
-    electrical  Net_17437;
-    electrical  Net_17436;
-    electrical  Net_17435;
-    electrical  Net_17434;
-    electrical  Net_17433;
-    electrical  Net_17432;
-    electrical  Net_17431;
-    electrical  Net_17430;
-    electrical  Net_17429;
-    electrical  Net_17428;
-    electrical  Net_17427;
-    electrical  Net_17426;
-    electrical  Net_17425;
-    electrical  Net_17424;
-    electrical  Net_17423;
-    electrical  Net_17422;
-    electrical  Net_17421;
-    electrical  Net_17420;
-    electrical  Net_17419;
-    electrical  Net_17418;
+    electrical  Net_18107;
+    electrical  Net_18106;
+    electrical  Net_18105;
+    electrical  Net_18104;
+    electrical  Net_18103;
+    electrical [1:0] Net_18102;
+    electrical  Net_18101;
+    electrical  Net_18100;
+    electrical  Net_18099;
+    electrical  Net_18098;
+    electrical  Net_18097;
+    electrical  Net_18096;
+    electrical  Net_18095;
+    electrical  Net_18094;
+    electrical  Net_18093;
+    electrical  Net_18092;
+    electrical  Net_18091;
+    electrical  Net_18090;
+    electrical  Net_18089;
+    electrical  Net_18088;
+    electrical  Net_18087;
+    electrical  Net_18086;
+    electrical  Net_18085;
+    electrical  Net_18084;
+    electrical  Net_18083;
+    electrical  Net_18082;
+    electrical  Net_18081;
+    electrical  Net_18080;
+    electrical  Net_18079;
+    electrical  Net_18078;
+    electrical  Net_18077;
+    electrical  Net_18076;
+    electrical  Net_18075;
+    electrical  Net_18074;
+    electrical  Net_18073;
+    electrical  Net_18072;
+    electrical  Net_18071;
+    electrical  Net_18070;
+    electrical  Net_18069;
+    electrical  Net_18068;
+    electrical  Net_18067;
+    electrical  Net_18066;
+    electrical  Net_18065;
+    electrical  Net_18064;
+    electrical  Net_18063;
+    electrical  Net_18062;
+    electrical  Net_18061;
+    electrical  Net_18060;
+    electrical  Net_18059;
+    electrical  Net_18058;
+    electrical  Net_18057;
+    electrical  Net_18056;
+    electrical  Net_18055;
+    electrical  Net_18054;
     electrical  Net_667;
     electrical  Net_140;
           wire  Net_17115;
@@ -909,67 +993,78 @@ module top ;
           wire  Net_17094;
           wire  Net_17093;
           wire  Net_562;
-          wire  Net_104;
-          wire  Net_90;
-          wire  Net_73;
-    electrical  Net_17417;
-    electrical  Net_17416;
-    electrical  Net_17415;
-    electrical  Net_17414;
-    electrical  Net_17413;
-    electrical [1:0] Net_17412;
-    electrical  Net_17411;
-    electrical  Net_17410;
-    electrical  Net_17409;
-    electrical  Net_17408;
-    electrical  Net_17407;
-    electrical  Net_17406;
-    electrical  Net_17405;
-    electrical  Net_17404;
-    electrical  Net_17403;
-    electrical  Net_17402;
-    electrical  Net_17401;
-    electrical  Net_17400;
-    electrical  Net_17399;
-    electrical  Net_17398;
-    electrical  Net_17397;
-    electrical  Net_17396;
-    electrical  Net_17395;
-    electrical  Net_17394;
-    electrical  Net_17393;
-    electrical  Net_17392;
-    electrical  Net_17391;
-    electrical  Net_17390;
-    electrical  Net_17389;
-    electrical  Net_17388;
-    electrical  Net_17387;
-    electrical  Net_17386;
-    electrical  Net_17385;
-    electrical  Net_17384;
-    electrical  Net_17383;
-    electrical  Net_17382;
-    electrical  Net_17381;
-    electrical  Net_17380;
-    electrical  Net_17379;
-    electrical  Net_17378;
-    electrical  Net_17377;
-    electrical  Net_17376;
-    electrical  Net_17375;
-    electrical  Net_17374;
-    electrical  Net_17373;
-    electrical  Net_17372;
-    electrical  Net_17371;
-    electrical  Net_17370;
-    electrical  Net_17369;
-    electrical  Net_17368;
-    electrical  Net_17367;
-    electrical  Net_17366;
-    electrical  Net_17365;
-    electrical  Net_17364;
-    electrical  Net_17363;
-    electrical  Net_17362;
-    electrical  Net_17361;
-    electrical  Net_17586;
+          wire  Net_18125;
+          wire  Net_18124;
+          wire  Net_18117;
+    electrical  Net_17652;
+    electrical  Net_17651;
+    electrical  Net_17650;
+    electrical  Net_17649;
+    electrical  Net_17648;
+    electrical [1:0] Net_17647;
+    electrical  Net_17646;
+    electrical  Net_17645;
+    electrical  Net_17644;
+    electrical  Net_17643;
+    electrical  Net_17642;
+    electrical  Net_17641;
+    electrical  Net_17640;
+    electrical  Net_17639;
+    electrical  Net_17638;
+    electrical  Net_17637;
+    electrical  Net_17636;
+    electrical  Net_17635;
+    electrical  Net_17634;
+    electrical  Net_17633;
+    electrical  Net_17632;
+    electrical  Net_17631;
+    electrical  Net_17630;
+    electrical  Net_17629;
+    electrical  Net_17628;
+    electrical  Net_17627;
+    electrical  Net_17626;
+    electrical  Net_17625;
+    electrical  Net_17624;
+    electrical  Net_17623;
+    electrical  Net_17622;
+    electrical  Net_17621;
+    electrical  Net_17620;
+    electrical  Net_17619;
+    electrical  Net_17618;
+    electrical  Net_17617;
+    electrical  Net_17616;
+    electrical  Net_17615;
+    electrical  Net_17614;
+    electrical  Net_17613;
+    electrical  Net_17612;
+    electrical  Net_17611;
+    electrical  Net_17610;
+    electrical  Net_17609;
+    electrical  Net_17608;
+    electrical  Net_17607;
+    electrical  Net_17606;
+    electrical  Net_17605;
+    electrical  Net_17604;
+    electrical  Net_17603;
+    electrical  Net_17602;
+    electrical  Net_17601;
+    electrical  Net_17600;
+    electrical  Net_17599;
+    electrical  Net_17598;
+    electrical  Net_17597;
+    electrical  Net_17596;
+          wire  Net_18120;
+          wire  Net_17679;
+          wire  Net_17683;
+          wire  Net_18028;
+    electrical  Net_18112;
+          wire  Net_18050;
+          wire  Net_18052;
+    electrical  Net_7443;
+    electrical  Net_17870;
+          wire  Net_17855;
+          wire  Net_17852;
+          wire  Net_18119;
     electrical  Net_191;
     electrical  Net_17268;
     electrical  Net_117;
@@ -978,87 +1073,75 @@ module top ;
           wire  Net_25;
           wire  Net_19;
           wire  Net_23;
-          wire  Net_14053;
-          wire  Net_15681;
-          wire  Net_14914;
-          wire  Net_14172;
-          wire  Net_14682;
-          wire  Net_16816;
-          wire  Net_14611;
-          wire  Net_13430;
     electrical  Net_10073;
           wire  Net_9807;
-    electrical  Net_7443;
-    electrical  Net_7618;
     electrical  Net_123;
-    electrical  Net_1829;
-          wire  Net_1989;
+    electrical  Net_18048;
           wire  Net_247;
-          wire  Net_1938;
-    electrical  Net_1804;
-    electrical  Net_1855;
+    electrical  Net_18047;
+    electrical  Net_18049;
           wire  Net_2111;
 
     cy_annotation_universal_v1_0 KIT_059_1 (
         .connect({
-            Net_17361,
-            Net_17362,
-            Net_17363,
-            Net_17364,
-            Net_17365,
-            Net_17366,
-            Net_17367,
-            Net_17368,
-            Net_17409,
-            Net_17408,
-            Net_17407,
-            Net_17394,
-            Net_17395,
-            Net_17396,
-            Net_17397,
-            Net_17398,
-            Net_17399,
-            Net_17400,
-            Net_17401,
-            Net_17406,
-            Net_17405,
-            Net_17404,
-            Net_17369,
-            Net_17370,
-            Net_17371,
-            Net_17372,
-            Net_17373,
-            Net_17374,
-            Net_17403,
-            Net_17402,
-            Net_17393,
-            Net_17392,
-            Net_7618,
-            Net_17391,
-            Net_17390,
-            Net_17389,
-            Net_17388,
-            Net_17387,
-            Net_17375,
-            Net_17376,
-            Net_17377,
-            Net_17378,
-            Net_17379,
-            Net_17380,
-            Net_17381,
-            Net_17382,
-            Net_17413,
-            Net_17414,
-            Net_17415,
-            Net_17416,
-            Net_17417,
-            Net_17385,
-            Net_17411,
-            Net_17383,
-            Net_17384,
-            Net_17386,
-            Net_17410,
-            Net_17412[1:0]
+            Net_17596,
+            Net_17597,
+            Net_17598,
+            Net_17599,
+            Net_17600,
+            Net_17601,
+            Net_17602,
+            Net_17603,
+            Net_17644,
+            Net_17643,
+            Net_17642,
+            Net_17629,
+            Net_17630,
+            Net_17631,
+            Net_17632,
+            Net_17633,
+            Net_17634,
+            Net_17635,
+            Net_17636,
+            Net_17641,
+            Net_17640,
+            Net_17639,
+            Net_17604,
+            Net_17605,
+            Net_17606,
+            Net_17607,
+            Net_17608,
+            Net_17609,
+            Net_17638,
+            Net_17637,
+            Net_17628,
+            Net_17627,
+            Net_17870,
+            Net_17626,
+            Net_17625,
+            Net_17624,
+            Net_17623,
+            Net_17622,
+            Net_17610,
+            Net_17611,
+            Net_17612,
+            Net_17613,
+            Net_17614,
+            Net_17615,
+            Net_17616,
+            Net_17617,
+            Net_17648,
+            Net_17649,
+            Net_17650,
+            Net_17651,
+            Net_17652,
+            Net_17620,
+            Net_17646,
+            Net_17618,
+            Net_17619,
+            Net_17621,
+            Net_17645,
+            Net_17647[1:0]
         })
     );
     defparam KIT_059_1.comp_name = "KIT_059_v1_0";
@@ -1067,45 +1150,33 @@ module top ;
 
 
 	cy_clock_v1_0
-		#(.id("c0fb34bd-1044-4931-9788-16b01ce89812"),
+		#(.id("f352711a-bcd5-4347-a3f7-46c8a71310e7"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("20000000000000"),
-		  .is_direct(0),
-		  .is_digital(1))
-		COUNT_CLOCK
-		 (.clock_out(Net_14682));
-
-
-    Debouncer_v1_0 DEBOUNCER (
-        .d(Net_14053),
-        .clock(Net_14172),
-        .q(Net_15681),
-        .neg(Net_16816),
-        .either(Net_90),
-        .pos(Net_13430));
-    defparam DEBOUNCER.EitherEdgeDetect = 0;
-    defparam DEBOUNCER.NegEdgeDetect = 1;
-    defparam DEBOUNCER.PosEdgeDetect = 1;
-    defparam DEBOUNCER.SignalWidth = 1;
-
-
-	cy_clock_v1_0
-		#(.id("f269e35f-7389-4633-ab7d-6f27c06636ae"),
-		  .source_clock_id(""),
-		  .divisor(0),
-		  .period("100000000000000"),
+		  .period("10000000000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		BUTTON_CLOCK
-		 (.clock_out(Net_14172));
+		 (.clock_out(Net_18119));
 
+
+    Debouncer_v1_0 DEBOUNCER (
+        .d(Net_18120),
+        .clock(Net_18119),
+        .q(Net_17852),
+        .neg(Net_18124),
+        .either(Net_18125),
+        .pos(Net_17679));
+    defparam DEBOUNCER.EitherEdgeDetect = 0;
+    defparam DEBOUNCER.NegEdgeDetect = 0;
+    defparam DEBOUNCER.PosEdgeDetect = 1;
+    defparam DEBOUNCER.SignalWidth = 1;
 
 
 	cy_isr_v1_0
 		#(.int_type(2'b00))
 		ISR_CONFIG
-		 (.int_signal(Net_14611));
+		 (.int_signal(Net_17683));
 
 
 
@@ -1124,8 +1195,8 @@ module top ;
         .reset(1'b0),
         .clock(Net_247),
         .tc(Net_17094),
-        .pwm1(Net_1938),
-        .pwm2(Net_1989),
+        .pwm1(Net_18052),
+        .pwm2(Net_18050),
         .interrupt(Net_17095),
         .capture(1'b0),
         .kill(1'b1),
@@ -1166,64 +1237,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_2 (
         .connect({
-            Net_17418,
-            Net_17419,
-            Net_17420,
-            Net_17421,
-            Net_17422,
-            Net_17423,
-            Net_17424,
-            Net_17425,
-            Net_17464,
-            Net_17463,
-            Net_17462,
-            Net_17449,
-            Net_17450,
-            Net_17451,
-            Net_17452,
-            Net_17453,
-            Net_17454,
-            Net_17455,
-            Net_17456,
-            Net_17461,
-            Net_17460,
-            Net_17459,
-            Net_17426,
-            Net_17427,
-            Net_17428,
-            Net_17429,
-            Net_17430,
-            Net_17431,
-            Net_17458,
-            Net_17457,
-            Net_17448,
-            Net_17586,
-            Net_17446,
-            Net_17445,
-            Net_17444,
-            Net_17443,
-            Net_17442,
-            Net_17441,
-            Net_17432,
-            Net_17433,
-            Net_17434,
-            Net_17435,
-            Net_17436,
-            Net_1804,
-            Net_1829,
-            Net_1855,
-            Net_17468,
-            Net_17469,
-            Net_17470,
-            Net_17471,
-            Net_17472,
-            Net_17439,
-            Net_17466,
-            Net_17437,
-            Net_17438,
-            Net_17440,
-            Net_17465,
-            Net_17467[1:0]
+            Net_18054,
+            Net_18055,
+            Net_18056,
+            Net_18057,
+            Net_18058,
+            Net_18059,
+            Net_18060,
+            Net_18061,
+            Net_18099,
+            Net_18098,
+            Net_18097,
+            Net_18084,
+            Net_18085,
+            Net_18086,
+            Net_18087,
+            Net_18088,
+            Net_18089,
+            Net_18090,
+            Net_18091,
+            Net_18096,
+            Net_18095,
+            Net_18094,
+            Net_18062,
+            Net_18063,
+            Net_18064,
+            Net_18065,
+            Net_18066,
+            Net_18067,
+            Net_18093,
+            Net_18092,
+            Net_18083,
+            Net_18112,
+            Net_18082,
+            Net_18081,
+            Net_18080,
+            Net_18079,
+            Net_18078,
+            Net_18077,
+            Net_18068,
+            Net_18069,
+            Net_18070,
+            Net_18071,
+            Net_18072,
+            Net_18047,
+            Net_18048,
+            Net_18049,
+            Net_18103,
+            Net_18104,
+            Net_18105,
+            Net_18106,
+            Net_18107,
+            Net_18075,
+            Net_18101,
+            Net_18073,
+            Net_18074,
+            Net_18076,
+            Net_18100,
+            Net_18102[1:0]
         })
     );
     defparam KIT_059_2.comp_name = "KIT_059_v1_0";
@@ -1252,7 +1323,7 @@ module top ;
 
     cy_annotation_universal_v1_0 RED (
         .connect({
-            Net_1804,
+            Net_18047,
             Net_140
         })
     );
@@ -1321,12 +1392,12 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		GREEN_PIN
 		 (.oe(tmpOE__GREEN_PIN_net),
-		  .y({Net_1989}),
+		  .y({Net_18050}),
 		  .fb({tmpFB_0__GREEN_PIN_net[0:0]}),
 		  .io({tmpIO_0__GREEN_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__GREEN_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__GREEN_PIN_net[0:0]}),
-		  .annotation({Net_1829}),
+		  .annotation({Net_18048}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1338,7 +1409,7 @@ module top ;
 
     cy_annotation_universal_v1_0 GREEN (
         .connect({
-            Net_1829,
+            Net_18048,
             Net_138
         })
     );
@@ -1348,7 +1419,7 @@ module top ;
 
     cy_annotation_universal_v1_0 BLUE (
         .connect({
-            Net_1855,
+            Net_18049,
             Net_123
         })
     );
@@ -1426,12 +1497,12 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		RED_PIN
 		 (.oe(tmpOE__RED_PIN_net),
-		  .y({Net_1938}),
+		  .y({Net_18052}),
 		  .fb({tmpFB_0__RED_PIN_net[0:0]}),
 		  .io({tmpIO_0__RED_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__RED_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__RED_PIN_net[0:0]}),
-		  .annotation({Net_1804}),
+		  .annotation({Net_18047}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1516,7 +1587,7 @@ module top ;
 		  .io({tmpIO_0__BLUE_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__BLUE_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__BLUE_PIN_net[0:0]}),
-		  .annotation({Net_1855}),
+		  .annotation({Net_18049}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1538,7 +1609,7 @@ module top ;
     cy_annotation_universal_v1_0 R_4 (
         .connect({
             Net_7443,
-            Net_7618
+            Net_17870
         })
     );
     defparam R_4.comp_name = "Resistor_v1_0";
@@ -1558,7 +1629,7 @@ module top ;
 	cy_isr_v1_0
 		#(.int_type(2'b00))
 		ISR_START
-		 (.int_signal(Net_13430));
+		 (.int_signal(Net_17679));
 
 
 	wire [0:0] tmpOE__BUTTON_PIN_net;
@@ -1622,11 +1693,11 @@ module top ;
 		BUTTON_PIN
 		 (.oe(tmpOE__BUTTON_PIN_net),
 		  .y({1'b0}),
-		  .fb({Net_14053}),
+		  .fb({Net_18120}),
 		  .io({tmpIO_0__BUTTON_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__BUTTON_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__BUTTON_PIN_net[0:0]}),
-		  .annotation({Net_7618}),
+		  .annotation({Net_17870}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1730,7 +1801,7 @@ module top ;
     defparam UART.TXEnable = 1;
 
 
-    assign Net_14914 = ~Net_15681;
+    assign Net_17855 = ~Net_17852;
 
 	wire [0:0] tmpOE__TX_PIN_net;
 	wire [0:0] tmpFB_0__TX_PIN_net;
@@ -1808,22 +1879,22 @@ module top ;
 
 	assign tmpOE__TX_PIN_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    Timer_v2_80_3 TIMER_BUTTON (
-        .reset(Net_16816),
-        .interrupt(Net_14611),
-        .enable(Net_14914),
+    Timer_v2_80_3 BUTTON_TIMER (
+        .reset(Net_17852),
+        .interrupt(Net_17811),
+        .enable(Net_17855),
         .trigger(1'b1),
         .capture(1'b0),
-        .capture_out(Net_15516),
-        .tc(Net_15517),
-        .clock(Net_14682));
-    defparam TIMER_BUTTON.CaptureCount = 2;
-    defparam TIMER_BUTTON.CaptureCounterEnabled = 0;
-    defparam TIMER_BUTTON.DeviceFamily = "PSoC5";
-    defparam TIMER_BUTTON.InterruptOnCapture = 0;
-    defparam TIMER_BUTTON.InterruptOnTC = 1;
-    defparam TIMER_BUTTON.Resolution = 8;
-    defparam TIMER_BUTTON.SiliconRevision = "0";
+        .capture_out(Net_17682),
+        .tc(Net_17683),
+        .clock(Net_18119));
+    defparam BUTTON_TIMER.CaptureCount = 2;
+    defparam BUTTON_TIMER.CaptureCounterEnabled = 0;
+    defparam BUTTON_TIMER.DeviceFamily = "PSoC5";
+    defparam BUTTON_TIMER.InterruptOnCapture = 0;
+    defparam BUTTON_TIMER.InterruptOnTC = 1;
+    defparam BUTTON_TIMER.Resolution = 8;
+    defparam BUTTON_TIMER.SiliconRevision = "0";
 
     cy_annotation_universal_v1_0 KIT_059_4 (
         .connect({
@@ -2350,7 +2421,7 @@ module top ;
 		  .io({tmpIO_0__ONBOARD_LED_net[0:0]}),
 		  .siovref(tmpSIOVREF__ONBOARD_LED_net),
 		  .interrupt({tmpINTERRUPT_0__ONBOARD_LED_net[0:0]}),
-		  .annotation({Net_17586}),
+		  .annotation({Net_18112}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -2359,6 +2430,32 @@ module top ;
 		  .out_reset({1'b0}));
 
 	assign tmpOE__ONBOARD_LED_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+    Timer_v2_80_5 NOTIFY_TIMER (
+        .reset(Net_18127),
+        .interrupt(Net_17904),
+        .enable(1'b1),
+        .trigger(1'b1),
+        .capture(1'b0),
+        .capture_out(Net_18027),
+        .tc(Net_18028),
+        .clock(Net_18119));
+    defparam NOTIFY_TIMER.CaptureCount = 2;
+    defparam NOTIFY_TIMER.CaptureCounterEnabled = 0;
+    defparam NOTIFY_TIMER.DeviceFamily = "PSoC5";
+    defparam NOTIFY_TIMER.InterruptOnCapture = 0;
+    defparam NOTIFY_TIMER.InterruptOnTC = 1;
+    defparam NOTIFY_TIMER.Resolution = 8;
+    defparam NOTIFY_TIMER.SiliconRevision = "0";
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b00))
+		ISR_NOTIFY
+		 (.int_signal(Net_18028));
+
+
+    assign Net_18127 = 1'h0;
 
 
 

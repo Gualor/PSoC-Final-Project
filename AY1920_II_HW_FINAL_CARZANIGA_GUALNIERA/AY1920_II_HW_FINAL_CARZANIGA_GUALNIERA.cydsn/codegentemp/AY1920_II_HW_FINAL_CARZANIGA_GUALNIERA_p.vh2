@@ -1,5 +1,5 @@
 -- Project:   AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
--- Generated: 05/18/2020 15:14:54
+-- Generated: 05/19/2020 15:40:08
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -45,25 +45,22 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL MISO(0)__PA : bit;
     SIGNAL MOSI(0)__PA : bit;
     SIGNAL Net_10171 : bit;
-    SIGNAL Net_13430 : bit;
-    SIGNAL Net_14053 : bit;
-    SIGNAL Net_14172 : bit;
-    ATTRIBUTE udbclken_assigned OF Net_14172 : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_14172 : SIGNAL IS true;
-    SIGNAL Net_14172_local : bit;
-    SIGNAL Net_14611 : bit;
-    SIGNAL Net_14682 : bit;
-    ATTRIBUTE global_signal OF Net_14682 : SIGNAL IS true;
-    SIGNAL Net_14682_local : bit;
-    SIGNAL Net_14914 : bit;
-    SIGNAL Net_15681 : bit;
-    SIGNAL Net_16816 : bit;
     SIGNAL Net_17337 : bit;
     SIGNAL Net_17340 : bit;
     SIGNAL Net_17342 : bit;
+    SIGNAL Net_17679 : bit;
+    SIGNAL Net_17683 : bit;
+    SIGNAL Net_17852 : bit;
+    SIGNAL Net_17855 : bit;
+    SIGNAL Net_18028 : bit;
+    SIGNAL Net_18050 : bit;
+    SIGNAL Net_18052 : bit;
+    SIGNAL Net_18119 : bit;
+    ATTRIBUTE udbclken_assigned OF Net_18119 : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_18119 : SIGNAL IS true;
+    SIGNAL Net_18119_local : bit;
+    SIGNAL Net_18120 : bit;
     SIGNAL Net_19 : bit;
-    SIGNAL Net_1938 : bit;
-    SIGNAL Net_1989 : bit;
     SIGNAL Net_2111 : bit;
     SIGNAL Net_23 : bit;
     SIGNAL Net_247 : bit;
@@ -77,7 +74,11 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL RX_PIN(0)__PA : bit;
     SIGNAL SCLK(0)__PA : bit;
     SIGNAL TX_PIN(0)__PA : bit;
+    SIGNAL \BUTTON_TIMER:Net_261\ : bit;
+    SIGNAL \BUTTON_TIMER:Net_57\ : bit;
     SIGNAL \DEBOUNCER:DEBOUNCER[0]:d_sync_1\ : bit;
+    SIGNAL \NOTIFY_TIMER:Net_261\ : bit;
+    SIGNAL \NOTIFY_TIMER:Net_57\ : bit;
     SIGNAL \PWM_B:PWMUDB:cmp1_less\ : bit;
     SIGNAL \PWM_B:PWMUDB:control_0\ : bit;
     SIGNAL \PWM_B:PWMUDB:control_1\ : bit;
@@ -137,8 +138,6 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE udbclken_assigned OF \SPIM:Net_276\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \SPIM:Net_276\ : SIGNAL IS true;
     SIGNAL \SPIM:Net_276_local\ : bit;
-    SIGNAL \TIMER_BUTTON:Net_261\ : bit;
-    SIGNAL \TIMER_BUTTON:Net_51\ : bit;
     SIGNAL \UART:BUART:counter_load_not\ : bit;
     SIGNAL \UART:BUART:pollcount_0\ : bit;
     SIGNAL \UART:BUART:pollcount_1\ : bit;
@@ -222,11 +221,12 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE lib_model OF \UART:BUART:rx_postpoll\ : LABEL IS "macrocell8";
     ATTRIBUTE lib_model OF \UART:BUART:rx_status_4\ : LABEL IS "macrocell9";
     ATTRIBUTE lib_model OF \UART:BUART:rx_status_5\ : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF Net_14914 : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF Net_17855 : LABEL IS "macrocell11";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:load_rx_data\ : LABEL IS "macrocell12";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_0\ : LABEL IS "macrocell13";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_4\ : LABEL IS "macrocell14";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:rx_status_6\ : LABEL IS "macrocell15";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell16";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:genblk8:stsreg\ : LABEL IS "statusicell1";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:sP8:pwmdp:u0\ : LABEL IS "datapathcell1";
@@ -241,17 +241,16 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE lib_model OF \SPIM:BSPIM:TxStsReg\ : LABEL IS "statusicell5";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:RxStsReg\ : LABEL IS "statusicell6";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell6";
-    ATTRIBUTE lib_model OF Net_15681 : LABEL IS "macrocell16";
-    ATTRIBUTE lib_model OF \DEBOUNCER:DEBOUNCER[0]:d_sync_1\ : LABEL IS "macrocell17";
-    ATTRIBUTE lib_model OF Net_13430 : LABEL IS "macrocell18";
-    ATTRIBUTE lib_model OF Net_16816 : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF Net_17852 : LABEL IS "macrocell17";
+    ATTRIBUTE lib_model OF \DEBOUNCER:DEBOUNCER[0]:d_sync_1\ : LABEL IS "macrocell18";
+    ATTRIBUTE lib_model OF Net_17679 : LABEL IS "macrocell19";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:runmode_enable\ : LABEL IS "macrocell20";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:prevCompare1\ : LABEL IS "macrocell21";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:prevCompare2\ : LABEL IS "macrocell22";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_0\ : LABEL IS "macrocell23";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_1\ : LABEL IS "macrocell24";
-    ATTRIBUTE lib_model OF Net_1938 : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF Net_1989 : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF Net_18052 : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF Net_18050 : LABEL IS "macrocell26";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell27";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell28";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:status_0\ : LABEL IS "macrocell29";
@@ -638,10 +637,8 @@ BEGIN
             dclk_1 => Net_247_local,
             dclk_glb_2 => \UART:Net_9\,
             dclk_2 => \UART:Net_9_local\,
-            dclk_glb_3 => Net_14682,
-            dclk_3 => Net_14682_local,
-            dclk_glb_4 => Net_14172,
-            dclk_4 => Net_14172_local,
+            dclk_glb_3 => Net_18119,
+            dclk_3 => Net_18119_local,
             dclk_glb_ff_3 => \ClockBlock.dclk_glb_ff_3__sig\);
 
     GREEN_PIN:logicalport
@@ -726,7 +723,7 @@ BEGIN
         PORT MAP(
             pa_out => GREEN_PIN(0)__PA,
             oe => open,
-            pin_input => Net_1989,
+            pin_input => Net_18050,
             pad_out => GREEN_PIN(0)_PAD,
             pad_in => GREEN_PIN(0)_PAD,
             in_clock => open,
@@ -818,7 +815,7 @@ BEGIN
         PORT MAP(
             pa_out => RED_PIN(0)__PA,
             oe => open,
-            pin_input => Net_1938,
+            pin_input => Net_18052,
             pad_out => RED_PIN(0)_PAD,
             pad_in => RED_PIN(0)_PAD,
             in_clock => open,
@@ -1002,7 +999,7 @@ BEGIN
         PORT MAP(
             pa_out => BUTTON_PIN(0)__PA,
             oe => open,
-            fb => Net_14053,
+            fb => Net_18120,
             pad_in => BUTTON_PIN(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
@@ -1755,14 +1752,14 @@ BEGIN
             main_0 => \UART:BUART:rx_fifonotempty\,
             main_1 => \UART:BUART:rx_state_stop1_reg\);
 
-    Net_14914:macrocell
+    Net_17855:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_14914,
-            main_0 => Net_15681);
+            q => Net_17855,
+            main_0 => Net_17852);
 
     \SPIM:BSPIM:load_rx_data\:macrocell
         GENERIC MAP(
@@ -1813,12 +1810,20 @@ BEGIN
             main_4 => \SPIM:BSPIM:count_0\,
             main_5 => \SPIM:BSPIM:rx_status_4\);
 
+    __ONE__:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => __ONE__);
+
     ISR_CONFIG:interrupt
         GENERIC MAP(
             int_type => "00",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_14611,
+            interrupt => Net_17683,
             clock => ClockBlock_BUS_CLK);
 
     \PWM_RG:PWMUDB:genblk1:ctrlreg\:controlcell
@@ -1975,7 +1980,7 @@ BEGIN
             int_type => "00",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_13430,
+            interrupt => Net_17679,
             clock => ClockBlock_BUS_CLK);
 
     \UART:BUART:sTX:TxShifter:u0\:datapathcell
@@ -2149,18 +2154,18 @@ BEGIN
             status_1 => open,
             status_0 => open);
 
-    \TIMER_BUTTON:TimerHW\:timercell
+    \BUTTON_TIMER:TimerHW\:timercell
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
             clock => \ClockBlock.dclk_glb_ff_3__sig\,
             kill => open,
-            enable => Net_14914,
+            enable => Net_17855,
             capture => open,
-            timer_reset => Net_16816,
-            tc => \TIMER_BUTTON:Net_51\,
-            cmp => \TIMER_BUTTON:Net_261\,
-            irq => Net_14611);
+            timer_reset => Net_17852,
+            tc => Net_17683,
+            cmp => \BUTTON_TIMER:Net_261\,
+            irq => \BUTTON_TIMER:Net_57\);
 
     \SPIM:RxInternalInterrupt\:interrupt
         GENERIC MAP(
@@ -2277,16 +2282,37 @@ BEGIN
             interrupt => Net_17342,
             clock => ClockBlock_BUS_CLK);
 
-    Net_15681:macrocell
+    \NOTIFY_TIMER:TimerHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ClockBlock.dclk_glb_ff_3__sig\,
+            kill => open,
+            enable => __ONE__,
+            capture => open,
+            timer_reset => open,
+            tc => Net_18028,
+            cmp => \NOTIFY_TIMER:Net_261\,
+            irq => \NOTIFY_TIMER:Net_57\);
+
+    ISR_NOTIFY:interrupt
+        GENERIC MAP(
+            int_type => "00",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_18028,
+            clock => ClockBlock_BUS_CLK);
+
+    Net_17852:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_15681,
-            clock_0 => Net_14172,
-            main_0 => Net_14053);
+            q => Net_17852,
+            clock_0 => Net_18119,
+            main_0 => Net_18120);
 
     \DEBOUNCER:DEBOUNCER[0]:d_sync_1\:macrocell
         GENERIC MAP(
@@ -2296,32 +2322,20 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \DEBOUNCER:DEBOUNCER[0]:d_sync_1\,
-            clock_0 => Net_14172,
-            main_0 => Net_15681);
+            clock_0 => Net_18119,
+            main_0 => Net_17852);
 
-    Net_13430:macrocell
+    Net_17679:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_13430,
-            clock_0 => Net_14172,
+            q => Net_17679,
+            clock_0 => Net_18119,
             main_0 => \DEBOUNCER:DEBOUNCER[0]:d_sync_1\,
-            main_1 => Net_15681);
-
-    Net_16816:macrocell
-        GENERIC MAP(
-            eqn_main => "(main_0 * !main_1)",
-            regmode => 1,
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            q => Net_16816,
-            clock_0 => Net_14172,
-            main_0 => \DEBOUNCER:DEBOUNCER[0]:d_sync_1\,
-            main_1 => Net_15681);
+            main_1 => Net_17852);
 
     \PWM_RG:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
@@ -2380,26 +2394,26 @@ BEGIN
             main_0 => \PWM_RG:PWMUDB:prevCompare2\,
             main_1 => \PWM_RG:PWMUDB:cmp2_less\);
 
-    Net_1938:macrocell
+    Net_18052:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_1938,
+            q => Net_18052,
             clock_0 => Net_247,
             main_0 => \PWM_RG:PWMUDB:runmode_enable\,
             main_1 => \PWM_RG:PWMUDB:cmp1_less\);
 
-    Net_1989:macrocell
+    Net_18050:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_1989,
+            q => Net_18050,
             clock_0 => Net_247,
             main_0 => \PWM_RG:PWMUDB:runmode_enable\,
             main_1 => \PWM_RG:PWMUDB:cmp2_less\);

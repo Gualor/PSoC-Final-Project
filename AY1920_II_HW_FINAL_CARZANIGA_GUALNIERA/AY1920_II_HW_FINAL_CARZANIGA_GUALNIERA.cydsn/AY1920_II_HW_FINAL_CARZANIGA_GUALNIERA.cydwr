@@ -349,6 +349,13 @@
       <Data key="c0fb34bd-1044-4931-9788-16b01ce89812" value="COUNT_CLOCK" />
       <Data key="f269e35f-7389-4633-ab7d-6f27c06636ae" value="BUTTON_CLOCK" />
     </Group>
+    <Group key="Interrupt">
+      <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/2f0e1ca3-d7f9-4fde-aef9-0b36f082c803" value="SPIM_TxInternalInterrupt" />
+      <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/14fe96ba-901d-4b28-a648-bce191698c4b" value="SPIM_RxInternalInterrupt" />
+      <Data key="74f4c273-229d-4212-9a13-dea90dabd392" value="ISR_CONFIG" />
+      <Data key="2289aaba-5f56-41cc-bf75-c203adb4dcfc" value="ISR_START" />
+      <Data key="863438ae-6e6a-44bf-bfe1-3ddf1472e7e3" value="ISR_NOTIFY" />
+    </Group>
     <Group key="Pin">
       <Data key="0a3da284-fc87-4f19-85f2-f61376c14682" value="Tx_1" />
       <Data key="7b09c831-1bc9-4a9e-a9b1-7ceeeadbb500" value="RX_PIN" />
@@ -3445,6 +3452,22 @@
       </Group>
       <Group key="1024">
         <Data key="LevelKey" value="00" />
+      </Group>
+    </Group>
+  </Group>
+  <Group key="Interrupt">
+    <Group key="74f4c273-229d-4212-9a13-dea90dabd392">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="5" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="2289aaba-5f56-41cc-bf75-c203adb4dcfc">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="6" />
+        <Data key="Vector" value="-1" />
       </Group>
     </Group>
   </Group>

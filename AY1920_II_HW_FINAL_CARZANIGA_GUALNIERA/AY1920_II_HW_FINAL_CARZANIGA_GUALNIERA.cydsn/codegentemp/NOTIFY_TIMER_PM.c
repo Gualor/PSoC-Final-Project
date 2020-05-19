@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: TIMER_BUTTON_PM.c
+* File Name: NOTIFY_TIMER_PM.c
 * Version 2.80
 *
 *  Description:
@@ -16,13 +16,13 @@
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#include "TIMER_BUTTON.h"
+#include "NOTIFY_TIMER.h"
 
-static TIMER_BUTTON_backupStruct TIMER_BUTTON_backup;
+static NOTIFY_TIMER_backupStruct NOTIFY_TIMER_backup;
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_SaveConfig
+* Function Name: NOTIFY_TIMER_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -35,29 +35,29 @@ static TIMER_BUTTON_backupStruct TIMER_BUTTON_backup;
 *  void
 *
 * Global variables:
-*  TIMER_BUTTON_backup:  Variables of this global structure are modified to
+*  NOTIFY_TIMER_backup:  Variables of this global structure are modified to
 *  store the values of non retention configuration registers when Sleep() API is
 *  called.
 *
 *******************************************************************************/
-void TIMER_BUTTON_SaveConfig(void) 
+void NOTIFY_TIMER_SaveConfig(void) 
 {
-    #if (!TIMER_BUTTON_UsingFixedFunction)
-        TIMER_BUTTON_backup.TimerUdb = TIMER_BUTTON_ReadCounter();
-        TIMER_BUTTON_backup.InterruptMaskValue = TIMER_BUTTON_STATUS_MASK;
-        #if (TIMER_BUTTON_UsingHWCaptureCounter)
-            TIMER_BUTTON_backup.TimerCaptureCounter = TIMER_BUTTON_ReadCaptureCount();
+    #if (!NOTIFY_TIMER_UsingFixedFunction)
+        NOTIFY_TIMER_backup.TimerUdb = NOTIFY_TIMER_ReadCounter();
+        NOTIFY_TIMER_backup.InterruptMaskValue = NOTIFY_TIMER_STATUS_MASK;
+        #if (NOTIFY_TIMER_UsingHWCaptureCounter)
+            NOTIFY_TIMER_backup.TimerCaptureCounter = NOTIFY_TIMER_ReadCaptureCount();
         #endif /* Back Up capture counter register  */
 
-        #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
-            TIMER_BUTTON_backup.TimerControlRegister = TIMER_BUTTON_ReadControlRegister();
+        #if(!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
+            NOTIFY_TIMER_backup.TimerControlRegister = NOTIFY_TIMER_ReadControlRegister();
         #endif /* Backup the enable state of the Timer component */
     #endif /* Backup non retention registers in UDB implementation. All fixed function registers are retention */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_RestoreConfig
+* Function Name: NOTIFY_TIMER_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -70,29 +70,29 @@ void TIMER_BUTTON_SaveConfig(void)
 *  void
 *
 * Global variables:
-*  TIMER_BUTTON_backup:  Variables of this global structure are used to
+*  NOTIFY_TIMER_backup:  Variables of this global structure are used to
 *  restore the values of non retention registers on wakeup from sleep mode.
 *
 *******************************************************************************/
-void TIMER_BUTTON_RestoreConfig(void) 
+void NOTIFY_TIMER_RestoreConfig(void) 
 {   
-    #if (!TIMER_BUTTON_UsingFixedFunction)
+    #if (!NOTIFY_TIMER_UsingFixedFunction)
 
-        TIMER_BUTTON_WriteCounter(TIMER_BUTTON_backup.TimerUdb);
-        TIMER_BUTTON_STATUS_MASK =TIMER_BUTTON_backup.InterruptMaskValue;
-        #if (TIMER_BUTTON_UsingHWCaptureCounter)
-            TIMER_BUTTON_SetCaptureCount(TIMER_BUTTON_backup.TimerCaptureCounter);
+        NOTIFY_TIMER_WriteCounter(NOTIFY_TIMER_backup.TimerUdb);
+        NOTIFY_TIMER_STATUS_MASK =NOTIFY_TIMER_backup.InterruptMaskValue;
+        #if (NOTIFY_TIMER_UsingHWCaptureCounter)
+            NOTIFY_TIMER_SetCaptureCount(NOTIFY_TIMER_backup.TimerCaptureCounter);
         #endif /* Restore Capture counter register*/
 
-        #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
-            TIMER_BUTTON_WriteControlRegister(TIMER_BUTTON_backup.TimerControlRegister);
+        #if(!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
+            NOTIFY_TIMER_WriteControlRegister(NOTIFY_TIMER_backup.TimerControlRegister);
         #endif /* Restore the enable state of the Timer component */
     #endif /* Restore non retention registers in the UDB implementation only */
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Sleep
+* Function Name: NOTIFY_TIMER_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -105,32 +105,32 @@ void TIMER_BUTTON_RestoreConfig(void)
 *  void
 *
 * Global variables:
-*  TIMER_BUTTON_backup.TimerEnableState:  Is modified depending on the
+*  NOTIFY_TIMER_backup.TimerEnableState:  Is modified depending on the
 *  enable state of the block before entering sleep mode.
 *
 *******************************************************************************/
-void TIMER_BUTTON_Sleep(void) 
+void NOTIFY_TIMER_Sleep(void) 
 {
-    #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
+    #if(!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
         /* Save Counter's enable state */
-        if(TIMER_BUTTON_CTRL_ENABLE == (TIMER_BUTTON_CONTROL & TIMER_BUTTON_CTRL_ENABLE))
+        if(NOTIFY_TIMER_CTRL_ENABLE == (NOTIFY_TIMER_CONTROL & NOTIFY_TIMER_CTRL_ENABLE))
         {
             /* Timer is enabled */
-            TIMER_BUTTON_backup.TimerEnableState = 1u;
+            NOTIFY_TIMER_backup.TimerEnableState = 1u;
         }
         else
         {
             /* Timer is disabled */
-            TIMER_BUTTON_backup.TimerEnableState = 0u;
+            NOTIFY_TIMER_backup.TimerEnableState = 0u;
         }
     #endif /* Back up enable state from the Timer control register */
-    TIMER_BUTTON_Stop();
-    TIMER_BUTTON_SaveConfig();
+    NOTIFY_TIMER_Stop();
+    NOTIFY_TIMER_SaveConfig();
 }
 
 
 /*******************************************************************************
-* Function Name: TIMER_BUTTON_Wakeup
+* Function Name: NOTIFY_TIMER_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -143,17 +143,17 @@ void TIMER_BUTTON_Sleep(void)
 *  void
 *
 * Global variables:
-*  TIMER_BUTTON_backup.enableState:  Is used to restore the enable state of
+*  NOTIFY_TIMER_backup.enableState:  Is used to restore the enable state of
 *  block on wakeup from sleep mode.
 *
 *******************************************************************************/
-void TIMER_BUTTON_Wakeup(void) 
+void NOTIFY_TIMER_Wakeup(void) 
 {
-    TIMER_BUTTON_RestoreConfig();
-    #if(!TIMER_BUTTON_UDB_CONTROL_REG_REMOVED)
-        if(TIMER_BUTTON_backup.TimerEnableState == 1u)
+    NOTIFY_TIMER_RestoreConfig();
+    #if(!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
+        if(NOTIFY_TIMER_backup.TimerEnableState == 1u)
         {     /* Enable Timer's operation */
-                TIMER_BUTTON_Enable();
+                NOTIFY_TIMER_Enable();
         } /* Do nothing if Timer was disabled before */
     #endif /* Remove this code section if Control register is removed */
 }

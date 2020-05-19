@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define UART_PutBuffer UART_PutString(bufferUART)
 char bufferUART[100];
 
 /*
@@ -34,6 +33,14 @@ int main(void)
     /* Enable start/stop mode ISR. */
     ISR_START_StartEx(CUSTOM_ISR_START);
     
+    /* Enable notification LED ISR. */
+    ISR_NOTIFY_StartEx(CUSTOM_ISR_NOTIFY);
+    
+    // timer 
+    NOTIFY_TIMER_Start();
+    
+    BUTTON_TIMER_Start();
+    
     /* Start UART */
     UART_Start();
     
@@ -42,6 +49,7 @@ int main(void)
     
     CyDelay(10);
     
+    /*
     UART_PutString("*********    LIS3DH TEST    *********\r\n");
     
     // Read WHO_AM_I Register
@@ -69,11 +77,18 @@ int main(void)
     UART_PutBuffer;
     
     UART_PutString("*************************************\r\n");
-
+    */
+    
+    // Initialize button state
+    button_state = STOP_MODE;
+    
+    // Initialize notification led state
+    Notify_Init(&notify_led);
+    
     /* Main loop. */
     for(;;)
     {
-        /* Place your application code here. */
+
     }
 }
 

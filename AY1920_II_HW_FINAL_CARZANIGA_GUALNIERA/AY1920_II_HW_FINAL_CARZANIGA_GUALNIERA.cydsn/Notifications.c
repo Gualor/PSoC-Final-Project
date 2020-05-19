@@ -6,9 +6,9 @@
  *
  * Notify_Status: notify user of the internal
  * mode of the firmware with the PSoC on-board 
- * LED. The LED modalities are the following:
- * -> Start mode:  LED on        
+ * LED. The LED modalities are the following:       
  * -> Stop mode:   LED off
+ * -> Start mode:  LED on 
  * -> Config mode: LED blink
  *
  * ========================================
@@ -18,30 +18,44 @@
 #include "Notifications.h"
 
 /*
+ * Initialize led_t variable.
+ */
+void Notify_Init(volatile led_t *led)
+{
+    // Initialize blink mode
+    led->mode = STOP_NOTIFY;
+    
+    // Initialize period counter
+    led->counter = 0;
+}
+
+/*
  * Enable LED blinking notifications based
  * on current state.
  */
-void Notify_Status(led_t *state)
+void Notify_Status(volatile led_t *led)
 {
-    // Increment counter if less than period, otherwise reset it
-    if (state->counter < state->mode.period)
-    {
-        state->counter++;
-    }
-    else
-    {
-        state->counter = 0;
-    }
-    
-    // Toggle LED based on compare value
-    if (state->counter == 0)
+    // Turn on LED
+    if (led->counter == 0)
     {
        ONBOARD_LED_Write(1);
     }
-    else if (state->counter == state->mode.compare_val)
+    
+    // Turn off LED
+    if (led->counter == led->mode.compare_val)
     {
         ONBOARD_LED_Write(0);
     } 
+    
+    // Increment counter if less than period, otherwise reset it
+    if (led->counter < led->mode.period-1)
+    {
+        led->counter++;
+    }
+    else
+    {
+        led->counter = 0;
+    }
 }
 
 /* [] END OF FILE */
