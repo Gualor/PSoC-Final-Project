@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
   28:SPI_Interface.c **** */
   29:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
   28              		.loc 1 29 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 2
 
 
   29              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
   64 0028 10BD     		pop	{r4, pc}
   65              		.cfi_endproc
   66              	.LFE0:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 3
 
 
   67              		.size	SPI_Interface_tradeByte, .-SPI_Interface_tradeByte
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  104 001e FAD0     		beq	.L5
   66:SPI_Interface.c ****     	
   67:SPI_Interface.c ****     /* Read the RX Buffer */
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 4
 
 
   68:SPI_Interface.c ****     SPIM_ReadRxData();
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  143              		.global	SPI_Interface_Multi_RW
  144              		.thumb
  145              		.thumb_func
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 5
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 5
 
 
  146              		.type	SPI_Interface_Multi_RW, %function
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  101:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
  102:SPI_Interface.c ****             SPIM_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBuffer
  183              		.loc 1 102 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 6
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 6
 
 
  184 001a 2146     		mov	r1, r4
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  221 004c 0096     		str	r6, [sp]
  222 004e 0196     		str	r6, [sp, #4]
  119:SPI_Interface.c ****         
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 7
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 7
 
 
  120:SPI_Interface.c ****     /* Update count for RX */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  261              		.loc 1 132 0 is_stmt 0 discriminator 1
  262 0088 4C45     		cmp	r4, r9
  263 008a F6DB     		blt	.L15
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 8
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 8
 
 
  264              	.LBE2:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  299              		.size	SPI_Interface_Multi_RW, .-SPI_Interface_Multi_RW
  300 00b6 00BF     		.text
  301              	.Letext0:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 9
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 9
 
 
  302              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  356 0066 08       		.byte	0x8
  357 0067 05       		.byte	0x5
  358 0068 F4010000 		.4byte	.LASF8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 10
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 10
 
 
  359 006c 03       		.uleb128 0x3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  413 00d9 01       		.uleb128 0x1
  414 00da 9C       		.byte	0x9c
  415 00db 44010000 		.4byte	0x144
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 11
 
 
  416 00df 07       		.uleb128 0x7
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  470 014b 8C000000 		.4byte	0x8c
  471 014f 00000000 		.4byte	.LFB1
  472 0153 34000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 12
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 12
 
 
  473 0157 01       		.uleb128 0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  527 01c6 28000000 		.4byte	.LVL15
  528 01ca 9C030000 		.4byte	0x39c
  529 01ce 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 13
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 13
 
 
  530 01cf 30000000 		.4byte	.LVL17
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  584 023b 01       		.byte	0x1
  585 023c 5C       		.byte	0x5c
  586 023d 1B020000 		.4byte	0x21b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 14
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 14
 
 
  587 0241 42000000 		.4byte	.LLST2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  641 02c3 14000000 		.4byte	.LVL21
  642 02c7 7B030000 		.4byte	0x37b
  643 02cb D5020000 		.4byte	0x2d5
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 15
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 15
 
 
  644 02cf 0A       		.uleb128 0xa
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  698 032a 7D       		.byte	0x7d
  699 032b 00       		.sleb128 0
  700 032c 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 16
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 16
 
 
  701 032d 01       		.uleb128 0x1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  755 03a5 06       		.byte	0x6
  756 03a6 60       		.byte	0x60
  757 03a7 15       		.uleb128 0x15
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 17
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 17
 
 
  758 03a8 5C010000 		.4byte	.LASF39
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  812 0020 03       		.uleb128 0x3
  813 0021 24       		.uleb128 0x24
  814 0022 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 18
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 18
 
 
  815 0023 0B       		.uleb128 0xb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  869 005a 19       		.uleb128 0x19
  870 005b 01       		.uleb128 0x1
  871 005c 13       		.uleb128 0x13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 19
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 19
 
 
  872 005d 00       		.byte	0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  926 009a 00       		.byte	0
  927 009b 11       		.uleb128 0x11
  928 009c 01       		.uleb128 0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 20
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 20
 
 
  929 009d 31       		.uleb128 0x31
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  983 00d6 0F       		.uleb128 0xf
  984 00d7 00       		.byte	0
  985 00d8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 21
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 21
 
 
  986 00d9 0B       		.uleb128 0xb
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1040 010f 00       		.byte	0
  1041 0110 14       		.uleb128 0x14
  1042 0111 21       		.uleb128 0x21
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 22
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 22
 
 
  1043 0112 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1097 003e 00000000 		.4byte	0
  1098              	.LLST2:
  1099 0042 00000000 		.4byte	.LVL19
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 23
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 23
 
 
  1100 0046 10000000 		.4byte	.LVL20
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1154 00ca 00000000 		.4byte	0
  1155              	.LLST6:
  1156 00ce 16000000 		.4byte	.LVL22
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 24
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 24
 
 
  1157 00d2 38000000 		.4byte	.LVL26
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1211 0163 54       		.byte	0x54
  1212 0164 00000000 		.4byte	0
  1213 0168 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 25
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 25
 
 
  1214              		.section	.debug_aranges,"",%progbits
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1254      00
  1255              	.LASF32:
  1256 002d 636F756E 		.ascii	"count\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 26
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 26
 
 
  1256      7400
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1280      66756E63 
  1280      74696F6E 
  1280      2D736563 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 27
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 27
 
 
  1280      74696F6E 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1305              	.LASF34:
  1306 01d4 64756D6D 		.ascii	"dummyTX\000"
  1306      79545800 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 28
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 28
 
 
  1307              	.LASF26:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 1
  1330      415F4755 
  1330      414C4E49 
  1330      4552415C 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc4JXMQC.s 			page 29
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8AO6lV.s 			page 29
 
 
  1330      41593139 

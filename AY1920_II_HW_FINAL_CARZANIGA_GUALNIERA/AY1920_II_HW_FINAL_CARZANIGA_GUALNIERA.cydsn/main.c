@@ -24,9 +24,9 @@ char bufferUART[100];
  * Main function designated to setup stuff.
  */
 int main(void)
-{
+{    
     // Enable global interrupts
-    CyGlobalIntEnable; 
+    CyGlobalIntEnable;
     
     // Enable configuration mode ISR
     ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
@@ -53,48 +53,16 @@ int main(void)
     // Initialize notifications
     Notify_Init(&notify_led);
     
-    CyDelay(10);
-    
     // Initialize LED driver
     RGB_Init();
     
-    int8_t x=-128;
-    int8_t y=-128;
-    int8_t z=-128;
+    // End of setup
+    CyDelay(10);
     
     // Main loop
     for(;;)
     {
-        if (x<126)
-        {
-            x++;
-            CyDelay(10);
-        }
-        else
-        {
-            if (y<126)
-            {
-                y++;
-                CyDelay(10);
-            }
-            else
-            {
-                if (z<126)
-                {
-                    z++;
-                    CyDelay(10);
-                }
-                else
-                {
-                    x = -128;
-                    y = -128;
-                    z = -128;
-                }
-            }
-        }
         
-        int8_t imu_data[3] = {x, y, z};
-        RGB_Driver((uint8_t*)imu_data);
     }
     
     return 0;
