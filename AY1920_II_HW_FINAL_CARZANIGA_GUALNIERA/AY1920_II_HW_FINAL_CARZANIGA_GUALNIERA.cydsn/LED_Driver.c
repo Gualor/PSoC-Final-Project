@@ -1,10 +1,18 @@
 /* ========================================
  *
  * This file contains utility functions used
- * to drive the RGB LED based on IMU data.
+ * to drive the RGB LED based on IMU data as
+ * well as the PSoC on-board LED used for
+ * user notifications.
  *
  * RGB_Driver: high level function that enable
  * LED driving based on IMU data coming from LIS3DH.
+ *
+ * RGB_Start: initialize and start both PWM_RG
+ * and PWM_B to drive the RGB LED.
+ *
+ * RGB_Stop: Disable both PWM_RG and PWM_B
+ * turning off the RGB LED.
  *
  * PWM_Driver: set the PWM compare values 
  * to change the duty cycles of all LED channels.
@@ -17,6 +25,13 @@
  *
  * Absolute_value: light weight abs function
  * that does not use conditional statements.
+ *
+ * LED_Notify: based on the internal state,
+ * commute the on-board LED blinking pattern
+ * to notify the user of the current mode:
+ * -> STOP_MODE: LED off
+ * -> START_MODE: LED on
+ * -> CONFIG_MODE: LED blink
  *
  * ========================================
 */
@@ -41,15 +56,27 @@ void RGB_Driver(uint8_t *dataPtr)
 }
 
 /*
- * Initialize pulse width modulators.
+ * Start RGB pulse width modulators.
  */
-void RGB_Init(void)
+void RGB_Start(void)
 {
     // Enable red/green PWM
     PWM_RG_Start();
     
     // Enable blue PWM
     PWM_B_Start();
+}
+
+/*
+ * Stop RGB pulse width modulators.
+ */
+void RGB_Stop(void)
+{
+    // Disable red/green PWM
+    PWM_RG_Stop();
+    
+    // Disable blue PWM
+    PWM_B_Stop();
 }
 
 /*
@@ -100,6 +127,43 @@ uint8_t Absolute_Value(uint8_t value)
     
     // XOR mask and subtract mask
     return (value ^ mask) - mask;
+}
+
+/*
+ * Commute on-board LED blinking mode
+ * based on internal state:
+ * -> STOP_MODE: LED off
+ * -> START_MODE: LED on
+ * -> CONFIG_MODE: LED blink
+ */
+void LED_Notify(button_t state)
+{
+    if (state == STOP_MODE)
+    {
+        // Disable PWM
+        PWM_NOTIFY_Stop();
+    }
+    else
+    {
+        // If LED PWM is not enabled
+        if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
+        {
+            // Enable PWM
+            PWM_NOTIFY_Start();
+        }
+        
+        // Change PWM compare value
+        if (state == START_MODE)
+        {
+            // Set PWM to turn on LED
+            PWM_NOTIFY_WriteCompare(255);
+        }
+        else if (state == CONFIG_MODE)
+        {
+            // Set PWM to make LED blink
+            PWM_NOTIFY_WriteCompare(127);
+        }
+    } 
 }
 
 /* [] END OF FILE */

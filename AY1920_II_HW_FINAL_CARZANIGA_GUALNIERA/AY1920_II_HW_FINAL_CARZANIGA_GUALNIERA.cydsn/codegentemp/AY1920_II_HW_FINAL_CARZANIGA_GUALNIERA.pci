@@ -1,5 +1,5 @@
 # AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
-# 2020-05-22 09:38:47Z
+# 2020-05-22 15:44:54Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,10 +12,10 @@ set_io "RED_PIN(0)" iocell 3 5
 set_io "BLUE_PIN(0)" iocell 3 7
 set_io "BUTTON_PIN(0)" iocell 2 2
 set_io "TX_PIN(0)" iocell 12 7
-set_io "MISO(0)" iocell 12 2
-set_io "MOSI(0)" iocell 12 1
-set_io "SCLK(0)" iocell 12 0
+set_io "MISO(0)" iocell 1 6
+set_io "MOSI(0)" iocell 12 3
+set_io "SCLK(0)" iocell 12 2
 set_io "RX_PIN(0)" iocell 12 6
-set_io "CS(0)" iocell 12 3
 set_io "ONBOARD_LED(0)" iocell 2 1
+set_io "CS(0)" iocell 1 7
 set_io "INT1_PIN(0)" iocell 12 4

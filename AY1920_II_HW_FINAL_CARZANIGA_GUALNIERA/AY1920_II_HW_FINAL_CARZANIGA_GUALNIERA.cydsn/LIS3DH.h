@@ -13,11 +13,12 @@
     #include "SPI_Interface.h"
     #include "project.h"
     
-    
-    
-    
     #define LIS3DH_BYTES_IN_FIFO 192
     uint8_t IMU_DataBuffer[LIS3DH_BYTES_IN_FIFO];
+    
+    
+    
+    
 
      /*** ========= MACROS ========= ***/   
 

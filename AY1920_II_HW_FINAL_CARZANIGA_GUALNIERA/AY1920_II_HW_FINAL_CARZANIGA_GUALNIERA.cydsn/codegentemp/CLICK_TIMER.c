@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: NOTIFY_TIMER.c
+* File Name: CLICK_TIMER.c
 * Version 2.80
 *
 * Description:
@@ -21,13 +21,13 @@
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#include "NOTIFY_TIMER.h"
+#include "CLICK_TIMER.h"
 
-uint8 NOTIFY_TIMER_initVar = 0u;
+uint8 CLICK_TIMER_initVar = 0u;
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_Init
+* Function Name: CLICK_TIMER_Init
 ********************************************************************************
 *
 * Summary:
@@ -40,131 +40,131 @@ uint8 NOTIFY_TIMER_initVar = 0u;
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_Init(void) 
+void CLICK_TIMER_Init(void) 
 {
-    #if(!NOTIFY_TIMER_UsingFixedFunction)
+    #if(!CLICK_TIMER_UsingFixedFunction)
             /* Interrupt State Backup for Critical Region*/
-            uint8 NOTIFY_TIMER_interruptState;
+            uint8 CLICK_TIMER_interruptState;
     #endif /* Interrupt state back up for Fixed Function only */
 
-    #if (NOTIFY_TIMER_UsingFixedFunction)
+    #if (CLICK_TIMER_UsingFixedFunction)
         /* Clear all bits but the enable bit (if it's already set) for Timer operation */
-        NOTIFY_TIMER_CONTROL &= NOTIFY_TIMER_CTRL_ENABLE;
+        CLICK_TIMER_CONTROL &= CLICK_TIMER_CTRL_ENABLE;
 
         /* Clear the mode bits for continuous run mode */
         #if (CY_PSOC5A)
-            NOTIFY_TIMER_CONTROL2 &= ((uint8)(~NOTIFY_TIMER_CTRL_MODE_MASK));
+            CLICK_TIMER_CONTROL2 &= ((uint8)(~CLICK_TIMER_CTRL_MODE_MASK));
         #endif /* Clear bits in CONTROL2 only in PSOC5A */
 
         #if (CY_PSOC3 || CY_PSOC5LP)
-            NOTIFY_TIMER_CONTROL3 &= ((uint8)(~NOTIFY_TIMER_CTRL_MODE_MASK));
+            CLICK_TIMER_CONTROL3 &= ((uint8)(~CLICK_TIMER_CTRL_MODE_MASK));
         #endif /* CONTROL3 register exists only in PSoC3 OR PSoC5LP */
 
         /* Check if One Shot mode is enabled i.e. RunMode !=0*/
-        #if (NOTIFY_TIMER_RunModeUsed != 0x0u)
+        #if (CLICK_TIMER_RunModeUsed != 0x0u)
             /* Set 3rd bit of Control register to enable one shot mode */
-            NOTIFY_TIMER_CONTROL |= 0x04u;
+            CLICK_TIMER_CONTROL |= 0x04u;
         #endif /* One Shot enabled only when RunModeUsed is not Continuous*/
 
-        #if (NOTIFY_TIMER_RunModeUsed == 2)
+        #if (CLICK_TIMER_RunModeUsed == 2)
             #if (CY_PSOC5A)
                 /* Set last 2 bits of control2 register if one shot(halt on
                 interrupt) is enabled*/
-                NOTIFY_TIMER_CONTROL2 |= 0x03u;
+                CLICK_TIMER_CONTROL2 |= 0x03u;
             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL2 for PSoC5A */
 
             #if (CY_PSOC3 || CY_PSOC5LP)
                 /* Set last 2 bits of control3 register if one shot(halt on
                 interrupt) is enabled*/
-                NOTIFY_TIMER_CONTROL3 |= 0x03u;
+                CLICK_TIMER_CONTROL3 |= 0x03u;
             #endif /* Set One-Shot Halt on Interrupt bit in CONTROL3 for PSoC3 or PSoC5LP */
 
         #endif /* Remove section if One Shot Halt on Interrupt is not enabled */
 
-        #if (NOTIFY_TIMER_UsingHWEnable != 0)
+        #if (CLICK_TIMER_UsingHWEnable != 0)
             #if (CY_PSOC5A)
                 /* Set the default Run Mode of the Timer to Continuous */
-                NOTIFY_TIMER_CONTROL2 |= NOTIFY_TIMER_CTRL_MODE_PULSEWIDTH;
+                CLICK_TIMER_CONTROL2 |= CLICK_TIMER_CTRL_MODE_PULSEWIDTH;
             #endif /* Set Continuous Run Mode in CONTROL2 for PSoC5A */
 
             #if (CY_PSOC3 || CY_PSOC5LP)
                 /* Clear and Set ROD and COD bits of CFG2 register */
-                NOTIFY_TIMER_CONTROL3 &= ((uint8)(~NOTIFY_TIMER_CTRL_RCOD_MASK));
-                NOTIFY_TIMER_CONTROL3 |= NOTIFY_TIMER_CTRL_RCOD;
+                CLICK_TIMER_CONTROL3 &= ((uint8)(~CLICK_TIMER_CTRL_RCOD_MASK));
+                CLICK_TIMER_CONTROL3 |= CLICK_TIMER_CTRL_RCOD;
 
                 /* Clear and Enable the HW enable bit in CFG2 register */
-                NOTIFY_TIMER_CONTROL3 &= ((uint8)(~NOTIFY_TIMER_CTRL_ENBL_MASK));
-                NOTIFY_TIMER_CONTROL3 |= NOTIFY_TIMER_CTRL_ENBL;
+                CLICK_TIMER_CONTROL3 &= ((uint8)(~CLICK_TIMER_CTRL_ENBL_MASK));
+                CLICK_TIMER_CONTROL3 |= CLICK_TIMER_CTRL_ENBL;
 
                 /* Set the default Run Mode of the Timer to Continuous */
-                NOTIFY_TIMER_CONTROL3 |= NOTIFY_TIMER_CTRL_MODE_CONTINUOUS;
+                CLICK_TIMER_CONTROL3 |= CLICK_TIMER_CTRL_MODE_CONTINUOUS;
             #endif /* Set Continuous Run Mode in CONTROL3 for PSoC3ES3 or PSoC5A */
 
         #endif /* Configure Run Mode with hardware enable */
 
         /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
-        NOTIFY_TIMER_RT1 &= ((uint8)(~NOTIFY_TIMER_RT1_MASK));
-        NOTIFY_TIMER_RT1 |= NOTIFY_TIMER_SYNC;
+        CLICK_TIMER_RT1 &= ((uint8)(~CLICK_TIMER_RT1_MASK));
+        CLICK_TIMER_RT1 |= CLICK_TIMER_SYNC;
 
         /*Enable DSI Sync all all inputs of the Timer*/
-        NOTIFY_TIMER_RT1 &= ((uint8)(~NOTIFY_TIMER_SYNCDSI_MASK));
-        NOTIFY_TIMER_RT1 |= NOTIFY_TIMER_SYNCDSI_EN;
+        CLICK_TIMER_RT1 &= ((uint8)(~CLICK_TIMER_SYNCDSI_MASK));
+        CLICK_TIMER_RT1 |= CLICK_TIMER_SYNCDSI_EN;
 
         /* Set the IRQ to use the status register interrupts */
-        NOTIFY_TIMER_CONTROL2 |= NOTIFY_TIMER_CTRL2_IRQ_SEL;
+        CLICK_TIMER_CONTROL2 |= CLICK_TIMER_CTRL2_IRQ_SEL;
     #endif /* Configuring registers of fixed function implementation */
 
     /* Set Initial values from Configuration */
-    NOTIFY_TIMER_WritePeriod(NOTIFY_TIMER_INIT_PERIOD);
-    NOTIFY_TIMER_WriteCounter(NOTIFY_TIMER_INIT_PERIOD);
+    CLICK_TIMER_WritePeriod(CLICK_TIMER_INIT_PERIOD);
+    CLICK_TIMER_WriteCounter(CLICK_TIMER_INIT_PERIOD);
 
-    #if (NOTIFY_TIMER_UsingHWCaptureCounter)/* Capture counter is enabled */
-        NOTIFY_TIMER_CAPTURE_COUNT_CTRL |= NOTIFY_TIMER_CNTR_ENABLE;
-        NOTIFY_TIMER_SetCaptureCount(NOTIFY_TIMER_INIT_CAPTURE_COUNT);
+    #if (CLICK_TIMER_UsingHWCaptureCounter)/* Capture counter is enabled */
+        CLICK_TIMER_CAPTURE_COUNT_CTRL |= CLICK_TIMER_CNTR_ENABLE;
+        CLICK_TIMER_SetCaptureCount(CLICK_TIMER_INIT_CAPTURE_COUNT);
     #endif /* Configure capture counter value */
 
-    #if (!NOTIFY_TIMER_UsingFixedFunction)
-        #if (NOTIFY_TIMER_SoftwareCaptureMode)
-            NOTIFY_TIMER_SetCaptureMode(NOTIFY_TIMER_INIT_CAPTURE_MODE);
+    #if (!CLICK_TIMER_UsingFixedFunction)
+        #if (CLICK_TIMER_SoftwareCaptureMode)
+            CLICK_TIMER_SetCaptureMode(CLICK_TIMER_INIT_CAPTURE_MODE);
         #endif /* Set Capture Mode for UDB implementation if capture mode is software controlled */
 
-        #if (NOTIFY_TIMER_SoftwareTriggerMode)
-            #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
-                if (0u == (NOTIFY_TIMER_CONTROL & NOTIFY_TIMER__B_TIMER__TM_SOFTWARE))
+        #if (CLICK_TIMER_SoftwareTriggerMode)
+            #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)
+                if (0u == (CLICK_TIMER_CONTROL & CLICK_TIMER__B_TIMER__TM_SOFTWARE))
                 {
-                    NOTIFY_TIMER_SetTriggerMode(NOTIFY_TIMER_INIT_TRIGGER_MODE);
+                    CLICK_TIMER_SetTriggerMode(CLICK_TIMER_INIT_TRIGGER_MODE);
                 }
-            #endif /* (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) */
+            #endif /* (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) */
         #endif /* Set trigger mode for UDB Implementation if trigger mode is software controlled */
 
         /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critical*/
         /* Enter Critical Region*/
-        NOTIFY_TIMER_interruptState = CyEnterCriticalSection();
+        CLICK_TIMER_interruptState = CyEnterCriticalSection();
 
         /* Use the interrupt output of the status register for IRQ output */
-        NOTIFY_TIMER_STATUS_AUX_CTRL |= NOTIFY_TIMER_STATUS_ACTL_INT_EN_MASK;
+        CLICK_TIMER_STATUS_AUX_CTRL |= CLICK_TIMER_STATUS_ACTL_INT_EN_MASK;
 
         /* Exit Critical Region*/
-        CyExitCriticalSection(NOTIFY_TIMER_interruptState);
+        CyExitCriticalSection(CLICK_TIMER_interruptState);
 
-        #if (NOTIFY_TIMER_EnableTriggerMode)
-            NOTIFY_TIMER_EnableTrigger();
+        #if (CLICK_TIMER_EnableTriggerMode)
+            CLICK_TIMER_EnableTrigger();
         #endif /* Set Trigger enable bit for UDB implementation in the control register*/
 		
 		
-        #if (NOTIFY_TIMER_InterruptOnCaptureCount && !NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
-            NOTIFY_TIMER_SetInterruptCount(NOTIFY_TIMER_INIT_INT_CAPTURE_COUNT);
+        #if (CLICK_TIMER_InterruptOnCaptureCount && !CLICK_TIMER_UDB_CONTROL_REG_REMOVED)
+            CLICK_TIMER_SetInterruptCount(CLICK_TIMER_INIT_INT_CAPTURE_COUNT);
         #endif /* Set interrupt count in UDB implementation if interrupt count feature is checked.*/
 
-        NOTIFY_TIMER_ClearFIFO();
+        CLICK_TIMER_ClearFIFO();
     #endif /* Configure additional features of UDB implementation */
 
-    NOTIFY_TIMER_SetInterruptMode(NOTIFY_TIMER_INIT_INTERRUPT_MODE);
+    CLICK_TIMER_SetInterruptMode(CLICK_TIMER_INIT_INTERRUPT_MODE);
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_Enable
+* Function Name: CLICK_TIMER_Enable
 ********************************************************************************
 *
 * Summary:
@@ -177,23 +177,23 @@ void NOTIFY_TIMER_Init(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_Enable(void) 
+void CLICK_TIMER_Enable(void) 
 {
     /* Globally Enable the Fixed Function Block chosen */
-    #if (NOTIFY_TIMER_UsingFixedFunction)
-        NOTIFY_TIMER_GLOBAL_ENABLE |= NOTIFY_TIMER_BLOCK_EN_MASK;
-        NOTIFY_TIMER_GLOBAL_STBY_ENABLE |= NOTIFY_TIMER_BLOCK_STBY_EN_MASK;
+    #if (CLICK_TIMER_UsingFixedFunction)
+        CLICK_TIMER_GLOBAL_ENABLE |= CLICK_TIMER_BLOCK_EN_MASK;
+        CLICK_TIMER_GLOBAL_STBY_ENABLE |= CLICK_TIMER_BLOCK_STBY_EN_MASK;
     #endif /* Set Enable bit for enabling Fixed function timer*/
 
     /* Remove assignment if control register is removed */
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED || NOTIFY_TIMER_UsingFixedFunction)
-        NOTIFY_TIMER_CONTROL |= NOTIFY_TIMER_CTRL_ENABLE;
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED || CLICK_TIMER_UsingFixedFunction)
+        CLICK_TIMER_CONTROL |= CLICK_TIMER_CTRL_ENABLE;
     #endif /* Remove assignment if control register is removed */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_Start
+* Function Name: CLICK_TIMER_Start
 ********************************************************************************
 *
 * Summary:
@@ -208,26 +208,26 @@ void NOTIFY_TIMER_Enable(void)
 *  void
 *
 * Global variables:
-*  NOTIFY_TIMER_initVar: Is modified when this function is called for the
+*  CLICK_TIMER_initVar: Is modified when this function is called for the
 *   first time. Is used to ensure that initialization happens only once.
 *
 *******************************************************************************/
-void NOTIFY_TIMER_Start(void) 
+void CLICK_TIMER_Start(void) 
 {
-    if(NOTIFY_TIMER_initVar == 0u)
+    if(CLICK_TIMER_initVar == 0u)
     {
-        NOTIFY_TIMER_Init();
+        CLICK_TIMER_Init();
 
-        NOTIFY_TIMER_initVar = 1u;   /* Clear this bit for Initialization */
+        CLICK_TIMER_initVar = 1u;   /* Clear this bit for Initialization */
     }
 
     /* Enable the Timer */
-    NOTIFY_TIMER_Enable();
+    CLICK_TIMER_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_Stop
+* Function Name: CLICK_TIMER_Stop
 ********************************************************************************
 *
 * Summary:
@@ -244,23 +244,23 @@ void NOTIFY_TIMER_Start(void)
 *               has no effect on the operation of the timer.
 *
 *******************************************************************************/
-void NOTIFY_TIMER_Stop(void) 
+void CLICK_TIMER_Stop(void) 
 {
     /* Disable Timer */
-    #if(!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED || NOTIFY_TIMER_UsingFixedFunction)
-        NOTIFY_TIMER_CONTROL &= ((uint8)(~NOTIFY_TIMER_CTRL_ENABLE));
+    #if(!CLICK_TIMER_UDB_CONTROL_REG_REMOVED || CLICK_TIMER_UsingFixedFunction)
+        CLICK_TIMER_CONTROL &= ((uint8)(~CLICK_TIMER_CTRL_ENABLE));
     #endif /* Remove assignment if control register is removed */
 
     /* Globally disable the Fixed Function Block chosen */
-    #if (NOTIFY_TIMER_UsingFixedFunction)
-        NOTIFY_TIMER_GLOBAL_ENABLE &= ((uint8)(~NOTIFY_TIMER_BLOCK_EN_MASK));
-        NOTIFY_TIMER_GLOBAL_STBY_ENABLE &= ((uint8)(~NOTIFY_TIMER_BLOCK_STBY_EN_MASK));
+    #if (CLICK_TIMER_UsingFixedFunction)
+        CLICK_TIMER_GLOBAL_ENABLE &= ((uint8)(~CLICK_TIMER_BLOCK_EN_MASK));
+        CLICK_TIMER_GLOBAL_STBY_ENABLE &= ((uint8)(~CLICK_TIMER_BLOCK_STBY_EN_MASK));
     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SetInterruptMode
+* Function Name: CLICK_TIMER_SetInterruptMode
 ********************************************************************************
 *
 * Summary:
@@ -276,14 +276,14 @@ void NOTIFY_TIMER_Stop(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SetInterruptMode(uint8 interruptMode) 
+void CLICK_TIMER_SetInterruptMode(uint8 interruptMode) 
 {
-    NOTIFY_TIMER_STATUS_MASK = interruptMode;
+    CLICK_TIMER_STATUS_MASK = interruptMode;
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SoftwareCapture
+* Function Name: CLICK_TIMER_SoftwareCapture
 ********************************************************************************
 *
 * Summary:
@@ -299,20 +299,20 @@ void NOTIFY_TIMER_SetInterruptMode(uint8 interruptMode)
 *  An existing hardware capture could be overwritten.
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SoftwareCapture(void) 
+void CLICK_TIMER_SoftwareCapture(void) 
 {
     /* Generate a software capture by reading the counter register */
-    #if(NOTIFY_TIMER_UsingFixedFunction)
-        (void)CY_GET_REG16(NOTIFY_TIMER_COUNTER_LSB_PTR);
+    #if(CLICK_TIMER_UsingFixedFunction)
+        (void)CY_GET_REG16(CLICK_TIMER_COUNTER_LSB_PTR);
     #else
-        (void)CY_GET_REG8(NOTIFY_TIMER_COUNTER_LSB_PTR_8BIT);
-    #endif/* (NOTIFY_TIMER_UsingFixedFunction) */
+        (void)CY_GET_REG8(CLICK_TIMER_COUNTER_LSB_PTR_8BIT);
+    #endif/* (CLICK_TIMER_UsingFixedFunction) */
     /* Capture Data is now in the FIFO */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadStatusRegister
+* Function Name: CLICK_TIMER_ReadStatusRegister
 ********************************************************************************
 *
 * Summary:
@@ -330,17 +330,17 @@ void NOTIFY_TIMER_SoftwareCapture(void)
 *  Status register bits may be clear on read.
 *
 *******************************************************************************/
-uint8   NOTIFY_TIMER_ReadStatusRegister(void) 
+uint8   CLICK_TIMER_ReadStatusRegister(void) 
 {
-    return (NOTIFY_TIMER_STATUS);
+    return (CLICK_TIMER_STATUS);
 }
 
 
-#if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
+#if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadControlRegister
+* Function Name: CLICK_TIMER_ReadControlRegister
 ********************************************************************************
 *
 * Summary:
@@ -353,18 +353,18 @@ uint8   NOTIFY_TIMER_ReadStatusRegister(void)
 *  The contents of the control register
 *
 *******************************************************************************/
-uint8 NOTIFY_TIMER_ReadControlRegister(void) 
+uint8 CLICK_TIMER_ReadControlRegister(void) 
 {
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) 
-        return ((uint8)NOTIFY_TIMER_CONTROL);
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) 
+        return ((uint8)CLICK_TIMER_CONTROL);
     #else
         return (0);
-    #endif /* (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) */
+    #endif /* (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_WriteControlRegister
+* Function Name: CLICK_TIMER_WriteControlRegister
 ********************************************************************************
 *
 * Summary:
@@ -376,20 +376,20 @@ uint8 NOTIFY_TIMER_ReadControlRegister(void)
 * Return:
 *
 *******************************************************************************/
-void NOTIFY_TIMER_WriteControlRegister(uint8 control) 
+void CLICK_TIMER_WriteControlRegister(uint8 control) 
 {
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) 
-        NOTIFY_TIMER_CONTROL = control;
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) 
+        CLICK_TIMER_CONTROL = control;
     #else
         control = 0u;
-    #endif /* (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) */
+    #endif /* (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 
 #endif /* Remove API if control register is unused */
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadPeriod
+* Function Name: CLICK_TIMER_ReadPeriod
 ********************************************************************************
 *
 * Summary:
@@ -402,18 +402,18 @@ void NOTIFY_TIMER_WriteControlRegister(uint8 control)
 *  The present value of the counter.
 *
 *******************************************************************************/
-uint8 NOTIFY_TIMER_ReadPeriod(void) 
+uint8 CLICK_TIMER_ReadPeriod(void) 
 {
-   #if(NOTIFY_TIMER_UsingFixedFunction)
-       return ((uint8)CY_GET_REG16(NOTIFY_TIMER_PERIOD_LSB_PTR));
+   #if(CLICK_TIMER_UsingFixedFunction)
+       return ((uint8)CY_GET_REG16(CLICK_TIMER_PERIOD_LSB_PTR));
    #else
-       return (CY_GET_REG8(NOTIFY_TIMER_PERIOD_LSB_PTR));
-   #endif /* (NOTIFY_TIMER_UsingFixedFunction) */
+       return (CY_GET_REG8(CLICK_TIMER_PERIOD_LSB_PTR));
+   #endif /* (CLICK_TIMER_UsingFixedFunction) */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_WritePeriod
+* Function Name: CLICK_TIMER_WritePeriod
 ********************************************************************************
 *
 * Summary:
@@ -428,19 +428,19 @@ uint8 NOTIFY_TIMER_ReadPeriod(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_WritePeriod(uint8 period) 
+void CLICK_TIMER_WritePeriod(uint8 period) 
 {
-    #if(NOTIFY_TIMER_UsingFixedFunction)
+    #if(CLICK_TIMER_UsingFixedFunction)
         uint16 period_temp = (uint16)period;
-        CY_SET_REG16(NOTIFY_TIMER_PERIOD_LSB_PTR, period_temp);
+        CY_SET_REG16(CLICK_TIMER_PERIOD_LSB_PTR, period_temp);
     #else
-        CY_SET_REG8(NOTIFY_TIMER_PERIOD_LSB_PTR, period);
+        CY_SET_REG8(CLICK_TIMER_PERIOD_LSB_PTR, period);
     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed function implementation */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadCapture
+* Function Name: CLICK_TIMER_ReadCapture
 ********************************************************************************
 *
 * Summary:
@@ -453,18 +453,18 @@ void NOTIFY_TIMER_WritePeriod(uint8 period)
 *  Present Capture value.
 *
 *******************************************************************************/
-uint8 NOTIFY_TIMER_ReadCapture(void) 
+uint8 CLICK_TIMER_ReadCapture(void) 
 {
-   #if(NOTIFY_TIMER_UsingFixedFunction)
-       return ((uint8)CY_GET_REG16(NOTIFY_TIMER_CAPTURE_LSB_PTR));
+   #if(CLICK_TIMER_UsingFixedFunction)
+       return ((uint8)CY_GET_REG16(CLICK_TIMER_CAPTURE_LSB_PTR));
    #else
-       return (CY_GET_REG8(NOTIFY_TIMER_CAPTURE_LSB_PTR));
-   #endif /* (NOTIFY_TIMER_UsingFixedFunction) */
+       return (CY_GET_REG8(CLICK_TIMER_CAPTURE_LSB_PTR));
+   #endif /* (CLICK_TIMER_UsingFixedFunction) */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_WriteCounter
+* Function Name: CLICK_TIMER_WriteCounter
 ********************************************************************************
 *
 * Summary:
@@ -477,22 +477,22 @@ uint8 NOTIFY_TIMER_ReadCapture(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_WriteCounter(uint8 counter) 
+void CLICK_TIMER_WriteCounter(uint8 counter) 
 {
-   #if(NOTIFY_TIMER_UsingFixedFunction)
+   #if(CLICK_TIMER_UsingFixedFunction)
         /* This functionality is removed until a FixedFunction HW update to
          * allow this register to be written
          */
-        CY_SET_REG16(NOTIFY_TIMER_COUNTER_LSB_PTR, (uint16)counter);
+        CY_SET_REG16(CLICK_TIMER_COUNTER_LSB_PTR, (uint16)counter);
         
     #else
-        CY_SET_REG8(NOTIFY_TIMER_COUNTER_LSB_PTR, counter);
+        CY_SET_REG8(CLICK_TIMER_COUNTER_LSB_PTR, counter);
     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fixed function Timer */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadCounter
+* Function Name: CLICK_TIMER_ReadCounter
 ********************************************************************************
 *
 * Summary:
@@ -505,27 +505,27 @@ void NOTIFY_TIMER_WriteCounter(uint8 counter)
 *  Present compare value.
 *
 *******************************************************************************/
-uint8 NOTIFY_TIMER_ReadCounter(void) 
+uint8 CLICK_TIMER_ReadCounter(void) 
 {
     /* Force capture by reading Accumulator */
     /* Must first do a software capture to be able to read the counter */
     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
-    #if(NOTIFY_TIMER_UsingFixedFunction)
-        (void)CY_GET_REG16(NOTIFY_TIMER_COUNTER_LSB_PTR);
+    #if(CLICK_TIMER_UsingFixedFunction)
+        (void)CY_GET_REG16(CLICK_TIMER_COUNTER_LSB_PTR);
     #else
-        (void)CY_GET_REG8(NOTIFY_TIMER_COUNTER_LSB_PTR_8BIT);
-    #endif/* (NOTIFY_TIMER_UsingFixedFunction) */
+        (void)CY_GET_REG8(CLICK_TIMER_COUNTER_LSB_PTR_8BIT);
+    #endif/* (CLICK_TIMER_UsingFixedFunction) */
 
     /* Read the data from the FIFO (or capture register for Fixed Function)*/
-    #if(NOTIFY_TIMER_UsingFixedFunction)
-        return ((uint8)CY_GET_REG16(NOTIFY_TIMER_CAPTURE_LSB_PTR));
+    #if(CLICK_TIMER_UsingFixedFunction)
+        return ((uint8)CY_GET_REG16(CLICK_TIMER_CAPTURE_LSB_PTR));
     #else
-        return (CY_GET_REG8(NOTIFY_TIMER_CAPTURE_LSB_PTR));
-    #endif /* (NOTIFY_TIMER_UsingFixedFunction) */
+        return (CY_GET_REG8(CLICK_TIMER_CAPTURE_LSB_PTR));
+    #endif /* (CLICK_TIMER_UsingFixedFunction) */
 }
 
 
-#if(!NOTIFY_TIMER_UsingFixedFunction) /* UDB Specific Functions */
+#if(!CLICK_TIMER_UsingFixedFunction) /* UDB Specific Functions */
 
     
 /*******************************************************************************
@@ -534,11 +534,11 @@ uint8 NOTIFY_TIMER_ReadCounter(void)
  ******************************************************************************/
 
 
-#if (NOTIFY_TIMER_SoftwareCaptureMode)
+#if (CLICK_TIMER_SoftwareCaptureMode)
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SetCaptureMode
+* Function Name: CLICK_TIMER_SetCaptureMode
 ********************************************************************************
 *
 * Summary:
@@ -547,44 +547,44 @@ uint8 NOTIFY_TIMER_ReadCounter(void)
 * Parameters:
 *  captureMode: This parameter sets the capture mode of the UDB capture feature
 *  The parameter values are defined using the
-*  #define NOTIFY_TIMER__B_TIMER__CM_NONE 0
-#define NOTIFY_TIMER__B_TIMER__CM_RISINGEDGE 1
-#define NOTIFY_TIMER__B_TIMER__CM_FALLINGEDGE 2
-#define NOTIFY_TIMER__B_TIMER__CM_EITHEREDGE 3
-#define NOTIFY_TIMER__B_TIMER__CM_SOFTWARE 4
+*  #define CLICK_TIMER__B_TIMER__CM_NONE 0
+#define CLICK_TIMER__B_TIMER__CM_RISINGEDGE 1
+#define CLICK_TIMER__B_TIMER__CM_FALLINGEDGE 2
+#define CLICK_TIMER__B_TIMER__CM_EITHEREDGE 3
+#define CLICK_TIMER__B_TIMER__CM_SOFTWARE 4
  identifiers
 *  The following are the possible values of the parameter
-*  NOTIFY_TIMER__B_TIMER__CM_NONE        - Set Capture mode to None
-*  NOTIFY_TIMER__B_TIMER__CM_RISINGEDGE  - Rising edge of Capture input
-*  NOTIFY_TIMER__B_TIMER__CM_FALLINGEDGE - Falling edge of Capture input
-*  NOTIFY_TIMER__B_TIMER__CM_EITHEREDGE  - Either edge of Capture input
+*  CLICK_TIMER__B_TIMER__CM_NONE        - Set Capture mode to None
+*  CLICK_TIMER__B_TIMER__CM_RISINGEDGE  - Rising edge of Capture input
+*  CLICK_TIMER__B_TIMER__CM_FALLINGEDGE - Falling edge of Capture input
+*  CLICK_TIMER__B_TIMER__CM_EITHEREDGE  - Either edge of Capture input
 *
 * Return:
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SetCaptureMode(uint8 captureMode) 
+void CLICK_TIMER_SetCaptureMode(uint8 captureMode) 
 {
     /* This must only set to two bits of the control register associated */
-    captureMode = ((uint8)((uint8)captureMode << NOTIFY_TIMER_CTRL_CAP_MODE_SHIFT));
-    captureMode &= (NOTIFY_TIMER_CTRL_CAP_MODE_MASK);
+    captureMode = ((uint8)((uint8)captureMode << CLICK_TIMER_CTRL_CAP_MODE_SHIFT));
+    captureMode &= (CLICK_TIMER_CTRL_CAP_MODE_MASK);
 
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)
         /* Clear the Current Setting */
-        NOTIFY_TIMER_CONTROL &= ((uint8)(~NOTIFY_TIMER_CTRL_CAP_MODE_MASK));
+        CLICK_TIMER_CONTROL &= ((uint8)(~CLICK_TIMER_CTRL_CAP_MODE_MASK));
 
         /* Write The New Setting */
-        NOTIFY_TIMER_CONTROL |= captureMode;
-    #endif /* (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) */
+        CLICK_TIMER_CONTROL |= captureMode;
+    #endif /* (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
 #endif /* Remove API if Capture Mode is not Software Controlled */
 
 
-#if (NOTIFY_TIMER_SoftwareTriggerMode)
+#if (CLICK_TIMER_SoftwareTriggerMode)
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SetTriggerMode
+* Function Name: CLICK_TIMER_SetTriggerMode
 ********************************************************************************
 *
 * Summary:
@@ -592,37 +592,37 @@ void NOTIFY_TIMER_SetCaptureMode(uint8 captureMode)
 *
 * Parameters:
 *  triggerMode: Pass one of the pre-defined Trigger Modes (except Software)
-    #define NOTIFY_TIMER__B_TIMER__TM_NONE 0x00u
-    #define NOTIFY_TIMER__B_TIMER__TM_RISINGEDGE 0x04u
-    #define NOTIFY_TIMER__B_TIMER__TM_FALLINGEDGE 0x08u
-    #define NOTIFY_TIMER__B_TIMER__TM_EITHEREDGE 0x0Cu
-    #define NOTIFY_TIMER__B_TIMER__TM_SOFTWARE 0x10u
+    #define CLICK_TIMER__B_TIMER__TM_NONE 0x00u
+    #define CLICK_TIMER__B_TIMER__TM_RISINGEDGE 0x04u
+    #define CLICK_TIMER__B_TIMER__TM_FALLINGEDGE 0x08u
+    #define CLICK_TIMER__B_TIMER__TM_EITHEREDGE 0x0Cu
+    #define CLICK_TIMER__B_TIMER__TM_SOFTWARE 0x10u
 *
 * Return:
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SetTriggerMode(uint8 triggerMode) 
+void CLICK_TIMER_SetTriggerMode(uint8 triggerMode) 
 {
     /* This must only set to two bits of the control register associated */
-    triggerMode &= NOTIFY_TIMER_CTRL_TRIG_MODE_MASK;
+    triggerMode &= CLICK_TIMER_CTRL_TRIG_MODE_MASK;
 
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
     
         /* Clear the Current Setting */
-        NOTIFY_TIMER_CONTROL &= ((uint8)(~NOTIFY_TIMER_CTRL_TRIG_MODE_MASK));
+        CLICK_TIMER_CONTROL &= ((uint8)(~CLICK_TIMER_CTRL_TRIG_MODE_MASK));
 
         /* Write The New Setting */
-        NOTIFY_TIMER_CONTROL |= (triggerMode | NOTIFY_TIMER__B_TIMER__TM_SOFTWARE);
+        CLICK_TIMER_CONTROL |= (triggerMode | CLICK_TIMER__B_TIMER__TM_SOFTWARE);
     #endif /* Remove code section if control register is not used */
 }
 #endif /* Remove API if Trigger Mode is not Software Controlled */
 
-#if (NOTIFY_TIMER_EnableTriggerMode)
+#if (CLICK_TIMER_EnableTriggerMode)
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_EnableTrigger
+* Function Name: CLICK_TIMER_EnableTrigger
 ********************************************************************************
 *
 * Summary:
@@ -635,16 +635,16 @@ void NOTIFY_TIMER_SetTriggerMode(uint8 triggerMode)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_EnableTrigger(void) 
+void CLICK_TIMER_EnableTrigger(void) 
 {
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
-        NOTIFY_TIMER_CONTROL |= NOTIFY_TIMER_CTRL_TRIG_EN;
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed */
+        CLICK_TIMER_CONTROL |= CLICK_TIMER_CTRL_TRIG_EN;
     #endif /* Remove code section if control register is not used */
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_DisableTrigger
+* Function Name: CLICK_TIMER_DisableTrigger
 ********************************************************************************
 *
 * Summary:
@@ -657,19 +657,19 @@ void NOTIFY_TIMER_EnableTrigger(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_DisableTrigger(void) 
+void CLICK_TIMER_DisableTrigger(void) 
 {
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED )   /* Remove assignment if control register is removed */
-        NOTIFY_TIMER_CONTROL &= ((uint8)(~NOTIFY_TIMER_CTRL_TRIG_EN));
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED )   /* Remove assignment if control register is removed */
+        CLICK_TIMER_CONTROL &= ((uint8)(~CLICK_TIMER_CTRL_TRIG_EN));
     #endif /* Remove code section if control register is not used */
 }
 #endif /* Remove API is Trigger Mode is set to None */
 
-#if(NOTIFY_TIMER_InterruptOnCaptureCount)
+#if(CLICK_TIMER_InterruptOnCaptureCount)
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SetInterruptCount
+* Function Name: CLICK_TIMER_SetInterruptCount
 ********************************************************************************
 *
 * Summary:
@@ -685,26 +685,26 @@ void NOTIFY_TIMER_DisableTrigger(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SetInterruptCount(uint8 interruptCount) 
+void CLICK_TIMER_SetInterruptCount(uint8 interruptCount) 
 {
     /* This must only set to two bits of the control register associated */
-    interruptCount &= NOTIFY_TIMER_CTRL_INTCNT_MASK;
+    interruptCount &= CLICK_TIMER_CTRL_INTCNT_MASK;
 
-    #if (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED)
+    #if (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)
         /* Clear the Current Setting */
-        NOTIFY_TIMER_CONTROL &= ((uint8)(~NOTIFY_TIMER_CTRL_INTCNT_MASK));
+        CLICK_TIMER_CONTROL &= ((uint8)(~CLICK_TIMER_CTRL_INTCNT_MASK));
         /* Write The New Setting */
-        NOTIFY_TIMER_CONTROL |= interruptCount;
-    #endif /* (!NOTIFY_TIMER_UDB_CONTROL_REG_REMOVED) */
+        CLICK_TIMER_CONTROL |= interruptCount;
+    #endif /* (!CLICK_TIMER_UDB_CONTROL_REG_REMOVED) */
 }
-#endif /* NOTIFY_TIMER_InterruptOnCaptureCount */
+#endif /* CLICK_TIMER_InterruptOnCaptureCount */
 
 
-#if (NOTIFY_TIMER_UsingHWCaptureCounter)
+#if (CLICK_TIMER_UsingHWCaptureCounter)
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_SetCaptureCount
+* Function Name: CLICK_TIMER_SetCaptureCount
 ********************************************************************************
 *
 * Summary:
@@ -719,14 +719,14 @@ void NOTIFY_TIMER_SetInterruptCount(uint8 interruptCount)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_SetCaptureCount(uint8 captureCount) 
+void CLICK_TIMER_SetCaptureCount(uint8 captureCount) 
 {
-    NOTIFY_TIMER_CAP_COUNT = captureCount;
+    CLICK_TIMER_CAP_COUNT = captureCount;
 }
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ReadCaptureCount
+* Function Name: CLICK_TIMER_ReadCaptureCount
 ********************************************************************************
 *
 * Summary:
@@ -739,15 +739,15 @@ void NOTIFY_TIMER_SetCaptureCount(uint8 captureCount)
 *  Returns the Capture Count Setting
 *
 *******************************************************************************/
-uint8 NOTIFY_TIMER_ReadCaptureCount(void) 
+uint8 CLICK_TIMER_ReadCaptureCount(void) 
 {
-    return ((uint8)NOTIFY_TIMER_CAP_COUNT);
+    return ((uint8)CLICK_TIMER_CAP_COUNT);
 }
-#endif /* NOTIFY_TIMER_UsingHWCaptureCounter */
+#endif /* CLICK_TIMER_UsingHWCaptureCounter */
 
 
 /*******************************************************************************
-* Function Name: NOTIFY_TIMER_ClearFIFO
+* Function Name: CLICK_TIMER_ClearFIFO
 ********************************************************************************
 *
 * Summary:
@@ -760,11 +760,11 @@ uint8 NOTIFY_TIMER_ReadCaptureCount(void)
 *  void
 *
 *******************************************************************************/
-void NOTIFY_TIMER_ClearFIFO(void) 
+void CLICK_TIMER_ClearFIFO(void) 
 {
-    while(0u != (NOTIFY_TIMER_ReadStatusRegister() & NOTIFY_TIMER_STATUS_FIFONEMP))
+    while(0u != (CLICK_TIMER_ReadStatusRegister() & CLICK_TIMER_STATUS_FIFONEMP))
     {
-        (void)NOTIFY_TIMER_ReadCapture();
+        (void)CLICK_TIMER_ReadCapture();
     }
 }
 

@@ -1,0 +1,2561 @@
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"PWM_NOTIFY.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.PWM_NOTIFY_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	PWM_NOTIFY_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	PWM_NOTIFY_Enable, %function
+  25              	PWM_NOTIFY_Enable:
+  26              	.LFB2:
+  27              		.file 1 "Generated_Source\\PSoC5\\PWM_NOTIFY.c"
+   1:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/PWM_NOTIFY.c **** * File Name: PWM_NOTIFY.c
+   3:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Version 3.30
+   4:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+   5:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Description:
+   6:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  The PWM User Module consist of an 8 or 16-bit counter with two 8 or 16-bit
+   7:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  comparitors. Each instance of this user module is capable of generating
+   8:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  two PWM outputs with the same period. The pulse width is selectable between
+   9:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  1 and 255/65535. The period is selectable between 2 and 255/65536 clocks.
+  10:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  The compare value output may be configured to be active when the present
+  11:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  counter is less than or less than/equal to the compare value.
+  12:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  A terminal count output is also provided. It generates a pulse one clock
+  13:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  width wide when the counter is equal to zero.
+  14:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  15:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Note:
+  16:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  17:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************
+  18:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  19:Generated_Source\PSoC5/PWM_NOTIFY.c **** * You may use this file only in accordance with the license, terms, conditions,
+  20:Generated_Source\PSoC5/PWM_NOTIFY.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  21:Generated_Source\PSoC5/PWM_NOTIFY.c **** * the software package with which this file was provided.
+  22:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************/
+  23:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  24:Generated_Source\PSoC5/PWM_NOTIFY.c **** #include "PWM_NOTIFY.h"
+  25:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  26:Generated_Source\PSoC5/PWM_NOTIFY.c **** /* Error message for removed <resource> through optimization */
+  27:Generated_Source\PSoC5/PWM_NOTIFY.c **** #ifdef PWM_NOTIFY_PWMUDB_genblk1_ctrlreg__REMOVED
+  28:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #error PWM_v3_30 detected with a constant 0 for the enable or \
+  29:Generated_Source\PSoC5/PWM_NOTIFY.c ****          constant 1 for reset. This will prevent the component from operating.
+  30:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* PWM_NOTIFY_PWMUDB_genblk1_ctrlreg__REMOVED */
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 2
+
+
+  31:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  32:Generated_Source\PSoC5/PWM_NOTIFY.c **** uint8 PWM_NOTIFY_initVar = 0u;
+  33:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  34:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  35:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+  36:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_Start
+  37:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+  38:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  39:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+  40:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  The start function initializes the pwm with the default values, the
+  41:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  enables the counter to begin counting.  It does not enable interrupts,
+  42:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  the EnableInt command should be called if interrupt generation is required.
+  43:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  44:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+  45:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+  46:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  47:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+  48:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+  49:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  50:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Global variables:
+  51:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  PWM_NOTIFY_initVar: Is modified when this function is called for the
+  52:Generated_Source\PSoC5/PWM_NOTIFY.c **** *   first time. Is used to ensure that initialization happens only once.
+  53:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  54:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+  55:Generated_Source\PSoC5/PWM_NOTIFY.c **** void PWM_NOTIFY_Start(void) 
+  56:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+  57:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /* If not Initialized then initialize all required hardware and software */
+  58:Generated_Source\PSoC5/PWM_NOTIFY.c ****     if(PWM_NOTIFY_initVar == 0u)
+  59:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+  60:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_Init();
+  61:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_initVar = 1u;
+  62:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+  63:Generated_Source\PSoC5/PWM_NOTIFY.c ****     PWM_NOTIFY_Enable();
+  64:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  65:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+  66:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  67:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  68:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+  69:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_Init
+  70:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+  71:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  72:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+  73:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  Initialize component's parameters to the parameters set by user in the
+  74:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  customizer of the component placed onto schematic. Usually called in
+  75:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  PWM_NOTIFY_Start().
+  76:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  77:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+  78:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+  79:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  80:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+  81:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+  82:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+  83:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+  84:Generated_Source\PSoC5/PWM_NOTIFY.c **** void PWM_NOTIFY_Init(void) 
+  85:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+  86:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction || PWM_NOTIFY_UseControl)
+  87:Generated_Source\PSoC5/PWM_NOTIFY.c ****         uint8 ctrl;
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 3
+
+
+  88:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction || PWM_NOTIFY_UseControl) */
+  89:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  90:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if(!PWM_NOTIFY_UsingFixedFunction)
+  91:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UseStatus)
+  92:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Interrupt State Backup for Critical Region*/
+  93:Generated_Source\PSoC5/PWM_NOTIFY.c ****             uint8 PWM_NOTIFY_interruptState;
+  94:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UseStatus) */
+  95:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (!PWM_NOTIFY_UsingFixedFunction) */
+  96:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+  97:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction)
+  98:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* You are allowed to write the compare value (FF only) */
+  99:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL |= PWM_NOTIFY_CFG0_MODE;
+ 100:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_DeadBand2_4)
+ 101:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_CONTROL |= PWM_NOTIFY_CFG0_DB;
+ 102:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_DeadBand2_4) */
+ 103:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 104:Generated_Source\PSoC5/PWM_NOTIFY.c ****         ctrl = PWM_NOTIFY_CONTROL3 & ((uint8 )(~PWM_NOTIFY_CTRL_CMPMODE1_MASK));
+ 105:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL3 = ctrl | PWM_NOTIFY_DEFAULT_COMPARE1_MODE;
+ 106:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 107:Generated_Source\PSoC5/PWM_NOTIFY.c ****          /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+ 108:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_RT1 &= ((uint8)(~PWM_NOTIFY_RT1_MASK));
+ 109:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_RT1 |= PWM_NOTIFY_SYNC;
+ 110:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 111:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /*Enable DSI Sync all all inputs of the PWM*/
+ 112:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_RT1 &= ((uint8)(~PWM_NOTIFY_SYNCDSI_MASK));
+ 113:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_RT1 |= PWM_NOTIFY_SYNCDSI_EN;
+ 114:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 115:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #elif (PWM_NOTIFY_UseControl)
+ 116:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Set the default compare mode defined in the parameter */
+ 117:Generated_Source\PSoC5/PWM_NOTIFY.c ****         ctrl = PWM_NOTIFY_CONTROL & ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE2_MASK)) &
+ 118:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE1_MASK));
+ 119:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL = ctrl | PWM_NOTIFY_DEFAULT_COMPARE2_MODE |
+ 120:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                    PWM_NOTIFY_DEFAULT_COMPARE1_MODE;
+ 121:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 122:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 123:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (!PWM_NOTIFY_UsingFixedFunction)
+ 124:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_Resolution == 8)
+ 125:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Set FIFO 0 to 1 byte register for period*/
+ 126:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_AUX_CONTROLDP0 |= (PWM_NOTIFY_AUX_CTRL_FIFO0_CLR);
+ 127:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else /* (PWM_NOTIFY_Resolution == 16)*/
+ 128:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Set FIFO 0 to 1 byte register for period */
+ 129:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_AUX_CONTROLDP0 |= (PWM_NOTIFY_AUX_CTRL_FIFO0_CLR);
+ 130:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_AUX_CONTROLDP1 |= (PWM_NOTIFY_AUX_CTRL_FIFO0_CLR);
+ 131:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_Resolution == 8) */
+ 132:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 133:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_WriteCounter(PWM_NOTIFY_INIT_PERIOD_VALUE);
+ 134:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (!PWM_NOTIFY_UsingFixedFunction) */
+ 135:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 136:Generated_Source\PSoC5/PWM_NOTIFY.c ****     PWM_NOTIFY_WritePeriod(PWM_NOTIFY_INIT_PERIOD_VALUE);
+ 137:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 138:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_UseOneCompareMode)
+ 139:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_WriteCompare(PWM_NOTIFY_INIT_COMPARE_VALUE1);
+ 140:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 141:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_WriteCompare1(PWM_NOTIFY_INIT_COMPARE_VALUE1);
+ 142:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_WriteCompare2(PWM_NOTIFY_INIT_COMPARE_VALUE2);
+ 143:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UseOneCompareMode) */
+ 144:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 4
+
+
+ 145:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_KillModeMinTime)
+ 146:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_WriteKillTime(PWM_NOTIFY_MinimumKillTime);
+ 147:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_KillModeMinTime) */
+ 148:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 149:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_DeadBandUsed)
+ 150:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_WriteDeadTime(PWM_NOTIFY_INIT_DEAD_TIME);
+ 151:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_DeadBandUsed) */
+ 152:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 153:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UseStatus || PWM_NOTIFY_UsingFixedFunction)
+ 154:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_SetInterruptMode(PWM_NOTIFY_INIT_INTERRUPTS_MODE);
+ 155:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UseStatus || PWM_NOTIFY_UsingFixedFunction) */
+ 156:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 157:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction)
+ 158:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Globally Enable the Fixed Function Block chosen */
+ 159:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_GLOBAL_ENABLE |= PWM_NOTIFY_BLOCK_EN_MASK;
+ 160:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Set the Interrupt source to come from the status register */
+ 161:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL2 |= PWM_NOTIFY_CTRL2_IRQ_SEL;
+ 162:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #else
+ 163:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UseStatus)
+ 164:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 165:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 166:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Enter Critical Region*/
+ 167:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_interruptState = CyEnterCriticalSection();
+ 168:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 169:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_STATUS_AUX_CTRL |= PWM_NOTIFY_STATUS_ACTL_INT_EN_MASK;
+ 170:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 171:Generated_Source\PSoC5/PWM_NOTIFY.c ****              /* Exit Critical Region*/
+ 172:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CyExitCriticalSection(PWM_NOTIFY_interruptState);
+ 173:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 174:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Clear the FIFO to enable the PWM_NOTIFY_STATUS_FIFOFULL
+ 175:Generated_Source\PSoC5/PWM_NOTIFY.c ****                    bit to be set on FIFO full. */
+ 176:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_ClearFIFO();
+ 177:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UseStatus) */
+ 178:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 179:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+ 180:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 181:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 182:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+ 183:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_Enable
+ 184:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+ 185:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 186:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+ 187:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  Enables the PWM block operation
+ 188:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 189:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+ 190:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 191:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 192:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+ 193:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 194:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 195:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Side Effects:
+ 196:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  This works only if software enable mode is chosen
+ 197:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 198:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+ 199:Generated_Source\PSoC5/PWM_NOTIFY.c **** void PWM_NOTIFY_Enable(void) 
+ 200:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+  28              		.loc 1 200 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 5
+
+
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 201:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 202:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction)
+ 203:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_GLOBAL_ENABLE |= PWM_NOTIFY_BLOCK_EN_MASK;
+ 204:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_GLOBAL_STBY_ENABLE |= PWM_NOTIFY_BLOCK_STBY_EN_MASK;
+ 205:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 206:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 207:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /* Enable the PWM from the control register  */
+ 208:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UseControl || PWM_NOTIFY_UsingFixedFunction)
+ 209:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL |= PWM_NOTIFY_CTRL_ENABLE;
+  33              		.loc 1 209 0
+  34 0000 024A     		ldr	r2, .L2
+  35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  36 0004 43F08003 		orr	r3, r3, #128
+  37 0008 1370     		strb	r3, [r2]
+  38 000a 7047     		bx	lr
+  39              	.L3:
+  40              		.align	2
+  41              	.L2:
+  42 000c 79650040 		.word	1073767801
+  43              		.cfi_endproc
+  44              	.LFE2:
+  45              		.size	PWM_NOTIFY_Enable, .-PWM_NOTIFY_Enable
+  46              		.section	.text.PWM_NOTIFY_Stop,"ax",%progbits
+  47              		.align	2
+  48              		.global	PWM_NOTIFY_Stop
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	PWM_NOTIFY_Stop, %function
+  52              	PWM_NOTIFY_Stop:
+  53              	.LFB3:
+ 210:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UseControl || PWM_NOTIFY_UsingFixedFunction) */
+ 211:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+ 212:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 213:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 214:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+ 215:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_Stop
+ 216:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+ 217:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 218:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+ 219:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  The stop function halts the PWM, but does not change any modes or disable
+ 220:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  interrupts.
+ 221:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 222:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+ 223:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 224:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 225:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+ 226:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 227:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 228:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Side Effects:
+ 229:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  If the Enable mode is set to Hardware only then this function
+ 230:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  has no effect on the operation of the PWM
+ 231:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 232:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 6
+
+
+ 233:Generated_Source\PSoC5/PWM_NOTIFY.c **** void PWM_NOTIFY_Stop(void) 
+ 234:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+  54              		.loc 1 234 0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+ 235:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UseControl || PWM_NOTIFY_UsingFixedFunction)
+ 236:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_CONTROL &= ((uint8)(~PWM_NOTIFY_CTRL_ENABLE));
+  59              		.loc 1 236 0
+  60 0000 024A     		ldr	r2, .L5
+  61 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  62 0004 03F07F03 		and	r3, r3, #127
+  63 0008 1370     		strb	r3, [r2]
+  64 000a 7047     		bx	lr
+  65              	.L6:
+  66              		.align	2
+  67              	.L5:
+  68 000c 79650040 		.word	1073767801
+  69              		.cfi_endproc
+  70              	.LFE3:
+  71              		.size	PWM_NOTIFY_Stop, .-PWM_NOTIFY_Stop
+  72              		.section	.text.PWM_NOTIFY_WriteCounter,"ax",%progbits
+  73              		.align	2
+  74              		.global	PWM_NOTIFY_WriteCounter
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	PWM_NOTIFY_WriteCounter, %function
+  78              	PWM_NOTIFY_WriteCounter:
+  79              	.LFB4:
+ 237:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UseControl || PWM_NOTIFY_UsingFixedFunction) */
+ 238:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 239:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /* Globally disable the Fixed Function Block chosen */
+ 240:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction)
+ 241:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_GLOBAL_ENABLE &= ((uint8)(~PWM_NOTIFY_BLOCK_EN_MASK));
+ 242:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_GLOBAL_STBY_ENABLE &= ((uint8)(~PWM_NOTIFY_BLOCK_STBY_EN_MASK));
+ 243:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 244:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+ 245:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 246:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_UseOneCompareMode)
+ 247:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_CompareMode1SW)
+ 248:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 249:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 250:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /*******************************************************************************
+ 251:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Function Name: PWM_NOTIFY_SetCompareMode
+ 252:Generated_Source\PSoC5/PWM_NOTIFY.c ****         ********************************************************************************
+ 253:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 254:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Summary:
+ 255:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  This function writes the Compare Mode for the pwm output when in Dither mode,
+ 256:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  Center Align Mode or One Output Mode.
+ 257:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 258:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Parameters:
+ 259:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 260:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *                defined in the H file as input arguments.
+ 261:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 262:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Return:
+ 263:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  None
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 7
+
+
+ 264:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 265:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *******************************************************************************/
+ 266:Generated_Source\PSoC5/PWM_NOTIFY.c ****         void PWM_NOTIFY_SetCompareMode(uint8 comparemode) 
+ 267:Generated_Source\PSoC5/PWM_NOTIFY.c ****         {
+ 268:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if(PWM_NOTIFY_UsingFixedFunction)
+ 269:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 270:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #if(0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT)
+ 271:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemodemasked = ((uint8)((uint8)comparemode << PWM_NOTIFY_CTRL_CMPMOD
+ 272:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #else
+ 273:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemodemasked = comparemode;
+ 274:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #endif /* (0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT) */
+ 275:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 276:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL3 &= ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE1_MASK)); /*Clear Existing 
+ 277:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL3 |= comparemodemasked;
+ 278:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 279:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #elif (PWM_NOTIFY_UseControl)
+ 280:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 281:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #if(0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT)
+ 282:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemode1masked = ((uint8)((uint8)comparemode << PWM_NOTIFY_CTRL_CMPMO
+ 283:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                                 PWM_NOTIFY_CTRL_CMPMODE1_MASK;
+ 284:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #else
+ 285:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemode1masked = comparemode & PWM_NOTIFY_CTRL_CMPMODE1_MASK;
+ 286:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #endif /* (0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT) */
+ 287:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 288:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #if(0 != PWM_NOTIFY_CTRL_CMPMODE2_SHIFT)
+ 289:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemode2masked = ((uint8)((uint8)comparemode << PWM_NOTIFY_CTRL_CMPMO
+ 290:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                                PWM_NOTIFY_CTRL_CMPMODE2_MASK;
+ 291:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #else
+ 292:Generated_Source\PSoC5/PWM_NOTIFY.c ****                     uint8 comparemode2masked = comparemode & PWM_NOTIFY_CTRL_CMPMODE2_MASK;
+ 293:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 #endif /* (0 != PWM_NOTIFY_CTRL_CMPMODE2_SHIFT) */
+ 294:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 295:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 /*Clear existing mode */
+ 296:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL &= ((uint8)(~(PWM_NOTIFY_CTRL_CMPMODE1_MASK |
+ 297:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                             PWM_NOTIFY_CTRL_CMPMODE2_MASK)));
+ 298:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL |= (comparemode1masked | comparemode2masked);
+ 299:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 300:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #else
+ 301:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 uint8 temp = comparemode;
+ 302:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 303:Generated_Source\PSoC5/PWM_NOTIFY.c ****         }
+ 304:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* PWM_NOTIFY_CompareMode1SW */
+ 305:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 306:Generated_Source\PSoC5/PWM_NOTIFY.c **** #else /* UseOneCompareMode */
+ 307:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 308:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_CompareMode1SW)
+ 309:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 310:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 311:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /*******************************************************************************
+ 312:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Function Name: PWM_NOTIFY_SetCompareMode1
+ 313:Generated_Source\PSoC5/PWM_NOTIFY.c ****         ********************************************************************************
+ 314:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 315:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Summary:
+ 316:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  This function writes the Compare Mode for the pwm or pwm1 output
+ 317:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 318:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Parameters:
+ 319:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 320:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *                defined in the H file as input arguments.
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 8
+
+
+ 321:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 322:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Return:
+ 323:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  None
+ 324:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 325:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *******************************************************************************/
+ 326:Generated_Source\PSoC5/PWM_NOTIFY.c ****         void PWM_NOTIFY_SetCompareMode1(uint8 comparemode) 
+ 327:Generated_Source\PSoC5/PWM_NOTIFY.c ****         {
+ 328:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if(0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT)
+ 329:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 uint8 comparemodemasked = ((uint8)((uint8)comparemode << PWM_NOTIFY_CTRL_CMPMODE1_S
+ 330:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                            PWM_NOTIFY_CTRL_CMPMODE1_MASK;
+ 331:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #else
+ 332:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 uint8 comparemodemasked = comparemode & PWM_NOTIFY_CTRL_CMPMODE1_MASK;
+ 333:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (0 != PWM_NOTIFY_CTRL_CMPMODE1_SHIFT) */
+ 334:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 335:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if (PWM_NOTIFY_UseControl)
+ 336:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL &= ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE1_MASK)); /*Clear existing m
+ 337:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_CONTROL |= comparemodemasked;
+ 338:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (PWM_NOTIFY_UseControl) */
+ 339:Generated_Source\PSoC5/PWM_NOTIFY.c ****         }
+ 340:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* PWM_NOTIFY_CompareMode1SW */
+ 341:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 342:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_CompareMode2SW)
+ 343:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 344:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 345:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 346:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_SetCompareMode2
+ 347:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 348:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 349:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 350:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function writes the Compare Mode for the pwm or pwm2 output
+ 351:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 352:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 353:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 354:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *                defined in the H file as input arguments.
+ 355:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 356:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 357:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 358:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 359:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 360:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_SetCompareMode2(uint8 comparemode) 
+ 361:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 362:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 363:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(0 != PWM_NOTIFY_CTRL_CMPMODE2_SHIFT)
+ 364:Generated_Source\PSoC5/PWM_NOTIFY.c ****             uint8 comparemodemasked = ((uint8)((uint8)comparemode << PWM_NOTIFY_CTRL_CMPMODE2_SHIFT
+ 365:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                                  PWM_NOTIFY_CTRL_CMPMODE2_MASK;
+ 366:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 367:Generated_Source\PSoC5/PWM_NOTIFY.c ****             uint8 comparemodemasked = comparemode & PWM_NOTIFY_CTRL_CMPMODE2_MASK;
+ 368:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (0 != PWM_NOTIFY_CTRL_CMPMODE2_SHIFT) */
+ 369:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 370:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_UseControl)
+ 371:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_CONTROL &= ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE2_MASK)); /*Clear existing mode 
+ 372:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_CONTROL |= comparemodemasked;
+ 373:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UseControl) */
+ 374:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 375:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /*PWM_NOTIFY_CompareMode2SW */
+ 376:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 377:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* UseOneCompareMode */
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 9
+
+
+ 378:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 379:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 380:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (!PWM_NOTIFY_UsingFixedFunction)
+ 381:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 382:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 383:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 384:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteCounter
+ 385:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 386:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 387:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 388:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Writes a new counter value directly to the counter register. This will be
+ 389:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  implemented for that currently running period and only that period. This API
+ 390:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  is valid only for UDB implementation and not available for fixed function
+ 391:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  PWM implementation.
+ 392:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 393:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 394:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  counter:  The period new period counter value.
+ 395:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 396:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 397:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 398:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 399:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Side Effects:
+ 400:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  The PWM Period will be reloaded when a counter value will be a zero
+ 401:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 402:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 403:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteCounter(uint8 counter) \
+ 404:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                        
+ 405:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+  80              		.loc 1 405 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85              	.LVL0:
+ 406:Generated_Source\PSoC5/PWM_NOTIFY.c ****         CY_SET_REG8(PWM_NOTIFY_COUNTER_LSB_PTR, counter);
+  86              		.loc 1 406 0
+  87 0000 014B     		ldr	r3, .L8
+  88 0002 1870     		strb	r0, [r3]
+  89 0004 7047     		bx	lr
+  90              	.L9:
+  91 0006 00BF     		.align	2
+  92              	.L8:
+  93 0008 0B650040 		.word	1073767691
+  94              		.cfi_endproc
+  95              	.LFE4:
+  96              		.size	PWM_NOTIFY_WriteCounter, .-PWM_NOTIFY_WriteCounter
+  97              		.section	.text.PWM_NOTIFY_ReadCounter,"ax",%progbits
+  98              		.align	2
+  99              		.global	PWM_NOTIFY_ReadCounter
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	PWM_NOTIFY_ReadCounter, %function
+ 103              	PWM_NOTIFY_ReadCounter:
+ 104              	.LFB5:
+ 407:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 408:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 409:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 10
+
+
+ 410:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 411:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadCounter
+ 412:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 413:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 414:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 415:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function returns the current value of the counter.  It doesn't matter
+ 416:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  if the counter is enabled or running.
+ 417:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 418:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 419:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 420:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 421:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 422:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  The current value of the counter.
+ 423:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 424:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 425:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadCounter(void) 
+ 426:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 105              		.loc 1 426 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		@ link register save eliminated.
+ 427:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Force capture by reading Accumulator */
+ 428:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Must first do a software capture to be able to read the counter */
+ 429:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 430:Generated_Source\PSoC5/PWM_NOTIFY.c ****           (void)CY_GET_REG8(PWM_NOTIFY_COUNTERCAP_LSB_PTR_8BIT);
+ 110              		.loc 1 430 0
+ 111 0000 024B     		ldr	r3, .L11
+ 112 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 431:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 432:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* Read the data from the FIFO */
+ 433:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_CAPTURE_LSB_PTR));
+ 113              		.loc 1 433 0
+ 114 0004 024B     		ldr	r3, .L11+4
+ 115 0006 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 434:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 116              		.loc 1 434 0
+ 117 0008 7047     		bx	lr
+ 118              	.L12:
+ 119 000a 00BF     		.align	2
+ 120              	.L11:
+ 121 000c 1B650040 		.word	1073767707
+ 122 0010 5B650040 		.word	1073767771
+ 123              		.cfi_endproc
+ 124              	.LFE5:
+ 125              		.size	PWM_NOTIFY_ReadCounter, .-PWM_NOTIFY_ReadCounter
+ 126              		.section	.text.PWM_NOTIFY_WritePeriod,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	PWM_NOTIFY_WritePeriod
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	PWM_NOTIFY_WritePeriod, %function
+ 132              	PWM_NOTIFY_WritePeriod:
+ 133              	.LFB7:
+ 435:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 436:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UseStatus)
+ 437:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 11
+
+
+ 438:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 439:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /*******************************************************************************
+ 440:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Function Name: PWM_NOTIFY_ClearFIFO
+ 441:Generated_Source\PSoC5/PWM_NOTIFY.c ****         ********************************************************************************
+ 442:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 443:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Summary:
+ 444:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  This function clears all capture data from the capture FIFO
+ 445:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 446:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Parameters:
+ 447:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  None
+ 448:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 449:Generated_Source\PSoC5/PWM_NOTIFY.c ****         * Return:
+ 450:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *  None
+ 451:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *
+ 452:Generated_Source\PSoC5/PWM_NOTIFY.c ****         *******************************************************************************/
+ 453:Generated_Source\PSoC5/PWM_NOTIFY.c ****         void PWM_NOTIFY_ClearFIFO(void) 
+ 454:Generated_Source\PSoC5/PWM_NOTIFY.c ****         {
+ 455:Generated_Source\PSoC5/PWM_NOTIFY.c ****             while(0u != (PWM_NOTIFY_ReadStatusRegister() & PWM_NOTIFY_STATUS_FIFONEMPTY))
+ 456:Generated_Source\PSoC5/PWM_NOTIFY.c ****             {
+ 457:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 (void)PWM_NOTIFY_ReadCapture();
+ 458:Generated_Source\PSoC5/PWM_NOTIFY.c ****             }
+ 459:Generated_Source\PSoC5/PWM_NOTIFY.c ****         }
+ 460:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 461:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* PWM_NOTIFY_UseStatus */
+ 462:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 463:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* !PWM_NOTIFY_UsingFixedFunction */
+ 464:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 465:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 466:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+ 467:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_WritePeriod
+ 468:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+ 469:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 470:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+ 471:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  This function is used to change the period of the counter.  The new period
+ 472:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  will be loaded the next time terminal count is detected.
+ 473:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 474:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+ 475:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  period:  Period value. May be between 1 and (2^Resolution)-1.  A value of 0
+ 476:Generated_Source\PSoC5/PWM_NOTIFY.c **** *           will result in the counter remaining at zero.
+ 477:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 478:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+ 479:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 480:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 481:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+ 482:Generated_Source\PSoC5/PWM_NOTIFY.c **** void PWM_NOTIFY_WritePeriod(uint8 period) 
+ 483:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+ 134              		.loc 1 483 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+ 139              	.LVL1:
+ 484:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if(PWM_NOTIFY_UsingFixedFunction)
+ 485:Generated_Source\PSoC5/PWM_NOTIFY.c ****         CY_SET_REG16(PWM_NOTIFY_PERIOD_LSB_PTR, (uint16)period);
+ 486:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #else
+ 487:Generated_Source\PSoC5/PWM_NOTIFY.c ****         CY_SET_REG8(PWM_NOTIFY_PERIOD_LSB_PTR, period);
+ 140              		.loc 1 487 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 12
+
+
+ 141 0000 014B     		ldr	r3, .L14
+ 142 0002 1870     		strb	r0, [r3]
+ 143 0004 7047     		bx	lr
+ 144              	.L15:
+ 145 0006 00BF     		.align	2
+ 146              	.L14:
+ 147 0008 4B650040 		.word	1073767755
+ 148              		.cfi_endproc
+ 149              	.LFE7:
+ 150              		.size	PWM_NOTIFY_WritePeriod, .-PWM_NOTIFY_WritePeriod
+ 151              		.section	.text.PWM_NOTIFY_WriteCompare,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	PWM_NOTIFY_WriteCompare
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.type	PWM_NOTIFY_WriteCompare, %function
+ 157              	PWM_NOTIFY_WriteCompare:
+ 158              	.LFB8:
+ 488:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 489:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+ 490:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 491:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_UseOneCompareMode)
+ 492:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 493:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 494:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 495:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteCompare
+ 496:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 497:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 498:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 499:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This funtion is used to change the compare1 value when the PWM is in Dither
+ 500:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  mode. The compare output will reflect the new value on the next UDB clock.
+ 501:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  The compare output will be driven high when the present counter value is
+ 502:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  compared to the compare value based on the compare mode defined in
+ 503:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Dither Mode.
+ 504:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 505:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 506:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  compare:  New compare value.
+ 507:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 508:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 509:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 510:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 511:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Side Effects:
+ 512:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function is only available if the PWM mode parameter is set to
+ 513:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Dither Mode, Center Aligned Mode or One Output Mode
+ 514:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 515:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 516:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteCompare(uint8 compare) \
+ 517:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                        
+ 518:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 159              		.loc 1 518 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164              	.LVL2:
+ 519:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UsingFixedFunction)
+ 520:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG16(PWM_NOTIFY_COMPARE1_LSB_PTR, (uint16)compare);
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 13
+
+
+ 521:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 522:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG8(PWM_NOTIFY_COMPARE1_LSB_PTR, compare);
+ 165              		.loc 1 522 0
+ 166 0000 014B     		ldr	r3, .L17
+ 167 0002 1870     		strb	r0, [r3]
+ 168 0004 7047     		bx	lr
+ 169              	.L18:
+ 170 0006 00BF     		.align	2
+ 171              	.L17:
+ 172 0008 2B650040 		.word	1073767723
+ 173              		.cfi_endproc
+ 174              	.LFE8:
+ 175              		.size	PWM_NOTIFY_WriteCompare, .-PWM_NOTIFY_WriteCompare
+ 176              		.section	.text.PWM_NOTIFY_SetInterruptMode,"ax",%progbits
+ 177              		.align	2
+ 178              		.global	PWM_NOTIFY_SetInterruptMode
+ 179              		.thumb
+ 180              		.thumb_func
+ 181              		.type	PWM_NOTIFY_SetInterruptMode, %function
+ 182              	PWM_NOTIFY_SetInterruptMode:
+ 183              	.LFB9:
+ 523:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 524:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 525:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if (PWM_NOTIFY_PWMMode == PWM_NOTIFY__B_PWM__DITHER)
+ 526:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if(PWM_NOTIFY_UsingFixedFunction)
+ 527:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 CY_SET_REG16(PWM_NOTIFY_COMPARE2_LSB_PTR, (uint16)(compare + 1u));
+ 528:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #else
+ 529:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 CY_SET_REG8(PWM_NOTIFY_COMPARE2_LSB_PTR, (compare + 1u));
+ 530:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 531:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_PWMMode == PWM_NOTIFY__B_PWM__DITHER) */
+ 532:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 533:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 534:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 535:Generated_Source\PSoC5/PWM_NOTIFY.c **** #else
+ 536:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 537:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 538:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 539:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteCompare1
+ 540:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 541:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 542:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 543:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This funtion is used to change the compare1 value.  The compare output will
+ 544:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  reflect the new value on the next UDB clock.  The compare output will be
+ 545:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  driven high when the present counter value is less than or less than or
+ 546:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  equal to the compare register, depending on the mode.
+ 547:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 548:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 549:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  compare:  New compare value.
+ 550:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 551:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 552:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 553:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 554:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 555:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteCompare1(uint8 compare) \
+ 556:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                         
+ 557:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 558:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UsingFixedFunction)
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 14
+
+
+ 559:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG16(PWM_NOTIFY_COMPARE1_LSB_PTR, (uint16)compare);
+ 560:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 561:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG8(PWM_NOTIFY_COMPARE1_LSB_PTR, compare);
+ 562:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 563:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 564:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 565:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 566:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 567:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteCompare2
+ 568:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 569:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 570:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 571:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This funtion is used to change the compare value, for compare1 output.
+ 572:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  The compare output will reflect the new value on the next UDB clock.
+ 573:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  The compare output will be driven high when the present counter value is
+ 574:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  less than or less than or equal to the compare register, depending on the
+ 575:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  mode.
+ 576:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 577:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 578:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  compare:  New compare value.
+ 579:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 580:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 581:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 582:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 583:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 584:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteCompare2(uint8 compare) \
+ 585:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                         
+ 586:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 587:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UsingFixedFunction)
+ 588:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG16(PWM_NOTIFY_COMPARE2_LSB_PTR, compare);
+ 589:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 590:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG8(PWM_NOTIFY_COMPARE2_LSB_PTR, compare);
+ 591:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 592:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 593:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* UseOneCompareMode */
+ 594:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 595:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_DeadBandUsed)
+ 596:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 597:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 598:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 599:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteDeadTime
+ 600:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 601:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 602:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 603:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function writes the dead-band counts to the corresponding register
+ 604:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 605:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 606:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  deadtime:  Number of counts for dead time
+ 607:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 608:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 609:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 610:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 611:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 612:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteDeadTime(uint8 deadtime) 
+ 613:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 614:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* If using the Dead Band 1-255 mode then just write the register */
+ 615:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(!PWM_NOTIFY_DeadBand2_4)
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 15
+
+
+ 616:Generated_Source\PSoC5/PWM_NOTIFY.c ****             CY_SET_REG8(PWM_NOTIFY_DEADBAND_COUNT_PTR, deadtime);
+ 617:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 618:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Otherwise the data has to be masked and offset */
+ 619:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Clear existing data */
+ 620:Generated_Source\PSoC5/PWM_NOTIFY.c ****             PWM_NOTIFY_DEADBAND_COUNT &= ((uint8)(~PWM_NOTIFY_DEADBAND_COUNT_MASK));
+ 621:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 622:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Set new dead time */
+ 623:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if(PWM_NOTIFY_DEADBAND_COUNT_SHIFT)
+ 624:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_DEADBAND_COUNT |= ((uint8)((uint8)deadtime << PWM_NOTIFY_DEADBAND_COUNT_
+ 625:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                                     PWM_NOTIFY_DEADBAND_COUNT_MASK;
+ 626:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #else
+ 627:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 PWM_NOTIFY_DEADBAND_COUNT |= deadtime & PWM_NOTIFY_DEADBAND_COUNT_MASK;
+ 628:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (PWM_NOTIFY_DEADBAND_COUNT_SHIFT) */
+ 629:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 630:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (!PWM_NOTIFY_DeadBand2_4) */
+ 631:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 632:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 633:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 634:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 635:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadDeadTime
+ 636:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 637:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 638:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 639:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function reads the dead-band counts from the corresponding register
+ 640:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 641:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 642:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 643:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 644:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 645:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Dead Band Counts
+ 646:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 647:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 648:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadDeadTime(void) 
+ 649:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 650:Generated_Source\PSoC5/PWM_NOTIFY.c ****         /* If using the Dead Band 1-255 mode then just read the register */
+ 651:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(!PWM_NOTIFY_DeadBand2_4)
+ 652:Generated_Source\PSoC5/PWM_NOTIFY.c ****             return (CY_GET_REG8(PWM_NOTIFY_DEADBAND_COUNT_PTR));
+ 653:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 654:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 655:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Otherwise the data has to be masked and offset */
+ 656:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #if(PWM_NOTIFY_DEADBAND_COUNT_SHIFT)
+ 657:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 return ((uint8)(((uint8)(PWM_NOTIFY_DEADBAND_COUNT & PWM_NOTIFY_DEADBAND_COUNT_MASK
+ 658:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                                                            PWM_NOTIFY_DEADBAND_COUN
+ 659:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #else
+ 660:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 return (PWM_NOTIFY_DEADBAND_COUNT & PWM_NOTIFY_DEADBAND_COUNT_MASK);
+ 661:Generated_Source\PSoC5/PWM_NOTIFY.c ****             #endif /* (PWM_NOTIFY_DEADBAND_COUNT_SHIFT) */
+ 662:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (!PWM_NOTIFY_DeadBand2_4) */
+ 663:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 664:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* DeadBandUsed */
+ 665:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 666:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_UseStatus || PWM_NOTIFY_UsingFixedFunction)
+ 667:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 668:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 669:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 670:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_SetInterruptMode
+ 671:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 672:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 16
+
+
+ 673:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 674:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function configures the interrupts mask control of theinterrupt
+ 675:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  source status register.
+ 676:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 677:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 678:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8 interruptMode: Bit field containing the interrupt sources enabled
+ 679:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 680:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 681:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 682:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 683:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 684:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_SetInterruptMode(uint8 interruptMode) 
+ 685:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 184              		.loc 1 685 0
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 0
+ 187              		@ frame_needed = 0, uses_anonymous_args = 0
+ 188              		@ link register save eliminated.
+ 189              	.LVL3:
+ 686:Generated_Source\PSoC5/PWM_NOTIFY.c ****         CY_SET_REG8(PWM_NOTIFY_STATUS_MASK_PTR, interruptMode);
+ 190              		.loc 1 686 0
+ 191 0000 014B     		ldr	r3, .L20
+ 192 0002 1870     		strb	r0, [r3]
+ 193 0004 7047     		bx	lr
+ 194              	.L21:
+ 195 0006 00BF     		.align	2
+ 196              	.L20:
+ 197 0008 89650040 		.word	1073767817
+ 198              		.cfi_endproc
+ 199              	.LFE9:
+ 200              		.size	PWM_NOTIFY_SetInterruptMode, .-PWM_NOTIFY_SetInterruptMode
+ 201              		.section	.text.PWM_NOTIFY_ReadStatusRegister,"ax",%progbits
+ 202              		.align	2
+ 203              		.global	PWM_NOTIFY_ReadStatusRegister
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	PWM_NOTIFY_ReadStatusRegister, %function
+ 207              	PWM_NOTIFY_ReadStatusRegister:
+ 208              	.LFB10:
+ 687:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 688:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 689:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 690:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 691:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadStatusRegister
+ 692:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 693:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 694:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 695:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  This function returns the current state of the status register.
+ 696:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 697:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 698:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 699:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 700:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 701:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8 : Current status register value. The status register bits are:
+ 702:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [7:6] : Unused(0)
+ 703:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [5]   : Kill event output
+ 704:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [4]   : FIFO not empty
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 17
+
+
+ 705:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [3]   : FIFO full
+ 706:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [2]   : Terminal count
+ 707:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [1]   : Compare output 2
+ 708:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [0]   : Compare output 1
+ 709:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 710:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 711:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadStatusRegister(void) 
+ 712:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 209              		.loc 1 712 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ 713:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_STATUS_PTR));
+ 214              		.loc 1 713 0
+ 215 0000 014B     		ldr	r3, .L23
+ 216 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 714:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 217              		.loc 1 714 0
+ 218 0004 7047     		bx	lr
+ 219              	.L24:
+ 220 0006 00BF     		.align	2
+ 221              	.L23:
+ 222 0008 69650040 		.word	1073767785
+ 223              		.cfi_endproc
+ 224              	.LFE10:
+ 225              		.size	PWM_NOTIFY_ReadStatusRegister, .-PWM_NOTIFY_ReadStatusRegister
+ 226              		.section	.text.PWM_NOTIFY_ReadControlRegister,"ax",%progbits
+ 227              		.align	2
+ 228              		.global	PWM_NOTIFY_ReadControlRegister
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.type	PWM_NOTIFY_ReadControlRegister, %function
+ 232              	PWM_NOTIFY_ReadControlRegister:
+ 233              	.LFB11:
+ 715:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 716:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* (PWM_NOTIFY_UseStatus || PWM_NOTIFY_UsingFixedFunction) */
+ 717:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 718:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 719:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_UseControl)
+ 720:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 721:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 722:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 723:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadControlRegister
+ 724:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 725:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 726:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 727:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Returns the current state of the control register. This API is available
+ 728:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  only if the control register is not removed.
+ 729:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 730:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 731:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 732:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 733:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 734:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8 : Current control register value
+ 735:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 736:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 18
+
+
+ 737:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadControlRegister(void) 
+ 738:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 234              		.loc 1 738 0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		@ link register save eliminated.
+ 739:Generated_Source\PSoC5/PWM_NOTIFY.c ****         uint8 result;
+ 740:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 741:Generated_Source\PSoC5/PWM_NOTIFY.c ****         result = CY_GET_REG8(PWM_NOTIFY_CONTROL_PTR);
+ 239              		.loc 1 741 0
+ 240 0000 014B     		ldr	r3, .L26
+ 241 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 242              	.LVL4:
+ 742:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (result);
+ 743:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 243              		.loc 1 743 0
+ 244 0004 7047     		bx	lr
+ 245              	.L27:
+ 246 0006 00BF     		.align	2
+ 247              	.L26:
+ 248 0008 79650040 		.word	1073767801
+ 249              		.cfi_endproc
+ 250              	.LFE11:
+ 251              		.size	PWM_NOTIFY_ReadControlRegister, .-PWM_NOTIFY_ReadControlRegister
+ 252              		.section	.text.PWM_NOTIFY_WriteControlRegister,"ax",%progbits
+ 253              		.align	2
+ 254              		.global	PWM_NOTIFY_WriteControlRegister
+ 255              		.thumb
+ 256              		.thumb_func
+ 257              		.type	PWM_NOTIFY_WriteControlRegister, %function
+ 258              	PWM_NOTIFY_WriteControlRegister:
+ 259              	.LFB12:
+ 744:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 745:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 746:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 747:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_WriteControlRegister
+ 748:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 749:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 750:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 751:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Sets the bit field of the control register. This API is available only if
+ 752:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  the control register is not removed.
+ 753:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 754:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 755:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8 control: Control register bit field, The status register bits are:
+ 756:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [7]   : PWM Enable
+ 757:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [6]   : Reset
+ 758:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [5:3] : Compare Mode2
+ 759:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  [2:0] : Compare Mode2
+ 760:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 761:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 762:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 763:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 764:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 765:Generated_Source\PSoC5/PWM_NOTIFY.c ****     void PWM_NOTIFY_WriteControlRegister(uint8 control) 
+ 766:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 260              		.loc 1 766 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 19
+
+
+ 261              		.cfi_startproc
+ 262              		@ args = 0, pretend = 0, frame = 0
+ 263              		@ frame_needed = 0, uses_anonymous_args = 0
+ 264              		@ link register save eliminated.
+ 265              	.LVL5:
+ 767:Generated_Source\PSoC5/PWM_NOTIFY.c ****         CY_SET_REG8(PWM_NOTIFY_CONTROL_PTR, control);
+ 266              		.loc 1 767 0
+ 267 0000 014B     		ldr	r3, .L29
+ 268 0002 1870     		strb	r0, [r3]
+ 269 0004 7047     		bx	lr
+ 270              	.L30:
+ 271 0006 00BF     		.align	2
+ 272              	.L29:
+ 273 0008 79650040 		.word	1073767801
+ 274              		.cfi_endproc
+ 275              	.LFE12:
+ 276              		.size	PWM_NOTIFY_WriteControlRegister, .-PWM_NOTIFY_WriteControlRegister
+ 277              		.section	.text.PWM_NOTIFY_ReadCapture,"ax",%progbits
+ 278              		.align	2
+ 279              		.global	PWM_NOTIFY_ReadCapture
+ 280              		.thumb
+ 281              		.thumb_func
+ 282              		.type	PWM_NOTIFY_ReadCapture, %function
+ 283              	PWM_NOTIFY_ReadCapture:
+ 284              	.LFB13:
+ 768:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 769:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 770:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* (PWM_NOTIFY_UseControl) */
+ 771:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 772:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 773:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (!PWM_NOTIFY_UsingFixedFunction)
+ 774:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 775:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 776:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 777:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadCapture
+ 778:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 779:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 780:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 781:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Reads the capture value from the capture FIFO.
+ 782:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 783:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 784:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 785:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 786:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 787:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8/uint16: The current capture value
+ 788:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 789:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 790:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadCapture(void) 
+ 791:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 285              		.loc 1 791 0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289              		@ link register save eliminated.
+ 792:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_CAPTURE_LSB_PTR));
+ 290              		.loc 1 792 0
+ 291 0000 014B     		ldr	r3, .L32
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 20
+
+
+ 292 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 793:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 293              		.loc 1 793 0
+ 294 0004 7047     		bx	lr
+ 295              	.L33:
+ 296 0006 00BF     		.align	2
+ 297              	.L32:
+ 298 0008 5B650040 		.word	1073767771
+ 299              		.cfi_endproc
+ 300              	.LFE13:
+ 301              		.size	PWM_NOTIFY_ReadCapture, .-PWM_NOTIFY_ReadCapture
+ 302              		.section	.text.PWM_NOTIFY_ClearFIFO,"ax",%progbits
+ 303              		.align	2
+ 304              		.global	PWM_NOTIFY_ClearFIFO
+ 305              		.thumb
+ 306              		.thumb_func
+ 307              		.type	PWM_NOTIFY_ClearFIFO, %function
+ 308              	PWM_NOTIFY_ClearFIFO:
+ 309              	.LFB6:
+ 454:Generated_Source\PSoC5/PWM_NOTIFY.c ****             while(0u != (PWM_NOTIFY_ReadStatusRegister() & PWM_NOTIFY_STATUS_FIFONEMPTY))
+ 310              		.loc 1 454 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314 0000 08B5     		push	{r3, lr}
+ 315              		.cfi_def_cfa_offset 8
+ 316              		.cfi_offset 3, -8
+ 317              		.cfi_offset 14, -4
+ 455:Generated_Source\PSoC5/PWM_NOTIFY.c ****             {
+ 318              		.loc 1 455 0
+ 319 0002 01E0     		b	.L35
+ 320              	.L36:
+ 457:Generated_Source\PSoC5/PWM_NOTIFY.c ****             }
+ 321              		.loc 1 457 0
+ 322 0004 FFF7FEFF 		bl	PWM_NOTIFY_ReadCapture
+ 323              	.LVL6:
+ 324              	.L35:
+ 455:Generated_Source\PSoC5/PWM_NOTIFY.c ****             {
+ 325              		.loc 1 455 0
+ 326 0008 FFF7FEFF 		bl	PWM_NOTIFY_ReadStatusRegister
+ 327              	.LVL7:
+ 328 000c 10F0100F 		tst	r0, #16
+ 329 0010 F8D1     		bne	.L36
+ 459:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 330              		.loc 1 459 0
+ 331 0012 08BD     		pop	{r3, pc}
+ 332              		.cfi_endproc
+ 333              	.LFE6:
+ 334              		.size	PWM_NOTIFY_ClearFIFO, .-PWM_NOTIFY_ClearFIFO
+ 335              		.section	.text.PWM_NOTIFY_Init,"ax",%progbits
+ 336              		.align	2
+ 337              		.global	PWM_NOTIFY_Init
+ 338              		.thumb
+ 339              		.thumb_func
+ 340              		.type	PWM_NOTIFY_Init, %function
+ 341              	PWM_NOTIFY_Init:
+ 342              	.LFB1:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 21
+
+
+  85:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if (PWM_NOTIFY_UsingFixedFunction || PWM_NOTIFY_UseControl)
+ 343              		.loc 1 85 0
+ 344              		.cfi_startproc
+ 345              		@ args = 0, pretend = 0, frame = 0
+ 346              		@ frame_needed = 0, uses_anonymous_args = 0
+ 347 0000 08B5     		push	{r3, lr}
+ 348              		.cfi_def_cfa_offset 8
+ 349              		.cfi_offset 3, -8
+ 350              		.cfi_offset 14, -4
+ 117:Generated_Source\PSoC5/PWM_NOTIFY.c ****                 ((uint8)(~PWM_NOTIFY_CTRL_CMPMODE1_MASK));
+ 351              		.loc 1 117 0
+ 352 0002 124A     		ldr	r2, .L40
+ 353 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 354 0006 03F0C003 		and	r3, r3, #192
+ 355              	.LVL8:
+ 119:Generated_Source\PSoC5/PWM_NOTIFY.c ****                                    PWM_NOTIFY_DEFAULT_COMPARE1_MODE;
+ 356              		.loc 1 119 0
+ 357 000a 43F00A03 		orr	r3, r3, #10
+ 358              	.LVL9:
+ 359 000e 1370     		strb	r3, [r2]
+ 126:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else /* (PWM_NOTIFY_Resolution == 16)*/
+ 360              		.loc 1 126 0
+ 361 0010 2232     		adds	r2, r2, #34
+ 362 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 363 0014 43F00103 		orr	r3, r3, #1
+ 364 0018 1370     		strb	r3, [r2]
+ 133:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (!PWM_NOTIFY_UsingFixedFunction) */
+ 365              		.loc 1 133 0
+ 366 001a C820     		movs	r0, #200
+ 367 001c FFF7FEFF 		bl	PWM_NOTIFY_WriteCounter
+ 368              	.LVL10:
+ 136:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 369              		.loc 1 136 0
+ 370 0020 C820     		movs	r0, #200
+ 371 0022 FFF7FEFF 		bl	PWM_NOTIFY_WritePeriod
+ 372              	.LVL11:
+ 139:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 373              		.loc 1 139 0
+ 374 0026 6420     		movs	r0, #100
+ 375 0028 FFF7FEFF 		bl	PWM_NOTIFY_WriteCompare
+ 376              	.LVL12:
+ 154:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UseStatus || PWM_NOTIFY_UsingFixedFunction) */
+ 377              		.loc 1 154 0
+ 378 002c 0020     		movs	r0, #0
+ 379 002e FFF7FEFF 		bl	PWM_NOTIFY_SetInterruptMode
+ 380              	.LVL13:
+ 167:Generated_Source\PSoC5/PWM_NOTIFY.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 381              		.loc 1 167 0
+ 382 0032 FFF7FEFF 		bl	CyEnterCriticalSection
+ 383              	.LVL14:
+ 169:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 384              		.loc 1 169 0
+ 385 0036 064A     		ldr	r2, .L40+4
+ 386 0038 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 387 003a 43F01003 		orr	r3, r3, #16
+ 388 003e 1370     		strb	r3, [r2]
+ 172:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 22
+
+
+ 389              		.loc 1 172 0
+ 390 0040 FFF7FEFF 		bl	CyExitCriticalSection
+ 391              	.LVL15:
+ 176:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UseStatus) */
+ 392              		.loc 1 176 0
+ 393 0044 FFF7FEFF 		bl	PWM_NOTIFY_ClearFIFO
+ 394              	.LVL16:
+ 395 0048 08BD     		pop	{r3, pc}
+ 396              	.L41:
+ 397 004a 00BF     		.align	2
+ 398              	.L40:
+ 399 004c 79650040 		.word	1073767801
+ 400 0050 99650040 		.word	1073767833
+ 401              		.cfi_endproc
+ 402              	.LFE1:
+ 403              		.size	PWM_NOTIFY_Init, .-PWM_NOTIFY_Init
+ 404              		.section	.text.PWM_NOTIFY_Start,"ax",%progbits
+ 405              		.align	2
+ 406              		.global	PWM_NOTIFY_Start
+ 407              		.thumb
+ 408              		.thumb_func
+ 409              		.type	PWM_NOTIFY_Start, %function
+ 410              	PWM_NOTIFY_Start:
+ 411              	.LFB0:
+  56:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /* If not Initialized then initialize all required hardware and software */
+ 412              		.loc 1 56 0
+ 413              		.cfi_startproc
+ 414              		@ args = 0, pretend = 0, frame = 0
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416 0000 08B5     		push	{r3, lr}
+ 417              		.cfi_def_cfa_offset 8
+ 418              		.cfi_offset 3, -8
+ 419              		.cfi_offset 14, -4
+  58:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 420              		.loc 1 58 0
+ 421 0002 054B     		ldr	r3, .L45
+ 422 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 423 0006 23B9     		cbnz	r3, .L43
+  60:Generated_Source\PSoC5/PWM_NOTIFY.c ****         PWM_NOTIFY_initVar = 1u;
+ 424              		.loc 1 60 0
+ 425 0008 FFF7FEFF 		bl	PWM_NOTIFY_Init
+ 426              	.LVL17:
+  61:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 427              		.loc 1 61 0
+ 428 000c 0122     		movs	r2, #1
+ 429 000e 024B     		ldr	r3, .L45
+ 430 0010 1A70     		strb	r2, [r3]
+ 431              	.L43:
+  63:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 432              		.loc 1 63 0
+ 433 0012 FFF7FEFF 		bl	PWM_NOTIFY_Enable
+ 434              	.LVL18:
+ 435 0016 08BD     		pop	{r3, pc}
+ 436              	.L46:
+ 437              		.align	2
+ 438              	.L45:
+ 439 0018 00000000 		.word	.LANCHOR0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 23
+
+
+ 440              		.cfi_endproc
+ 441              	.LFE0:
+ 442              		.size	PWM_NOTIFY_Start, .-PWM_NOTIFY_Start
+ 443              		.section	.text.PWM_NOTIFY_ReadCompare,"ax",%progbits
+ 444              		.align	2
+ 445              		.global	PWM_NOTIFY_ReadCompare
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.type	PWM_NOTIFY_ReadCompare, %function
+ 449              	PWM_NOTIFY_ReadCompare:
+ 450              	.LFB14:
+ 794:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 795:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* (!PWM_NOTIFY_UsingFixedFunction) */
+ 796:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 797:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 798:Generated_Source\PSoC5/PWM_NOTIFY.c **** #if (PWM_NOTIFY_UseOneCompareMode)
+ 799:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 800:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 801:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 802:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadCompare
+ 803:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 804:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 805:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 806:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Reads the compare value for the compare output when the PWM Mode parameter is
+ 807:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  set to Dither mode, Center Aligned mode, or One Output mode.
+ 808:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 809:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 810:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 811:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 812:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 813:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8/uint16: Current compare value
+ 814:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 815:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 816:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadCompare(void) 
+ 817:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 451              		.loc 1 817 0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455              		@ link register save eliminated.
+ 818:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #if(PWM_NOTIFY_UsingFixedFunction)
+ 819:Generated_Source\PSoC5/PWM_NOTIFY.c ****             return ((uint8)CY_GET_REG16(PWM_NOTIFY_COMPARE1_LSB_PTR));
+ 820:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #else
+ 821:Generated_Source\PSoC5/PWM_NOTIFY.c ****             return (CY_GET_REG8(PWM_NOTIFY_COMPARE1_LSB_PTR));
+ 456              		.loc 1 821 0
+ 457 0000 014B     		ldr	r3, .L48
+ 458 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 822:Generated_Source\PSoC5/PWM_NOTIFY.c ****         #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 823:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 459              		.loc 1 823 0
+ 460 0004 7047     		bx	lr
+ 461              	.L49:
+ 462 0006 00BF     		.align	2
+ 463              	.L48:
+ 464 0008 2B650040 		.word	1073767723
+ 465              		.cfi_endproc
+ 466              	.LFE14:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 24
+
+
+ 467              		.size	PWM_NOTIFY_ReadCompare, .-PWM_NOTIFY_ReadCompare
+ 468              		.section	.text.PWM_NOTIFY_ReadPeriod,"ax",%progbits
+ 469              		.align	2
+ 470              		.global	PWM_NOTIFY_ReadPeriod
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.type	PWM_NOTIFY_ReadPeriod, %function
+ 474              	PWM_NOTIFY_ReadPeriod:
+ 475              	.LFB15:
+ 824:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 825:Generated_Source\PSoC5/PWM_NOTIFY.c **** #else
+ 826:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 827:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 828:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 829:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadCompare1
+ 830:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 831:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 832:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 833:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Reads the compare value for the compare1 output.
+ 834:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 835:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 836:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 837:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 838:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 839:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8/uint16: Current compare value.
+ 840:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 841:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 842:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadCompare1(void) 
+ 843:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 844:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_COMPARE1_LSB_PTR));
+ 845:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 846:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 847:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 848:Generated_Source\PSoC5/PWM_NOTIFY.c ****     /*******************************************************************************
+ 849:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Function Name: PWM_NOTIFY_ReadCompare2
+ 850:Generated_Source\PSoC5/PWM_NOTIFY.c ****     ********************************************************************************
+ 851:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 852:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Summary:
+ 853:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  Reads the compare value for the compare2 output.
+ 854:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 855:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Parameters:
+ 856:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  None
+ 857:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 858:Generated_Source\PSoC5/PWM_NOTIFY.c ****     * Return:
+ 859:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *  uint8/uint16: Current compare value.
+ 860:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *
+ 861:Generated_Source\PSoC5/PWM_NOTIFY.c ****     *******************************************************************************/
+ 862:Generated_Source\PSoC5/PWM_NOTIFY.c ****     uint8 PWM_NOTIFY_ReadCompare2(void) 
+ 863:Generated_Source\PSoC5/PWM_NOTIFY.c ****     {
+ 864:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_COMPARE2_LSB_PTR));
+ 865:Generated_Source\PSoC5/PWM_NOTIFY.c ****     }
+ 866:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 867:Generated_Source\PSoC5/PWM_NOTIFY.c **** #endif /* (PWM_NOTIFY_UseOneCompareMode) */
+ 868:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 869:Generated_Source\PSoC5/PWM_NOTIFY.c **** 
+ 870:Generated_Source\PSoC5/PWM_NOTIFY.c **** /*******************************************************************************
+ 871:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Function Name: PWM_NOTIFY_ReadPeriod
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 25
+
+
+ 872:Generated_Source\PSoC5/PWM_NOTIFY.c **** ********************************************************************************
+ 873:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 874:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Summary:
+ 875:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  Reads the period value used by the PWM hardware.
+ 876:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 877:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Parameters:
+ 878:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  None
+ 879:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 880:Generated_Source\PSoC5/PWM_NOTIFY.c **** * Return:
+ 881:Generated_Source\PSoC5/PWM_NOTIFY.c **** *  uint8/16: Period value
+ 882:Generated_Source\PSoC5/PWM_NOTIFY.c **** *
+ 883:Generated_Source\PSoC5/PWM_NOTIFY.c **** *******************************************************************************/
+ 884:Generated_Source\PSoC5/PWM_NOTIFY.c **** uint8 PWM_NOTIFY_ReadPeriod(void) 
+ 885:Generated_Source\PSoC5/PWM_NOTIFY.c **** {
+ 476              		.loc 1 885 0
+ 477              		.cfi_startproc
+ 478              		@ args = 0, pretend = 0, frame = 0
+ 479              		@ frame_needed = 0, uses_anonymous_args = 0
+ 480              		@ link register save eliminated.
+ 886:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #if(PWM_NOTIFY_UsingFixedFunction)
+ 887:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return ((uint8)CY_GET_REG16(PWM_NOTIFY_PERIOD_LSB_PTR));
+ 888:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #else
+ 889:Generated_Source\PSoC5/PWM_NOTIFY.c ****         return (CY_GET_REG8(PWM_NOTIFY_PERIOD_LSB_PTR));
+ 481              		.loc 1 889 0
+ 482 0000 014B     		ldr	r3, .L51
+ 483 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 890:Generated_Source\PSoC5/PWM_NOTIFY.c ****     #endif /* (PWM_NOTIFY_UsingFixedFunction) */
+ 891:Generated_Source\PSoC5/PWM_NOTIFY.c **** }
+ 484              		.loc 1 891 0
+ 485 0004 7047     		bx	lr
+ 486              	.L52:
+ 487 0006 00BF     		.align	2
+ 488              	.L51:
+ 489 0008 4B650040 		.word	1073767755
+ 490              		.cfi_endproc
+ 491              	.LFE15:
+ 492              		.size	PWM_NOTIFY_ReadPeriod, .-PWM_NOTIFY_ReadPeriod
+ 493              		.global	PWM_NOTIFY_initVar
+ 494              		.bss
+ 495              		.set	.LANCHOR0,. + 0
+ 496              		.type	PWM_NOTIFY_initVar, %object
+ 497              		.size	PWM_NOTIFY_initVar, 1
+ 498              	PWM_NOTIFY_initVar:
+ 499 0000 00       		.space	1
+ 500              		.text
+ 501              	.Letext0:
+ 502              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 503              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 504              		.section	.debug_info,"",%progbits
+ 505              	.Ldebug_info0:
+ 506 0000 30030000 		.4byte	0x330
+ 507 0004 0400     		.2byte	0x4
+ 508 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 509 000a 04       		.byte	0x4
+ 510 000b 01       		.uleb128 0x1
+ 511 000c 03010000 		.4byte	.LASF41
+ 512 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 26
+
+
+ 513 0011 7A000000 		.4byte	.LASF42
+ 514 0015 92020000 		.4byte	.LASF43
+ 515 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 516 001d 00000000 		.4byte	0
+ 517 0021 00000000 		.4byte	.Ldebug_line0
+ 518 0025 02       		.uleb128 0x2
+ 519 0026 01       		.byte	0x1
+ 520 0027 06       		.byte	0x6
+ 521 0028 6D030000 		.4byte	.LASF0
+ 522 002c 02       		.uleb128 0x2
+ 523 002d 01       		.byte	0x1
+ 524 002e 08       		.byte	0x8
+ 525 002f F5000000 		.4byte	.LASF1
+ 526 0033 02       		.uleb128 0x2
+ 527 0034 02       		.byte	0x2
+ 528 0035 05       		.byte	0x5
+ 529 0036 07030000 		.4byte	.LASF2
+ 530 003a 02       		.uleb128 0x2
+ 531 003b 02       		.byte	0x2
+ 532 003c 07       		.byte	0x7
+ 533 003d 67000000 		.4byte	.LASF3
+ 534 0041 02       		.uleb128 0x2
+ 535 0042 04       		.byte	0x4
+ 536 0043 05       		.byte	0x5
+ 537 0044 53030000 		.4byte	.LASF4
+ 538 0048 02       		.uleb128 0x2
+ 539 0049 04       		.byte	0x4
+ 540 004a 07       		.byte	0x7
+ 541 004b 96010000 		.4byte	.LASF5
+ 542 004f 02       		.uleb128 0x2
+ 543 0050 08       		.byte	0x8
+ 544 0051 05       		.byte	0x5
+ 545 0052 EB020000 		.4byte	.LASF6
+ 546 0056 02       		.uleb128 0x2
+ 547 0057 08       		.byte	0x8
+ 548 0058 07       		.byte	0x7
+ 549 0059 DE000000 		.4byte	.LASF7
+ 550 005d 03       		.uleb128 0x3
+ 551 005e 04       		.byte	0x4
+ 552 005f 05       		.byte	0x5
+ 553 0060 696E7400 		.ascii	"int\000"
+ 554 0064 02       		.uleb128 0x2
+ 555 0065 04       		.byte	0x4
+ 556 0066 07       		.byte	0x7
+ 557 0067 30020000 		.4byte	.LASF8
+ 558 006b 04       		.uleb128 0x4
+ 559 006c C6010000 		.4byte	.LASF12
+ 560 0070 02       		.byte	0x2
+ 561 0071 E401     		.2byte	0x1e4
+ 562 0073 2C000000 		.4byte	0x2c
+ 563 0077 02       		.uleb128 0x2
+ 564 0078 04       		.byte	0x4
+ 565 0079 04       		.byte	0x4
+ 566 007a D0000000 		.4byte	.LASF9
+ 567 007e 02       		.uleb128 0x2
+ 568 007f 08       		.byte	0x8
+ 569 0080 04       		.byte	0x4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 27
+
+
+ 570 0081 FB010000 		.4byte	.LASF10
+ 571 0085 02       		.uleb128 0x2
+ 572 0086 01       		.byte	0x1
+ 573 0087 08       		.byte	0x8
+ 574 0088 5C030000 		.4byte	.LASF11
+ 575 008c 04       		.uleb128 0x4
+ 576 008d 91010000 		.4byte	.LASF13
+ 577 0091 02       		.byte	0x2
+ 578 0092 8E02     		.2byte	0x28e
+ 579 0094 98000000 		.4byte	0x98
+ 580 0098 05       		.uleb128 0x5
+ 581 0099 6B000000 		.4byte	0x6b
+ 582 009d 02       		.uleb128 0x2
+ 583 009e 08       		.byte	0x8
+ 584 009f 04       		.byte	0x4
+ 585 00a0 61030000 		.4byte	.LASF14
+ 586 00a4 02       		.uleb128 0x2
+ 587 00a5 04       		.byte	0x4
+ 588 00a6 07       		.byte	0x7
+ 589 00a7 E2020000 		.4byte	.LASF15
+ 590 00ab 06       		.uleb128 0x6
+ 591 00ac E9010000 		.4byte	.LASF16
+ 592 00b0 01       		.byte	0x1
+ 593 00b1 C7       		.byte	0xc7
+ 594 00b2 00000000 		.4byte	.LFB2
+ 595 00b6 10000000 		.4byte	.LFE2-.LFB2
+ 596 00ba 01       		.uleb128 0x1
+ 597 00bb 9C       		.byte	0x9c
+ 598 00bc 06       		.uleb128 0x6
+ 599 00bd 43030000 		.4byte	.LASF17
+ 600 00c1 01       		.byte	0x1
+ 601 00c2 E9       		.byte	0xe9
+ 602 00c3 00000000 		.4byte	.LFB3
+ 603 00c7 10000000 		.4byte	.LFE3-.LFB3
+ 604 00cb 01       		.uleb128 0x1
+ 605 00cc 9C       		.byte	0x9c
+ 606 00cd 07       		.uleb128 0x7
+ 607 00ce 5A020000 		.4byte	.LASF18
+ 608 00d2 01       		.byte	0x1
+ 609 00d3 9301     		.2byte	0x193
+ 610 00d5 00000000 		.4byte	.LFB4
+ 611 00d9 0C000000 		.4byte	.LFE4-.LFB4
+ 612 00dd 01       		.uleb128 0x1
+ 613 00de 9C       		.byte	0x9c
+ 614 00df F2000000 		.4byte	0xf2
+ 615 00e3 08       		.uleb128 0x8
+ 616 00e4 D6000000 		.4byte	.LASF20
+ 617 00e8 01       		.byte	0x1
+ 618 00e9 9301     		.2byte	0x193
+ 619 00eb 6B000000 		.4byte	0x6b
+ 620 00ef 01       		.uleb128 0x1
+ 621 00f0 50       		.byte	0x50
+ 622 00f1 00       		.byte	0
+ 623 00f2 09       		.uleb128 0x9
+ 624 00f3 A2030000 		.4byte	.LASF26
+ 625 00f7 01       		.byte	0x1
+ 626 00f8 A901     		.2byte	0x1a9
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 28
+
+
+ 627 00fa 6B000000 		.4byte	0x6b
+ 628 00fe 00000000 		.4byte	.LFB5
+ 629 0102 14000000 		.4byte	.LFE5-.LFB5
+ 630 0106 01       		.uleb128 0x1
+ 631 0107 9C       		.byte	0x9c
+ 632 0108 07       		.uleb128 0x7
+ 633 0109 02020000 		.4byte	.LASF19
+ 634 010d 01       		.byte	0x1
+ 635 010e E201     		.2byte	0x1e2
+ 636 0110 00000000 		.4byte	.LFB7
+ 637 0114 0C000000 		.4byte	.LFE7-.LFB7
+ 638 0118 01       		.uleb128 0x1
+ 639 0119 9C       		.byte	0x9c
+ 640 011a 2D010000 		.4byte	0x12d
+ 641 011e 08       		.uleb128 0x8
+ 642 011f 60000000 		.4byte	.LASF21
+ 643 0123 01       		.byte	0x1
+ 644 0124 E201     		.2byte	0x1e2
+ 645 0126 6B000000 		.4byte	0x6b
+ 646 012a 01       		.uleb128 0x1
+ 647 012b 50       		.byte	0x50
+ 648 012c 00       		.byte	0
+ 649 012d 07       		.uleb128 0x7
+ 650 012e 9E000000 		.4byte	.LASF22
+ 651 0132 01       		.byte	0x1
+ 652 0133 0402     		.2byte	0x204
+ 653 0135 00000000 		.4byte	.LFB8
+ 654 0139 0C000000 		.4byte	.LFE8-.LFB8
+ 655 013d 01       		.uleb128 0x1
+ 656 013e 9C       		.byte	0x9c
+ 657 013f 52010000 		.4byte	0x152
+ 658 0143 08       		.uleb128 0x8
+ 659 0144 79030000 		.4byte	.LASF23
+ 660 0148 01       		.byte	0x1
+ 661 0149 0402     		.2byte	0x204
+ 662 014b 6B000000 		.4byte	0x6b
+ 663 014f 01       		.uleb128 0x1
+ 664 0150 50       		.byte	0x50
+ 665 0151 00       		.byte	0
+ 666 0152 07       		.uleb128 0x7
+ 667 0153 11030000 		.4byte	.LASF24
+ 668 0157 01       		.byte	0x1
+ 669 0158 AC02     		.2byte	0x2ac
+ 670 015a 00000000 		.4byte	.LFB9
+ 671 015e 0C000000 		.4byte	.LFE9-.LFB9
+ 672 0162 01       		.uleb128 0x1
+ 673 0163 9C       		.byte	0x9c
+ 674 0164 77010000 		.4byte	0x177
+ 675 0168 08       		.uleb128 0x8
+ 676 0169 F9020000 		.4byte	.LASF25
+ 677 016d 01       		.byte	0x1
+ 678 016e AC02     		.2byte	0x2ac
+ 679 0170 6B000000 		.4byte	0x6b
+ 680 0174 01       		.uleb128 0x1
+ 681 0175 50       		.byte	0x50
+ 682 0176 00       		.byte	0
+ 683 0177 09       		.uleb128 0x9
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 29
+
+
+ 684 0178 A8010000 		.4byte	.LASF27
+ 685 017c 01       		.byte	0x1
+ 686 017d C702     		.2byte	0x2c7
+ 687 017f 6B000000 		.4byte	0x6b
+ 688 0183 00000000 		.4byte	.LFB10
+ 689 0187 0C000000 		.4byte	.LFE10-.LFB10
+ 690 018b 01       		.uleb128 0x1
+ 691 018c 9C       		.byte	0x9c
+ 692 018d 0A       		.uleb128 0xa
+ 693 018e 41000000 		.4byte	.LASF44
+ 694 0192 01       		.byte	0x1
+ 695 0193 E102     		.2byte	0x2e1
+ 696 0195 6B000000 		.4byte	0x6b
+ 697 0199 00000000 		.4byte	.LFB11
+ 698 019d 0C000000 		.4byte	.LFE11-.LFB11
+ 699 01a1 01       		.uleb128 0x1
+ 700 01a2 9C       		.byte	0x9c
+ 701 01a3 B6010000 		.4byte	0x1b6
+ 702 01a7 0B       		.uleb128 0xb
+ 703 01a8 53020000 		.4byte	.LASF33
+ 704 01ac 01       		.byte	0x1
+ 705 01ad E302     		.2byte	0x2e3
+ 706 01af 6B000000 		.4byte	0x6b
+ 707 01b3 01       		.uleb128 0x1
+ 708 01b4 50       		.byte	0x50
+ 709 01b5 00       		.byte	0
+ 710 01b6 07       		.uleb128 0x7
+ 711 01b7 72020000 		.4byte	.LASF28
+ 712 01bb 01       		.byte	0x1
+ 713 01bc FD02     		.2byte	0x2fd
+ 714 01be 00000000 		.4byte	.LFB12
+ 715 01c2 0C000000 		.4byte	.LFE12-.LFB12
+ 716 01c6 01       		.uleb128 0x1
+ 717 01c7 9C       		.byte	0x9c
+ 718 01c8 DB010000 		.4byte	0x1db
+ 719 01cc 08       		.uleb128 0x8
+ 720 01cd CC010000 		.4byte	.LASF29
+ 721 01d1 01       		.byte	0x1
+ 722 01d2 FD02     		.2byte	0x2fd
+ 723 01d4 6B000000 		.4byte	0x6b
+ 724 01d8 01       		.uleb128 0x1
+ 725 01d9 50       		.byte	0x50
+ 726 01da 00       		.byte	0
+ 727 01db 09       		.uleb128 0x9
+ 728 01dc 17000000 		.4byte	.LASF30
+ 729 01e0 01       		.byte	0x1
+ 730 01e1 1603     		.2byte	0x316
+ 731 01e3 6B000000 		.4byte	0x6b
+ 732 01e7 00000000 		.4byte	.LFB13
+ 733 01eb 0C000000 		.4byte	.LFE13-.LFB13
+ 734 01ef 01       		.uleb128 0x1
+ 735 01f0 9C       		.byte	0x9c
+ 736 01f1 07       		.uleb128 0x7
+ 737 01f2 D4010000 		.4byte	.LASF31
+ 738 01f6 01       		.byte	0x1
+ 739 01f7 C501     		.2byte	0x1c5
+ 740 01f9 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 30
+
+
+ 741 01fd 14000000 		.4byte	.LFE6-.LFB6
+ 742 0201 01       		.uleb128 0x1
+ 743 0202 9C       		.byte	0x9c
+ 744 0203 1A020000 		.4byte	0x21a
+ 745 0207 0C       		.uleb128 0xc
+ 746 0208 08000000 		.4byte	.LVL6
+ 747 020c DB010000 		.4byte	0x1db
+ 748 0210 0C       		.uleb128 0xc
+ 749 0211 0C000000 		.4byte	.LVL7
+ 750 0215 77010000 		.4byte	0x177
+ 751 0219 00       		.byte	0
+ 752 021a 0D       		.uleb128 0xd
+ 753 021b 92030000 		.4byte	.LASF32
+ 754 021f 01       		.byte	0x1
+ 755 0220 54       		.byte	0x54
+ 756 0221 00000000 		.4byte	.LFB1
+ 757 0225 54000000 		.4byte	.LFE1-.LFB1
+ 758 0229 01       		.uleb128 0x1
+ 759 022a 9C       		.byte	0x9c
+ 760 022b B8020000 		.4byte	0x2b8
+ 761 022f 0E       		.uleb128 0xe
+ 762 0230 DD020000 		.4byte	.LASF34
+ 763 0234 01       		.byte	0x1
+ 764 0235 57       		.byte	0x57
+ 765 0236 6B000000 		.4byte	0x6b
+ 766 023a 00000000 		.4byte	.LLST0
+ 767 023e 0E       		.uleb128 0xe
+ 768 023f B6000000 		.4byte	.LASF35
+ 769 0243 01       		.byte	0x1
+ 770 0244 5D       		.byte	0x5d
+ 771 0245 6B000000 		.4byte	0x6b
+ 772 0249 13000000 		.4byte	.LLST1
+ 773 024d 0F       		.uleb128 0xf
+ 774 024e 20000000 		.4byte	.LVL10
+ 775 0252 CD000000 		.4byte	0xcd
+ 776 0256 61020000 		.4byte	0x261
+ 777 025a 10       		.uleb128 0x10
+ 778 025b 01       		.uleb128 0x1
+ 779 025c 50       		.byte	0x50
+ 780 025d 02       		.uleb128 0x2
+ 781 025e 09       		.byte	0x9
+ 782 025f C8       		.byte	0xc8
+ 783 0260 00       		.byte	0
+ 784 0261 0F       		.uleb128 0xf
+ 785 0262 26000000 		.4byte	.LVL11
+ 786 0266 08010000 		.4byte	0x108
+ 787 026a 75020000 		.4byte	0x275
+ 788 026e 10       		.uleb128 0x10
+ 789 026f 01       		.uleb128 0x1
+ 790 0270 50       		.byte	0x50
+ 791 0271 02       		.uleb128 0x2
+ 792 0272 09       		.byte	0x9
+ 793 0273 C8       		.byte	0xc8
+ 794 0274 00       		.byte	0
+ 795 0275 0F       		.uleb128 0xf
+ 796 0276 2C000000 		.4byte	.LVL12
+ 797 027a 2D010000 		.4byte	0x12d
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 31
+
+
+ 798 027e 89020000 		.4byte	0x289
+ 799 0282 10       		.uleb128 0x10
+ 800 0283 01       		.uleb128 0x1
+ 801 0284 50       		.byte	0x50
+ 802 0285 02       		.uleb128 0x2
+ 803 0286 08       		.byte	0x8
+ 804 0287 64       		.byte	0x64
+ 805 0288 00       		.byte	0
+ 806 0289 0F       		.uleb128 0xf
+ 807 028a 32000000 		.4byte	.LVL13
+ 808 028e 52010000 		.4byte	0x152
+ 809 0292 9C020000 		.4byte	0x29c
+ 810 0296 10       		.uleb128 0x10
+ 811 0297 01       		.uleb128 0x1
+ 812 0298 50       		.byte	0x50
+ 813 0299 01       		.uleb128 0x1
+ 814 029a 30       		.byte	0x30
+ 815 029b 00       		.byte	0
+ 816 029c 0C       		.uleb128 0xc
+ 817 029d 36000000 		.4byte	.LVL14
+ 818 02a1 1D030000 		.4byte	0x31d
+ 819 02a5 0C       		.uleb128 0xc
+ 820 02a6 44000000 		.4byte	.LVL15
+ 821 02aa 28030000 		.4byte	0x328
+ 822 02ae 0C       		.uleb128 0xc
+ 823 02af 48000000 		.4byte	.LVL16
+ 824 02b3 F1010000 		.4byte	0x1f1
+ 825 02b7 00       		.byte	0
+ 826 02b8 0D       		.uleb128 0xd
+ 827 02b9 81030000 		.4byte	.LASF36
+ 828 02bd 01       		.byte	0x1
+ 829 02be 37       		.byte	0x37
+ 830 02bf 00000000 		.4byte	.LFB0
+ 831 02c3 1C000000 		.4byte	.LFE0-.LFB0
+ 832 02c7 01       		.uleb128 0x1
+ 833 02c8 9C       		.byte	0x9c
+ 834 02c9 E0020000 		.4byte	0x2e0
+ 835 02cd 0C       		.uleb128 0xc
+ 836 02ce 0C000000 		.4byte	.LVL17
+ 837 02d2 1A020000 		.4byte	0x21a
+ 838 02d6 0C       		.uleb128 0xc
+ 839 02d7 16000000 		.4byte	.LVL18
+ 840 02db AB000000 		.4byte	0xab
+ 841 02df 00       		.byte	0
+ 842 02e0 09       		.uleb128 0x9
+ 843 02e1 00000000 		.4byte	.LASF37
+ 844 02e5 01       		.byte	0x1
+ 845 02e6 3003     		.2byte	0x330
+ 846 02e8 6B000000 		.4byte	0x6b
+ 847 02ec 00000000 		.4byte	.LFB14
+ 848 02f0 0C000000 		.4byte	.LFE14-.LFB14
+ 849 02f4 01       		.uleb128 0x1
+ 850 02f5 9C       		.byte	0x9c
+ 851 02f6 09       		.uleb128 0x9
+ 852 02f7 2D030000 		.4byte	.LASF38
+ 853 02fb 01       		.byte	0x1
+ 854 02fc 7403     		.2byte	0x374
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 32
+
+
+ 855 02fe 6B000000 		.4byte	0x6b
+ 856 0302 00000000 		.4byte	.LFB15
+ 857 0306 0C000000 		.4byte	.LFE15-.LFB15
+ 858 030a 01       		.uleb128 0x1
+ 859 030b 9C       		.byte	0x9c
+ 860 030c 11       		.uleb128 0x11
+ 861 030d 2E000000 		.4byte	.LASF45
+ 862 0311 01       		.byte	0x1
+ 863 0312 20       		.byte	0x20
+ 864 0313 6B000000 		.4byte	0x6b
+ 865 0317 05       		.uleb128 0x5
+ 866 0318 03       		.byte	0x3
+ 867 0319 00000000 		.4byte	PWM_NOTIFY_initVar
+ 868 031d 12       		.uleb128 0x12
+ 869 031e 19020000 		.4byte	.LASF39
+ 870 0322 19020000 		.4byte	.LASF39
+ 871 0326 03       		.byte	0x3
+ 872 0327 7D       		.byte	0x7d
+ 873 0328 12       		.uleb128 0x12
+ 874 0329 3D020000 		.4byte	.LASF40
+ 875 032d 3D020000 		.4byte	.LASF40
+ 876 0331 03       		.byte	0x3
+ 877 0332 7E       		.byte	0x7e
+ 878 0333 00       		.byte	0
+ 879              		.section	.debug_abbrev,"",%progbits
+ 880              	.Ldebug_abbrev0:
+ 881 0000 01       		.uleb128 0x1
+ 882 0001 11       		.uleb128 0x11
+ 883 0002 01       		.byte	0x1
+ 884 0003 25       		.uleb128 0x25
+ 885 0004 0E       		.uleb128 0xe
+ 886 0005 13       		.uleb128 0x13
+ 887 0006 0B       		.uleb128 0xb
+ 888 0007 03       		.uleb128 0x3
+ 889 0008 0E       		.uleb128 0xe
+ 890 0009 1B       		.uleb128 0x1b
+ 891 000a 0E       		.uleb128 0xe
+ 892 000b 55       		.uleb128 0x55
+ 893 000c 17       		.uleb128 0x17
+ 894 000d 11       		.uleb128 0x11
+ 895 000e 01       		.uleb128 0x1
+ 896 000f 10       		.uleb128 0x10
+ 897 0010 17       		.uleb128 0x17
+ 898 0011 00       		.byte	0
+ 899 0012 00       		.byte	0
+ 900 0013 02       		.uleb128 0x2
+ 901 0014 24       		.uleb128 0x24
+ 902 0015 00       		.byte	0
+ 903 0016 0B       		.uleb128 0xb
+ 904 0017 0B       		.uleb128 0xb
+ 905 0018 3E       		.uleb128 0x3e
+ 906 0019 0B       		.uleb128 0xb
+ 907 001a 03       		.uleb128 0x3
+ 908 001b 0E       		.uleb128 0xe
+ 909 001c 00       		.byte	0
+ 910 001d 00       		.byte	0
+ 911 001e 03       		.uleb128 0x3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 33
+
+
+ 912 001f 24       		.uleb128 0x24
+ 913 0020 00       		.byte	0
+ 914 0021 0B       		.uleb128 0xb
+ 915 0022 0B       		.uleb128 0xb
+ 916 0023 3E       		.uleb128 0x3e
+ 917 0024 0B       		.uleb128 0xb
+ 918 0025 03       		.uleb128 0x3
+ 919 0026 08       		.uleb128 0x8
+ 920 0027 00       		.byte	0
+ 921 0028 00       		.byte	0
+ 922 0029 04       		.uleb128 0x4
+ 923 002a 16       		.uleb128 0x16
+ 924 002b 00       		.byte	0
+ 925 002c 03       		.uleb128 0x3
+ 926 002d 0E       		.uleb128 0xe
+ 927 002e 3A       		.uleb128 0x3a
+ 928 002f 0B       		.uleb128 0xb
+ 929 0030 3B       		.uleb128 0x3b
+ 930 0031 05       		.uleb128 0x5
+ 931 0032 49       		.uleb128 0x49
+ 932 0033 13       		.uleb128 0x13
+ 933 0034 00       		.byte	0
+ 934 0035 00       		.byte	0
+ 935 0036 05       		.uleb128 0x5
+ 936 0037 35       		.uleb128 0x35
+ 937 0038 00       		.byte	0
+ 938 0039 49       		.uleb128 0x49
+ 939 003a 13       		.uleb128 0x13
+ 940 003b 00       		.byte	0
+ 941 003c 00       		.byte	0
+ 942 003d 06       		.uleb128 0x6
+ 943 003e 2E       		.uleb128 0x2e
+ 944 003f 00       		.byte	0
+ 945 0040 3F       		.uleb128 0x3f
+ 946 0041 19       		.uleb128 0x19
+ 947 0042 03       		.uleb128 0x3
+ 948 0043 0E       		.uleb128 0xe
+ 949 0044 3A       		.uleb128 0x3a
+ 950 0045 0B       		.uleb128 0xb
+ 951 0046 3B       		.uleb128 0x3b
+ 952 0047 0B       		.uleb128 0xb
+ 953 0048 27       		.uleb128 0x27
+ 954 0049 19       		.uleb128 0x19
+ 955 004a 11       		.uleb128 0x11
+ 956 004b 01       		.uleb128 0x1
+ 957 004c 12       		.uleb128 0x12
+ 958 004d 06       		.uleb128 0x6
+ 959 004e 40       		.uleb128 0x40
+ 960 004f 18       		.uleb128 0x18
+ 961 0050 9742     		.uleb128 0x2117
+ 962 0052 19       		.uleb128 0x19
+ 963 0053 00       		.byte	0
+ 964 0054 00       		.byte	0
+ 965 0055 07       		.uleb128 0x7
+ 966 0056 2E       		.uleb128 0x2e
+ 967 0057 01       		.byte	0x1
+ 968 0058 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 34
+
+
+ 969 0059 19       		.uleb128 0x19
+ 970 005a 03       		.uleb128 0x3
+ 971 005b 0E       		.uleb128 0xe
+ 972 005c 3A       		.uleb128 0x3a
+ 973 005d 0B       		.uleb128 0xb
+ 974 005e 3B       		.uleb128 0x3b
+ 975 005f 05       		.uleb128 0x5
+ 976 0060 27       		.uleb128 0x27
+ 977 0061 19       		.uleb128 0x19
+ 978 0062 11       		.uleb128 0x11
+ 979 0063 01       		.uleb128 0x1
+ 980 0064 12       		.uleb128 0x12
+ 981 0065 06       		.uleb128 0x6
+ 982 0066 40       		.uleb128 0x40
+ 983 0067 18       		.uleb128 0x18
+ 984 0068 9742     		.uleb128 0x2117
+ 985 006a 19       		.uleb128 0x19
+ 986 006b 01       		.uleb128 0x1
+ 987 006c 13       		.uleb128 0x13
+ 988 006d 00       		.byte	0
+ 989 006e 00       		.byte	0
+ 990 006f 08       		.uleb128 0x8
+ 991 0070 05       		.uleb128 0x5
+ 992 0071 00       		.byte	0
+ 993 0072 03       		.uleb128 0x3
+ 994 0073 0E       		.uleb128 0xe
+ 995 0074 3A       		.uleb128 0x3a
+ 996 0075 0B       		.uleb128 0xb
+ 997 0076 3B       		.uleb128 0x3b
+ 998 0077 05       		.uleb128 0x5
+ 999 0078 49       		.uleb128 0x49
+ 1000 0079 13       		.uleb128 0x13
+ 1001 007a 02       		.uleb128 0x2
+ 1002 007b 18       		.uleb128 0x18
+ 1003 007c 00       		.byte	0
+ 1004 007d 00       		.byte	0
+ 1005 007e 09       		.uleb128 0x9
+ 1006 007f 2E       		.uleb128 0x2e
+ 1007 0080 00       		.byte	0
+ 1008 0081 3F       		.uleb128 0x3f
+ 1009 0082 19       		.uleb128 0x19
+ 1010 0083 03       		.uleb128 0x3
+ 1011 0084 0E       		.uleb128 0xe
+ 1012 0085 3A       		.uleb128 0x3a
+ 1013 0086 0B       		.uleb128 0xb
+ 1014 0087 3B       		.uleb128 0x3b
+ 1015 0088 05       		.uleb128 0x5
+ 1016 0089 27       		.uleb128 0x27
+ 1017 008a 19       		.uleb128 0x19
+ 1018 008b 49       		.uleb128 0x49
+ 1019 008c 13       		.uleb128 0x13
+ 1020 008d 11       		.uleb128 0x11
+ 1021 008e 01       		.uleb128 0x1
+ 1022 008f 12       		.uleb128 0x12
+ 1023 0090 06       		.uleb128 0x6
+ 1024 0091 40       		.uleb128 0x40
+ 1025 0092 18       		.uleb128 0x18
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 35
+
+
+ 1026 0093 9742     		.uleb128 0x2117
+ 1027 0095 19       		.uleb128 0x19
+ 1028 0096 00       		.byte	0
+ 1029 0097 00       		.byte	0
+ 1030 0098 0A       		.uleb128 0xa
+ 1031 0099 2E       		.uleb128 0x2e
+ 1032 009a 01       		.byte	0x1
+ 1033 009b 3F       		.uleb128 0x3f
+ 1034 009c 19       		.uleb128 0x19
+ 1035 009d 03       		.uleb128 0x3
+ 1036 009e 0E       		.uleb128 0xe
+ 1037 009f 3A       		.uleb128 0x3a
+ 1038 00a0 0B       		.uleb128 0xb
+ 1039 00a1 3B       		.uleb128 0x3b
+ 1040 00a2 05       		.uleb128 0x5
+ 1041 00a3 27       		.uleb128 0x27
+ 1042 00a4 19       		.uleb128 0x19
+ 1043 00a5 49       		.uleb128 0x49
+ 1044 00a6 13       		.uleb128 0x13
+ 1045 00a7 11       		.uleb128 0x11
+ 1046 00a8 01       		.uleb128 0x1
+ 1047 00a9 12       		.uleb128 0x12
+ 1048 00aa 06       		.uleb128 0x6
+ 1049 00ab 40       		.uleb128 0x40
+ 1050 00ac 18       		.uleb128 0x18
+ 1051 00ad 9742     		.uleb128 0x2117
+ 1052 00af 19       		.uleb128 0x19
+ 1053 00b0 01       		.uleb128 0x1
+ 1054 00b1 13       		.uleb128 0x13
+ 1055 00b2 00       		.byte	0
+ 1056 00b3 00       		.byte	0
+ 1057 00b4 0B       		.uleb128 0xb
+ 1058 00b5 34       		.uleb128 0x34
+ 1059 00b6 00       		.byte	0
+ 1060 00b7 03       		.uleb128 0x3
+ 1061 00b8 0E       		.uleb128 0xe
+ 1062 00b9 3A       		.uleb128 0x3a
+ 1063 00ba 0B       		.uleb128 0xb
+ 1064 00bb 3B       		.uleb128 0x3b
+ 1065 00bc 05       		.uleb128 0x5
+ 1066 00bd 49       		.uleb128 0x49
+ 1067 00be 13       		.uleb128 0x13
+ 1068 00bf 02       		.uleb128 0x2
+ 1069 00c0 18       		.uleb128 0x18
+ 1070 00c1 00       		.byte	0
+ 1071 00c2 00       		.byte	0
+ 1072 00c3 0C       		.uleb128 0xc
+ 1073 00c4 898201   		.uleb128 0x4109
+ 1074 00c7 00       		.byte	0
+ 1075 00c8 11       		.uleb128 0x11
+ 1076 00c9 01       		.uleb128 0x1
+ 1077 00ca 31       		.uleb128 0x31
+ 1078 00cb 13       		.uleb128 0x13
+ 1079 00cc 00       		.byte	0
+ 1080 00cd 00       		.byte	0
+ 1081 00ce 0D       		.uleb128 0xd
+ 1082 00cf 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 36
+
+
+ 1083 00d0 01       		.byte	0x1
+ 1084 00d1 3F       		.uleb128 0x3f
+ 1085 00d2 19       		.uleb128 0x19
+ 1086 00d3 03       		.uleb128 0x3
+ 1087 00d4 0E       		.uleb128 0xe
+ 1088 00d5 3A       		.uleb128 0x3a
+ 1089 00d6 0B       		.uleb128 0xb
+ 1090 00d7 3B       		.uleb128 0x3b
+ 1091 00d8 0B       		.uleb128 0xb
+ 1092 00d9 27       		.uleb128 0x27
+ 1093 00da 19       		.uleb128 0x19
+ 1094 00db 11       		.uleb128 0x11
+ 1095 00dc 01       		.uleb128 0x1
+ 1096 00dd 12       		.uleb128 0x12
+ 1097 00de 06       		.uleb128 0x6
+ 1098 00df 40       		.uleb128 0x40
+ 1099 00e0 18       		.uleb128 0x18
+ 1100 00e1 9742     		.uleb128 0x2117
+ 1101 00e3 19       		.uleb128 0x19
+ 1102 00e4 01       		.uleb128 0x1
+ 1103 00e5 13       		.uleb128 0x13
+ 1104 00e6 00       		.byte	0
+ 1105 00e7 00       		.byte	0
+ 1106 00e8 0E       		.uleb128 0xe
+ 1107 00e9 34       		.uleb128 0x34
+ 1108 00ea 00       		.byte	0
+ 1109 00eb 03       		.uleb128 0x3
+ 1110 00ec 0E       		.uleb128 0xe
+ 1111 00ed 3A       		.uleb128 0x3a
+ 1112 00ee 0B       		.uleb128 0xb
+ 1113 00ef 3B       		.uleb128 0x3b
+ 1114 00f0 0B       		.uleb128 0xb
+ 1115 00f1 49       		.uleb128 0x49
+ 1116 00f2 13       		.uleb128 0x13
+ 1117 00f3 02       		.uleb128 0x2
+ 1118 00f4 17       		.uleb128 0x17
+ 1119 00f5 00       		.byte	0
+ 1120 00f6 00       		.byte	0
+ 1121 00f7 0F       		.uleb128 0xf
+ 1122 00f8 898201   		.uleb128 0x4109
+ 1123 00fb 01       		.byte	0x1
+ 1124 00fc 11       		.uleb128 0x11
+ 1125 00fd 01       		.uleb128 0x1
+ 1126 00fe 31       		.uleb128 0x31
+ 1127 00ff 13       		.uleb128 0x13
+ 1128 0100 01       		.uleb128 0x1
+ 1129 0101 13       		.uleb128 0x13
+ 1130 0102 00       		.byte	0
+ 1131 0103 00       		.byte	0
+ 1132 0104 10       		.uleb128 0x10
+ 1133 0105 8A8201   		.uleb128 0x410a
+ 1134 0108 00       		.byte	0
+ 1135 0109 02       		.uleb128 0x2
+ 1136 010a 18       		.uleb128 0x18
+ 1137 010b 9142     		.uleb128 0x2111
+ 1138 010d 18       		.uleb128 0x18
+ 1139 010e 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 37
+
+
+ 1140 010f 00       		.byte	0
+ 1141 0110 11       		.uleb128 0x11
+ 1142 0111 34       		.uleb128 0x34
+ 1143 0112 00       		.byte	0
+ 1144 0113 03       		.uleb128 0x3
+ 1145 0114 0E       		.uleb128 0xe
+ 1146 0115 3A       		.uleb128 0x3a
+ 1147 0116 0B       		.uleb128 0xb
+ 1148 0117 3B       		.uleb128 0x3b
+ 1149 0118 0B       		.uleb128 0xb
+ 1150 0119 49       		.uleb128 0x49
+ 1151 011a 13       		.uleb128 0x13
+ 1152 011b 3F       		.uleb128 0x3f
+ 1153 011c 19       		.uleb128 0x19
+ 1154 011d 02       		.uleb128 0x2
+ 1155 011e 18       		.uleb128 0x18
+ 1156 011f 00       		.byte	0
+ 1157 0120 00       		.byte	0
+ 1158 0121 12       		.uleb128 0x12
+ 1159 0122 2E       		.uleb128 0x2e
+ 1160 0123 00       		.byte	0
+ 1161 0124 3F       		.uleb128 0x3f
+ 1162 0125 19       		.uleb128 0x19
+ 1163 0126 3C       		.uleb128 0x3c
+ 1164 0127 19       		.uleb128 0x19
+ 1165 0128 6E       		.uleb128 0x6e
+ 1166 0129 0E       		.uleb128 0xe
+ 1167 012a 03       		.uleb128 0x3
+ 1168 012b 0E       		.uleb128 0xe
+ 1169 012c 3A       		.uleb128 0x3a
+ 1170 012d 0B       		.uleb128 0xb
+ 1171 012e 3B       		.uleb128 0x3b
+ 1172 012f 0B       		.uleb128 0xb
+ 1173 0130 00       		.byte	0
+ 1174 0131 00       		.byte	0
+ 1175 0132 00       		.byte	0
+ 1176              		.section	.debug_loc,"",%progbits
+ 1177              	.Ldebug_loc0:
+ 1178              	.LLST0:
+ 1179 0000 0A000000 		.4byte	.LVL8
+ 1180 0004 0E000000 		.4byte	.LVL9
+ 1181 0008 0100     		.2byte	0x1
+ 1182 000a 53       		.byte	0x53
+ 1183 000b 00000000 		.4byte	0
+ 1184 000f 00000000 		.4byte	0
+ 1185              	.LLST1:
+ 1186 0013 36000000 		.4byte	.LVL14
+ 1187 0017 43000000 		.4byte	.LVL15-1
+ 1188 001b 0100     		.2byte	0x1
+ 1189 001d 50       		.byte	0x50
+ 1190 001e 00000000 		.4byte	0
+ 1191 0022 00000000 		.4byte	0
+ 1192              		.section	.debug_aranges,"",%progbits
+ 1193 0000 94000000 		.4byte	0x94
+ 1194 0004 0200     		.2byte	0x2
+ 1195 0006 00000000 		.4byte	.Ldebug_info0
+ 1196 000a 04       		.byte	0x4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 38
+
+
+ 1197 000b 00       		.byte	0
+ 1198 000c 0000     		.2byte	0
+ 1199 000e 0000     		.2byte	0
+ 1200 0010 00000000 		.4byte	.LFB2
+ 1201 0014 10000000 		.4byte	.LFE2-.LFB2
+ 1202 0018 00000000 		.4byte	.LFB3
+ 1203 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1204 0020 00000000 		.4byte	.LFB4
+ 1205 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1206 0028 00000000 		.4byte	.LFB5
+ 1207 002c 14000000 		.4byte	.LFE5-.LFB5
+ 1208 0030 00000000 		.4byte	.LFB7
+ 1209 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1210 0038 00000000 		.4byte	.LFB8
+ 1211 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1212 0040 00000000 		.4byte	.LFB9
+ 1213 0044 0C000000 		.4byte	.LFE9-.LFB9
+ 1214 0048 00000000 		.4byte	.LFB10
+ 1215 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1216 0050 00000000 		.4byte	.LFB11
+ 1217 0054 0C000000 		.4byte	.LFE11-.LFB11
+ 1218 0058 00000000 		.4byte	.LFB12
+ 1219 005c 0C000000 		.4byte	.LFE12-.LFB12
+ 1220 0060 00000000 		.4byte	.LFB13
+ 1221 0064 0C000000 		.4byte	.LFE13-.LFB13
+ 1222 0068 00000000 		.4byte	.LFB6
+ 1223 006c 14000000 		.4byte	.LFE6-.LFB6
+ 1224 0070 00000000 		.4byte	.LFB1
+ 1225 0074 54000000 		.4byte	.LFE1-.LFB1
+ 1226 0078 00000000 		.4byte	.LFB0
+ 1227 007c 1C000000 		.4byte	.LFE0-.LFB0
+ 1228 0080 00000000 		.4byte	.LFB14
+ 1229 0084 0C000000 		.4byte	.LFE14-.LFB14
+ 1230 0088 00000000 		.4byte	.LFB15
+ 1231 008c 0C000000 		.4byte	.LFE15-.LFB15
+ 1232 0090 00000000 		.4byte	0
+ 1233 0094 00000000 		.4byte	0
+ 1234              		.section	.debug_ranges,"",%progbits
+ 1235              	.Ldebug_ranges0:
+ 1236 0000 00000000 		.4byte	.LFB2
+ 1237 0004 10000000 		.4byte	.LFE2
+ 1238 0008 00000000 		.4byte	.LFB3
+ 1239 000c 10000000 		.4byte	.LFE3
+ 1240 0010 00000000 		.4byte	.LFB4
+ 1241 0014 0C000000 		.4byte	.LFE4
+ 1242 0018 00000000 		.4byte	.LFB5
+ 1243 001c 14000000 		.4byte	.LFE5
+ 1244 0020 00000000 		.4byte	.LFB7
+ 1245 0024 0C000000 		.4byte	.LFE7
+ 1246 0028 00000000 		.4byte	.LFB8
+ 1247 002c 0C000000 		.4byte	.LFE8
+ 1248 0030 00000000 		.4byte	.LFB9
+ 1249 0034 0C000000 		.4byte	.LFE9
+ 1250 0038 00000000 		.4byte	.LFB10
+ 1251 003c 0C000000 		.4byte	.LFE10
+ 1252 0040 00000000 		.4byte	.LFB11
+ 1253 0044 0C000000 		.4byte	.LFE11
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 39
+
+
+ 1254 0048 00000000 		.4byte	.LFB12
+ 1255 004c 0C000000 		.4byte	.LFE12
+ 1256 0050 00000000 		.4byte	.LFB13
+ 1257 0054 0C000000 		.4byte	.LFE13
+ 1258 0058 00000000 		.4byte	.LFB6
+ 1259 005c 14000000 		.4byte	.LFE6
+ 1260 0060 00000000 		.4byte	.LFB1
+ 1261 0064 54000000 		.4byte	.LFE1
+ 1262 0068 00000000 		.4byte	.LFB0
+ 1263 006c 1C000000 		.4byte	.LFE0
+ 1264 0070 00000000 		.4byte	.LFB14
+ 1265 0074 0C000000 		.4byte	.LFE14
+ 1266 0078 00000000 		.4byte	.LFB15
+ 1267 007c 0C000000 		.4byte	.LFE15
+ 1268 0080 00000000 		.4byte	0
+ 1269 0084 00000000 		.4byte	0
+ 1270              		.section	.debug_line,"",%progbits
+ 1271              	.Ldebug_line0:
+ 1272 0000 86010000 		.section	.debug_str,"MS",%progbits,1
+ 1272      02005200 
+ 1272      00000201 
+ 1272      FB0E0D00 
+ 1272      01010101 
+ 1273              	.LASF37:
+ 1274 0000 50574D5F 		.ascii	"PWM_NOTIFY_ReadCompare\000"
+ 1274      4E4F5449 
+ 1274      46595F52 
+ 1274      65616443 
+ 1274      6F6D7061 
+ 1275              	.LASF30:
+ 1276 0017 50574D5F 		.ascii	"PWM_NOTIFY_ReadCapture\000"
+ 1276      4E4F5449 
+ 1276      46595F52 
+ 1276      65616443 
+ 1276      61707475 
+ 1277              	.LASF45:
+ 1278 002e 50574D5F 		.ascii	"PWM_NOTIFY_initVar\000"
+ 1278      4E4F5449 
+ 1278      46595F69 
+ 1278      6E697456 
+ 1278      617200
+ 1279              	.LASF44:
+ 1280 0041 50574D5F 		.ascii	"PWM_NOTIFY_ReadControlRegister\000"
+ 1280      4E4F5449 
+ 1280      46595F52 
+ 1280      65616443 
+ 1280      6F6E7472 
+ 1281              	.LASF21:
+ 1282 0060 70657269 		.ascii	"period\000"
+ 1282      6F6400
+ 1283              	.LASF3:
+ 1284 0067 73686F72 		.ascii	"short unsigned int\000"
+ 1284      7420756E 
+ 1284      7369676E 
+ 1284      65642069 
+ 1284      6E7400
+ 1285              	.LASF42:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 40
+
+
+ 1286 007a 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_NOTIFY.c\000"
+ 1286      72617465 
+ 1286      645F536F 
+ 1286      75726365 
+ 1286      5C50536F 
+ 1287              	.LASF22:
+ 1288 009e 50574D5F 		.ascii	"PWM_NOTIFY_WriteCompare\000"
+ 1288      4E4F5449 
+ 1288      46595F57 
+ 1288      72697465 
+ 1288      436F6D70 
+ 1289              	.LASF35:
+ 1290 00b6 50574D5F 		.ascii	"PWM_NOTIFY_interruptState\000"
+ 1290      4E4F5449 
+ 1290      46595F69 
+ 1290      6E746572 
+ 1290      72757074 
+ 1291              	.LASF9:
+ 1292 00d0 666C6F61 		.ascii	"float\000"
+ 1292      7400
+ 1293              	.LASF20:
+ 1294 00d6 636F756E 		.ascii	"counter\000"
+ 1294      74657200 
+ 1295              	.LASF7:
+ 1296 00de 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1296      206C6F6E 
+ 1296      6720756E 
+ 1296      7369676E 
+ 1296      65642069 
+ 1297              	.LASF1:
+ 1298 00f5 756E7369 		.ascii	"unsigned char\000"
+ 1298      676E6564 
+ 1298      20636861 
+ 1298      7200
+ 1299              	.LASF41:
+ 1300 0103 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1300      43313120 
+ 1300      352E342E 
+ 1300      31203230 
+ 1300      31363036 
+ 1301 0136 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1301      20726576 
+ 1301      6973696F 
+ 1301      6E203233 
+ 1301      37373135 
+ 1302 0169 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1302      66756E63 
+ 1302      74696F6E 
+ 1302      2D736563 
+ 1302      74696F6E 
+ 1303              	.LASF13:
+ 1304 0191 72656738 		.ascii	"reg8\000"
+ 1304      00
+ 1305              	.LASF5:
+ 1306 0196 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1306      20756E73 
+ 1306      69676E65 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 41
+
+
+ 1306      6420696E 
+ 1306      7400
+ 1307              	.LASF27:
+ 1308 01a8 50574D5F 		.ascii	"PWM_NOTIFY_ReadStatusRegister\000"
+ 1308      4E4F5449 
+ 1308      46595F52 
+ 1308      65616453 
+ 1308      74617475 
+ 1309              	.LASF12:
+ 1310 01c6 75696E74 		.ascii	"uint8\000"
+ 1310      3800
+ 1311              	.LASF29:
+ 1312 01cc 636F6E74 		.ascii	"control\000"
+ 1312      726F6C00 
+ 1313              	.LASF31:
+ 1314 01d4 50574D5F 		.ascii	"PWM_NOTIFY_ClearFIFO\000"
+ 1314      4E4F5449 
+ 1314      46595F43 
+ 1314      6C656172 
+ 1314      4649464F 
+ 1315              	.LASF16:
+ 1316 01e9 50574D5F 		.ascii	"PWM_NOTIFY_Enable\000"
+ 1316      4E4F5449 
+ 1316      46595F45 
+ 1316      6E61626C 
+ 1316      6500
+ 1317              	.LASF10:
+ 1318 01fb 646F7562 		.ascii	"double\000"
+ 1318      6C6500
+ 1319              	.LASF19:
+ 1320 0202 50574D5F 		.ascii	"PWM_NOTIFY_WritePeriod\000"
+ 1320      4E4F5449 
+ 1320      46595F57 
+ 1320      72697465 
+ 1320      50657269 
+ 1321              	.LASF39:
+ 1322 0219 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1322      74657243 
+ 1322      72697469 
+ 1322      63616C53 
+ 1322      65637469 
+ 1323              	.LASF8:
+ 1324 0230 756E7369 		.ascii	"unsigned int\000"
+ 1324      676E6564 
+ 1324      20696E74 
+ 1324      00
+ 1325              	.LASF40:
+ 1326 023d 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1326      69744372 
+ 1326      69746963 
+ 1326      616C5365 
+ 1326      6374696F 
+ 1327              	.LASF33:
+ 1328 0253 72657375 		.ascii	"result\000"
+ 1328      6C7400
+ 1329              	.LASF18:
+ 1330 025a 50574D5F 		.ascii	"PWM_NOTIFY_WriteCounter\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 42
+
+
+ 1330      4E4F5449 
+ 1330      46595F57 
+ 1330      72697465 
+ 1330      436F756E 
+ 1331              	.LASF28:
+ 1332 0272 50574D5F 		.ascii	"PWM_NOTIFY_WriteControlRegister\000"
+ 1332      4E4F5449 
+ 1332      46595F57 
+ 1332      72697465 
+ 1332      436F6E74 
+ 1333              	.LASF43:
+ 1334 0292 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\test_hw\\AY1920_II_HW_FIN"
+ 1334      73657273 
+ 1334      5C4D616E 
+ 1334      755C4465 
+ 1334      736B746F 
+ 1335 02c0 414C5F43 		.ascii	"AL_CARZANIGA_GUALNIERA.cydsn\000"
+ 1335      41525A41 
+ 1335      4E494741 
+ 1335      5F475541 
+ 1335      4C4E4945 
+ 1336              	.LASF34:
+ 1337 02dd 6374726C 		.ascii	"ctrl\000"
+ 1337      00
+ 1338              	.LASF15:
+ 1339 02e2 73697A65 		.ascii	"sizetype\000"
+ 1339      74797065 
+ 1339      00
+ 1340              	.LASF6:
+ 1341 02eb 6C6F6E67 		.ascii	"long long int\000"
+ 1341      206C6F6E 
+ 1341      6720696E 
+ 1341      7400
+ 1342              	.LASF25:
+ 1343 02f9 696E7465 		.ascii	"interruptMode\000"
+ 1343      72727570 
+ 1343      744D6F64 
+ 1343      6500
+ 1344              	.LASF2:
+ 1345 0307 73686F72 		.ascii	"short int\000"
+ 1345      7420696E 
+ 1345      7400
+ 1346              	.LASF24:
+ 1347 0311 50574D5F 		.ascii	"PWM_NOTIFY_SetInterruptMode\000"
+ 1347      4E4F5449 
+ 1347      46595F53 
+ 1347      6574496E 
+ 1347      74657272 
+ 1348              	.LASF38:
+ 1349 032d 50574D5F 		.ascii	"PWM_NOTIFY_ReadPeriod\000"
+ 1349      4E4F5449 
+ 1349      46595F52 
+ 1349      65616450 
+ 1349      6572696F 
+ 1350              	.LASF17:
+ 1351 0343 50574D5F 		.ascii	"PWM_NOTIFY_Stop\000"
+ 1351      4E4F5449 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc2ZiqVz.s 			page 43
+
+
+ 1351      46595F53 
+ 1351      746F7000 
+ 1352              	.LASF4:
+ 1353 0353 6C6F6E67 		.ascii	"long int\000"
+ 1353      20696E74 
+ 1353      00
+ 1354              	.LASF11:
+ 1355 035c 63686172 		.ascii	"char\000"
+ 1355      00
+ 1356              	.LASF14:
+ 1357 0361 6C6F6E67 		.ascii	"long double\000"
+ 1357      20646F75 
+ 1357      626C6500 
+ 1358              	.LASF0:
+ 1359 036d 7369676E 		.ascii	"signed char\000"
+ 1359      65642063 
+ 1359      68617200 
+ 1360              	.LASF23:
+ 1361 0379 636F6D70 		.ascii	"compare\000"
+ 1361      61726500 
+ 1362              	.LASF36:
+ 1363 0381 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
+ 1363      4E4F5449 
+ 1363      46595F53 
+ 1363      74617274 
+ 1363      00
+ 1364              	.LASF32:
+ 1365 0392 50574D5F 		.ascii	"PWM_NOTIFY_Init\000"
+ 1365      4E4F5449 
+ 1365      46595F49 
+ 1365      6E697400 
+ 1366              	.LASF26:
+ 1367 03a2 50574D5F 		.ascii	"PWM_NOTIFY_ReadCounter\000"
+ 1367      4E4F5449 
+ 1367      46595F52 
+ 1367      65616443 
+ 1367      6F756E74 
+ 1368              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
