@@ -1,6 +1,6 @@
 // ======================================================================
 // AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v generated from TopDesign.cysch
-// 05/20/2020 at 15:49
+// 05/22/2020 at 11:38
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -406,7 +406,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v"
 `endif
 
-// UART_v2_50(Address1=0, Address2=0, BaudRate=9600, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=0, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=false, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=76800, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART, CY_INSTANCE_SHORT_NAME=UART, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=UART, )
+// UART_v2_50(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=0, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=false, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART, CY_INSTANCE_SHORT_NAME=UART, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=UART, )
 module UART_v2_50_2 (
     cts_n,
     tx,
@@ -457,7 +457,7 @@ module UART_v2_50_2 (
 		#(.id("b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("13020833333.3333"),
+		  .period("1085069444.44444"),
 		  .is_direct(0),
 		  .is_digital(1))
 		IntClock
@@ -772,6 +772,7 @@ endmodule
 // top
 module top ;
 
+          wire  Net_18560;
           wire  Net_18027;
           wire  Net_18026;
           wire  Net_18025;
@@ -784,60 +785,59 @@ module top ;
           wire  Net_17339;
           wire  Net_17338;
           wire  Net_17337;
-    electrical  Net_17582;
-    electrical  Net_17581;
-    electrical  Net_17580;
-    electrical  Net_17579;
-    electrical  Net_17578;
-    electrical [1:0] Net_17577;
-    electrical  Net_17576;
-    electrical  Net_17575;
-    electrical  Net_17574;
-    electrical  Net_17573;
-    electrical  Net_17572;
-    electrical  Net_17571;
-    electrical  Net_17570;
-    electrical  Net_17569;
-    electrical  Net_17568;
-    electrical  Net_17567;
-    electrical  Net_17566;
-    electrical  Net_17565;
-    electrical  Net_17564;
-    electrical  Net_17563;
-    electrical  Net_17562;
-    electrical  Net_17561;
-    electrical  Net_17560;
-    electrical  Net_17559;
-    electrical  Net_17558;
-    electrical  Net_17557;
-    electrical  Net_17556;
-    electrical  Net_17555;
-    electrical  Net_17554;
-    electrical  Net_17553;
-    electrical  Net_17552;
-    electrical  Net_17551;
-    electrical  Net_17550;
-    electrical  Net_17549;
-    electrical  Net_17548;
-    electrical  Net_17547;
-    electrical  Net_17546;
-    electrical  Net_17545;
-    electrical  Net_17544;
-    electrical  Net_17543;
-    electrical  Net_17542;
-    electrical  Net_17541;
-    electrical  Net_17540;
-    electrical  Net_17539;
-    electrical  Net_17538;
-    electrical  Net_17537;
-    electrical  Net_17536;
-    electrical  Net_17535;
-    electrical  Net_17534;
-    electrical  Net_17533;
-    electrical  Net_17532;
-    electrical  Net_17531;
-    electrical  Net_17530;
-    electrical  Net_17529;
+    electrical  Net_18556;
+    electrical  Net_18555;
+    electrical  Net_18554;
+    electrical  Net_18553;
+    electrical  Net_18552;
+    electrical [1:0] Net_18551;
+    electrical  Net_18550;
+    electrical  Net_18549;
+    electrical  Net_18548;
+    electrical  Net_18547;
+    electrical  Net_18546;
+    electrical  Net_18545;
+    electrical  Net_18544;
+    electrical  Net_18543;
+    electrical  Net_18542;
+    electrical  Net_18541;
+    electrical  Net_18540;
+    electrical  Net_18539;
+    electrical  Net_18538;
+    electrical  Net_18536;
+    electrical  Net_18535;
+    electrical  Net_18534;
+    electrical  Net_18533;
+    electrical  Net_18532;
+    electrical  Net_18531;
+    electrical  Net_18530;
+    electrical  Net_18529;
+    electrical  Net_18528;
+    electrical  Net_18527;
+    electrical  Net_18526;
+    electrical  Net_18525;
+    electrical  Net_18524;
+    electrical  Net_18523;
+    electrical  Net_18522;
+    electrical  Net_18521;
+    electrical  Net_18520;
+    electrical  Net_18519;
+    electrical  Net_18518;
+    electrical  Net_18517;
+    electrical  Net_18516;
+    electrical  Net_18515;
+    electrical  Net_18514;
+    electrical  Net_18513;
+    electrical  Net_18512;
+    electrical  Net_18511;
+    electrical  Net_18510;
+    electrical  Net_18509;
+    electrical  Net_18508;
+    electrical  Net_18507;
+    electrical  Net_18506;
+    electrical  Net_18505;
+    electrical  Net_18504;
+    electrical  Net_18503;
           wire  Net_17682;
           wire  Net_17681;
           wire  Net_17680;
@@ -854,119 +854,119 @@ module top ;
           wire  Net_10168;
           wire  Net_10167;
           wire  Net_10166;
-    electrical  Net_17528;
-    electrical  Net_17527;
-    electrical  Net_17526;
-    electrical  Net_17525;
-    electrical  Net_17524;
-    electrical [1:0] Net_17523;
-    electrical  Net_17522;
-    electrical  Net_17521;
-    electrical  Net_17520;
-    electrical  Net_17519;
-    electrical  Net_17518;
-    electrical  Net_17517;
-    electrical  Net_17516;
-    electrical  Net_17515;
-    electrical  Net_17514;
-    electrical  Net_17513;
-    electrical  Net_17512;
-    electrical  Net_17511;
-    electrical  Net_17510;
-    electrical  Net_17509;
-    electrical  Net_17508;
-    electrical  Net_17507;
-    electrical  Net_17506;
-    electrical  Net_17505;
-    electrical  Net_17504;
-    electrical  Net_17503;
-    electrical  Net_17502;
-    electrical  Net_17501;
-    electrical  Net_17500;
-    electrical  Net_17499;
-    electrical  Net_17498;
-    electrical  Net_17497;
-    electrical  Net_17496;
-    electrical  Net_17495;
-    electrical  Net_17494;
-    electrical  Net_17493;
-    electrical  Net_17492;
-    electrical  Net_17491;
-    electrical  Net_17490;
-    electrical  Net_17489;
-    electrical  Net_17488;
-    electrical  Net_17487;
-    electrical  Net_17486;
-    electrical  Net_17485;
-    electrical  Net_17484;
-    electrical  Net_17483;
-    electrical  Net_17482;
-    electrical  Net_17481;
-    electrical  Net_17480;
-    electrical  Net_17479;
-    electrical  Net_17478;
-    electrical  Net_17477;
-    electrical  Net_17476;
-    electrical  Net_17475;
-    electrical  Net_17474;
-    electrical  Net_17473;
+    electrical  Net_18502;
+    electrical  Net_18501;
+    electrical  Net_18500;
+    electrical  Net_18499;
+    electrical  Net_18498;
+    electrical [1:0] Net_18497;
+    electrical  Net_18496;
+    electrical  Net_18495;
+    electrical  Net_18494;
+    electrical  Net_18493;
+    electrical  Net_18492;
+    electrical  Net_18491;
+    electrical  Net_18490;
+    electrical  Net_18489;
+    electrical  Net_18488;
+    electrical  Net_18487;
+    electrical  Net_18486;
+    electrical  Net_18485;
+    electrical  Net_18484;
+    electrical  Net_18483;
+    electrical  Net_18482;
+    electrical  Net_18481;
+    electrical  Net_18480;
+    electrical  Net_18479;
+    electrical  Net_18478;
+    electrical  Net_18477;
+    electrical  Net_18476;
+    electrical  Net_18475;
+    electrical  Net_18474;
+    electrical  Net_18473;
+    electrical  Net_18472;
+    electrical  Net_18471;
+    electrical  Net_18470;
+    electrical  Net_18469;
+    electrical  Net_18468;
+    electrical  Net_18467;
+    electrical  Net_18466;
+    electrical  Net_18465;
+    electrical  Net_18464;
+    electrical  Net_18463;
+    electrical  Net_18462;
+    electrical  Net_18461;
+    electrical  Net_18460;
+    electrical  Net_18459;
+    electrical  Net_18458;
+    electrical  Net_18457;
+    electrical  Net_18456;
+    electrical  Net_18455;
+    electrical  Net_18454;
+    electrical  Net_18453;
+    electrical  Net_18452;
+    electrical  Net_18451;
+    electrical  Net_18450;
+    electrical  Net_18449;
+    electrical  Net_18448;
+    electrical  Net_18447;
     electrical  Net_453;
     electrical  Net_3543;
     electrical  Net_138;
-    electrical  Net_18107;
-    electrical  Net_18106;
-    electrical  Net_18105;
-    electrical  Net_18104;
-    electrical  Net_18103;
-    electrical [1:0] Net_18102;
-    electrical  Net_18101;
-    electrical  Net_18100;
-    electrical  Net_18099;
-    electrical  Net_18098;
-    electrical  Net_18097;
-    electrical  Net_18096;
-    electrical  Net_18095;
-    electrical  Net_18094;
-    electrical  Net_18093;
-    electrical  Net_18092;
-    electrical  Net_18091;
-    electrical  Net_18090;
-    electrical  Net_18089;
-    electrical  Net_18088;
-    electrical  Net_18087;
-    electrical  Net_18086;
-    electrical  Net_18085;
-    electrical  Net_18084;
-    electrical  Net_18083;
-    electrical  Net_18082;
-    electrical  Net_18081;
-    electrical  Net_18080;
-    electrical  Net_18079;
-    electrical  Net_18078;
-    electrical  Net_18077;
-    electrical  Net_18076;
-    electrical  Net_18075;
-    electrical  Net_18074;
-    electrical  Net_18073;
-    electrical  Net_18072;
-    electrical  Net_18071;
-    electrical  Net_18070;
-    electrical  Net_18069;
-    electrical  Net_18068;
-    electrical  Net_18067;
-    electrical  Net_18066;
-    electrical  Net_18065;
-    electrical  Net_18064;
-    electrical  Net_18063;
-    electrical  Net_18062;
-    electrical  Net_18061;
-    electrical  Net_18060;
-    electrical  Net_18059;
-    electrical  Net_18058;
-    electrical  Net_18057;
-    electrical  Net_18056;
-    electrical  Net_18055;
-    electrical  Net_18054;
+    electrical  Net_18446;
+    electrical  Net_18445;
+    electrical  Net_18444;
+    electrical  Net_18443;
+    electrical  Net_18442;
+    electrical [1:0] Net_18441;
+    electrical  Net_18440;
+    electrical  Net_18439;
+    electrical  Net_18438;
+    electrical  Net_18437;
+    electrical  Net_18436;
+    electrical  Net_18435;
+    electrical  Net_18434;
+    electrical  Net_18433;
+    electrical  Net_18432;
+    electrical  Net_18431;
+    electrical  Net_18430;
+    electrical  Net_18429;
+    electrical  Net_18428;
+    electrical  Net_18427;
+    electrical  Net_18426;
+    electrical  Net_18425;
+    electrical  Net_18424;
+    electrical  Net_18423;
+    electrical  Net_18422;
+    electrical  Net_18421;
+    electrical  Net_18420;
+    electrical  Net_18419;
+    electrical  Net_18418;
+    electrical  Net_18417;
+    electrical  Net_18416;
+    electrical  Net_18415;
+    electrical  Net_18414;
+    electrical  Net_18413;
+    electrical  Net_18412;
+    electrical  Net_18411;
+    electrical  Net_18410;
+    electrical  Net_18409;
+    electrical  Net_18408;
+    electrical  Net_18407;
+    electrical  Net_18406;
+    electrical  Net_18405;
+    electrical  Net_18404;
+    electrical  Net_18403;
+    electrical  Net_18402;
+    electrical  Net_18401;
+    electrical  Net_18400;
+    electrical  Net_18399;
+    electrical  Net_18398;
+    electrical  Net_18397;
+    electrical  Net_18396;
+    electrical  Net_18395;
+    electrical  Net_18394;
+    electrical  Net_18393;
     electrical  Net_667;
     electrical  Net_140;
           wire  Net_17115;
@@ -994,63 +994,64 @@ module top ;
           wire  Net_18125;
           wire  Net_18124;
           wire  Net_18117;
-    electrical  Net_17652;
-    electrical  Net_17651;
-    electrical  Net_17650;
-    electrical  Net_17649;
-    electrical  Net_17648;
-    electrical [1:0] Net_17647;
-    electrical  Net_17646;
-    electrical  Net_17645;
-    electrical  Net_17644;
-    electrical  Net_17643;
-    electrical  Net_17642;
-    electrical  Net_17641;
-    electrical  Net_17640;
-    electrical  Net_17639;
-    electrical  Net_17638;
-    electrical  Net_17637;
-    electrical  Net_17636;
-    electrical  Net_17635;
-    electrical  Net_17634;
-    electrical  Net_17633;
-    electrical  Net_17632;
-    electrical  Net_17631;
-    electrical  Net_17630;
-    electrical  Net_17629;
-    electrical  Net_17628;
-    electrical  Net_17627;
-    electrical  Net_17626;
-    electrical  Net_17625;
-    electrical  Net_17624;
-    electrical  Net_17623;
-    electrical  Net_17622;
-    electrical  Net_17621;
-    electrical  Net_17620;
-    electrical  Net_17619;
-    electrical  Net_17618;
-    electrical  Net_17617;
-    electrical  Net_17616;
-    electrical  Net_17615;
-    electrical  Net_17614;
-    electrical  Net_17613;
-    electrical  Net_17612;
-    electrical  Net_17611;
-    electrical  Net_17610;
-    electrical  Net_17609;
-    electrical  Net_17608;
-    electrical  Net_17607;
-    electrical  Net_17606;
-    electrical  Net_17605;
-    electrical  Net_17604;
-    electrical  Net_17603;
-    electrical  Net_17602;
-    electrical  Net_17601;
-    electrical  Net_17600;
-    electrical  Net_17599;
-    electrical  Net_17598;
-    electrical  Net_17597;
-    electrical  Net_17596;
+    electrical  Net_18392;
+    electrical  Net_18391;
+    electrical  Net_18390;
+    electrical  Net_18389;
+    electrical  Net_18388;
+    electrical [1:0] Net_18387;
+    electrical  Net_18386;
+    electrical  Net_18385;
+    electrical  Net_18384;
+    electrical  Net_18383;
+    electrical  Net_18382;
+    electrical  Net_18381;
+    electrical  Net_18380;
+    electrical  Net_18379;
+    electrical  Net_18378;
+    electrical  Net_18377;
+    electrical  Net_18376;
+    electrical  Net_18375;
+    electrical  Net_18374;
+    electrical  Net_18373;
+    electrical  Net_18372;
+    electrical  Net_18371;
+    electrical  Net_18370;
+    electrical  Net_18369;
+    electrical  Net_18368;
+    electrical  Net_18367;
+    electrical  Net_18366;
+    electrical  Net_18365;
+    electrical  Net_18364;
+    electrical  Net_18363;
+    electrical  Net_18362;
+    electrical  Net_18361;
+    electrical  Net_18360;
+    electrical  Net_18359;
+    electrical  Net_18358;
+    electrical  Net_18357;
+    electrical  Net_18356;
+    electrical  Net_18355;
+    electrical  Net_18354;
+    electrical  Net_18353;
+    electrical  Net_18352;
+    electrical  Net_18351;
+    electrical  Net_18350;
+    electrical  Net_18349;
+    electrical  Net_18348;
+    electrical  Net_18347;
+    electrical  Net_18346;
+    electrical  Net_18345;
+    electrical  Net_18344;
+    electrical  Net_18343;
+    electrical  Net_18342;
+    electrical  Net_18341;
+    electrical  Net_18340;
+    electrical  Net_18339;
+    electrical  Net_18338;
+    electrical  Net_18337;
+    electrical  Net_18336;
+    electrical  Net_18537;
           wire  Net_18163;
           wire  Net_18162;
           wire  Net_17093;
@@ -1084,64 +1085,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_1 (
         .connect({
-            Net_17596,
-            Net_17597,
-            Net_17598,
-            Net_17599,
-            Net_17600,
-            Net_17601,
-            Net_17602,
-            Net_17603,
-            Net_17644,
-            Net_17643,
-            Net_17642,
-            Net_17629,
-            Net_17630,
-            Net_17631,
-            Net_17632,
-            Net_17633,
-            Net_17634,
-            Net_17635,
-            Net_17636,
-            Net_17641,
-            Net_17640,
-            Net_17639,
-            Net_17604,
-            Net_17605,
-            Net_17606,
-            Net_17607,
-            Net_17608,
-            Net_17609,
-            Net_17638,
-            Net_17637,
-            Net_17628,
-            Net_17627,
+            Net_18336,
+            Net_18337,
+            Net_18338,
+            Net_18339,
+            Net_18340,
+            Net_18341,
+            Net_18342,
+            Net_18343,
+            Net_18384,
+            Net_18383,
+            Net_18382,
+            Net_18369,
+            Net_18370,
+            Net_18371,
+            Net_18372,
+            Net_18373,
+            Net_18374,
+            Net_18375,
+            Net_18376,
+            Net_18381,
+            Net_18380,
+            Net_18379,
+            Net_18344,
+            Net_18345,
+            Net_18346,
+            Net_18347,
+            Net_18348,
+            Net_18349,
+            Net_18378,
+            Net_18377,
+            Net_18368,
+            Net_18367,
             Net_17870,
-            Net_17626,
-            Net_17625,
-            Net_17624,
-            Net_17623,
-            Net_17622,
-            Net_17610,
-            Net_17611,
-            Net_17612,
-            Net_17613,
-            Net_17614,
-            Net_17615,
-            Net_17616,
-            Net_17617,
-            Net_17648,
-            Net_17649,
-            Net_17650,
-            Net_17651,
-            Net_17652,
-            Net_17620,
-            Net_17646,
-            Net_17618,
-            Net_17619,
-            Net_17621,
-            Net_17645,
-            Net_17647[1:0]
+            Net_18366,
+            Net_18365,
+            Net_18364,
+            Net_18363,
+            Net_18362,
+            Net_18350,
+            Net_18351,
+            Net_18352,
+            Net_18353,
+            Net_18354,
+            Net_18355,
+            Net_18356,
+            Net_18357,
+            Net_18388,
+            Net_18389,
+            Net_18390,
+            Net_18391,
+            Net_18392,
+            Net_18360,
+            Net_18386,
+            Net_18358,
+            Net_18359,
+            Net_18361,
+            Net_18385,
+            Net_18387[1:0]
         })
     );
     defparam KIT_059_1.comp_name = "KIT_059_v1_0";
@@ -1237,64 +1238,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_2 (
         .connect({
-            Net_18054,
-            Net_18055,
-            Net_18056,
-            Net_18057,
-            Net_18058,
-            Net_18059,
-            Net_18060,
-            Net_18061,
-            Net_18099,
-            Net_18098,
-            Net_18097,
-            Net_18084,
-            Net_18085,
-            Net_18086,
-            Net_18087,
-            Net_18088,
-            Net_18089,
-            Net_18090,
-            Net_18091,
-            Net_18096,
-            Net_18095,
-            Net_18094,
-            Net_18062,
-            Net_18063,
-            Net_18064,
-            Net_18065,
-            Net_18066,
-            Net_18067,
-            Net_18093,
-            Net_18092,
-            Net_18083,
+            Net_18393,
+            Net_18394,
+            Net_18395,
+            Net_18396,
+            Net_18397,
+            Net_18398,
+            Net_18399,
+            Net_18400,
+            Net_18438,
+            Net_18437,
+            Net_18436,
+            Net_18423,
+            Net_18424,
+            Net_18425,
+            Net_18426,
+            Net_18427,
+            Net_18428,
+            Net_18429,
+            Net_18430,
+            Net_18435,
+            Net_18434,
+            Net_18433,
+            Net_18401,
+            Net_18402,
+            Net_18403,
+            Net_18404,
+            Net_18405,
+            Net_18406,
+            Net_18432,
+            Net_18431,
+            Net_18422,
             Net_18112,
-            Net_18082,
-            Net_18081,
-            Net_18080,
-            Net_18079,
-            Net_18078,
-            Net_18077,
-            Net_18068,
-            Net_18069,
-            Net_18070,
-            Net_18071,
-            Net_18072,
+            Net_18421,
+            Net_18420,
+            Net_18419,
+            Net_18418,
+            Net_18417,
+            Net_18416,
+            Net_18407,
+            Net_18408,
+            Net_18409,
+            Net_18410,
+            Net_18411,
             Net_18047,
             Net_18048,
             Net_18049,
-            Net_18103,
-            Net_18104,
-            Net_18105,
-            Net_18106,
-            Net_18107,
-            Net_18075,
-            Net_18101,
-            Net_18073,
-            Net_18074,
-            Net_18076,
-            Net_18100,
-            Net_18102[1:0]
+            Net_18442,
+            Net_18443,
+            Net_18444,
+            Net_18445,
+            Net_18446,
+            Net_18414,
+            Net_18440,
+            Net_18412,
+            Net_18413,
+            Net_18415,
+            Net_18439,
+            Net_18441[1:0]
         })
     );
     defparam KIT_059_2.comp_name = "KIT_059_v1_0";
@@ -1709,64 +1710,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_3 (
         .connect({
-            Net_17473,
-            Net_17474,
-            Net_17475,
-            Net_17476,
-            Net_17477,
-            Net_17478,
-            Net_17479,
-            Net_17480,
-            Net_17520,
-            Net_17519,
-            Net_17518,
-            Net_17507,
-            Net_17508,
-            Net_17509,
-            Net_17510,
-            Net_17511,
-            Net_17512,
+            Net_18447,
+            Net_18448,
+            Net_18449,
+            Net_18450,
+            Net_18451,
+            Net_18452,
+            Net_18453,
+            Net_18454,
+            Net_18494,
+            Net_18493,
+            Net_18492,
+            Net_18481,
+            Net_18482,
+            Net_18483,
+            Net_18484,
+            Net_18485,
+            Net_18486,
             Net_17268,
             Net_10073,
-            Net_17517,
-            Net_17516,
-            Net_17515,
-            Net_17481,
-            Net_17482,
-            Net_17483,
-            Net_17484,
-            Net_17485,
-            Net_17486,
-            Net_17514,
-            Net_17513,
-            Net_17506,
-            Net_17505,
-            Net_17504,
-            Net_17503,
-            Net_17502,
-            Net_17501,
-            Net_17500,
-            Net_17499,
-            Net_17487,
-            Net_17488,
-            Net_17489,
-            Net_17490,
-            Net_17491,
-            Net_17492,
-            Net_17493,
-            Net_17494,
-            Net_17524,
-            Net_17525,
-            Net_17526,
-            Net_17527,
-            Net_17528,
-            Net_17497,
-            Net_17522,
-            Net_17495,
-            Net_17496,
-            Net_17498,
-            Net_17521,
-            Net_17523[1:0]
+            Net_18491,
+            Net_18490,
+            Net_18489,
+            Net_18455,
+            Net_18456,
+            Net_18457,
+            Net_18458,
+            Net_18459,
+            Net_18460,
+            Net_18488,
+            Net_18487,
+            Net_18480,
+            Net_18479,
+            Net_18478,
+            Net_18477,
+            Net_18476,
+            Net_18475,
+            Net_18474,
+            Net_18473,
+            Net_18461,
+            Net_18462,
+            Net_18463,
+            Net_18464,
+            Net_18465,
+            Net_18466,
+            Net_18467,
+            Net_18468,
+            Net_18498,
+            Net_18499,
+            Net_18500,
+            Net_18501,
+            Net_18502,
+            Net_18471,
+            Net_18496,
+            Net_18469,
+            Net_18470,
+            Net_18472,
+            Net_18495,
+            Net_18497[1:0]
         })
     );
     defparam KIT_059_3.comp_name = "KIT_059_v1_0";
@@ -1898,64 +1899,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_4 (
         .connect({
-            Net_17529,
-            Net_17530,
-            Net_17531,
-            Net_17532,
-            Net_17533,
-            Net_17534,
-            Net_17535,
-            Net_17536,
-            Net_17574,
-            Net_17573,
-            Net_17572,
+            Net_18503,
+            Net_18504,
+            Net_18505,
+            Net_18506,
+            Net_18507,
+            Net_18508,
+            Net_18509,
+            Net_18510,
+            Net_18548,
+            Net_18547,
+            Net_18546,
             Net_184,
             Net_116,
             Net_117,
             Net_191,
-            Net_17563,
-            Net_17564,
-            Net_17565,
-            Net_17566,
-            Net_17571,
-            Net_17570,
-            Net_17569,
-            Net_17537,
-            Net_17538,
-            Net_17539,
-            Net_17540,
-            Net_17541,
-            Net_17542,
-            Net_17568,
-            Net_17567,
-            Net_17562,
-            Net_17561,
-            Net_17560,
-            Net_17559,
-            Net_17558,
-            Net_17557,
-            Net_17556,
-            Net_17555,
-            Net_17543,
-            Net_17544,
-            Net_17545,
-            Net_17546,
-            Net_17547,
-            Net_17548,
-            Net_17549,
-            Net_17550,
-            Net_17578,
-            Net_17579,
-            Net_17580,
-            Net_17581,
-            Net_17582,
-            Net_17553,
-            Net_17576,
-            Net_17551,
-            Net_17552,
-            Net_17554,
-            Net_17575,
-            Net_17577[1:0]
+            Net_18537,
+            Net_18538,
+            Net_18539,
+            Net_18540,
+            Net_18545,
+            Net_18544,
+            Net_18543,
+            Net_18511,
+            Net_18512,
+            Net_18513,
+            Net_18514,
+            Net_18515,
+            Net_18516,
+            Net_18542,
+            Net_18541,
+            Net_18536,
+            Net_18535,
+            Net_18534,
+            Net_18533,
+            Net_18532,
+            Net_18531,
+            Net_18530,
+            Net_18529,
+            Net_18517,
+            Net_18518,
+            Net_18519,
+            Net_18520,
+            Net_18521,
+            Net_18522,
+            Net_18523,
+            Net_18524,
+            Net_18552,
+            Net_18553,
+            Net_18554,
+            Net_18555,
+            Net_18556,
+            Net_18527,
+            Net_18550,
+            Net_18525,
+            Net_18526,
+            Net_18528,
+            Net_18549,
+            Net_18551[1:0]
         })
     );
     defparam KIT_059_4.comp_name = "KIT_059_v1_0";
@@ -2460,6 +2461,88 @@ module top ;
     assign Net_17093 = 1'h0;
 
     assign Net_17104 = 1'h0;
+
+	wire [0:0] tmpOE__INT1_PIN_net;
+	wire [0:0] tmpIO_0__INT1_PIN_net;
+	wire [0:0] tmpINTERRUPT_0__INT1_PIN_net;
+	electrical [0:0] tmpSIOVREF__INT1_PIN_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("5fa90865-77bd-469c-b29d-70b5f243a5e6"),
+		  .drive_mode(3'b001),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b1),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		INT1_PIN
+		 (.oe(tmpOE__INT1_PIN_net),
+		  .y({1'b0}),
+		  .fb({Net_18560}),
+		  .io({tmpIO_0__INT1_PIN_net[0:0]}),
+		  .siovref(tmpSIOVREF__INT1_PIN_net),
+		  .interrupt({tmpINTERRUPT_0__INT1_PIN_net[0:0]}),
+		  .annotation({Net_18537}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__INT1_PIN_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b00))
+		ISR_IMU
+		 (.int_signal(Net_18560));
+
 
 
 

@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 20 2020 15:49:10
+#File Generated:     May 22 2020 11:38:47
 
 #Purpose:            
 
@@ -55,7 +55,7 @@ Design Statistics after Packing
 Device Utilization Summary after Packing
     Macrocells                  :	54/192
     UDBS                        :	9/24
-    IOs                         :	11/72
+    IOs                         :	12/72
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -87,9 +87,9 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: PWM_CLOCK            | Frequency:  77.2 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  60.2 MHz | Target:   2.0 MHz
-Clock: UART_IntClock        | Frequency:  57.2 MHz | Target:   0.1 MHz
+Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
+Clock: SPIM_IntClock        | Frequency:  58.3 MHz | Target:   2.0 MHz
+Clock: UART_IntClock        | Frequency:  53.6 MHz | Target:   0.9 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -109,14 +109,14 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: PWM_CLOCK            | Frequency:  77.2 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  60.2 MHz | Target:   2.0 MHz
-Clock: UART_IntClock        | Frequency:  57.2 MHz | Target:   0.1 MHz
+Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
+Clock: SPIM_IntClock        | Frequency:  64.5 MHz | Target:   2.0 MHz
+Clock: UART_IntClock        | Frequency:  51.4 MHz | Target:   0.9 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.2 (sec)
+D2088: Phase 7, elapsed time : 1.8 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	16
@@ -126,11 +126,11 @@ Final Design Statistics
     Number of Status            	:	6
     Number of SyncCells         	:	0
     Number of count7cells       	:	2
-    Number of IOs       	:	11
+    Number of IOs       	:	12
 
 Device Utilization Summary
     Macrocells                  :	54/192
-    IOs                         :	11/72
+    IOs                         :	12/72
 
 
 
@@ -147,16 +147,16 @@ analysis after routing.
                      Clock Summary 
 ======================================================================
 Number of clocks: 10
-Clock: BUTTON_CLOCK         | Frequency: 118.4 MHz | Target:   0.0 MHz
+Clock: BUTTON_CLOCK         | Frequency: 123.4 MHz | Target:   0.0 MHz
 Clock: BUTTON_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: PWM_CLOCK            | Frequency:  72.5 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  65.0 MHz | Target:   2.2 MHz
-Clock: UART_IntClock        | Frequency:  57.2 MHz | Target:   0.1 MHz
+Clock: PWM_CLOCK            | Frequency:  67.5 MHz | Target:   0.1 MHz
+Clock: SPIM_IntClock        | Frequency:  68.9 MHz | Target:   2.2 MHz
+Clock: UART_IntClock        | Frequency:  49.8 MHz | Target:   1.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -167,5 +167,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 2.4 sec.
+I2076: Total run-time: 3.0 sec.
 

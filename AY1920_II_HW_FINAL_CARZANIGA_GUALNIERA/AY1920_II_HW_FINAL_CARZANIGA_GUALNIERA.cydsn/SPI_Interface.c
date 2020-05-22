@@ -76,16 +76,6 @@ uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
 	
 }
 
-
-/*
-* @brief Full-Duplex, Multi-Byte Trade (RX/TX)
-*/
-void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
-	
-    
-	
-}
-
 /*
 * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
 */

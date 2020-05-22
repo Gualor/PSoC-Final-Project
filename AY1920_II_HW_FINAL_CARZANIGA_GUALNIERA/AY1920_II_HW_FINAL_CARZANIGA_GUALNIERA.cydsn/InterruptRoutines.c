@@ -56,6 +56,45 @@ CY_ISR(CUSTOM_ISR_START)
     // Check button press counter
     if (press_counter < 1)
     {
+        // Setup internal timer
+        CySysTickClear();
+        CySysTickStart();
+        press_counter++;
+    }
+    else
+    {
+        // Get time passed from first button press
+        uint32_t delta_time = CySysTickGetValue();
+
+        // Toggle button state if time delta is less than 1 second
+        if (delta_time < SYS_TICK_PER_SECOND)
+        {
+            // Toggle start/stop state
+            if (button_state == START_MODE)
+            {
+                button_state = STOP_MODE;
+            }
+            else if (button_state == STOP_MODE)
+            {
+                button_state = START_MODE;
+            }
+            
+            // Stop internal timer
+            CySysTickStop();
+        }
+        
+        // Reset button press counter
+        press_counter = 0;
+    }
+}
+
+
+/*
+CY_ISR(CUSTOM_ISR_START)
+{   
+    // Check button press counter
+    if (press_counter < 1)
+    {
         press_timer = 0;
         press_counter++;
     }
@@ -75,6 +114,7 @@ CY_ISR(CUSTOM_ISR_START)
         press_counter = 0;
     }
 }
+*/
 
 /*
  * ISR function that implements LED visual feedbacks
@@ -116,6 +156,24 @@ CY_ISR(CUSTOM_ISR_NOTIFY)
     
     // Toggle LED state to notify state
     Notify_Status(&notify_led);
+    
+    
+}
+
+/*
+ * ISR function that notify incoming external ISR from LIS3DH FIFO overrun
+ */
+CY_ISR(CUSTOM_ISR_IMU)
+{
+    //UART_PutChar(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
+    IMUDataReady = 1;
+    
+    //IMU_ReadFIFO(IMU_DataBuffer);
+    
+    //IMU_DataSend(IMU_DataBuffer);
+    
+    //IMU_ResetFIFO();         
+    
 }
 
 /* [] END OF FILE */

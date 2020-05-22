@@ -15,6 +15,10 @@
     /* Include project dependencies. */
     #include "project.h"
     #include "Notifications.h"
+    #include "LIS3DH.h"
+    
+    /* Constants definition. */
+    #define SYS_TICK_PER_SECOND 1000
     
     /* Constants definition. */
     #define DOUBLE_CLICK_RESET_TIME 10
@@ -30,6 +34,7 @@
     CY_ISR_PROTO(CUSTOM_ISR_CONFIG);
     CY_ISR_PROTO(CUSTOM_ISR_START);
     CY_ISR_PROTO(CUSTOM_ISR_NOTIFY);
+    CY_ISR_PROTO(CUSTOM_ISR_IMU);
 
     /* Button press variables. */
     volatile uint8_t press_counter;
@@ -41,6 +46,8 @@
     
     /* Current on-board LED state. */
     volatile led_t notify_led;
+    
+    volatile uint8 IMUDataReady;  // Variable containing the status of the packet [0 not ready, 1 ready]
     
 #endif
 
