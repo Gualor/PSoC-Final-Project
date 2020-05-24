@@ -6,15 +6,14 @@
  *
  * CUSTOM_ISR_CONFIG: Triggered with a long 
  * press of 2 seconds of the on-board button, 
- * it toggles the configuration mode state.
+ * it toggles the configuration mode state and
+ * save config flag inside EEPROM.
  * (Priotity level: 5)
  *
- * CUSTOM_ISR_START: Triggered with a rapid 
- * click of the on-board button, it increments
- * a press counter on the first click. On the 
- * second click get the time delta from the
- * first one and if less than 1 second, toggle
- * start/stop state.
+ * CUSTOM_ISR_START: Triggered with a double
+ * click event (with time delta between clicks
+ * less than 1s), it toggles the start/stop
+ * state and save it inside the EEPROM.
  * (Priority level: 6)
  *
  * ========================================
@@ -22,10 +21,10 @@
 
 /* Include project dependencies. */
 #include "InterruptRoutines.h"
-#include "LIS3DH.h"
 
 /*
- * ISR function that toggles configuration mode.
+ * ISR function that toggles configuration mode
+ * and save state inside EEPROM.
  */
 CY_ISR(CUSTOM_ISR_CONFIG)
 {   
@@ -34,69 +33,72 @@ CY_ISR(CUSTOM_ISR_CONFIG)
     {
         // Enter configuration mode
         button_state = CONFIG_MODE;
+        
+        // Save config flag inside EEPROM
+        EEPROM_saveConfigFlag(1);
+        
+        // Blink on-board LED
+        LED_Notify_Config();
     }
     else
     {
-        // Resume stop mode by default
-        button_state = STOP_MODE;
+        // Resume start/stop mode
+        button_state = EEPROM_retrieveStartStopState();
+        
+        // Reset config flag inside EEPROM
+        EEPROM_saveConfigFlag(0);
+        
+        if (button_state == STOP_MODE)
+        {
+            // Turn on-board LED off
+            LED_Notify_Stop();
+        }
+        else if (button_state == START_MODE)
+        {
+            // Turn on-board LED on
+            LED_Notify_Start();
+        }
     }
 }
 
 /* 
- * ISR function that implements start/stop functionality.
+ * ISR function that implements start/stop functionality
+ * and save state inside EEPROM.
  */
 CY_ISR(CUSTOM_ISR_START)
 {   
     // Toggle start/stop state
     if (button_state == START_MODE)
     {
+        // Enter stop mode
         button_state = STOP_MODE;
+        
+        // Save stop bit inside EEPROM
+        EEPROM_saveStartStopState(0);
+        
+        // Turn on-board LED off
+        LED_Notify_Stop();
     }
     else if (button_state == STOP_MODE)
     {
+        // Enter start mode
         button_state = START_MODE;
+        
+        // Save start bit inside EEPROM
+        EEPROM_saveStartStopState(1);
+        
+        // Turn on-board LED on
+        LED_Notify_Start();
     }
 }
 
-
 /*
- * ISR function that notify incoming external ISR from LIS3DH FIFO overrun
+ * ISR function that notify incoming external ISR from LIS3DH FIFO overrun.
  */
 CY_ISR(CUSTOM_ISR_IMU)
 {
+    // Notify main of LIS3DH interrupt occurrence
     IMU_interrupt_flag = 1;
-    //IMU_data_ready_flag = 1;
-    
-    //UART_PutChar(IMU_ReadByte(LIS3DH_FIFO_SRC_REG));
-    
-    /*
-    if((IMU_ReadByte(LIS3DH_FIFO_SRC_REG)) & (LIS3DH_FIFO_SRC_REG_OVR_MASK))
-    {
-        IMU_data_ready_flag = 1;
-        
-        
-        IMU_ReadFIFO(IMU_DataBuffer);
-
-        
-        IMU_DataSend(IMU_DataBuffer);
-        
-
-        IMU_ResetFIFO();
-        
-        
-    }
-    
-    
-    
-    //uint8_t int1_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
-    if((IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
-    {
-        IMU_over_threshold_flag = 1;
-        //UART_PutChar('T');
-        //UART_PutChar(int1_reg);
-    }
-    */
-    
 }
 
 /* [] END OF FILE */

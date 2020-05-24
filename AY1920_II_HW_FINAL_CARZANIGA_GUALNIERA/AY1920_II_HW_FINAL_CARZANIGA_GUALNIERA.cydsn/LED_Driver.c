@@ -46,13 +46,16 @@
  * -> Y value drives GREEN channel
  * -> Z value drives BLUE channel
  */
-void RGB_Driver(uint8_t *dataPtr)
-{
+void RGB_Driver(uint8_t* dataPtr)
+{   
+    // Apply moving average filter
+    Moving_Average(dataPtr, RGB_DataBuffer, 32);
+    
     // Process IMU data in place
-    IMU_Data_Process(dataPtr);
+    RGB_dataProcess(RGB_DataBuffer);
     
     // Set PWM compare values
-    PWM_Driver(dataPtr);
+    PWM_Driver(RGB_DataBuffer);
 }
 
 /*
@@ -82,7 +85,7 @@ void RGB_Stop(void)
 /*
  * Write PWM_RG and PWM_B compare values.
  */
-void PWM_Driver(uint8_t *dataPtr)
+void PWM_Driver(uint8* dataPtr)
 {
     // Set red channel PWM compare value
     PWM_RG_WriteCompare1(dataPtr[0]);
@@ -97,22 +100,51 @@ void PWM_Driver(uint8_t *dataPtr)
 /*
  * Process IMU data in place to map full LED range.
  */
-void IMU_Data_Process(uint8_t *dataPtr)
-{    
+void RGB_dataProcess(uint8_t* dataPtr)
+{   
     // For all 3 channels
     for (uint8_t i=0; i<3; i++)
-    {   
-        // Get absolute value and multiply by 2 to use full range
-        uint16_t tmp = (int16_t)Absolute_Value(dataPtr[i])*2;
+    {
+        // Take absolute value
+        dataPtr[i] = Absolute_Value(dataPtr[i]);
         
-        // Avoid uint8_t variable overflow
-        if (tmp > 255)
+        // Avoid variable overflow
+        if (dataPtr[i] > 127)
         {
-            tmp = 255;
+            dataPtr[i] = 127;
         }
         
+        // Multiply by 2 to use full range of uint8
+        dataPtr[i] *= 2;
+        
         // Get negated value to drive common anode LED
-        dataPtr[i] = ~((uint8_t)tmp);
+        dataPtr[i] = ~((uint8_t)dataPtr[i]);
+    }
+}
+
+/*
+ * Compute moving average filter across window.
+ */
+void Moving_Average(uint8_t* dataPtr, uint8_t* filtPtr, uint8_t windowSize)
+{
+    int16_t dataSum[3] = {0,0,0};
+    
+    // For all sample in window
+    for (uint8_t i=0; i<windowSize; i++)
+    {
+        // For all 3 channels
+        for (uint8_t j=0; j<3; j++)
+        {
+            // Sum the sample
+            dataSum[j] += (int8_t)dataPtr[1+i*6+j*2];
+        }
+    }
+    
+    // For all 3 channels
+    for (uint8_t i=0; i<3; i++)
+    {
+        // Assign window average value
+        filtPtr[i] = (uint8_t)(((float)dataSum[i])/windowSize);
     }
 }
 
@@ -120,50 +152,13 @@ void IMU_Data_Process(uint8_t *dataPtr)
  * Get absolute value of int8_t variable without
  * conditional jumps.
  */
-uint8_t Absolute_Value(uint8_t value)
+uint8_t Absolute_Value(int8_t value)
 {
-    // Get sign of val
-    uint8_t mask = (value >> 7);
+    // Get sign bit
+    const int8_t mask = value >> 7;
     
-    // XOR mask and subtract mask
-    return (value ^ mask) - mask;
-}
-
-/*
- * Commute on-board LED blinking mode
- * based on internal state:
- * -> STOP_MODE: LED off
- * -> START_MODE: LED on
- * -> CONFIG_MODE: LED blink
- */
-void LED_Notify(button_t state)
-{
-    if (state == STOP_MODE)
-    {
-        // Disable PWM
-        PWM_NOTIFY_Stop();
-    }
-    else
-    {
-        // If LED PWM is not enabled
-        if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
-        {
-            // Enable PWM
-            PWM_NOTIFY_Start();
-        }
-        
-        // Change PWM compare value
-        if (state == START_MODE)
-        {
-            // Set PWM to turn on LED
-            PWM_NOTIFY_WriteCompare(255);
-        }
-        else if (state == CONFIG_MODE)
-        {
-            // Set PWM to make LED blink
-            PWM_NOTIFY_WriteCompare(127);
-        }
-    } 
+    // Compute abs value
+    return (uint8_t)((value + mask) ^ mask);
 }
 
 /* [] END OF FILE */

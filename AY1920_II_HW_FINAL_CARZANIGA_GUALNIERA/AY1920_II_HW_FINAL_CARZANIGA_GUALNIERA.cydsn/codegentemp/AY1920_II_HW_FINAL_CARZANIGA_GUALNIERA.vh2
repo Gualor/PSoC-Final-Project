@@ -2,7 +2,7 @@
 --	Conversion of AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat May 23 16:24:45 2020
+--	Sat May 23 16:33:21 2020
 --
 
 USE cypress.cypress.all;
@@ -16,64 +16,64 @@ SIGNAL Net_27453 : bit;
 SIGNAL Net_19465 : bit;
 TERMINAL Net_28802 : bit;
 TERMINAL Net_22256 : bit;
-TERMINAL Net_28375 : bit;
-TERMINAL Net_28376 : bit;
-TERMINAL Net_28377 : bit;
-TERMINAL Net_28378 : bit;
-TERMINAL Net_28379 : bit;
-TERMINAL Net_28380 : bit;
-TERMINAL Net_28381 : bit;
-TERMINAL Net_28382 : bit;
-TERMINAL Net_28423 : bit;
-TERMINAL Net_28422 : bit;
-TERMINAL Net_28421 : bit;
-TERMINAL Net_28408 : bit;
-TERMINAL Net_28409 : bit;
-TERMINAL Net_28410 : bit;
-TERMINAL Net_28411 : bit;
-TERMINAL Net_28412 : bit;
-TERMINAL Net_28413 : bit;
-TERMINAL Net_28414 : bit;
-TERMINAL Net_28415 : bit;
-TERMINAL Net_28420 : bit;
-TERMINAL Net_28419 : bit;
-TERMINAL Net_28418 : bit;
-TERMINAL Net_28383 : bit;
-TERMINAL Net_28384 : bit;
-TERMINAL Net_28385 : bit;
-TERMINAL Net_28386 : bit;
-TERMINAL Net_28387 : bit;
-TERMINAL Net_28388 : bit;
-TERMINAL Net_28417 : bit;
-TERMINAL Net_28416 : bit;
-TERMINAL Net_28407 : bit;
-TERMINAL Net_28406 : bit;
-TERMINAL Net_28405 : bit;
-TERMINAL Net_28404 : bit;
-TERMINAL Net_28403 : bit;
-TERMINAL Net_28402 : bit;
-TERMINAL Net_28401 : bit;
-TERMINAL Net_28389 : bit;
-TERMINAL Net_28390 : bit;
-TERMINAL Net_28391 : bit;
-TERMINAL Net_28392 : bit;
-TERMINAL Net_28393 : bit;
-TERMINAL Net_28394 : bit;
-TERMINAL Net_28395 : bit;
-TERMINAL Net_28396 : bit;
-TERMINAL Net_28427 : bit;
-TERMINAL Net_28428 : bit;
-TERMINAL Net_28429 : bit;
-TERMINAL Net_28430 : bit;
-TERMINAL Net_28431 : bit;
-TERMINAL Net_28399 : bit;
-TERMINAL Net_28425 : bit;
-TERMINAL Net_28397 : bit;
-TERMINAL Net_28398 : bit;
-TERMINAL Net_28400 : bit;
-TERMINAL Net_28424 : bit;
-TERMINAL Net_28426_1 : bit;
-TERMINAL Net_28426_0 : bit;
+TERMINAL Net_28306 : bit;
+TERMINAL Net_28307 : bit;
+TERMINAL Net_28308 : bit;
+TERMINAL Net_28309 : bit;
+TERMINAL Net_28310 : bit;
+TERMINAL Net_28311 : bit;
+TERMINAL Net_28312 : bit;
+TERMINAL Net_28313 : bit;
+TERMINAL Net_28354 : bit;
+TERMINAL Net_28353 : bit;
+TERMINAL Net_28352 : bit;
+TERMINAL Net_28339 : bit;
+TERMINAL Net_28340 : bit;
+TERMINAL Net_28341 : bit;
+TERMINAL Net_28342 : bit;
+TERMINAL Net_28343 : bit;
+TERMINAL Net_28344 : bit;
+TERMINAL Net_28345 : bit;
+TERMINAL Net_28346 : bit;
+TERMINAL Net_28351 : bit;
+TERMINAL Net_28350 : bit;
+TERMINAL Net_28349 : bit;
+TERMINAL Net_28314 : bit;
+TERMINAL Net_28315 : bit;
+TERMINAL Net_28316 : bit;
+TERMINAL Net_28317 : bit;
+TERMINAL Net_28318 : bit;
+TERMINAL Net_28319 : bit;
+TERMINAL Net_28348 : bit;
+TERMINAL Net_28347 : bit;
+TERMINAL Net_28338 : bit;
+TERMINAL Net_28337 : bit;
+TERMINAL Net_28336 : bit;
+TERMINAL Net_28335 : bit;
+TERMINAL Net_28334 : bit;
+TERMINAL Net_28333 : bit;
+TERMINAL Net_28332 : bit;
+TERMINAL Net_28320 : bit;
+TERMINAL Net_28321 : bit;
+TERMINAL Net_28322 : bit;
+TERMINAL Net_28323 : bit;
+TERMINAL Net_28324 : bit;
+TERMINAL Net_28325 : bit;
+TERMINAL Net_28326 : bit;
+TERMINAL Net_28327 : bit;
+TERMINAL Net_28358 : bit;
+TERMINAL Net_28359 : bit;
+TERMINAL Net_28360 : bit;
+TERMINAL Net_28361 : bit;
+TERMINAL Net_28362 : bit;
+TERMINAL Net_28330 : bit;
+TERMINAL Net_28356 : bit;
+TERMINAL Net_28328 : bit;
+TERMINAL Net_28329 : bit;
+TERMINAL Net_28331 : bit;
+TERMINAL Net_28355 : bit;
+TERMINAL Net_28357_1 : bit;
+TERMINAL Net_28357_0 : bit;
 SIGNAL Net_18733 : bit;
 SIGNAL \PWM_RG:PWMUDB:km_run\ : bit;
 SIGNAL \PWM_RG:PWMUDB:min_kill_reg\ : bit;
@@ -782,65 +782,65 @@ SIGNAL \PWM_B:Net_107\ : bit;
 SIGNAL \PWM_B:Net_114\ : bit;
 TERMINAL Net_140 : bit;
 TERMINAL Net_667 : bit;
-TERMINAL Net_28432 : bit;
-TERMINAL Net_28433 : bit;
-TERMINAL Net_28434 : bit;
-TERMINAL Net_28435 : bit;
-TERMINAL Net_28436 : bit;
-TERMINAL Net_28437 : bit;
-TERMINAL Net_28438 : bit;
-TERMINAL Net_28439 : bit;
-TERMINAL Net_28477 : bit;
-TERMINAL Net_28476 : bit;
-TERMINAL Net_28475 : bit;
-TERMINAL Net_28462 : bit;
-TERMINAL Net_28463 : bit;
-TERMINAL Net_28464 : bit;
-TERMINAL Net_28465 : bit;
-TERMINAL Net_28466 : bit;
-TERMINAL Net_28467 : bit;
-TERMINAL Net_28468 : bit;
-TERMINAL Net_28469 : bit;
-TERMINAL Net_28474 : bit;
-TERMINAL Net_28473 : bit;
-TERMINAL Net_28472 : bit;
-TERMINAL Net_28440 : bit;
-TERMINAL Net_28441 : bit;
-TERMINAL Net_28442 : bit;
-TERMINAL Net_28443 : bit;
-TERMINAL Net_28444 : bit;
-TERMINAL Net_28445 : bit;
-TERMINAL Net_28471 : bit;
-TERMINAL Net_28470 : bit;
-TERMINAL Net_28461 : bit;
+TERMINAL Net_28133 : bit;
+TERMINAL Net_28134 : bit;
+TERMINAL Net_28135 : bit;
+TERMINAL Net_28136 : bit;
+TERMINAL Net_28137 : bit;
+TERMINAL Net_28138 : bit;
+TERMINAL Net_28139 : bit;
+TERMINAL Net_28140 : bit;
+TERMINAL Net_28178 : bit;
+TERMINAL Net_28177 : bit;
+TERMINAL Net_28176 : bit;
+TERMINAL Net_28163 : bit;
+TERMINAL Net_28164 : bit;
+TERMINAL Net_28165 : bit;
+TERMINAL Net_28166 : bit;
+TERMINAL Net_28167 : bit;
+TERMINAL Net_28168 : bit;
+TERMINAL Net_28169 : bit;
+TERMINAL Net_28170 : bit;
+TERMINAL Net_28175 : bit;
+TERMINAL Net_28174 : bit;
+TERMINAL Net_28173 : bit;
+TERMINAL Net_28141 : bit;
+TERMINAL Net_28142 : bit;
+TERMINAL Net_28143 : bit;
+TERMINAL Net_28144 : bit;
+TERMINAL Net_28145 : bit;
+TERMINAL Net_28146 : bit;
+TERMINAL Net_28172 : bit;
+TERMINAL Net_28171 : bit;
+TERMINAL Net_28162 : bit;
 TERMINAL Net_18671 : bit;
-TERMINAL Net_28460 : bit;
-TERMINAL Net_28459 : bit;
-TERMINAL Net_28458 : bit;
-TERMINAL Net_28457 : bit;
-TERMINAL Net_28456 : bit;
-TERMINAL Net_28455 : bit;
-TERMINAL Net_28446 : bit;
-TERMINAL Net_28447 : bit;
-TERMINAL Net_28448 : bit;
-TERMINAL Net_28449 : bit;
-TERMINAL Net_28450 : bit;
+TERMINAL Net_28161 : bit;
+TERMINAL Net_28160 : bit;
+TERMINAL Net_28159 : bit;
+TERMINAL Net_28158 : bit;
+TERMINAL Net_28157 : bit;
+TERMINAL Net_28156 : bit;
+TERMINAL Net_28147 : bit;
+TERMINAL Net_28148 : bit;
+TERMINAL Net_28149 : bit;
+TERMINAL Net_28150 : bit;
+TERMINAL Net_28151 : bit;
 TERMINAL Net_18047 : bit;
 TERMINAL Net_18048 : bit;
 TERMINAL Net_18049 : bit;
-TERMINAL Net_28481 : bit;
-TERMINAL Net_28482 : bit;
-TERMINAL Net_28483 : bit;
-TERMINAL Net_28484 : bit;
-TERMINAL Net_28485 : bit;
-TERMINAL Net_28453 : bit;
-TERMINAL Net_28479 : bit;
-TERMINAL Net_28451 : bit;
-TERMINAL Net_28452 : bit;
-TERMINAL Net_28454 : bit;
-TERMINAL Net_28478 : bit;
-TERMINAL Net_28480_1 : bit;
-TERMINAL Net_28480_0 : bit;
+TERMINAL Net_28182 : bit;
+TERMINAL Net_28183 : bit;
+TERMINAL Net_28184 : bit;
+TERMINAL Net_28185 : bit;
+TERMINAL Net_28186 : bit;
+TERMINAL Net_28154 : bit;
+TERMINAL Net_28180 : bit;
+TERMINAL Net_28152 : bit;
+TERMINAL Net_28153 : bit;
+TERMINAL Net_28155 : bit;
+TERMINAL Net_28179 : bit;
+TERMINAL Net_28181_1 : bit;
+TERMINAL Net_28181_0 : bit;
 TERMINAL Net_138 : bit;
 TERMINAL Net_3543 : bit;
 TERMINAL Net_123 : bit;
@@ -875,65 +875,65 @@ SIGNAL Net_17852 : bit;
 SIGNAL Net_27392 : bit;
 SIGNAL Net_28367 : bit;
 SIGNAL Net_28368 : bit;
-TERMINAL Net_28486 : bit;
-TERMINAL Net_28487 : bit;
-TERMINAL Net_28488 : bit;
-TERMINAL Net_28489 : bit;
-TERMINAL Net_28490 : bit;
-TERMINAL Net_28491 : bit;
-TERMINAL Net_28492 : bit;
-TERMINAL Net_28493 : bit;
-TERMINAL Net_28533 : bit;
-TERMINAL Net_28532 : bit;
-TERMINAL Net_28531 : bit;
-TERMINAL Net_28520 : bit;
-TERMINAL Net_28521 : bit;
-TERMINAL Net_28522 : bit;
-TERMINAL Net_28523 : bit;
-TERMINAL Net_28524 : bit;
-TERMINAL Net_28525 : bit;
+TERMINAL Net_28187 : bit;
+TERMINAL Net_28188 : bit;
+TERMINAL Net_28189 : bit;
+TERMINAL Net_28190 : bit;
+TERMINAL Net_28191 : bit;
+TERMINAL Net_28192 : bit;
+TERMINAL Net_28193 : bit;
+TERMINAL Net_28194 : bit;
+TERMINAL Net_28234 : bit;
+TERMINAL Net_28233 : bit;
+TERMINAL Net_28232 : bit;
+TERMINAL Net_28221 : bit;
+TERMINAL Net_28222 : bit;
+TERMINAL Net_28223 : bit;
+TERMINAL Net_28224 : bit;
+TERMINAL Net_28225 : bit;
+TERMINAL Net_28226 : bit;
 TERMINAL Net_17268 : bit;
 TERMINAL Net_10073 : bit;
-TERMINAL Net_28530 : bit;
-TERMINAL Net_28529 : bit;
-TERMINAL Net_28528 : bit;
-TERMINAL Net_28494 : bit;
-TERMINAL Net_28495 : bit;
-TERMINAL Net_28496 : bit;
-TERMINAL Net_28497 : bit;
-TERMINAL Net_28498 : bit;
-TERMINAL Net_28499 : bit;
-TERMINAL Net_28527 : bit;
-TERMINAL Net_28526 : bit;
-TERMINAL Net_28519 : bit;
-TERMINAL Net_28518 : bit;
-TERMINAL Net_28517 : bit;
-TERMINAL Net_28516 : bit;
-TERMINAL Net_28515 : bit;
-TERMINAL Net_28514 : bit;
-TERMINAL Net_28513 : bit;
-TERMINAL Net_28512 : bit;
-TERMINAL Net_28500 : bit;
-TERMINAL Net_28501 : bit;
-TERMINAL Net_28502 : bit;
-TERMINAL Net_28503 : bit;
-TERMINAL Net_28504 : bit;
-TERMINAL Net_28505 : bit;
-TERMINAL Net_28506 : bit;
-TERMINAL Net_28507 : bit;
-TERMINAL Net_28537 : bit;
-TERMINAL Net_28538 : bit;
-TERMINAL Net_28539 : bit;
-TERMINAL Net_28540 : bit;
-TERMINAL Net_28541 : bit;
-TERMINAL Net_28510 : bit;
-TERMINAL Net_28535 : bit;
-TERMINAL Net_28508 : bit;
-TERMINAL Net_28509 : bit;
-TERMINAL Net_28511 : bit;
-TERMINAL Net_28534 : bit;
-TERMINAL Net_28536_1 : bit;
-TERMINAL Net_28536_0 : bit;
+TERMINAL Net_28231 : bit;
+TERMINAL Net_28230 : bit;
+TERMINAL Net_28229 : bit;
+TERMINAL Net_28195 : bit;
+TERMINAL Net_28196 : bit;
+TERMINAL Net_28197 : bit;
+TERMINAL Net_28198 : bit;
+TERMINAL Net_28199 : bit;
+TERMINAL Net_28200 : bit;
+TERMINAL Net_28228 : bit;
+TERMINAL Net_28227 : bit;
+TERMINAL Net_28220 : bit;
+TERMINAL Net_28219 : bit;
+TERMINAL Net_28218 : bit;
+TERMINAL Net_28217 : bit;
+TERMINAL Net_28216 : bit;
+TERMINAL Net_28215 : bit;
+TERMINAL Net_28214 : bit;
+TERMINAL Net_28213 : bit;
+TERMINAL Net_28201 : bit;
+TERMINAL Net_28202 : bit;
+TERMINAL Net_28203 : bit;
+TERMINAL Net_28204 : bit;
+TERMINAL Net_28205 : bit;
+TERMINAL Net_28206 : bit;
+TERMINAL Net_28207 : bit;
+TERMINAL Net_28208 : bit;
+TERMINAL Net_28238 : bit;
+TERMINAL Net_28239 : bit;
+TERMINAL Net_28240 : bit;
+TERMINAL Net_28241 : bit;
+TERMINAL Net_28242 : bit;
+TERMINAL Net_28211 : bit;
+TERMINAL Net_28236 : bit;
+TERMINAL Net_28209 : bit;
+TERMINAL Net_28210 : bit;
+TERMINAL Net_28212 : bit;
+TERMINAL Net_28235 : bit;
+TERMINAL Net_28237_1 : bit;
+TERMINAL Net_28237_0 : bit;
 SIGNAL \UART:Net_9\ : bit;
 SIGNAL \UART:Net_61\ : bit;
 SIGNAL \UART:BUART:clock_op\ : bit;
@@ -1589,204 +1589,204 @@ SIGNAL \CLICK_TIMER:TimerUDB:sT8:timerdp:f1_blk_stat_reg\ : bit;
 ATTRIBUTE port_state_att of \CLICK_TIMER:TimerUDB:sT8:timerdp:f1_blk_stat_reg\:SIGNAL IS 2;
 SIGNAL \CLICK_TIMER:Net_102\ : bit;
 SIGNAL \CLICK_TIMER:Net_266\ : bit;
-TERMINAL Net_28542 : bit;
-TERMINAL Net_28543 : bit;
-TERMINAL Net_28544 : bit;
-TERMINAL Net_28545 : bit;
-TERMINAL Net_28546 : bit;
-TERMINAL Net_28547 : bit;
-TERMINAL Net_28548 : bit;
-TERMINAL Net_28549 : bit;
-TERMINAL Net_28586 : bit;
-TERMINAL Net_28585 : bit;
-TERMINAL Net_28584 : bit;
-TERMINAL Net_28576 : bit;
-TERMINAL Net_28577 : bit;
+TERMINAL Net_28610 : bit;
+TERMINAL Net_28611 : bit;
+TERMINAL Net_28612 : bit;
+TERMINAL Net_28613 : bit;
+TERMINAL Net_28614 : bit;
+TERMINAL Net_28401 : bit;
+TERMINAL Net_28400 : bit;
+TERMINAL Net_28615 : bit;
+TERMINAL Net_28650 : bit;
+TERMINAL Net_28649 : bit;
+TERMINAL Net_28648 : bit;
+TERMINAL Net_28640 : bit;
+TERMINAL Net_28641 : bit;
 TERMINAL Net_28305 : bit;
 TERMINAL Net_28300 : bit;
 TERMINAL Net_28276 : bit;
-TERMINAL Net_28578 : bit;
-TERMINAL Net_28579 : bit;
-TERMINAL Net_28580 : bit;
-TERMINAL Net_28583 : bit;
-TERMINAL Net_28582 : bit;
-TERMINAL Net_28581 : bit;
-TERMINAL Net_28550 : bit;
-TERMINAL Net_28551 : bit;
-TERMINAL Net_28552 : bit;
-TERMINAL Net_28553 : bit;
-TERMINAL Net_28554 : bit;
-TERMINAL Net_28555 : bit;
+TERMINAL Net_28642 : bit;
+TERMINAL Net_28643 : bit;
+TERMINAL Net_28644 : bit;
+TERMINAL Net_28647 : bit;
+TERMINAL Net_28646 : bit;
+TERMINAL Net_28645 : bit;
+TERMINAL Net_28616 : bit;
+TERMINAL Net_28617 : bit;
+TERMINAL Net_28618 : bit;
+TERMINAL Net_28619 : bit;
+TERMINAL Net_28620 : bit;
+TERMINAL Net_28621 : bit;
 TERMINAL Net_117 : bit;
 TERMINAL Net_28280 : bit;
-TERMINAL Net_28575 : bit;
-TERMINAL Net_28574 : bit;
-TERMINAL Net_28573 : bit;
-TERMINAL Net_28572 : bit;
-TERMINAL Net_28571 : bit;
-TERMINAL Net_28570 : bit;
-TERMINAL Net_28569 : bit;
-TERMINAL Net_28568 : bit;
-TERMINAL Net_28556 : bit;
-TERMINAL Net_28557 : bit;
-TERMINAL Net_28558 : bit;
-TERMINAL Net_28559 : bit;
-TERMINAL Net_28560 : bit;
-TERMINAL Net_28561 : bit;
-TERMINAL Net_28562 : bit;
-TERMINAL Net_28563 : bit;
-TERMINAL Net_28590 : bit;
-TERMINAL Net_28591 : bit;
-TERMINAL Net_28592 : bit;
-TERMINAL Net_28593 : bit;
-TERMINAL Net_28594 : bit;
-TERMINAL Net_28566 : bit;
-TERMINAL Net_28588 : bit;
-TERMINAL Net_28564 : bit;
-TERMINAL Net_28565 : bit;
-TERMINAL Net_28567 : bit;
-TERMINAL Net_28587 : bit;
-TERMINAL Net_28589_1 : bit;
-TERMINAL Net_28589_0 : bit;
-SIGNAL tmpOE__MISO_net_0 : bit;
+TERMINAL Net_28405 : bit;
+TERMINAL Net_28639 : bit;
+TERMINAL Net_28638 : bit;
+TERMINAL Net_28637 : bit;
+TERMINAL Net_28410 : bit;
+TERMINAL Net_28636 : bit;
+TERMINAL Net_28635 : bit;
+TERMINAL Net_28634 : bit;
+TERMINAL Net_28622 : bit;
+TERMINAL Net_28623 : bit;
+TERMINAL Net_28624 : bit;
+TERMINAL Net_28625 : bit;
+TERMINAL Net_28626 : bit;
+TERMINAL Net_28627 : bit;
+TERMINAL Net_28628 : bit;
+TERMINAL Net_28629 : bit;
+TERMINAL Net_28654 : bit;
+TERMINAL Net_28655 : bit;
+TERMINAL Net_28656 : bit;
+TERMINAL Net_28657 : bit;
+TERMINAL Net_28658 : bit;
+TERMINAL Net_28632 : bit;
+TERMINAL Net_28652 : bit;
+TERMINAL Net_28630 : bit;
+TERMINAL Net_28631 : bit;
+TERMINAL Net_28633 : bit;
+TERMINAL Net_28651 : bit;
+TERMINAL Net_28653_1 : bit;
+TERMINAL Net_28653_0 : bit;
+SIGNAL tmpOE__MISO_IMU_net_0 : bit;
 SIGNAL Net_19 : bit;
-SIGNAL tmpIO_0__MISO_net_0 : bit;
-TERMINAL tmpSIOVREF__MISO_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__MISO_net_0 : bit;
-SIGNAL tmpOE__MOSI_net_0 : bit;
+SIGNAL tmpIO_0__MISO_IMU_net_0 : bit;
+TERMINAL tmpSIOVREF__MISO_IMU_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__MISO_IMU_net_0 : bit;
+SIGNAL tmpOE__MOSI_IMU_net_0 : bit;
 SIGNAL Net_23 : bit;
-SIGNAL tmpFB_0__MOSI_net_0 : bit;
-SIGNAL tmpIO_0__MOSI_net_0 : bit;
-TERMINAL tmpSIOVREF__MOSI_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__MOSI_net_0 : bit;
-SIGNAL tmpOE__SCLK_net_0 : bit;
+SIGNAL tmpFB_0__MOSI_IMU_net_0 : bit;
+SIGNAL tmpIO_0__MOSI_IMU_net_0 : bit;
+TERMINAL tmpSIOVREF__MOSI_IMU_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__MOSI_IMU_net_0 : bit;
+SIGNAL tmpOE__SCLK_IMU_net_0 : bit;
 SIGNAL Net_25 : bit;
-SIGNAL tmpFB_0__SCLK_net_0 : bit;
-SIGNAL tmpIO_0__SCLK_net_0 : bit;
-TERMINAL tmpSIOVREF__SCLK_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__SCLK_net_0 : bit;
-SIGNAL \SPIM:Net_276\ : bit;
-SIGNAL \SPIM:Net_288\ : bit;
-SIGNAL Net_17340 : bit;
-SIGNAL \SPIM:BSPIM:clk_fin\ : bit;
-SIGNAL \SPIM:BSPIM:load_rx_data\ : bit;
-SIGNAL \SPIM:BSPIM:dpcounter_one\ : bit;
-SIGNAL \SPIM:BSPIM:pol_supprt\ : bit;
-SIGNAL \SPIM:BSPIM:miso_to_dp\ : bit;
-SIGNAL \SPIM:Net_244\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_after_ld\ : bit;
-SIGNAL \SPIM:BSPIM:so_send\ : bit;
-SIGNAL \SPIM:BSPIM:so_send_reg\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_reg\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_fin\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_cpha_1\ : bit;
-SIGNAL \SPIM:BSPIM:state_2\ : bit;
-SIGNAL \SPIM:BSPIM:state_1\ : bit;
-SIGNAL \SPIM:BSPIM:state_0\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_from_dp\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_cpha_0\ : bit;
-SIGNAL Net_17337 : bit;
-SIGNAL \SPIM:BSPIM:mosi_hs_reg\ : bit;
-SIGNAL \SPIM:BSPIM:pre_mosi\ : bit;
-SIGNAL \SPIM:BSPIM:count_4\ : bit;
-SIGNAL \SPIM:BSPIM:count_3\ : bit;
-SIGNAL \SPIM:BSPIM:count_2\ : bit;
-SIGNAL \SPIM:BSPIM:count_1\ : bit;
-SIGNAL \SPIM:BSPIM:count_0\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_pre_reg\ : bit;
-SIGNAL \SPIM:BSPIM:dpcounter_zero\ : bit;
-SIGNAL \SPIM:BSPIM:load_cond\ : bit;
-SIGNAL \SPIM:BSPIM:dpcounter_one_reg\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_from_dp_reg\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_0\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_1\ : bit;
-SIGNAL \SPIM:BSPIM:dpMOSI_fifo_empty\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_2\ : bit;
-SIGNAL \SPIM:BSPIM:dpMOSI_fifo_not_full\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_3\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_4\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_4\ : bit;
-SIGNAL \SPIM:BSPIM:dpMISO_fifo_full\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_5\ : bit;
-SIGNAL \SPIM:BSPIM:dpMISO_fifo_not_empty\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_6\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_6\ : bit;
-SIGNAL \SPIM:BSPIM:tx_status_5\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_3\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_2\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_1\ : bit;
-SIGNAL \SPIM:BSPIM:rx_status_0\ : bit;
-SIGNAL \SPIM:BSPIM:control_7\ : bit;
-SIGNAL \SPIM:BSPIM:control_6\ : bit;
-SIGNAL \SPIM:BSPIM:control_5\ : bit;
-SIGNAL \SPIM:BSPIM:control_4\ : bit;
-SIGNAL \SPIM:BSPIM:control_3\ : bit;
-SIGNAL \SPIM:BSPIM:control_2\ : bit;
-SIGNAL \SPIM:BSPIM:control_1\ : bit;
-SIGNAL \SPIM:BSPIM:control_0\ : bit;
-SIGNAL \SPIM:Net_294\ : bit;
-SIGNAL \SPIM:BSPIM:ld_ident\ : bit;
-SIGNAL \SPIM:Net_273\ : bit;
-SIGNAL \SPIM:BSPIM:cnt_enable\ : bit;
-SIGNAL \SPIM:BSPIM:count_6\ : bit;
-SIGNAL \SPIM:BSPIM:count_5\ : bit;
-SIGNAL \SPIM:BSPIM:cnt_tc\ : bit;
-SIGNAL Net_17342 : bit;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ce0\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ce0\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cl0\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cl0\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:z0\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:z0\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ff0\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ff0\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ce1\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ce1\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cl1\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cl1\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:z1\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:z1\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ff1\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ff1\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ov_msb\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ov_msb\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:co_msb\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:co_msb\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cmsb\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cmsb\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ce0_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ce0_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cl0_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cl0_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:z0_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:z0_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ff0_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ff0_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ce1_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ce1_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cl1_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cl1_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:z1_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:z1_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ff1_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ff1_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:ov_msb_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:ov_msb_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:co_msb_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:co_msb_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:cmsb_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:cmsb_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:so_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:so_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:f0_bus_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:f0_bus_stat_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:f0_blk_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:f0_blk_stat_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:f1_bus_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:f1_bus_stat_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:BSPIM:sR8:Dp:f1_blk_stat_reg\ : bit;
-ATTRIBUTE port_state_att of \SPIM:BSPIM:sR8:Dp:f1_blk_stat_reg\:SIGNAL IS 2;
-SIGNAL \SPIM:Net_289\ : bit;
+SIGNAL tmpFB_0__SCLK_IMU_net_0 : bit;
+SIGNAL tmpIO_0__SCLK_IMU_net_0 : bit;
+TERMINAL tmpSIOVREF__SCLK_IMU_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__SCLK_IMU_net_0 : bit;
+SIGNAL \SPIM_IMU:Net_276\ : bit;
+SIGNAL \SPIM_IMU:Net_288\ : bit;
+SIGNAL Net_28607 : bit;
+SIGNAL \SPIM_IMU:BSPIM:clk_fin\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:load_rx_data\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpcounter_one\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:pol_supprt\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:miso_to_dp\ : bit;
+SIGNAL \SPIM_IMU:Net_244\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_after_ld\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:so_send\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:so_send_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_fin\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_cpha_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_2\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_0\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_from_dp\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_cpha_0\ : bit;
+SIGNAL Net_28604 : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_hs_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:pre_mosi\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_4\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_3\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_2\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_0\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_pre_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpcounter_zero\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:load_cond\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpcounter_one_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_from_dp_reg\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_0\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpMOSI_fifo_empty\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_2\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpMOSI_fifo_not_full\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_3\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_4\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_4\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpMISO_fifo_full\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_5\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpMISO_fifo_not_empty\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_6\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_6\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:tx_status_5\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_3\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_2\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:rx_status_0\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_7\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_6\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_5\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_4\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_3\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_2\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_1\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:control_0\ : bit;
+SIGNAL \SPIM_IMU:Net_294\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:ld_ident\ : bit;
+SIGNAL \SPIM_IMU:Net_273\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:cnt_enable\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_6\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:count_5\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:cnt_tc\ : bit;
+SIGNAL Net_28609 : bit;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ce0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ce0\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cl0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cl0\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:z0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:z0\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ff0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ff0\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ce1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ce1\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cl1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cl1\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:z1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:z1\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ff1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ff1\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ov_msb\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:co_msb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:co_msb\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cmsb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cmsb\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ce0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cl0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:z0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ff0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ce1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cl1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:z1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ff1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:so_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:so_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:BSPIM:sR8:Dp:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_IMU:BSPIM:sR8:Dp:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_IMU:Net_289\ : bit;
 SIGNAL tmpOE__RX_PIN_net_0 : bit;
 SIGNAL tmpIO_0__RX_PIN_net_0 : bit;
 TERMINAL tmpSIOVREF__RX_PIN_net_0 : bit;
@@ -2147,11 +2147,11 @@ SIGNAL Net_19820 : bit;
 SIGNAL \PWM_NOTIFY:Net_113\ : bit;
 SIGNAL \PWM_NOTIFY:Net_107\ : bit;
 SIGNAL \PWM_NOTIFY:Net_114\ : bit;
-SIGNAL tmpOE__CS_net_0 : bit;
-SIGNAL tmpFB_0__CS_net_0 : bit;
-SIGNAL tmpIO_0__CS_net_0 : bit;
-TERMINAL tmpSIOVREF__CS_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__CS_net_0 : bit;
+SIGNAL tmpOE__CS_IMU_net_0 : bit;
+SIGNAL tmpFB_0__CS_IMU_net_0 : bit;
+SIGNAL tmpIO_0__CS_IMU_net_0 : bit;
+TERMINAL tmpSIOVREF__CS_IMU_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__CS_IMU_net_0 : bit;
 SIGNAL \BUTTON_TIMER:Net_260\ : bit;
 SIGNAL \BUTTON_TIMER:Net_266\ : bit;
 SIGNAL \BUTTON_TIMER:Net_51\ : bit;
@@ -2164,10 +2164,154 @@ SIGNAL Net_17855 : bit;
 SIGNAL Net_28007 : bit;
 SIGNAL BUTTON_LATCH : bit;
 SIGNAL tmpOE__INT1_PIN_net_0 : bit;
-SIGNAL Net_28297 : bit;
+SIGNAL Net_28603 : bit;
 SIGNAL tmpIO_0__INT1_PIN_net_0 : bit;
 TERMINAL tmpSIOVREF__INT1_PIN_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__INT1_PIN_net_0 : bit;
+SIGNAL \SPIM_EEPROM:Net_276\ : bit;
+SIGNAL \SPIM_EEPROM:Net_288\ : bit;
+SIGNAL Net_28600 : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:clk_fin\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:load_rx_data\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpcounter_one\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:pol_supprt\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:miso_to_dp\ : bit;
+SIGNAL \SPIM_EEPROM:Net_244\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_after_ld\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:so_send\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:so_send_reg\ : bit;
+SIGNAL Net_28403 : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_reg\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_fin\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_cpha_0\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_2\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_0\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_from_dp\ : bit;
+SIGNAL Net_28597 : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_hs_reg\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_cpha_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:pre_mosi\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_4\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_3\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_2\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_0\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_pre_reg\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpcounter_zero\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:load_cond\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpcounter_one_reg\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_from_dp_reg\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_0\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpMOSI_fifo_empty\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_2\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpMOSI_fifo_not_full\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_3\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_4\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_4\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpMISO_fifo_full\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_5\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpMISO_fifo_not_empty\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_6\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_6\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:tx_status_5\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_3\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_2\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:rx_status_0\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_7\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_6\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_5\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_4\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_3\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_2\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_1\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:control_0\ : bit;
+SIGNAL \SPIM_EEPROM:Net_294\ : bit;
+SIGNAL \SPIM_EEPROM:Net_273\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:ld_ident\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:cnt_enable\ : bit;
+SIGNAL Net_28404 : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_6\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:count_5\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:cnt_tc\ : bit;
+SIGNAL Net_28602 : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ce0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ce0\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cl0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cl0\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:z0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:z0\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ff0\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ff0\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ce1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ce1\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cl1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cl1\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:z1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:z1\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ff1\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ff1\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ov_msb\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:co_msb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:co_msb\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cmsb\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cmsb\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ce0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cl0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:z0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ff0_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ce1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cl1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:z1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ff1_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:so_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:so_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \SPIM_EEPROM:BSPIM:sR8:Dp:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \SPIM_EEPROM:BSPIM:sR8:Dp:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL Net_28406 : bit;
+SIGNAL \SPIM_EEPROM:Net_289\ : bit;
+SIGNAL tmpOE__MOSI_EEPROM_net_0 : bit;
+SIGNAL tmpFB_0__MOSI_EEPROM_net_0 : bit;
+SIGNAL tmpIO_0__MOSI_EEPROM_net_0 : bit;
+TERMINAL tmpSIOVREF__MOSI_EEPROM_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__MOSI_EEPROM_net_0 : bit;
+SIGNAL tmpOE__SCLK_EEPROM_net_0 : bit;
+SIGNAL tmpFB_0__SCLK_EEPROM_net_0 : bit;
+SIGNAL tmpIO_0__SCLK_EEPROM_net_0 : bit;
+TERMINAL tmpSIOVREF__SCLK_EEPROM_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__SCLK_EEPROM_net_0 : bit;
+SIGNAL tmpOE__CS_EEPROM_net_0 : bit;
+SIGNAL tmpFB_0__CS_EEPROM_net_0 : bit;
+SIGNAL tmpIO_0__CS_EEPROM_net_0 : bit;
+TERMINAL tmpSIOVREF__CS_EEPROM_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__CS_EEPROM_net_0 : bit;
+SIGNAL tmpOE__MISO_EEPROM_net_0 : bit;
+SIGNAL tmpIO_0__MISO_EEPROM_net_0 : bit;
+TERMINAL tmpSIOVREF__MISO_EEPROM_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__MISO_EEPROM_net_0 : bit;
 SIGNAL \PWM_RG:PWMUDB:min_kill_reg\\D\ : bit;
 SIGNAL \PWM_RG:PWMUDB:prevCapture\\D\ : bit;
 SIGNAL \PWM_RG:PWMUDB:trig_last\\D\ : bit;
@@ -2242,18 +2386,18 @@ SIGNAL \CLICK_TIMER:TimerUDB:tc_reg_i\\D\ : bit;
 SIGNAL \CLICK_TIMER:TimerUDB:hwEnable_reg\\D\ : bit;
 SIGNAL \CLICK_TIMER:TimerUDB:capture_out_reg_i\\D\ : bit;
 SIGNAL Net_25D : bit;
-SIGNAL \SPIM:BSPIM:so_send_reg\\D\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_reg\\D\ : bit;
-SIGNAL \SPIM:BSPIM:state_2\\D\ : bit;
-SIGNAL \SPIM:BSPIM:state_1\\D\ : bit;
-SIGNAL \SPIM:BSPIM:state_0\\D\ : bit;
-SIGNAL Net_17337D : bit;
-SIGNAL \SPIM:BSPIM:mosi_pre_reg\\D\ : bit;
-SIGNAL \SPIM:BSPIM:load_cond\\D\ : bit;
-SIGNAL \SPIM:BSPIM:dpcounter_one_reg\\D\ : bit;
-SIGNAL \SPIM:BSPIM:mosi_from_dp_reg\\D\ : bit;
-SIGNAL \SPIM:BSPIM:ld_ident\\D\ : bit;
-SIGNAL \SPIM:BSPIM:cnt_enable\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:so_send_reg\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_reg\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_2\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_1\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:state_0\\D\ : bit;
+SIGNAL Net_28604D : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_pre_reg\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:load_cond\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:dpcounter_one_reg\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:mosi_from_dp_reg\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:ld_ident\\D\ : bit;
+SIGNAL \SPIM_IMU:BSPIM:cnt_enable\\D\ : bit;
 SIGNAL \PWM_NOTIFY:PWMUDB:min_kill_reg\\D\ : bit;
 SIGNAL \PWM_NOTIFY:PWMUDB:prevCapture\\D\ : bit;
 SIGNAL \PWM_NOTIFY:PWMUDB:trig_last\\D\ : bit;
@@ -2271,6 +2415,19 @@ SIGNAL \PWM_NOTIFY:PWMUDB:pwm1_i_reg\\D\ : bit;
 SIGNAL \PWM_NOTIFY:PWMUDB:pwm2_i_reg\\D\ : bit;
 SIGNAL \PWM_NOTIFY:PWMUDB:tc_i_reg\\D\ : bit;
 SIGNAL BUTTON_LATCHD : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:so_send_reg\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_reg\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_2\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_1\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:state_0\\D\ : bit;
+SIGNAL Net_28597D : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_pre_reg\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:load_cond\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:dpcounter_one_reg\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:mosi_from_dp_reg\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:ld_ident\\D\ : bit;
+SIGNAL \SPIM_EEPROM:BSPIM:cnt_enable\\D\ : bit;
+SIGNAL Net_28404D : bit;
 BEGIN
 
 Net_19465 <=  ('0') ;
@@ -2432,64 +2589,64 @@ Net_27404_0D <= ((not Net_27404_1 and not Net_27404_0 and not Net_24140 and Net_
 
 \CLICK_TIMER:TimerUDB:status_tc\ <= ((Net_23914 and \CLICK_TIMER:TimerUDB:control_7\ and \CLICK_TIMER:TimerUDB:per_zero\));
 
-\SPIM:BSPIM:load_rx_data\ <= ((not \SPIM:BSPIM:count_4\ and not \SPIM:BSPIM:count_3\ and not \SPIM:BSPIM:count_2\ and not \SPIM:BSPIM:count_1\ and \SPIM:BSPIM:count_0\));
+\SPIM_IMU:BSPIM:load_rx_data\ <= ((not \SPIM_IMU:BSPIM:count_4\ and not \SPIM_IMU:BSPIM:count_3\ and not \SPIM_IMU:BSPIM:count_2\ and not \SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:count_0\));
 
-\SPIM:BSPIM:load_cond\\D\ <= ((not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_2\)
-	OR (\SPIM:BSPIM:count_0\ and \SPIM:BSPIM:load_cond\)
-	OR (\SPIM:BSPIM:count_1\ and \SPIM:BSPIM:load_cond\)
-	OR (\SPIM:BSPIM:count_2\ and \SPIM:BSPIM:load_cond\)
-	OR (\SPIM:BSPIM:count_3\ and \SPIM:BSPIM:load_cond\)
-	OR (\SPIM:BSPIM:count_4\ and \SPIM:BSPIM:load_cond\));
+\SPIM_IMU:BSPIM:load_cond\\D\ <= ((not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_2\)
+	OR (\SPIM_IMU:BSPIM:count_0\ and \SPIM_IMU:BSPIM:load_cond\)
+	OR (\SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:load_cond\)
+	OR (\SPIM_IMU:BSPIM:count_2\ and \SPIM_IMU:BSPIM:load_cond\)
+	OR (\SPIM_IMU:BSPIM:count_3\ and \SPIM_IMU:BSPIM:load_cond\)
+	OR (\SPIM_IMU:BSPIM:count_4\ and \SPIM_IMU:BSPIM:load_cond\));
 
-\SPIM:BSPIM:tx_status_0\ <= ((not \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\));
+\SPIM_IMU:BSPIM:tx_status_0\ <= ((not \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\));
 
-\SPIM:BSPIM:tx_status_4\ <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\));
+\SPIM_IMU:BSPIM:tx_status_4\ <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\));
 
-\SPIM:BSPIM:rx_status_6\ <= ((not \SPIM:BSPIM:count_4\ and not \SPIM:BSPIM:count_3\ and not \SPIM:BSPIM:count_2\ and not \SPIM:BSPIM:count_1\ and \SPIM:BSPIM:count_0\ and \SPIM:BSPIM:rx_status_4\));
+\SPIM_IMU:BSPIM:rx_status_6\ <= ((not \SPIM_IMU:BSPIM:count_4\ and not \SPIM_IMU:BSPIM:count_3\ and not \SPIM_IMU:BSPIM:count_2\ and not \SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:count_0\ and \SPIM_IMU:BSPIM:rx_status_4\));
 
-\SPIM:BSPIM:state_2\\D\ <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:count_4\ and not \SPIM:BSPIM:count_3\ and not \SPIM:BSPIM:count_2\ and not \SPIM:BSPIM:count_0\ and not \SPIM:BSPIM:tx_status_1\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_1\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:count_4\ and not \SPIM:BSPIM:count_3\ and not \SPIM:BSPIM:count_2\ and not \SPIM:BSPIM:count_1\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_0\));
+\SPIM_IMU:BSPIM:state_2\\D\ <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:count_4\ and not \SPIM_IMU:BSPIM:count_3\ and not \SPIM_IMU:BSPIM:count_2\ and not \SPIM_IMU:BSPIM:count_0\ and not \SPIM_IMU:BSPIM:tx_status_1\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_1\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:count_4\ and not \SPIM_IMU:BSPIM:count_3\ and not \SPIM_IMU:BSPIM:count_2\ and not \SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_0\));
 
-\SPIM:BSPIM:state_1\\D\ <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:count_0\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:tx_status_1\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:count_1\ and not \SPIM:BSPIM:count_0\ and \SPIM:BSPIM:state_1\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_0\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_1\)
-	OR (not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_2\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:state_0\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_2\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_3\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_4\));
+\SPIM_IMU:BSPIM:state_1\\D\ <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:count_1\ and not \SPIM_IMU:BSPIM:count_0\ and \SPIM_IMU:BSPIM:state_1\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_0\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_1\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:count_0\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:tx_status_1\)
+	OR (not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_2\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:state_0\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_2\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_3\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_4\));
 
-\SPIM:BSPIM:state_0\\D\ <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:tx_status_1\ and \SPIM:BSPIM:count_4\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:tx_status_1\ and \SPIM:BSPIM:count_3\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:tx_status_1\ and \SPIM:BSPIM:count_2\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:count_1\ and not \SPIM:BSPIM:tx_status_1\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:tx_status_1\ and \SPIM:BSPIM:count_0\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:count_4\ and not \SPIM:BSPIM:count_3\ and not \SPIM:BSPIM:count_2\ and not \SPIM:BSPIM:count_1\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:count_0\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:tx_status_1\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\ and not \SPIM:BSPIM:tx_status_1\));
+\SPIM_IMU:BSPIM:state_0\\D\ <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:tx_status_1\ and \SPIM_IMU:BSPIM:count_4\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:tx_status_1\ and \SPIM_IMU:BSPIM:count_3\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:tx_status_1\ and \SPIM_IMU:BSPIM:count_2\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:count_1\ and not \SPIM_IMU:BSPIM:tx_status_1\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:tx_status_1\ and \SPIM_IMU:BSPIM:count_0\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:count_4\ and not \SPIM_IMU:BSPIM:count_3\ and not \SPIM_IMU:BSPIM:count_2\ and not \SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:count_0\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:tx_status_1\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\ and not \SPIM_IMU:BSPIM:tx_status_1\));
 
-Net_17337D <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\)
-	OR (\SPIM:BSPIM:state_1\ and Net_17337)
-	OR (\SPIM:BSPIM:state_2\ and Net_17337)
-	OR (\SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_1\));
+Net_28604D <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\)
+	OR (\SPIM_IMU:BSPIM:state_1\ and Net_28604)
+	OR (\SPIM_IMU:BSPIM:state_2\ and Net_28604)
+	OR (\SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_1\));
 
-\SPIM:BSPIM:cnt_enable\\D\ <= ((not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_4\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_3\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_2\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:count_1\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:count_0\ and \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_2\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:cnt_enable\)
-	OR (not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:state_0\));
+\SPIM_IMU:BSPIM:cnt_enable\\D\ <= ((not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_4\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_3\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_2\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:count_1\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:count_0\ and \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_2\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:cnt_enable\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:state_0\));
 
-\SPIM:BSPIM:mosi_reg\\D\ <= ((not \SPIM:BSPIM:state_2\ and not \SPIM:BSPIM:state_0\ and \SPIM:BSPIM:state_1\ and \SPIM:BSPIM:mosi_from_dp\)
-	OR (not \SPIM:BSPIM:state_1\ and not \SPIM:BSPIM:state_0\ and Net_23 and \SPIM:BSPIM:state_2\)
-	OR (not \SPIM:BSPIM:state_2\ and Net_23 and \SPIM:BSPIM:state_0\));
+\SPIM_IMU:BSPIM:mosi_reg\\D\ <= ((not \SPIM_IMU:BSPIM:state_2\ and not \SPIM_IMU:BSPIM:state_0\ and \SPIM_IMU:BSPIM:state_1\ and \SPIM_IMU:BSPIM:mosi_from_dp\)
+	OR (not \SPIM_IMU:BSPIM:state_1\ and not \SPIM_IMU:BSPIM:state_0\ and Net_23 and \SPIM_IMU:BSPIM:state_2\)
+	OR (not \SPIM_IMU:BSPIM:state_2\ and Net_23 and \SPIM_IMU:BSPIM:state_0\));
 
-Net_25D <= (\SPIM:BSPIM:state_0\
-	OR not \SPIM:BSPIM:state_1\
-	OR \SPIM:BSPIM:state_2\);
+Net_25D <= (\SPIM_IMU:BSPIM:state_0\
+	OR not \SPIM_IMU:BSPIM:state_1\
+	OR \SPIM_IMU:BSPIM:state_2\);
 
 \PWM_NOTIFY:PWMUDB:sc_kill_tmp\\D\ <= (not \PWM_NOTIFY:PWMUDB:tc_i\);
 
@@ -2516,6 +2673,77 @@ Net_17855 <= (not Net_17852);
 BUTTON_LATCHD <= ((not Net_27404_1 and not Net_24140 and Net_27404_0)
 	OR (not Net_27404_1 and not Net_24140 and Net_23914));
 
+\SPIM_EEPROM:BSPIM:load_rx_data\ <= ((not \SPIM_EEPROM:BSPIM:count_4\ and not \SPIM_EEPROM:BSPIM:count_3\ and not \SPIM_EEPROM:BSPIM:count_2\ and not \SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:count_0\));
+
+\SPIM_EEPROM:BSPIM:load_cond\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\)
+	OR (\SPIM_EEPROM:BSPIM:count_0\ and \SPIM_EEPROM:BSPIM:load_cond\)
+	OR (\SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:load_cond\)
+	OR (\SPIM_EEPROM:BSPIM:count_2\ and \SPIM_EEPROM:BSPIM:load_cond\)
+	OR (\SPIM_EEPROM:BSPIM:count_3\ and \SPIM_EEPROM:BSPIM:load_cond\)
+	OR (\SPIM_EEPROM:BSPIM:count_4\ and \SPIM_EEPROM:BSPIM:load_cond\));
+
+\SPIM_EEPROM:BSPIM:tx_status_0\ <= ((not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_0\));
+
+\SPIM_EEPROM:BSPIM:tx_status_4\ <= ((not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\));
+
+\SPIM_EEPROM:BSPIM:rx_status_6\ <= ((not \SPIM_EEPROM:BSPIM:count_4\ and not \SPIM_EEPROM:BSPIM:count_3\ and not \SPIM_EEPROM:BSPIM:count_2\ and not \SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:count_0\ and \SPIM_EEPROM:BSPIM:rx_status_4\));
+
+\SPIM_EEPROM:BSPIM:state_2\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and not \SPIM_EEPROM:BSPIM:count_4\ and not \SPIM_EEPROM:BSPIM:count_3\ and not \SPIM_EEPROM:BSPIM:count_2\ and not \SPIM_EEPROM:BSPIM:count_0\ and not \SPIM_EEPROM:BSPIM:ld_ident\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:count_1\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:count_4\ and not \SPIM_EEPROM:BSPIM:count_3\ and not \SPIM_EEPROM:BSPIM:count_1\ and not \SPIM_EEPROM:BSPIM:tx_status_1\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:count_2\ and \SPIM_EEPROM:BSPIM:count_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\));
+
+\SPIM_EEPROM:BSPIM:state_1\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:count_0\)
+	OR (\SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:count_1\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:count_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:count_2\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:count_2\ and not \SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:state_1\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (\SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:tx_status_1\)
+	OR (not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (\SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:count_3\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:count_4\));
+
+\SPIM_EEPROM:BSPIM:state_0\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and not \SPIM_EEPROM:BSPIM:tx_status_1\)
+	OR (\SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\));
+
+Net_28597D <= ((not \SPIM_EEPROM:BSPIM:state_0\ and Net_28597)
+	OR (not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\)
+	OR (\SPIM_EEPROM:BSPIM:state_1\ and Net_28597));
+
+\SPIM_EEPROM:BSPIM:cnt_enable\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:cnt_enable\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (\SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:cnt_enable\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:cnt_enable\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:cnt_enable\));
+
+\SPIM_EEPROM:BSPIM:mosi_reg\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\)
+	OR (\SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and Net_28403 and \SPIM_EEPROM:BSPIM:state_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\ and \SPIM_EEPROM:BSPIM:count_0\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and not \SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\ and \SPIM_EEPROM:BSPIM:count_2\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\ and \SPIM_EEPROM:BSPIM:count_3\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:mosi_from_dp\ and \SPIM_EEPROM:BSPIM:count_4\));
+
+Net_28404D <= ((\SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\ and Net_28404)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:state_0\));
+
+\SPIM_EEPROM:BSPIM:ld_ident\\D\ <= ((not \SPIM_EEPROM:BSPIM:state_1\ and not \SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:state_2\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:count_0\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and not \SPIM_EEPROM:BSPIM:count_1\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:count_2\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:count_3\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_2\ and \SPIM_EEPROM:BSPIM:count_4\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (\SPIM_EEPROM:BSPIM:state_0\ and \SPIM_EEPROM:BSPIM:ld_ident\)
+	OR (not \SPIM_EEPROM:BSPIM:state_1\ and \SPIM_EEPROM:BSPIM:ld_ident\));
+
 BUTTON_CLOCK:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"f352711a-bcd5-4347-a3f7-46c8a71310e7",
@@ -2535,21 +2763,21 @@ KIT_059_1:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_28375, Net_28376, Net_28377, Net_28378,
-			Net_28379, Net_28380, Net_28381, Net_28382,
-			Net_28423, Net_28422, Net_28421, Net_28408,
-			Net_28409, Net_28410, Net_28411, Net_28412,
-			Net_28413, Net_28414, Net_28415, Net_28420,
-			Net_28419, Net_28418, Net_28383, Net_28384,
-			Net_28385, Net_28386, Net_28387, Net_28388,
-			Net_28417, Net_28416, Net_28407, Net_28406,
-			Net_22256, Net_28405, Net_28404, Net_28403,
-			Net_28402, Net_28401, Net_28389, Net_28390,
-			Net_28391, Net_28392, Net_28393, Net_28394,
-			Net_28395, Net_28396, Net_28427, Net_28428,
-			Net_28429, Net_28430, Net_28431, Net_28399,
-			Net_28425, Net_28397, Net_28398, Net_28400,
-			Net_28424, Net_28426_1, Net_28426_0));
+	PORT MAP(connect=>(Net_28306, Net_28307, Net_28308, Net_28309,
+			Net_28310, Net_28311, Net_28312, Net_28313,
+			Net_28354, Net_28353, Net_28352, Net_28339,
+			Net_28340, Net_28341, Net_28342, Net_28343,
+			Net_28344, Net_28345, Net_28346, Net_28351,
+			Net_28350, Net_28349, Net_28314, Net_28315,
+			Net_28316, Net_28317, Net_28318, Net_28319,
+			Net_28348, Net_28347, Net_28338, Net_28337,
+			Net_22256, Net_28336, Net_28335, Net_28334,
+			Net_28333, Net_28332, Net_28320, Net_28321,
+			Net_28322, Net_28323, Net_28324, Net_28325,
+			Net_28326, Net_28327, Net_28358, Net_28359,
+			Net_28360, Net_28361, Net_28362, Net_28330,
+			Net_28356, Net_28328, Net_28329, Net_28331,
+			Net_28355, Net_28357_1, Net_28357_0));
 PWM_CLOCK:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"7ec52678-bf3a-4e40-936f-cd1e471837ac",
@@ -2807,21 +3035,21 @@ KIT_059_2:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_28432, Net_28433, Net_28434, Net_28435,
-			Net_28436, Net_28437, Net_28438, Net_28439,
-			Net_28477, Net_28476, Net_28475, Net_28462,
-			Net_28463, Net_28464, Net_28465, Net_28466,
-			Net_28467, Net_28468, Net_28469, Net_28474,
-			Net_28473, Net_28472, Net_28440, Net_28441,
-			Net_28442, Net_28443, Net_28444, Net_28445,
-			Net_28471, Net_28470, Net_28461, Net_18671,
-			Net_28460, Net_28459, Net_28458, Net_28457,
-			Net_28456, Net_28455, Net_28446, Net_28447,
-			Net_28448, Net_28449, Net_28450, Net_18047,
-			Net_18048, Net_18049, Net_28481, Net_28482,
-			Net_28483, Net_28484, Net_28485, Net_28453,
-			Net_28479, Net_28451, Net_28452, Net_28454,
-			Net_28478, Net_28480_1, Net_28480_0));
+	PORT MAP(connect=>(Net_28133, Net_28134, Net_28135, Net_28136,
+			Net_28137, Net_28138, Net_28139, Net_28140,
+			Net_28178, Net_28177, Net_28176, Net_28163,
+			Net_28164, Net_28165, Net_28166, Net_28167,
+			Net_28168, Net_28169, Net_28170, Net_28175,
+			Net_28174, Net_28173, Net_28141, Net_28142,
+			Net_28143, Net_28144, Net_28145, Net_28146,
+			Net_28172, Net_28171, Net_28162, Net_18671,
+			Net_28161, Net_28160, Net_28159, Net_28158,
+			Net_28157, Net_28156, Net_28147, Net_28148,
+			Net_28149, Net_28150, Net_28151, Net_18047,
+			Net_18048, Net_18049, Net_28182, Net_28183,
+			Net_28184, Net_28185, Net_28186, Net_28154,
+			Net_28180, Net_28152, Net_28153, Net_28155,
+			Net_28179, Net_28181_1, Net_28181_0));
 R_2:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"Resistor_v1_0",
 		port_names=>"T1, T2",
@@ -3155,21 +3383,21 @@ KIT_059_3:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_28486, Net_28487, Net_28488, Net_28489,
-			Net_28490, Net_28491, Net_28492, Net_28493,
-			Net_28533, Net_28532, Net_28531, Net_28520,
-			Net_28521, Net_28522, Net_28523, Net_28524,
-			Net_28525, Net_17268, Net_10073, Net_28530,
-			Net_28529, Net_28528, Net_28494, Net_28495,
-			Net_28496, Net_28497, Net_28498, Net_28499,
-			Net_28527, Net_28526, Net_28519, Net_28518,
-			Net_28517, Net_28516, Net_28515, Net_28514,
-			Net_28513, Net_28512, Net_28500, Net_28501,
-			Net_28502, Net_28503, Net_28504, Net_28505,
-			Net_28506, Net_28507, Net_28537, Net_28538,
-			Net_28539, Net_28540, Net_28541, Net_28510,
-			Net_28535, Net_28508, Net_28509, Net_28511,
-			Net_28534, Net_28536_1, Net_28536_0));
+	PORT MAP(connect=>(Net_28187, Net_28188, Net_28189, Net_28190,
+			Net_28191, Net_28192, Net_28193, Net_28194,
+			Net_28234, Net_28233, Net_28232, Net_28221,
+			Net_28222, Net_28223, Net_28224, Net_28225,
+			Net_28226, Net_17268, Net_10073, Net_28231,
+			Net_28230, Net_28229, Net_28195, Net_28196,
+			Net_28197, Net_28198, Net_28199, Net_28200,
+			Net_28228, Net_28227, Net_28220, Net_28219,
+			Net_28218, Net_28217, Net_28216, Net_28215,
+			Net_28214, Net_28213, Net_28201, Net_28202,
+			Net_28203, Net_28204, Net_28205, Net_28206,
+			Net_28207, Net_28208, Net_28238, Net_28239,
+			Net_28240, Net_28241, Net_28242, Net_28211,
+			Net_28236, Net_28209, Net_28210, Net_28212,
+			Net_28235, Net_28237_1, Net_28237_0));
 \UART:IntClock\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
@@ -3673,22 +3901,22 @@ KIT_059_4:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_28542, Net_28543, Net_28544, Net_28545,
-			Net_28546, Net_28547, Net_28548, Net_28549,
-			Net_28586, Net_28585, Net_28584, Net_28576,
-			Net_28577, Net_28305, Net_28300, Net_28276,
-			Net_28578, Net_28579, Net_28580, Net_28583,
-			Net_28582, Net_28581, Net_28550, Net_28551,
-			Net_28552, Net_28553, Net_28554, Net_28555,
-			Net_117, Net_28280, Net_28575, Net_28574,
-			Net_28573, Net_28572, Net_28571, Net_28570,
-			Net_28569, Net_28568, Net_28556, Net_28557,
-			Net_28558, Net_28559, Net_28560, Net_28561,
-			Net_28562, Net_28563, Net_28590, Net_28591,
-			Net_28592, Net_28593, Net_28594, Net_28566,
-			Net_28588, Net_28564, Net_28565, Net_28567,
-			Net_28587, Net_28589_1, Net_28589_0));
-MISO:cy_psoc3_pins_v1_10
+	PORT MAP(connect=>(Net_28610, Net_28611, Net_28612, Net_28613,
+			Net_28614, Net_28401, Net_28400, Net_28615,
+			Net_28650, Net_28649, Net_28648, Net_28640,
+			Net_28641, Net_28305, Net_28300, Net_28276,
+			Net_28642, Net_28643, Net_28644, Net_28647,
+			Net_28646, Net_28645, Net_28616, Net_28617,
+			Net_28618, Net_28619, Net_28620, Net_28621,
+			Net_117, Net_28280, Net_28405, Net_28639,
+			Net_28638, Net_28637, Net_28410, Net_28636,
+			Net_28635, Net_28634, Net_28622, Net_28623,
+			Net_28624, Net_28625, Net_28626, Net_28627,
+			Net_28628, Net_28629, Net_28654, Net_28655,
+			Net_28656, Net_28657, Net_28658, Net_28632,
+			Net_28652, Net_28630, Net_28631, Net_28633,
+			Net_28651, Net_28653_1, Net_28653_0));
+MISO_IMU:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
 		drive_mode=>"001",
 		ibuf_enabled=>"1",
@@ -3748,8 +3976,8 @@ MISO:cy_psoc3_pins_v1_10
 		y=>(Net_19465),
 		fb=>Net_19,
 		analog=>(open),
-		io=>(tmpIO_0__MISO_net_0),
-		siovref=>(tmpSIOVREF__MISO_net_0),
+		io=>(tmpIO_0__MISO_IMU_net_0),
+		siovref=>(tmpSIOVREF__MISO_IMU_net_0),
 		annotation=>Net_117,
 		in_clock=>Net_19465,
 		in_clock_en=>one,
@@ -3757,8 +3985,8 @@ MISO:cy_psoc3_pins_v1_10
 		out_clock=>Net_19465,
 		out_clock_en=>one,
 		out_reset=>Net_19465,
-		interrupt=>tmpINTERRUPT_0__MISO_net_0);
-MOSI:cy_psoc3_pins_v1_10
+		interrupt=>tmpINTERRUPT_0__MISO_IMU_net_0);
+MOSI_IMU:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"8593873b-05de-4935-8f7b-25fff2c6e2ef",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -3816,10 +4044,10 @@ MOSI:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
 		y=>Net_23,
-		fb=>(tmpFB_0__MOSI_net_0),
+		fb=>(tmpFB_0__MOSI_IMU_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__MOSI_net_0),
-		siovref=>(tmpSIOVREF__MOSI_net_0),
+		io=>(tmpIO_0__MOSI_IMU_net_0),
+		siovref=>(tmpSIOVREF__MOSI_IMU_net_0),
 		annotation=>Net_28300,
 		in_clock=>Net_19465,
 		in_clock_en=>one,
@@ -3827,8 +4055,8 @@ MOSI:cy_psoc3_pins_v1_10
 		out_clock=>Net_19465,
 		out_clock_en=>one,
 		out_reset=>Net_19465,
-		interrupt=>tmpINTERRUPT_0__MOSI_net_0);
-SCLK:cy_psoc3_pins_v1_10
+		interrupt=>tmpINTERRUPT_0__MOSI_IMU_net_0);
+SCLK_IMU:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"83b2fde2-60ad-45b6-9e5c-cb3baa6e3f9a",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -3886,10 +4114,10 @@ SCLK:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
 		y=>Net_25,
-		fb=>(tmpFB_0__SCLK_net_0),
+		fb=>(tmpFB_0__SCLK_IMU_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__SCLK_net_0),
-		siovref=>(tmpSIOVREF__SCLK_net_0),
+		io=>(tmpIO_0__SCLK_IMU_net_0),
+		siovref=>(tmpSIOVREF__SCLK_IMU_net_0),
 		annotation=>Net_28305,
 		in_clock=>Net_19465,
 		in_clock_en=>one,
@@ -3897,8 +4125,8 @@ SCLK:cy_psoc3_pins_v1_10
 		out_clock=>Net_19465,
 		out_clock_en=>one,
 		out_reset=>Net_19465,
-		interrupt=>tmpINTERRUPT_0__SCLK_net_0);
-\SPIM:IntClock\:cy_clock_v1_0
+		interrupt=>tmpINTERRUPT_0__SCLK_IMU_net_0);
+\SPIM_IMU:IntClock\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"15cb15b3-05f2-49b1-a67e-9f121bc62871/426fcbe0-714d-4404-8fa8-581ff40c30f1",
 		source_clock_id=>"",
@@ -3906,49 +4134,49 @@ SCLK:cy_psoc3_pins_v1_10
 		period=>"500000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>\SPIM:Net_276\,
+	PORT MAP(clock_out=>\SPIM_IMU:Net_276\,
 		dig_domain_out=>open);
-\SPIM:RxInternalInterrupt\:cy_isr_v1_0
+\SPIM_IMU:RxInternalInterrupt\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_17340);
-\SPIM:BSPIM:ClkEn\:cy_psoc3_udb_clock_enable_v1_0
+	PORT MAP(int_signal=>Net_28607);
+\SPIM_IMU:BSPIM:ClkEn\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
-	PORT MAP(clock_in=>\SPIM:Net_276\,
+	PORT MAP(clock_in=>\SPIM_IMU:Net_276\,
 		enable=>one,
-		clock_out=>\SPIM:BSPIM:clk_fin\);
-\SPIM:BSPIM:BitCounter\:cy_psoc3_count7
+		clock_out=>\SPIM_IMU:BSPIM:clk_fin\);
+\SPIM_IMU:BSPIM:BitCounter\:cy_psoc3_count7
 	GENERIC MAP(cy_period=>"0001111",
 		cy_init_value=>"0000000",
 		cy_route_ld=>'0',
 		cy_route_en=>'1',
 		cy_alt_mode=>'0')
-	PORT MAP(clock=>\SPIM:BSPIM:clk_fin\,
+	PORT MAP(clock=>\SPIM_IMU:BSPIM:clk_fin\,
 		reset=>Net_19465,
 		load=>Net_19465,
-		enable=>\SPIM:BSPIM:cnt_enable\,
-		count=>(\SPIM:BSPIM:count_6\, \SPIM:BSPIM:count_5\, \SPIM:BSPIM:count_4\, \SPIM:BSPIM:count_3\,
-			\SPIM:BSPIM:count_2\, \SPIM:BSPIM:count_1\, \SPIM:BSPIM:count_0\),
-		tc=>\SPIM:BSPIM:cnt_tc\);
-\SPIM:BSPIM:TxStsReg\:cy_psoc3_statusi
+		enable=>\SPIM_IMU:BSPIM:cnt_enable\,
+		count=>(\SPIM_IMU:BSPIM:count_6\, \SPIM_IMU:BSPIM:count_5\, \SPIM_IMU:BSPIM:count_4\, \SPIM_IMU:BSPIM:count_3\,
+			\SPIM_IMU:BSPIM:count_2\, \SPIM_IMU:BSPIM:count_1\, \SPIM_IMU:BSPIM:count_0\),
+		tc=>\SPIM_IMU:BSPIM:cnt_tc\);
+\SPIM_IMU:BSPIM:TxStsReg\:cy_psoc3_statusi
 	GENERIC MAP(cy_force_order=>'1',
 		cy_md_select=>"0001001",
 		cy_int_mask=>"0000000")
 	PORT MAP(reset=>Net_19465,
-		clock=>\SPIM:BSPIM:clk_fin\,
-		status=>(Net_19465, Net_19465, \SPIM:BSPIM:tx_status_4\, \SPIM:BSPIM:load_rx_data\,
-			\SPIM:BSPIM:tx_status_2\, \SPIM:BSPIM:tx_status_1\, \SPIM:BSPIM:tx_status_0\),
-		interrupt=>Net_17342);
-\SPIM:BSPIM:RxStsReg\:cy_psoc3_statusi
+		clock=>\SPIM_IMU:BSPIM:clk_fin\,
+		status=>(Net_19465, Net_19465, \SPIM_IMU:BSPIM:tx_status_4\, \SPIM_IMU:BSPIM:load_rx_data\,
+			\SPIM_IMU:BSPIM:tx_status_2\, \SPIM_IMU:BSPIM:tx_status_1\, \SPIM_IMU:BSPIM:tx_status_0\),
+		interrupt=>Net_28609);
+\SPIM_IMU:BSPIM:RxStsReg\:cy_psoc3_statusi
 	GENERIC MAP(cy_force_order=>'1',
 		cy_md_select=>"1000000",
 		cy_int_mask=>"0000000")
 	PORT MAP(reset=>Net_19465,
-		clock=>\SPIM:BSPIM:clk_fin\,
-		status=>(\SPIM:BSPIM:rx_status_6\, \SPIM:BSPIM:rx_status_5\, \SPIM:BSPIM:rx_status_4\, Net_19465,
+		clock=>\SPIM_IMU:BSPIM:clk_fin\,
+		status=>(\SPIM_IMU:BSPIM:rx_status_6\, \SPIM_IMU:BSPIM:rx_status_5\, \SPIM_IMU:BSPIM:rx_status_4\, Net_19465,
 			Net_19465, Net_19465, Net_19465),
-		interrupt=>Net_17340);
-\SPIM:BSPIM:sR8:Dp:u0\:cy_psoc3_dp
+		interrupt=>Net_28607);
+\SPIM_IMU:BSPIM:sR8:Dp:u0\:cy_psoc3_dp
 	GENERIC MAP(cy_dpconfig=>"0000000000000000000000001100000000000001010000000001000100010000000000011100000000010001000000000000000101000000000000010100000011111111000000001111111111111111000000000010001000001100111100000000000000000100",
 		d0_init=>"00000000",
 		d1_init=>"00000000",
@@ -3971,12 +4199,12 @@ SCLK:cy_psoc3_pins_v1_10
 		f1_bus_sync=>'1',
 		f1_blk_sync=>'1')
 	PORT MAP(reset=>Net_19465,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		cs_addr=>(\SPIM:BSPIM:state_2\, \SPIM:BSPIM:state_1\, \SPIM:BSPIM:state_0\),
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		cs_addr=>(\SPIM_IMU:BSPIM:state_2\, \SPIM_IMU:BSPIM:state_1\, \SPIM_IMU:BSPIM:state_0\),
 		route_si=>Net_19,
 		route_ci=>Net_19465,
 		f0_load=>Net_19465,
-		f1_load=>\SPIM:BSPIM:load_rx_data\,
+		f1_load=>\SPIM_IMU:BSPIM:load_rx_data\,
 		d0_load=>Net_19465,
 		d1_load=>Net_19465,
 		ce0=>open,
@@ -3990,11 +4218,11 @@ SCLK:cy_psoc3_pins_v1_10
 		ov_msb=>open,
 		co_msb=>open,
 		cmsb=>open,
-		so=>\SPIM:BSPIM:mosi_from_dp\,
-		f0_bus_stat=>\SPIM:BSPIM:tx_status_2\,
-		f0_blk_stat=>\SPIM:BSPIM:tx_status_1\,
-		f1_bus_stat=>\SPIM:BSPIM:rx_status_5\,
-		f1_blk_stat=>\SPIM:BSPIM:rx_status_4\,
+		so=>\SPIM_IMU:BSPIM:mosi_from_dp\,
+		f0_bus_stat=>\SPIM_IMU:BSPIM:tx_status_2\,
+		f0_blk_stat=>\SPIM_IMU:BSPIM:tx_status_1\,
+		f1_bus_stat=>\SPIM_IMU:BSPIM:rx_status_5\,
+		f1_blk_stat=>\SPIM_IMU:BSPIM:rx_status_4\,
 		ce0_reg=>open,
 		cl0_reg=>open,
 		z0_reg=>open,
@@ -4034,10 +4262,10 @@ SCLK:cy_psoc3_pins_v1_10
 		pi=>(Net_19465, Net_19465, Net_19465, Net_19465,
 			Net_19465, Net_19465, Net_19465, Net_19465),
 		po=>open);
-\SPIM:TxInternalInterrupt\:cy_isr_v1_0
+\SPIM_IMU:TxInternalInterrupt\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_17342);
+	PORT MAP(int_signal=>Net_28609);
 RX_PIN:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"7b09c831-1bc9-4a9e-a9b1-7ceeeadbb500",
 		drive_mode=>"001",
@@ -4297,7 +4525,7 @@ ONBOARD_LED:cy_psoc3_pins_v1_10
 \PWM_NOTIFY:PWMUDB:MODULE_9:g2:a0:g1:z1:s0:g1:u0:gs(8):g2:g3:ub\:cy_buf
 	PORT MAP(x=>Net_19465,
 		y=>\PWM_NOTIFY:PWMUDB:MODULE_9:g2:a0:g1:z1:s0:g1:u0:c_8\);
-CS:cy_psoc3_pins_v1_10
+CS_IMU:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"c896bc4f-d4bc-406a-9944-0b6604077baa",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -4355,10 +4583,10 @@ CS:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
 		y=>(Net_19465),
-		fb=>(tmpFB_0__CS_net_0),
+		fb=>(tmpFB_0__CS_IMU_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__CS_net_0),
-		siovref=>(tmpSIOVREF__CS_net_0),
+		io=>(tmpIO_0__CS_IMU_net_0),
+		siovref=>(tmpSIOVREF__CS_IMU_net_0),
 		annotation=>Net_28280,
 		in_clock=>Net_19465,
 		in_clock_en=>one,
@@ -4366,7 +4594,7 @@ CS:cy_psoc3_pins_v1_10
 		out_clock=>Net_19465,
 		out_clock_en=>one,
 		out_reset=>Net_19465,
-		interrupt=>tmpINTERRUPT_0__CS_net_0);
+		interrupt=>tmpINTERRUPT_0__CS_IMU_net_0);
 NOTIFY_CLOCK:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"8d9110f5-a9a8-42de-869b-4af39d78a861",
@@ -4454,7 +4682,7 @@ INT1_PIN:cy_psoc3_pins_v1_10
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(one),
 		y=>(Net_19465),
-		fb=>Net_28297,
+		fb=>Net_28603,
 		analog=>(open),
 		io=>(tmpIO_0__INT1_PIN_net_0),
 		siovref=>(tmpSIOVREF__INT1_PIN_net_0),
@@ -4469,7 +4697,427 @@ INT1_PIN:cy_psoc3_pins_v1_10
 ISR_IMU:cy_isr_v1_0
 	GENERIC MAP(int_type=>"00",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_28297);
+	PORT MAP(int_signal=>Net_28603);
+\SPIM_EEPROM:IntClock\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"feb60e3c-d59b-4134-9628-0841c6fc5d8f/426fcbe0-714d-4404-8fa8-581ff40c30f1",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"500000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\SPIM_EEPROM:Net_276\,
+		dig_domain_out=>open);
+\SPIM_EEPROM:RxInternalInterrupt\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_28600);
+\SPIM_EEPROM:BSPIM:ClkEn\:cy_psoc3_udb_clock_enable_v1_0
+	GENERIC MAP(sync_mode=>'1')
+	PORT MAP(clock_in=>\SPIM_EEPROM:Net_276\,
+		enable=>one,
+		clock_out=>\SPIM_EEPROM:BSPIM:clk_fin\);
+\SPIM_EEPROM:BSPIM:BitCounter\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"0001111",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'0',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		reset=>Net_19465,
+		load=>Net_19465,
+		enable=>\SPIM_EEPROM:BSPIM:cnt_enable\,
+		count=>(\SPIM_EEPROM:BSPIM:count_6\, \SPIM_EEPROM:BSPIM:count_5\, \SPIM_EEPROM:BSPIM:count_4\, \SPIM_EEPROM:BSPIM:count_3\,
+			\SPIM_EEPROM:BSPIM:count_2\, \SPIM_EEPROM:BSPIM:count_1\, \SPIM_EEPROM:BSPIM:count_0\),
+		tc=>\SPIM_EEPROM:BSPIM:cnt_tc\);
+\SPIM_EEPROM:BSPIM:TxStsReg\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"0001001",
+		cy_int_mask=>"0000000")
+	PORT MAP(reset=>Net_19465,
+		clock=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		status=>(Net_19465, Net_19465, \SPIM_EEPROM:BSPIM:tx_status_4\, \SPIM_EEPROM:BSPIM:load_rx_data\,
+			\SPIM_EEPROM:BSPIM:tx_status_2\, \SPIM_EEPROM:BSPIM:tx_status_1\, \SPIM_EEPROM:BSPIM:tx_status_0\),
+		interrupt=>Net_28602);
+\SPIM_EEPROM:BSPIM:RxStsReg\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"1000000",
+		cy_int_mask=>"0000000")
+	PORT MAP(reset=>Net_19465,
+		clock=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		status=>(\SPIM_EEPROM:BSPIM:rx_status_6\, \SPIM_EEPROM:BSPIM:rx_status_5\, \SPIM_EEPROM:BSPIM:rx_status_4\, Net_19465,
+			Net_19465, Net_19465, Net_19465),
+		interrupt=>Net_28600);
+\SPIM_EEPROM:BSPIM:sR8:Dp:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000001100000000000001010000000001000100010000000000011100000000010001000000000000000101000000000000010100000011111111000000001111111111111111000000000010001000001000111100000000000000000100",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>Net_19465,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		cs_addr=>(\SPIM_EEPROM:BSPIM:state_2\, \SPIM_EEPROM:BSPIM:state_1\, \SPIM_EEPROM:BSPIM:state_0\),
+		route_si=>Net_28406,
+		route_ci=>Net_19465,
+		f0_load=>Net_19465,
+		f1_load=>\SPIM_EEPROM:BSPIM:load_rx_data\,
+		d0_load=>Net_19465,
+		d1_load=>Net_19465,
+		ce0=>open,
+		cl0=>open,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>open,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>\SPIM_EEPROM:BSPIM:mosi_from_dp\,
+		f0_bus_stat=>\SPIM_EEPROM:BSPIM:tx_status_2\,
+		f0_blk_stat=>\SPIM_EEPROM:BSPIM:tx_status_1\,
+		f1_bus_stat=>\SPIM_EEPROM:BSPIM:rx_status_5\,
+		f1_blk_stat=>\SPIM_EEPROM:BSPIM:rx_status_4\,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>Net_19465,
+		co=>open,
+		sir=>Net_19465,
+		sor=>open,
+		sil=>Net_19465,
+		sol=>open,
+		msbi=>Net_19465,
+		msbo=>open,
+		cei=>(Net_19465, Net_19465),
+		ceo=>open,
+		cli=>(Net_19465, Net_19465),
+		clo=>open,
+		zi=>(Net_19465, Net_19465),
+		zo=>open,
+		fi=>(Net_19465, Net_19465),
+		fo=>open,
+		capi=>(Net_19465, Net_19465),
+		capo=>open,
+		cfbi=>Net_19465,
+		cfbo=>open,
+		pi=>(Net_19465, Net_19465, Net_19465, Net_19465,
+			Net_19465, Net_19465, Net_19465, Net_19465),
+		po=>open);
+\SPIM_EEPROM:TxInternalInterrupt\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_28602);
+MOSI_EEPROM:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"58d8acf9-4d16-44f5-b162-862d3d98707a",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>Net_28403,
+		fb=>(tmpFB_0__MOSI_EEPROM_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__MOSI_EEPROM_net_0),
+		siovref=>(tmpSIOVREF__MOSI_EEPROM_net_0),
+		annotation=>Net_28400,
+		in_clock=>Net_19465,
+		in_clock_en=>one,
+		in_reset=>Net_19465,
+		out_clock=>Net_19465,
+		out_clock_en=>one,
+		out_reset=>Net_19465,
+		interrupt=>tmpINTERRUPT_0__MOSI_EEPROM_net_0);
+SCLK_EEPROM:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"9db10e9e-28ff-4446-94f7-c180455b4e98",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>Net_28404,
+		fb=>(tmpFB_0__SCLK_EEPROM_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__SCLK_EEPROM_net_0),
+		siovref=>(tmpSIOVREF__SCLK_EEPROM_net_0),
+		annotation=>Net_28401,
+		in_clock=>Net_19465,
+		in_clock_en=>one,
+		in_reset=>Net_19465,
+		out_clock=>Net_19465,
+		out_clock_en=>one,
+		out_reset=>Net_19465,
+		interrupt=>tmpINTERRUPT_0__SCLK_EEPROM_net_0);
+CS_EEPROM:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"4614d3f7-1f0c-4a1e-be6f-3f3ec4d3b0fe",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(Net_19465),
+		fb=>(tmpFB_0__CS_EEPROM_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__CS_EEPROM_net_0),
+		siovref=>(tmpSIOVREF__CS_EEPROM_net_0),
+		annotation=>Net_28410,
+		in_clock=>Net_19465,
+		in_clock_en=>one,
+		in_reset=>Net_19465,
+		out_clock=>Net_19465,
+		out_clock_en=>one,
+		out_reset=>Net_19465,
+		interrupt=>tmpINTERRUPT_0__CS_EEPROM_net_0);
+MISO_EEPROM:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"d2e1f642-0f63-4c1a-9e15-f0da124a6023",
+		drive_mode=>"001",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"00000000",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"1",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(one),
+		y=>(Net_19465),
+		fb=>Net_28406,
+		analog=>(open),
+		io=>(tmpIO_0__MISO_EEPROM_net_0),
+		siovref=>(tmpSIOVREF__MISO_EEPROM_net_0),
+		annotation=>Net_28405,
+		in_clock=>Net_19465,
+		in_clock_en=>one,
+		in_reset=>Net_19465,
+		out_clock=>Net_19465,
+		out_clock_en=>one,
+		out_reset=>Net_19465,
+		interrupt=>tmpINTERRUPT_0__MISO_EEPROM_net_0);
 \PWM_RG:PWMUDB:min_kill_reg\:cy_dsrff
 	PORT MAP(d=>one,
 		s=>Net_19465,
@@ -4796,56 +5444,56 @@ Net_27404_0:cy_dff
 		q=>\CLICK_TIMER:TimerUDB:capture_out_reg_i\);
 Net_25:cy_dff
 	PORT MAP(d=>Net_25D,
-		clk=>\SPIM:BSPIM:clk_fin\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
 		q=>Net_25);
-\SPIM:BSPIM:so_send_reg\:cy_dff
+\SPIM_IMU:BSPIM:so_send_reg\:cy_dff
 	PORT MAP(d=>Net_19465,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:so_send_reg\);
-\SPIM:BSPIM:mosi_reg\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:mosi_reg\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:so_send_reg\);
+\SPIM_IMU:BSPIM:mosi_reg\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:mosi_reg\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
 		q=>Net_23);
-\SPIM:BSPIM:state_2\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:state_2\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:state_2\);
-\SPIM:BSPIM:state_1\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:state_1\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:state_1\);
-\SPIM:BSPIM:state_0\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:state_0\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:state_0\);
-Net_17337:cy_dff
-	PORT MAP(d=>Net_17337D,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>Net_17337);
-\SPIM:BSPIM:mosi_pre_reg\:cy_dff
+\SPIM_IMU:BSPIM:state_2\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:state_2\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:state_2\);
+\SPIM_IMU:BSPIM:state_1\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:state_1\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:state_1\);
+\SPIM_IMU:BSPIM:state_0\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:state_0\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:state_0\);
+Net_28604:cy_dff
+	PORT MAP(d=>Net_28604D,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>Net_28604);
+\SPIM_IMU:BSPIM:mosi_pre_reg\:cy_dff
 	PORT MAP(d=>Net_19465,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:mosi_pre_reg\);
-\SPIM:BSPIM:load_cond\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:load_cond\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:load_cond\);
-\SPIM:BSPIM:dpcounter_one_reg\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:load_rx_data\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:dpcounter_one_reg\);
-\SPIM:BSPIM:mosi_from_dp_reg\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:mosi_from_dp\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:mosi_from_dp_reg\);
-\SPIM:BSPIM:ld_ident\:cy_dff
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:mosi_pre_reg\);
+\SPIM_IMU:BSPIM:load_cond\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:load_cond\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:load_cond\);
+\SPIM_IMU:BSPIM:dpcounter_one_reg\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:load_rx_data\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:dpcounter_one_reg\);
+\SPIM_IMU:BSPIM:mosi_from_dp_reg\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:mosi_from_dp\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:mosi_from_dp_reg\);
+\SPIM_IMU:BSPIM:ld_ident\:cy_dff
 	PORT MAP(d=>Net_19465,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:ld_ident\);
-\SPIM:BSPIM:cnt_enable\:cy_dff
-	PORT MAP(d=>\SPIM:BSPIM:cnt_enable\\D\,
-		clk=>\SPIM:BSPIM:clk_fin\,
-		q=>\SPIM:BSPIM:cnt_enable\);
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:ld_ident\);
+\SPIM_IMU:BSPIM:cnt_enable\:cy_dff
+	PORT MAP(d=>\SPIM_IMU:BSPIM:cnt_enable\\D\,
+		clk=>\SPIM_IMU:BSPIM:clk_fin\,
+		q=>\SPIM_IMU:BSPIM:cnt_enable\);
 \PWM_NOTIFY:PWMUDB:min_kill_reg\:cy_dsrff
 	PORT MAP(d=>one,
 		s=>Net_19465,
@@ -4930,5 +5578,57 @@ BUTTON_LATCH:cy_dff
 	PORT MAP(d=>BUTTON_LATCHD,
 		clk=>Net_27453,
 		q=>Net_23914);
+\SPIM_EEPROM:BSPIM:so_send_reg\:cy_dff
+	PORT MAP(d=>Net_19465,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:so_send_reg\);
+\SPIM_EEPROM:BSPIM:mosi_reg\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:mosi_reg\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>Net_28403);
+\SPIM_EEPROM:BSPIM:state_2\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:state_2\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:state_2\);
+\SPIM_EEPROM:BSPIM:state_1\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:state_1\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:state_1\);
+\SPIM_EEPROM:BSPIM:state_0\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:state_0\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:state_0\);
+Net_28597:cy_dff
+	PORT MAP(d=>Net_28597D,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>Net_28597);
+\SPIM_EEPROM:BSPIM:mosi_pre_reg\:cy_dff
+	PORT MAP(d=>Net_19465,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:mosi_pre_reg\);
+\SPIM_EEPROM:BSPIM:load_cond\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:load_cond\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:load_cond\);
+\SPIM_EEPROM:BSPIM:dpcounter_one_reg\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:load_rx_data\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:dpcounter_one_reg\);
+\SPIM_EEPROM:BSPIM:mosi_from_dp_reg\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:mosi_from_dp\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:mosi_from_dp_reg\);
+\SPIM_EEPROM:BSPIM:ld_ident\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:ld_ident\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:ld_ident\);
+\SPIM_EEPROM:BSPIM:cnt_enable\:cy_dff
+	PORT MAP(d=>\SPIM_EEPROM:BSPIM:cnt_enable\\D\,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>\SPIM_EEPROM:BSPIM:cnt_enable\);
+Net_28404:cy_dff
+	PORT MAP(d=>Net_28404D,
+		clk=>\SPIM_EEPROM:BSPIM:clk_fin\,
+		q=>Net_28404);
 
 END R_T_L;

@@ -12,6 +12,7 @@
 #pragma once
 
 #include "SPI_Interface.h"
+#include "stdbool.h"
 
 #define SLAVE_CS_Write CS_1_Write
 #define SPIM           SPIM_1
@@ -46,6 +47,20 @@ extern uint8_t eeprom_Status;
 
 #define SPI_EEPROM_PAGE_SIZE   64
 #define SPI_EEPROM_SIZE_BYTE   0x7FFF
+
+/* EEPROM User defined regiter masks. */
+#define CTRL_REG_PSOC_STATUS    0x0000
+#define CTRL_REG_LOG_PAGES_LOW  0x0008
+#define CTRL_REG_LOG_PAGES_HIGH 0x0016
+#define LOG_DATA_BASE_ADDR      0x0040
+
+#define CTRL_REG_PSOC_START_STOP_SHIFT  0
+#define CTRL_REG_PSOC_CONFIG_MODE_SHIFT 1
+#define CTRL_REG_PSOC_SEND_FLAG_SHIFT   2
+
+#define CTRL_REG_PSOC_SET_START         ((uint8_t) 0x01u << CTRL_REG_PSOC_START_STOP_SHIFT)
+#define CTRL_REG_PSOC_SET_CONFIG        ((uint8_t) 0x01u << CTRL_REG_PSOC_CONFIG_MODE_SHIFT)
+#define CTRL_REG_PSOC_SET_SEND_FLAG     ((uint8_t) 0x01u << CTRL_REG_PSOC_SEND_FLAG_SHIFT)
 
 /*** ========= FUNCTION DECLARATIONS ========= ***/
 
@@ -105,5 +120,26 @@ void EEPROM_writePage(uint16_t addr, uint8_t* data, uint8_t nBytes);
 * @note This is a blocking function!
 */
 void EEPROM_waitForWriteComplete(void);
+
+
+//////////////////////////////////////////////////////////////////
+void EEPROM_saveStartStopState(uint8_t state);
+
+uint8_t EEPROM_retrieveStartStopState(void);
+
+void EEPROM_saveConfigFlag(uint8_t flag);
+
+uint8_t EEPROM_retrieveConfigFlag(void);
+
+void EEPROM_saveSendFlag(uint8_t flag);
+
+uint8_t EEPROM_retrieveSendFlag(void);
+
+uint16_t EEPROM_retrieveLogPages(void);
+
+void EEPROM_incrementLogCounter(void);
+
+void EEPROM_storeLogBuffer(uint8_t* dataPtr, uint8_t nBytes);
+//////////////////////////////////////////////////////////////////////
 
 /* [] END OF FILE */

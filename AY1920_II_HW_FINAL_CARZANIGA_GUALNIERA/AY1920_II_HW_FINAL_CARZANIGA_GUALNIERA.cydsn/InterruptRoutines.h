@@ -14,10 +14,8 @@
     
     /* Include project dependencies. */
     #include "project.h"
-    #include "stdio.h"
-    
-    /* Constants definition. */
-    #define SYS_TICK_PER_SECOND 1000
+    #include "25LC256.h"
+    #include "Notifications.h"
     
     /* State machine type. */
     typedef enum {
@@ -31,15 +29,13 @@
     CY_ISR_PROTO(CUSTOM_ISR_START);
     CY_ISR_PROTO(CUSTOM_ISR_IMU);
     
-    volatile uint8 IMU_interrupt_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
+    /* LIS3DH state flags. */
+    volatile uint8_t IMU_interrupt_flag;
+    volatile uint8_t IMU_data_ready_flag;       
+    volatile uint8_t IMU_over_threshold_flag;
     
-    volatile uint8 IMU_data_ready_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
-    
-    volatile uint8 IMU_over_threshold_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
-    
-    /* Finite state machine variables. */
+    /* Internal state variable. */
     volatile button_t button_state;
-    volatile button_t old_button_state;
     
 #endif
 

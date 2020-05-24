@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 23 2020 16:24:46
+#File Generated:     May 23 2020 16:33:23
 
 #Purpose:            
 
@@ -44,18 +44,18 @@ Phase 2
 Phase 3
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	19
-    Number of Sequential MCs    	:	46
-    Number of DPs               	:	8
-    Number of Controls          	:	6
-    Number of Status            	:	8
+    Number of Combinational MCs 	:	23
+    Number of Sequential MCs    	:	55
+    Number of DPs               	:	9
+    Number of Controls          	:	7
+    Number of Status            	:	10
     Number of SyncCells         	:	0
-    Number of count7cells       	:	2
+    Number of count7cells       	:	3
 
 Device Utilization Summary after Packing
-    Macrocells                  :	65/192
-    UDBS                        :	10/24
-    IOs                         :	12/72
+    Macrocells                  :	78/192
+    UDBS                        :	14/24
+    IOs                         :	16/72
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -79,30 +79,31 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
-Clock: BUTTON_CLOCK         | Frequency:  54.0 MHz | Target:   0.0 MHz
+Number of clocks: 12
+Clock: BUTTON_CLOCK         | Frequency:  44.8 MHz | Target:   0.0 MHz
 Clock: BUTTON_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: NOTIFY_CLOCK         | Frequency:  85.3 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  55.7 MHz | Target:   2.0 MHz
-Clock: UART_IntClock        | Frequency:  51.4 MHz | Target:   0.9 MHz
+Clock: NOTIFY_CLOCK         | Frequency:  80.6 MHz | Target:   0.0 MHz
+Clock: PWM_CLOCK            | Frequency:  84.8 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  52.3 MHz | Target:   2.0 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  59.8 MHz | Target:   2.0 MHz
+Clock: UART_IntClock        | Frequency:  53.6 MHz | Target:   0.9 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.1 (sec)
+D2088: Phase 6, elapsed time : 0.2 (sec)
 
 Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
+Number of clocks: 12
 Clock: BUTTON_CLOCK         | Frequency:  54.0 MHz | Target:   0.0 MHz
 Clock: BUTTON_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
@@ -110,29 +111,30 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: NOTIFY_CLOCK         | Frequency:  85.3 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  65.0 MHz | Target:   2.0 MHz
-Clock: UART_IntClock        | Frequency:  42.9 MHz | Target:   0.9 MHz
+Clock: NOTIFY_CLOCK         | Frequency:  80.6 MHz | Target:   0.0 MHz
+Clock: PWM_CLOCK            | Frequency:  80.3 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  65.0 MHz | Target:   2.0 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  59.8 MHz | Target:   2.0 MHz
+Clock: UART_IntClock        | Frequency:  51.4 MHz | Target:   0.9 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.5 (sec)
+D2088: Phase 7, elapsed time : 2.8 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	19
-    Number of Sequential MCs    	:	46
-    Number of DPs               	:	8
-    Number of Controls          	:	6
-    Number of Status            	:	8
+    Number of Combinational MCs 	:	23
+    Number of Sequential MCs    	:	55
+    Number of DPs               	:	9
+    Number of Controls          	:	7
+    Number of Status            	:	10
     Number of SyncCells         	:	0
-    Number of count7cells       	:	2
-    Number of IOs       	:	12
+    Number of count7cells       	:	3
+    Number of IOs       	:	16
 
 Device Utilization Summary
-    Macrocells                  :	65/192
-    IOs                         :	12/72
+    Macrocells                  :	78/192
+    IOs                         :	16/72
 
 
 
@@ -148,8 +150,8 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 11
-Clock: BUTTON_CLOCK         | Frequency:  54.0 MHz | Target:   0.0 MHz
+Number of clocks: 12
+Clock: BUTTON_CLOCK         | Frequency:  55.7 MHz | Target:   0.0 MHz
 Clock: BUTTON_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
@@ -157,9 +159,10 @@ Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: NOTIFY_CLOCK         | Frequency:  81.0 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
-Clock: SPIM_IntClock        | Frequency:  65.0 MHz | Target:   2.2 MHz
-Clock: UART_IntClock        | Frequency:  45.7 MHz | Target:   1.0 MHz
+Clock: PWM_CLOCK            | Frequency:  77.2 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  66.8 MHz | Target:   2.2 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  66.8 MHz | Target:   2.2 MHz
+Clock: UART_IntClock        | Frequency:  50.2 MHz | Target:   1.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -170,5 +173,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 2.8 sec.
+I2076: Total run-time: 4.4 sec.
 

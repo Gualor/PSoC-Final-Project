@@ -13,16 +13,19 @@
     
     /* Project dependendcies. */
     #include "project.h"
-    #include "InterruptRoutines.h"
+    #include "stdio.h"
     
-    /* Function prototypes. */
-    void RGB_Driver(uint8_t *dataPtr);
+    /* LED driver utility functions. */
     void RGB_Stop(void);
     void RGB_Start(void);
-    void PWM_Driver(uint8_t *dataPtr);
-    void IMU_Data_Process(uint8_t *dataPtr);
-    uint8_t Absolute_Value(uint8_t value);
-    void LED_Notify(button_t state);
+    void RGB_Driver(uint8_t* dataPtr);
+    void RGB_dataProcess(uint8_t* dataPtr);
+    void PWM_Driver(uint8_t* dataPtr);
+    uint8_t Absolute_Value(int8_t value);
+    void Moving_Average(uint8_t* dataPtr, uint8_t* filtPtr, uint8_t windowSize);
+    
+    /* LED driver value. */
+    uint8_t RGB_DataBuffer[3];
     
 #endif    
 

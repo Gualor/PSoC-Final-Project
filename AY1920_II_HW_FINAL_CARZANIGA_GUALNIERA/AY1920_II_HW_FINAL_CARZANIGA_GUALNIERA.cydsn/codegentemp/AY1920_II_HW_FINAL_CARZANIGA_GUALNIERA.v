@@ -1,6 +1,6 @@
 // ======================================================================
 // AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v generated from TopDesign.cysch
-// 05/23/2020 at 16:24
+// 05/23/2020 at 16:33
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -644,7 +644,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v"
 `endif
 
-// SPI_Master_v2_50(BidirectMode=false, ClockInternal=true, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DesiredBitRate=1000000, HighSpeedMode=false, InternalClockUsed=1, InternalInterruptEnabled=0, InternalRxInterruptEnabled=1, InternalTxInterruptEnabled=1, InterruptOnByteComplete=false, InterruptOnRXFull=false, InterruptOnRXNotEmpty=true, InterruptOnRXOverrun=false, InterruptOnSPIDone=false, InterruptOnSPIIdle=false, InterruptOnTXEmpty=false, InterruptOnTXNotFull=true, IntOnByteComp=0, IntOnRXFull=0, IntOnRXNotEmpty=1, IntOnRXOver=0, IntOnSPIDone=0, IntOnSPIIdle=0, IntOnTXEmpty=0, IntOnTXNotFull=1, Mode=4, ModeUseZero=0, NumberOfDataBits=8, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, RxBufferSize=8, ShiftDir=0, TxBufferSize=8, UseInternalInterrupt=false, UseRxInternalInterrupt=true, UseTxInternalInterrupt=true, VerilogSectionReplacementString=sR8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=SPI_Master_v2_50, CY_CONFIG_TITLE=SPIM, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=SPIM, CY_INSTANCE_SHORT_NAME=SPIM, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=SPIM, )
+// SPI_Master_v2_50(BidirectMode=false, ClockInternal=true, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DesiredBitRate=1000000, HighSpeedMode=false, InternalClockUsed=1, InternalInterruptEnabled=0, InternalRxInterruptEnabled=1, InternalTxInterruptEnabled=1, InterruptOnByteComplete=false, InterruptOnRXFull=false, InterruptOnRXNotEmpty=true, InterruptOnRXOverrun=false, InterruptOnSPIDone=false, InterruptOnSPIIdle=false, InterruptOnTXEmpty=false, InterruptOnTXNotFull=true, IntOnByteComp=0, IntOnRXFull=0, IntOnRXNotEmpty=1, IntOnRXOver=0, IntOnSPIDone=0, IntOnSPIIdle=0, IntOnTXEmpty=0, IntOnTXNotFull=1, Mode=4, ModeUseZero=0, NumberOfDataBits=8, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, RxBufferSize=8, ShiftDir=0, TxBufferSize=8, UseInternalInterrupt=false, UseRxInternalInterrupt=true, UseTxInternalInterrupt=true, VerilogSectionReplacementString=sR8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=SPI_Master_v2_50, CY_CONFIG_TITLE=SPIM_IMU, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=SPIM_IMU, CY_INSTANCE_SHORT_NAME=SPIM_IMU, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=SPIM_IMU, )
 module SPI_Master_v2_50_4 (
     mosi,
     sclk,
@@ -923,10 +923,110 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_srff_v1_0\cy_srff_v1_0.v"
 `endif
 
+// SPI_Master_v2_50(BidirectMode=false, ClockInternal=true, CtlModeReplacementString=SyncCtl, CyGetRegReplacementString=CY_GET_REG8, CySetRegReplacementString=CY_SET_REG8, DesiredBitRate=1000000, HighSpeedMode=false, InternalClockUsed=1, InternalInterruptEnabled=0, InternalRxInterruptEnabled=1, InternalTxInterruptEnabled=1, InterruptOnByteComplete=false, InterruptOnRXFull=false, InterruptOnRXNotEmpty=true, InterruptOnRXOverrun=false, InterruptOnSPIDone=false, InterruptOnSPIIdle=false, InterruptOnTXEmpty=false, InterruptOnTXNotFull=true, IntOnByteComp=0, IntOnRXFull=0, IntOnRXNotEmpty=1, IntOnRXOver=0, IntOnSPIDone=0, IntOnSPIIdle=0, IntOnTXEmpty=0, IntOnTXNotFull=1, Mode=1, ModeUseZero=1, NumberOfDataBits=8, RegDefReplacementString=reg8, RegSizeReplacementString=uint8, RxBufferSize=8, ShiftDir=0, TxBufferSize=8, UseInternalInterrupt=false, UseRxInternalInterrupt=true, UseTxInternalInterrupt=true, VerilogSectionReplacementString=sR8, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=SPI_Master_v2_50, CY_CONFIG_TITLE=SPIM_EEPROM, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=SPIM_EEPROM, CY_INSTANCE_SHORT_NAME=SPIM_EEPROM, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=SPIM_EEPROM, )
+module SPI_Master_v2_50_7 (
+    mosi,
+    sclk,
+    ss,
+    miso,
+    clock,
+    reset,
+    rx_interrupt,
+    sdat,
+    tx_interrupt);
+    output      mosi;
+    output      sclk;
+    output      ss;
+    input       miso;
+    input       clock;
+    input       reset;
+    output      rx_interrupt;
+    inout       sdat;
+    output      tx_interrupt;
+
+    parameter BidirectMode = 0;
+    parameter HighSpeedMode = 0;
+    parameter NumberOfDataBits = 8;
+    parameter ShiftDir = 0;
+
+          wire  Net_289;
+          wire  Net_257;
+          wire  Net_288;
+          wire  Net_294;
+          wire  Net_161;
+          wire  Net_244;
+          wire  Net_273;
+          wire  Net_276;
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_276 = Net_288;
+
+
+	cy_clock_v1_0
+		#(.id("feb60e3c-d59b-4134-9628-0841c6fc5d8f/426fcbe0-714d-4404-8fa8-581ff40c30f1"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("500000000"),
+		  .is_direct(0),
+		  .is_digital(1))
+		IntClock
+		 (.clock_out(Net_288));
+
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		RxInternalInterrupt
+		 (.int_signal(rx_interrupt));
+
+
+    B_SPI_Master_v2_50 BSPIM (
+        .sclk(sclk),
+        .ss(ss),
+        .miso(Net_244),
+        .clock(Net_276),
+        .reset(Net_273),
+        .rx_interpt(rx_interrupt),
+        .tx_enable(Net_294),
+        .mosi(mosi),
+        .tx_interpt(tx_interrupt));
+    defparam BSPIM.BidirectMode = 0;
+    defparam BSPIM.HighSpeedMode = 0;
+    defparam BSPIM.ModeCPHA = 0;
+    defparam BSPIM.ModePOL = 0;
+    defparam BSPIM.NumberOfDataBits = 8;
+    defparam BSPIM.ShiftDir = 0;
+
+	// VirtualMux_2 (cy_virtualmux_v1_0)
+	assign Net_244 = miso;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		TxInternalInterrupt
+		 (.int_signal(tx_interrupt));
+
+
+	// VirtualMux_3 (cy_virtualmux_v1_0)
+	assign Net_273 = Net_289;
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_289));
+
+
+
+endmodule
+
 // top
 module top ;
 
-          wire  Net_28297;
+          wire  Net_28602;
+          wire  Net_28601;
+          wire  Net_28600;
+          wire  Net_28599;
+          wire  Net_28598;
+          wire  Net_28597;
+          wire  Net_28603;
           wire  Net_28366;
           wire  Net_28365;
           wire  Net_28364;
@@ -944,65 +1044,61 @@ module top ;
           wire  Net_19821;
           wire  Net_19820;
           wire  Net_19647;
-          wire  Net_17342;
-          wire  Net_17341;
-          wire  Net_17340;
-          wire  Net_17339;
-          wire  Net_17338;
-          wire  Net_17337;
-    electrical  Net_28594;
-    electrical  Net_28593;
-    electrical  Net_28592;
-    electrical  Net_28591;
-    electrical  Net_28590;
-    electrical [1:0] Net_28589;
-    electrical  Net_28588;
-    electrical  Net_28587;
-    electrical  Net_28586;
-    electrical  Net_28585;
-    electrical  Net_28584;
-    electrical  Net_28583;
-    electrical  Net_28582;
-    electrical  Net_28581;
-    electrical  Net_28580;
-    electrical  Net_28579;
-    electrical  Net_28578;
-    electrical  Net_28577;
-    electrical  Net_28576;
-    electrical  Net_28575;
-    electrical  Net_28574;
-    electrical  Net_28573;
-    electrical  Net_28572;
-    electrical  Net_28571;
-    electrical  Net_28570;
-    electrical  Net_28569;
-    electrical  Net_28568;
-    electrical  Net_28567;
-    electrical  Net_28566;
-    electrical  Net_28565;
-    electrical  Net_28564;
-    electrical  Net_28563;
-    electrical  Net_28562;
-    electrical  Net_28561;
-    electrical  Net_28560;
-    electrical  Net_28559;
-    electrical  Net_28558;
-    electrical  Net_28557;
-    electrical  Net_28556;
-    electrical  Net_28555;
-    electrical  Net_28554;
-    electrical  Net_28553;
-    electrical  Net_28552;
-    electrical  Net_28551;
-    electrical  Net_28550;
-    electrical  Net_28549;
-    electrical  Net_28548;
-    electrical  Net_28547;
-    electrical  Net_28546;
-    electrical  Net_28545;
-    electrical  Net_28544;
-    electrical  Net_28543;
-    electrical  Net_28542;
+          wire  Net_28609;
+          wire  Net_28608;
+          wire  Net_28607;
+          wire  Net_28606;
+          wire  Net_28605;
+          wire  Net_28604;
+    electrical  Net_28658;
+    electrical  Net_28657;
+    electrical  Net_28656;
+    electrical  Net_28655;
+    electrical  Net_28654;
+    electrical [1:0] Net_28653;
+    electrical  Net_28652;
+    electrical  Net_28651;
+    electrical  Net_28650;
+    electrical  Net_28649;
+    electrical  Net_28648;
+    electrical  Net_28647;
+    electrical  Net_28646;
+    electrical  Net_28645;
+    electrical  Net_28644;
+    electrical  Net_28643;
+    electrical  Net_28642;
+    electrical  Net_28641;
+    electrical  Net_28640;
+    electrical  Net_28639;
+    electrical  Net_28638;
+    electrical  Net_28637;
+    electrical  Net_28636;
+    electrical  Net_28635;
+    electrical  Net_28634;
+    electrical  Net_28633;
+    electrical  Net_28632;
+    electrical  Net_28631;
+    electrical  Net_28630;
+    electrical  Net_28629;
+    electrical  Net_28628;
+    electrical  Net_28627;
+    electrical  Net_28626;
+    electrical  Net_28625;
+    electrical  Net_28624;
+    electrical  Net_28623;
+    electrical  Net_28622;
+    electrical  Net_28621;
+    electrical  Net_28620;
+    electrical  Net_28619;
+    electrical  Net_28618;
+    electrical  Net_28617;
+    electrical  Net_28616;
+    electrical  Net_28615;
+    electrical  Net_28614;
+    electrical  Net_28613;
+    electrical  Net_28612;
+    electrical  Net_28611;
+    electrical  Net_28610;
           wire  Net_28372;
           wire  Net_28371;
           wire  Net_28370;
@@ -1019,121 +1115,121 @@ module top ;
           wire  Net_10168;
           wire  Net_10167;
           wire  Net_10166;
-    electrical  Net_28541;
-    electrical  Net_28540;
-    electrical  Net_28539;
-    electrical  Net_28538;
-    electrical  Net_28537;
-    electrical [1:0] Net_28536;
-    electrical  Net_28535;
-    electrical  Net_28534;
-    electrical  Net_28533;
-    electrical  Net_28532;
-    electrical  Net_28531;
-    electrical  Net_28530;
-    electrical  Net_28529;
-    electrical  Net_28528;
-    electrical  Net_28527;
-    electrical  Net_28526;
-    electrical  Net_28525;
-    electrical  Net_28524;
-    electrical  Net_28523;
-    electrical  Net_28522;
-    electrical  Net_28521;
-    electrical  Net_28520;
-    electrical  Net_28519;
-    electrical  Net_28518;
-    electrical  Net_28517;
-    electrical  Net_28516;
-    electrical  Net_28515;
-    electrical  Net_28514;
-    electrical  Net_28513;
-    electrical  Net_28512;
-    electrical  Net_28511;
-    electrical  Net_28510;
-    electrical  Net_28509;
-    electrical  Net_28508;
-    electrical  Net_28507;
-    electrical  Net_28506;
-    electrical  Net_28505;
-    electrical  Net_28504;
-    electrical  Net_28503;
-    electrical  Net_28502;
-    electrical  Net_28501;
-    electrical  Net_28500;
-    electrical  Net_28499;
-    electrical  Net_28498;
-    electrical  Net_28497;
-    electrical  Net_28496;
-    electrical  Net_28495;
-    electrical  Net_28494;
-    electrical  Net_28493;
-    electrical  Net_28492;
-    electrical  Net_28491;
-    electrical  Net_28490;
-    electrical  Net_28489;
-    electrical  Net_28488;
-    electrical  Net_28487;
-    electrical  Net_28486;
+    electrical  Net_28242;
+    electrical  Net_28241;
+    electrical  Net_28240;
+    electrical  Net_28239;
+    electrical  Net_28238;
+    electrical [1:0] Net_28237;
+    electrical  Net_28236;
+    electrical  Net_28235;
+    electrical  Net_28234;
+    electrical  Net_28233;
+    electrical  Net_28232;
+    electrical  Net_28231;
+    electrical  Net_28230;
+    electrical  Net_28229;
+    electrical  Net_28228;
+    electrical  Net_28227;
+    electrical  Net_28226;
+    electrical  Net_28225;
+    electrical  Net_28224;
+    electrical  Net_28223;
+    electrical  Net_28222;
+    electrical  Net_28221;
+    electrical  Net_28220;
+    electrical  Net_28219;
+    electrical  Net_28218;
+    electrical  Net_28217;
+    electrical  Net_28216;
+    electrical  Net_28215;
+    electrical  Net_28214;
+    electrical  Net_28213;
+    electrical  Net_28212;
+    electrical  Net_28211;
+    electrical  Net_28210;
+    electrical  Net_28209;
+    electrical  Net_28208;
+    electrical  Net_28207;
+    electrical  Net_28206;
+    electrical  Net_28205;
+    electrical  Net_28204;
+    electrical  Net_28203;
+    electrical  Net_28202;
+    electrical  Net_28201;
+    electrical  Net_28200;
+    electrical  Net_28199;
+    electrical  Net_28198;
+    electrical  Net_28197;
+    electrical  Net_28196;
+    electrical  Net_28195;
+    electrical  Net_28194;
+    electrical  Net_28193;
+    electrical  Net_28192;
+    electrical  Net_28191;
+    electrical  Net_28190;
+    electrical  Net_28189;
+    electrical  Net_28188;
+    electrical  Net_28187;
           wire  Net_28368;
           wire  Net_28367;
     electrical  Net_453;
     electrical  Net_3543;
     electrical  Net_138;
-    electrical  Net_28485;
-    electrical  Net_28484;
-    electrical  Net_28483;
-    electrical  Net_28482;
-    electrical  Net_28481;
-    electrical [1:0] Net_28480;
-    electrical  Net_28479;
-    electrical  Net_28478;
-    electrical  Net_28477;
-    electrical  Net_28476;
-    electrical  Net_28475;
-    electrical  Net_28474;
-    electrical  Net_28473;
-    electrical  Net_28472;
-    electrical  Net_28471;
-    electrical  Net_28470;
-    electrical  Net_28469;
-    electrical  Net_28468;
-    electrical  Net_28467;
-    electrical  Net_28466;
-    electrical  Net_28465;
-    electrical  Net_28464;
-    electrical  Net_28463;
-    electrical  Net_28462;
-    electrical  Net_28461;
-    electrical  Net_28460;
-    electrical  Net_28459;
-    electrical  Net_28458;
-    electrical  Net_28457;
-    electrical  Net_28456;
-    electrical  Net_28455;
-    electrical  Net_28454;
-    electrical  Net_28453;
-    electrical  Net_28452;
-    electrical  Net_28451;
-    electrical  Net_28450;
-    electrical  Net_28449;
-    electrical  Net_28448;
-    electrical  Net_28447;
-    electrical  Net_28446;
-    electrical  Net_28445;
-    electrical  Net_28444;
-    electrical  Net_28443;
-    electrical  Net_28442;
-    electrical  Net_28441;
-    electrical  Net_28440;
-    electrical  Net_28439;
-    electrical  Net_28438;
-    electrical  Net_28437;
-    electrical  Net_28436;
-    electrical  Net_28435;
-    electrical  Net_28434;
-    electrical  Net_28433;
-    electrical  Net_28432;
+    electrical  Net_28186;
+    electrical  Net_28185;
+    electrical  Net_28184;
+    electrical  Net_28183;
+    electrical  Net_28182;
+    electrical [1:0] Net_28181;
+    electrical  Net_28180;
+    electrical  Net_28179;
+    electrical  Net_28178;
+    electrical  Net_28177;
+    electrical  Net_28176;
+    electrical  Net_28175;
+    electrical  Net_28174;
+    electrical  Net_28173;
+    electrical  Net_28172;
+    electrical  Net_28171;
+    electrical  Net_28170;
+    electrical  Net_28169;
+    electrical  Net_28168;
+    electrical  Net_28167;
+    electrical  Net_28166;
+    electrical  Net_28165;
+    electrical  Net_28164;
+    electrical  Net_28163;
+    electrical  Net_28162;
+    electrical  Net_28161;
+    electrical  Net_28160;
+    electrical  Net_28159;
+    electrical  Net_28158;
+    electrical  Net_28157;
+    electrical  Net_28156;
+    electrical  Net_28155;
+    electrical  Net_28154;
+    electrical  Net_28153;
+    electrical  Net_28152;
+    electrical  Net_28151;
+    electrical  Net_28150;
+    electrical  Net_28149;
+    electrical  Net_28148;
+    electrical  Net_28147;
+    electrical  Net_28146;
+    electrical  Net_28145;
+    electrical  Net_28144;
+    electrical  Net_28143;
+    electrical  Net_28142;
+    electrical  Net_28141;
+    electrical  Net_28140;
+    electrical  Net_28139;
+    electrical  Net_28138;
+    electrical  Net_28137;
+    electrical  Net_28136;
+    electrical  Net_28135;
+    electrical  Net_28134;
+    electrical  Net_28133;
     electrical  Net_667;
     electrical  Net_140;
           wire  Net_28075;
@@ -1158,64 +1254,79 @@ module top ;
           wire  Net_18327;
           wire  Net_18326;
           wire  Net_19075;
-    electrical  Net_28431;
-    electrical  Net_28430;
-    electrical  Net_28429;
-    electrical  Net_28428;
-    electrical  Net_28427;
-    electrical [1:0] Net_28426;
-    electrical  Net_28425;
-    electrical  Net_28424;
-    electrical  Net_28423;
-    electrical  Net_28422;
-    electrical  Net_28421;
-    electrical  Net_28420;
-    electrical  Net_28419;
-    electrical  Net_28418;
-    electrical  Net_28417;
-    electrical  Net_28416;
-    electrical  Net_28415;
-    electrical  Net_28414;
-    electrical  Net_28413;
-    electrical  Net_28412;
-    electrical  Net_28411;
-    electrical  Net_28410;
-    electrical  Net_28409;
-    electrical  Net_28408;
-    electrical  Net_28407;
-    electrical  Net_28406;
-    electrical  Net_28405;
-    electrical  Net_28404;
-    electrical  Net_28403;
-    electrical  Net_28402;
+    electrical  Net_28362;
+    electrical  Net_28361;
+    electrical  Net_28360;
+    electrical  Net_28359;
+    electrical  Net_28358;
+    electrical [1:0] Net_28357;
+    electrical  Net_28356;
+    electrical  Net_28355;
+    electrical  Net_28354;
+    electrical  Net_28353;
+    electrical  Net_28352;
+    electrical  Net_28351;
+    electrical  Net_28350;
+    electrical  Net_28349;
+    electrical  Net_28348;
+    electrical  Net_28347;
+    electrical  Net_28346;
+    electrical  Net_28345;
+    electrical  Net_28344;
+    electrical  Net_28343;
+    electrical  Net_28342;
+    electrical  Net_28341;
+    electrical  Net_28340;
+    electrical  Net_28339;
+    electrical  Net_28338;
+    electrical  Net_28337;
+    electrical  Net_28336;
+    electrical  Net_28335;
+    electrical  Net_28334;
+    electrical  Net_28333;
+    electrical  Net_28332;
+    electrical  Net_28331;
+    electrical  Net_28330;
+    electrical  Net_28329;
+    electrical  Net_28328;
+    electrical  Net_28327;
+    electrical  Net_28326;
+    electrical  Net_28325;
+    electrical  Net_28324;
+    electrical  Net_28323;
+    electrical  Net_28322;
+    electrical  Net_28321;
+    electrical  Net_28320;
+    electrical  Net_28319;
+    electrical  Net_28318;
+    electrical  Net_28317;
+    electrical  Net_28316;
+    electrical  Net_28315;
+    electrical  Net_28314;
+    electrical  Net_28313;
+    electrical  Net_28312;
+    electrical  Net_28311;
+    electrical  Net_28310;
+    electrical  Net_28309;
+    electrical  Net_28308;
+    electrical  Net_28307;
+    electrical  Net_28306;
+          wire  Net_28374;
+          wire  Net_23;
+          wire  Net_19;
+          wire  Net_25;
+    electrical  Net_28276;
+    electrical  Net_28305;
+    electrical  Net_28300;
+    electrical  Net_28280;
+    electrical  Net_117;
+          wire  Net_28403;
+          wire  Net_28404;
     electrical  Net_28401;
     electrical  Net_28400;
-    electrical  Net_28399;
-    electrical  Net_28398;
-    electrical  Net_28397;
-    electrical  Net_28396;
-    electrical  Net_28395;
-    electrical  Net_28394;
-    electrical  Net_28393;
-    electrical  Net_28392;
-    electrical  Net_28391;
-    electrical  Net_28390;
-    electrical  Net_28389;
-    electrical  Net_28388;
-    electrical  Net_28387;
-    electrical  Net_28386;
-    electrical  Net_28385;
-    electrical  Net_28384;
-    electrical  Net_28383;
-    electrical  Net_28382;
-    electrical  Net_28381;
-    electrical  Net_28380;
-    electrical  Net_28379;
-    electrical  Net_28378;
-    electrical  Net_28377;
-    electrical  Net_28376;
-    electrical  Net_28375;
-          wire  Net_28374;
+          wire  Net_28406;
+    electrical  Net_28410;
+    electrical  Net_28405;
     electrical  Net_28802;
           wire  Net_28042;
           wire  Net_24015;
@@ -1230,10 +1341,6 @@ module top ;
           wire  Net_17855;
           wire  Net_27453;
           wire  Net_17852;
-    electrical  Net_28300;
-    electrical  Net_28305;
-    electrical  Net_28280;
-    electrical  Net_28276;
           wire  Net_18733;
           wire  Net_17104;
           wire  Net_18727;
@@ -1241,13 +1348,9 @@ module top ;
           wire  Net_19465;
           wire  Net_18163;
           wire  Net_18731;
-    electrical  Net_117;
-          wire  Net_25;
           wire  Net_17093;
     electrical  Net_18671;
     electrical  Net_17268;
-          wire  Net_19;
-          wire  Net_23;
     electrical  Net_10073;
           wire  Net_9807;
     electrical  Net_123;
@@ -1281,64 +1384,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_1 (
         .connect({
-            Net_28375,
-            Net_28376,
-            Net_28377,
-            Net_28378,
-            Net_28379,
-            Net_28380,
-            Net_28381,
-            Net_28382,
-            Net_28423,
-            Net_28422,
-            Net_28421,
-            Net_28408,
-            Net_28409,
-            Net_28410,
-            Net_28411,
-            Net_28412,
-            Net_28413,
-            Net_28414,
-            Net_28415,
-            Net_28420,
-            Net_28419,
-            Net_28418,
-            Net_28383,
-            Net_28384,
-            Net_28385,
-            Net_28386,
-            Net_28387,
-            Net_28388,
-            Net_28417,
-            Net_28416,
-            Net_28407,
-            Net_28406,
+            Net_28306,
+            Net_28307,
+            Net_28308,
+            Net_28309,
+            Net_28310,
+            Net_28311,
+            Net_28312,
+            Net_28313,
+            Net_28354,
+            Net_28353,
+            Net_28352,
+            Net_28339,
+            Net_28340,
+            Net_28341,
+            Net_28342,
+            Net_28343,
+            Net_28344,
+            Net_28345,
+            Net_28346,
+            Net_28351,
+            Net_28350,
+            Net_28349,
+            Net_28314,
+            Net_28315,
+            Net_28316,
+            Net_28317,
+            Net_28318,
+            Net_28319,
+            Net_28348,
+            Net_28347,
+            Net_28338,
+            Net_28337,
             Net_22256,
-            Net_28405,
-            Net_28404,
-            Net_28403,
-            Net_28402,
-            Net_28401,
-            Net_28389,
-            Net_28390,
-            Net_28391,
-            Net_28392,
-            Net_28393,
-            Net_28394,
-            Net_28395,
-            Net_28396,
-            Net_28427,
-            Net_28428,
-            Net_28429,
-            Net_28430,
-            Net_28431,
-            Net_28399,
-            Net_28425,
-            Net_28397,
-            Net_28398,
-            Net_28400,
-            Net_28424,
-            Net_28426[1:0]
+            Net_28336,
+            Net_28335,
+            Net_28334,
+            Net_28333,
+            Net_28332,
+            Net_28320,
+            Net_28321,
+            Net_28322,
+            Net_28323,
+            Net_28324,
+            Net_28325,
+            Net_28326,
+            Net_28327,
+            Net_28358,
+            Net_28359,
+            Net_28360,
+            Net_28361,
+            Net_28362,
+            Net_28330,
+            Net_28356,
+            Net_28328,
+            Net_28329,
+            Net_28331,
+            Net_28355,
+            Net_28357[1:0]
         })
     );
     defparam KIT_059_1.comp_name = "KIT_059_v1_0";
@@ -1403,64 +1506,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_2 (
         .connect({
-            Net_28432,
-            Net_28433,
-            Net_28434,
-            Net_28435,
-            Net_28436,
-            Net_28437,
-            Net_28438,
-            Net_28439,
-            Net_28477,
-            Net_28476,
-            Net_28475,
-            Net_28462,
-            Net_28463,
-            Net_28464,
-            Net_28465,
-            Net_28466,
-            Net_28467,
-            Net_28468,
-            Net_28469,
-            Net_28474,
-            Net_28473,
-            Net_28472,
-            Net_28440,
-            Net_28441,
-            Net_28442,
-            Net_28443,
-            Net_28444,
-            Net_28445,
-            Net_28471,
-            Net_28470,
-            Net_28461,
+            Net_28133,
+            Net_28134,
+            Net_28135,
+            Net_28136,
+            Net_28137,
+            Net_28138,
+            Net_28139,
+            Net_28140,
+            Net_28178,
+            Net_28177,
+            Net_28176,
+            Net_28163,
+            Net_28164,
+            Net_28165,
+            Net_28166,
+            Net_28167,
+            Net_28168,
+            Net_28169,
+            Net_28170,
+            Net_28175,
+            Net_28174,
+            Net_28173,
+            Net_28141,
+            Net_28142,
+            Net_28143,
+            Net_28144,
+            Net_28145,
+            Net_28146,
+            Net_28172,
+            Net_28171,
+            Net_28162,
             Net_18671,
-            Net_28460,
-            Net_28459,
-            Net_28458,
-            Net_28457,
-            Net_28456,
-            Net_28455,
-            Net_28446,
-            Net_28447,
-            Net_28448,
-            Net_28449,
-            Net_28450,
+            Net_28161,
+            Net_28160,
+            Net_28159,
+            Net_28158,
+            Net_28157,
+            Net_28156,
+            Net_28147,
+            Net_28148,
+            Net_28149,
+            Net_28150,
+            Net_28151,
             Net_18047,
             Net_18048,
             Net_18049,
-            Net_28481,
-            Net_28482,
-            Net_28483,
-            Net_28484,
-            Net_28485,
-            Net_28453,
-            Net_28479,
-            Net_28451,
-            Net_28452,
-            Net_28454,
-            Net_28478,
-            Net_28480[1:0]
+            Net_28182,
+            Net_28183,
+            Net_28184,
+            Net_28185,
+            Net_28186,
+            Net_28154,
+            Net_28180,
+            Net_28152,
+            Net_28153,
+            Net_28155,
+            Net_28179,
+            Net_28181[1:0]
         })
     );
     defparam KIT_059_2.comp_name = "KIT_059_v1_0";
@@ -1871,64 +1974,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_3 (
         .connect({
-            Net_28486,
-            Net_28487,
-            Net_28488,
-            Net_28489,
-            Net_28490,
-            Net_28491,
-            Net_28492,
-            Net_28493,
-            Net_28533,
-            Net_28532,
-            Net_28531,
-            Net_28520,
-            Net_28521,
-            Net_28522,
-            Net_28523,
-            Net_28524,
-            Net_28525,
+            Net_28187,
+            Net_28188,
+            Net_28189,
+            Net_28190,
+            Net_28191,
+            Net_28192,
+            Net_28193,
+            Net_28194,
+            Net_28234,
+            Net_28233,
+            Net_28232,
+            Net_28221,
+            Net_28222,
+            Net_28223,
+            Net_28224,
+            Net_28225,
+            Net_28226,
             Net_17268,
             Net_10073,
-            Net_28530,
-            Net_28529,
-            Net_28528,
-            Net_28494,
-            Net_28495,
-            Net_28496,
-            Net_28497,
-            Net_28498,
-            Net_28499,
-            Net_28527,
-            Net_28526,
-            Net_28519,
-            Net_28518,
-            Net_28517,
-            Net_28516,
-            Net_28515,
-            Net_28514,
-            Net_28513,
-            Net_28512,
-            Net_28500,
-            Net_28501,
-            Net_28502,
-            Net_28503,
-            Net_28504,
-            Net_28505,
-            Net_28506,
-            Net_28507,
-            Net_28537,
-            Net_28538,
-            Net_28539,
-            Net_28540,
-            Net_28541,
-            Net_28510,
-            Net_28535,
-            Net_28508,
-            Net_28509,
-            Net_28511,
-            Net_28534,
-            Net_28536[1:0]
+            Net_28231,
+            Net_28230,
+            Net_28229,
+            Net_28195,
+            Net_28196,
+            Net_28197,
+            Net_28198,
+            Net_28199,
+            Net_28200,
+            Net_28228,
+            Net_28227,
+            Net_28220,
+            Net_28219,
+            Net_28218,
+            Net_28217,
+            Net_28216,
+            Net_28215,
+            Net_28214,
+            Net_28213,
+            Net_28201,
+            Net_28202,
+            Net_28203,
+            Net_28204,
+            Net_28205,
+            Net_28206,
+            Net_28207,
+            Net_28208,
+            Net_28238,
+            Net_28239,
+            Net_28240,
+            Net_28241,
+            Net_28242,
+            Net_28211,
+            Net_28236,
+            Net_28209,
+            Net_28210,
+            Net_28212,
+            Net_28235,
+            Net_28237[1:0]
         })
     );
     defparam KIT_059_3.comp_name = "KIT_059_v1_0";
@@ -2064,74 +2167,74 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_4 (
         .connect({
-            Net_28542,
-            Net_28543,
-            Net_28544,
-            Net_28545,
-            Net_28546,
-            Net_28547,
-            Net_28548,
-            Net_28549,
-            Net_28586,
-            Net_28585,
-            Net_28584,
-            Net_28576,
-            Net_28577,
+            Net_28610,
+            Net_28611,
+            Net_28612,
+            Net_28613,
+            Net_28614,
+            Net_28401,
+            Net_28400,
+            Net_28615,
+            Net_28650,
+            Net_28649,
+            Net_28648,
+            Net_28640,
+            Net_28641,
             Net_28305,
             Net_28300,
             Net_28276,
-            Net_28578,
-            Net_28579,
-            Net_28580,
-            Net_28583,
-            Net_28582,
-            Net_28581,
-            Net_28550,
-            Net_28551,
-            Net_28552,
-            Net_28553,
-            Net_28554,
-            Net_28555,
+            Net_28642,
+            Net_28643,
+            Net_28644,
+            Net_28647,
+            Net_28646,
+            Net_28645,
+            Net_28616,
+            Net_28617,
+            Net_28618,
+            Net_28619,
+            Net_28620,
+            Net_28621,
             Net_117,
             Net_28280,
-            Net_28575,
-            Net_28574,
-            Net_28573,
-            Net_28572,
-            Net_28571,
-            Net_28570,
-            Net_28569,
-            Net_28568,
-            Net_28556,
-            Net_28557,
-            Net_28558,
-            Net_28559,
-            Net_28560,
-            Net_28561,
-            Net_28562,
-            Net_28563,
-            Net_28590,
-            Net_28591,
-            Net_28592,
-            Net_28593,
-            Net_28594,
-            Net_28566,
-            Net_28588,
-            Net_28564,
-            Net_28565,
-            Net_28567,
-            Net_28587,
-            Net_28589[1:0]
+            Net_28405,
+            Net_28639,
+            Net_28638,
+            Net_28637,
+            Net_28410,
+            Net_28636,
+            Net_28635,
+            Net_28634,
+            Net_28622,
+            Net_28623,
+            Net_28624,
+            Net_28625,
+            Net_28626,
+            Net_28627,
+            Net_28628,
+            Net_28629,
+            Net_28654,
+            Net_28655,
+            Net_28656,
+            Net_28657,
+            Net_28658,
+            Net_28632,
+            Net_28652,
+            Net_28630,
+            Net_28631,
+            Net_28633,
+            Net_28651,
+            Net_28653[1:0]
         })
     );
     defparam KIT_059_4.comp_name = "KIT_059_v1_0";
     defparam KIT_059_4.port_names = "P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0";
     defparam KIT_059_4.width = 59;
 
-	wire [0:0] tmpOE__MISO_net;
-	wire [0:0] tmpIO_0__MISO_net;
-	wire [0:0] tmpINTERRUPT_0__MISO_net;
-	electrical [0:0] tmpSIOVREF__MISO_net;
+	wire [0:0] tmpOE__MISO_IMU_net;
+	wire [0:0] tmpIO_0__MISO_IMU_net;
+	wire [0:0] tmpINTERRUPT_0__MISO_IMU_net;
+	electrical [0:0] tmpSIOVREF__MISO_IMU_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("1425177d-0d0e-4468-8bcc-e638e5509a9b"),
@@ -2186,13 +2289,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		MISO
-		 (.oe(tmpOE__MISO_net),
+		MISO_IMU
+		 (.oe(tmpOE__MISO_IMU_net),
 		  .y({1'b0}),
 		  .fb({Net_19}),
-		  .io({tmpIO_0__MISO_net[0:0]}),
-		  .siovref(tmpSIOVREF__MISO_net),
-		  .interrupt({tmpINTERRUPT_0__MISO_net[0:0]}),
+		  .io({tmpIO_0__MISO_IMU_net[0:0]}),
+		  .siovref(tmpSIOVREF__MISO_IMU_net),
+		  .interrupt({tmpINTERRUPT_0__MISO_IMU_net[0:0]}),
 		  .annotation({Net_117}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
@@ -2201,13 +2304,13 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__MISO_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__MISO_IMU_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-	wire [0:0] tmpOE__MOSI_net;
-	wire [0:0] tmpFB_0__MOSI_net;
-	wire [0:0] tmpIO_0__MOSI_net;
-	wire [0:0] tmpINTERRUPT_0__MOSI_net;
-	electrical [0:0] tmpSIOVREF__MOSI_net;
+	wire [0:0] tmpOE__MOSI_IMU_net;
+	wire [0:0] tmpFB_0__MOSI_IMU_net;
+	wire [0:0] tmpIO_0__MOSI_IMU_net;
+	wire [0:0] tmpINTERRUPT_0__MOSI_IMU_net;
+	electrical [0:0] tmpSIOVREF__MOSI_IMU_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("8593873b-05de-4935-8f7b-25fff2c6e2ef"),
@@ -2262,13 +2365,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		MOSI
-		 (.oe(tmpOE__MOSI_net),
+		MOSI_IMU
+		 (.oe(tmpOE__MOSI_IMU_net),
 		  .y({Net_23}),
-		  .fb({tmpFB_0__MOSI_net[0:0]}),
-		  .io({tmpIO_0__MOSI_net[0:0]}),
-		  .siovref(tmpSIOVREF__MOSI_net),
-		  .interrupt({tmpINTERRUPT_0__MOSI_net[0:0]}),
+		  .fb({tmpFB_0__MOSI_IMU_net[0:0]}),
+		  .io({tmpIO_0__MOSI_IMU_net[0:0]}),
+		  .siovref(tmpSIOVREF__MOSI_IMU_net),
+		  .interrupt({tmpINTERRUPT_0__MOSI_IMU_net[0:0]}),
 		  .annotation({Net_28300}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
@@ -2277,13 +2380,13 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__MOSI_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__MOSI_IMU_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-	wire [0:0] tmpOE__SCLK_net;
-	wire [0:0] tmpFB_0__SCLK_net;
-	wire [0:0] tmpIO_0__SCLK_net;
-	wire [0:0] tmpINTERRUPT_0__SCLK_net;
-	electrical [0:0] tmpSIOVREF__SCLK_net;
+	wire [0:0] tmpOE__SCLK_IMU_net;
+	wire [0:0] tmpFB_0__SCLK_IMU_net;
+	wire [0:0] tmpIO_0__SCLK_IMU_net;
+	wire [0:0] tmpINTERRUPT_0__SCLK_IMU_net;
+	electrical [0:0] tmpSIOVREF__SCLK_IMU_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("83b2fde2-60ad-45b6-9e5c-cb3baa6e3f9a"),
@@ -2338,13 +2441,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		SCLK
-		 (.oe(tmpOE__SCLK_net),
+		SCLK_IMU
+		 (.oe(tmpOE__SCLK_IMU_net),
 		  .y({Net_25}),
-		  .fb({tmpFB_0__SCLK_net[0:0]}),
-		  .io({tmpIO_0__SCLK_net[0:0]}),
-		  .siovref(tmpSIOVREF__SCLK_net),
-		  .interrupt({tmpINTERRUPT_0__SCLK_net[0:0]}),
+		  .fb({tmpFB_0__SCLK_IMU_net[0:0]}),
+		  .io({tmpIO_0__SCLK_IMU_net[0:0]}),
+		  .siovref(tmpSIOVREF__SCLK_IMU_net),
+		  .interrupt({tmpINTERRUPT_0__SCLK_IMU_net[0:0]}),
 		  .annotation({Net_28305}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
@@ -2353,22 +2456,22 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__SCLK_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__SCLK_IMU_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    SPI_Master_v2_50_4 SPIM (
+    SPI_Master_v2_50_4 SPIM_IMU (
         .mosi(Net_23),
         .sclk(Net_25),
-        .ss(Net_17337),
+        .ss(Net_28604),
         .miso(Net_19),
         .clock(1'b0),
         .reset(1'b0),
-        .rx_interrupt(Net_17340),
-        .sdat(Net_17341),
-        .tx_interrupt(Net_17342));
-    defparam SPIM.BidirectMode = 0;
-    defparam SPIM.HighSpeedMode = 0;
-    defparam SPIM.NumberOfDataBits = 8;
-    defparam SPIM.ShiftDir = 0;
+        .rx_interrupt(Net_28607),
+        .sdat(Net_28608),
+        .tx_interrupt(Net_28609));
+    defparam SPIM_IMU.BidirectMode = 0;
+    defparam SPIM_IMU.HighSpeedMode = 0;
+    defparam SPIM_IMU.NumberOfDataBits = 8;
+    defparam SPIM_IMU.ShiftDir = 0;
 
 	wire [0:0] tmpOE__RX_PIN_net;
 	wire [0:0] tmpIO_0__RX_PIN_net;
@@ -2545,11 +2648,11 @@ module top ;
 
     assign Net_17104 = 1'h0;
 
-	wire [0:0] tmpOE__CS_net;
-	wire [0:0] tmpFB_0__CS_net;
-	wire [0:0] tmpIO_0__CS_net;
-	wire [0:0] tmpINTERRUPT_0__CS_net;
-	electrical [0:0] tmpSIOVREF__CS_net;
+	wire [0:0] tmpOE__CS_IMU_net;
+	wire [0:0] tmpFB_0__CS_IMU_net;
+	wire [0:0] tmpIO_0__CS_IMU_net;
+	wire [0:0] tmpINTERRUPT_0__CS_IMU_net;
+	electrical [0:0] tmpSIOVREF__CS_IMU_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("c896bc4f-d4bc-406a-9944-0b6604077baa"),
@@ -2604,13 +2707,13 @@ module top ;
 		  .ovt_needed(1'b0),
 		  .ovt_slew_control(2'b00),
 		  .input_buffer_sel(2'b00))
-		CS
-		 (.oe(tmpOE__CS_net),
+		CS_IMU
+		 (.oe(tmpOE__CS_IMU_net),
 		  .y({1'b0}),
-		  .fb({tmpFB_0__CS_net[0:0]}),
-		  .io({tmpIO_0__CS_net[0:0]}),
-		  .siovref(tmpSIOVREF__CS_net),
-		  .interrupt({tmpINTERRUPT_0__CS_net[0:0]}),
+		  .fb({tmpFB_0__CS_IMU_net[0:0]}),
+		  .io({tmpIO_0__CS_IMU_net[0:0]}),
+		  .siovref(tmpSIOVREF__CS_IMU_net),
+		  .interrupt({tmpINTERRUPT_0__CS_IMU_net[0:0]}),
 		  .annotation({Net_28280}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
@@ -2619,7 +2722,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__CS_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__CS_IMU_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 	cy_clock_v1_0
@@ -2742,7 +2845,7 @@ module top ;
 		INT1_PIN
 		 (.oe(tmpOE__INT1_PIN_net),
 		  .y({1'b0}),
-		  .fb({Net_28297}),
+		  .fb({Net_28603}),
 		  .io({tmpIO_0__INT1_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__INT1_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__INT1_PIN_net[0:0]}),
@@ -2760,8 +2863,326 @@ module top ;
 	cy_isr_v1_0
 		#(.int_type(2'b00))
 		ISR_IMU
-		 (.int_signal(Net_28297));
+		 (.int_signal(Net_28603));
 
+
+    SPI_Master_v2_50_7 SPIM_EEPROM (
+        .mosi(Net_28403),
+        .sclk(Net_28404),
+        .ss(Net_28597),
+        .miso(Net_28406),
+        .clock(1'b0),
+        .reset(1'b0),
+        .rx_interrupt(Net_28600),
+        .sdat(Net_28601),
+        .tx_interrupt(Net_28602));
+    defparam SPIM_EEPROM.BidirectMode = 0;
+    defparam SPIM_EEPROM.HighSpeedMode = 0;
+    defparam SPIM_EEPROM.NumberOfDataBits = 8;
+    defparam SPIM_EEPROM.ShiftDir = 0;
+
+	wire [0:0] tmpOE__MOSI_EEPROM_net;
+	wire [0:0] tmpFB_0__MOSI_EEPROM_net;
+	wire [0:0] tmpIO_0__MOSI_EEPROM_net;
+	wire [0:0] tmpINTERRUPT_0__MOSI_EEPROM_net;
+	electrical [0:0] tmpSIOVREF__MOSI_EEPROM_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("58d8acf9-4d16-44f5-b162-862d3d98707a"),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_clk_en(0),
+		  .input_sync(1'b1),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b1),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b1),
+		  .vtrip(2'b10),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		MOSI_EEPROM
+		 (.oe(tmpOE__MOSI_EEPROM_net),
+		  .y({Net_28403}),
+		  .fb({tmpFB_0__MOSI_EEPROM_net[0:0]}),
+		  .io({tmpIO_0__MOSI_EEPROM_net[0:0]}),
+		  .siovref(tmpSIOVREF__MOSI_EEPROM_net),
+		  .interrupt({tmpINTERRUPT_0__MOSI_EEPROM_net[0:0]}),
+		  .annotation({Net_28400}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__MOSI_EEPROM_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	wire [0:0] tmpOE__SCLK_EEPROM_net;
+	wire [0:0] tmpFB_0__SCLK_EEPROM_net;
+	wire [0:0] tmpIO_0__SCLK_EEPROM_net;
+	wire [0:0] tmpINTERRUPT_0__SCLK_EEPROM_net;
+	electrical [0:0] tmpSIOVREF__SCLK_EEPROM_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("9db10e9e-28ff-4446-94f7-c180455b4e98"),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_clk_en(0),
+		  .input_sync(1'b1),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b1),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b1),
+		  .vtrip(2'b10),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		SCLK_EEPROM
+		 (.oe(tmpOE__SCLK_EEPROM_net),
+		  .y({Net_28404}),
+		  .fb({tmpFB_0__SCLK_EEPROM_net[0:0]}),
+		  .io({tmpIO_0__SCLK_EEPROM_net[0:0]}),
+		  .siovref(tmpSIOVREF__SCLK_EEPROM_net),
+		  .interrupt({tmpINTERRUPT_0__SCLK_EEPROM_net[0:0]}),
+		  .annotation({Net_28401}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__SCLK_EEPROM_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	wire [0:0] tmpOE__CS_EEPROM_net;
+	wire [0:0] tmpFB_0__CS_EEPROM_net;
+	wire [0:0] tmpIO_0__CS_EEPROM_net;
+	wire [0:0] tmpINTERRUPT_0__CS_EEPROM_net;
+	electrical [0:0] tmpSIOVREF__CS_EEPROM_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("4614d3f7-1f0c-4a1e-be6f-3f3ec4d3b0fe"),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b1),
+		  .input_clk_en(0),
+		  .input_sync(1'b1),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b1),
+		  .vtrip(2'b10),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		CS_EEPROM
+		 (.oe(tmpOE__CS_EEPROM_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__CS_EEPROM_net[0:0]}),
+		  .io({tmpIO_0__CS_EEPROM_net[0:0]}),
+		  .siovref(tmpSIOVREF__CS_EEPROM_net),
+		  .interrupt({tmpINTERRUPT_0__CS_EEPROM_net[0:0]}),
+		  .annotation({Net_28410}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__CS_EEPROM_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	wire [0:0] tmpOE__MISO_EEPROM_net;
+	wire [0:0] tmpIO_0__MISO_EEPROM_net;
+	wire [0:0] tmpINTERRUPT_0__MISO_EEPROM_net;
+	electrical [0:0] tmpSIOVREF__MISO_EEPROM_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("d2e1f642-0f63-4c1a-9e15-f0da124a6023"),
+		  .drive_mode(3'b001),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_clk_en(0),
+		  .input_sync(1'b0),
+		  .input_sync_mode(1'b0),
+		  .intr_mode(2'b00),
+		  .invert_in_clock(0),
+		  .invert_in_clock_en(0),
+		  .invert_in_reset(0),
+		  .invert_out_clock(0),
+		  .invert_out_clock_en(0),
+		  .invert_out_reset(0),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .oe_reset(0),
+		  .oe_sync(1'b0),
+		  .output_clk_en(0),
+		  .output_clock_mode(1'b0),
+		  .output_conn(1'b0),
+		  .output_mode(1'b0),
+		  .output_reset(0),
+		  .output_sync(1'b0),
+		  .pa_in_clock(-1),
+		  .pa_in_clock_en(-1),
+		  .pa_in_reset(-1),
+		  .pa_out_clock(-1),
+		  .pa_out_clock_en(-1),
+		  .pa_out_reset(-1),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b1),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .sio_hifreq(""),
+		  .sio_vohsel(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .use_annotation(1'b1),
+		  .vtrip(2'b00),
+		  .width(1),
+		  .ovt_hyst_trim(1'b0),
+		  .ovt_needed(1'b0),
+		  .ovt_slew_control(2'b00),
+		  .input_buffer_sel(2'b00))
+		MISO_EEPROM
+		 (.oe(tmpOE__MISO_EEPROM_net),
+		  .y({1'b0}),
+		  .fb({Net_28406}),
+		  .io({tmpIO_0__MISO_EEPROM_net[0:0]}),
+		  .siovref(tmpSIOVREF__MISO_EEPROM_net),
+		  .interrupt({tmpINTERRUPT_0__MISO_EEPROM_net[0:0]}),
+		  .annotation({Net_28405}),
+		  .in_clock({1'b0}),
+		  .in_clock_en({1'b1}),
+		  .in_reset({1'b0}),
+		  .out_clock({1'b0}),
+		  .out_clock_en({1'b1}),
+		  .out_reset({1'b0}));
+
+	assign tmpOE__MISO_EEPROM_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 
