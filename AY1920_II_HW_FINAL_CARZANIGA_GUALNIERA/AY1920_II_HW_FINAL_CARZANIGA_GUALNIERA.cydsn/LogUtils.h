@@ -17,9 +17,7 @@
     #include "project.h"
     
     /* Useful constants definition. */
-    #define LOG_MESSAGE_ID_BYTE     1
-    #define LOG_MESSAGE_REG_BYTE    1
-    #define LOG_MESSAGE_TIME_BYTE   2
+    #define LOG_MESSAGE_HEADER_BYTE  4
     #define LOG_MESSAGE_DATA_BYTE   60
     #define LOG_MESSAGE_TOT_BYTE    64
     
@@ -28,6 +26,7 @@
         uint8_t logID;
         uint8_t intReg;
         uint16_t timestamp;
+        uint8_t dataSize;
         uint8_t data[LOG_MESSAGE_DATA_BYTE];
     } log_t;
     

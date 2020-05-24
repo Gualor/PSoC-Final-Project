@@ -224,19 +224,22 @@ void EEPROM_incrementLogCounter()
 {
     // Read number of already written pages
     uint16_t reg_count = EEPROM_retrieveLogPages();
-    reg_count++;
     
-    // Divide into two 8-bit registers
-    uint8_t reg_count_low = reg_count & 0x00FF;
-    uint8_t reg_count_high = (reg_count >> 8) & 0x00FF;
+    // Avoid variable overflow
+    if (reg_count < sizeof(uint16_t))
+    {
+        // Increment counter
+        reg_count++;
     
-    // Overwrite registers
-    EEPROM_writeByte(CTRL_REG_LOG_PAGES_LOW, reg_count_low);
-    EEPROM_waitForWriteComplete();
-    EEPROM_writeByte(CTRL_REG_LOG_PAGES_HIGH, reg_count_high);
-    EEPROM_waitForWriteComplete();
-    
-    // TODO: CHECK OVERFLOW
+        // Store data in buffer
+        uint8_t buffer[2];
+        buffer[0] = reg_count & 0x00FF;
+        buffer[1] = (reg_count >> 8) & 0x00FF;
+        
+        // Overwrite registers
+        EEPROM_writePage(CTRL_REG_LOG_PAGES_LOW, buffer, 2);
+        EEPROM_waitForWriteComplete();
+    }   
 }
 
 /*
@@ -255,10 +258,39 @@ void EEPROM_storeLogData(uint8_t* dataPtr, uint8_t nBytes)
         // Compute first available address 
         uint16_t page_addr = LOG_DATA_BASE_ADDR + page_count * SPI_EEPROM_PAGE_SIZE;
         
-        // Write EEPROM page
-        EEPROM_writePage(page_addr, dataPtr, nBytes);
-        EEPROM_waitForWriteComplete();
+        // Check if address is valid
+        if (page_addr > SPI_EEPROM_SIZE_BYTE)
+        {
+            // Write EEPROM page
+            EEPROM_writePage(page_addr, dataPtr, nBytes);
+            EEPROM_waitForWriteComplete();
+        }
     }
+}
+
+/*
+ * Store log type messages of 64 bytes inside first
+ * unoccupied memory page.
+ */
+void EEPROM_storeLogMessage(log_t message)
+{
+    uint8_t buffer[64];
+    
+    // Updack struct and place data inside buffer
+    buffer[0] = message.logID;
+    buffer[1] = message.intReg;
+    buffer[2] = (message.timestamp | 0xFF);
+    buffer[3] = ((message.timestamp >> 8) | 0xFF);
+    for (uint8_t i=0; i<message.dataSize; i++)
+    {
+        buffer[4+i] = message.data[i];
+    }
+    
+    // Store buffer in memory (size = header + payload)
+    EEPROM_storeLogData(buffer, LOG_MESSAGE_HEADER_BYTE + message.dataSize);
+    
+    // Increment number of written pages
+    EEPROM_incrementLogCounter();
 }
 
 /* [] END OF FILE */

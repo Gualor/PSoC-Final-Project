@@ -14,7 +14,7 @@
     #define __25LC256_H__
 
     #include "SPI_Interface.h"
-    #include "stdbool.h"
+    #include "LogUtils.h"
 
     #define SLAVE_CS_Write CS_1_Write
     #define SPIM           SPIM_1
@@ -142,6 +142,8 @@
     void EEPROM_incrementLogCounter(void);
 
     void EEPROM_storeLogBuffer(uint8_t* dataPtr, uint8_t nBytes);
+    
+    void EEPROM_storeLogMessage(log_t message);
     //////////////////////////////////////////////////////////////////////
     
 #endif

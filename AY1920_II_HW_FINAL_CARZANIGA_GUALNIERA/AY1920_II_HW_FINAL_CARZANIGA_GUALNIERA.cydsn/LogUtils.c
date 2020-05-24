@@ -55,6 +55,7 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t
     
     // Insert data payload
     LOG_insertPayload(&message, dataPtr, nBytes);
+    message.dataSize = nBytes;
     
     return message;
 }

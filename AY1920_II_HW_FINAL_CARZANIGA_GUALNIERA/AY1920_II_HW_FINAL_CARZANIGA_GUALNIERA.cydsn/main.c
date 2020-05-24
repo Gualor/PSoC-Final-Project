@@ -15,6 +15,7 @@
 #include "InterruptRoutines.h"
 #include "SPI_Interface.h"
 #include "LED_Driver.h"
+#include "LogUtils.h"
 #include "25LC256.h"
 #include "LIS3DH.h"
 #include "stdio.h"
@@ -96,6 +97,15 @@ int main(void)
             {   
                 // Read LIS3DH interrupt register
                 uint8_t int1_src_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
+                
+                // Find free memory slot inside EEPROM
+                uint16_t page_cnt_reg = EEPROM_retrieveLogPages();
+                
+                /* TODO
+                uint8_t id = get_id();
+                uint8_t data = get_data();
+                log_t logMessage = LOG_createMessage(id, data, 64);
+                */
                 
                 // Set over threshold flag
                 IMU_over_threshold_flag = 1;
