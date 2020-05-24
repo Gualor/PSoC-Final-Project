@@ -62,7 +62,7 @@ int main(void)
     button_state = STOP_MODE;
     
     // Initialize IMU data flag
-    //IMU_interrupt_flag = 0;
+    IMU_interrupt_flag = 0;
     IMU_data_ready_flag = 0;
     IMU_over_threshold_flag = 0;
     

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
   35              		.cfi_offset 14, -4
   21:Notifications.c ****     // If LED PWM is enabled
   22:Notifications.c ****     if (PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE)
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 2
 
 
   36              		.loc 1 22 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
   39:Notifications.c ****     }
   40:Notifications.c ****     
   41:Notifications.c ****     // Change PWM compare value
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 3
 
 
   42:Notifications.c ****     PWM_NOTIFY_WriteCompare(255);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  111 0016 08BD     		pop	{r3, pc}
  112              		.cfi_endproc
  113              	.LFE65:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 4
 
 
  114              		.size	LED_Notify_Config, .-LED_Notify_Config
@@ -199,14 +199,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  129 000c 4F000000 		.4byte	.LASF24
  130 0010 0C       		.byte	0xc
  131 0011 21000000 		.4byte	.LASF25
- 132 0015 5B010000 		.4byte	.LASF26
+ 132 0015 42010000 		.4byte	.LASF26
  133 0019 00000000 		.4byte	.Ldebug_ranges0+0
  134 001d 00000000 		.4byte	0
  135 0021 00000000 		.4byte	.Ldebug_line0
  136 0025 02       		.uleb128 0x2
  137 0026 01       		.byte	0x1
  138 0027 06       		.byte	0x6
- 139 0028 06020000 		.4byte	.LASF0
+ 139 0028 25020000 		.4byte	.LASF0
  140 002c 02       		.uleb128 0x2
  141 002d 01       		.byte	0x1
  142 002e 08       		.byte	0x8
@@ -214,20 +214,20 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  144 0033 02       		.uleb128 0x2
  145 0034 02       		.byte	0x2
  146 0035 05       		.byte	0x5
- 147 0036 2E020000 		.4byte	.LASF2
+ 147 0036 4D020000 		.4byte	.LASF2
  148 003a 02       		.uleb128 0x2
  149 003b 02       		.byte	0x2
  150 003c 07       		.byte	0x7
  151 003d 0E000000 		.4byte	.LASF3
  152 0041 03       		.uleb128 0x3
- 153 0042 1E020000 		.4byte	.LASF9
+ 153 0042 3D020000 		.4byte	.LASF9
  154 0046 02       		.byte	0x2
  155 0047 3F       		.byte	0x3f
  156 0048 4C000000 		.4byte	0x4c
  157 004c 02       		.uleb128 0x2
  158 004d 04       		.byte	0x4
  159 004e 05       		.byte	0x5
- 160 004f 42010000 		.4byte	.LASF4
+ 160 004f DE010000 		.4byte	.LASF4
  161 0053 02       		.uleb128 0x2
  162 0054 04       		.byte	0x4
  163 0055 07       		.byte	0x7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  168 005d 00000000 		.4byte	.LASF6
  169 0061 02       		.uleb128 0x2
  170 0062 08       		.byte	0x8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 5
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 5
 
 
  171 0063 07       		.byte	0x7
@@ -252,7 +252,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  179 0071 07       		.byte	0x7
  180 0072 31000000 		.4byte	.LASF8
  181 0076 03       		.uleb128 0x3
- 182 0077 38020000 		.4byte	.LASF10
+ 182 0077 57020000 		.4byte	.LASF10
  183 007b 03       		.byte	0x3
  184 007c 2C       		.byte	0x2c
  185 007d 41000000 		.4byte	0x41
@@ -264,25 +264,25 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  191 008d 02       		.uleb128 0x2
  192 008e 04       		.byte	0x4
  193 008f 04       		.byte	0x4
- 194 0090 28020000 		.4byte	.LASF12
+ 194 0090 47020000 		.4byte	.LASF12
  195 0094 02       		.uleb128 0x2
  196 0095 08       		.byte	0x8
  197 0096 04       		.byte	0x4
- 198 0097 54010000 		.4byte	.LASF13
+ 198 0097 F0010000 		.4byte	.LASF13
  199 009b 02       		.uleb128 0x2
  200 009c 01       		.byte	0x1
  201 009d 08       		.byte	0x8
- 202 009e 52020000 		.4byte	.LASF14
+ 202 009e 71020000 		.4byte	.LASF14
  203 00a2 02       		.uleb128 0x2
  204 00a3 08       		.byte	0x8
  205 00a4 04       		.byte	0x4
- 206 00a5 12020000 		.4byte	.LASF15
+ 206 00a5 31020000 		.4byte	.LASF15
  207 00a9 02       		.uleb128 0x2
  208 00aa 04       		.byte	0x4
  209 00ab 07       		.byte	0x7
- 210 00ac 4B010000 		.4byte	.LASF16
+ 210 00ac E7010000 		.4byte	.LASF16
  211 00b0 06       		.uleb128 0x6
- 212 00b1 D8010000 		.4byte	.LASF17
+ 212 00b1 F7010000 		.4byte	.LASF17
  213 00b5 01       		.byte	0x1
  214 00b6 13       		.byte	0x13
  215 00b7 00000000 		.4byte	.LFB63
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  225 00d3 64010000 		.4byte	0x164
  226 00d7 00       		.byte	0
  227 00d8 06       		.uleb128 0x6
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 6
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 6
 
 
  228 00d9 3E000000 		.4byte	.LASF18
@@ -327,7 +327,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  251 010e 00       		.byte	0
  252 010f 00       		.byte	0
  253 0110 06       		.uleb128 0x6
- 254 0111 40020000 		.4byte	.LASF19
+ 254 0111 5F020000 		.4byte	.LASF19
  255 0115 01       		.byte	0x1
  256 0116 30       		.byte	0x30
  257 0117 00000000 		.4byte	.LFB65
@@ -353,18 +353,18 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  277 0146 00       		.byte	0
  278 0147 00       		.byte	0
  279 0148 0A       		.uleb128 0xa
- 280 0149 F9010000 		.4byte	.LASF27
+ 280 0149 18020000 		.4byte	.LASF27
  281 014d 06       		.byte	0x6
  282 014e 1207     		.2byte	0x712
  283 0150 54010000 		.4byte	0x154
  284 0154 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 7
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 7
 
 
  285 0155 76000000 		.4byte	0x76
  286 0159 0C       		.uleb128 0xc
- 287 015a 57020000 		.4byte	.LASF20
- 288 015e 57020000 		.4byte	.LASF20
+ 287 015a 76020000 		.4byte	.LASF20
+ 288 015e 76020000 		.4byte	.LASF20
  289 0162 05       		.byte	0x5
  290 0163 9D       		.byte	0x9d
  291 0164 0C       		.uleb128 0xc
@@ -373,8 +373,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  294 016d 05       		.byte	0x5
  295 016e 93       		.byte	0x93
  296 016f 0C       		.uleb128 0xc
- 297 0170 E8010000 		.4byte	.LASF22
- 298 0174 E8010000 		.4byte	.LASF22
+ 297 0170 07020000 		.4byte	.LASF22
+ 298 0174 07020000 		.4byte	.LASF22
  299 0178 05       		.byte	0x5
  300 0179 92       		.byte	0x92
  301 017a 0C       		.uleb128 0xc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  339 001e 03       		.uleb128 0x3
  340 001f 16       		.uleb128 0x16
  341 0020 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 8
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 8
 
 
  342 0021 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  396 0058 19       		.uleb128 0x19
  397 0059 01       		.uleb128 0x1
  398 005a 13       		.uleb128 0x13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 9
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 9
 
 
  399 005b 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  453 0098 2E       		.uleb128 0x2e
  454 0099 00       		.byte	0
  455 009a 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 10
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 10
 
 
  456 009b 19       		.uleb128 0x19
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  502      7420756E 
  502      7369676E 
  502      65642069 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 11
 
 
  502      6E7400
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  521              	.LASF1:
  522 0124 756E7369 		.ascii	"unsigned char\000"
  522      676E6564 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 12
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 12
 
 
  522      20636861 
@@ -668,87 +668,90 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 1
  524      4E4F5449 
  524      46595F53 
  524      746F7000 
- 525              	.LASF4:
- 526 0142 6C6F6E67 		.ascii	"long int\000"
- 526      20696E74 
- 526      00
- 527              	.LASF16:
- 528 014b 73697A65 		.ascii	"sizetype\000"
- 528      74797065 
- 528      00
- 529              	.LASF13:
- 530 0154 646F7562 		.ascii	"double\000"
- 530      6C6500
- 531              	.LASF26:
- 532 015b 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\PSoC-Final-Project\\AY192"
- 532      73657273 
- 532      5C4C6F72 
- 532      795C4465 
- 532      736B746F 
- 533 0189 305F4949 		.ascii	"0_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_II_HW_FIN"
- 533      5F48575F 
- 533      46494E41 
- 533      4C5F4341 
- 533      525A414E 
- 534 01bb 414C5F43 		.ascii	"AL_CARZANIGA_GUALNIERA.cydsn\000"
- 534      41525A41 
- 534      4E494741 
- 534      5F475541 
- 534      4C4E4945 
- 535              	.LASF17:
- 536 01d8 4C45445F 		.ascii	"LED_Notify_Stop\000"
- 536      4E6F7469 
- 536      66795F53 
- 536      746F7000 
- 537              	.LASF22:
- 538 01e8 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
- 538      4E4F5449 
- 538      46595F53 
- 538      74617274 
- 538      00
- 539              	.LASF27:
- 540 01f9 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 540      52784275 
- 540      66666572 
- 540      00
- 541              	.LASF0:
- 542 0206 7369676E 		.ascii	"signed char\000"
- 542      65642063 
- 542      68617200 
- 543              	.LASF15:
- 544 0212 6C6F6E67 		.ascii	"long double\000"
- 544      20646F75 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc1F6enM.s 			page 13
+ 525              	.LASF26:
+ 526 0142 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 526      73657273 
+ 526      5C4C6F72 
+ 526      795C4465 
+ 526      736B746F 
+ 527 0170 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 527      65735C50 
+ 527      536F432D 
+ 527      46696E61 
+ 527      6C2D5072 
+ 528 01a1 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 528      415F4755 
+ 528      414C4E49 
+ 528      4552415C 
+ 528      41593139 
+ 529 01d3 49455241 		.ascii	"IERA.cydsn\000"
+ 529      2E637964 
+ 529      736E00
+ 530              	.LASF4:
+ 531 01de 6C6F6E67 		.ascii	"long int\000"
+ 531      20696E74 
+ 531      00
+ 532              	.LASF16:
+ 533 01e7 73697A65 		.ascii	"sizetype\000"
+ 533      74797065 
+ 533      00
+ 534              	.LASF13:
+ 535 01f0 646F7562 		.ascii	"double\000"
+ 535      6C6500
+ 536              	.LASF17:
+ 537 01f7 4C45445F 		.ascii	"LED_Notify_Stop\000"
+ 537      4E6F7469 
+ 537      66795F53 
+ 537      746F7000 
+ 538              	.LASF22:
+ 539 0207 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
+ 539      4E4F5449 
+ 539      46595F53 
+ 539      74617274 
+ 539      00
+ 540              	.LASF27:
+ 541 0218 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 541      52784275 
+ 541      66666572 
+ 541      00
+ 542              	.LASF0:
+ 543 0225 7369676E 		.ascii	"signed char\000"
+ 543      65642063 
+ 543      68617200 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccKoatfO.s 			page 13
 
 
- 544      626C6500 
- 545              	.LASF9:
- 546 021e 5F5F696E 		.ascii	"__int32_t\000"
- 546      7433325F 
- 546      7400
- 547              	.LASF12:
- 548 0228 666C6F61 		.ascii	"float\000"
- 548      7400
- 549              	.LASF2:
- 550 022e 73686F72 		.ascii	"short int\000"
- 550      7420696E 
- 550      7400
- 551              	.LASF10:
- 552 0238 696E7433 		.ascii	"int32_t\000"
- 552      325F7400 
- 553              	.LASF19:
- 554 0240 4C45445F 		.ascii	"LED_Notify_Config\000"
- 554      4E6F7469 
- 554      66795F43 
- 554      6F6E6669 
- 554      6700
- 555              	.LASF14:
- 556 0252 63686172 		.ascii	"char\000"
- 556      00
- 557              	.LASF20:
- 558 0257 50574D5F 		.ascii	"PWM_NOTIFY_ReadControlRegister\000"
- 558      4E4F5449 
- 558      46595F52 
- 558      65616443 
- 558      6F6E7472 
- 559              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 544              	.LASF15:
+ 545 0231 6C6F6E67 		.ascii	"long double\000"
+ 545      20646F75 
+ 545      626C6500 
+ 546              	.LASF9:
+ 547 023d 5F5F696E 		.ascii	"__int32_t\000"
+ 547      7433325F 
+ 547      7400
+ 548              	.LASF12:
+ 549 0247 666C6F61 		.ascii	"float\000"
+ 549      7400
+ 550              	.LASF2:
+ 551 024d 73686F72 		.ascii	"short int\000"
+ 551      7420696E 
+ 551      7400
+ 552              	.LASF10:
+ 553 0257 696E7433 		.ascii	"int32_t\000"
+ 553      325F7400 
+ 554              	.LASF19:
+ 555 025f 4C45445F 		.ascii	"LED_Notify_Config\000"
+ 555      4E6F7469 
+ 555      66795F43 
+ 555      6F6E6669 
+ 555      6700
+ 556              	.LASF14:
+ 557 0271 63686172 		.ascii	"char\000"
+ 557      00
+ 558              	.LASF20:
+ 559 0276 50574D5F 		.ascii	"PWM_NOTIFY_ReadControlRegister\000"
+ 559      4E4F5449 
+ 559      46595F52 
+ 559      65616443 
+ 559      6F6E7472 
+ 560              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

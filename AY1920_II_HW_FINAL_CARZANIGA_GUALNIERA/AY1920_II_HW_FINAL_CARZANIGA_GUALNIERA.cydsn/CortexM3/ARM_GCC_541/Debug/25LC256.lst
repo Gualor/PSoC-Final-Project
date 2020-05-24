@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
   20:25LC256.c     **** 	return SPI_EEPROM_Interface_ReadByte(SPI_EEPROM_RDSR);
   36              		.loc 1 20 0
   37 0002 0520     		movs	r0, #5
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 2
 
 
   38 0004 FFF7FEFF 		bl	SPI_EEPROM_Interface_ReadByte
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              	.LVL2:
   82 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 3
 
 
   83              		.cfi_def_cfa_offset 4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  123              		@ frame_needed = 0, uses_anonymous_args = 0
  124              	.LVL5:
  125 0000 30B5     		push	{r4, r5, lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 4
 
 
  126              		.cfi_def_cfa_offset 12
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
   58:25LC256.c     **** 
   59:25LC256.c     **** void EEPROM_readPage(uint16_t addr, uint8_t* dataRX, uint8_t nBytes) 
   60:25LC256.c     **** {
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 5
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 5
 
 
  169              		.loc 1 60 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  214              		@ args = 0, pretend = 0, frame = 8
  215              		@ frame_needed = 1, uses_anonymous_args = 0
  216              	.LVL13:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 6
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 6
 
 
  217 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  257 003a 0DF10300 		add	r0, sp, #3
  258 003e FFF7FEFF 		bl	memcpy
  259              	.LVL18:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 7
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 7
 
 
   84:25LC256.c     **** 	
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  303 000c 08BD     		pop	{r3, pc}
  304              		.cfi_endproc
  305              	.LFE69:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 8
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 8
 
 
  306              		.size	EEPROM_waitForWriteComplete, .-EEPROM_waitForWriteComplete
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  343              	.L18:
  112:25LC256.c     ****     }
  113:25LC256.c     ****     
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 9
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 9
 
 
  114:25LC256.c     ****     // Overwrite register content
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  380              	.LFE71:
  381              		.size	EEPROM_retrieveStartStopState, .-EEPROM_retrieveStartStopState
  382 000e 00BF     		.section	.text.EEPROM_saveConfigFlag,"ax",%progbits
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 10
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 10
 
 
  383              		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  150:25LC256.c     ****     
  151:25LC256.c     ****     // Overwrite register content
  152:25LC256.c     ****     EEPROM_writeByte(CTRL_REG_PSOC_STATUS, ctrl_reg);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 11
 
 
  419              		.loc 1 152 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  457 000e 00BF     		.section	.text.EEPROM_saveSendFlag,"ax",%progbits
  458              		.align	2
  459              		.global	EEPROM_saveSendFlag
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 12
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 12
 
 
  460              		.thumb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  189:25LC256.c     ****     EEPROM_writeByte(CTRL_REG_PSOC_STATUS, ctrl_reg);
  494              		.loc 1 189 0
  495 001a 0020     		movs	r0, #0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 13
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 13
 
 
  496 001c FFF7FEFF 		bl	EEPROM_writeByte
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  534              		.global	EEPROM_retrieveLogPages
  535              		.thumb
  536              		.thumb_func
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 14
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 14
 
 
  537              		.type	EEPROM_retrieveLogPages, %function
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  222:25LC256.c     ****  */
  223:25LC256.c     **** void EEPROM_incrementLogCounter()
  224:25LC256.c     **** {
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 15
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 15
 
 
  575              		.loc 1 224 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  616 0026 00BF     		.section	.text.EEPROM_storeLogData,"ax",%progbits
  617              		.align	2
  618              		.global	EEPROM_storeLogData
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 16
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 16
 
 
  619              		.thumb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  259:25LC256.c     ****         EEPROM_writePage(page_addr, dataPtr, nBytes);
  651              		.loc 1 259 0
  652 0014 2246     		mov	r2, r4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 17
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 17
 
 
  653 0016 2946     		mov	r1, r5
@@ -998,15 +998,15 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  686 000b 01       		.uleb128 0x1
  687 000c 18010000 		.4byte	.LASF58
  688 0010 0C       		.byte	0xc
- 689 0011 E3010000 		.4byte	.LASF59
- 690 0015 08030000 		.4byte	.LASF60
+ 689 0011 7F020000 		.4byte	.LASF59
+ 690 0015 A6010000 		.4byte	.LASF60
  691 0019 00000000 		.4byte	.Ldebug_ranges0+0
  692 001d 00000000 		.4byte	0
  693 0021 00000000 		.4byte	.Ldebug_line0
  694 0025 02       		.uleb128 0x2
  695 0026 01       		.byte	0x1
  696 0027 06       		.byte	0x6
- 697 0028 D0020000 		.4byte	.LASF0
+ 697 0028 6C030000 		.4byte	.LASF0
  698 002c 03       		.uleb128 0x3
  699 002d 39000000 		.4byte	.LASF3
  700 0031 02       		.byte	0x2
@@ -1018,13 +1018,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  706 003a 0A010000 		.4byte	.LASF1
  707 003e 02       		.uleb128 0x2
  708 003f 02       		.byte	0x2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 18
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 18
 
 
  709 0040 05       		.byte	0x5
- 710 0041 9E030000 		.4byte	.LASF2
+ 710 0041 BD030000 		.4byte	.LASF2
  711 0045 03       		.uleb128 0x3
- 712 0046 14020000 		.4byte	.LASF4
+ 712 0046 B0020000 		.4byte	.LASF4
  713 004a 02       		.byte	0x2
  714 004b 2B       		.byte	0x2b
  715 004c 50000000 		.4byte	0x50
@@ -1040,11 +1040,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  725 0062 02       		.uleb128 0x2
  726 0063 04       		.byte	0x4
  727 0064 05       		.byte	0x5
- 728 0065 C9030000 		.4byte	.LASF7
+ 728 0065 E8030000 		.4byte	.LASF7
  729 0069 02       		.uleb128 0x2
  730 006a 04       		.byte	0x4
  731 006b 07       		.byte	0x7
- 732 006c AE010000 		.4byte	.LASF8
+ 732 006c 4A020000 		.4byte	.LASF8
  733 0070 02       		.uleb128 0x2
  734 0071 08       		.byte	0x8
  735 0072 05       		.byte	0x5
@@ -1060,14 +1060,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  745 0085 02       		.uleb128 0x2
  746 0086 04       		.byte	0x4
  747 0087 07       		.byte	0x7
- 748 0088 8A020000 		.4byte	.LASF11
+ 748 0088 26030000 		.4byte	.LASF11
  749 008c 03       		.uleb128 0x3
- 750 008d B0020000 		.4byte	.LASF12
+ 750 008d 4C030000 		.4byte	.LASF12
  751 0091 03       		.byte	0x3
  752 0092 18       		.byte	0x18
  753 0093 2C000000 		.4byte	0x2c
  754 0097 03       		.uleb128 0x3
- 755 0098 B9030000 		.4byte	.LASF13
+ 755 0098 D8030000 		.4byte	.LASF13
  756 009c 03       		.byte	0x3
  757 009d 24       		.byte	0x24
  758 009e 45000000 		.4byte	0x45
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  763 00a9 57000000 		.4byte	0x57
  764 00ad 02       		.uleb128 0x2
  765 00ae 04       		.byte	0x4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 19
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 19
 
 
  766 00af 04       		.byte	0x4
@@ -1086,21 +1086,21 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  768 00b4 02       		.uleb128 0x2
  769 00b5 08       		.byte	0x8
  770 00b6 04       		.byte	0x4
- 771 00b7 1F020000 		.4byte	.LASF16
+ 771 00b7 BB020000 		.4byte	.LASF16
  772 00bb 02       		.uleb128 0x2
  773 00bc 01       		.byte	0x1
  774 00bd 08       		.byte	0x8
- 775 00be 8C030000 		.4byte	.LASF17
+ 775 00be AB030000 		.4byte	.LASF17
  776 00c2 02       		.uleb128 0x2
  777 00c3 08       		.byte	0x8
  778 00c4 04       		.byte	0x4
- 779 00c5 E8030000 		.4byte	.LASF18
+ 779 00c5 07040000 		.4byte	.LASF18
  780 00c9 02       		.uleb128 0x2
  781 00ca 04       		.byte	0x4
  782 00cb 07       		.byte	0x7
- 783 00cc FF020000 		.4byte	.LASF19
+ 783 00cc 9B030000 		.4byte	.LASF19
  784 00d0 05       		.uleb128 0x5
- 785 00d1 78020000 		.4byte	.LASF20
+ 785 00d1 14030000 		.4byte	.LASF20
  786 00d5 01       		.byte	0x1
  787 00d6 12       		.byte	0x12
  788 00d7 8C000000 		.4byte	0x8c
@@ -1120,7 +1120,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  802 00f7 00       		.byte	0
  803 00f8 00       		.byte	0
  804 00f9 08       		.uleb128 0x8
- 805 00fa 4F040000 		.4byte	.LASF24
+ 805 00fa 6E040000 		.4byte	.LASF24
  806 00fe 01       		.byte	0x1
  807 00ff 17       		.byte	0x17
  808 0100 00000000 		.4byte	.LFB64
@@ -1138,11 +1138,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  820 011b 36       		.byte	0x36
  821 011c 00       		.byte	0
  822 011d 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 20
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 20
 
 
  823 011e 05       		.uleb128 0x5
- 824 011f D3010000 		.4byte	.LASF21
+ 824 011f 6F020000 		.4byte	.LASF21
  825 0123 01       		.byte	0x1
  826 0124 1F       		.byte	0x1f
  827 0125 8C000000 		.4byte	0x8c
@@ -1158,7 +1158,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  837 013e 97000000 		.4byte	0x97
  838 0142 00000000 		.4byte	.LLST0
  839 0146 0A       		.uleb128 0xa
- 840 0147 85030000 		.4byte	.LASF22
+ 840 0147 A4030000 		.4byte	.LASF22
  841 014b 01       		.byte	0x1
  842 014c 22       		.byte	0x22
  843 014d 83010000 		.4byte	0x183
@@ -1166,7 +1166,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  845 0152 91       		.byte	0x91
  846 0153 74       		.sleb128 -12
  847 0154 0A       		.uleb128 0xa
- 848 0155 DC020000 		.4byte	.LASF23
+ 848 0155 78030000 		.4byte	.LASF23
  849 0159 01       		.byte	0x1
  850 015a 25       		.byte	0x25
  851 015b 8C000000 		.4byte	0x8c
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  877 017e 53       		.byte	0x53
  878 017f 01       		.uleb128 0x1
  879 0180 31       		.byte	0x31
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 21
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 21
 
 
  880 0181 00       		.byte	0
@@ -1226,13 +1226,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  902 01af 97000000 		.4byte	0x97
  903 01b3 21000000 		.4byte	.LLST1
  904 01b7 09       		.uleb128 0x9
- 905 01b8 ED010000 		.4byte	.LASF27
+ 905 01b8 89020000 		.4byte	.LASF27
  906 01bc 01       		.byte	0x1
  907 01bd 2D       		.byte	0x2d
  908 01be 8C000000 		.4byte	0x8c
  909 01c2 42000000 		.4byte	.LLST2
  910 01c6 0A       		.uleb128 0xa
- 911 01c7 85030000 		.4byte	.LASF22
+ 911 01c7 A4030000 		.4byte	.LASF22
  912 01cb 01       		.byte	0x1
  913 01cc 33       		.byte	0x33
  914 01cd 0C020000 		.4byte	0x20c
@@ -1240,7 +1240,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  916 01d2 91       		.byte	0x91
  917 01d3 6C       		.sleb128 -20
  918 01d4 0A       		.uleb128 0xa
- 919 01d5 C0010000 		.4byte	.LASF28
+ 919 01d5 5C020000 		.4byte	.LASF28
  920 01d9 01       		.byte	0x1
  921 01da 35       		.byte	0x35
  922 01db 8C000000 		.4byte	0x8c
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  934 01f6 50       		.byte	0x50
  935 01f7 02       		.uleb128 0x2
  936 01f8 91       		.byte	0x91
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 22
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 22
 
 
  937 01f9 6C       		.sleb128 -20
@@ -1288,7 +1288,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  961 021a 03       		.byte	0x3
  962 021b 00       		.byte	0
  963 021c 08       		.uleb128 0x8
- 964 021d 40020000 		.4byte	.LASF29
+ 964 021d DC020000 		.4byte	.LASF29
  965 0221 01       		.byte	0x1
  966 0222 3B       		.byte	0x3b
  967 0223 00000000 		.4byte	.LFB67
@@ -1303,7 +1303,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  976 0238 97000000 		.4byte	0x97
  977 023c 63000000 		.4byte	.LLST3
  978 0240 09       		.uleb128 0x9
- 979 0241 DC020000 		.4byte	.LASF23
+ 979 0241 78030000 		.4byte	.LASF23
  980 0245 01       		.byte	0x1
  981 0246 3B       		.byte	0x3b
  982 0247 8A020000 		.4byte	0x28a
@@ -1315,10 +1315,10 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  988 0256 8C000000 		.4byte	0x8c
  989 025a B0000000 		.4byte	.LLST5
  990 025e 0A       		.uleb128 0xa
- 991 025f 85030000 		.4byte	.LASF22
+ 991 025f A4030000 		.4byte	.LASF22
  992 0263 01       		.byte	0x1
  993 0264 3E       		.byte	0x3e
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 23
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 23
 
 
  994 0265 83010000 		.4byte	0x183
@@ -1353,7 +1353,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1023 028b 04       		.byte	0x4
  1024 028c 8C000000 		.4byte	0x8c
  1025 0290 08       		.uleb128 0x8
- 1026 0291 A8030000 		.4byte	.LASF31
+ 1026 0291 C7030000 		.4byte	.LASF31
  1027 0295 01       		.byte	0x1
  1028 0296 44       		.byte	0x44
  1029 0297 00000000 		.4byte	.LFB68
@@ -1378,18 +1378,18 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1048 02c8 01       		.byte	0x1
  1049 02c9 44       		.byte	0x44
  1050 02ca 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 24
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 24
 
 
  1051 02ce 10010000 		.4byte	.LLST8
  1052 02d2 0F       		.uleb128 0xf
- 1053 02d3 85030000 		.4byte	.LASF22
+ 1053 02d3 A4030000 		.4byte	.LASF22
  1054 02d7 01       		.byte	0x1
  1055 02d8 4E       		.byte	0x4e
  1056 02d9 4D030000 		.4byte	0x34d
  1057 02dd 31010000 		.4byte	.LLST9
  1058 02e1 0A       		.uleb128 0xa
- 1059 02e2 C0010000 		.4byte	.LASF28
+ 1059 02e2 5C020000 		.4byte	.LASF28
  1060 02e6 01       		.byte	0x1
  1061 02e7 56       		.byte	0x56
  1062 02e8 8C000000 		.4byte	0x8c
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1105 0334 07       		.uleb128 0x7
  1106 0335 01       		.uleb128 0x1
  1107 0336 50       		.byte	0x50
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 25
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 25
 
 
  1108 0337 02       		.uleb128 0x2
@@ -1478,7 +1478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1142 0362 02       		.uleb128 0x2
  1143 0363 00       		.byte	0
  1144 0364 08       		.uleb128 0x8
- 1145 0365 E3020000 		.4byte	.LASF33
+ 1145 0365 7F030000 		.4byte	.LASF33
  1146 0369 01       		.byte	0x1
  1147 036a 5B       		.byte	0x5b
  1148 036b 00000000 		.4byte	.LFB69
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1162 038e 26000000 		.4byte	.LFE70-.LFB70
  1163 0392 01       		.uleb128 0x1
  1164 0393 9C       		.byte	0x9c
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 26
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 26
 
 
  1165 0394 E6030000 		.4byte	0x3e6
@@ -1539,7 +1539,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1200 03e1 64030000 		.4byte	0x364
  1201 03e5 00       		.byte	0
  1202 03e6 05       		.uleb128 0x5
- 1203 03e7 5A020000 		.4byte	.LASF37
+ 1203 03e7 F6020000 		.4byte	.LASF37
  1204 03eb 01       		.byte	0x1
  1205 03ec 7A       		.byte	0x7a
  1206 03ed 8C000000 		.4byte	0x8c
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1219 040f 08000000 		.4byte	.LVL30
  1220 0413 1E010000 		.4byte	0x11e
  1221 0417 07       		.uleb128 0x7
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 27
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 27
 
 
  1222 0418 01       		.uleb128 0x1
@@ -1568,7 +1568,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1226 041c 00       		.byte	0
  1227 041d 00       		.byte	0
  1228 041e 08       		.uleb128 0x8
- 1229 041f D2030000 		.4byte	.LASF38
+ 1229 041f F1030000 		.4byte	.LASF38
  1230 0423 01       		.byte	0x1
  1231 0424 88       		.byte	0x88
  1232 0425 00000000 		.4byte	.LFB72
@@ -1577,7 +1577,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1235 042e 9C       		.byte	0x9c
  1236 042f 81040000 		.4byte	0x481
  1237 0433 09       		.uleb128 0x9
- 1238 0434 97020000 		.4byte	.LASF39
+ 1238 0434 33030000 		.4byte	.LASF39
  1239 0438 01       		.byte	0x1
  1240 0439 88       		.byte	0x88
  1241 043a 8C000000 		.4byte	0x8c
@@ -1613,12 +1613,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1271 047c 64030000 		.4byte	0x364
  1272 0480 00       		.byte	0
  1273 0481 05       		.uleb128 0x5
- 1274 0482 26020000 		.4byte	.LASF40
+ 1274 0482 C2020000 		.4byte	.LASF40
  1275 0486 01       		.byte	0x1
  1276 0487 9F       		.byte	0x9f
  1277 0488 8C000000 		.4byte	0x8c
  1278 048c 00000000 		.4byte	.LFB73
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 28
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 28
 
 
  1279 0490 0E000000 		.4byte	.LFE73-.LFB73
@@ -1651,7 +1651,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1306 04c9 9C       		.byte	0x9c
  1307 04ca 1C050000 		.4byte	0x51c
  1308 04ce 09       		.uleb128 0x9
- 1309 04cf 97020000 		.4byte	.LASF39
+ 1309 04cf 33030000 		.4byte	.LASF39
  1310 04d3 01       		.byte	0x1
  1311 04d4 AD       		.byte	0xad
  1312 04d5 8C000000 		.4byte	0x8c
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1333 0508 12050000 		.4byte	0x512
  1334 050c 07       		.uleb128 0x7
  1335 050d 01       		.uleb128 0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 29
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 29
 
 
  1336 050e 50       		.byte	0x50
@@ -1690,7 +1690,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1342 0517 64030000 		.4byte	0x364
  1343 051b 00       		.byte	0
  1344 051c 05       		.uleb128 0x5
- 1345 051d B8020000 		.4byte	.LASF42
+ 1345 051d 54030000 		.4byte	.LASF42
  1346 0521 01       		.byte	0x1
  1347 0522 C4       		.byte	0xc4
  1348 0523 8C000000 		.4byte	0x8c
@@ -1716,7 +1716,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1368 0552 00       		.byte	0
  1369 0553 00       		.byte	0
  1370 0554 05       		.uleb128 0x5
- 1371 0555 F4030000 		.4byte	.LASF43
+ 1371 0555 13040000 		.4byte	.LASF43
  1372 0559 01       		.byte	0x1
  1373 055a D2       		.byte	0xd2
  1374 055b 97000000 		.4byte	0x97
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1390 0589 07       		.uleb128 0x7
  1391 058a 01       		.uleb128 0x1
  1392 058b 50       		.byte	0x50
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 30
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 30
 
 
  1393 058c 01       		.uleb128 0x1
@@ -1755,7 +1755,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1404 059d 00       		.byte	0
  1405 059e 00       		.byte	0
  1406 059f 08       		.uleb128 0x8
- 1407 05a0 16040000 		.4byte	.LASF45
+ 1407 05a0 35040000 		.4byte	.LASF45
  1408 05a4 01       		.byte	0x1
  1409 05a5 DF       		.byte	0xdf
  1410 05a6 00000000 		.4byte	.LFB77
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1447 05fb 0D       		.uleb128 0xd
  1448 05fc 18000000 		.4byte	.LVL63
  1449 0600 64030000 		.4byte	0x364
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 31
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 31
 
 
  1450 0604 10       		.uleb128 0x10
@@ -1822,7 +1822,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1468 0622 64030000 		.4byte	0x364
  1469 0626 00       		.byte	0
  1470 0627 08       		.uleb128 0x8
- 1471 0628 9C020000 		.4byte	.LASF48
+ 1471 0628 38030000 		.4byte	.LASF48
  1472 062c 01       		.byte	0x1
  1473 062d F7       		.byte	0xf7
  1474 062e 00000000 		.4byte	.LFB78
@@ -1831,7 +1831,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1477 0637 9C       		.byte	0x9c
  1478 0638 B0060000 		.4byte	0x6b0
  1479 063c 09       		.uleb128 0x9
- 1480 063d A6010000 		.4byte	.LASF49
+ 1480 063d 42020000 		.4byte	.LASF49
  1481 0641 01       		.byte	0x1
  1482 0642 F7       		.byte	0xf7
  1483 0643 8A020000 		.4byte	0x28a
@@ -1852,13 +1852,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1498 066a 97000000 		.4byte	0x97
  1499 066e 51030000 		.4byte	.LLST24
  1500 0672 13       		.uleb128 0x13
- 1501 0673 0C040000 		.4byte	.LASF51
+ 1501 0673 2B040000 		.4byte	.LASF51
  1502 0677 01       		.byte	0x1
  1503 0678 0001     		.2byte	0x100
  1504 067a 97000000 		.4byte	0x97
  1505 067e 64030000 		.4byte	.LLST25
  1506 0682 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 32
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 32
 
 
  1507 0683 0E000000 		.4byte	.LVL67
@@ -1886,14 +1886,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1529 06ae 00       		.byte	0
  1530 06af 00       		.byte	0
  1531 06b0 14       		.uleb128 0x14
- 1532 06b1 91030000 		.4byte	.LASF52
+ 1532 06b1 B0030000 		.4byte	.LASF52
  1533 06b5 04       		.byte	0x4
  1534 06b6 1207     		.2byte	0x712
  1535 06b8 BC060000 		.4byte	0x6bc
  1536 06bc 15       		.uleb128 0x15
  1537 06bd A2000000 		.4byte	0xa2
  1538 06c1 16       		.uleb128 0x16
- 1539 06c2 C5010000 		.4byte	.LASF53
+ 1539 06c2 61020000 		.4byte	.LASF53
  1540 06c6 01       		.byte	0x1
  1541 06c7 0E       		.byte	0xe
  1542 06c8 8C000000 		.4byte	0x8c
@@ -1901,8 +1901,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1544 06cd 03       		.byte	0x3
  1545 06ce 00000000 		.4byte	eeprom_Status
  1546 06d2 17       		.uleb128 0x17
- 1547 06d3 F6010000 		.4byte	.LASF54
- 1548 06d7 F6010000 		.4byte	.LASF54
+ 1547 06d3 92020000 		.4byte	.LASF54
+ 1548 06d7 92020000 		.4byte	.LASF54
  1549 06db 05       		.byte	0x5
  1550 06dc 87       		.byte	0x87
  1551 06dd 17       		.uleb128 0x17
@@ -1911,21 +1911,21 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1554 06e6 05       		.byte	0x5
  1555 06e7 77       		.byte	0x77
  1556 06e8 17       		.uleb128 0x17
- 1557 06e9 31040000 		.4byte	.LASF56
- 1558 06ed 31040000 		.4byte	.LASF56
+ 1557 06e9 50040000 		.4byte	.LASF56
+ 1558 06ed 50040000 		.4byte	.LASF56
  1559 06f1 05       		.byte	0x5
  1560 06f2 A3       		.byte	0xa3
  1561 06f3 17       		.uleb128 0x17
- 1562 06f4 50020000 		.4byte	.LASF57
- 1563 06f8 50020000 		.4byte	.LASF57
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 33
+ 1562 06f4 EC020000 		.4byte	.LASF57
+ 1563 06f8 EC020000 		.4byte	.LASF57
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 33
 
 
  1564 06fc 06       		.byte	0x6
  1565 06fd 77       		.byte	0x77
  1566 06fe 18       		.uleb128 0x18
- 1567 06ff C2030000 		.4byte	.LASF61
- 1568 0703 C2030000 		.4byte	.LASF61
+ 1567 06ff E1030000 		.4byte	.LASF61
+ 1568 0703 E1030000 		.4byte	.LASF61
  1569 0707 00       		.byte	0
  1570              		.section	.debug_abbrev,"",%progbits
  1571              	.Ldebug_abbrev0:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1618 002e 0B       		.uleb128 0xb
  1619 002f 0B       		.uleb128 0xb
  1620 0030 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 34
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 34
 
 
  1621 0031 0B       		.uleb128 0xb
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1675 006d 19       		.uleb128 0x19
  1676 006e 03       		.uleb128 0x3
  1677 006f 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 35
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 35
 
 
  1678 0070 3A       		.uleb128 0x3a
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1732 00a7 13       		.uleb128 0x13
  1733 00a8 00       		.byte	0
  1734 00a9 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 36
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 36
 
 
  1735 00aa 0C       		.uleb128 0xc
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1789 00e4 21       		.uleb128 0x21
  1790 00e5 00       		.byte	0
  1791 00e6 49       		.uleb128 0x49
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 37
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 37
 
 
  1792 00e7 13       		.uleb128 0x13
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1846 011d 34       		.uleb128 0x34
  1847 011e 00       		.byte	0
  1848 011f 03       		.uleb128 0x3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 38
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 38
 
 
  1849 0120 0E       		.uleb128 0xe
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1903 0015 F3       		.byte	0xf3
  1904 0016 01       		.uleb128 0x1
  1905 0017 50       		.byte	0x50
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 39
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 39
 
 
  1906 0018 9F       		.byte	0x9f
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  1960 009a 1F000000 		.4byte	.LVL12-1
  1961 009e 24000000 		.4byte	.LFE67
  1962 00a2 0400     		.2byte	0x4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 40
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 40
 
 
  1963 00a4 F3       		.byte	0xf3
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2017 0126 01       		.uleb128 0x1
  2018 0127 52       		.byte	0x52
  2019 0128 9F       		.byte	0x9f
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 41
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 41
 
 
  2020 0129 00000000 		.4byte	0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2074 01a6 51       		.byte	0x51
  2075 01a7 00000000 		.4byte	0
  2076 01ab 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 42
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 42
 
 
  2077              	.LLST12:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2131 022b 9F       		.byte	0x9f
  2132 022c 00000000 		.4byte	0
  2133 0230 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 43
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 43
 
 
  2134              	.LLST16:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2188 02b7 50       		.byte	0x50
  2189 02b8 00000000 		.4byte	0
  2190 02bc 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 44
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 44
 
 
  2191              	.LLST20:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2245 034d 00000000 		.4byte	0
  2246              	.LLST24:
  2247 0351 0E000000 		.4byte	.LVL67
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 45
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 45
 
 
  2248 0355 10000000 		.4byte	.LVL68
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2302              		.section	.debug_ranges,"",%progbits
  2303              	.Ldebug_ranges0:
  2304 0000 00000000 		.4byte	.LFB63
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 46
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 46
 
 
  2305 0004 0A000000 		.4byte	.LFE63
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2346      61766553 
  2346      74617274 
  2346      53746F70 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 47
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 47
 
 
  2347              	.LASF3:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2371              	.LASF14:
  2372 00db 696E7433 		.ascii	"int32_t\000"
  2372      325F7400 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 48
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 48
 
 
  2373              	.LASF26:
@@ -2857,212 +2857,215 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 1
  2386      74696F6E 
  2386      2D736563 
  2386      74696F6E 
- 2387              	.LASF49:
- 2388 01a6 64617461 		.ascii	"dataPtr\000"
- 2388      50747200 
- 2389              	.LASF8:
- 2390 01ae 6C6F6E67 		.ascii	"long unsigned int\000"
- 2390      20756E73 
- 2390      69676E65 
- 2390      6420696E 
- 2390      7400
- 2391              	.LASF28:
- 2392 01c0 74656D70 		.ascii	"temp\000"
- 2392      00
- 2393              	.LASF53:
- 2394 01c5 65657072 		.ascii	"eeprom_Status\000"
- 2394      6F6D5F53 
- 2394      74617475 
- 2394      7300
- 2395              	.LASF21:
- 2396 01d3 45455052 		.ascii	"EEPROM_readByte\000"
- 2396      4F4D5F72 
- 2396      65616442 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 49
+ 2387              	.LASF60:
+ 2388 01a6 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 2388      73657273 
+ 2388      5C4C6F72 
+ 2388      795C4465 
+ 2388      736B746F 
+ 2389 01d4 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 2389      65735C50 
+ 2389      536F432D 
+ 2389      46696E61 
+ 2389      6C2D5072 
+ 2390 0205 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 2390      415F4755 
+ 2390      414C4E49 
+ 2390      4552415C 
+ 2390      41593139 
+ 2391 0237 49455241 		.ascii	"IERA.cydsn\000"
+ 2391      2E637964 
+ 2391      736E00
+ 2392              	.LASF49:
+ 2393 0242 64617461 		.ascii	"dataPtr\000"
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 49
 
 
- 2396      79746500 
- 2397              	.LASF59:
- 2398 01e3 32354C43 		.ascii	"25LC256.c\000"
- 2398      3235362E 
- 2398      6300
- 2399              	.LASF27:
- 2400 01ed 64617461 		.ascii	"dataByte\000"
- 2400      42797465 
- 2400      00
- 2401              	.LASF54:
- 2402 01f6 5350495F 		.ascii	"SPI_EEPROM_Interface_ReadByte\000"
- 2402      45455052 
- 2402      4F4D5F49 
- 2402      6E746572 
- 2402      66616365 
- 2403              	.LASF4:
- 2404 0214 5F5F7569 		.ascii	"__uint16_t\000"
- 2404      6E743136 
- 2404      5F7400
- 2405              	.LASF16:
- 2406 021f 646F7562 		.ascii	"double\000"
- 2406      6C6500
- 2407              	.LASF40:
- 2408 0226 45455052 		.ascii	"EEPROM_retrieveConfigFlag\000"
- 2408      4F4D5F72 
- 2408      65747269 
- 2408      65766543 
- 2408      6F6E6669 
- 2409              	.LASF29:
- 2410 0240 45455052 		.ascii	"EEPROM_readPage\000"
- 2410      4F4D5F72 
- 2410      65616450 
- 2410      61676500 
- 2411              	.LASF57:
- 2412 0250 43794465 		.ascii	"CyDelayUs\000"
- 2412      6C617955 
- 2412      7300
- 2413              	.LASF37:
- 2414 025a 45455052 		.ascii	"EEPROM_retrieveStartStopState\000"
- 2414      4F4D5F72 
- 2414      65747269 
- 2414      65766553 
- 2414      74617274 
- 2415              	.LASF20:
- 2416 0278 45455052 		.ascii	"EEPROM_readStatus\000"
- 2416      4F4D5F72 
- 2416      65616453 
- 2416      74617475 
- 2416      7300
- 2417              	.LASF11:
- 2418 028a 756E7369 		.ascii	"unsigned int\000"
- 2418      676E6564 
- 2418      20696E74 
- 2418      00
- 2419              	.LASF39:
- 2420 0297 666C6167 		.ascii	"flag\000"
- 2420      00
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 50
+ 2393      50747200 
+ 2394              	.LASF8:
+ 2395 024a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2395      20756E73 
+ 2395      69676E65 
+ 2395      6420696E 
+ 2395      7400
+ 2396              	.LASF28:
+ 2397 025c 74656D70 		.ascii	"temp\000"
+ 2397      00
+ 2398              	.LASF53:
+ 2399 0261 65657072 		.ascii	"eeprom_Status\000"
+ 2399      6F6D5F53 
+ 2399      74617475 
+ 2399      7300
+ 2400              	.LASF21:
+ 2401 026f 45455052 		.ascii	"EEPROM_readByte\000"
+ 2401      4F4D5F72 
+ 2401      65616442 
+ 2401      79746500 
+ 2402              	.LASF59:
+ 2403 027f 32354C43 		.ascii	"25LC256.c\000"
+ 2403      3235362E 
+ 2403      6300
+ 2404              	.LASF27:
+ 2405 0289 64617461 		.ascii	"dataByte\000"
+ 2405      42797465 
+ 2405      00
+ 2406              	.LASF54:
+ 2407 0292 5350495F 		.ascii	"SPI_EEPROM_Interface_ReadByte\000"
+ 2407      45455052 
+ 2407      4F4D5F49 
+ 2407      6E746572 
+ 2407      66616365 
+ 2408              	.LASF4:
+ 2409 02b0 5F5F7569 		.ascii	"__uint16_t\000"
+ 2409      6E743136 
+ 2409      5F7400
+ 2410              	.LASF16:
+ 2411 02bb 646F7562 		.ascii	"double\000"
+ 2411      6C6500
+ 2412              	.LASF40:
+ 2413 02c2 45455052 		.ascii	"EEPROM_retrieveConfigFlag\000"
+ 2413      4F4D5F72 
+ 2413      65747269 
+ 2413      65766543 
+ 2413      6F6E6669 
+ 2414              	.LASF29:
+ 2415 02dc 45455052 		.ascii	"EEPROM_readPage\000"
+ 2415      4F4D5F72 
+ 2415      65616450 
+ 2415      61676500 
+ 2416              	.LASF57:
+ 2417 02ec 43794465 		.ascii	"CyDelayUs\000"
+ 2417      6C617955 
+ 2417      7300
+ 2418              	.LASF37:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 50
 
 
- 2421              	.LASF48:
- 2422 029c 45455052 		.ascii	"EEPROM_storeLogData\000"
- 2422      4F4D5F73 
- 2422      746F7265 
- 2422      4C6F6744 
- 2422      61746100 
- 2423              	.LASF12:
- 2424 02b0 75696E74 		.ascii	"uint8_t\000"
- 2424      385F7400 
- 2425              	.LASF42:
- 2426 02b8 45455052 		.ascii	"EEPROM_retrieveSendFlag\000"
- 2426      4F4D5F72 
- 2426      65747269 
- 2426      65766553 
- 2426      656E6446 
- 2427              	.LASF0:
- 2428 02d0 7369676E 		.ascii	"signed char\000"
- 2428      65642063 
- 2428      68617200 
- 2429              	.LASF23:
- 2430 02dc 64617461 		.ascii	"dataRX\000"
- 2430      525800
- 2431              	.LASF33:
- 2432 02e3 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 2432      4F4D5F77 
- 2432      61697446 
- 2432      6F725772 
- 2432      69746543 
- 2433              	.LASF19:
- 2434 02ff 73697A65 		.ascii	"sizetype\000"
- 2434      74797065 
- 2434      00
- 2435              	.LASF60:
- 2436 0308 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\PSoC-Final-Project\\AY192"
- 2436      73657273 
- 2436      5C4C6F72 
- 2436      795C4465 
- 2436      736B746F 
- 2437 0336 305F4949 		.ascii	"0_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_II_HW_FIN"
- 2437      5F48575F 
- 2437      46494E41 
- 2437      4C5F4341 
- 2437      525A414E 
- 2438 0368 414C5F43 		.ascii	"AL_CARZANIGA_GUALNIERA.cydsn\000"
- 2438      41525A41 
- 2438      4E494741 
- 2438      5F475541 
- 2438      4C4E4945 
- 2439              	.LASF22:
- 2440 0385 64617461 		.ascii	"dataTX\000"
- 2440      545800
- 2441              	.LASF17:
- 2442 038c 63686172 		.ascii	"char\000"
- 2442      00
- 2443              	.LASF52:
- 2444 0391 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2444      52784275 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 51
+ 2419 02f6 45455052 		.ascii	"EEPROM_retrieveStartStopState\000"
+ 2419      4F4D5F72 
+ 2419      65747269 
+ 2419      65766553 
+ 2419      74617274 
+ 2420              	.LASF20:
+ 2421 0314 45455052 		.ascii	"EEPROM_readStatus\000"
+ 2421      4F4D5F72 
+ 2421      65616453 
+ 2421      74617475 
+ 2421      7300
+ 2422              	.LASF11:
+ 2423 0326 756E7369 		.ascii	"unsigned int\000"
+ 2423      676E6564 
+ 2423      20696E74 
+ 2423      00
+ 2424              	.LASF39:
+ 2425 0333 666C6167 		.ascii	"flag\000"
+ 2425      00
+ 2426              	.LASF48:
+ 2427 0338 45455052 		.ascii	"EEPROM_storeLogData\000"
+ 2427      4F4D5F73 
+ 2427      746F7265 
+ 2427      4C6F6744 
+ 2427      61746100 
+ 2428              	.LASF12:
+ 2429 034c 75696E74 		.ascii	"uint8_t\000"
+ 2429      385F7400 
+ 2430              	.LASF42:
+ 2431 0354 45455052 		.ascii	"EEPROM_retrieveSendFlag\000"
+ 2431      4F4D5F72 
+ 2431      65747269 
+ 2431      65766553 
+ 2431      656E6446 
+ 2432              	.LASF0:
+ 2433 036c 7369676E 		.ascii	"signed char\000"
+ 2433      65642063 
+ 2433      68617200 
+ 2434              	.LASF23:
+ 2435 0378 64617461 		.ascii	"dataRX\000"
+ 2435      525800
+ 2436              	.LASF33:
+ 2437 037f 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 2437      4F4D5F77 
+ 2437      61697446 
+ 2437      6F725772 
+ 2437      69746543 
+ 2438              	.LASF19:
+ 2439 039b 73697A65 		.ascii	"sizetype\000"
+ 2439      74797065 
+ 2439      00
+ 2440              	.LASF22:
+ 2441 03a4 64617461 		.ascii	"dataTX\000"
+ 2441      545800
+ 2442              	.LASF17:
+ 2443 03ab 63686172 		.ascii	"char\000"
+ 2443      00
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 51
 
 
- 2444      66666572 
- 2444      00
- 2445              	.LASF2:
- 2446 039e 73686F72 		.ascii	"short int\000"
- 2446      7420696E 
- 2446      7400
- 2447              	.LASF31:
- 2448 03a8 45455052 		.ascii	"EEPROM_writePage\000"
- 2448      4F4D5F77 
- 2448      72697465 
- 2448      50616765 
- 2448      00
- 2449              	.LASF13:
- 2450 03b9 75696E74 		.ascii	"uint16_t\000"
- 2450      31365F74 
- 2450      00
- 2451              	.LASF61:
- 2452 03c2 6D656D63 		.ascii	"memcpy\000"
- 2452      707900
- 2453              	.LASF7:
- 2454 03c9 6C6F6E67 		.ascii	"long int\000"
- 2454      20696E74 
- 2454      00
- 2455              	.LASF38:
- 2456 03d2 45455052 		.ascii	"EEPROM_saveConfigFlag\000"
- 2456      4F4D5F73 
- 2456      61766543 
- 2456      6F6E6669 
- 2456      67466C61 
- 2457              	.LASF18:
- 2458 03e8 6C6F6E67 		.ascii	"long double\000"
- 2458      20646F75 
- 2458      626C6500 
- 2459              	.LASF43:
- 2460 03f4 45455052 		.ascii	"EEPROM_retrieveLogPages\000"
- 2460      4F4D5F72 
- 2460      65747269 
- 2460      6576654C 
- 2460      6F675061 
- 2461              	.LASF51:
- 2462 040c 70616765 		.ascii	"page_addr\000"
- 2462      5F616464 
- 2462      7200
- 2463              	.LASF45:
- 2464 0416 45455052 		.ascii	"EEPROM_incrementLogCounter\000"
- 2464      4F4D5F69 
- 2464      6E637265 
- 2464      6D656E74 
- 2464      4C6F6743 
- 2465              	.LASF56:
- 2466 0431 5350495F 		.ascii	"SPI_EEPROM_Interface_Multi_RW\000"
- 2466      45455052 
- 2466      4F4D5F49 
- 2466      6E746572 
- 2466      66616365 
- 2467              	.LASF24:
- 2468 044f 45455052 		.ascii	"EEPROM_writeEnable\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccH1gFkr.s 			page 52
+ 2444              	.LASF52:
+ 2445 03b0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2445      52784275 
+ 2445      66666572 
+ 2445      00
+ 2446              	.LASF2:
+ 2447 03bd 73686F72 		.ascii	"short int\000"
+ 2447      7420696E 
+ 2447      7400
+ 2448              	.LASF31:
+ 2449 03c7 45455052 		.ascii	"EEPROM_writePage\000"
+ 2449      4F4D5F77 
+ 2449      72697465 
+ 2449      50616765 
+ 2449      00
+ 2450              	.LASF13:
+ 2451 03d8 75696E74 		.ascii	"uint16_t\000"
+ 2451      31365F74 
+ 2451      00
+ 2452              	.LASF61:
+ 2453 03e1 6D656D63 		.ascii	"memcpy\000"
+ 2453      707900
+ 2454              	.LASF7:
+ 2455 03e8 6C6F6E67 		.ascii	"long int\000"
+ 2455      20696E74 
+ 2455      00
+ 2456              	.LASF38:
+ 2457 03f1 45455052 		.ascii	"EEPROM_saveConfigFlag\000"
+ 2457      4F4D5F73 
+ 2457      61766543 
+ 2457      6F6E6669 
+ 2457      67466C61 
+ 2458              	.LASF18:
+ 2459 0407 6C6F6E67 		.ascii	"long double\000"
+ 2459      20646F75 
+ 2459      626C6500 
+ 2460              	.LASF43:
+ 2461 0413 45455052 		.ascii	"EEPROM_retrieveLogPages\000"
+ 2461      4F4D5F72 
+ 2461      65747269 
+ 2461      6576654C 
+ 2461      6F675061 
+ 2462              	.LASF51:
+ 2463 042b 70616765 		.ascii	"page_addr\000"
+ 2463      5F616464 
+ 2463      7200
+ 2464              	.LASF45:
+ 2465 0435 45455052 		.ascii	"EEPROM_incrementLogCounter\000"
+ 2465      4F4D5F69 
+ 2465      6E637265 
+ 2465      6D656E74 
+ 2465      4C6F6743 
+ 2466              	.LASF56:
+ 2467 0450 5350495F 		.ascii	"SPI_EEPROM_Interface_Multi_RW\000"
+ 2467      45455052 
+ 2467      4F4D5F49 
+ 2467      6E746572 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccB4K9az.s 			page 52
 
 
- 2468      4F4D5F77 
- 2468      72697465 
- 2468      456E6162 
- 2468      6C6500
- 2469              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2467      66616365 
+ 2468              	.LASF24:
+ 2469 046e 45455052 		.ascii	"EEPROM_writeEnable\000"
+ 2469      4F4D5F77 
+ 2469      72697465 
+ 2469      456E6162 
+ 2469      6C6500
+ 2470              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
