@@ -136,7 +136,8 @@ void Moving_Average(uint8_t* dataPtr, uint8_t* filtPtr, uint8_t windowSize)
         for (uint8_t j=0; j<3; j++)
         {
             // Sum the sample
-            dataSum[j] += (int8_t)dataPtr[1+i*6+j*2];
+            int8_t tmp = dataPtr[1+i*6+j*2];
+            dataSum[j] += (int16_t)tmp;
         }
     }
     
@@ -144,7 +145,7 @@ void Moving_Average(uint8_t* dataPtr, uint8_t* filtPtr, uint8_t windowSize)
     for (uint8_t i=0; i<3; i++)
     {
         // Assign window average value
-        filtPtr[i] = (uint8_t)(((float)dataSum[i])/windowSize);
+        filtPtr[i] = (uint8_t)(dataSum[i]/windowSize);
     }
 }
 
