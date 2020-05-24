@@ -22,6 +22,7 @@
 
 /* Include project dependencies. */
 #include "InterruptRoutines.h"
+#include "LIS3DH.h"
 
 /*
  * ISR function that toggles configuration mode.
@@ -63,16 +64,38 @@ CY_ISR(CUSTOM_ISR_START)
  */
 CY_ISR(CUSTOM_ISR_IMU)
 {
-    //UART_PutChar(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_CTRL_REG));
-    //UART_PutChar(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
-    IMUDataReady = 1;
+    IMU_interrupt_flag = 1;
+    //IMU_data_ready_flag = 1;
     
-    //IMU_ReadFIFO(IMU_DataBuffer);
+    //UART_PutChar(IMU_ReadByte(LIS3DH_FIFO_SRC_REG));
     
-    //IMU_DataSend(IMU_DataBuffer);
+    /*
+    if((IMU_ReadByte(LIS3DH_FIFO_SRC_REG)) & (LIS3DH_FIFO_SRC_REG_OVR_MASK))
+    {
+        IMU_data_ready_flag = 1;
+        
+        
+        IMU_ReadFIFO(IMU_DataBuffer);
+
+        
+        IMU_DataSend(IMU_DataBuffer);
+        
+
+        IMU_ResetFIFO();
+        
+        
+    }
     
-    //IMU_ResetFIFO();
     
+    
+    //uint8_t int1_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
+    if((IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
+    {
+        IMU_over_threshold_flag = 1;
+        //UART_PutChar('T');
+        //UART_PutChar(int1_reg);
+    }
+    */
     
 }
 

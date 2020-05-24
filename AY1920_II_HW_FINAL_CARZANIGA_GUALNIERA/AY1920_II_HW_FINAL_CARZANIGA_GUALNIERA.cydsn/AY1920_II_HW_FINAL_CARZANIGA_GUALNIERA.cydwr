@@ -352,6 +352,7 @@
     <Group key="Interrupt">
       <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/2f0e1ca3-d7f9-4fde-aef9-0b36f082c803" value="SPIM_TxInternalInterrupt" />
       <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/14fe96ba-901d-4b28-a648-bce191698c4b" value="SPIM_RxInternalInterrupt" />
+      <Data key="50a1cbae-ee4f-424a-b2f7-87b1d69fae49" value="ISR_IMU" />
       <Data key="74f4c273-229d-4212-9a13-dea90dabd392" value="ISR_CONFIG" />
       <Data key="2289aaba-5f56-41cc-bf75-c203adb4dcfc" value="ISR_START" />
       <Data key="863438ae-6e6a-44bf-bfe1-3ddf1472e7e3" value="ISR_NOTIFY" />
@@ -3459,6 +3460,20 @@
     </Group>
   </Group>
   <Group key="Interrupt">
+    <Group key="15cb15b3-05f2-49b1-a67e-9f121bc62871/2f0e1ca3-d7f9-4fde-aef9-0b36f082c803">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="3" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="15cb15b3-05f2-49b1-a67e-9f121bc62871/14fe96ba-901d-4b28-a648-bce191698c4b">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="3" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
     <Group key="74f4c273-229d-4212-9a13-dea90dabd392">
       <Group key="CortexM3">
         <Data key="Assigned" value="True" />

@@ -16,9 +16,6 @@
     #define LIS3DH_BYTES_IN_FIFO 192
     uint8_t IMU_DataBuffer[LIS3DH_BYTES_IN_FIFO];
     
-    
-    
-    
 
      /*** ========= MACROS ========= ***/   
 
@@ -29,33 +26,19 @@
     #define LIS3DH_FIFO_BYTES_IN_LEVEL 6
     
     /**
-    * \brief Address of the read address byte on SPI 0b1110 1000  (Read[0], Increment address[1], register address[2:7] )
-    *                                 WHO AM I REG  0b1000 1111
+    * \brief Address of the read address of  WHO AM I REG
     */
-    #define LIS3DH_READ_WHO_AM_I_REG  0x8F
-
-    // 0b10100111
-    #define LIS3DH_READ_STATUS_REG  0xA7
-
-
-    // 0b10100000
-    #define LIS3DH_READ_CTRL_REG1 0xA0
-
-    // 0b10000000
-    #define LIS3DH_READ_CTRL_REG3 0xA2
-
-    // 0b10100011
-    #define LIS3DH_READ_CTRL_REG4 0xA3
-
-    // 0b10100100
-    #define LIS3DH_READ_CTRL_REG5 0xA4
-
-    // 0b10100100
-    #define LIS3DH_READ_FIFO_CTRL_REG 0xAE
-
-    // 0b10100100
-    #define LIS3DH_READ_FIFO_SRC_REG 0xAF
-
+    #define LIS3DH_WHO_AM_I_REG  0x0F
+    
+    /**
+    * \brief Address of the read address of  WHO AM I REG
+    */
+    #define LIS3DH_STATUS_REG  0x27
+    
+    /**
+    *   \brief Mask for the status register in order to check if data available
+    */
+    #define STATUS_REG_MASK 0x08
 
     /**
     *   \brief Address of the X axis output low register  A8 OR E8 for auto-increment address
@@ -67,33 +50,30 @@
     */
     #define LIS3DH_READ_OUT_Y_H 0xAB
 
-
-
-
-
     /**
     *   \brief Address of the Control register 1
     */
     #define LIS3DH_CTRL_REG1 0x20
 
-
     /**
     *   \brief Hex value to set low power mode to the accelerator and 100Hz data rate 0b0101 1111
     */
     #define LIS3DH_CTRL_REG1_LOW_POWER_MODE 0x5F
-
-
+    
     /**
-    *   \brief Hex value to set low power mode to the accelerator and 100Hz data rate 0b0101 1111
+    *   \brief Hex value to set low power mode to the accelerator and 200Hz data rate 0b0101 1111
+    */
+    #define LIS3DH_CTRL_REG1_LOW_POWER_MODE_200 0x6F
+    
+    /**
+    *   \brief Hex value to set low power mode to the accelerator and 400Hz data rate 0b0101 1111
     */
     #define LIS3DH_CTRL_REG1_LOW_POWER_MODE_400 0x7F
-
 
     /**
     *   \brief Hex value to set low power mode to the accelerator and 100Hz data rate 0b0101 1111
     */
     #define LIS3DH_CTRL_REG1_NORMAL_MODE 0x57
-
 
     /**
     *   \brief Address of the Control register 3
@@ -101,15 +81,19 @@
     #define LIS3DH_CTRL_REG3 0x22
 
     /**
-    *   \brief Hex value to enable interrupt on pin INT1 when overrun occurs
+    *   \brief Hex value to enable interrupt on overrun
     */
     #define LIS3DH_CTRL_REG3_I1_OVERRUN 0x02
+    
+    /**
+    *   \brief Hex value to enable interrupt on IA1 and overrun
+    */
+    #define LIS3DH_CTRL_REG3_I1_IA1_OVERRUN 0x42
 
     /**
     *   \brief Hex value to enable interrupt on pin INT1 when overrun occurs
     */
     #define LIS3DH_CTRL_REG3_NULL 0x00
-
 
     /**
     *   \brief Address of the Control register 4
@@ -117,14 +101,9 @@
     #define LIS3DH_CTRL_REG4 0x23
 
     /**
-    *   \brief Hex value to set output registers not updated until MSB and LSB reading, FSR +-2g
+    *   \brief Hex value to set output registers not updated until MSB and LSB reading, FSR +-2g and SPI 4 wire interface
     */
     #define LIS3DH_CTRL_REG4_BDU_ACTIVE 0x80
-
-    /**
-    *   \brief Hex value to set output registers not updated until MSB and LSB reading, FSR +-2g
-    */
-    #define LIS3DH_CTRL_REG4_CONTINUOS_UPDATE 0x00
 
     /**
     *   \brief Address of the Control register 5
@@ -137,12 +116,17 @@
     #define LIS3DH_CTRL_REG5_FIFO_ENABLE 0x40
 
     /**
-    *   \brief Hex value to enable FIFO mode
+    *   \brief Hex value to disable FIFO mode
     */
     #define LIS3DH_CTRL_REG5_FIFO_DISABLE 0x00
+    
+    /**
+    *   \brief Hex value to enable FIFO mode and latched option for isr
+    */
+    #define LIS3DH_CTRL_REG5_FIFO_ENABLE_LIR_INT1 0x48
 
     /**
-    *   \brief Hex value to enable FIFO mode
+    *   \brief Hex value to reboot memory
     */
     #define LIS3DH_CTRL_REG5_REBOOT_MEMORY 0xC0
 
@@ -152,7 +136,7 @@
     #define LIS3DH_FIFO_CTRL_REG 0x2E
 
     /**
-    *   \brief Hex value to enable FIFO mode
+    *   \brief Hex value to enable BYPASS mode
     */
     #define LIS3DH_FIFO_CTRL_REG_BYPASS_MODE 0x00
 
@@ -162,38 +146,78 @@
     #define LIS3DH_FIFO_CTRL_REG_FIFO_MODE 0x40
 
     /**
-    *   \brief Hex value to enable FIFO mode
+    *   \brief Hex value to enable FIFO mode with wtm (pesenti)
     */
     #define LIS3DH_FIFO_CTRL_REG_WTM 0x5F
 
     /**
-    *   \brief Hex value to enable FIFO mode
+    *   \brief Hex value to enable STREAM mode
     */
     #define LIS3DH_FIFO_CTRL_REG_STREAM_MODE 0x80
 
-
-    /**
-    *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit
-    */
-    #define LIS3DH_FIFO_EMPTY_MASK 0b00100000
-    
-       /**
-    *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit
-    */
-    #define LIS3DH_FIFO_OVR_MASK 0b01000000
-    
     
     /**
     *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit
     */
     #define LIS3DH_FIFO_DATA_TO_READ 0b00011111
-
-
-
+    
     /**
-    *   \brief Mask for the status register in order to check if data available
+    *   \brief Address of the FIFO Control register 
     */
-    #define STATUS_REG_MASK 0x08 // 0b00001000 mask
+    #define LIS3DH_FIFO_SRC_REG 0x2F
+    
+    /**
+    *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit set to 1
+    */
+    #define LIS3DH_FIFO_SRC_REG_EMPTY_MASK 0b00100000
+    
+    /**
+    *   \brief Binary mask to check if FIFO_SRC_REG has overrun bit set to 1
+    */
+    #define LIS3DH_FIFO_SRC_REG_OVR_MASK 0b01000000
+    
+    /**
+    *   \brief Address of the INT1 CFG register 
+    */
+    #define LIS3DH_INT1_CFG 0x30
+    
+    /**
+    *   \brief Hex value to set isr on high events for all the 3 axis
+    */
+    #define LIS3DH_INT1_CFG_HIGH_EVENTS 0x2A
+    
+    /**
+    *   \brief Address of the INT1 SRC register 
+    */
+    #define LIS3DH_INT1_SRC 0x31
+    
+    /**
+    *   \brief Mask for INT1 SRC register to detect isr occurrences
+    */
+    #define LIS3DH_INT1_SRC_IA_MASK 0b01000000
+    
+    /**
+    *   \brief Address of the INT1 THS register 
+    */
+    #define LIS3DH_INT1_THS 0x32
+    
+    /**
+    *   \brief Hex value for the threshold of each IMU axis
+    */
+    #define LIS3DH_INT1_THS_VALUE 0x64 //@+-2G FSR ---> 1 LSB = 16mG ---> 0x64 ---> 1.6G
+    
+    /**
+    *   \brief Address of the INT1 DURATION register 
+    */
+    #define LIS3DH_INT1_DURATION 0x33
+    
+    /**
+    *   \brief Hex value for the time duration of an overthreshold event
+    */
+    //#define LIS3DH_INT1_DURATION_VALUE 0x0A // @ 200Hx ODR --> 5 ms every lsb --> 50ms total
+    
+    #define LIS3DH_INT1_DURATION_VALUE 0x04 // @ 200Hx ODR --> 5 ms every lsb --> 20ms total
+
 
 
     /*** ========= FUNCTION DECLARATIONS ========= ***/

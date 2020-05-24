@@ -31,7 +31,11 @@
     CY_ISR_PROTO(CUSTOM_ISR_START);
     CY_ISR_PROTO(CUSTOM_ISR_IMU);
     
-    volatile uint8 IMUDataReady;  // Variable containing the status of the packet [0 not ready, 1 ready]
+    volatile uint8 IMU_interrupt_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
+    
+    volatile uint8 IMU_data_ready_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
+    
+    volatile uint8 IMU_over_threshold_flag;  // Variable containing the status of the packet [0 not ready, 1 ready]
     
     /* Finite state machine variables. */
     volatile button_t button_state;

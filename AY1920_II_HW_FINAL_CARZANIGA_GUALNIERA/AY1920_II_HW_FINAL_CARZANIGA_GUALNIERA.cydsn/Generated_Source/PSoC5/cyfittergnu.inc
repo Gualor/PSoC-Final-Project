@@ -306,7 +306,7 @@
 .set SPIM_RxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
 .set SPIM_RxInternalInterrupt__INTC_MASK, 0x08
 .set SPIM_RxInternalInterrupt__INTC_NUMBER, 3
-.set SPIM_RxInternalInterrupt__INTC_PRIOR_NUM, 7
+.set SPIM_RxInternalInterrupt__INTC_PRIOR_NUM, 3
 .set SPIM_RxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_3
 .set SPIM_RxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set SPIM_RxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -314,7 +314,7 @@
 .set SPIM_TxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
 .set SPIM_TxInternalInterrupt__INTC_MASK, 0x10
 .set SPIM_TxInternalInterrupt__INTC_NUMBER, 4
-.set SPIM_TxInternalInterrupt__INTC_PRIOR_NUM, 7
+.set SPIM_TxInternalInterrupt__INTC_PRIOR_NUM, 3
 .set SPIM_TxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_4
 .set SPIM_TxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set SPIM_TxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0

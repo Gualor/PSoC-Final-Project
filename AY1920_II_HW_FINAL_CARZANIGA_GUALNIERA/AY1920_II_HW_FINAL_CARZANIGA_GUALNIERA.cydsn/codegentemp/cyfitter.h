@@ -306,7 +306,7 @@
 #define SPIM_RxInternalInterrupt__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
 #define SPIM_RxInternalInterrupt__INTC_MASK 0x08u
 #define SPIM_RxInternalInterrupt__INTC_NUMBER 3u
-#define SPIM_RxInternalInterrupt__INTC_PRIOR_NUM 7u
+#define SPIM_RxInternalInterrupt__INTC_PRIOR_NUM 3u
 #define SPIM_RxInternalInterrupt__INTC_PRIOR_REG CYREG_NVIC_PRI_3
 #define SPIM_RxInternalInterrupt__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define SPIM_RxInternalInterrupt__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
@@ -314,7 +314,7 @@
 #define SPIM_TxInternalInterrupt__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
 #define SPIM_TxInternalInterrupt__INTC_MASK 0x10u
 #define SPIM_TxInternalInterrupt__INTC_NUMBER 4u
-#define SPIM_TxInternalInterrupt__INTC_PRIOR_NUM 7u
+#define SPIM_TxInternalInterrupt__INTC_PRIOR_NUM 3u
 #define SPIM_TxInternalInterrupt__INTC_PRIOR_REG CYREG_NVIC_PRI_4
 #define SPIM_TxInternalInterrupt__INTC_SET_EN_REG CYREG_NVIC_SETENA0
 #define SPIM_TxInternalInterrupt__INTC_SET_PD_REG CYREG_NVIC_SETPEND0

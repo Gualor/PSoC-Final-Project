@@ -11618,7 +11618,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  306              	.set SPIM_RxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  307              	.set SPIM_RxInternalInterrupt__INTC_MASK, 0x08
  308              	.set SPIM_RxInternalInterrupt__INTC_NUMBER, 3
- 309              	.set SPIM_RxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 309              	.set SPIM_RxInternalInterrupt__INTC_PRIOR_NUM, 3
  310              	.set SPIM_RxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_3
  311              	.set SPIM_RxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  312              	.set SPIM_RxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -11626,7 +11626,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  314              	.set SPIM_TxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  315              	.set SPIM_TxInternalInterrupt__INTC_MASK, 0x10
  316              	.set SPIM_TxInternalInterrupt__INTC_NUMBER, 4
- 317              	.set SPIM_TxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 317              	.set SPIM_TxInternalInterrupt__INTC_PRIOR_NUM, 3
  318              	.set SPIM_TxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_4
  319              	.set SPIM_TxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  320              	.set SPIM_TxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0

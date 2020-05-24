@@ -18,7 +18,8 @@ void IMU_RegistersSetup()
      UART_PutString("*********    LIS3DH TEST    *********\r\n");
     
     // Read WHO_AM_I Register
-    uint8_t who_am_i = SPI_Interface_ReadByte(LIS3DH_READ_WHO_AM_I_REG);
+    //uint8_t who_am_i = SPI_Interface_ReadByte(LIS3DH_READ_WHO_AM_I_REG);
+    uint8_t who_am_i = IMU_ReadByte(LIS3DH_WHO_AM_I_REG);
     
     sprintf(bufferUART, "WHO AM I REG: 0x%02X [Expected: 0x33]\r\n", who_am_i);
     UART_PutString(bufferUART);
@@ -27,7 +28,7 @@ void IMU_RegistersSetup()
     
     
     // Read Status Register
-    uint8_t status_reg = SPI_Interface_ReadByte(LIS3DH_READ_STATUS_REG);
+    uint8_t status_reg = IMU_ReadByte(LIS3DH_STATUS_REG);
     
     sprintf(bufferUART, "STATUS REG: 0x%02X \r\n", status_reg);
     UART_PutString(bufferUART);
@@ -40,7 +41,7 @@ void IMU_RegistersSetup()
     /******************************************/
     
     // Read actual value
-    uint8_t ctrl_reg1 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG1);
+    uint8_t ctrl_reg1 = IMU_ReadByte(LIS3DH_CTRL_REG1);
     
     sprintf(bufferUART, "CTRL REG1: 0x%02X \r\n", ctrl_reg1);
     UART_PutString(bufferUART);
@@ -50,7 +51,7 @@ void IMU_RegistersSetup()
     // Write 
     
     /* Prepare the TX packet */
-    uint8_t CTRL1TX[2] = {LIS3DH_CTRL_REG1, LIS3DH_CTRL_REG1_LOW_POWER_MODE_400};
+    uint8_t CTRL1TX[2] = {LIS3DH_CTRL_REG1, LIS3DH_CTRL_REG1_LOW_POWER_MODE_200};
 	/* Nothing to RX... */
 	uint8_t temp = 0;
 	
@@ -58,7 +59,7 @@ void IMU_RegistersSetup()
 	SPI_Interface_Multi_RW(CTRL1TX, 2, &temp, 0);
     
     // Read Control Register 1 again
-    ctrl_reg1 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG1);
+    ctrl_reg1 = IMU_ReadByte(LIS3DH_CTRL_REG1);
     
     sprintf(bufferUART, "CTRL REG1 AFTER WRITE: 0x%02X \r\n", ctrl_reg1);
     UART_PutString(bufferUART);
@@ -70,7 +71,7 @@ void IMU_RegistersSetup()
     /******************************************/    
     
      // Read actual value
-    uint8_t ctrl_reg3 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG3);
+    uint8_t ctrl_reg3 = IMU_ReadByte(LIS3DH_CTRL_REG3);
     
     sprintf(bufferUART, "CTRL REG3: 0x%02X \r\n", ctrl_reg3);
     UART_PutString(bufferUART);
@@ -79,7 +80,7 @@ void IMU_RegistersSetup()
     
     // Write
     /* Prepare the TX packet */
-    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_OVERRUN};
+    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_IA1_OVERRUN};
 	/* Nothing to RX... */
 	temp = 0;
 	
@@ -87,7 +88,7 @@ void IMU_RegistersSetup()
 	SPI_Interface_Multi_RW(CTRL3TX, 2, &temp, 0);
     
     // Read Control Register 3 again
-    ctrl_reg3 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG3);
+    ctrl_reg3 = IMU_ReadByte(LIS3DH_CTRL_REG3);
     
     sprintf(bufferUART, "CTRL REG3 AFTER WRITE: 0x%02X \r\n", ctrl_reg3);
     UART_PutString(bufferUART);
@@ -99,7 +100,7 @@ void IMU_RegistersSetup()
     /******************************************/
     
     // Read actual value
-    uint8_t ctrl_reg4 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG4);
+    uint8_t ctrl_reg4 = IMU_ReadByte(LIS3DH_CTRL_REG4);
     
     sprintf(bufferUART, "CTRL REG4: 0x%02X \r\n", ctrl_reg4);
     UART_PutString(bufferUART);
@@ -116,7 +117,7 @@ void IMU_RegistersSetup()
 	SPI_Interface_Multi_RW(CTRL4TX, 2, &temp, 0);
     
     // Read Control Register 4 again
-    ctrl_reg4 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG4);
+    ctrl_reg4 = IMU_ReadByte(LIS3DH_CTRL_REG4);
     
     sprintf(bufferUART, "CTRL REG4 AFTER WRITE: 0x%02X \r\n", ctrl_reg4);
     UART_PutString(bufferUART);
@@ -128,7 +129,7 @@ void IMU_RegistersSetup()
     /******************************************/
     
     // Read actual value
-    uint8_t ctrl_reg5 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG5);
+    uint8_t ctrl_reg5 = IMU_ReadByte(LIS3DH_CTRL_REG5);
     
     sprintf(bufferUART, "CTRL REG5: 0x%02X \r\n", ctrl_reg5);
     UART_PutString(bufferUART);
@@ -147,7 +148,7 @@ void IMU_RegistersSetup()
 	SPI_Interface_Multi_RW(CTRL5TX, 2, &temp, 0);
     
     // Read Control Register 5 again
-    ctrl_reg5 = SPI_Interface_ReadByte(LIS3DH_READ_CTRL_REG5);
+    ctrl_reg5 = IMU_ReadByte(LIS3DH_CTRL_REG5);
     
     sprintf(bufferUART, "CTRL REG5 AFTER WRITE: 0x%02X \r\n", ctrl_reg5);
     UART_PutString(bufferUART);
@@ -161,7 +162,7 @@ void IMU_RegistersSetup()
     /******************************************/
             
     
-    while(!(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG) & LIS3DH_FIFO_EMPTY_MASK))
+    while(!(IMU_ReadByte(LIS3DH_FIFO_SRC_REG) & LIS3DH_FIFO_SRC_REG_EMPTY_MASK))
     {
         
         uint8_t dataTX = LIS3DH_READ_OUT_X_L;
@@ -188,7 +189,7 @@ void IMU_RegistersSetup()
     /******************************************/
 
     // Read actual value
-    uint8_t fifo_ctrl = SPI_Interface_ReadByte(LIS3DH_READ_FIFO_CTRL_REG);
+    uint8_t fifo_ctrl = IMU_ReadByte(LIS3DH_FIFO_CTRL_REG);
     
     sprintf(bufferUART, "FIFO CTRL REG: 0x%02X \r\n", fifo_ctrl);
     UART_PutString(bufferUART);
@@ -205,12 +206,101 @@ void IMU_RegistersSetup()
 	SPI_Interface_Multi_RW(FIFOTX, 2, &temp, 0);
     
     // Read FIFO Control Register again
-    fifo_ctrl = SPI_Interface_ReadByte(LIS3DH_READ_FIFO_CTRL_REG);
+    fifo_ctrl = IMU_ReadByte(LIS3DH_FIFO_CTRL_REG);
     
     sprintf(bufferUART, "FIFO CTRL REG AFTER WRITE: 0x%02X \r\n", fifo_ctrl);
     UART_PutString(bufferUART);
     
-    UART_PutString("*************************************\r\n"); 
+    UART_PutString("*************************************\r\n");
+    
+    
+    /******************************************/
+    /*    Setup INT1_CGF Register             */
+    /******************************************/
+
+    // Read actual value
+    uint8_t int1_cfg = IMU_ReadByte(LIS3DH_INT1_CFG);
+    
+    sprintf(bufferUART, "INT1 CFG REG: 0x%02X \r\n", int1_cfg);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
+    
+    // Write 
+    
+    /* Prepare the TX packet */
+    uint8_t INT1TX[2] = {LIS3DH_INT1_CFG, LIS3DH_INT1_CFG_HIGH_EVENTS};
+	/* Nothing to RX... */
+	temp = 0;
+	
+	SPI_Interface_Multi_RW(INT1TX, 2, &temp, 0);
+    
+    // Read INT1 CFG Register again
+    int1_cfg = IMU_ReadByte(LIS3DH_INT1_CFG);
+    
+    sprintf(bufferUART, "INT1 CFG REG AFTER WRITE: 0x%02X \r\n", int1_cfg);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
+    
+    /******************************************/
+    /*    Setup INT1_THS Register             */
+    /******************************************/
+
+    // Read actual value
+    uint8_t int1_ths = IMU_ReadByte(LIS3DH_INT1_THS);
+    
+    sprintf(bufferUART, "INT1 THS REG: 0x%02X \r\n", int1_ths);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
+    
+    // Write 
+    
+    /* Prepare the TX packet */
+    uint8_t THSTX[2] = {LIS3DH_INT1_THS, LIS3DH_INT1_THS_VALUE};
+	/* Nothing to RX... */
+	temp = 0;
+	
+	SPI_Interface_Multi_RW(THSTX, 2, &temp, 0);
+    
+    // Read INT1 CFG Register again
+    int1_ths = IMU_ReadByte(LIS3DH_INT1_THS);
+    
+    sprintf(bufferUART, "INT1 THS REG AFTER WRITE: 0x%02X \r\n", int1_ths);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
+    
+    
+    /******************************************/
+    /*    Setup INT1_DURATION Register        */
+    /******************************************/
+
+    // Read actual value
+    uint8_t int1_dur = IMU_ReadByte(LIS3DH_INT1_DURATION);
+    
+    sprintf(bufferUART, "INT1 DURATION REG: 0x%02X \r\n", int1_dur);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
+    
+    // Write 
+    
+    /* Prepare the TX packet */
+    uint8_t DURTX[2] = {LIS3DH_INT1_DURATION, LIS3DH_INT1_DURATION_VALUE};
+	/* Nothing to RX... */
+	temp = 0;
+	
+	SPI_Interface_Multi_RW(DURTX, 2, &temp, 0);
+    
+    // Read INT1 CFG Register again
+    int1_dur = IMU_ReadByte(LIS3DH_INT1_DURATION);
+    
+    sprintf(bufferUART, "INT1 DURATION REG AFTER WRITE: 0x%02X \r\n", int1_dur);
+    UART_PutString(bufferUART);
+    
+    UART_PutString("*************************************\r\n");
     
 }
 
@@ -291,7 +381,7 @@ void IMU_ReadFIFO(uint8_t *buffer)
     for(int i = 0; i < 32 ; i++)
     {              
         SPI_Interface_Multi_RW(&dataTX, 1, &buffer[i*6], LIS3DH_FIFO_BYTES_IN_LEVEL);
-        //UART_PutChar(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
+        //UART_PutChar(IMU_ReadByte(LIS3DH_FIFO_SRC_REG));
     }
     //UART_PutChar(SPI_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
 }
