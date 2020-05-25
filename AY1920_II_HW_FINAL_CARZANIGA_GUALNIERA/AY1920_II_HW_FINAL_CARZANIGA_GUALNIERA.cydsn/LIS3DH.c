@@ -26,6 +26,7 @@ void IMU_RegistersSetup()
     
     UART_PutString("*************************************\r\n");
     
+    
     // Read Status Register
     uint8_t status_reg = IMU_ReadByte(LIS3DH_STATUS_REG);
     
@@ -134,7 +135,9 @@ void IMU_RegistersSetup()
     UART_PutString(bufferUART);
     
     UART_PutString("*************************************\r\n");
-
+    
+    
+    
     // Write 
     
     /* Prepare the TX packet */
@@ -152,6 +155,8 @@ void IMU_RegistersSetup()
     
     UART_PutString("*************************************\r\n");
     
+    
+    
     /******************************************/
     /*    Flush FIFO before start             */
     /******************************************/
@@ -167,13 +172,18 @@ void IMU_RegistersSetup()
     }
    
     UART_PutString("*********FIFO FLUSHED\r\n");
-
+    
+    
+    
      // Reset FIFO
     uint8_t BYPASSTX[2] = {LIS3DH_FIFO_CTRL_REG, LIS3DH_FIFO_CTRL_REG_BYPASS_MODE};
 	temp = 0;
 	SPI_IMU_Interface_Multi_RW(BYPASSTX, 2, &temp, 0);
+    
     CyDelayUs(1);
     
+    
+
     /******************************************/
     /*    Setup FIFO Control Register         */
     /******************************************/
@@ -291,19 +301,22 @@ void IMU_RegistersSetup()
     UART_PutString(bufferUART);
     
     UART_PutString("*************************************\r\n");
+    
 }
 
 
 /** ====== User-level Functions ====== **/
 
 uint8_t IMU_ReadByte(uint8_t address) 
-{  
+{
+    
     // LIS3DH bit set to read
     address |= LIS3DH_READ_BIT;
 	/* Prepare the TX data packet: instruction + address */
 	uint8_t dataRX = SPI_IMU_Interface_ReadByte(address) ;
 	
 	return dataRX;
+    
 }
 
 void IMU_WriteByte(uint8_t address, uint8_t dataByte) 
@@ -315,17 +328,22 @@ void IMU_WriteByte(uint8_t address, uint8_t dataByte)
 	uint8_t temp = 0;
 	
 	/* Write 1 byte to addr */
-	SPI_IMU_Interface_Multi_RW(dataTX, 2, &temp, 0);   
+	SPI_IMU_Interface_Multi_RW(dataTX, 2, &temp, 0);
+	    
 }
 
 void IMU_ReadMultyByte(uint8_t address, uint8_t* dataRX, uint8_t nBytes) 
 {
+    
      // LIS3DH bit set to read and auto increment address to read
     address =  address | LIS3DH_READ_BIT | LIS3DH_AUTO_INCREMENT_ADDRESS;
     
 	/* Prepare the TX data packet: instructon + address */
 	/* Read the nBytes */
-	SPI_IMU_Interface_Multi_RW(&address, 1, dataRX,  nBytes);	
+	SPI_IMU_Interface_Multi_RW(&address, 1, dataRX,  nBytes);
+	
+	
+		
 }
 
 
@@ -348,6 +366,7 @@ void IMU_WriteMultyByte(uint8_t address, uint8_t* data, uint8_t nBytes)
 		
 }
 
+
 void IMU_ReadFIFO(uint8_t *buffer)
 {   
     //UART_PutChar(SPI_IMU_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
@@ -367,12 +386,46 @@ void IMU_ReadFIFO(uint8_t *buffer)
     //UART_PutChar(SPI_IMU_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
 }
 
+void IMU_StoreFIFO(uint8_t *buffer)
+{
+    // Buffer storing only high registers read from the IMU (8 bit configuration, low power mode)
+    uint8_t high_reg_data[LIS3DH_BYTES_IN_FIFO_HIGH_REG];
+    uint8_t down_sampled_data[(LIS3DH_BYTES_IN_FIFO_HIGH_REG/LIS3DH_DOWN_SAMPLE)];
+    
+    // Save only the high registers 
+    for(uint8_t i = 0; i < LIS3DH_BYTES_IN_FIFO_HIGH_REG; i++)
+    {
+        high_reg_data[i] = buffer[i*2 +1];
+    }
+    
+    // Downsample from 96 values to 48 (from 32 levels of FIFO to 16)
+    for(uint8_t i = 0; i < (LIS3DH_LEVELS_IN_FIFO/LIS3DH_DOWN_SAMPLE); i++)
+    {
+        down_sampled_data[i*3] = high_reg_data[(i*3)*2];
+        down_sampled_data[i*3 + 1] = high_reg_data[(i*3)*2 + 1];
+        down_sampled_data[i*3 + 2] = high_reg_data[(i*3)*2 + 2];
+    }
+
+    UART_PutArray(down_sampled_data, 48);
+    // Copy the first 5 FIFO in the next positions of the buffer, in order to free the first position to the new incoming FIFO
+    memcpy(&IMU_LOG_data_buffer[LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED], IMU_LOG_data_buffer, (LIS3DH_BYTES_IN_LOG_BUFFER - LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED));
+    
+    
+    // Copy the new FIFO in the first place of the buffer
+    memcpy(&IMU_LOG_data_buffer, down_sampled_data, LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED);
+
+
+}
+
+
+
 void IMU_DataSend(uint8_t *buffer)
 {
     uint8_t DataBuffer[8];
     DataBuffer[0] = 0xA0;
     DataBuffer[7] = 0xC0;
 
+    
     // Send uart 6 registers at time
     for(int i = 0; i < 32 ; i++)
     {              
@@ -391,12 +444,17 @@ void IMU_ResetFIFO()
     uint8_t BYPASSTX[2] = {LIS3DH_FIFO_CTRL_REG, LIS3DH_FIFO_CTRL_REG_BYPASS_MODE};
 	uint8_t temp = 0;
 	SPI_IMU_Interface_Multi_RW(BYPASSTX, 2, &temp, 0);
+    
     CyDelayUs(1);
+    
+    
     
     // Set FIFO mode again
     uint8_t FIFOTX[2] = {LIS3DH_FIFO_CTRL_REG, LIS3DH_FIFO_CTRL_REG_FIFO_MODE};
 	temp = 0;
 	SPI_IMU_Interface_Multi_RW(FIFOTX, 2, &temp, 0);
+   
+    
 }
 
 /* [] END OF FILE */

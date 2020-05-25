@@ -13,8 +13,19 @@
     #include "SPI_Interface.h"
     #include "project.h"
     
+    #define LIS3DH_FIFO_BYTES_IN_LEVEL 6
+    #define LIS3DH_LEVELS_IN_FIFO 32
     #define LIS3DH_BYTES_IN_FIFO 192
+    #define LIS3DH_BYTES_IN_FIFO_HIGH_REG 96
+    #define LIS3DH_FIFO_STORED 6
+    #define LIS3DH_DOWN_SAMPLE 2
+    #define LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED LIS3DH_BYTES_IN_FIFO_HIGH_REG/LIS3DH_DOWN_SAMPLE
+    #define LIS3DH_BYTES_IN_LOG_BUFFER LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED * LIS3DH_FIFO_STORED // 16 levels * 3 registers * 6 FIFO
+    
+    
     uint8_t IMU_DataBuffer[LIS3DH_BYTES_IN_FIFO];
+    
+    uint8_t IMU_LOG_data_buffer[LIS3DH_BYTES_IN_LOG_BUFFER];
     
 
      /*** ========= MACROS ========= ***/   
@@ -23,7 +34,7 @@
     #define LIS3DH_READ_BIT 0b10000000
     #define LIS3DH_AUTO_INCREMENT_ADDRESS 0b01000000
     
-    #define LIS3DH_FIFO_BYTES_IN_LEVEL 6
+    
     
     /**
     * \brief Address of the read address of  WHO AM I REG
@@ -146,7 +157,7 @@
     #define LIS3DH_FIFO_CTRL_REG_FIFO_MODE 0x40
 
     /**
-    *   \brief Hex value to enable FIFO mode with wtm (pesenti)
+    *   \brief Hex value to enable FIFO mode with wtm
     */
     #define LIS3DH_FIFO_CTRL_REG_WTM 0x5F
 
@@ -154,12 +165,6 @@
     *   \brief Hex value to enable STREAM mode
     */
     #define LIS3DH_FIFO_CTRL_REG_STREAM_MODE 0x80
-
-    
-    /**
-    *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit
-    */
-    #define LIS3DH_FIFO_DATA_TO_READ 0b00011111
     
     /**
     *   \brief Address of the FIFO Control register 
@@ -175,6 +180,11 @@
     *   \brief Binary mask to check if FIFO_SRC_REG has overrun bit set to 1
     */
     #define LIS3DH_FIFO_SRC_REG_OVR_MASK 0b01000000
+    
+    /**
+    *   \brief Binary mask to check how many data are store in the FIFO
+    */
+    #define LIS3DH_FIFO_SRC_DATA_TO_READ 0b00011111
     
     /**
     *   \brief Address of the INT1 CFG register 
@@ -224,13 +234,15 @@
 
     /** ====== Helper Functions ====== **/
 
-    void IMU_RegistersSetup();
+    void IMU_RegistersSetup(void);
     
     void IMU_ReadFIFO(uint8_t *buffer);
     
     void IMU_DataSend(uint8_t *buffer);
     
-    void IMU_ResetFIFO();
+    void IMU_StoreFIFO(uint8_t *buffer);
+    
+    void IMU_ResetFIFO(void);
     
     /** ====== User-level Functions ====== **/
 

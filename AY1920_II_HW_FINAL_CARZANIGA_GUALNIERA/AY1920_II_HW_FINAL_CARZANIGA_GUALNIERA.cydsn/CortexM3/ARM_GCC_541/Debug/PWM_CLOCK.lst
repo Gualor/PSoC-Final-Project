@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
   28:Generated_Source\PSoC5/PWM_CLOCK.c **** 
   29:Generated_Source\PSoC5/PWM_CLOCK.c **** 
   30:Generated_Source\PSoC5/PWM_CLOCK.c **** /*******************************************************************************
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 2
 
 
   31:Generated_Source\PSoC5/PWM_CLOCK.c **** * Function Name: PWM_CLOCK_Start
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
   54:Generated_Source\PSoC5/PWM_CLOCK.c **** * Function Name: PWM_CLOCK_Stop
   55:Generated_Source\PSoC5/PWM_CLOCK.c **** ********************************************************************************
   56:Generated_Source\PSoC5/PWM_CLOCK.c **** *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 3
 
 
   57:Generated_Source\PSoC5/PWM_CLOCK.c **** * Summary:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
   80:Generated_Source\PSoC5/PWM_CLOCK.c **** 
   81:Generated_Source\PSoC5/PWM_CLOCK.c **** 
   82:Generated_Source\PSoC5/PWM_CLOCK.c **** /*******************************************************************************
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 4
 
 
   83:Generated_Source\PSoC5/PWM_CLOCK.c **** * Function Name: PWM_CLOCK_StopBlock
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  111 0018 1370     		strb	r3, [r2]
  116:Generated_Source\PSoC5/PWM_CLOCK.c **** #endif /* PWM_CLOCK__CFG3 */
  117:Generated_Source\PSoC5/PWM_CLOCK.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 5
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 5
 
 
  118:Generated_Source\PSoC5/PWM_CLOCK.c ****         /* Clear mask of bus clock. */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  136:Generated_Source\PSoC5/PWM_CLOCK.c ****         CY_SET_REG16(PWM_CLOCK_DIV_PTR, oldDivider);
  148              		.loc 1 136 0
  149 0056 8F33     		adds	r3, r3, #143
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 6
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 6
 
 
  150 0058 1A80     		strh	r2, [r3]	@ movhi
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  160:Generated_Source\PSoC5/PWM_CLOCK.c ****     {
  161:Generated_Source\PSoC5/PWM_CLOCK.c ****         PWM_CLOCK_CLKSTBY &= (uint8)(~PWM_CLOCK_CLKSTBY_MASK);
  181              		.loc 1 161 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 7
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 7
 
 
  182 0002 064A     		ldr	r2, .L15
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  189:Generated_Source\PSoC5/PWM_CLOCK.c **** * Returns:
  190:Generated_Source\PSoC5/PWM_CLOCK.c **** *  None
  191:Generated_Source\PSoC5/PWM_CLOCK.c **** *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 8
 
 
  192:Generated_Source\PSoC5/PWM_CLOCK.c **** *******************************************************************************/
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  246:Generated_Source\PSoC5/PWM_CLOCK.c ****                     CY_SET_REG16(CYREG_CLKDIST_WRK0, oldDivider);
  247:Generated_Source\PSoC5/PWM_CLOCK.c ****                     CLK_DIST_LD = CYCLK_LD_DISABLE|CYCLK_LD_SYNC_EN|CYCLK_LD_LOAD;
  248:Generated_Source\PSoC5/PWM_CLOCK.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 9
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 9
 
 
  249:Generated_Source\PSoC5/PWM_CLOCK.c ****                     /* Wait for clock to be disabled */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  213              		@ link register save eliminated.
  299:Generated_Source\PSoC5/PWM_CLOCK.c ****     return CY_GET_REG16(PWM_CLOCK_DIV_PTR);
  214              		.loc 1 299 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 10
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 10
 
 
  215 0000 014B     		ldr	r3, .L18
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  235              		.loc 1 333 0
  236              		.cfi_startproc
  237              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 11
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 11
 
 
  238              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  362:Generated_Source\PSoC5/PWM_CLOCK.c **** *
  363:Generated_Source\PSoC5/PWM_CLOCK.c **** * Returns:
  364:Generated_Source\PSoC5/PWM_CLOCK.c **** *  None
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 12
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 12
 
 
  365:Generated_Source\PSoC5/PWM_CLOCK.c **** *
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  388:Generated_Source\PSoC5/PWM_CLOCK.c **** uint8 PWM_CLOCK_GetModeRegister(void) 
  389:Generated_Source\PSoC5/PWM_CLOCK.c **** {
  295              		.loc 1 389 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 13
 
 
  296              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  419:Generated_Source\PSoC5/PWM_CLOCK.c **** void PWM_CLOCK_SetSourceRegister(uint8 clkSource) 
  420:Generated_Source\PSoC5/PWM_CLOCK.c **** {
  421:Generated_Source\PSoC5/PWM_CLOCK.c ****     uint16 currDiv = PWM_CLOCK_GetDividerRegister();
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 14
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 14
 
 
  422:Generated_Source\PSoC5/PWM_CLOCK.c ****     uint8 oldSrc = PWM_CLOCK_GetSourceRegister();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  329              		.loc 1 467 0
  330 0004 00F00700 		and	r0, r0, #7
  331 0008 7047     		bx	lr
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 15
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 15
 
 
  332              	.L31:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  379              		.loc 1 205 0 is_stmt 0 discriminator 1
  380 0020 00B1     		cbz	r0, .L35
  205:Generated_Source\PSoC5/PWM_CLOCK.c ****         {
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 16
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 16
 
 
  381              		.loc 1 205 0 discriminator 2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  425              		.loc 1 240 0
  426 0058 0C39     		subs	r1, r1, #12
  427 005a 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 17
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 17
 
 
  428 005c 03F07F03 		and	r3, r3, #127
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  472              	.LVL18:
  473 00a4 00E0     		b	.L41
  474              	.LVL19:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 18
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 18
 
 
  475              	.L43:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  524              		@ frame_needed = 0, uses_anonymous_args = 0
  525              	.LVL23:
  526 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 19
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 19
 
 
  527              		.cfi_def_cfa_offset 16
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  569 0032 094A     		ldr	r2, .L52
  570 0034 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  438:Generated_Source\PSoC5/PWM_CLOCK.c ****             (PWM_CLOCK_MOD_SRC & (uint8)(~PWM_CLOCK_SRC_SEL_MSK)) | clkSource;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 20
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 20
 
 
  571              		.loc 1 438 0
@@ -1181,48 +1181,48 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  605 0006 00000000 		.4byte	.Ldebug_abbrev0
  606 000a 04       		.byte	0x4
  607 000b 01       		.uleb128 0x1
- 608 000c 82020000 		.4byte	.LASF36
+ 608 000c 6A020000 		.4byte	.LASF36
  609 0010 0C       		.byte	0xc
- 610 0011 91010000 		.4byte	.LASF37
- 611 0015 E6010000 		.4byte	.LASF38
+ 610 0011 15020000 		.4byte	.LASF37
+ 611 0015 08000000 		.4byte	.LASF38
  612 0019 00000000 		.4byte	.Ldebug_ranges0+0
  613 001d 00000000 		.4byte	0
  614 0021 00000000 		.4byte	.Ldebug_line0
  615 0025 02       		.uleb128 0x2
  616 0026 01       		.byte	0x1
  617 0027 06       		.byte	0x6
- 618 0028 C3000000 		.4byte	.LASF0
+ 618 0028 41010000 		.4byte	.LASF0
  619 002c 02       		.uleb128 0x2
  620 002d 01       		.byte	0x1
  621 002e 08       		.byte	0x8
- 622 002f 8D000000 		.4byte	.LASF1
+ 622 002f 0B010000 		.4byte	.LASF1
  623 0033 02       		.uleb128 0x2
  624 0034 02       		.byte	0x2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 21
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 21
 
 
  625 0035 05       		.byte	0x5
- 626 0036 0E000000 		.4byte	.LASF2
+ 626 0036 8C000000 		.4byte	.LASF2
  627 003a 02       		.uleb128 0x2
  628 003b 02       		.byte	0x2
  629 003c 07       		.byte	0x7
- 630 003d 2A010000 		.4byte	.LASF3
+ 630 003d A8010000 		.4byte	.LASF3
  631 0041 02       		.uleb128 0x2
  632 0042 04       		.byte	0x4
  633 0043 05       		.byte	0x5
- 634 0044 77000000 		.4byte	.LASF4
+ 634 0044 F5000000 		.4byte	.LASF4
  635 0048 02       		.uleb128 0x2
  636 0049 04       		.byte	0x4
  637 004a 07       		.byte	0x7
- 638 004b 78010000 		.4byte	.LASF5
+ 638 004b F6010000 		.4byte	.LASF5
  639 004f 02       		.uleb128 0x2
  640 0050 08       		.byte	0x8
  641 0051 05       		.byte	0x5
- 642 0052 69000000 		.4byte	.LASF6
+ 642 0052 E7000000 		.4byte	.LASF6
  643 0056 02       		.uleb128 0x2
  644 0057 08       		.byte	0x8
  645 0058 07       		.byte	0x7
- 646 0059 CF000000 		.4byte	.LASF7
+ 646 0059 4D010000 		.4byte	.LASF7
  647 005d 03       		.uleb128 0x3
  648 005e 04       		.byte	0x4
  649 005f 05       		.byte	0x5
@@ -1230,48 +1230,48 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  651 0064 02       		.uleb128 0x2
  652 0065 04       		.byte	0x4
  653 0066 07       		.byte	0x7
- 654 0067 E6000000 		.4byte	.LASF8
+ 654 0067 64010000 		.4byte	.LASF8
  655 006b 04       		.uleb128 0x4
- 656 006c 52000000 		.4byte	.LASF9
+ 656 006c D0000000 		.4byte	.LASF9
  657 0070 02       		.byte	0x2
  658 0071 E401     		.2byte	0x1e4
  659 0073 2C000000 		.4byte	0x2c
  660 0077 04       		.uleb128 0x4
- 661 0078 34000000 		.4byte	.LASF10
+ 661 0078 B2000000 		.4byte	.LASF10
  662 007c 02       		.byte	0x2
  663 007d E501     		.2byte	0x1e5
  664 007f 3A000000 		.4byte	0x3a
  665 0083 02       		.uleb128 0x2
  666 0084 04       		.byte	0x4
  667 0085 04       		.byte	0x4
- 668 0086 63000000 		.4byte	.LASF11
+ 668 0086 E1000000 		.4byte	.LASF11
  669 008a 02       		.uleb128 0x2
  670 008b 08       		.byte	0x8
  671 008c 04       		.byte	0x4
- 672 008d 8A010000 		.4byte	.LASF12
+ 672 008d 08020000 		.4byte	.LASF12
  673 0091 02       		.uleb128 0x2
  674 0092 01       		.byte	0x1
  675 0093 08       		.byte	0x8
- 676 0094 3D010000 		.4byte	.LASF13
+ 676 0094 BB010000 		.4byte	.LASF13
  677 0098 04       		.uleb128 0x4
- 678 0099 73010000 		.4byte	.LASF14
+ 678 0099 F1010000 		.4byte	.LASF14
  679 009d 02       		.byte	0x2
  680 009e 8E02     		.2byte	0x28e
  681 00a0 A4000000 		.4byte	0xa4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 22
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 22
 
 
  682 00a4 05       		.uleb128 0x5
  683 00a5 6B000000 		.4byte	0x6b
  684 00a9 04       		.uleb128 0x4
- 685 00aa 08000000 		.4byte	.LASF15
+ 685 00aa 0F020000 		.4byte	.LASF15
  686 00ae 02       		.byte	0x2
  687 00af 8F02     		.2byte	0x28f
  688 00b1 B5000000 		.4byte	0xb5
  689 00b5 05       		.uleb128 0x5
  690 00b6 77000000 		.4byte	0x77
  691 00ba 06       		.uleb128 0x6
- 692 00bb BC010000 		.4byte	.LASF16
+ 692 00bb 40020000 		.4byte	.LASF16
  693 00bf 01       		.byte	0x1
  694 00c0 2D       		.byte	0x2d
  695 00c1 00000000 		.4byte	.LFB0
@@ -1279,7 +1279,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  697 00c9 01       		.uleb128 0x1
  698 00ca 9C       		.byte	0x9c
  699 00cb 06       		.uleb128 0x6
- 700 00cc 43000000 		.4byte	.LASF17
+ 700 00cc C1000000 		.4byte	.LASF17
  701 00d0 01       		.byte	0x1
  702 00d1 47       		.byte	0x47
  703 00d2 00000000 		.4byte	.LFB1
@@ -1287,7 +1287,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  705 00da 01       		.uleb128 0x1
  706 00db 9C       		.byte	0x9c
  707 00dc 07       		.uleb128 0x7
- 708 00dd 5F010000 		.4byte	.LASF18
+ 708 00dd DD010000 		.4byte	.LASF18
  709 00e1 01       		.byte	0x1
  710 00e2 64       		.byte	0x64
  711 00e3 00000000 		.4byte	.LFB2
@@ -1299,7 +1299,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  717 00f2 0A000000 		.4byte	.LBB2
  718 00f6 62000000 		.4byte	.LBE2-.LBB2
  719 00fa 09       		.uleb128 0x9
- 720 00fb 54010000 		.4byte	.LASF30
+ 720 00fb D2010000 		.4byte	.LASF30
  721 00ff 01       		.byte	0x1
  722 0100 69       		.byte	0x69
  723 0101 77000000 		.4byte	0x77
@@ -1307,7 +1307,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  725 0109 00       		.byte	0
  726 010a 00       		.byte	0
  727 010b 07       		.uleb128 0x7
- 728 010c 49030000 		.4byte	.LASF19
+ 728 010c 31030000 		.4byte	.LASF19
  729 0110 01       		.byte	0x1
  730 0111 9D       		.byte	0x9d
  731 0112 00000000 		.4byte	.LFB3
@@ -1316,9 +1316,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  734 011b 9C       		.byte	0x9c
  735 011c 2E010000 		.4byte	0x12e
  736 0120 0A       		.uleb128 0xa
- 737 0121 87000000 		.4byte	.LASF21
+ 737 0121 05010000 		.4byte	.LASF21
  738 0125 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 23
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 23
 
 
  739 0126 9D       		.byte	0x9d
@@ -1327,7 +1327,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  742 012c 50       		.byte	0x50
  743 012d 00       		.byte	0
  744 012e 0B       		.uleb128 0xb
- 745 012f 0D010000 		.4byte	.LASF24
+ 745 012f 8B010000 		.4byte	.LASF24
  746 0133 01       		.byte	0x1
  747 0134 2901     		.2byte	0x129
  748 0136 77000000 		.4byte	0x77
@@ -1336,7 +1336,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  751 0142 01       		.uleb128 0x1
  752 0143 9C       		.byte	0x9c
  753 0144 0C       		.uleb128 0xc
- 754 0145 F3000000 		.4byte	.LASF20
+ 754 0145 71010000 		.4byte	.LASF20
  755 0149 01       		.byte	0x1
  756 014a 4C01     		.2byte	0x14c
  757 014c 00000000 		.4byte	.LFB6
@@ -1345,14 +1345,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  760 0155 9C       		.byte	0x9c
  761 0156 6B010000 		.4byte	0x16b
  762 015a 0D       		.uleb128 0xd
- 763 015b 9B000000 		.4byte	.LASF22
+ 763 015b 19010000 		.4byte	.LASF22
  764 015f 01       		.byte	0x1
  765 0160 4C01     		.2byte	0x14c
  766 0162 6B000000 		.4byte	0x6b
  767 0166 13000000 		.4byte	.LLST1
  768 016a 00       		.byte	0
  769 016b 0C       		.uleb128 0xc
- 770 016c 18000000 		.4byte	.LASF23
+ 770 016c 96000000 		.4byte	.LASF23
  771 0170 01       		.byte	0x1
  772 0171 6F01     		.2byte	0x16f
  773 0173 00000000 		.4byte	.LFB7
@@ -1361,14 +1361,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  776 017c 9C       		.byte	0x9c
  777 017d 92010000 		.4byte	0x192
  778 0181 0D       		.uleb128 0xd
- 779 0182 9B000000 		.4byte	.LASF22
+ 779 0182 19010000 		.4byte	.LASF22
  780 0186 01       		.byte	0x1
  781 0187 6F01     		.2byte	0x16f
  782 0189 6B000000 		.4byte	0x6b
  783 018d 34000000 		.4byte	.LLST2
  784 0191 00       		.byte	0
  785 0192 0B       		.uleb128 0xb
- 786 0193 CC010000 		.4byte	.LASF25
+ 786 0193 50020000 		.4byte	.LASF25
  787 0197 01       		.byte	0x1
  788 0198 8401     		.2byte	0x184
  789 019a 6B000000 		.4byte	0x6b
@@ -1377,8 +1377,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  792 01a6 01       		.uleb128 0x1
  793 01a7 9C       		.byte	0x9c
  794 01a8 0B       		.uleb128 0xb
- 795 01a9 10030000 		.4byte	.LASF26
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 24
+ 795 01a9 F8020000 		.4byte	.LASF26
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 24
 
 
  796 01ad 01       		.byte	0x1
@@ -1389,7 +1389,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  801 01bc 01       		.uleb128 0x1
  802 01bd 9C       		.byte	0x9c
  803 01be 07       		.uleb128 0x7
- 804 01bf 2C030000 		.4byte	.LASF27
+ 804 01bf 14030000 		.4byte	.LASF27
  805 01c3 01       		.byte	0x1
  806 01c4 C1       		.byte	0xc1
  807 01c5 00000000 		.4byte	.LFB4
@@ -1398,31 +1398,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  810 01ce 9C       		.byte	0x9c
  811 01cf 2F020000 		.4byte	0x22f
  812 01d3 0E       		.uleb128 0xe
- 813 01d4 58000000 		.4byte	.LASF28
+ 813 01d4 D6000000 		.4byte	.LASF28
  814 01d8 01       		.byte	0x1
  815 01d9 C1       		.byte	0xc1
  816 01da 77000000 		.4byte	0x77
  817 01de 55000000 		.4byte	.LLST3
  818 01e2 0E       		.uleb128 0xe
- 819 01e3 3B000000 		.4byte	.LASF29
+ 819 01e3 B9000000 		.4byte	.LASF29
  820 01e7 01       		.byte	0x1
  821 01e8 C1       		.byte	0xc1
  822 01e9 6B000000 		.4byte	0x6b
  823 01ed 76000000 		.4byte	.LLST4
  824 01f1 09       		.uleb128 0x9
- 825 01f2 B4010000 		.4byte	.LASF31
+ 825 01f2 38020000 		.4byte	.LASF31
  826 01f6 01       		.byte	0x1
  827 01f7 C4       		.byte	0xc4
  828 01f8 6B000000 		.4byte	0x6b
  829 01fc 97000000 		.4byte	.LLST5
  830 0200 09       		.uleb128 0x9
- 831 0201 4C010000 		.4byte	.LASF32
+ 831 0201 CA010000 		.4byte	.LASF32
  832 0205 01       		.byte	0x1
  833 0206 C6       		.byte	0xc6
  834 0207 6B000000 		.4byte	0x6b
  835 020b E1000000 		.4byte	.LLST6
  836 020f 0F       		.uleb128 0xf
- 837 0210 54010000 		.4byte	.LASF30
+ 837 0210 D2010000 		.4byte	.LASF30
  838 0214 01       		.byte	0x1
  839 0215 C7       		.byte	0xc7
  840 0216 77000000 		.4byte	0x77
@@ -1436,9 +1436,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  848 022a 2E010000 		.4byte	0x12e
  849 022e 00       		.byte	0
  850 022f 11       		.uleb128 0x11
- 851 0230 A7000000 		.4byte	.LASF39
+ 851 0230 25010000 		.4byte	.LASF39
  852 0234 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 25
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 25
 
 
  853 0235 A301     		.2byte	0x1a3
@@ -1447,7 +1447,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  856 023f 01       		.uleb128 0x1
  857 0240 9C       		.byte	0x9c
  858 0241 0D       		.uleb128 0xd
- 859 0242 42010000 		.4byte	.LASF33
+ 859 0242 C0010000 		.4byte	.LASF33
  860 0246 01       		.byte	0x1
  861 0247 A301     		.2byte	0x1a3
  862 0249 6B000000 		.4byte	0x6b
@@ -1459,7 +1459,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  868 0259 77000000 		.4byte	0x77
  869 025d 15010000 		.4byte	.LLST8
  870 0261 13       		.uleb128 0x13
- 871 0262 80000000 		.4byte	.LASF35
+ 871 0262 FE000000 		.4byte	.LASF35
  872 0266 01       		.byte	0x1
  873 0267 A601     		.2byte	0x1a6
  874 0269 6B000000 		.4byte	0x6b
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  907 0014 24       		.uleb128 0x24
  908 0015 00       		.byte	0
  909 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 26
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 26
 
 
  910 0017 0B       		.uleb128 0xb
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  964 004d 06       		.uleb128 0x6
  965 004e 40       		.uleb128 0x40
  966 004f 18       		.uleb128 0x18
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 27
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 27
 
 
  967 0050 9742     		.uleb128 0x2117
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1021 0088 05       		.uleb128 0x5
  1022 0089 00       		.byte	0
  1023 008a 03       		.uleb128 0x3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 28
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 28
 
 
  1024 008b 0E       		.uleb128 0xe
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1078 00c2 18       		.uleb128 0x18
  1079 00c3 9742     		.uleb128 0x2117
  1080 00c5 19       		.uleb128 0x19
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 29
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 29
 
 
  1081 00c6 01       		.uleb128 0x1
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1135 00fe 31       		.uleb128 0x31
  1136 00ff 13       		.uleb128 0x13
  1137 0100 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 30
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 30
 
 
  1138 0101 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1192 0138 00       		.byte	0
  1193              		.section	.debug_loc,"",%progbits
  1194              	.Ldebug_loc0:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 31
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 31
 
 
  1195              	.LLST0:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1249 0081 09000000 		.4byte	.LVL8-1
  1250 0085 DC000000 		.4byte	.LFE4
  1251 0089 0400     		.2byte	0x4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 32
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 32
 
 
  1252 008b F3       		.byte	0xf3
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1306              	.LLST8:
  1307 0115 0A000000 		.4byte	.LVL25
  1308 0119 56000000 		.4byte	.LVL29
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 33
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 33
 
 
  1309 011d 0100     		.2byte	0x1
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1363 0040 00000000 		.4byte	.LFB10
  1364 0044 10000000 		.4byte	.LFE10
  1365 0048 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 34
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 34
 
 
  1366 004c DC000000 		.4byte	.LFE4
@@ -1996,215 +1996,212 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 1
  1374              	.LASF34:
  1375 0000 63757272 		.ascii	"currDiv\000"
  1375      44697600 
- 1376              	.LASF15:
- 1377 0008 72656731 		.ascii	"reg16\000"
- 1377      3600
- 1378              	.LASF2:
- 1379 000e 73686F72 		.ascii	"short int\000"
- 1379      7420696E 
- 1379      7400
- 1380              	.LASF23:
- 1381 0018 50574D5F 		.ascii	"PWM_CLOCK_ClearModeRegister\000"
- 1381      434C4F43 
- 1381      4B5F436C 
- 1381      6561724D 
- 1381      6F646552 
- 1382              	.LASF10:
- 1383 0034 75696E74 		.ascii	"uint16\000"
- 1383      313600
- 1384              	.LASF29:
- 1385 003b 72657374 		.ascii	"restart\000"
- 1385      61727400 
- 1386              	.LASF17:
- 1387 0043 50574D5F 		.ascii	"PWM_CLOCK_Stop\000"
- 1387      434C4F43 
- 1387      4B5F5374 
- 1387      6F7000
- 1388              	.LASF9:
- 1389 0052 75696E74 		.ascii	"uint8\000"
- 1389      3800
- 1390              	.LASF28:
- 1391 0058 636C6B44 		.ascii	"clkDivider\000"
- 1391      69766964 
- 1391      657200
- 1392              	.LASF11:
- 1393 0063 666C6F61 		.ascii	"float\000"
- 1393      7400
- 1394              	.LASF6:
- 1395 0069 6C6F6E67 		.ascii	"long long int\000"
- 1395      206C6F6E 
- 1395      6720696E 
+ 1376              	.LASF38:
+ 1377 0008 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 1377      73657273 
+ 1377      5C4D616E 
+ 1377      755C4465 
+ 1377      736B746F 
+ 1378 0036 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 1378      31393230 
+ 1378      5F49495F 
+ 1378      48575F46 
+ 1378      494E414C 
+ 1379 0067 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 1379      5F46494E 
+ 1379      414C5F43 
+ 1379      41525A41 
+ 1379      4E494741 
+ 1380              	.LASF2:
+ 1381 008c 73686F72 		.ascii	"short int\000"
+ 1381      7420696E 
+ 1381      7400
+ 1382              	.LASF23:
+ 1383 0096 50574D5F 		.ascii	"PWM_CLOCK_ClearModeRegister\000"
+ 1383      434C4F43 
+ 1383      4B5F436C 
+ 1383      6561724D 
+ 1383      6F646552 
+ 1384              	.LASF10:
+ 1385 00b2 75696E74 		.ascii	"uint16\000"
+ 1385      313600
+ 1386              	.LASF29:
+ 1387 00b9 72657374 		.ascii	"restart\000"
+ 1387      61727400 
+ 1388              	.LASF17:
+ 1389 00c1 50574D5F 		.ascii	"PWM_CLOCK_Stop\000"
+ 1389      434C4F43 
+ 1389      4B5F5374 
+ 1389      6F7000
+ 1390              	.LASF9:
+ 1391 00d0 75696E74 		.ascii	"uint8\000"
+ 1391      3800
+ 1392              	.LASF28:
+ 1393 00d6 636C6B44 		.ascii	"clkDivider\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 35
+
+
+ 1393      69766964 
+ 1393      657200
+ 1394              	.LASF11:
+ 1395 00e1 666C6F61 		.ascii	"float\000"
  1395      7400
- 1396              	.LASF4:
- 1397 0077 6C6F6E67 		.ascii	"long int\000"
- 1397      20696E74 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 35
-
-
- 1397      00
- 1398              	.LASF35:
- 1399 0080 6F6C6453 		.ascii	"oldSrc\000"
- 1399      726300
- 1400              	.LASF21:
- 1401 0087 73746174 		.ascii	"state\000"
- 1401      6500
- 1402              	.LASF1:
- 1403 008d 756E7369 		.ascii	"unsigned char\000"
- 1403      676E6564 
- 1403      20636861 
- 1403      7200
- 1404              	.LASF22:
- 1405 009b 6D6F6465 		.ascii	"modeBitMask\000"
- 1405      4269744D 
- 1405      61736B00 
- 1406              	.LASF39:
- 1407 00a7 50574D5F 		.ascii	"PWM_CLOCK_SetSourceRegister\000"
- 1407      434C4F43 
- 1407      4B5F5365 
- 1407      74536F75 
- 1407      72636552 
- 1408              	.LASF0:
- 1409 00c3 7369676E 		.ascii	"signed char\000"
- 1409      65642063 
- 1409      68617200 
- 1410              	.LASF7:
- 1411 00cf 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1411      206C6F6E 
- 1411      6720756E 
- 1411      7369676E 
- 1411      65642069 
- 1412              	.LASF8:
- 1413 00e6 756E7369 		.ascii	"unsigned int\000"
- 1413      676E6564 
- 1413      20696E74 
- 1413      00
- 1414              	.LASF20:
- 1415 00f3 50574D5F 		.ascii	"PWM_CLOCK_SetModeRegister\000"
- 1415      434C4F43 
- 1415      4B5F5365 
- 1415      744D6F64 
- 1415      65526567 
- 1416              	.LASF24:
- 1417 010d 50574D5F 		.ascii	"PWM_CLOCK_GetDividerRegister\000"
+ 1396              	.LASF6:
+ 1397 00e7 6C6F6E67 		.ascii	"long long int\000"
+ 1397      206C6F6E 
+ 1397      6720696E 
+ 1397      7400
+ 1398              	.LASF4:
+ 1399 00f5 6C6F6E67 		.ascii	"long int\000"
+ 1399      20696E74 
+ 1399      00
+ 1400              	.LASF35:
+ 1401 00fe 6F6C6453 		.ascii	"oldSrc\000"
+ 1401      726300
+ 1402              	.LASF21:
+ 1403 0105 73746174 		.ascii	"state\000"
+ 1403      6500
+ 1404              	.LASF1:
+ 1405 010b 756E7369 		.ascii	"unsigned char\000"
+ 1405      676E6564 
+ 1405      20636861 
+ 1405      7200
+ 1406              	.LASF22:
+ 1407 0119 6D6F6465 		.ascii	"modeBitMask\000"
+ 1407      4269744D 
+ 1407      61736B00 
+ 1408              	.LASF39:
+ 1409 0125 50574D5F 		.ascii	"PWM_CLOCK_SetSourceRegister\000"
+ 1409      434C4F43 
+ 1409      4B5F5365 
+ 1409      74536F75 
+ 1409      72636552 
+ 1410              	.LASF0:
+ 1411 0141 7369676E 		.ascii	"signed char\000"
+ 1411      65642063 
+ 1411      68617200 
+ 1412              	.LASF7:
+ 1413 014d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1413      206C6F6E 
+ 1413      6720756E 
+ 1413      7369676E 
+ 1413      65642069 
+ 1414              	.LASF8:
+ 1415 0164 756E7369 		.ascii	"unsigned int\000"
+ 1415      676E6564 
+ 1415      20696E74 
+ 1415      00
+ 1416              	.LASF20:
+ 1417 0171 50574D5F 		.ascii	"PWM_CLOCK_SetModeRegister\000"
  1417      434C4F43 
- 1417      4B5F4765 
- 1417      74446976 
- 1417      69646572 
- 1418              	.LASF3:
- 1419 012a 73686F72 		.ascii	"short unsigned int\000"
- 1419      7420756E 
- 1419      7369676E 
- 1419      65642069 
- 1419      6E7400
- 1420              	.LASF13:
- 1421 013d 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 36
+ 1417      4B5F5365 
+ 1417      744D6F64 
+ 1417      65526567 
+ 1418              	.LASF24:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 36
 
 
- 1421      00
- 1422              	.LASF33:
- 1423 0142 636C6B53 		.ascii	"clkSource\000"
- 1423      6F757263 
- 1423      6500
- 1424              	.LASF32:
- 1425 014c 63757272 		.ascii	"currSrc\000"
- 1425      53726300 
- 1426              	.LASF30:
- 1427 0154 6F6C6444 		.ascii	"oldDivider\000"
- 1427      69766964 
- 1427      657200
- 1428              	.LASF18:
- 1429 015f 50574D5F 		.ascii	"PWM_CLOCK_StopBlock\000"
- 1429      434C4F43 
- 1429      4B5F5374 
- 1429      6F70426C 
- 1429      6F636B00 
- 1430              	.LASF14:
- 1431 0173 72656738 		.ascii	"reg8\000"
- 1431      00
- 1432              	.LASF5:
- 1433 0178 6C6F6E67 		.ascii	"long unsigned int\000"
- 1433      20756E73 
- 1433      69676E65 
- 1433      6420696E 
- 1433      7400
- 1434              	.LASF12:
- 1435 018a 646F7562 		.ascii	"double\000"
- 1435      6C6500
- 1436              	.LASF37:
- 1437 0191 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_CLOCK.c\000"
- 1437      72617465 
- 1437      645F536F 
- 1437      75726365 
- 1437      5C50536F 
- 1438              	.LASF31:
- 1439 01b4 656E6162 		.ascii	"enabled\000"
- 1439      6C656400 
- 1440              	.LASF16:
- 1441 01bc 50574D5F 		.ascii	"PWM_CLOCK_Start\000"
- 1441      434C4F43 
- 1441      4B5F5374 
- 1441      61727400 
- 1442              	.LASF25:
- 1443 01cc 50574D5F 		.ascii	"PWM_CLOCK_GetModeRegister\000"
- 1443      434C4F43 
- 1443      4B5F4765 
- 1443      744D6F64 
- 1443      65526567 
- 1444              	.LASF38:
- 1445 01e6 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 1445      73657273 
- 1445      5C4C6F72 
- 1445      795C4465 
- 1445      736B746F 
- 1446 0214 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cce0tYLq.s 			page 37
+ 1419 018b 50574D5F 		.ascii	"PWM_CLOCK_GetDividerRegister\000"
+ 1419      434C4F43 
+ 1419      4B5F4765 
+ 1419      74446976 
+ 1419      69646572 
+ 1420              	.LASF3:
+ 1421 01a8 73686F72 		.ascii	"short unsigned int\000"
+ 1421      7420756E 
+ 1421      7369676E 
+ 1421      65642069 
+ 1421      6E7400
+ 1422              	.LASF13:
+ 1423 01bb 63686172 		.ascii	"char\000"
+ 1423      00
+ 1424              	.LASF33:
+ 1425 01c0 636C6B53 		.ascii	"clkSource\000"
+ 1425      6F757263 
+ 1425      6500
+ 1426              	.LASF32:
+ 1427 01ca 63757272 		.ascii	"currSrc\000"
+ 1427      53726300 
+ 1428              	.LASF30:
+ 1429 01d2 6F6C6444 		.ascii	"oldDivider\000"
+ 1429      69766964 
+ 1429      657200
+ 1430              	.LASF18:
+ 1431 01dd 50574D5F 		.ascii	"PWM_CLOCK_StopBlock\000"
+ 1431      434C4F43 
+ 1431      4B5F5374 
+ 1431      6F70426C 
+ 1431      6F636B00 
+ 1432              	.LASF14:
+ 1433 01f1 72656738 		.ascii	"reg8\000"
+ 1433      00
+ 1434              	.LASF5:
+ 1435 01f6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1435      20756E73 
+ 1435      69676E65 
+ 1435      6420696E 
+ 1435      7400
+ 1436              	.LASF12:
+ 1437 0208 646F7562 		.ascii	"double\000"
+ 1437      6C6500
+ 1438              	.LASF15:
+ 1439 020f 72656731 		.ascii	"reg16\000"
+ 1439      3600
+ 1440              	.LASF37:
+ 1441 0215 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_CLOCK.c\000"
+ 1441      72617465 
+ 1441      645F536F 
+ 1441      75726365 
+ 1441      5C50536F 
+ 1442              	.LASF31:
+ 1443 0238 656E6162 		.ascii	"enabled\000"
+ 1443      6C656400 
+ 1444              	.LASF16:
+ 1445 0240 50574D5F 		.ascii	"PWM_CLOCK_Start\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cccVMxAa.s 			page 37
 
 
- 1446      65735C50 
- 1446      536F432D 
- 1446      46696E61 
- 1446      6C2D5072 
- 1447 0245 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 1447      415F4755 
- 1447      414C4E49 
- 1447      4552415C 
- 1447      41593139 
- 1448 0277 49455241 		.ascii	"IERA.cydsn\000"
- 1448      2E637964 
- 1448      736E00
- 1449              	.LASF36:
- 1450 0282 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1450      43313120 
- 1450      352E342E 
- 1450      31203230 
- 1450      31363036 
- 1451 02b5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1451      20726576 
- 1451      6973696F 
- 1451      6E203233 
- 1451      37373135 
- 1452 02e8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1452      66756E63 
- 1452      74696F6E 
- 1452      2D736563 
- 1452      74696F6E 
- 1453              	.LASF26:
- 1454 0310 50574D5F 		.ascii	"PWM_CLOCK_GetSourceRegister\000"
- 1454      434C4F43 
- 1454      4B5F4765 
- 1454      74536F75 
- 1454      72636552 
- 1455              	.LASF27:
- 1456 032c 50574D5F 		.ascii	"PWM_CLOCK_SetDividerRegister\000"
- 1456      434C4F43 
- 1456      4B5F5365 
- 1456      74446976 
- 1456      69646572 
- 1457              	.LASF19:
- 1458 0349 50574D5F 		.ascii	"PWM_CLOCK_StandbyPower\000"
- 1458      434C4F43 
- 1458      4B5F5374 
- 1458      616E6462 
- 1458      79506F77 
- 1459              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1445      434C4F43 
+ 1445      4B5F5374 
+ 1445      61727400 
+ 1446              	.LASF25:
+ 1447 0250 50574D5F 		.ascii	"PWM_CLOCK_GetModeRegister\000"
+ 1447      434C4F43 
+ 1447      4B5F4765 
+ 1447      744D6F64 
+ 1447      65526567 
+ 1448              	.LASF36:
+ 1449 026a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1449      43313120 
+ 1449      352E342E 
+ 1449      31203230 
+ 1449      31363036 
+ 1450 029d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1450      20726576 
+ 1450      6973696F 
+ 1450      6E203233 
+ 1450      37373135 
+ 1451 02d0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1451      66756E63 
+ 1451      74696F6E 
+ 1451      2D736563 
+ 1451      74696F6E 
+ 1452              	.LASF26:
+ 1453 02f8 50574D5F 		.ascii	"PWM_CLOCK_GetSourceRegister\000"
+ 1453      434C4F43 
+ 1453      4B5F4765 
+ 1453      74536F75 
+ 1453      72636552 
+ 1454              	.LASF27:
+ 1455 0314 50574D5F 		.ascii	"PWM_CLOCK_SetDividerRegister\000"
+ 1455      434C4F43 
+ 1455      4B5F5365 
+ 1455      74446976 
+ 1455      69646572 
+ 1456              	.LASF19:
+ 1457 0331 50574D5F 		.ascii	"PWM_CLOCK_StandbyPower\000"
+ 1457      434C4F43 
+ 1457      4B5F5374 
+ 1457      616E6462 
+ 1457      79506F77 
+ 1458              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

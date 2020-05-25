@@ -44,7 +44,7 @@ int main(void)
     IMU_RegistersSetup();
     
     // Enable external ISR from IMU
-    //ISR_IMU_StartEx(CUSTOM_ISR_IMU);
+    ISR_IMU_StartEx(CUSTOM_ISR_IMU);
     
     // Enable configuration mode ISR
     ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
@@ -52,9 +52,10 @@ int main(void)
     // Enable start/stop mode ISR
     ISR_START_StartEx(CUSTOM_ISR_START);
 
-    // Initialize HW timers 
+    // Initialize timers 
     BUTTON_TIMER_Start();
     CLICK_TIMER_Start();
+    MAIN_TIMER_Start();
     
     // Initialize ADC
     ADC_DELSIG_Start();
@@ -67,9 +68,7 @@ int main(void)
     
     // Initialize IMU data flag
     IMU_interrupt_flag = 0;
-    IMU_data_ready_flag = 0;
-    IMU_over_threshold_flag = 0;
-    
+
     // End of setup
     CyDelay(10);
     
@@ -108,12 +107,13 @@ int main(void)
             {
                 // Read data via SPI from IMU
                 IMU_ReadFIFO(IMU_DataBuffer);
+                
+                // Store the read FIFO in the LOG buffer
+                IMU_StoreFIFO(IMU_DataBuffer);
     
                 //Send data read from FIFO via UART
                 IMU_DataSend(IMU_DataBuffer);
                     
-                // Reset the FIFO to enable next ISR occurrences
-                IMU_ResetFIFO();
                 
                 // Drive RGB LED with IMU data
                 RGB_Driver(IMU_DataBuffer); 
@@ -138,7 +138,9 @@ int main(void)
                 IMU_over_threshold_flag = 1;
             }
             
-            // Reset flag to allow new ISR occurrences
+            // Reset the FIFO to enable next ISR occurrences
+            IMU_ResetFIFO();
+            // Reset flag interrupt flag
             IMU_interrupt_flag = 0;
         }   
     }

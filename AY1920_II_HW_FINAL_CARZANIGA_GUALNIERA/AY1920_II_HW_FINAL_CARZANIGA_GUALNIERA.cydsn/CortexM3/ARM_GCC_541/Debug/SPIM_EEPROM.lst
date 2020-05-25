@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
   28:Generated_Source\PSoC5/SPIM_EEPROM.c ****     volatile uint8 SPIM_EEPROM_rxBuffer[SPIM_EEPROM_RX_BUFFER_SIZE];
   29:Generated_Source\PSoC5/SPIM_EEPROM.c ****     volatile uint8 SPIM_EEPROM_rxBufferFull;
   30:Generated_Source\PSoC5/SPIM_EEPROM.c ****     volatile uint8 SPIM_EEPROM_rxBufferRead;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 2
 
 
   31:Generated_Source\PSoC5/SPIM_EEPROM.c ****     volatile uint8 SPIM_EEPROM_rxBufferWrite;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
   85:Generated_Source\PSoC5/SPIM_EEPROM.c ****     #if(SPIM_EEPROM_RX_SOFTWARE_BUF_ENABLED)
   86:Generated_Source\PSoC5/SPIM_EEPROM.c ****         SPIM_EEPROM_rxBufferFull  = 0u;
   87:Generated_Source\PSoC5/SPIM_EEPROM.c ****         SPIM_EEPROM_rxBufferRead  = 0u;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 3
 
 
   88:Generated_Source\PSoC5/SPIM_EEPROM.c ****         SPIM_EEPROM_rxBufferWrite = 0u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  142:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
  143:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Summary:
  144:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  Initialize and Enable the SPI Master component.
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 4
 
 
  145:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  199:Generated_Source\PSoC5/SPIM_EEPROM.c ****     CyExitCriticalSection(enableInterrupts);
  200:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
  201:Generated_Source\PSoC5/SPIM_EEPROM.c ****     #if(0u != SPIM_EEPROM_INTERNAL_CLOCK)
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 5
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 5
 
 
  202:Generated_Source\PSoC5/SPIM_EEPROM.c ****         SPIM_EEPROM_IntClock_Disable();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  231:Generated_Source\PSoC5/SPIM_EEPROM.c ****     #endif /* (0u != SPIM_EEPROM_INTERNAL_TX_INT_ENABLED) */
  232:Generated_Source\PSoC5/SPIM_EEPROM.c **** }
  233:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 6
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 6
 
 
  234:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
   84              		.cfi_offset 3, -8
   85              		.cfi_offset 14, -4
  124:Generated_Source\PSoC5/SPIM_EEPROM.c ****     SPIM_EEPROM_COUNTER_CONTROL_REG |= SPIM_EEPROM_CNTR_ENABLE;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 7
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 7
 
 
   86              		.loc 1 124 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  257:Generated_Source\PSoC5/SPIM_EEPROM.c **** }
  258:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
  259:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 8
 
 
  260:Generated_Source\PSoC5/SPIM_EEPROM.c **** /*******************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  289:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Summary:
  290:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  Disable internal Rx interrupt generation.
  291:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 9
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 9
 
 
  292:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Parameters:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  194 0006 094A     		ldr	r2, .L19
  195 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  196 000a 03F0EF03 		and	r3, r3, #239
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 10
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 10
 
 
  197 000e 1370     		strb	r3, [r2]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  321:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Return:
  322:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  None.
  323:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 11
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 11
 
 
  324:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Theory:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  353:Generated_Source\PSoC5/SPIM_EEPROM.c **** {
  256              		.loc 1 353 0
  257              		.cfi_startproc
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 12
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 12
 
 
  258              		@ args = 0, pretend = 0, frame = 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  385:Generated_Source\PSoC5/SPIM_EEPROM.c **** *******************************************************************************/
  386:Generated_Source\PSoC5/SPIM_EEPROM.c **** uint8 SPIM_EEPROM_ReadTxStatus(void) 
  387:Generated_Source\PSoC5/SPIM_EEPROM.c **** {
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 13
 
 
  281              		.loc 1 387 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  316              	.LFE10:
  317              		.size	SPIM_EEPROM_ReadTxStatus, .-SPIM_EEPROM_ReadTxStatus
  318              		.section	.text.SPIM_EEPROM_ReadRxStatus,"ax",%progbits
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 14
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 14
 
 
  319              		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  336              	.LVL16:
  444:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
  445:Generated_Source\PSoC5/SPIM_EEPROM.c ****         tmpStatus = SPIM_EEPROM_GET_STATUS_RX(SPIM_EEPROM_swStatusRx);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 15
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 15
 
 
  337              		.loc 1 445 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  466:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
  467:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Parameters:
  468:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  txDataByte: The data value to send across the SPI.
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 16
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 16
 
 
  469:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  388 000c 12B1     		cbz	r2, .L43
  506:Generated_Source\PSoC5/SPIM_EEPROM.c ****             {
  507:Generated_Source\PSoC5/SPIM_EEPROM.c ****                 tmpTxBufferRead = (SPIM_EEPROM_TX_BUFFER_SIZE - 1u);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 17
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 17
 
 
  508:Generated_Source\PSoC5/SPIM_EEPROM.c ****             }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  426 003e DBB2     		uxtb	r3, r3
  427 0040 9A42     		cmp	r2, r3
  428 0042 07D1     		bne	.L38
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 18
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 18
 
 
  524:Generated_Source\PSoC5/SPIM_EEPROM.c ****            (0u != (SPIM_EEPROM_swStatusTx & SPIM_EEPROM_STS_TX_FIFO_NOT_FULL)))
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  467 007a 0ED1     		bne	.L41
  539:Generated_Source\PSoC5/SPIM_EEPROM.c ****             {
  540:Generated_Source\PSoC5/SPIM_EEPROM.c ****                 SPIM_EEPROM_txBufferRead++;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 19
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 19
 
 
  468              		.loc 1 540 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  509 00b8 00000000 		.word	SPIM_EEPROM_txBufferWrite
  510 00bc 62640040 		.word	1073767522
  511 00c0 00000000 		.word	SPIM_EEPROM_swStatusTx
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 20
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 20
 
 
  512 00c4 41640040 		.word	1073767489
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  593:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Side Effects:
  594:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  Will return invalid data if the FIFO is empty. The user should Call
  595:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 21
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 21
 
 
  596:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  ReadByte() function.
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  560 002c DBB2     		uxtb	r3, r3
  561 002e 072B     		cmp	r3, #7
  562 0030 06D9     		bls	.L48
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 22
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 22
 
 
  617:Generated_Source\PSoC5/SPIM_EEPROM.c ****                 {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  595 0060 00000000 		.word	SPIM_EEPROM_rxBuffer
  596              		.cfi_endproc
  597              	.LFE13:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 23
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 23
 
 
  598              		.size	SPIM_EEPROM_ReadRxData, .-SPIM_EEPROM_ReadRxData
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  617              	.LVL36:
  674:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
  675:Generated_Source\PSoC5/SPIM_EEPROM.c ****         if(SPIM_EEPROM_rxBufferRead == SPIM_EEPROM_rxBufferWrite)
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 24
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 24
 
 
  618              		.loc 1 675 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  661              	.L54:
  662              	.LVL41:
  686:Generated_Source\PSoC5/SPIM_EEPROM.c ****         }
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 25
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 25
 
 
  687:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  718:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  SPIM_EEPROM_txBufferWrite - used for the account of the bytes which
  719:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  have been written down in the TX software buffer.
  720:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  SPIM_EEPROM_txBufferRead - used for the account of the bytes which
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 26
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 26
 
 
  721:Generated_Source\PSoC5/SPIM_EEPROM.c **** *  have been read from the TX software buffer.
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  719 002c 1478     		ldrb	r4, [r2]	@ zero_extendqisi2
  720 002e 1C1B     		subs	r4, r3, r4
  721 0030 E4B2     		uxtb	r4, r4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 27
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 27
 
 
  722              	.LVL45:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  746 004a 2046     		mov	r0, r4
  747 004c 10BD     		pop	{r4, pc}
  748              	.LVL51:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 28
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 28
 
 
  749              	.L66:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  766              		.cfi_startproc
  767              		@ args = 0, pretend = 0, frame = 0
  768              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 29
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 29
 
 
  769 0000 08B5     		push	{r3, lr}
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  807 0034 00000000 		.word	SPIM_EEPROM_rxBufferFull
  808 0038 00000000 		.word	SPIM_EEPROM_rxBufferRead
  809 003c 00000000 		.word	SPIM_EEPROM_rxBufferWrite
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 30
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 30
 
 
  810              		.cfi_endproc
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  824              		@ frame_needed = 0, uses_anonymous_args = 0
  825 0000 08B5     		push	{r3, lr}
  826              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 31
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 31
 
 
  827              		.cfi_offset 3, -8
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  857              		.loc 1 886 0
  858 002e 084A     		ldr	r2, .L75+16
  859 0030 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 32
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 32
 
 
  860 0032 03F0FB03 		and	r3, r3, #251
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  916:Generated_Source\PSoC5/SPIM_EEPROM.c ****     * Function Name: SPIM_EEPROM_TxDisable
  917:Generated_Source\PSoC5/SPIM_EEPROM.c ****     ********************************************************************************
  918:Generated_Source\PSoC5/SPIM_EEPROM.c ****     *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 33
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 33
 
 
  919:Generated_Source\PSoC5/SPIM_EEPROM.c ****     * Summary:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  893              		.cfi_offset 5, -12
  894              		.cfi_offset 6, -8
  895              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 34
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 34
 
 
  896 0002 0646     		mov	r6, r0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  978:Generated_Source\PSoC5/SPIM_EEPROM.c **** /*******************************************************************************
  979:Generated_Source\PSoC5/SPIM_EEPROM.c **** * Function Name: SPIM_EEPROM_ClearFIFO
  980:Generated_Source\PSoC5/SPIM_EEPROM.c **** ********************************************************************************
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 35
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 35
 
 
  981:Generated_Source\PSoC5/SPIM_EEPROM.c **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  962 001a 42F00102 		orr	r2, r2, #1
  963 001e 1A70     		strb	r2, [r3]
 1008:Generated_Source\PSoC5/SPIM_EEPROM.c ****     SPIM_EEPROM_AUX_CONTROL_DP0_REG &= ((uint8) ~SPIM_EEPROM_TX_FIFO_CLR);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 36
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 36
 
 
  964              		.loc 1 1008 0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1007 0010 0846     		mov	r0, r1
  1008 0012 FFF7FEFF 		bl	CyIntSetPriority
  1009              	.LVL68:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 37
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 37
 
 
   72:Generated_Source\PSoC5/SPIM_EEPROM.c ****     #endif /* (0u != SPIM_EEPROM_INTERNAL_TX_INT_ENABLED) */
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1052              	.LVL73:
   98:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
  1053              		.loc 1 98 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 38
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 38
 
 
  1054 0054 FFF7FEFF 		bl	SPIM_EEPROM_ReadRxStatus
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1103              	.LVL75:
  168:Generated_Source\PSoC5/SPIM_EEPROM.c ****     }
  1104              		.loc 1 168 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 39
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 39
 
 
  1105 000c 0122     		movs	r2, #1
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1131              		@ frame_needed = 0, uses_anonymous_args = 0
  1132 0000 08B5     		push	{r3, lr}
  1133              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 40
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 40
 
 
  1134              		.cfi_offset 3, -8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1163 0002 FFF7FEFF 		bl	SPIM_EEPROM_DisableTxInt
  1164              	.LVL79:
 1068:Generated_Source\PSoC5/SPIM_EEPROM.c ****     SPIM_EEPROM_DisableRxInt();
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 41
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 41
 
 
  1165              		.loc 1 1068 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1194              	.L102:
  1195 000e 00BF     		.align	2
  1196              	.L101:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 42
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 42
 
 
  1197 0010 82640040 		.word	1073767554
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
 1128:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
 1129:Generated_Source\PSoC5/SPIM_EEPROM.c ****     #if(SPIM_EEPROM_TX_SOFTWARE_BUF_ENABLED || SPIM_EEPROM_RX_SOFTWARE_BUF_ENABLED)
 1130:Generated_Source\PSoC5/SPIM_EEPROM.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 43
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 43
 
 
 1131:Generated_Source\PSoC5/SPIM_EEPROM.c ****         SPIM_EEPROM_DisableInt();
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1250 0034 10BD     		pop	{r4, pc}
  1251              	.LVL87:
  1252              	.L106:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 44
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 44
 
 
  1253 0036 00BF     		.align	2
@@ -2619,48 +2619,48 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1288 0006 00000000 		.4byte	.Ldebug_abbrev0
  1289 000a 04       		.byte	0x4
  1290 000b 01       		.uleb128 0x1
- 1291 000c 62040000 		.4byte	.LASF70
+ 1291 000c 4A040000 		.4byte	.LASF70
  1292 0010 0C       		.byte	0xc
- 1293 0011 66010000 		.4byte	.LASF71
- 1294 0015 C6030000 		.4byte	.LASF72
+ 1293 0011 EA010000 		.4byte	.LASF71
+ 1294 0015 A5000000 		.4byte	.LASF72
  1295 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1296 001d 00000000 		.4byte	0
  1297 0021 00000000 		.4byte	.Ldebug_line0
  1298 0025 02       		.uleb128 0x2
  1299 0026 01       		.byte	0x1
  1300 0027 06       		.byte	0x6
- 1301 0028 C9000000 		.4byte	.LASF0
+ 1301 0028 4D010000 		.4byte	.LASF0
  1302 002c 02       		.uleb128 0x2
  1303 002d 01       		.byte	0x1
  1304 002e 08       		.byte	0x8
- 1305 002f AE030000 		.4byte	.LASF1
+ 1305 002f 32040000 		.4byte	.LASF1
  1306 0033 02       		.uleb128 0x2
  1307 0034 02       		.byte	0x2
  1308 0035 05       		.byte	0x5
- 1309 0036 BC030000 		.4byte	.LASF2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 45
+ 1309 0036 40040000 		.4byte	.LASF2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 45
 
 
  1310 003a 02       		.uleb128 0x2
  1311 003b 02       		.byte	0x2
  1312 003c 07       		.byte	0x7
- 1313 003d 4B020000 		.4byte	.LASF3
+ 1313 003d CF020000 		.4byte	.LASF3
  1314 0041 02       		.uleb128 0x2
  1315 0042 04       		.byte	0x4
  1316 0043 05       		.byte	0x5
- 1317 0044 F4000000 		.4byte	.LASF4
+ 1317 0044 78010000 		.4byte	.LASF4
  1318 0048 02       		.uleb128 0x2
  1319 0049 04       		.byte	0x4
  1320 004a 07       		.byte	0x7
- 1321 004b ED010000 		.4byte	.LASF5
+ 1321 004b 71020000 		.4byte	.LASF5
  1322 004f 02       		.uleb128 0x2
  1323 0050 08       		.byte	0x8
  1324 0051 05       		.byte	0x5
- 1325 0052 BB000000 		.4byte	.LASF6
+ 1325 0052 3F010000 		.4byte	.LASF6
  1326 0056 02       		.uleb128 0x2
  1327 0057 08       		.byte	0x8
  1328 0058 07       		.byte	0x7
- 1329 0059 84000000 		.4byte	.LASF7
+ 1329 0059 8E000000 		.4byte	.LASF7
  1330 005d 03       		.uleb128 0x3
  1331 005e 04       		.byte	0x4
  1332 005f 05       		.byte	0x5
@@ -2668,41 +2668,41 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1334 0064 02       		.uleb128 0x2
  1335 0065 04       		.byte	0x4
  1336 0066 07       		.byte	0x7
- 1337 0067 C7010000 		.4byte	.LASF8
+ 1337 0067 4B020000 		.4byte	.LASF8
  1338 006b 04       		.uleb128 0x4
- 1339 006c 3F010000 		.4byte	.LASF9
+ 1339 006c C3010000 		.4byte	.LASF9
  1340 0070 02       		.byte	0x2
  1341 0071 E401     		.2byte	0x1e4
  1342 0073 2C000000 		.4byte	0x2c
  1343 0077 04       		.uleb128 0x4
- 1344 0078 8B010000 		.4byte	.LASF10
+ 1344 0078 0F020000 		.4byte	.LASF10
  1345 007c 02       		.byte	0x2
  1346 007d E601     		.2byte	0x1e6
  1347 007f 48000000 		.4byte	0x48
  1348 0083 02       		.uleb128 0x2
  1349 0084 04       		.byte	0x4
  1350 0085 04       		.byte	0x4
- 1351 0086 71030000 		.4byte	.LASF11
+ 1351 0086 F5030000 		.4byte	.LASF11
  1352 008a 02       		.uleb128 0x2
  1353 008b 08       		.byte	0x8
  1354 008c 04       		.byte	0x4
- 1355 008d 5F010000 		.4byte	.LASF12
+ 1355 008d E3010000 		.4byte	.LASF12
  1356 0091 02       		.uleb128 0x2
  1357 0092 01       		.byte	0x1
  1358 0093 08       		.byte	0x8
- 1359 0094 32050000 		.4byte	.LASF13
+ 1359 0094 1A050000 		.4byte	.LASF13
  1360 0098 04       		.uleb128 0x4
- 1361 0099 A9030000 		.4byte	.LASF14
+ 1361 0099 2D040000 		.4byte	.LASF14
  1362 009d 02       		.byte	0x2
  1363 009e 8E02     		.2byte	0x28e
  1364 00a0 A4000000 		.4byte	0xa4
  1365 00a4 05       		.uleb128 0x5
  1366 00a5 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 46
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 46
 
 
  1367 00a9 04       		.uleb128 0x4
- 1368 00aa D2020000 		.4byte	.LASF15
+ 1368 00aa 56030000 		.4byte	.LASF15
  1369 00ae 02       		.byte	0x2
  1370 00af 9002     		.2byte	0x290
  1371 00b1 B5000000 		.4byte	0xb5
@@ -2711,13 +2711,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1374 00ba 02       		.uleb128 0x2
  1375 00bb 08       		.byte	0x8
  1376 00bc 04       		.byte	0x4
- 1377 00bd 17030000 		.4byte	.LASF16
+ 1377 00bd 9B030000 		.4byte	.LASF16
  1378 00c1 02       		.uleb128 0x2
  1379 00c2 04       		.byte	0x4
  1380 00c3 07       		.byte	0x7
- 1381 00c4 0E030000 		.4byte	.LASF17
+ 1381 00c4 92030000 		.4byte	.LASF17
  1382 00c8 06       		.uleb128 0x6
- 1383 00c9 C7050000 		.4byte	.LASF18
+ 1383 00c9 AF050000 		.4byte	.LASF18
  1384 00cd 01       		.byte	0x1
  1385 00ce E3       		.byte	0xe3
  1386 00cf 00000000 		.4byte	.LFB4
@@ -2725,7 +2725,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1388 00d7 01       		.uleb128 0x1
  1389 00d8 9C       		.byte	0x9c
  1390 00d9 06       		.uleb128 0x6
- 1391 00da 91030000 		.4byte	.LASF19
+ 1391 00da 15040000 		.4byte	.LASF19
  1392 00de 01       		.byte	0x1
  1393 00df FC       		.byte	0xfc
  1394 00e0 00000000 		.4byte	.LFB5
@@ -2733,7 +2733,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1396 00e8 01       		.uleb128 0x1
  1397 00e9 9C       		.byte	0x9c
  1398 00ea 07       		.uleb128 0x7
- 1399 00eb A6020000 		.4byte	.LASF22
+ 1399 00eb 2A030000 		.4byte	.LASF22
  1400 00ef 01       		.byte	0x1
  1401 00f0 78       		.byte	0x78
  1402 00f1 00000000 		.4byte	.LFB1
@@ -2742,7 +2742,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1405 00fa 9C       		.byte	0x9c
  1406 00fb 3C010000 		.4byte	0x13c
  1407 00ff 08       		.uleb128 0x8
- 1408 0100 B6050000 		.4byte	.LASF24
+ 1408 0100 9E050000 		.4byte	.LASF24
  1409 0104 01       		.byte	0x1
  1410 0105 7A       		.byte	0x7a
  1411 0106 6B000000 		.4byte	0x6b
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1421 0125 DC060000 		.4byte	0x6dc
  1422 0129 09       		.uleb128 0x9
  1423 012a 30000000 		.4byte	.LVL3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 47
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 47
 
 
  1424 012e C8000000 		.4byte	0xc8
@@ -2767,7 +2767,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1427 0137 D9000000 		.4byte	0xd9
  1428 013b 00       		.byte	0
  1429 013c 0A       		.uleb128 0xa
- 1430 013d 16010000 		.4byte	.LASF20
+ 1430 013d 9A010000 		.4byte	.LASF20
  1431 0141 01       		.byte	0x1
  1432 0142 1501     		.2byte	0x115
  1433 0144 00000000 		.4byte	.LFB6
@@ -2775,7 +2775,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1435 014c 01       		.uleb128 0x1
  1436 014d 9C       		.byte	0x9c
  1437 014e 0A       		.uleb128 0xa
- 1438 014f 0E060000 		.4byte	.LASF21
+ 1438 014f F6050000 		.4byte	.LASF21
  1439 0153 01       		.byte	0x1
  1440 0154 2E01     		.2byte	0x12e
  1441 0156 00000000 		.4byte	.LFB7
@@ -2792,7 +2792,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1452 0170 9C       		.byte	0x9c
  1453 0171 B2010000 		.4byte	0x1b2
  1454 0175 08       		.uleb128 0x8
- 1455 0176 B6050000 		.4byte	.LASF24
+ 1455 0176 9E050000 		.4byte	.LASF24
  1456 017a 01       		.byte	0x1
  1457 017b C2       		.byte	0xc2
  1458 017c 6B000000 		.4byte	0x6b
@@ -2814,11 +2814,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1474 01ad 4E010000 		.4byte	0x14e
  1475 01b1 00       		.byte	0
  1476 01b2 0B       		.uleb128 0xb
- 1477 01b3 D8020000 		.4byte	.LASF25
+ 1477 01b3 5C030000 		.4byte	.LASF25
  1478 01b7 01       		.byte	0x1
  1479 01b8 4801     		.2byte	0x148
  1480 01ba 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 48
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 48
 
 
  1481 01be 0C000000 		.4byte	.LFE8-.LFB8
@@ -2826,7 +2826,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1483 01c3 9C       		.byte	0x9c
  1484 01c4 D7010000 		.4byte	0x1d7
  1485 01c8 0C       		.uleb128 0xc
- 1486 01c9 9F020000 		.4byte	.LASF27
+ 1486 01c9 23030000 		.4byte	.LASF27
  1487 01cd 01       		.byte	0x1
  1488 01ce 4801     		.2byte	0x148
  1489 01d0 6B000000 		.4byte	0x6b
@@ -2834,7 +2834,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1491 01d5 50       		.byte	0x50
  1492 01d6 00       		.byte	0
  1493 01d7 0B       		.uleb128 0xb
- 1494 01d8 D5000000 		.4byte	.LASF26
+ 1494 01d8 59010000 		.4byte	.LASF26
  1495 01dc 01       		.byte	0x1
  1496 01dd 6001     		.2byte	0x160
  1497 01df 00000000 		.4byte	.LFB9
@@ -2843,7 +2843,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1500 01e8 9C       		.byte	0x9c
  1501 01e9 FC010000 		.4byte	0x1fc
  1502 01ed 0C       		.uleb128 0xc
- 1503 01ee 9F020000 		.4byte	.LASF27
+ 1503 01ee 23030000 		.4byte	.LASF27
  1504 01f2 01       		.byte	0x1
  1505 01f3 6001     		.2byte	0x160
  1506 01f5 6B000000 		.4byte	0x6b
@@ -2851,7 +2851,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1508 01fa 50       		.byte	0x50
  1509 01fb 00       		.byte	0
  1510 01fc 0D       		.uleb128 0xd
- 1511 01fd FD000000 		.4byte	.LASF29
+ 1511 01fd 81010000 		.4byte	.LASF29
  1512 0201 01       		.byte	0x1
  1513 0202 8201     		.2byte	0x182
  1514 0204 6B000000 		.4byte	0x6b
@@ -2861,7 +2861,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1518 0211 9C       		.byte	0x9c
  1519 0212 39020000 		.4byte	0x239
  1520 0216 0E       		.uleb128 0xe
- 1521 0217 9B000000 		.4byte	.LASF28
+ 1521 0217 27000000 		.4byte	.LASF28
  1522 021b 01       		.byte	0x1
  1523 021c 8401     		.2byte	0x184
  1524 021e 6B000000 		.4byte	0x6b
@@ -2874,11 +2874,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1531 0234 C8000000 		.4byte	0xc8
  1532 0238 00       		.byte	0
  1533 0239 0D       		.uleb128 0xd
- 1534 023a 55050000 		.4byte	.LASF30
+ 1534 023a 3D050000 		.4byte	.LASF30
  1535 023e 01       		.byte	0x1
  1536 023f B501     		.2byte	0x1b5
  1537 0241 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 49
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 49
 
 
  1538 0245 00000000 		.4byte	.LFB11
@@ -2887,7 +2887,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1541 024e 9C       		.byte	0x9c
  1542 024f 76020000 		.4byte	0x276
  1543 0253 0E       		.uleb128 0xe
- 1544 0254 9B000000 		.4byte	.LASF28
+ 1544 0254 27000000 		.4byte	.LASF28
  1545 0258 01       		.byte	0x1
  1546 0259 B701     		.2byte	0x1b7
  1547 025b 6B000000 		.4byte	0x6b
@@ -2900,7 +2900,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1554 0271 D9000000 		.4byte	0xd9
  1555 0275 00       		.byte	0
  1556 0276 0B       		.uleb128 0xb
- 1557 0277 5E020000 		.4byte	.LASF31
+ 1557 0277 E2020000 		.4byte	.LASF31
  1558 027b 01       		.byte	0x1
  1559 027c EE01     		.2byte	0x1ee
  1560 027e 00000000 		.4byte	.LFB12
@@ -2909,19 +2909,19 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1563 0287 9C       		.byte	0x9c
  1564 0288 CF020000 		.4byte	0x2cf
  1565 028c 0F       		.uleb128 0xf
- 1566 028d 3B060000 		.4byte	.LASF32
+ 1566 028d 23060000 		.4byte	.LASF32
  1567 0291 01       		.byte	0x1
  1568 0292 EE01     		.2byte	0x1ee
  1569 0294 6B000000 		.4byte	0x6b
  1570 0298 62000000 		.4byte	.LLST4
  1571 029c 0E       		.uleb128 0xe
- 1572 029d 55030000 		.4byte	.LASF33
+ 1572 029d D9030000 		.4byte	.LASF33
  1573 02a1 01       		.byte	0x1
  1574 02a2 F201     		.2byte	0x1f2
  1575 02a4 6B000000 		.4byte	0x6b
  1576 02a8 83000000 		.4byte	.LLST5
  1577 02ac 0E       		.uleb128 0xe
- 1578 02ad 2F010000 		.4byte	.LASF34
+ 1578 02ad B3010000 		.4byte	.LASF34
  1579 02b1 01       		.byte	0x1
  1580 02b2 F301     		.2byte	0x1f3
  1581 02b4 6B000000 		.4byte	0x6b
@@ -2934,11 +2934,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1588 02ca C8000000 		.4byte	0xc8
  1589 02ce 00       		.byte	0
  1590 02cf 0D       		.uleb128 0xd
- 1591 02d0 2F020000 		.4byte	.LASF35
+ 1591 02d0 B3020000 		.4byte	.LASF35
  1592 02d4 01       		.byte	0x1
  1593 02d5 5A02     		.2byte	0x25a
  1594 02d7 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 50
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 50
 
 
  1595 02db 00000000 		.4byte	.LFB13
@@ -2947,7 +2947,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1598 02e4 9C       		.byte	0x9c
  1599 02e5 0C030000 		.4byte	0x30c
  1600 02e9 0E       		.uleb128 0xe
- 1601 02ea 2B050000 		.4byte	.LASF36
+ 1601 02ea 13050000 		.4byte	.LASF36
  1602 02ee 01       		.byte	0x1
  1603 02ef 5C02     		.2byte	0x25c
  1604 02f1 6B000000 		.4byte	0x6b
@@ -2960,7 +2960,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1611 0307 D9000000 		.4byte	0xd9
  1612 030b 00       		.byte	0
  1613 030c 0D       		.uleb128 0xd
- 1614 030d 4F000000 		.4byte	.LASF37
+ 1614 030d 59000000 		.4byte	.LASF37
  1615 0311 01       		.byte	0x1
  1616 0312 9A02     		.2byte	0x29a
  1617 0314 6B000000 		.4byte	0x6b
@@ -2970,7 +2970,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1621 0321 9C       		.byte	0x9c
  1622 0322 49030000 		.4byte	0x349
  1623 0326 0E       		.uleb128 0xe
- 1624 0327 46020000 		.4byte	.LASF38
+ 1624 0327 CA020000 		.4byte	.LASF38
  1625 032b 01       		.byte	0x1
  1626 032c 9C02     		.2byte	0x29c
  1627 032e 6B000000 		.4byte	0x6b
@@ -2983,7 +2983,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1634 0344 D9000000 		.4byte	0xd9
  1635 0348 00       		.byte	0
  1636 0349 0D       		.uleb128 0xd
- 1637 034a 6E050000 		.4byte	.LASF39
+ 1637 034a 56050000 		.4byte	.LASF39
  1638 034e 01       		.byte	0x1
  1639 034f D702     		.2byte	0x2d7
  1640 0351 6B000000 		.4byte	0x6b
@@ -2993,12 +2993,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1644 035e 9C       		.byte	0x9c
  1645 035f 86030000 		.4byte	0x386
  1646 0363 0E       		.uleb128 0xe
- 1647 0364 46020000 		.4byte	.LASF38
+ 1647 0364 CA020000 		.4byte	.LASF38
  1648 0368 01       		.byte	0x1
  1649 0369 D902     		.2byte	0x2d9
  1650 036b 6B000000 		.4byte	0x6b
  1651 036f 2F010000 		.4byte	.LLST9
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 51
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 51
 
 
  1652 0373 09       		.uleb128 0x9
@@ -3009,7 +3009,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1657 0381 C8000000 		.4byte	0xc8
  1658 0385 00       		.byte	0
  1659 0386 0B       		.uleb128 0xb
- 1660 0387 77030000 		.4byte	.LASF40
+ 1660 0387 FB030000 		.4byte	.LASF40
  1661 038b 01       		.byte	0x1
  1662 038c 2603     		.2byte	0x326
  1663 038e 00000000 		.4byte	.LFB16
@@ -3025,7 +3025,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1673 03aa D9000000 		.4byte	0xd9
  1674 03ae 00       		.byte	0
  1675 03af 0B       		.uleb128 0xb
- 1676 03b0 92010000 		.4byte	.LASF41
+ 1676 03b0 16020000 		.4byte	.LASF41
  1677 03b4 01       		.byte	0x1
  1678 03b5 5D03     		.2byte	0x35d
  1679 03b7 00000000 		.4byte	.LFB17
@@ -3034,7 +3034,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1682 03c0 9C       		.byte	0x9c
  1683 03c1 FA030000 		.4byte	0x3fa
  1684 03c5 0E       		.uleb128 0xe
- 1685 03c6 B6050000 		.4byte	.LASF24
+ 1685 03c6 9E050000 		.4byte	.LASF24
  1686 03ca 01       		.byte	0x1
  1687 03cb 5F03     		.2byte	0x35f
  1688 03cd 6B000000 		.4byte	0x6b
@@ -3053,31 +3053,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1701 03f5 C8000000 		.4byte	0xc8
  1702 03f9 00       		.byte	0
  1703 03fa 0B       		.uleb128 0xb
- 1704 03fb DF050000 		.4byte	.LASF42
+ 1704 03fb C7050000 		.4byte	.LASF42
  1705 03ff 01       		.byte	0x1
  1706 0400 C203     		.2byte	0x3c2
  1707 0402 00000000 		.4byte	.LFB18
  1708 0406 1E000000 		.4byte	.LFE18-.LFB18
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 52
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 52
 
 
  1709 040a 01       		.uleb128 0x1
  1710 040b 9C       		.byte	0x9c
  1711 040c 4A040000 		.4byte	0x44a
  1712 0410 0F       		.uleb128 0xf
- 1713 0411 4E050000 		.4byte	.LASF43
+ 1713 0411 36050000 		.4byte	.LASF43
  1714 0415 01       		.byte	0x1
  1715 0416 C203     		.2byte	0x3c2
  1716 0418 4A040000 		.4byte	0x44a
  1717 041c 6B010000 		.4byte	.LLST11
  1718 0420 0F       		.uleb128 0xf
- 1719 0421 07050000 		.4byte	.LASF44
+ 1719 0421 EF040000 		.4byte	.LASF44
  1720 0425 01       		.byte	0x1
  1721 0426 C203     		.2byte	0x3c2
  1722 0428 6B000000 		.4byte	0x6b
  1723 042c 89010000 		.4byte	.LLST12
  1724 0430 0E       		.uleb128 0xe
- 1725 0431 85020000 		.4byte	.LASF45
+ 1725 0431 09030000 		.4byte	.LASF45
  1726 0435 01       		.byte	0x1
  1727 0436 C503     		.2byte	0x3c5
  1728 0438 6B000000 		.4byte	0x6b
@@ -3092,7 +3092,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1737 0450 11       		.uleb128 0x11
  1738 0451 6B000000 		.4byte	0x6b
  1739 0455 0B       		.uleb128 0xb
- 1740 0456 A5000000 		.4byte	.LASF46
+ 1740 0456 29010000 		.4byte	.LASF46
  1741 045a 01       		.byte	0x1
  1742 045b E303     		.2byte	0x3e3
  1743 045d 00000000 		.4byte	.LFB19
@@ -3101,7 +3101,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1746 0466 9C       		.byte	0x9c
  1747 0467 8E040000 		.4byte	0x48e
  1748 046b 0E       		.uleb128 0xe
- 1749 046c B6050000 		.4byte	.LASF24
+ 1749 046c 9E050000 		.4byte	.LASF24
  1750 0470 01       		.byte	0x1
  1751 0471 E503     		.2byte	0x3e5
  1752 0473 6B000000 		.4byte	0x6b
@@ -3114,11 +3114,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1759 0489 D1060000 		.4byte	0x6d1
  1760 048d 00       		.byte	0
  1761 048e 07       		.uleb128 0x7
- 1762 048f 8E020000 		.4byte	.LASF47
+ 1762 048f 12030000 		.4byte	.LASF47
  1763 0493 01       		.byte	0x1
  1764 0494 3F       		.byte	0x3f
  1765 0495 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 53
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 53
 
 
  1766 0499 90000000 		.4byte	.LFE0-.LFB0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1820 04f9 09       		.uleb128 0x9
  1821 04fa 36000000 		.4byte	.LVL72
  1822 04fe 55040000 		.4byte	0x455
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 54
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 54
 
 
  1823 0502 09       		.uleb128 0x9
@@ -3189,7 +3189,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1828 0510 39020000 		.4byte	0x239
  1829 0514 00       		.byte	0
  1830 0515 07       		.uleb128 0x7
- 1831 0516 3D000000 		.4byte	.LASF48
+ 1831 0516 47000000 		.4byte	.LASF48
  1832 051a 01       		.byte	0x1
  1833 051b A3       		.byte	0xa3
  1834 051c 00000000 		.4byte	.LFB2
@@ -3205,7 +3205,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1844 0538 EA000000 		.4byte	0xea
  1845 053c 00       		.byte	0
  1846 053d 0B       		.uleb128 0xb
- 1847 053e 27000000 		.4byte	.LASF49
+ 1847 053e 31000000 		.4byte	.LASF49
  1848 0542 01       		.byte	0x1
  1849 0543 1104     		.2byte	0x411
  1850 0545 00000000 		.4byte	.LFB20
@@ -3221,7 +3221,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1860 0561 C8000000 		.4byte	0xc8
  1861 0565 00       		.byte	0
  1862 0566 0B       		.uleb128 0xb
- 1863 0567 F0040000 		.4byte	.LASF50
+ 1863 0567 D8040000 		.4byte	.LASF50
  1864 056b 01       		.byte	0x1
  1865 056c 2904     		.2byte	0x429
  1866 056e 00000000 		.4byte	.LFB21
@@ -3237,8 +3237,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1876 058a 4E010000 		.4byte	0x14e
  1877 058e 00       		.byte	0
  1878 058f 0B       		.uleb128 0xb
- 1879 0590 38030000 		.4byte	.LASF51
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 55
+ 1879 0590 BC030000 		.4byte	.LASF51
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 55
 
 
  1880 0594 01       		.byte	0x1
@@ -3249,7 +3249,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1885 05a0 9C       		.byte	0x9c
  1886 05a1 B4050000 		.4byte	0x5b4
  1887 05a5 0C       		.uleb128 0xc
- 1888 05a6 9F020000 		.4byte	.LASF27
+ 1888 05a6 23030000 		.4byte	.LASF27
  1889 05aa 01       		.byte	0x1
  1890 05ab 4204     		.2byte	0x442
  1891 05ad 6B000000 		.4byte	0x6b
@@ -3257,7 +3257,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1893 05b2 50       		.byte	0x50
  1894 05b3 00       		.byte	0
  1895 05b4 0D       		.uleb128 0xd
- 1896 05b5 8A050000 		.4byte	.LASF52
+ 1896 05b5 72050000 		.4byte	.LASF52
  1897 05b9 01       		.byte	0x1
  1898 05ba 6504     		.2byte	0x465
  1899 05bc 6B000000 		.4byte	0x6b
@@ -3267,7 +3267,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1903 05c9 9C       		.byte	0x9c
  1904 05ca F1050000 		.4byte	0x5f1
  1905 05ce 0E       		.uleb128 0xe
- 1906 05cf 9B000000 		.4byte	.LASF28
+ 1906 05cf 27000000 		.4byte	.LASF28
  1907 05d3 01       		.byte	0x1
  1908 05d4 6704     		.2byte	0x467
  1909 05d6 6B000000 		.4byte	0x6b
@@ -3280,7 +3280,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1916 05ec 3D050000 		.4byte	0x53d
  1917 05f0 00       		.byte	0
  1918 05f1 14       		.uleb128 0x14
- 1919 05f2 27060000 		.4byte	.LASF53
+ 1919 05f2 0F060000 		.4byte	.LASF53
  1920 05f6 01       		.byte	0x1
  1921 05f7 22       		.byte	0x22
  1922 05f8 6B000000 		.4byte	0x6b
@@ -3288,7 +3288,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1924 05fd 03       		.byte	0x3
  1925 05fe 00000000 		.4byte	SPIM_EEPROM_initVar
  1926 0602 14       		.uleb128 0x14
- 1927 0603 37050000 		.4byte	.LASF54
+ 1927 0603 1F050000 		.4byte	.LASF54
  1928 0607 01       		.byte	0x1
  1929 0608 24       		.byte	0x24
  1930 0609 A4000000 		.4byte	0xa4
@@ -3296,9 +3296,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1932 060e 03       		.byte	0x3
  1933 060f 00000000 		.4byte	SPIM_EEPROM_swStatusTx
  1934 0613 14       		.uleb128 0x14
- 1935 0614 F7020000 		.4byte	.LASF55
+ 1935 0614 7B030000 		.4byte	.LASF55
  1936 0618 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 56
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 56
 
 
  1937 0619 25       		.byte	0x25
@@ -3314,7 +3314,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1947 0632 07       		.byte	0x7
  1948 0633 00       		.byte	0
  1949 0634 14       		.uleb128 0x14
- 1950 0635 A1050000 		.4byte	.LASF56
+ 1950 0635 89050000 		.4byte	.LASF56
  1951 0639 01       		.byte	0x1
  1952 063a 15       		.byte	0x15
  1953 063b 45060000 		.4byte	0x645
@@ -3324,7 +3324,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1957 0645 05       		.uleb128 0x5
  1958 0646 24060000 		.4byte	0x624
  1959 064a 14       		.uleb128 0x14
- 1960 064b D4010000 		.4byte	.LASF57
+ 1960 064b 58020000 		.4byte	.LASF57
  1961 064f 01       		.byte	0x1
  1962 0650 17       		.byte	0x17
  1963 0651 A4000000 		.4byte	0xa4
@@ -3332,7 +3332,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1965 0656 03       		.byte	0x3
  1966 0657 00000000 		.4byte	SPIM_EEPROM_txBufferRead
  1967 065b 14       		.uleb128 0x14
- 1968 065c 11050000 		.4byte	.LASF58
+ 1968 065c F9040000 		.4byte	.LASF58
  1969 0660 01       		.byte	0x1
  1970 0661 18       		.byte	0x18
  1971 0662 A4000000 		.4byte	0xa4
@@ -3340,7 +3340,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1973 0667 03       		.byte	0x3
  1974 0668 00000000 		.4byte	SPIM_EEPROM_txBufferWrite
  1975 066c 14       		.uleb128 0x14
- 1976 066d 6B000000 		.4byte	.LASF59
+ 1976 066d 75000000 		.4byte	.LASF59
  1977 0671 01       		.byte	0x1
  1978 0672 16       		.byte	0x16
  1979 0673 A4000000 		.4byte	0xa4
@@ -3348,7 +3348,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1981 0678 03       		.byte	0x3
  1982 0679 00000000 		.4byte	SPIM_EEPROM_txBufferFull
  1983 067d 14       		.uleb128 0x14
- 1984 067e 23030000 		.4byte	.LASF60
+ 1984 067e A7030000 		.4byte	.LASF60
  1985 0682 01       		.byte	0x1
  1986 0683 1C       		.byte	0x1c
  1987 0684 8E060000 		.4byte	0x68e
@@ -3358,10 +3358,10 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1991 068e 05       		.uleb128 0x5
  1992 068f 24060000 		.4byte	0x624
  1993 0693 14       		.uleb128 0x14
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 57
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 57
 
 
- 1994 0694 B9020000 		.4byte	.LASF61
+ 1994 0694 3D030000 		.4byte	.LASF61
  1995 0698 01       		.byte	0x1
  1996 0699 1E       		.byte	0x1e
  1997 069a A4000000 		.4byte	0xa4
@@ -3369,7 +3369,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  1999 069f 03       		.byte	0x3
  2000 06a0 00000000 		.4byte	SPIM_EEPROM_rxBufferRead
  2001 06a4 14       		.uleb128 0x14
- 2002 06a5 F4050000 		.4byte	.LASF62
+ 2002 06a5 DC050000 		.4byte	.LASF62
  2003 06a9 01       		.byte	0x1
  2004 06aa 1F       		.byte	0x1f
  2005 06ab A4000000 		.4byte	0xa4
@@ -3377,7 +3377,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2007 06b0 03       		.byte	0x3
  2008 06b1 00000000 		.4byte	SPIM_EEPROM_rxBufferWrite
  2009 06b5 14       		.uleb128 0x14
- 2010 06b6 FF010000 		.4byte	.LASF63
+ 2010 06b6 83020000 		.4byte	.LASF63
  2011 06ba 01       		.byte	0x1
  2012 06bb 1D       		.byte	0x1d
  2013 06bc A4000000 		.4byte	0xa4
@@ -3385,8 +3385,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2015 06c1 03       		.byte	0x3
  2016 06c2 00000000 		.4byte	SPIM_EEPROM_rxBufferFull
  2017 06c6 17       		.uleb128 0x17
- 2018 06c7 18020000 		.4byte	.LASF64
- 2019 06cb 18020000 		.4byte	.LASF64
+ 2018 06c7 9C020000 		.4byte	.LASF64
+ 2019 06cb 9C020000 		.4byte	.LASF64
  2020 06cf 03       		.byte	0x3
  2021 06d0 7D       		.byte	0x7d
  2022 06d1 17       		.uleb128 0x17
@@ -3395,30 +3395,30 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2025 06da 03       		.byte	0x3
  2026 06db 7E       		.byte	0x7e
  2027 06dc 17       		.uleb128 0x17
- 2028 06dd AC010000 		.4byte	.LASF66
- 2029 06e1 AC010000 		.4byte	.LASF66
+ 2028 06dd 30020000 		.4byte	.LASF66
+ 2029 06e1 30020000 		.4byte	.LASF66
  2030 06e5 04       		.byte	0x4
  2031 06e6 27       		.byte	0x27
  2032 06e7 17       		.uleb128 0x17
- 2033 06e8 45010000 		.4byte	.LASF67
- 2034 06ec 45010000 		.4byte	.LASF67
+ 2033 06e8 C9010000 		.4byte	.LASF67
+ 2034 06ec C9010000 		.4byte	.LASF67
  2035 06f0 04       		.byte	0x4
  2036 06f1 28       		.byte	0x28
  2037 06f2 17       		.uleb128 0x17
- 2038 06f3 60030000 		.4byte	.LASF68
- 2039 06f7 60030000 		.4byte	.LASF68
+ 2038 06f3 E4030000 		.4byte	.LASF68
+ 2039 06f7 E4030000 		.4byte	.LASF68
  2040 06fb 03       		.byte	0x3
  2041 06fc 8B       		.byte	0x8b
  2042 06fd 17       		.uleb128 0x17
- 2043 06fe 76020000 		.4byte	.LASF69
- 2044 0702 76020000 		.4byte	.LASF69
+ 2043 06fe FA020000 		.4byte	.LASF69
+ 2044 0702 FA020000 		.4byte	.LASF69
  2045 0706 03       		.byte	0x3
  2046 0707 88       		.byte	0x88
  2047 0708 00       		.byte	0
  2048              		.section	.debug_abbrev,"",%progbits
  2049              	.Ldebug_abbrev0:
  2050 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 58
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 58
 
 
  2051 0001 11       		.uleb128 0x11
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2105 0037 35       		.uleb128 0x35
  2106 0038 00       		.byte	0
  2107 0039 49       		.uleb128 0x49
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 59
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 59
 
 
  2108 003a 13       		.uleb128 0x13
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2162 0072 03       		.uleb128 0x3
  2163 0073 0E       		.uleb128 0xe
  2164 0074 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 60
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 60
 
 
  2165 0075 0B       		.uleb128 0xb
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2219 00ae 11       		.uleb128 0x11
  2220 00af 01       		.uleb128 0x1
  2221 00b0 12       		.uleb128 0x12
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 61
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 61
 
 
  2222 00b1 06       		.uleb128 0x6
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2276 00e9 03       		.uleb128 0x3
  2277 00ea 0E       		.uleb128 0xe
  2278 00eb 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 62
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 62
 
 
  2279 00ec 0B       		.uleb128 0xb
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2333 0126 02       		.uleb128 0x2
  2334 0127 18       		.uleb128 0x18
  2335 0128 9142     		.uleb128 0x2111
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 63
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 63
 
 
  2336 012a 18       		.uleb128 0x18
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2390 0160 00       		.byte	0
  2391 0161 00       		.byte	0
  2392              		.section	.debug_loc,"",%progbits
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 64
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 64
 
 
  2393              	.Ldebug_loc0:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2447 008b 0100     		.2byte	0x1
  2448 008d 53       		.byte	0x53
  2449 008e 36000000 		.4byte	.LVL27
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 65
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 65
 
 
  2450 0092 52000000 		.4byte	.LVL28
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2504 0127 00000000 		.4byte	0
  2505 012b 00000000 		.4byte	0
  2506              	.LLST9:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 66
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 66
 
 
  2507 012f 32000000 		.4byte	.LVL45
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2561 01c2 12000000 		.4byte	.LVL62
  2562 01c6 0100     		.2byte	0x1
  2563 01c8 55       		.byte	0x55
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 67
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 67
 
 
  2564 01c9 14000000 		.4byte	.LVL63
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2618 0068 00000000 		.4byte	.LFB13
  2619 006c 64000000 		.4byte	.LFE13-.LFB13
  2620 0070 00000000 		.4byte	.LFB14
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 68
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 68
 
 
  2621 0074 58000000 		.4byte	.LFE14-.LFB14
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2675 006c 58000000 		.4byte	.LFE15
  2676 0070 00000000 		.4byte	.LFB16
  2677 0074 40000000 		.4byte	.LFE16
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 69
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 69
 
 
  2678 0078 00000000 		.4byte	.LFB17
@@ -4120,415 +4120,412 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 1
  2704      69746963 
  2704      616C5365 
  2704      6374696F 
- 2705              	.LASF49:
- 2706 0027 5350494D 		.ascii	"SPIM_EEPROM_EnableInt\000"
- 2706      5F454550 
- 2706      524F4D5F 
- 2706      456E6162 
- 2706      6C65496E 
- 2707              	.LASF48:
- 2708 003d 5350494D 		.ascii	"SPIM_EEPROM_Start\000"
+ 2705              	.LASF28:
+ 2706 0027 746D7053 		.ascii	"tmpStatus\000"
+ 2706      74617475 
+ 2706      7300
+ 2707              	.LASF49:
+ 2708 0031 5350494D 		.ascii	"SPIM_EEPROM_EnableInt\000"
  2708      5F454550 
  2708      524F4D5F 
- 2708      53746172 
- 2708      7400
- 2709              	.LASF37:
- 2710 004f 5350494D 		.ascii	"SPIM_EEPROM_GetRxBufferSize\000"
+ 2708      456E6162 
+ 2708      6C65496E 
+ 2709              	.LASF48:
+ 2710 0047 5350494D 		.ascii	"SPIM_EEPROM_Start\000"
  2710      5F454550 
  2710      524F4D5F 
- 2710      47657452 
- 2710      78427566 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 70
+ 2710      53746172 
+ 2710      7400
+ 2711              	.LASF37:
+ 2712 0059 5350494D 		.ascii	"SPIM_EEPROM_GetRxBufferSize\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 70
 
 
- 2711              	.LASF59:
- 2712 006b 5350494D 		.ascii	"SPIM_EEPROM_txBufferFull\000"
  2712      5F454550 
  2712      524F4D5F 
- 2712      74784275 
- 2712      66666572 
- 2713              	.LASF7:
- 2714 0084 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2714      206C6F6E 
- 2714      6720756E 
- 2714      7369676E 
- 2714      65642069 
- 2715              	.LASF28:
- 2716 009b 746D7053 		.ascii	"tmpStatus\000"
- 2716      74617475 
- 2716      7300
- 2717              	.LASF46:
- 2718 00a5 5350494D 		.ascii	"SPIM_EEPROM_ClearFIFO\000"
- 2718      5F454550 
- 2718      524F4D5F 
- 2718      436C6561 
- 2718      72464946 
- 2719              	.LASF6:
- 2720 00bb 6C6F6E67 		.ascii	"long long int\000"
- 2720      206C6F6E 
- 2720      6720696E 
- 2720      7400
- 2721              	.LASF0:
- 2722 00c9 7369676E 		.ascii	"signed char\000"
- 2722      65642063 
- 2722      68617200 
- 2723              	.LASF26:
- 2724 00d5 5350494D 		.ascii	"SPIM_EEPROM_SetRxInterruptMode\000"
- 2724      5F454550 
- 2724      524F4D5F 
- 2724      53657452 
- 2724      78496E74 
- 2725              	.LASF4:
- 2726 00f4 6C6F6E67 		.ascii	"long int\000"
- 2726      20696E74 
- 2726      00
- 2727              	.LASF29:
- 2728 00fd 5350494D 		.ascii	"SPIM_EEPROM_ReadTxStatus\000"
+ 2712      47657452 
+ 2712      78427566 
+ 2713              	.LASF59:
+ 2714 0075 5350494D 		.ascii	"SPIM_EEPROM_txBufferFull\000"
+ 2714      5F454550 
+ 2714      524F4D5F 
+ 2714      74784275 
+ 2714      66666572 
+ 2715              	.LASF7:
+ 2716 008e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2716      206C6F6E 
+ 2716      6720756E 
+ 2716      7369676E 
+ 2716      65642069 
+ 2717              	.LASF72:
+ 2718 00a5 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 2718      73657273 
+ 2718      5C4D616E 
+ 2718      755C4465 
+ 2718      736B746F 
+ 2719 00d3 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 2719      31393230 
+ 2719      5F49495F 
+ 2719      48575F46 
+ 2719      494E414C 
+ 2720 0104 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 2720      5F46494E 
+ 2720      414C5F43 
+ 2720      41525A41 
+ 2720      4E494741 
+ 2721              	.LASF46:
+ 2722 0129 5350494D 		.ascii	"SPIM_EEPROM_ClearFIFO\000"
+ 2722      5F454550 
+ 2722      524F4D5F 
+ 2722      436C6561 
+ 2722      72464946 
+ 2723              	.LASF6:
+ 2724 013f 6C6F6E67 		.ascii	"long long int\000"
+ 2724      206C6F6E 
+ 2724      6720696E 
+ 2724      7400
+ 2725              	.LASF0:
+ 2726 014d 7369676E 		.ascii	"signed char\000"
+ 2726      65642063 
+ 2726      68617200 
+ 2727              	.LASF26:
+ 2728 0159 5350494D 		.ascii	"SPIM_EEPROM_SetRxInterruptMode\000"
  2728      5F454550 
  2728      524F4D5F 
- 2728      52656164 
- 2728      54785374 
- 2729              	.LASF20:
- 2730 0116 5350494D 		.ascii	"SPIM_EEPROM_DisableTxInt\000"
- 2730      5F454550 
- 2730      524F4D5F 
- 2730      44697361 
- 2730      626C6554 
- 2731              	.LASF34:
- 2732 012f 746D7054 		.ascii	"tmpTxBufferRead\000"
- 2732      78427566 
- 2732      66657252 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 71
+ 2728      53657452 
+ 2728      78496E74 
+ 2729              	.LASF4:
+ 2730 0178 6C6F6E67 		.ascii	"long int\000"
+ 2730      20696E74 
+ 2730      00
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 71
 
 
- 2732      65616400 
- 2733              	.LASF9:
- 2734 013f 75696E74 		.ascii	"uint8\000"
- 2734      3800
- 2735              	.LASF67:
- 2736 0145 5350494D 		.ascii	"SPIM_EEPROM_IntClock_Stop\000"
- 2736      5F454550 
- 2736      524F4D5F 
- 2736      496E7443 
- 2736      6C6F636B 
- 2737              	.LASF12:
- 2738 015f 646F7562 		.ascii	"double\000"
- 2738      6C6500
- 2739              	.LASF71:
- 2740 0166 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPIM_EEPROM.c\000"
- 2740      72617465 
- 2740      645F536F 
- 2740      75726365 
- 2740      5C50536F 
- 2741              	.LASF10:
- 2742 018b 75696E74 		.ascii	"uint32\000"
- 2742      333200
- 2743              	.LASF41:
- 2744 0192 5350494D 		.ascii	"SPIM_EEPROM_ClearTxBuffer\000"
- 2744      5F454550 
- 2744      524F4D5F 
- 2744      436C6561 
- 2744      72547842 
- 2745              	.LASF66:
- 2746 01ac 5350494D 		.ascii	"SPIM_EEPROM_IntClock_Start\000"
- 2746      5F454550 
- 2746      524F4D5F 
- 2746      496E7443 
- 2746      6C6F636B 
- 2747              	.LASF8:
- 2748 01c7 756E7369 		.ascii	"unsigned int\000"
- 2748      676E6564 
- 2748      20696E74 
- 2748      00
- 2749              	.LASF57:
- 2750 01d4 5350494D 		.ascii	"SPIM_EEPROM_txBufferRead\000"
+ 2731              	.LASF29:
+ 2732 0181 5350494D 		.ascii	"SPIM_EEPROM_ReadTxStatus\000"
+ 2732      5F454550 
+ 2732      524F4D5F 
+ 2732      52656164 
+ 2732      54785374 
+ 2733              	.LASF20:
+ 2734 019a 5350494D 		.ascii	"SPIM_EEPROM_DisableTxInt\000"
+ 2734      5F454550 
+ 2734      524F4D5F 
+ 2734      44697361 
+ 2734      626C6554 
+ 2735              	.LASF34:
+ 2736 01b3 746D7054 		.ascii	"tmpTxBufferRead\000"
+ 2736      78427566 
+ 2736      66657252 
+ 2736      65616400 
+ 2737              	.LASF9:
+ 2738 01c3 75696E74 		.ascii	"uint8\000"
+ 2738      3800
+ 2739              	.LASF67:
+ 2740 01c9 5350494D 		.ascii	"SPIM_EEPROM_IntClock_Stop\000"
+ 2740      5F454550 
+ 2740      524F4D5F 
+ 2740      496E7443 
+ 2740      6C6F636B 
+ 2741              	.LASF12:
+ 2742 01e3 646F7562 		.ascii	"double\000"
+ 2742      6C6500
+ 2743              	.LASF71:
+ 2744 01ea 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPIM_EEPROM.c\000"
+ 2744      72617465 
+ 2744      645F536F 
+ 2744      75726365 
+ 2744      5C50536F 
+ 2745              	.LASF10:
+ 2746 020f 75696E74 		.ascii	"uint32\000"
+ 2746      333200
+ 2747              	.LASF41:
+ 2748 0216 5350494D 		.ascii	"SPIM_EEPROM_ClearTxBuffer\000"
+ 2748      5F454550 
+ 2748      524F4D5F 
+ 2748      436C6561 
+ 2748      72547842 
+ 2749              	.LASF66:
+ 2750 0230 5350494D 		.ascii	"SPIM_EEPROM_IntClock_Start\000"
  2750      5F454550 
  2750      524F4D5F 
- 2750      74784275 
- 2750      66666572 
- 2751              	.LASF5:
- 2752 01ed 6C6F6E67 		.ascii	"long unsigned int\000"
- 2752      20756E73 
- 2752      69676E65 
- 2752      6420696E 
- 2752      7400
- 2753              	.LASF63:
- 2754 01ff 5350494D 		.ascii	"SPIM_EEPROM_rxBufferFull\000"
+ 2750      496E7443 
+ 2750      6C6F636B 
+ 2751              	.LASF8:
+ 2752 024b 756E7369 		.ascii	"unsigned int\000"
+ 2752      676E6564 
+ 2752      20696E74 
+ 2752      00
+ 2753              	.LASF57:
+ 2754 0258 5350494D 		.ascii	"SPIM_EEPROM_txBufferRead\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 72
+
+
  2754      5F454550 
  2754      524F4D5F 
- 2754      72784275 
+ 2754      74784275 
  2754      66666572 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 72
-
-
- 2755              	.LASF64:
- 2756 0218 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 2756      74657243 
- 2756      72697469 
- 2756      63616C53 
- 2756      65637469 
- 2757              	.LASF35:
- 2758 022f 5350494D 		.ascii	"SPIM_EEPROM_ReadRxData\000"
+ 2755              	.LASF5:
+ 2756 0271 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2756      20756E73 
+ 2756      69676E65 
+ 2756      6420696E 
+ 2756      7400
+ 2757              	.LASF63:
+ 2758 0283 5350494D 		.ascii	"SPIM_EEPROM_rxBufferFull\000"
  2758      5F454550 
  2758      524F4D5F 
- 2758      52656164 
- 2758      52784461 
- 2759              	.LASF38:
- 2760 0246 73697A65 		.ascii	"size\000"
- 2760      00
- 2761              	.LASF3:
- 2762 024b 73686F72 		.ascii	"short unsigned int\000"
- 2762      7420756E 
- 2762      7369676E 
- 2762      65642069 
- 2762      6E7400
- 2763              	.LASF31:
- 2764 025e 5350494D 		.ascii	"SPIM_EEPROM_WriteTxData\000"
- 2764      5F454550 
- 2764      524F4D5F 
- 2764      57726974 
- 2764      65547844 
- 2765              	.LASF69:
- 2766 0276 4379496E 		.ascii	"CyIntSetVector\000"
- 2766      74536574 
- 2766      56656374 
- 2766      6F7200
- 2767              	.LASF45:
- 2768 0285 62756649 		.ascii	"bufIndex\000"
- 2768      6E646578 
- 2768      00
- 2769              	.LASF47:
- 2770 028e 5350494D 		.ascii	"SPIM_EEPROM_Init\000"
- 2770      5F454550 
- 2770      524F4D5F 
- 2770      496E6974 
- 2770      00
- 2771              	.LASF27:
- 2772 029f 696E7453 		.ascii	"intSrc\000"
- 2772      726300
- 2773              	.LASF22:
- 2774 02a6 5350494D 		.ascii	"SPIM_EEPROM_Enable\000"
+ 2758      72784275 
+ 2758      66666572 
+ 2759              	.LASF64:
+ 2760 029c 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2760      74657243 
+ 2760      72697469 
+ 2760      63616C53 
+ 2760      65637469 
+ 2761              	.LASF35:
+ 2762 02b3 5350494D 		.ascii	"SPIM_EEPROM_ReadRxData\000"
+ 2762      5F454550 
+ 2762      524F4D5F 
+ 2762      52656164 
+ 2762      52784461 
+ 2763              	.LASF38:
+ 2764 02ca 73697A65 		.ascii	"size\000"
+ 2764      00
+ 2765              	.LASF3:
+ 2766 02cf 73686F72 		.ascii	"short unsigned int\000"
+ 2766      7420756E 
+ 2766      7369676E 
+ 2766      65642069 
+ 2766      6E7400
+ 2767              	.LASF31:
+ 2768 02e2 5350494D 		.ascii	"SPIM_EEPROM_WriteTxData\000"
+ 2768      5F454550 
+ 2768      524F4D5F 
+ 2768      57726974 
+ 2768      65547844 
+ 2769              	.LASF69:
+ 2770 02fa 4379496E 		.ascii	"CyIntSetVector\000"
+ 2770      74536574 
+ 2770      56656374 
+ 2770      6F7200
+ 2771              	.LASF45:
+ 2772 0309 62756649 		.ascii	"bufIndex\000"
+ 2772      6E646578 
+ 2772      00
+ 2773              	.LASF47:
+ 2774 0312 5350494D 		.ascii	"SPIM_EEPROM_Init\000"
  2774      5F454550 
  2774      524F4D5F 
- 2774      456E6162 
- 2774      6C6500
- 2775              	.LASF61:
- 2776 02b9 5350494D 		.ascii	"SPIM_EEPROM_rxBufferRead\000"
- 2776      5F454550 
- 2776      524F4D5F 
- 2776      72784275 
- 2776      66666572 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 73
+ 2774      496E6974 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 73
 
 
- 2777              	.LASF15:
- 2778 02d2 72656733 		.ascii	"reg32\000"
- 2778      3200
- 2779              	.LASF25:
- 2780 02d8 5350494D 		.ascii	"SPIM_EEPROM_SetTxInterruptMode\000"
+ 2774      00
+ 2775              	.LASF27:
+ 2776 0323 696E7453 		.ascii	"intSrc\000"
+ 2776      726300
+ 2777              	.LASF22:
+ 2778 032a 5350494D 		.ascii	"SPIM_EEPROM_Enable\000"
+ 2778      5F454550 
+ 2778      524F4D5F 
+ 2778      456E6162 
+ 2778      6C6500
+ 2779              	.LASF61:
+ 2780 033d 5350494D 		.ascii	"SPIM_EEPROM_rxBufferRead\000"
  2780      5F454550 
  2780      524F4D5F 
- 2780      53657454 
- 2780      78496E74 
- 2781              	.LASF55:
- 2782 02f7 5350494D 		.ascii	"SPIM_EEPROM_swStatusRx\000"
- 2782      5F454550 
- 2782      524F4D5F 
- 2782      73775374 
- 2782      61747573 
- 2783              	.LASF17:
- 2784 030e 73697A65 		.ascii	"sizetype\000"
- 2784      74797065 
- 2784      00
- 2785              	.LASF16:
- 2786 0317 6C6F6E67 		.ascii	"long double\000"
- 2786      20646F75 
- 2786      626C6500 
- 2787              	.LASF60:
- 2788 0323 5350494D 		.ascii	"SPIM_EEPROM_rxBuffer\000"
- 2788      5F454550 
- 2788      524F4D5F 
- 2788      72784275 
- 2788      66666572 
- 2789              	.LASF51:
- 2790 0338 5350494D 		.ascii	"SPIM_EEPROM_SetInterruptMode\000"
- 2790      5F454550 
- 2790      524F4D5F 
- 2790      53657449 
- 2790      6E746572 
- 2791              	.LASF33:
- 2792 0355 74656D70 		.ascii	"tempStatus\000"
- 2792      53746174 
- 2792      757300
- 2793              	.LASF68:
- 2794 0360 4379496E 		.ascii	"CyIntSetPriority\000"
- 2794      74536574 
- 2794      5072696F 
- 2794      72697479 
- 2794      00
- 2795              	.LASF11:
- 2796 0371 666C6F61 		.ascii	"float\000"
- 2796      7400
- 2797              	.LASF40:
- 2798 0377 5350494D 		.ascii	"SPIM_EEPROM_ClearRxBuffer\000"
- 2798      5F454550 
- 2798      524F4D5F 
- 2798      436C6561 
- 2798      72527842 
- 2799              	.LASF19:
- 2800 0391 5350494D 		.ascii	"SPIM_EEPROM_EnableRxInt\000"
- 2800      5F454550 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 74
+ 2780      72784275 
+ 2780      66666572 
+ 2781              	.LASF15:
+ 2782 0356 72656733 		.ascii	"reg32\000"
+ 2782      3200
+ 2783              	.LASF25:
+ 2784 035c 5350494D 		.ascii	"SPIM_EEPROM_SetTxInterruptMode\000"
+ 2784      5F454550 
+ 2784      524F4D5F 
+ 2784      53657454 
+ 2784      78496E74 
+ 2785              	.LASF55:
+ 2786 037b 5350494D 		.ascii	"SPIM_EEPROM_swStatusRx\000"
+ 2786      5F454550 
+ 2786      524F4D5F 
+ 2786      73775374 
+ 2786      61747573 
+ 2787              	.LASF17:
+ 2788 0392 73697A65 		.ascii	"sizetype\000"
+ 2788      74797065 
+ 2788      00
+ 2789              	.LASF16:
+ 2790 039b 6C6F6E67 		.ascii	"long double\000"
+ 2790      20646F75 
+ 2790      626C6500 
+ 2791              	.LASF60:
+ 2792 03a7 5350494D 		.ascii	"SPIM_EEPROM_rxBuffer\000"
+ 2792      5F454550 
+ 2792      524F4D5F 
+ 2792      72784275 
+ 2792      66666572 
+ 2793              	.LASF51:
+ 2794 03bc 5350494D 		.ascii	"SPIM_EEPROM_SetInterruptMode\000"
+ 2794      5F454550 
+ 2794      524F4D5F 
+ 2794      53657449 
+ 2794      6E746572 
+ 2795              	.LASF33:
+ 2796 03d9 74656D70 		.ascii	"tempStatus\000"
+ 2796      53746174 
+ 2796      757300
+ 2797              	.LASF68:
+ 2798 03e4 4379496E 		.ascii	"CyIntSetPriority\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 74
 
 
- 2800      524F4D5F 
- 2800      456E6162 
- 2800      6C655278 
- 2801              	.LASF14:
- 2802 03a9 72656738 		.ascii	"reg8\000"
- 2802      00
- 2803              	.LASF1:
- 2804 03ae 756E7369 		.ascii	"unsigned char\000"
- 2804      676E6564 
- 2804      20636861 
- 2804      7200
- 2805              	.LASF2:
- 2806 03bc 73686F72 		.ascii	"short int\000"
- 2806      7420696E 
- 2806      7400
- 2807              	.LASF72:
- 2808 03c6 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 2808      73657273 
- 2808      5C4C6F72 
- 2808      795C4465 
- 2808      736B746F 
- 2809 03f4 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
- 2809      65735C50 
- 2809      536F432D 
- 2809      46696E61 
- 2809      6C2D5072 
- 2810 0425 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 2810      415F4755 
- 2810      414C4E49 
- 2810      4552415C 
- 2810      41593139 
- 2811 0457 49455241 		.ascii	"IERA.cydsn\000"
- 2811      2E637964 
- 2811      736E00
- 2812              	.LASF70:
- 2813 0462 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2813      43313120 
- 2813      352E342E 
- 2813      31203230 
- 2813      31363036 
- 2814 0495 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2814      20726576 
- 2814      6973696F 
- 2814      6E203233 
- 2814      37373135 
- 2815 04c8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2815      66756E63 
- 2815      74696F6E 
- 2815      2D736563 
- 2815      74696F6E 
- 2816              	.LASF50:
- 2817 04f0 5350494D 		.ascii	"SPIM_EEPROM_DisableInt\000"
- 2817      5F454550 
- 2817      524F4D5F 
- 2817      44697361 
- 2817      626C6549 
- 2818              	.LASF44:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 75
+ 2798      74536574 
+ 2798      5072696F 
+ 2798      72697479 
+ 2798      00
+ 2799              	.LASF11:
+ 2800 03f5 666C6F61 		.ascii	"float\000"
+ 2800      7400
+ 2801              	.LASF40:
+ 2802 03fb 5350494D 		.ascii	"SPIM_EEPROM_ClearRxBuffer\000"
+ 2802      5F454550 
+ 2802      524F4D5F 
+ 2802      436C6561 
+ 2802      72527842 
+ 2803              	.LASF19:
+ 2804 0415 5350494D 		.ascii	"SPIM_EEPROM_EnableRxInt\000"
+ 2804      5F454550 
+ 2804      524F4D5F 
+ 2804      456E6162 
+ 2804      6C655278 
+ 2805              	.LASF14:
+ 2806 042d 72656738 		.ascii	"reg8\000"
+ 2806      00
+ 2807              	.LASF1:
+ 2808 0432 756E7369 		.ascii	"unsigned char\000"
+ 2808      676E6564 
+ 2808      20636861 
+ 2808      7200
+ 2809              	.LASF2:
+ 2810 0440 73686F72 		.ascii	"short int\000"
+ 2810      7420696E 
+ 2810      7400
+ 2811              	.LASF70:
+ 2812 044a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2812      43313120 
+ 2812      352E342E 
+ 2812      31203230 
+ 2812      31363036 
+ 2813 047d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2813      20726576 
+ 2813      6973696F 
+ 2813      6E203233 
+ 2813      37373135 
+ 2814 04b0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2814      66756E63 
+ 2814      74696F6E 
+ 2814      2D736563 
+ 2814      74696F6E 
+ 2815              	.LASF50:
+ 2816 04d8 5350494D 		.ascii	"SPIM_EEPROM_DisableInt\000"
+ 2816      5F454550 
+ 2816      524F4D5F 
+ 2816      44697361 
+ 2816      626C6549 
+ 2817              	.LASF44:
+ 2818 04ef 62797465 		.ascii	"byteCount\000"
+ 2818      436F756E 
+ 2818      7400
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 75
 
 
- 2819 0507 62797465 		.ascii	"byteCount\000"
- 2819      436F756E 
- 2819      7400
- 2820              	.LASF58:
- 2821 0511 5350494D 		.ascii	"SPIM_EEPROM_txBufferWrite\000"
- 2821      5F454550 
- 2821      524F4D5F 
- 2821      74784275 
- 2821      66666572 
- 2822              	.LASF36:
- 2823 052b 72784461 		.ascii	"rxData\000"
- 2823      746100
- 2824              	.LASF13:
- 2825 0532 63686172 		.ascii	"char\000"
- 2825      00
- 2826              	.LASF54:
- 2827 0537 5350494D 		.ascii	"SPIM_EEPROM_swStatusTx\000"
- 2827      5F454550 
- 2827      524F4D5F 
- 2827      73775374 
- 2827      61747573 
- 2828              	.LASF43:
- 2829 054e 62756666 		.ascii	"buffer\000"
- 2829      657200
- 2830              	.LASF30:
- 2831 0555 5350494D 		.ascii	"SPIM_EEPROM_ReadRxStatus\000"
- 2831      5F454550 
- 2831      524F4D5F 
- 2831      52656164 
- 2831      52785374 
- 2832              	.LASF39:
- 2833 056e 5350494D 		.ascii	"SPIM_EEPROM_GetTxBufferSize\000"
- 2833      5F454550 
- 2833      524F4D5F 
- 2833      47657454 
- 2833      78427566 
- 2834              	.LASF52:
- 2835 058a 5350494D 		.ascii	"SPIM_EEPROM_ReadStatus\000"
- 2835      5F454550 
- 2835      524F4D5F 
- 2835      52656164 
- 2835      53746174 
- 2836              	.LASF56:
- 2837 05a1 5350494D 		.ascii	"SPIM_EEPROM_txBuffer\000"
- 2837      5F454550 
- 2837      524F4D5F 
- 2837      74784275 
- 2837      66666572 
- 2838              	.LASF24:
- 2839 05b6 656E6162 		.ascii	"enableInterrupts\000"
- 2839      6C65496E 
- 2839      74657272 
- 2839      75707473 
- 2839      00
- 2840              	.LASF18:
- 2841 05c7 5350494D 		.ascii	"SPIM_EEPROM_EnableTxInt\000"
- 2841      5F454550 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9GkL0d.s 			page 76
+ 2819              	.LASF58:
+ 2820 04f9 5350494D 		.ascii	"SPIM_EEPROM_txBufferWrite\000"
+ 2820      5F454550 
+ 2820      524F4D5F 
+ 2820      74784275 
+ 2820      66666572 
+ 2821              	.LASF36:
+ 2822 0513 72784461 		.ascii	"rxData\000"
+ 2822      746100
+ 2823              	.LASF13:
+ 2824 051a 63686172 		.ascii	"char\000"
+ 2824      00
+ 2825              	.LASF54:
+ 2826 051f 5350494D 		.ascii	"SPIM_EEPROM_swStatusTx\000"
+ 2826      5F454550 
+ 2826      524F4D5F 
+ 2826      73775374 
+ 2826      61747573 
+ 2827              	.LASF43:
+ 2828 0536 62756666 		.ascii	"buffer\000"
+ 2828      657200
+ 2829              	.LASF30:
+ 2830 053d 5350494D 		.ascii	"SPIM_EEPROM_ReadRxStatus\000"
+ 2830      5F454550 
+ 2830      524F4D5F 
+ 2830      52656164 
+ 2830      52785374 
+ 2831              	.LASF39:
+ 2832 0556 5350494D 		.ascii	"SPIM_EEPROM_GetTxBufferSize\000"
+ 2832      5F454550 
+ 2832      524F4D5F 
+ 2832      47657454 
+ 2832      78427566 
+ 2833              	.LASF52:
+ 2834 0572 5350494D 		.ascii	"SPIM_EEPROM_ReadStatus\000"
+ 2834      5F454550 
+ 2834      524F4D5F 
+ 2834      52656164 
+ 2834      53746174 
+ 2835              	.LASF56:
+ 2836 0589 5350494D 		.ascii	"SPIM_EEPROM_txBuffer\000"
+ 2836      5F454550 
+ 2836      524F4D5F 
+ 2836      74784275 
+ 2836      66666572 
+ 2837              	.LASF24:
+ 2838 059e 656E6162 		.ascii	"enableInterrupts\000"
+ 2838      6C65496E 
+ 2838      74657272 
+ 2838      75707473 
+ 2838      00
+ 2839              	.LASF18:
+ 2840 05af 5350494D 		.ascii	"SPIM_EEPROM_EnableTxInt\000"
+ 2840      5F454550 
+ 2840      524F4D5F 
+ 2840      456E6162 
+ 2840      6C655478 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccVJYX2e.s 			page 76
 
 
- 2841      524F4D5F 
- 2841      456E6162 
- 2841      6C655478 
- 2842              	.LASF42:
- 2843 05df 5350494D 		.ascii	"SPIM_EEPROM_PutArray\000"
- 2843      5F454550 
- 2843      524F4D5F 
- 2843      50757441 
- 2843      72726179 
- 2844              	.LASF62:
- 2845 05f4 5350494D 		.ascii	"SPIM_EEPROM_rxBufferWrite\000"
- 2845      5F454550 
- 2845      524F4D5F 
- 2845      72784275 
- 2845      66666572 
- 2846              	.LASF21:
- 2847 060e 5350494D 		.ascii	"SPIM_EEPROM_DisableRxInt\000"
- 2847      5F454550 
- 2847      524F4D5F 
- 2847      44697361 
- 2847      626C6552 
- 2848              	.LASF53:
- 2849 0627 5350494D 		.ascii	"SPIM_EEPROM_initVar\000"
- 2849      5F454550 
- 2849      524F4D5F 
- 2849      696E6974 
- 2849      56617200 
- 2850              	.LASF32:
- 2851 063b 74784461 		.ascii	"txData\000"
- 2851      746100
- 2852              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2841              	.LASF42:
+ 2842 05c7 5350494D 		.ascii	"SPIM_EEPROM_PutArray\000"
+ 2842      5F454550 
+ 2842      524F4D5F 
+ 2842      50757441 
+ 2842      72726179 
+ 2843              	.LASF62:
+ 2844 05dc 5350494D 		.ascii	"SPIM_EEPROM_rxBufferWrite\000"
+ 2844      5F454550 
+ 2844      524F4D5F 
+ 2844      72784275 
+ 2844      66666572 
+ 2845              	.LASF21:
+ 2846 05f6 5350494D 		.ascii	"SPIM_EEPROM_DisableRxInt\000"
+ 2846      5F454550 
+ 2846      524F4D5F 
+ 2846      44697361 
+ 2846      626C6552 
+ 2847              	.LASF53:
+ 2848 060f 5350494D 		.ascii	"SPIM_EEPROM_initVar\000"
+ 2848      5F454550 
+ 2848      524F4D5F 
+ 2848      696E6974 
+ 2848      56617200 
+ 2849              	.LASF32:
+ 2850 0623 74784461 		.ascii	"txData\000"
+ 2850      746100
+ 2851              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

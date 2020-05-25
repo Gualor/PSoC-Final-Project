@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
   20:25LC256.c     **** 	return SPI_EEPROM_Interface_ReadByte(SPI_EEPROM_RDSR);
   36              		.loc 1 20 0
   37 0002 0520     		movs	r0, #5
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 2
 
 
   38 0004 FFF7FEFF 		bl	SPI_EEPROM_Interface_ReadByte
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              	.LVL2:
   82 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 3
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 3
 
 
   83              		.cfi_def_cfa_offset 4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  123              		@ frame_needed = 0, uses_anonymous_args = 0
  124              	.LVL5:
  125 0000 30B5     		push	{r4, r5, lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 4
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 4
 
 
  126              		.cfi_def_cfa_offset 12
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
   58:25LC256.c     **** 
   59:25LC256.c     **** void EEPROM_readPage(uint16_t addr, uint8_t* dataRX, uint8_t nBytes) 
   60:25LC256.c     **** {
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 5
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 5
 
 
  169              		.loc 1 60 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  214              		@ args = 0, pretend = 0, frame = 8
  215              		@ frame_needed = 1, uses_anonymous_args = 0
  216              	.LVL13:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 6
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 6
 
 
  217 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  257 003a 0DF10300 		add	r0, sp, #3
  258 003e FFF7FEFF 		bl	memcpy
  259              	.LVL18:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 7
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 7
 
 
   84:25LC256.c     **** 	
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  303 000c 08BD     		pop	{r3, pc}
  304              		.cfi_endproc
  305              	.LFE69:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 8
 
 
  306              		.size	EEPROM_waitForWriteComplete, .-EEPROM_waitForWriteComplete
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  343              	.L18:
  112:25LC256.c     ****     }
  113:25LC256.c     ****     
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 9
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 9
 
 
  114:25LC256.c     ****     // Overwrite register content
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  380              	.LFE71:
  381              		.size	EEPROM_retrieveStartStopState, .-EEPROM_retrieveStartStopState
  382 000e 00BF     		.section	.text.EEPROM_saveConfigFlag,"ax",%progbits
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 10
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 10
 
 
  383              		.align	2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  150:25LC256.c     ****     
  151:25LC256.c     ****     // Overwrite register content
  152:25LC256.c     ****     EEPROM_writeByte(CTRL_REG_PSOC_STATUS, ctrl_reg);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 11
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 11
 
 
  419              		.loc 1 152 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  457 000e 00BF     		.section	.text.EEPROM_saveSendFlag,"ax",%progbits
  458              		.align	2
  459              		.global	EEPROM_saveSendFlag
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 12
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 12
 
 
  460              		.thumb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  189:25LC256.c     ****     EEPROM_writeByte(CTRL_REG_PSOC_STATUS, ctrl_reg);
  494              		.loc 1 189 0
  495 001a 0020     		movs	r0, #0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 13
 
 
  496 001c FFF7FEFF 		bl	EEPROM_writeByte
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  534              		.global	EEPROM_saveResetFlag
  535              		.thumb
  536              		.thumb_func
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 14
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 14
 
 
  537              		.type	EEPROM_saveResetFlag, %function
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  570 001a 0020     		movs	r0, #0
  571 001c FFF7FEFF 		bl	EEPROM_writeByte
  572              	.LVL58:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 15
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 15
 
 
  227:25LC256.c     ****     EEPROM_waitForWriteComplete();
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  611              		.thumb_func
  612              		.type	EEPROM_retrieveLogPages, %function
  613              	EEPROM_retrieveLogPages:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 16
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 16
 
 
  614              	.LFB78:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  261:25LC256.c     **** {
  650              		.loc 1 261 0
  651              		.cfi_startproc
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 17
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 17
 
 
  652              		@ args = 0, pretend = 0, frame = 8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  280:25LC256.c     **** }
  688              		.loc 1 280 0
  689 0028 03B0     		add	sp, sp, #12
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 18
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 18
 
 
  690              		.cfi_def_cfa_offset 4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  727              	.LVL74:
  728 0010 8301     		lsls	r3, r0, #6
  729 0012 98B2     		uxth	r0, r3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 19
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 19
 
 
  730              	.LVL75:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  767              		@ args = 68, pretend = 16, frame = 64
  768              		@ frame_needed = 0, uses_anonymous_args = 0
  769              	.LVL79:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 20
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 20
 
 
  770 0000 84B0     		sub	sp, sp, #16
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  809              		.cfi_def_cfa_offset 24
  810              		@ sp needed
  811 0044 BDE81040 		pop	{r4, lr}
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 21
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 21
 
 
  812              		.cfi_restore 14
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  341:25LC256.c     ****     
  850              		.loc 1 341 0
  851 0010 2546     		mov	r5, r4
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 22
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 22
 
 
  852              	.LBB5:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  892              	.Letext0:
  893              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
  894              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 23
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 23
 
 
  895              		.file 4 "LogUtils.h"
@@ -1332,63 +1332,63 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  903 0006 00000000 		.4byte	.Ldebug_abbrev0
  904 000a 04       		.byte	0x4
  905 000b 01       		.uleb128 0x1
- 906 000c DA030000 		.4byte	.LASF70
+ 906 000c 5E040000 		.4byte	.LASF70
  907 0010 0C       		.byte	0xc
- 908 0011 4E000000 		.4byte	.LASF71
- 909 0015 68040000 		.4byte	.LASF72
+ 908 0011 CC000000 		.4byte	.LASF71
+ 909 0015 32000000 		.4byte	.LASF72
  910 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  911 001d 00000000 		.4byte	0
  912 0021 00000000 		.4byte	.Ldebug_line0
  913 0025 02       		.uleb128 0x2
  914 0026 01       		.byte	0x1
  915 0027 06       		.byte	0x6
- 916 0028 C5010000 		.4byte	.LASF0
+ 916 0028 49020000 		.4byte	.LASF0
  917 002c 03       		.uleb128 0x3
- 918 002d 53010000 		.4byte	.LASF3
+ 918 002d D1010000 		.4byte	.LASF3
  919 0031 02       		.byte	0x2
  920 0032 1D       		.byte	0x1d
  921 0033 37000000 		.4byte	0x37
  922 0037 02       		.uleb128 0x2
  923 0038 01       		.byte	0x1
  924 0039 08       		.byte	0x8
- 925 003a 8D010000 		.4byte	.LASF1
+ 925 003a 11020000 		.4byte	.LASF1
  926 003e 02       		.uleb128 0x2
  927 003f 02       		.byte	0x2
  928 0040 05       		.byte	0x5
- 929 0041 DB000000 		.4byte	.LASF2
+ 929 0041 59010000 		.4byte	.LASF2
  930 0045 03       		.uleb128 0x3
- 931 0046 AE000000 		.4byte	.LASF4
+ 931 0046 2C010000 		.4byte	.LASF4
  932 004a 02       		.byte	0x2
  933 004b 2B       		.byte	0x2b
  934 004c 50000000 		.4byte	0x50
  935 0050 02       		.uleb128 0x2
  936 0051 02       		.byte	0x2
  937 0052 07       		.byte	0x7
- 938 0053 5F020000 		.4byte	.LASF5
+ 938 0053 E3020000 		.4byte	.LASF5
  939 0057 03       		.uleb128 0x3
- 940 0058 75030000 		.4byte	.LASF6
+ 940 0058 F9030000 		.4byte	.LASF6
  941 005c 02       		.byte	0x2
  942 005d 3F       		.byte	0x3f
  943 005e 62000000 		.4byte	0x62
  944 0062 02       		.uleb128 0x2
  945 0063 04       		.byte	0x4
  946 0064 05       		.byte	0x5
- 947 0065 1E010000 		.4byte	.LASF7
+ 947 0065 9C010000 		.4byte	.LASF7
  948 0069 02       		.uleb128 0x2
  949 006a 04       		.byte	0x4
  950 006b 07       		.byte	0x7
- 951 006c 1D020000 		.4byte	.LASF8
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 24
+ 951 006c A1020000 		.4byte	.LASF8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 24
 
 
  952 0070 02       		.uleb128 0x2
  953 0071 08       		.byte	0x8
  954 0072 05       		.byte	0x5
- 955 0073 EB000000 		.4byte	.LASF9
+ 955 0073 69010000 		.4byte	.LASF9
  956 0077 02       		.uleb128 0x2
  957 0078 08       		.byte	0x8
  958 0079 07       		.byte	0x7
- 959 007a D9010000 		.4byte	.LASF10
+ 959 007a 5D020000 		.4byte	.LASF10
  960 007e 04       		.uleb128 0x4
  961 007f 04       		.byte	0x4
  962 0080 05       		.byte	0x5
@@ -1396,72 +1396,72 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  964 0085 02       		.uleb128 0x2
  965 0086 04       		.byte	0x4
  966 0087 07       		.byte	0x7
- 967 0088 F0010000 		.4byte	.LASF11
+ 967 0088 74020000 		.4byte	.LASF11
  968 008c 03       		.uleb128 0x3
- 969 008d CC000000 		.4byte	.LASF12
+ 969 008d 4A010000 		.4byte	.LASF12
  970 0091 03       		.byte	0x3
  971 0092 18       		.byte	0x18
  972 0093 2C000000 		.4byte	0x2c
  973 0097 03       		.uleb128 0x3
- 974 0098 0D020000 		.4byte	.LASF13
+ 974 0098 91020000 		.4byte	.LASF13
  975 009c 03       		.byte	0x3
  976 009d 24       		.byte	0x24
  977 009e 45000000 		.4byte	0x45
  978 00a2 03       		.uleb128 0x3
- 979 00a3 D1010000 		.4byte	.LASF14
+ 979 00a3 55020000 		.4byte	.LASF14
  980 00a7 03       		.byte	0x3
  981 00a8 2C       		.byte	0x2c
  982 00a9 57000000 		.4byte	0x57
  983 00ad 02       		.uleb128 0x2
  984 00ae 04       		.byte	0x4
  985 00af 04       		.byte	0x4
- 986 00b0 E5000000 		.4byte	.LASF15
+ 986 00b0 63010000 		.4byte	.LASF15
  987 00b4 02       		.uleb128 0x2
  988 00b5 08       		.byte	0x8
  989 00b6 04       		.byte	0x4
- 990 00b7 3F030000 		.4byte	.LASF16
+ 990 00b7 C3030000 		.4byte	.LASF16
  991 00bb 02       		.uleb128 0x2
  992 00bc 01       		.byte	0x1
  993 00bd 08       		.byte	0x8
- 994 00be 79020000 		.4byte	.LASF17
+ 994 00be FD020000 		.4byte	.LASF17
  995 00c2 02       		.uleb128 0x2
  996 00c3 08       		.byte	0x8
  997 00c4 04       		.byte	0x4
- 998 00c5 77010000 		.4byte	.LASF18
+ 998 00c5 FB010000 		.4byte	.LASF18
  999 00c9 02       		.uleb128 0x2
  1000 00ca 04       		.byte	0x4
  1001 00cb 07       		.byte	0x7
- 1002 00cc 9A030000 		.4byte	.LASF19
+ 1002 00cc 1E040000 		.4byte	.LASF19
  1003 00d0 05       		.uleb128 0x5
  1004 00d1 40       		.byte	0x40
  1005 00d2 04       		.byte	0x4
- 1006 00d3 19       		.byte	0x19
+ 1006 00d3 1A       		.byte	0x1a
  1007 00d4 09010000 		.4byte	0x109
  1008 00d8 06       		.uleb128 0x6
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 25
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 25
 
 
- 1009 00d9 BF010000 		.4byte	.LASF20
+ 1009 00d9 43020000 		.4byte	.LASF20
  1010 00dd 04       		.byte	0x4
- 1011 00de 1A       		.byte	0x1a
+ 1011 00de 1B       		.byte	0x1b
  1012 00df 8C000000 		.4byte	0x8c
  1013 00e3 00       		.byte	0
  1014 00e4 06       		.uleb128 0x6
- 1015 00e5 72020000 		.4byte	.LASF21
+ 1015 00e5 F6020000 		.4byte	.LASF21
  1016 00e9 04       		.byte	0x4
- 1017 00ea 1B       		.byte	0x1b
+ 1017 00ea 1C       		.byte	0x1c
  1018 00eb 8C000000 		.4byte	0x8c
  1019 00ef 01       		.byte	0x1
  1020 00f0 06       		.uleb128 0x6
- 1021 00f1 B5010000 		.4byte	.LASF22
+ 1021 00f1 39020000 		.4byte	.LASF22
  1022 00f5 04       		.byte	0x4
- 1023 00f6 1C       		.byte	0x1c
+ 1023 00f6 1D       		.byte	0x1d
  1024 00f7 97000000 		.4byte	0x97
  1025 00fb 02       		.byte	0x2
  1026 00fc 06       		.uleb128 0x6
- 1027 00fd F2020000 		.4byte	.LASF23
+ 1027 00fd 76030000 		.4byte	.LASF23
  1028 0101 04       		.byte	0x4
- 1029 0102 1D       		.byte	0x1d
+ 1029 0102 1E       		.byte	0x1e
  1030 0103 09010000 		.4byte	0x109
  1031 0107 04       		.byte	0x4
  1032 0108 00       		.byte	0
@@ -1473,12 +1473,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1038 0117 3B       		.byte	0x3b
  1039 0118 00       		.byte	0
  1040 0119 03       		.uleb128 0x3
- 1041 011a 2F020000 		.4byte	.LASF24
+ 1041 011a B3020000 		.4byte	.LASF24
  1042 011e 04       		.byte	0x4
- 1043 011f 1E       		.byte	0x1e
+ 1043 011f 1F       		.byte	0x1f
  1044 0120 D0000000 		.4byte	0xd0
  1045 0124 09       		.uleb128 0x9
- 1046 0125 A3030000 		.4byte	.LASF25
+ 1046 0125 27040000 		.4byte	.LASF25
  1047 0129 01       		.byte	0x1
  1048 012a 12       		.byte	0x12
  1049 012b 8C000000 		.4byte	0x8c
@@ -1498,10 +1498,10 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1063 014b 00       		.byte	0
  1064 014c 00       		.byte	0
  1065 014d 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 26
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 26
 
 
- 1066 014e 97020000 		.4byte	.LASF29
+ 1066 014e 1B030000 		.4byte	.LASF29
  1067 0152 01       		.byte	0x1
  1068 0153 17       		.byte	0x17
  1069 0154 00000000 		.4byte	.LFB64
@@ -1520,7 +1520,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1082 0170 00       		.byte	0
  1083 0171 00       		.byte	0
  1084 0172 09       		.uleb128 0x9
- 1085 0173 FD010000 		.4byte	.LASF26
+ 1085 0173 81020000 		.4byte	.LASF26
  1086 0177 01       		.byte	0x1
  1087 0178 1F       		.byte	0x1f
  1088 0179 8C000000 		.4byte	0x8c
@@ -1530,13 +1530,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1092 0186 9C       		.byte	0x9c
  1093 0187 D7010000 		.4byte	0x1d7
  1094 018b 0D       		.uleb128 0xd
- 1095 018c 30010000 		.4byte	.LASF31
+ 1095 018c AE010000 		.4byte	.LASF31
  1096 0190 01       		.byte	0x1
  1097 0191 1F       		.byte	0x1f
  1098 0192 97000000 		.4byte	0x97
  1099 0196 00000000 		.4byte	.LLST0
  1100 019a 0E       		.uleb128 0xe
- 1101 019b D4000000 		.4byte	.LASF27
+ 1101 019b 52010000 		.4byte	.LASF27
  1102 019f 01       		.byte	0x1
  1103 01a0 22       		.byte	0x22
  1104 01a1 D7010000 		.4byte	0x1d7
@@ -1544,7 +1544,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1106 01a6 91       		.byte	0x91
  1107 01a7 74       		.sleb128 -12
  1108 01a8 0E       		.uleb128 0xe
- 1109 01a9 F7020000 		.4byte	.LASF28
+ 1109 01a9 7B030000 		.4byte	.LASF28
  1110 01ad 01       		.byte	0x1
  1111 01ae 25       		.byte	0x25
  1112 01af 8C000000 		.4byte	0x8c
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1120 01c0 01       		.uleb128 0x1
  1121 01c1 50       		.byte	0x50
  1122 01c2 02       		.uleb128 0x2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 27
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 27
 
 
  1123 01c3 91       		.byte	0x91
@@ -1589,7 +1589,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1148 01e5 02       		.byte	0x2
  1149 01e6 00       		.byte	0
  1150 01e7 0C       		.uleb128 0xc
- 1151 01e8 38000000 		.4byte	.LASF30
+ 1151 01e8 B6000000 		.4byte	.LASF30
  1152 01ec 01       		.byte	0x1
  1153 01ed 2D       		.byte	0x2d
  1154 01ee 00000000 		.4byte	.LFB66
@@ -1598,19 +1598,19 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1157 01f7 9C       		.byte	0x9c
  1158 01f8 60020000 		.4byte	0x260
  1159 01fc 0D       		.uleb128 0xd
- 1160 01fd 30010000 		.4byte	.LASF31
+ 1160 01fd AE010000 		.4byte	.LASF31
  1161 0201 01       		.byte	0x1
  1162 0202 2D       		.byte	0x2d
  1163 0203 97000000 		.4byte	0x97
  1164 0207 21000000 		.4byte	.LLST1
  1165 020b 0D       		.uleb128 0xd
- 1166 020c 27010000 		.4byte	.LASF32
+ 1166 020c A5010000 		.4byte	.LASF32
  1167 0210 01       		.byte	0x1
  1168 0211 2D       		.byte	0x2d
  1169 0212 8C000000 		.4byte	0x8c
  1170 0216 42000000 		.4byte	.LLST2
  1171 021a 0E       		.uleb128 0xe
- 1172 021b D4000000 		.4byte	.LASF27
+ 1172 021b 52010000 		.4byte	.LASF27
  1173 021f 01       		.byte	0x1
  1174 0220 33       		.byte	0x33
  1175 0221 60020000 		.4byte	0x260
@@ -1618,10 +1618,10 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1177 0226 91       		.byte	0x91
  1178 0227 6C       		.sleb128 -20
  1179 0228 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 28
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 28
 
 
- 1180 0229 49000000 		.4byte	.LASF33
+ 1180 0229 C7000000 		.4byte	.LASF33
  1181 022d 01       		.byte	0x1
  1182 022e 35       		.byte	0x35
  1183 022f 8C000000 		.4byte	0x8c
@@ -1666,7 +1666,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1222 026e 03       		.byte	0x3
  1223 026f 00       		.byte	0
  1224 0270 0C       		.uleb128 0xc
- 1225 0271 E2020000 		.4byte	.LASF34
+ 1225 0271 66030000 		.4byte	.LASF34
  1226 0275 01       		.byte	0x1
  1227 0276 3B       		.byte	0x3b
  1228 0277 00000000 		.4byte	.LFB67
@@ -1675,28 +1675,28 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1231 0280 9C       		.byte	0x9c
  1232 0281 DE020000 		.4byte	0x2de
  1233 0285 0D       		.uleb128 0xd
- 1234 0286 30010000 		.4byte	.LASF31
+ 1234 0286 AE010000 		.4byte	.LASF31
  1235 028a 01       		.byte	0x1
  1236 028b 3B       		.byte	0x3b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 29
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 29
 
 
  1237 028c 97000000 		.4byte	0x97
  1238 0290 63000000 		.4byte	.LLST3
  1239 0294 0D       		.uleb128 0xd
- 1240 0295 F7020000 		.4byte	.LASF28
+ 1240 0295 7B030000 		.4byte	.LASF28
  1241 0299 01       		.byte	0x1
  1242 029a 3B       		.byte	0x3b
  1243 029b DE020000 		.4byte	0x2de
  1244 029f 84000000 		.4byte	.LLST4
  1245 02a3 0D       		.uleb128 0xd
- 1246 02a4 16020000 		.4byte	.LASF35
+ 1246 02a4 9A020000 		.4byte	.LASF35
  1247 02a8 01       		.byte	0x1
  1248 02a9 3B       		.byte	0x3b
  1249 02aa 8C000000 		.4byte	0x8c
  1250 02ae B0000000 		.4byte	.LLST5
  1251 02b2 0E       		.uleb128 0xe
- 1252 02b3 D4000000 		.4byte	.LASF27
+ 1252 02b3 52010000 		.4byte	.LASF27
  1253 02b7 01       		.byte	0x1
  1254 02b8 3E       		.byte	0x3e
  1255 02b9 D7010000 		.4byte	0x1d7
@@ -1738,36 +1738,36 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1291 02ef 5C000000 		.4byte	.LFE68-.LFB68
  1292 02f3 01       		.uleb128 0x1
  1293 02f4 9C       		.byte	0x9c
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 30
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 30
 
 
  1294 02f5 A1030000 		.4byte	0x3a1
  1295 02f9 0D       		.uleb128 0xd
- 1296 02fa 30010000 		.4byte	.LASF31
+ 1296 02fa AE010000 		.4byte	.LASF31
  1297 02fe 01       		.byte	0x1
  1298 02ff 44       		.byte	0x44
  1299 0300 97000000 		.4byte	0x97
  1300 0304 D1000000 		.4byte	.LLST6
  1301 0308 0D       		.uleb128 0xd
- 1302 0309 F2020000 		.4byte	.LASF23
+ 1302 0309 76030000 		.4byte	.LASF23
  1303 030d 01       		.byte	0x1
  1304 030e 44       		.byte	0x44
  1305 030f DE020000 		.4byte	0x2de
  1306 0313 F2000000 		.4byte	.LLST7
  1307 0317 0D       		.uleb128 0xd
- 1308 0318 16020000 		.4byte	.LASF35
+ 1308 0318 9A020000 		.4byte	.LASF35
  1309 031c 01       		.byte	0x1
  1310 031d 44       		.byte	0x44
  1311 031e 8C000000 		.4byte	0x8c
  1312 0322 10010000 		.4byte	.LLST8
  1313 0326 11       		.uleb128 0x11
- 1314 0327 D4000000 		.4byte	.LASF27
+ 1314 0327 52010000 		.4byte	.LASF27
  1315 032b 01       		.byte	0x1
  1316 032c 4E       		.byte	0x4e
  1317 032d A1030000 		.4byte	0x3a1
  1318 0331 31010000 		.4byte	.LLST9
  1319 0335 0E       		.uleb128 0xe
- 1320 0336 49000000 		.4byte	.LASF33
+ 1320 0336 C7000000 		.4byte	.LASF33
  1321 033a 01       		.byte	0x1
  1322 033b 56       		.byte	0x56
  1323 033c 8C000000 		.4byte	0x8c
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1348 0370 7D       		.byte	0x7d
  1349 0371 03       		.sleb128 3
  1350 0372 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 31
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 31
 
 
  1351 0373 01       		.uleb128 0x1
@@ -1856,9 +1856,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1403 03b6 02       		.uleb128 0x2
  1404 03b7 00       		.byte	0
  1405 03b8 0C       		.uleb128 0xc
- 1406 03b9 6C000000 		.4byte	.LASF37
+ 1406 03b9 EA000000 		.4byte	.LASF37
  1407 03bd 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 32
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 32
 
 
  1408 03be 5B       		.byte	0x5b
@@ -1872,7 +1872,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1416 03d2 24010000 		.4byte	0x124
  1417 03d6 00       		.byte	0
  1418 03d7 0C       		.uleb128 0xc
- 1419 03d8 9B010000 		.4byte	.LASF38
+ 1419 03d8 1F020000 		.4byte	.LASF38
  1420 03dc 01       		.byte	0x1
  1421 03dd 63       		.byte	0x63
  1422 03de 00000000 		.4byte	.LFB70
@@ -1881,13 +1881,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1425 03e7 9C       		.byte	0x9c
  1426 03e8 3A040000 		.4byte	0x43a
  1427 03ec 0D       		.uleb128 0xd
- 1428 03ed 32000000 		.4byte	.LASF39
+ 1428 03ed DB010000 		.4byte	.LASF39
  1429 03f1 01       		.byte	0x1
  1430 03f2 63       		.byte	0x63
  1431 03f3 8C000000 		.4byte	0x8c
  1432 03f7 5A010000 		.4byte	.LLST10
  1433 03fb 11       		.uleb128 0x11
- 1434 03fc 2E030000 		.4byte	.LASF40
+ 1434 03fc B2030000 		.4byte	.LASF40
  1435 0400 01       		.byte	0x1
  1436 0401 66       		.byte	0x66
  1437 0402 8C000000 		.4byte	0x8c
@@ -1917,8 +1917,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1461 0435 B8030000 		.4byte	0x3b8
  1462 0439 00       		.byte	0
  1463 043a 09       		.uleb128 0x9
- 1464 043b 41020000 		.4byte	.LASF41
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 33
+ 1464 043b C5020000 		.4byte	.LASF41
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 33
 
 
  1465 043f 01       		.byte	0x1
@@ -1930,7 +1930,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1471 044e 9C       		.byte	0x9c
  1472 044f 72040000 		.4byte	0x472
  1473 0453 11       		.uleb128 0x11
- 1474 0454 2E030000 		.4byte	.LASF40
+ 1474 0454 B2030000 		.4byte	.LASF40
  1475 0458 01       		.byte	0x1
  1476 0459 7D       		.byte	0x7d
  1477 045a 8C000000 		.4byte	0x8c
@@ -1946,7 +1946,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1487 0470 00       		.byte	0
  1488 0471 00       		.byte	0
  1489 0472 0C       		.uleb128 0xc
- 1490 0473 C5020000 		.4byte	.LASF42
+ 1490 0473 49030000 		.4byte	.LASF42
  1491 0477 01       		.byte	0x1
  1492 0478 88       		.byte	0x88
  1493 0479 00000000 		.4byte	.LFB72
@@ -1955,13 +1955,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1496 0482 9C       		.byte	0x9c
  1497 0483 D5040000 		.4byte	0x4d5
  1498 0487 0D       		.uleb128 0xd
- 1499 0488 CA030000 		.4byte	.LASF43
+ 1499 0488 4E040000 		.4byte	.LASF43
  1500 048c 01       		.byte	0x1
  1501 048d 88       		.byte	0x88
  1502 048e 8C000000 		.4byte	0x8c
  1503 0492 C6010000 		.4byte	.LLST13
  1504 0496 11       		.uleb128 0x11
- 1505 0497 2E030000 		.4byte	.LASF40
+ 1505 0497 B2030000 		.4byte	.LASF40
  1506 049b 01       		.byte	0x1
  1507 049c 8B       		.byte	0x8b
  1508 049d 8C000000 		.4byte	0x8c
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1519 04b7 00       		.byte	0
  1520 04b8 12       		.uleb128 0x12
  1521 04b9 20000000 		.4byte	.LVL38
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 34
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 34
 
 
  1522 04bd E7010000 		.4byte	0x1e7
@@ -1994,7 +1994,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1532 04d0 B8030000 		.4byte	0x3b8
  1533 04d4 00       		.byte	0
  1534 04d5 09       		.uleb128 0x9
- 1535 04d6 5D010000 		.4byte	.LASF44
+ 1535 04d6 E1010000 		.4byte	.LASF44
  1536 04da 01       		.byte	0x1
  1537 04db 9F       		.byte	0x9f
  1538 04dc 8C000000 		.4byte	0x8c
@@ -2004,7 +2004,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1542 04e9 9C       		.byte	0x9c
  1543 04ea 0D050000 		.4byte	0x50d
  1544 04ee 11       		.uleb128 0x11
- 1545 04ef 2E030000 		.4byte	.LASF40
+ 1545 04ef B2030000 		.4byte	.LASF40
  1546 04f3 01       		.byte	0x1
  1547 04f4 A2       		.byte	0xa2
  1548 04f5 8C000000 		.4byte	0x8c
@@ -2020,7 +2020,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1558 050b 00       		.byte	0
  1559 050c 00       		.byte	0
  1560 050d 0C       		.uleb128 0xc
- 1561 050e 61030000 		.4byte	.LASF45
+ 1561 050e E5030000 		.4byte	.LASF45
  1562 0512 01       		.byte	0x1
  1563 0513 AD       		.byte	0xad
  1564 0514 00000000 		.4byte	.LFB74
@@ -2029,16 +2029,16 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1567 051d 9C       		.byte	0x9c
  1568 051e 70050000 		.4byte	0x570
  1569 0522 0D       		.uleb128 0xd
- 1570 0523 CA030000 		.4byte	.LASF43
+ 1570 0523 4E040000 		.4byte	.LASF43
  1571 0527 01       		.byte	0x1
  1572 0528 AD       		.byte	0xad
  1573 0529 8C000000 		.4byte	0x8c
  1574 052d 34020000 		.4byte	.LLST16
  1575 0531 11       		.uleb128 0x11
- 1576 0532 2E030000 		.4byte	.LASF40
+ 1576 0532 B2030000 		.4byte	.LASF40
  1577 0536 01       		.byte	0x1
  1578 0537 B0       		.byte	0xb0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 35
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 35
 
 
  1579 0538 8C000000 		.4byte	0x8c
@@ -2068,7 +2068,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1603 056b B8030000 		.4byte	0x3b8
  1604 056f 00       		.byte	0
  1605 0570 09       		.uleb128 0x9
- 1606 0571 FE020000 		.4byte	.LASF46
+ 1606 0571 82030000 		.4byte	.LASF46
  1607 0575 01       		.byte	0x1
  1608 0576 C4       		.byte	0xc4
  1609 0577 8C000000 		.4byte	0x8c
@@ -2078,7 +2078,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1613 0584 9C       		.byte	0x9c
  1614 0585 A8050000 		.4byte	0x5a8
  1615 0589 11       		.uleb128 0x11
- 1616 058a 2E030000 		.4byte	.LASF40
+ 1616 058a B2030000 		.4byte	.LASF40
  1617 058e 01       		.byte	0x1
  1618 058f C7       		.byte	0xc7
  1619 0590 8C000000 		.4byte	0x8c
@@ -2094,11 +2094,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1629 05a6 00       		.byte	0
  1630 05a7 00       		.byte	0
  1631 05a8 0C       		.uleb128 0xc
- 1632 05a9 B5030000 		.4byte	.LASF47
+ 1632 05a9 39040000 		.4byte	.LASF47
  1633 05ad 01       		.byte	0x1
  1634 05ae D2       		.byte	0xd2
  1635 05af 00000000 		.4byte	.LFB76
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 36
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 36
 
 
  1636 05b3 26000000 		.4byte	.LFE76-.LFB76
@@ -2106,13 +2106,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1638 05b8 9C       		.byte	0x9c
  1639 05b9 0B060000 		.4byte	0x60b
  1640 05bd 0D       		.uleb128 0xd
- 1641 05be CA030000 		.4byte	.LASF43
+ 1641 05be 4E040000 		.4byte	.LASF43
  1642 05c2 01       		.byte	0x1
  1643 05c3 D2       		.byte	0xd2
  1644 05c4 8C000000 		.4byte	0x8c
  1645 05c8 A2020000 		.4byte	.LLST19
  1646 05cc 11       		.uleb128 0x11
- 1647 05cd 2E030000 		.4byte	.LASF40
+ 1647 05cd B2030000 		.4byte	.LASF40
  1648 05d1 01       		.byte	0x1
  1649 05d2 D5       		.byte	0xd5
  1650 05d3 8C000000 		.4byte	0x8c
@@ -2142,7 +2142,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1674 0606 B8030000 		.4byte	0x3b8
  1675 060a 00       		.byte	0
  1676 060b 09       		.uleb128 0x9
- 1677 060c 7E020000 		.4byte	.LASF48
+ 1677 060c 02030000 		.4byte	.LASF48
  1678 0610 01       		.byte	0x1
  1679 0611 E9       		.byte	0xe9
  1680 0612 8C000000 		.4byte	0x8c
@@ -2152,13 +2152,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1684 061f 9C       		.byte	0x9c
  1685 0620 43060000 		.4byte	0x643
  1686 0624 11       		.uleb128 0x11
- 1687 0625 2E030000 		.4byte	.LASF40
+ 1687 0625 B2030000 		.4byte	.LASF40
  1688 0629 01       		.byte	0x1
  1689 062a EC       		.byte	0xec
  1690 062b 8C000000 		.4byte	0x8c
  1691 062f F7020000 		.4byte	.LLST21
  1692 0633 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 37
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 37
 
 
  1693 0634 08000000 		.4byte	.LVL60
@@ -2171,7 +2171,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1700 0641 00       		.byte	0
  1701 0642 00       		.byte	0
  1702 0643 09       		.uleb128 0x9
- 1703 0644 16030000 		.4byte	.LASF49
+ 1703 0644 9A030000 		.4byte	.LASF49
  1704 0648 01       		.byte	0x1
  1705 0649 F7       		.byte	0xf7
  1706 064a 97000000 		.4byte	0x97
@@ -2207,7 +2207,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1736 068c 00       		.byte	0
  1737 068d 00       		.byte	0
  1738 068e 14       		.uleb128 0x14
- 1739 068f AA020000 		.4byte	.LASF51
+ 1739 068f 2E030000 		.4byte	.LASF51
  1740 0693 01       		.byte	0x1
  1741 0694 0401     		.2byte	0x104
  1742 0696 00000000 		.4byte	.LFB79
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1747 06a4 15       		.uleb128 0x15
  1748 06a5 11000000 		.4byte	.LASF50
  1749 06a9 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 38
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 38
 
 
  1750 06aa 0701     		.2byte	0x107
@@ -2229,7 +2229,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1755 06b9 1C000000 		.4byte	.LBE2-.LBB2
  1756 06bd F8060000 		.4byte	0x6f8
  1757 06c1 17       		.uleb128 0x17
- 1758 06c2 DB020000 		.4byte	.LASF52
+ 1758 06c2 5F030000 		.4byte	.LASF52
  1759 06c6 01       		.byte	0x1
  1760 06c7 1001     		.2byte	0x110
  1761 06c9 02070000 		.4byte	0x702
@@ -2273,25 +2273,25 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1799 0710 01       		.byte	0x1
  1800 0711 00       		.byte	0
  1801 0712 14       		.uleb128 0x14
- 1802 0713 58000000 		.4byte	.LASF53
+ 1802 0713 D6000000 		.4byte	.LASF53
  1803 0717 01       		.byte	0x1
  1804 0718 1F01     		.2byte	0x11f
  1805 071a 00000000 		.4byte	.LFB80
  1806 071e 2C000000 		.4byte	.LFE80-.LFB80
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 39
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 39
 
 
  1807 0722 01       		.uleb128 0x1
  1808 0723 9C       		.byte	0x9c
  1809 0724 9F070000 		.4byte	0x79f
  1810 0728 18       		.uleb128 0x18
- 1811 0729 7F030000 		.4byte	.LASF54
+ 1811 0729 03040000 		.4byte	.LASF54
  1812 072d 01       		.byte	0x1
  1813 072e 1F01     		.2byte	0x11f
  1814 0730 DE020000 		.4byte	0x2de
  1815 0734 4A030000 		.4byte	.LLST24
  1816 0738 18       		.uleb128 0x18
- 1817 0739 16020000 		.4byte	.LASF35
+ 1817 0739 9A020000 		.4byte	.LASF35
  1818 073d 01       		.byte	0x1
  1819 073e 1F01     		.2byte	0x11f
  1820 0740 8C000000 		.4byte	0x8c
@@ -2300,13 +2300,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1823 0749 0A000000 		.4byte	.LBB3
  1824 074d 22000000 		.4byte	.LBE3-.LBB3
  1825 0751 15       		.uleb128 0x15
- 1826 0752 CF030000 		.4byte	.LASF55
+ 1826 0752 53040000 		.4byte	.LASF55
  1827 0756 01       		.byte	0x1
  1828 0757 2501     		.2byte	0x125
  1829 0759 97000000 		.4byte	0x97
  1830 075d 9F030000 		.4byte	.LLST26
  1831 0761 15       		.uleb128 0x15
- 1832 0762 B9000000 		.4byte	.LASF56
+ 1832 0762 37010000 		.4byte	.LASF56
  1833 0766 01       		.byte	0x1
  1834 0767 2801     		.2byte	0x128
  1835 0769 97000000 		.4byte	0x97
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1861 079e 00       		.byte	0
  1862 079f 14       		.uleb128 0x14
  1863 07a0 1B000000 		.4byte	.LASF57
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 40
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 40
 
 
  1864 07a4 01       		.byte	0x1
@@ -2349,7 +2349,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1869 07b0 9C       		.byte	0x9c
  1870 07b1 28080000 		.4byte	0x828
  1871 07b5 1A       		.uleb128 0x1a
- 1872 07b6 37030000 		.4byte	.LASF58
+ 1872 07b6 BB030000 		.4byte	.LASF58
  1873 07ba 01       		.byte	0x1
  1874 07bb 3801     		.2byte	0x138
  1875 07bd 19010000 		.4byte	0x119
@@ -2357,7 +2357,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1877 07c2 91       		.byte	0x91
  1878 07c3 70       		.sleb128 -16
  1879 07c4 1A       		.uleb128 0x1a
- 1880 07c5 C3000000 		.4byte	.LASF59
+ 1880 07c5 41010000 		.4byte	.LASF59
  1881 07c9 01       		.byte	0x1
  1882 07ca 3801     		.2byte	0x138
  1883 07cc 8C000000 		.4byte	0x8c
@@ -2365,7 +2365,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1885 07d1 91       		.byte	0x91
  1886 07d2 30       		.sleb128 48
  1887 07d3 17       		.uleb128 0x17
- 1888 07d4 DB020000 		.4byte	.LASF52
+ 1888 07d4 5F030000 		.4byte	.LASF52
  1889 07d8 01       		.byte	0x1
  1890 07d9 3A01     		.2byte	0x13a
  1891 07db 28080000 		.4byte	0x828
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1918 0804 12       		.uleb128 0x12
  1919 0805 3E000000 		.4byte	.LVL81
  1920 0809 12070000 		.4byte	0x712
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 41
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 41
 
 
  1921 080d 1E080000 		.4byte	0x81e
@@ -2427,7 +2427,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1944 0836 3F       		.byte	0x3f
  1945 0837 00       		.byte	0
  1946 0838 14       		.uleb128 0x14
- 1947 0839 87030000 		.4byte	.LASF60
+ 1947 0839 0B040000 		.4byte	.LASF60
  1948 083d 01       		.byte	0x1
  1949 083e 4E01     		.2byte	0x14e
  1950 0840 00000000 		.4byte	.LFB82
@@ -2436,7 +2436,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1953 0849 9C       		.byte	0x9c
  1954 084a D1080000 		.4byte	0x8d1
  1955 084e 17       		.uleb128 0x17
- 1956 084f 35020000 		.4byte	.LASF61
+ 1956 084f B9020000 		.4byte	.LASF61
  1957 0853 01       		.byte	0x1
  1958 0854 5101     		.2byte	0x151
  1959 0856 28080000 		.4byte	0x828
@@ -2444,7 +2444,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1961 085b 91       		.byte	0x91
  1962 085c B07F     		.sleb128 -80
  1963 085e 15       		.uleb128 0x15
- 1964 085f B9000000 		.4byte	.LASF56
+ 1964 085f 37010000 		.4byte	.LASF56
  1965 0863 01       		.byte	0x1
  1966 0864 5501     		.2byte	0x155
  1967 0866 97000000 		.4byte	0x97
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  1975 087b 5801     		.2byte	0x158
  1976 087d 97000000 		.4byte	0x97
  1977 0881 EF030000 		.4byte	.LLST29
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 42
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 42
 
 
  1978 0885 0A       		.uleb128 0xa
@@ -2517,8 +2517,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2031 08cf 00       		.byte	0
  2032 08d0 00       		.byte	0
  2033 08d1 1D       		.uleb128 0x1d
- 2034 08d2 46030000 		.4byte	.LASF62
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 43
+ 2034 08d2 CA030000 		.4byte	.LASF62
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 43
 
 
  2035 08d6 05       		.byte	0x5
@@ -2527,7 +2527,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2038 08dd 1E       		.uleb128 0x1e
  2039 08de A2000000 		.4byte	0xa2
  2040 08e2 1F       		.uleb128 0x1f
- 2041 08e3 53030000 		.4byte	.LASF63
+ 2041 08e3 D7030000 		.4byte	.LASF63
  2042 08e7 01       		.byte	0x1
  2043 08e8 0E       		.byte	0xe
  2044 08e9 8C000000 		.4byte	0x8c
@@ -2535,31 +2535,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2046 08ee 03       		.byte	0x3
  2047 08ef 00000000 		.4byte	eeprom_Status
  2048 08f3 20       		.uleb128 0x20
- 2049 08f4 35010000 		.4byte	.LASF64
- 2050 08f8 35010000 		.4byte	.LASF64
+ 2049 08f4 B3010000 		.4byte	.LASF64
+ 2050 08f8 B3010000 		.4byte	.LASF64
  2051 08fc 06       		.byte	0x6
  2052 08fd 87       		.byte	0x87
  2053 08fe 20       		.uleb128 0x20
- 2054 08ff 88000000 		.4byte	.LASF65
- 2055 0903 88000000 		.4byte	.LASF65
+ 2054 08ff 06010000 		.4byte	.LASF65
+ 2055 0903 06010000 		.4byte	.LASF65
  2056 0907 06       		.byte	0x6
  2057 0908 77       		.byte	0x77
  2058 0909 20       		.uleb128 0x20
- 2059 090a 00010000 		.4byte	.LASF66
- 2060 090e 00010000 		.4byte	.LASF66
+ 2059 090a 7E010000 		.4byte	.LASF66
+ 2060 090e 7E010000 		.4byte	.LASF66
  2061 0912 06       		.byte	0x6
  2062 0913 A3       		.byte	0xa3
  2063 0914 20       		.uleb128 0x20
- 2064 0915 83010000 		.4byte	.LASF67
- 2065 0919 83010000 		.4byte	.LASF67
+ 2064 0915 07020000 		.4byte	.LASF67
+ 2065 0919 07020000 		.4byte	.LASF67
  2066 091d 07       		.byte	0x7
  2067 091e 77       		.byte	0x77
  2068 091f 21       		.uleb128 0x21
- 2069 0920 A7000000 		.4byte	.LASF68
- 2070 0924 A7000000 		.4byte	.LASF68
+ 2069 0920 25010000 		.4byte	.LASF68
+ 2070 0924 25010000 		.4byte	.LASF68
  2071 0928 21       		.uleb128 0x21
- 2072 0929 F9000000 		.4byte	.LASF69
- 2073 092d F9000000 		.4byte	.LASF69
+ 2072 0929 77010000 		.4byte	.LASF69
+ 2073 092d 77010000 		.4byte	.LASF69
  2074 0931 00       		.byte	0
  2075              		.section	.debug_abbrev,"",%progbits
  2076              	.Ldebug_abbrev0:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2089 000c 17       		.uleb128 0x17
  2090 000d 11       		.uleb128 0x11
  2091 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 44
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 44
 
 
  2092 000f 10       		.uleb128 0x10
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2146 0045 00       		.byte	0
  2147 0046 03       		.uleb128 0x3
  2148 0047 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 45
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 45
 
 
  2149 0048 3A       		.uleb128 0x3a
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2203 007f 00       		.byte	0
  2204 0080 0A       		.uleb128 0xa
  2205 0081 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 46
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 46
 
 
  2206 0084 01       		.byte	0x1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2260 00be 00       		.byte	0
  2261 00bf 00       		.byte	0
  2262 00c0 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 47
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 47
 
 
  2263 00c1 34       		.uleb128 0x34
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2317 00fb 01       		.uleb128 0x1
  2318 00fc 13       		.uleb128 0x13
  2319 00fd 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 48
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 48
 
 
  2320 00fe 00       		.byte	0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2374 0135 01       		.uleb128 0x1
  2375 0136 12       		.uleb128 0x12
  2376 0137 06       		.uleb128 0x6
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 49
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 49
 
 
  2377 0138 01       		.uleb128 0x1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2431 016e 02       		.uleb128 0x2
  2432 016f 18       		.uleb128 0x18
  2433 0170 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 50
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 50
 
 
  2434 0171 00       		.byte	0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2488 01a7 3A       		.uleb128 0x3a
  2489 01a8 0B       		.uleb128 0xb
  2490 01a9 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 51
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 51
 
 
  2491 01aa 0B       		.uleb128 0xb
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2545 0019 00000000 		.4byte	0
  2546 001d 00000000 		.4byte	0
  2547              	.LLST1:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 52
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 52
 
 
  2548 0021 00000000 		.4byte	.LVL5
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2602 00a5 01       		.uleb128 0x1
  2603 00a6 51       		.byte	0x51
  2604 00a7 9F       		.byte	0x9f
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 53
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 53
 
 
  2605 00a8 00000000 		.4byte	0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2659 012d 00000000 		.4byte	0
  2660              	.LLST9:
  2661 0131 26000000 		.4byte	.LVL17
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 54
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 54
 
 
  2662 0135 58000000 		.4byte	.LVL20
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2716 01af 08000000 		.4byte	.LVL30
  2717 01b3 0C000000 		.4byte	.LVL31
  2718 01b7 0500     		.2byte	0x5
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 55
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 55
 
 
  2719 01b9 70       		.byte	0x70
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2773 0234 00000000 		.4byte	.LVL42
  2774 0238 06000000 		.4byte	.LVL43
  2775 023c 0100     		.2byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 56
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 56
 
 
  2776 023e 50       		.byte	0x50
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2830 02bb 00000000 		.4byte	0
  2831 02bf 00000000 		.4byte	0
  2832              	.LLST20:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 57
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 57
 
 
  2833 02c3 0A000000 		.4byte	.LVL54
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2887 0352 0100     		.2byte	0x1
  2888 0354 50       		.byte	0x50
  2889 0355 0D000000 		.4byte	.LVL73-1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 58
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 58
 
 
  2890 0359 2A000000 		.4byte	.LVL78
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  2944 03e6 55       		.byte	0x55
  2945 03e7 00000000 		.4byte	0
  2946 03eb 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 59
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 59
 
 
  2947              	.LLST29:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  3001 0088 00000000 		.4byte	.LFB78
  3002 008c 18000000 		.4byte	.LFE78-.LFB78
  3003 0090 00000000 		.4byte	.LFB79
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 60
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 60
 
 
  3004 0094 2E000000 		.4byte	.LFE79-.LFB79
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  3058 00ac 4C000000 		.4byte	.LFE81
  3059 00b0 00000000 		.4byte	.LFB82
  3060 00b4 36000000 		.4byte	.LFE82
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 61
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 61
 
 
  3061 00b8 00000000 		.4byte	0
@@ -3626,359 +3626,356 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 1
  3071      746F7265 
  3071      4C6F674D 
  3071      65737361 
- 3072              	.LASF39:
- 3073 0032 73746174 		.ascii	"state\000"
- 3073      6500
- 3074              	.LASF30:
- 3075 0038 45455052 		.ascii	"EEPROM_writeByte\000"
- 3075      4F4D5F77 
- 3075      72697465 
- 3075      42797465 
- 3075      00
- 3076              	.LASF33:
- 3077 0049 74656D70 		.ascii	"temp\000"
+ 3072              	.LASF72:
+ 3073 0032 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 3073      73657273 
+ 3073      5C4D616E 
+ 3073      755C4465 
+ 3073      736B746F 
+ 3074 0060 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 3074      31393230 
+ 3074      5F49495F 
+ 3074      48575F46 
+ 3074      494E414C 
+ 3075 0091 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 3075      5F46494E 
+ 3075      414C5F43 
+ 3075      41525A41 
+ 3075      4E494741 
+ 3076              	.LASF30:
+ 3077 00b6 45455052 		.ascii	"EEPROM_writeByte\000"
+ 3077      4F4D5F77 
+ 3077      72697465 
+ 3077      42797465 
  3077      00
- 3078              	.LASF71:
- 3079 004e 32354C43 		.ascii	"25LC256.c\000"
- 3079      3235362E 
- 3079      6300
- 3080              	.LASF53:
- 3081 0058 45455052 		.ascii	"EEPROM_storeLogData\000"
- 3081      4F4D5F73 
- 3081      746F7265 
- 3081      4C6F6744 
- 3081      61746100 
- 3082              	.LASF37:
- 3083 006c 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 3083      4F4D5F77 
- 3083      61697446 
- 3083      6F725772 
- 3083      69746543 
- 3084              	.LASF65:
- 3085 0088 5350495F 		.ascii	"SPI_EEPROM_Interface_tradeByte\000"
- 3085      45455052 
- 3085      4F4D5F49 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 62
+ 3078              	.LASF33:
+ 3079 00c7 74656D70 		.ascii	"temp\000"
+ 3079      00
+ 3080              	.LASF71:
+ 3081 00cc 32354C43 		.ascii	"25LC256.c\000"
+ 3081      3235362E 
+ 3081      6300
+ 3082              	.LASF53:
+ 3083 00d6 45455052 		.ascii	"EEPROM_storeLogData\000"
+ 3083      4F4D5F73 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 62
 
 
- 3085      6E746572 
- 3085      66616365 
- 3086              	.LASF68:
- 3087 00a7 6D656D63 		.ascii	"memcpy\000"
- 3087      707900
- 3088              	.LASF4:
- 3089 00ae 5F5F7569 		.ascii	"__uint16_t\000"
- 3089      6E743136 
- 3089      5F7400
- 3090              	.LASF56:
- 3091 00b9 70616765 		.ascii	"page_addr\000"
- 3091      5F616464 
- 3091      7200
- 3092              	.LASF59:
- 3093 00c3 64617461 		.ascii	"dataSize\000"
- 3093      53697A65 
- 3093      00
- 3094              	.LASF12:
- 3095 00cc 75696E74 		.ascii	"uint8_t\000"
- 3095      385F7400 
- 3096              	.LASF27:
- 3097 00d4 64617461 		.ascii	"dataTX\000"
- 3097      545800
- 3098              	.LASF2:
- 3099 00db 73686F72 		.ascii	"short int\000"
- 3099      7420696E 
- 3099      7400
- 3100              	.LASF15:
- 3101 00e5 666C6F61 		.ascii	"float\000"
+ 3083      746F7265 
+ 3083      4C6F6744 
+ 3083      61746100 
+ 3084              	.LASF37:
+ 3085 00ea 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 3085      4F4D5F77 
+ 3085      61697446 
+ 3085      6F725772 
+ 3085      69746543 
+ 3086              	.LASF65:
+ 3087 0106 5350495F 		.ascii	"SPI_EEPROM_Interface_tradeByte\000"
+ 3087      45455052 
+ 3087      4F4D5F49 
+ 3087      6E746572 
+ 3087      66616365 
+ 3088              	.LASF68:
+ 3089 0125 6D656D63 		.ascii	"memcpy\000"
+ 3089      707900
+ 3090              	.LASF4:
+ 3091 012c 5F5F7569 		.ascii	"__uint16_t\000"
+ 3091      6E743136 
+ 3091      5F7400
+ 3092              	.LASF56:
+ 3093 0137 70616765 		.ascii	"page_addr\000"
+ 3093      5F616464 
+ 3093      7200
+ 3094              	.LASF59:
+ 3095 0141 64617461 		.ascii	"dataSize\000"
+ 3095      53697A65 
+ 3095      00
+ 3096              	.LASF12:
+ 3097 014a 75696E74 		.ascii	"uint8_t\000"
+ 3097      385F7400 
+ 3098              	.LASF27:
+ 3099 0152 64617461 		.ascii	"dataTX\000"
+ 3099      545800
+ 3100              	.LASF2:
+ 3101 0159 73686F72 		.ascii	"short int\000"
+ 3101      7420696E 
  3101      7400
- 3102              	.LASF9:
- 3103 00eb 6C6F6E67 		.ascii	"long long int\000"
- 3103      206C6F6E 
- 3103      6720696E 
+ 3102              	.LASF15:
+ 3103 0163 666C6F61 		.ascii	"float\000"
  3103      7400
- 3104              	.LASF69:
- 3105 00f9 6D656D73 		.ascii	"memset\000"
- 3105      657400
- 3106              	.LASF66:
- 3107 0100 5350495F 		.ascii	"SPI_EEPROM_Interface_Multi_RW\000"
- 3107      45455052 
- 3107      4F4D5F49 
- 3107      6E746572 
- 3107      66616365 
- 3108              	.LASF7:
- 3109 011e 6C6F6E67 		.ascii	"long int\000"
- 3109      20696E74 
- 3109      00
- 3110              	.LASF32:
- 3111 0127 64617461 		.ascii	"dataByte\000"
- 3111      42797465 
+ 3104              	.LASF9:
+ 3105 0169 6C6F6E67 		.ascii	"long long int\000"
+ 3105      206C6F6E 
+ 3105      6720696E 
+ 3105      7400
+ 3106              	.LASF69:
+ 3107 0177 6D656D73 		.ascii	"memset\000"
+ 3107      657400
+ 3108              	.LASF66:
+ 3109 017e 5350495F 		.ascii	"SPI_EEPROM_Interface_Multi_RW\000"
+ 3109      45455052 
+ 3109      4F4D5F49 
+ 3109      6E746572 
+ 3109      66616365 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 63
+
+
+ 3110              	.LASF7:
+ 3111 019c 6C6F6E67 		.ascii	"long int\000"
+ 3111      20696E74 
  3111      00
- 3112              	.LASF31:
- 3113 0130 61646472 		.ascii	"addr\000"
+ 3112              	.LASF32:
+ 3113 01a5 64617461 		.ascii	"dataByte\000"
+ 3113      42797465 
  3113      00
- 3114              	.LASF64:
- 3115 0135 5350495F 		.ascii	"SPI_EEPROM_Interface_ReadByte\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 63
+ 3114              	.LASF31:
+ 3115 01ae 61646472 		.ascii	"addr\000"
+ 3115      00
+ 3116              	.LASF64:
+ 3117 01b3 5350495F 		.ascii	"SPI_EEPROM_Interface_ReadByte\000"
+ 3117      45455052 
+ 3117      4F4D5F49 
+ 3117      6E746572 
+ 3117      66616365 
+ 3118              	.LASF3:
+ 3119 01d1 5F5F7569 		.ascii	"__uint8_t\000"
+ 3119      6E74385F 
+ 3119      7400
+ 3120              	.LASF39:
+ 3121 01db 73746174 		.ascii	"state\000"
+ 3121      6500
+ 3122              	.LASF44:
+ 3123 01e1 45455052 		.ascii	"EEPROM_retrieveConfigFlag\000"
+ 3123      4F4D5F72 
+ 3123      65747269 
+ 3123      65766543 
+ 3123      6F6E6669 
+ 3124              	.LASF18:
+ 3125 01fb 6C6F6E67 		.ascii	"long double\000"
+ 3125      20646F75 
+ 3125      626C6500 
+ 3126              	.LASF67:
+ 3127 0207 43794465 		.ascii	"CyDelayUs\000"
+ 3127      6C617955 
+ 3127      7300
+ 3128              	.LASF1:
+ 3129 0211 756E7369 		.ascii	"unsigned char\000"
+ 3129      676E6564 
+ 3129      20636861 
+ 3129      7200
+ 3130              	.LASF38:
+ 3131 021f 45455052 		.ascii	"EEPROM_saveStartStopState\000"
+ 3131      4F4D5F73 
+ 3131      61766553 
+ 3131      74617274 
+ 3131      53746F70 
+ 3132              	.LASF22:
+ 3133 0239 74696D65 		.ascii	"timestamp\000"
+ 3133      7374616D 
+ 3133      7000
+ 3134              	.LASF20:
+ 3135 0243 6C6F6749 		.ascii	"logID\000"
+ 3135      4400
+ 3136              	.LASF0:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 64
 
 
- 3115      45455052 
- 3115      4F4D5F49 
- 3115      6E746572 
- 3115      66616365 
- 3116              	.LASF3:
- 3117 0153 5F5F7569 		.ascii	"__uint8_t\000"
- 3117      6E74385F 
- 3117      7400
- 3118              	.LASF44:
- 3119 015d 45455052 		.ascii	"EEPROM_retrieveConfigFlag\000"
- 3119      4F4D5F72 
- 3119      65747269 
- 3119      65766543 
- 3119      6F6E6669 
- 3120              	.LASF18:
- 3121 0177 6C6F6E67 		.ascii	"long double\000"
- 3121      20646F75 
- 3121      626C6500 
- 3122              	.LASF67:
- 3123 0183 43794465 		.ascii	"CyDelayUs\000"
- 3123      6C617955 
- 3123      7300
- 3124              	.LASF1:
- 3125 018d 756E7369 		.ascii	"unsigned char\000"
- 3125      676E6564 
- 3125      20636861 
- 3125      7200
- 3126              	.LASF38:
- 3127 019b 45455052 		.ascii	"EEPROM_saveStartStopState\000"
- 3127      4F4D5F73 
- 3127      61766553 
- 3127      74617274 
- 3127      53746F70 
- 3128              	.LASF22:
- 3129 01b5 74696D65 		.ascii	"timestamp\000"
- 3129      7374616D 
- 3129      7000
- 3130              	.LASF20:
- 3131 01bf 6C6F6749 		.ascii	"logID\000"
- 3131      4400
- 3132              	.LASF0:
- 3133 01c5 7369676E 		.ascii	"signed char\000"
- 3133      65642063 
- 3133      68617200 
- 3134              	.LASF14:
- 3135 01d1 696E7433 		.ascii	"int32_t\000"
- 3135      325F7400 
- 3136              	.LASF10:
- 3137 01d9 6C6F6E67 		.ascii	"long long unsigned int\000"
- 3137      206C6F6E 
- 3137      6720756E 
- 3137      7369676E 
- 3137      65642069 
- 3138              	.LASF11:
- 3139 01f0 756E7369 		.ascii	"unsigned int\000"
- 3139      676E6564 
- 3139      20696E74 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 64
-
-
- 3139      00
- 3140              	.LASF26:
- 3141 01fd 45455052 		.ascii	"EEPROM_readByte\000"
- 3141      4F4D5F72 
- 3141      65616442 
- 3141      79746500 
- 3142              	.LASF13:
- 3143 020d 75696E74 		.ascii	"uint16_t\000"
- 3143      31365F74 
+ 3137 0249 7369676E 		.ascii	"signed char\000"
+ 3137      65642063 
+ 3137      68617200 
+ 3138              	.LASF14:
+ 3139 0255 696E7433 		.ascii	"int32_t\000"
+ 3139      325F7400 
+ 3140              	.LASF10:
+ 3141 025d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3141      206C6F6E 
+ 3141      6720756E 
+ 3141      7369676E 
+ 3141      65642069 
+ 3142              	.LASF11:
+ 3143 0274 756E7369 		.ascii	"unsigned int\000"
+ 3143      676E6564 
+ 3143      20696E74 
  3143      00
- 3144              	.LASF35:
- 3145 0216 6E427974 		.ascii	"nBytes\000"
- 3145      657300
- 3146              	.LASF8:
- 3147 021d 6C6F6E67 		.ascii	"long unsigned int\000"
- 3147      20756E73 
- 3147      69676E65 
- 3147      6420696E 
- 3147      7400
- 3148              	.LASF24:
- 3149 022f 6C6F675F 		.ascii	"log_t\000"
- 3149      7400
- 3150              	.LASF61:
- 3151 0235 72657365 		.ascii	"resetBuffer\000"
- 3151      74427566 
- 3151      66657200 
- 3152              	.LASF41:
- 3153 0241 45455052 		.ascii	"EEPROM_retrieveStartStopState\000"
- 3153      4F4D5F72 
- 3153      65747269 
- 3153      65766553 
- 3153      74617274 
- 3154              	.LASF5:
- 3155 025f 73686F72 		.ascii	"short unsigned int\000"
- 3155      7420756E 
- 3155      7369676E 
- 3155      65642069 
- 3155      6E7400
- 3156              	.LASF21:
- 3157 0272 696E7452 		.ascii	"intReg\000"
- 3157      656700
- 3158              	.LASF17:
- 3159 0279 63686172 		.ascii	"char\000"
- 3159      00
- 3160              	.LASF48:
- 3161 027e 45455052 		.ascii	"EEPROM_retrieveResetFlag\000"
- 3161      4F4D5F72 
- 3161      65747269 
- 3161      65766552 
- 3161      65736574 
- 3162              	.LASF29:
- 3163 0297 45455052 		.ascii	"EEPROM_writeEnable\000"
- 3163      4F4D5F77 
- 3163      72697465 
- 3163      456E6162 
- 3163      6C6500
- 3164              	.LASF51:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 65
+ 3144              	.LASF26:
+ 3145 0281 45455052 		.ascii	"EEPROM_readByte\000"
+ 3145      4F4D5F72 
+ 3145      65616442 
+ 3145      79746500 
+ 3146              	.LASF13:
+ 3147 0291 75696E74 		.ascii	"uint16_t\000"
+ 3147      31365F74 
+ 3147      00
+ 3148              	.LASF35:
+ 3149 029a 6E427974 		.ascii	"nBytes\000"
+ 3149      657300
+ 3150              	.LASF8:
+ 3151 02a1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3151      20756E73 
+ 3151      69676E65 
+ 3151      6420696E 
+ 3151      7400
+ 3152              	.LASF24:
+ 3153 02b3 6C6F675F 		.ascii	"log_t\000"
+ 3153      7400
+ 3154              	.LASF61:
+ 3155 02b9 72657365 		.ascii	"resetBuffer\000"
+ 3155      74427566 
+ 3155      66657200 
+ 3156              	.LASF41:
+ 3157 02c5 45455052 		.ascii	"EEPROM_retrieveStartStopState\000"
+ 3157      4F4D5F72 
+ 3157      65747269 
+ 3157      65766553 
+ 3157      74617274 
+ 3158              	.LASF5:
+ 3159 02e3 73686F72 		.ascii	"short unsigned int\000"
+ 3159      7420756E 
+ 3159      7369676E 
+ 3159      65642069 
+ 3159      6E7400
+ 3160              	.LASF21:
+ 3161 02f6 696E7452 		.ascii	"intReg\000"
+ 3161      656700
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 65
 
 
- 3165 02aa 45455052 		.ascii	"EEPROM_incrementLogCounter\000"
- 3165      4F4D5F69 
- 3165      6E637265 
- 3165      6D656E74 
- 3165      4C6F6743 
- 3166              	.LASF42:
- 3167 02c5 45455052 		.ascii	"EEPROM_saveConfigFlag\000"
- 3167      4F4D5F73 
- 3167      61766543 
- 3167      6F6E6669 
- 3167      67466C61 
- 3168              	.LASF52:
- 3169 02db 62756666 		.ascii	"buffer\000"
- 3169      657200
- 3170              	.LASF34:
- 3171 02e2 45455052 		.ascii	"EEPROM_readPage\000"
- 3171      4F4D5F72 
- 3171      65616450 
- 3171      61676500 
- 3172              	.LASF23:
- 3173 02f2 64617461 		.ascii	"data\000"
- 3173      00
- 3174              	.LASF28:
- 3175 02f7 64617461 		.ascii	"dataRX\000"
- 3175      525800
- 3176              	.LASF46:
- 3177 02fe 45455052 		.ascii	"EEPROM_retrieveSendFlag\000"
- 3177      4F4D5F72 
- 3177      65747269 
- 3177      65766553 
- 3177      656E6446 
- 3178              	.LASF49:
- 3179 0316 45455052 		.ascii	"EEPROM_retrieveLogPages\000"
- 3179      4F4D5F72 
- 3179      65747269 
- 3179      6576654C 
- 3179      6F675061 
- 3180              	.LASF40:
- 3181 032e 6374726C 		.ascii	"ctrl_reg\000"
- 3181      5F726567 
- 3181      00
- 3182              	.LASF58:
- 3183 0337 6D657373 		.ascii	"message\000"
- 3183      61676500 
- 3184              	.LASF16:
- 3185 033f 646F7562 		.ascii	"double\000"
- 3185      6C6500
- 3186              	.LASF62:
- 3187 0346 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 3187      52784275 
- 3187      66666572 
- 3187      00
- 3188              	.LASF63:
- 3189 0353 65657072 		.ascii	"eeprom_Status\000"
- 3189      6F6D5F53 
- 3189      74617475 
- 3189      7300
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 66
+ 3162              	.LASF17:
+ 3163 02fd 63686172 		.ascii	"char\000"
+ 3163      00
+ 3164              	.LASF48:
+ 3165 0302 45455052 		.ascii	"EEPROM_retrieveResetFlag\000"
+ 3165      4F4D5F72 
+ 3165      65747269 
+ 3165      65766552 
+ 3165      65736574 
+ 3166              	.LASF29:
+ 3167 031b 45455052 		.ascii	"EEPROM_writeEnable\000"
+ 3167      4F4D5F77 
+ 3167      72697465 
+ 3167      456E6162 
+ 3167      6C6500
+ 3168              	.LASF51:
+ 3169 032e 45455052 		.ascii	"EEPROM_incrementLogCounter\000"
+ 3169      4F4D5F69 
+ 3169      6E637265 
+ 3169      6D656E74 
+ 3169      4C6F6743 
+ 3170              	.LASF42:
+ 3171 0349 45455052 		.ascii	"EEPROM_saveConfigFlag\000"
+ 3171      4F4D5F73 
+ 3171      61766543 
+ 3171      6F6E6669 
+ 3171      67466C61 
+ 3172              	.LASF52:
+ 3173 035f 62756666 		.ascii	"buffer\000"
+ 3173      657200
+ 3174              	.LASF34:
+ 3175 0366 45455052 		.ascii	"EEPROM_readPage\000"
+ 3175      4F4D5F72 
+ 3175      65616450 
+ 3175      61676500 
+ 3176              	.LASF23:
+ 3177 0376 64617461 		.ascii	"data\000"
+ 3177      00
+ 3178              	.LASF28:
+ 3179 037b 64617461 		.ascii	"dataRX\000"
+ 3179      525800
+ 3180              	.LASF46:
+ 3181 0382 45455052 		.ascii	"EEPROM_retrieveSendFlag\000"
+ 3181      4F4D5F72 
+ 3181      65747269 
+ 3181      65766553 
+ 3181      656E6446 
+ 3182              	.LASF49:
+ 3183 039a 45455052 		.ascii	"EEPROM_retrieveLogPages\000"
+ 3183      4F4D5F72 
+ 3183      65747269 
+ 3183      6576654C 
+ 3183      6F675061 
+ 3184              	.LASF40:
+ 3185 03b2 6374726C 		.ascii	"ctrl_reg\000"
+ 3185      5F726567 
+ 3185      00
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 66
 
 
- 3190              	.LASF45:
- 3191 0361 45455052 		.ascii	"EEPROM_saveSendFlag\000"
- 3191      4F4D5F73 
- 3191      61766553 
- 3191      656E6446 
- 3191      6C616700 
- 3192              	.LASF6:
- 3193 0375 5F5F696E 		.ascii	"__int32_t\000"
- 3193      7433325F 
- 3193      7400
- 3194              	.LASF54:
- 3195 037f 64617461 		.ascii	"dataPtr\000"
- 3195      50747200 
- 3196              	.LASF60:
- 3197 0387 45455052 		.ascii	"EEPROM_resetMemory\000"
- 3197      4F4D5F72 
- 3197      65736574 
- 3197      4D656D6F 
- 3197      727900
- 3198              	.LASF19:
- 3199 039a 73697A65 		.ascii	"sizetype\000"
- 3199      74797065 
- 3199      00
- 3200              	.LASF25:
- 3201 03a3 45455052 		.ascii	"EEPROM_readStatus\000"
+ 3186              	.LASF58:
+ 3187 03bb 6D657373 		.ascii	"message\000"
+ 3187      61676500 
+ 3188              	.LASF16:
+ 3189 03c3 646F7562 		.ascii	"double\000"
+ 3189      6C6500
+ 3190              	.LASF62:
+ 3191 03ca 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3191      52784275 
+ 3191      66666572 
+ 3191      00
+ 3192              	.LASF63:
+ 3193 03d7 65657072 		.ascii	"eeprom_Status\000"
+ 3193      6F6D5F53 
+ 3193      74617475 
+ 3193      7300
+ 3194              	.LASF45:
+ 3195 03e5 45455052 		.ascii	"EEPROM_saveSendFlag\000"
+ 3195      4F4D5F73 
+ 3195      61766553 
+ 3195      656E6446 
+ 3195      6C616700 
+ 3196              	.LASF6:
+ 3197 03f9 5F5F696E 		.ascii	"__int32_t\000"
+ 3197      7433325F 
+ 3197      7400
+ 3198              	.LASF54:
+ 3199 0403 64617461 		.ascii	"dataPtr\000"
+ 3199      50747200 
+ 3200              	.LASF60:
+ 3201 040b 45455052 		.ascii	"EEPROM_resetMemory\000"
  3201      4F4D5F72 
- 3201      65616453 
- 3201      74617475 
- 3201      7300
- 3202              	.LASF47:
- 3203 03b5 45455052 		.ascii	"EEPROM_saveResetFlag\000"
- 3203      4F4D5F73 
- 3203      61766552 
- 3203      65736574 
- 3203      466C6167 
- 3204              	.LASF43:
- 3205 03ca 666C6167 		.ascii	"flag\000"
- 3205      00
- 3206              	.LASF55:
- 3207 03cf 70616765 		.ascii	"page_count\000"
- 3207      5F636F75 
- 3207      6E7400
- 3208              	.LASF70:
- 3209 03da 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 3209      43313120 
- 3209      352E342E 
- 3209      31203230 
- 3209      31363036 
- 3210 040d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 3210      20726576 
- 3210      6973696F 
- 3210      6E203233 
- 3210      37373135 
- 3211 0440 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 3211      66756E63 
- 3211      74696F6E 
- 3211      2D736563 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfAzdRr.s 			page 67
+ 3201      65736574 
+ 3201      4D656D6F 
+ 3201      727900
+ 3202              	.LASF19:
+ 3203 041e 73697A65 		.ascii	"sizetype\000"
+ 3203      74797065 
+ 3203      00
+ 3204              	.LASF25:
+ 3205 0427 45455052 		.ascii	"EEPROM_readStatus\000"
+ 3205      4F4D5F72 
+ 3205      65616453 
+ 3205      74617475 
+ 3205      7300
+ 3206              	.LASF47:
+ 3207 0439 45455052 		.ascii	"EEPROM_saveResetFlag\000"
+ 3207      4F4D5F73 
+ 3207      61766552 
+ 3207      65736574 
+ 3207      466C6167 
+ 3208              	.LASF43:
+ 3209 044e 666C6167 		.ascii	"flag\000"
+ 3209      00
+ 3210              	.LASF55:
+ 3211 0453 70616765 		.ascii	"page_count\000"
+ 3211      5F636F75 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\cclFlTbA.s 			page 67
 
 
- 3211      74696F6E 
- 3212              	.LASF72:
- 3213 0468 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 3213      73657273 
- 3213      5C4C6F72 
- 3213      795C4465 
- 3213      736B746F 
- 3214 0496 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
- 3214      65735C50 
- 3214      536F432D 
- 3214      46696E61 
- 3214      6C2D5072 
- 3215 04c7 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 3215      415F4755 
- 3215      414C4E49 
- 3215      4552415C 
- 3215      41593139 
- 3216 04f9 49455241 		.ascii	"IERA.cydsn\000"
- 3216      2E637964 
- 3216      736E00
- 3217              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 3211      6E7400
+ 3212              	.LASF70:
+ 3213 045e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3213      43313120 
+ 3213      352E342E 
+ 3213      31203230 
+ 3213      31363036 
+ 3214 0491 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3214      20726576 
+ 3214      6973696F 
+ 3214      6E203233 
+ 3214      37373135 
+ 3215 04c4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3215      66756E63 
+ 3215      74696F6E 
+ 3215      2D736563 
+ 3215      74696F6E 
+ 3216              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
