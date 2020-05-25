@@ -40,11 +40,11 @@ int main(void)
     
     CyDelay(10);
     
-    // Setup all registers via SPI to LIS3DH accelerometer
+    // Setup all registers via SPI to LIS3DH
     IMU_RegistersSetup();
     
-    /* Enable external ISR from IMU */
-    ISR_IMU_StartEx(CUSTOM_ISR_IMU);
+    // Enable external ISR from IMU
+    //ISR_IMU_StartEx(CUSTOM_ISR_IMU);
     
     // Enable configuration mode ISR
     ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
@@ -55,6 +55,9 @@ int main(void)
     // Initialize HW timers 
     BUTTON_TIMER_Start();
     CLICK_TIMER_Start();
+    
+    // Initialize ADC
+    ADC_DELSIG_Start();
     
     // Initialize LED RGB
     RGB_Start();
@@ -69,10 +72,31 @@ int main(void)
     
     // End of setup
     CyDelay(10);
+    
+    // Define send flag
+    uint8_t send_flag = 0;
  
     // Main loop
     for(;;)
-    {     
+    {   
+        // Enter configuration mode
+        if (button_state == CONFIG_MODE)
+        {
+            // TODO: IMU_Stop()
+            
+            // While in configuration mode
+            while(EEPROM_retrieveConfigFlag() == 1)
+            {
+                // Assign new send flag based on knob
+                send_flag = POT_Read_Value(send_flag);
+            }
+            
+            // Save send flag inside EEPROM
+            EEPROM_saveSendFlag(send_flag);
+
+            // TODO: IMU_Start()
+        }
+        
         // External ISR occurence
         if(IMU_interrupt_flag == 1)
         {   

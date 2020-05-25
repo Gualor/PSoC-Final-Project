@@ -1,5 +1,5 @@
 -- Project:   AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
--- Generated: 05/24/2020 20:44:40
+-- Generated: 05/25/2020 12:54:16
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -66,10 +66,6 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL Net_19465 : bit;
     ATTRIBUTE GROUND OF Net_19465 : SIGNAL IS true;
     SIGNAL Net_19647 : bit;
-    SIGNAL Net_19796 : bit;
-    ATTRIBUTE udbclken_assigned OF Net_19796 : SIGNAL IS "True";
-    ATTRIBUTE global_signal OF Net_19796 : SIGNAL IS true;
-    SIGNAL Net_19796_local : bit;
     SIGNAL Net_20798 : bit;
     SIGNAL Net_23914 : bit;
     SIGNAL Net_24015 : bit;
@@ -99,12 +95,40 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL Net_29047 : bit;
     ATTRIBUTE global_signal OF Net_29047 : SIGNAL IS true;
     SIGNAL Net_29047_local : bit;
+    SIGNAL Net_29101 : bit;
+    SIGNAL Net_29105 : bit;
+    ATTRIBUTE udbclken_assigned OF Net_29105 : SIGNAL IS "True";
+    ATTRIBUTE global_signal OF Net_29105 : SIGNAL IS true;
+    SIGNAL Net_29105_local : bit;
     SIGNAL ONBOARD_LED(0)__PA : bit;
+    SIGNAL POT_PIN(0)__PA : bit;
     SIGNAL RED_PIN(0)__PA : bit;
     SIGNAL RX_PIN(0)__PA : bit;
     SIGNAL SCLK_EEPROM(0)__PA : bit;
     SIGNAL SCLK_IMU(0)__PA : bit;
     SIGNAL TX_PIN(0)__PA : bit;
+    SIGNAL \ADC_DELSIG:Net_245_0\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_1\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_2\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_3\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_4\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_5\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_6\ : bit;
+    SIGNAL \ADC_DELSIG:Net_245_7\ : bit;
+    SIGNAL \ADC_DELSIG:Net_488\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DELSIG:Net_488\ : SIGNAL IS true;
+    SIGNAL \ADC_DELSIG:Net_488_adig\ : bit;
+    SIGNAL \ADC_DELSIG:Net_488_adig_local\ : bit;
+    SIGNAL \ADC_DELSIG:Net_488_local\ : bit;
+    SIGNAL \ADC_DELSIG:Net_93\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DELSIG:Net_93\ : SIGNAL IS true;
+    SIGNAL \ADC_DELSIG:Net_93_local\ : bit;
+    SIGNAL \ADC_DELSIG:aclock\ : bit;
+    SIGNAL \ADC_DELSIG:mod_dat_0\ : bit;
+    SIGNAL \ADC_DELSIG:mod_dat_1\ : bit;
+    SIGNAL \ADC_DELSIG:mod_dat_2\ : bit;
+    SIGNAL \ADC_DELSIG:mod_dat_3\ : bit;
+    SIGNAL \ADC_DELSIG:mod_reset\ : bit;
     SIGNAL \BUTTON_TIMER:Net_261\ : bit;
     SIGNAL \BUTTON_TIMER:Net_57\ : bit;
     SIGNAL \CLICK_TIMER:TimerUDB:control_0\ : bit;
@@ -274,8 +298,9 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
     SIGNAL one : bit;
     ATTRIBUTE POWER OF one : SIGNAL IS true;
-    SIGNAL \ClockBlock.dclk_glb_ff_5__sig\ : bit;
+    SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
     SIGNAL \ClockBlock.dclk_glb_ff_6__sig\ : bit;
+    SIGNAL \ClockBlock.dclk_glb_ff_7__sig\ : bit;
     ATTRIBUTE lib_model OF GREEN_PIN(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF GREEN_PIN(0) : LABEL IS "P3[6]";
     ATTRIBUTE lib_model OF RED_PIN(0) : LABEL IS "iocell2";
@@ -308,6 +333,8 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE Location OF TX_PIN(0) : LABEL IS "P12[7]";
     ATTRIBUTE lib_model OF RX_PIN(0) : LABEL IS "iocell16";
     ATTRIBUTE Location OF RX_PIN(0) : LABEL IS "P12[6]";
+    ATTRIBUTE lib_model OF POT_PIN(0) : LABEL IS "iocell17";
+    ATTRIBUTE Location OF POT_PIN(0) : LABEL IS "P3[3]";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_2\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:status_2\ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF Net_24015 : LABEL IS "macrocell3";
@@ -355,6 +382,7 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE lib_model OF \UART:BUART:sTX:TxSts\ : LABEL IS "statusicell9";
     ATTRIBUTE lib_model OF \UART:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell9";
     ATTRIBUTE lib_model OF \UART:BUART:sRX:RxSts\ : LABEL IS "statusicell10";
+    ATTRIBUTE Location OF \ADC_DELSIG:DSM\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:runmode_enable\ : LABEL IS "macrocell25";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:prevCompare1\ : LABEL IS "macrocell26";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:prevCompare2\ : LABEL IS "macrocell27";
@@ -630,6 +658,39 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE udb_chain OF datapathcell : COMPONENT IS "ce0i,ce0,cl0i,cl0,z0i,z0,ff0i,ff0,ce1i,ce1,cl1i,cl1,z1i,z1,ff1i,ff1,cap0i,cap0,cap1i,cap1,ci,co_msb,sir,sol_msb,cfbi,cfbo,sil,sor,cmsbi,cmsbo";
     ATTRIBUTE chain_lsb OF datapathcell : COMPONENT IS "ce0i,cl0i,z0i,ff0i,ce1i,cl1i,z1i,ff1i,cap0i,cap1i,ci,sir,cfbi,sor,cmsbo";
     ATTRIBUTE chain_msb OF datapathcell : COMPONENT IS "ce0,cl0,z0,ff0,ce1,cl1,z1,ff1,cap0,cap1,co_msb,sol_msb,cfbo,sil,cmsbi";
+    COMPONENT decimatorcell
+        PORT (
+            aclock : IN std_ulogic;
+            mod_dat_0 : IN std_ulogic;
+            mod_dat_1 : IN std_ulogic;
+            mod_dat_2 : IN std_ulogic;
+            mod_dat_3 : IN std_ulogic;
+            ext_start : IN std_ulogic;
+            modrst : OUT std_ulogic;
+            interrupt : OUT std_ulogic);
+    END COMPONENT;
+    COMPONENT dsmodcell
+        PORT (
+            aclock : IN std_ulogic;
+            modbitin_udb : IN std_ulogic;
+            reset_udb : IN std_ulogic;
+            reset_dec : IN std_ulogic;
+            dec_clock : OUT std_ulogic;
+            mod_dat_0 : OUT std_ulogic;
+            mod_dat_1 : OUT std_ulogic;
+            mod_dat_2 : OUT std_ulogic;
+            mod_dat_3 : OUT std_ulogic;
+            dout_udb_0 : OUT std_ulogic;
+            dout_udb_1 : OUT std_ulogic;
+            dout_udb_2 : OUT std_ulogic;
+            dout_udb_3 : OUT std_ulogic;
+            dout_udb_4 : OUT std_ulogic;
+            dout_udb_5 : OUT std_ulogic;
+            dout_udb_6 : OUT std_ulogic;
+            dout_udb_7 : OUT std_ulogic;
+            extclk_cp_udb : IN std_ulogic;
+            clk_udb : IN std_ulogic);
+    END COMPONENT;
     COMPONENT interrupt
         PORT (
             interrupt : IN std_ulogic;
@@ -762,22 +823,29 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => \SPIM_IMU:Net_276\,
-            dclk_0 => \SPIM_IMU:Net_276_local\,
-            dclk_glb_1 => \SPIM_EEPROM:Net_276\,
-            dclk_1 => \SPIM_EEPROM:Net_276_local\,
-            dclk_glb_2 => \UART:Net_9\,
-            dclk_2 => \UART:Net_9_local\,
-            dclk_glb_3 => Net_18733,
-            dclk_3 => Net_18733_local,
-            dclk_glb_4 => Net_19796,
-            dclk_4 => Net_19796_local,
-            dclk_glb_5 => Net_27453,
-            dclk_5 => Net_27453_local,
-            dclk_glb_6 => Net_29047,
-            dclk_6 => Net_29047_local,
-            dclk_glb_ff_5 => \ClockBlock.dclk_glb_ff_5__sig\,
-            dclk_glb_ff_6 => \ClockBlock.dclk_glb_ff_6__sig\);
+            dclk_glb_0 => \ADC_DELSIG:Net_93\,
+            dclk_0 => \ADC_DELSIG:Net_93_local\,
+            dclk_glb_1 => \SPIM_IMU:Net_276\,
+            dclk_1 => \SPIM_IMU:Net_276_local\,
+            dclk_glb_2 => \SPIM_EEPROM:Net_276\,
+            dclk_2 => \SPIM_EEPROM:Net_276_local\,
+            dclk_glb_3 => \UART:Net_9\,
+            dclk_3 => \UART:Net_9_local\,
+            aclk_glb_0 => \ADC_DELSIG:Net_488\,
+            aclk_0 => \ADC_DELSIG:Net_488_local\,
+            clk_a_dig_glb_0 => \ADC_DELSIG:Net_488_adig\,
+            clk_a_dig_0 => \ADC_DELSIG:Net_488_adig_local\,
+            dclk_glb_4 => Net_18733,
+            dclk_4 => Net_18733_local,
+            dclk_glb_5 => Net_29105,
+            dclk_5 => Net_29105_local,
+            dclk_glb_6 => Net_27453,
+            dclk_6 => Net_27453_local,
+            dclk_glb_7 => Net_29047,
+            dclk_7 => Net_29047_local,
+            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\,
+            dclk_glb_ff_6 => \ClockBlock.dclk_glb_ff_6__sig\,
+            dclk_glb_ff_7 => \ClockBlock.dclk_glb_ff_7__sig\);
 
     GREEN_PIN:logicalport
         GENERIC MAP(
@@ -2242,6 +2310,95 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
+    POT_PIN:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "77715107-f8d5-47e5-a629-0fb83101ac6b",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "A",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "1",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    POT_PIN(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "POT_PIN",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
+        PORT MAP(
+            pa_out => POT_PIN(0)__PA,
+            oe => open,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
     \PWM_RG:PWMUDB:status_2\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
@@ -2862,7 +3019,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_19796,
+            clock => Net_29105,
             control_7 => \PWM_NOTIFY:PWMUDB:control_7\,
             control_6 => \PWM_NOTIFY:PWMUDB:control_6\,
             control_5 => \PWM_NOTIFY:PWMUDB:control_5\,
@@ -2881,7 +3038,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_19796,
+            clock => Net_29105,
             status_6 => open,
             status_5 => open,
             status_4 => open,
@@ -2918,7 +3075,7 @@ BEGIN
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            clock => Net_19796,
+            clock => Net_29105,
             cs_addr_2 => \PWM_NOTIFY:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_NOTIFY:PWMUDB:runmode_enable\,
             ce0_comb => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
@@ -2931,7 +3088,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.dclk_glb_ff_5__sig\,
+            clock => \ClockBlock.dclk_glb_ff_6__sig\,
             kill => open,
             enable => Net_17855,
             capture => open,
@@ -3246,7 +3403,7 @@ BEGIN
         GENERIC MAP(
             cy_registers => "")
         PORT MAP(
-            clock => \ClockBlock.dclk_glb_ff_6__sig\,
+            clock => \ClockBlock.dclk_glb_ff_7__sig\,
             kill => open,
             enable => __ONE__,
             capture => open,
@@ -3254,6 +3411,51 @@ BEGIN
             tc => \MAIN_TIMER:Net_51\,
             cmp => \MAIN_TIMER:Net_261\,
             irq => \MAIN_TIMER:Net_57\);
+
+    \ADC_DELSIG:DSM\:dsmodcell
+        GENERIC MAP(
+            cy_registers => "",
+            resolution => 8)
+        PORT MAP(
+            aclock => \ClockBlock.aclk_glb_ff_0__sig\,
+            modbitin_udb => open,
+            reset_udb => open,
+            reset_dec => \ADC_DELSIG:mod_reset\,
+            extclk_cp_udb => \ADC_DELSIG:Net_93_local\,
+            dec_clock => \ADC_DELSIG:aclock\,
+            mod_dat_3 => \ADC_DELSIG:mod_dat_3\,
+            mod_dat_2 => \ADC_DELSIG:mod_dat_2\,
+            mod_dat_1 => \ADC_DELSIG:mod_dat_1\,
+            mod_dat_0 => \ADC_DELSIG:mod_dat_0\,
+            dout_udb_7 => \ADC_DELSIG:Net_245_7\,
+            dout_udb_6 => \ADC_DELSIG:Net_245_6\,
+            dout_udb_5 => \ADC_DELSIG:Net_245_5\,
+            dout_udb_4 => \ADC_DELSIG:Net_245_4\,
+            dout_udb_3 => \ADC_DELSIG:Net_245_3\,
+            dout_udb_2 => \ADC_DELSIG:Net_245_2\,
+            dout_udb_1 => \ADC_DELSIG:Net_245_1\,
+            dout_udb_0 => \ADC_DELSIG:Net_245_0\);
+
+    \ADC_DELSIG:IRQ\:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_29101,
+            clock => ClockBlock_BUS_CLK);
+
+    \ADC_DELSIG:DEC\:decimatorcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            aclock => \ADC_DELSIG:aclock\,
+            mod_dat_3 => \ADC_DELSIG:mod_dat_3\,
+            mod_dat_2 => \ADC_DELSIG:mod_dat_2\,
+            mod_dat_1 => \ADC_DELSIG:mod_dat_1\,
+            mod_dat_0 => \ADC_DELSIG:mod_dat_0\,
+            ext_start => __ONE__,
+            modrst => \ADC_DELSIG:mod_reset\,
+            interrupt => Net_29101);
 
     \PWM_RG:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
@@ -3602,7 +3804,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_NOTIFY:PWMUDB:runmode_enable\,
-            clock_0 => Net_19796,
+            clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:control_7\);
 
     \PWM_NOTIFY:PWMUDB:prevCompare1\:macrocell
@@ -3613,7 +3815,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_NOTIFY:PWMUDB:prevCompare1\,
-            clock_0 => Net_19796,
+            clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
             main_1 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
 
@@ -3625,7 +3827,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => \PWM_NOTIFY:PWMUDB:status_0\,
-            clock_0 => Net_19796,
+            clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:prevCompare1\,
             main_1 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
             main_2 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
@@ -3638,7 +3840,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_19647,
-            clock_0 => Net_19796,
+            clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:runmode_enable\,
             main_1 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
             main_2 => \PWM_NOTIFY:PWMUDB:cmp1_less\);

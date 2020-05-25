@@ -26,13 +26,12 @@
         uint8_t logID;
         uint8_t intReg;
         uint16_t timestamp;
-        uint8_t dataSize;
         uint8_t data[LOG_MESSAGE_DATA_BYTE];
     } log_t;
     
     /* Function prototypes. */
     log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t nBytes);
-    void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t size);
+    void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t nBytes);
     void LOG_insertTimestamp(log_t* msg);
     
 #endif

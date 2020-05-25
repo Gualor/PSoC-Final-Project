@@ -39,6 +39,9 @@ CY_ISR(CUSTOM_ISR_CONFIG)
         
         // Blink on-board LED
         LED_Notify_Config();
+        
+        // Enable ADC sampling 
+        ADC_DELSIG_StartConvert();
     }
     else
     {
@@ -58,6 +61,9 @@ CY_ISR(CUSTOM_ISR_CONFIG)
             // Turn on-board LED on
             LED_Notify_Start();
         }
+        
+        // Disable ADC sampling 
+        ADC_DELSIG_StartConvert();
     }
 }
 

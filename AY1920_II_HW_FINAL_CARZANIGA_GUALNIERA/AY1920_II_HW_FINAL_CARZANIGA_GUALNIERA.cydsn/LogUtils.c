@@ -55,7 +55,6 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t
     
     // Insert data payload
     LOG_insertPayload(&message, dataPtr, nBytes);
-    message.dataSize = nBytes;
     
     return message;
 }
@@ -63,14 +62,10 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t
 /*
  * Insert data payload into log data structure.
  */
-void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t size)
+void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t nBytes)
 {
-    // For buffer size
-    for (uint8_t i=0; i<size; i++)
-    {
-        // Copy data into message data field
-        msg->data[i] = dataPtr[i];
-    }
+    // Copy payload inside data field
+    memcpy(msg->data, dataPtr, nBytes);
 }
 
 /*

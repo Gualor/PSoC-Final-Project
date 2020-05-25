@@ -47,8 +47,9 @@
     #define SPI_EEPROM_BLOCK_PROTECTION_1   ((uint8_t) 0x01u << SPI_EEPROM_BLOCK_PROTECTION_1_SHIFT)
     #define SPI_EEPROM_WPEN                 ((uint8_t) 0x01u << SPI_EEPROM_WPEN_SHIFT)
 
-    #define SPI_EEPROM_PAGE_SIZE   64
-    #define SPI_EEPROM_SIZE_BYTE   0x7FFF
+    #define SPI_EEPROM_PAGE_SIZE    64
+    #define SPI_EEPROM_PAGE_COUNT   512
+    #define SPI_EEPROM_SIZE_BYTE    0x7FFF
 
     /* EEPROM User defined regiter masks. */
     #define CTRL_REG_PSOC_STATUS    0x0000
@@ -59,10 +60,12 @@
     #define CTRL_REG_PSOC_START_STOP_SHIFT  0
     #define CTRL_REG_PSOC_CONFIG_MODE_SHIFT 1
     #define CTRL_REG_PSOC_SEND_FLAG_SHIFT   2
+    #define CTRL_REG_PSOC_RESET_FLAG_SHIFT  3
 
     #define CTRL_REG_PSOC_SET_START         ((uint8_t) 0x01u << CTRL_REG_PSOC_START_STOP_SHIFT)
     #define CTRL_REG_PSOC_SET_CONFIG        ((uint8_t) 0x01u << CTRL_REG_PSOC_CONFIG_MODE_SHIFT)
     #define CTRL_REG_PSOC_SET_SEND_FLAG     ((uint8_t) 0x01u << CTRL_REG_PSOC_SEND_FLAG_SHIFT)
+    #define CTRL_REG_PSOC_SET_RESET_FLAG    ((uint8_t) 0x01u << CTRL_REG_PSOC_RESET_FLAG_SHIFT)
 
     /*** ========= FUNCTION DECLARATIONS ========= ***/
 
@@ -136,6 +139,10 @@
     void EEPROM_saveSendFlag(uint8_t flag);
 
     uint8_t EEPROM_retrieveSendFlag(void);
+    
+    void EEPROM_saveResetFlag(uint8_t flag);
+    
+    uint8_t EEPROM_retrieveResetFlag(void);
 
     uint16_t EEPROM_retrieveLogPages(void);
 
@@ -143,7 +150,7 @@
 
     void EEPROM_storeLogBuffer(uint8_t* dataPtr, uint8_t nBytes);
     
-    void EEPROM_storeLogMessage(log_t message);
+    void EEPROM_storeLogMessage(log_t message, uint8_t dataSize);
     //////////////////////////////////////////////////////////////////////
     
 #endif
