@@ -43,8 +43,8 @@
  * Drive LED RGB by setting PWM duty cycles based
  * on xyz-axes IMU data so that:
  * -> X value drives RED channel
- * -> Y value drives GREEN channel
- * -> Z value drives BLUE channel
+ * -> Y value drives BLUE channel
+ * -> Z value drives GREEN channel
  */
 void RGB_Driver(uint8_t* dataPtr)
 {   
@@ -56,6 +56,21 @@ void RGB_Driver(uint8_t* dataPtr)
     
     // Set PWM compare values
     PWM_Driver(RGB_DataBuffer);
+}
+
+/*
+ * Drive LED blue channel base on flag value:
+ * 1 -> turn on
+ * 0 -> turn off
+ */
+void RGB_sendFlagNotify(uint8_t flag)
+{
+    // Drive blue channel only
+    uint8_t buffer[3];
+    buffer[0] = PWM_CYCLE_LENGTH;
+    buffer[1] = PWM_CYCLE_LENGTH - PWM_CYCLE_LENGTH * flag;
+    buffer[2] = PWM_CYCLE_LENGTH;
+    PWM_Driver(buffer);
 }
 
 /*
@@ -91,10 +106,10 @@ void PWM_Driver(uint8* dataPtr)
     PWM_RG_WriteCompare1(dataPtr[0]);
     
     // Set green channel PWM compare value
-    PWM_RG_WriteCompare2(dataPtr[1]);
+    PWM_RG_WriteCompare2(dataPtr[2]);
     
     //Set blue channel PWM compare value
-    PWM_B_WriteCompare(dataPtr[2]);
+    PWM_B_WriteCompare(dataPtr[1]);
 }
 
 /*

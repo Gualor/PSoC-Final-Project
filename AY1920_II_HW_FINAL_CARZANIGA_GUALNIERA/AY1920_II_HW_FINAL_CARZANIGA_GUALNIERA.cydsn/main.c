@@ -89,6 +89,9 @@ int main(void)
             {
                 // Assign new send flag based on knob
                 send_flag = POT_Read_Value(send_flag);
+                
+                // Drive LED blue channel based on flag
+                RGB_sendFlagNotify(send_flag);
             }
             
             // Save send flag inside EEPROM

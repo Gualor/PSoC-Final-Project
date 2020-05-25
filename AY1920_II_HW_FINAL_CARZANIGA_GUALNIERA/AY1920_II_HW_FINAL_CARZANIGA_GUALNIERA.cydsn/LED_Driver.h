@@ -15,10 +15,14 @@
     #include "project.h"
     #include "stdio.h"
     
+    /* Useful constants. */
+    #define PWM_CYCLE_LENGTH    255
+    
     /* LED driver utility functions. */
     void RGB_Stop(void);
     void RGB_Start(void);
     void RGB_Driver(uint8_t* dataPtr);
+    void RGB_sendFlagNotify(uint8_t flag);
     void RGB_dataProcess(uint8_t* dataPtr);
     void PWM_Driver(uint8_t* dataPtr);
     uint8_t Absolute_Value(int8_t value);
