@@ -39,7 +39,7 @@
 /*
  * Create a single log message with 60 bytes of max payload. 
  */
-log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t nBytes)
+log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr, uint8_t nBytes)
 {
     // Create log type message
     log_t message;
@@ -51,7 +51,7 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint8_t* dataPtr, uint8_t
     message.intReg = intReg;
     
     // Assign logging timestamp
-    LOG_insertTimestamp(&message);
+    message.timestamp = time;
     
     // Insert data payload
     LOG_insertPayload(&message, dataPtr, nBytes);
@@ -69,12 +69,24 @@ void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t nBytes)
 }
 
 /*
- * Insert timestamp in seconds since PSoC booting.
+ * Get timestamp in seconds since PSoC booting.
  */
-void LOG_insertTimestamp(log_t* msg)
+uint16_t LOG_getTimestamp(void)
 {
     // Read time in seconds from boot up
-    msg->timestamp = LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
+    return LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
+}
+
+/*
+ * Get identification number.
+ */ 
+uint8_t LOG_getID(void)
+{
+    // Get number of log pages
+    uint16_t nPages = EEPROM_retrieveLogPages();
+    
+    // Get unique sequential ID
+    return (uint8_t)(nPages / LOG_PAGES_PER_EVENT);
 }
 
 /* [] END OF FILE */

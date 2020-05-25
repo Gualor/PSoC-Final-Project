@@ -113,7 +113,6 @@ int main(void)
     
                 //Send data read from FIFO via UART
                 IMU_DataSend(IMU_DataBuffer);
-                    
                 
                 // Drive RGB LED with IMU data
                 RGB_Driver(IMU_DataBuffer); 
@@ -122,24 +121,39 @@ int main(void)
             // Over threshold event occured
             else
             {   
+
+                // Get unique ID number
+                uint8_t log_id = LOG_getID();
+                
                 // Read LIS3DH interrupt register
-                uint8_t int1_src_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
+                uint8_t int_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
                 
-                // Find free memory slot inside EEPROM
-                uint16_t page_cnt_reg = EEPROM_retrieveLogPages();
+                // Get timestamp in seconds from boot
+                uint16_t timestamp = LOG_getTimestamp();
                 
-                /* TODO
-                uint8_t id = get_id();
-                uint8_t data = get_data();
-                log_t logMessage = LOG_createMessage(id, data, 64);
-                */
-                
+                for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
+                {
+                    uint8_t tmpBuffer[60];
+                    for (uint8_t j=0; j<60; j++)
+                    {
+                        // Get current batch of data
+                        tmpBuffer[j] = IMU_LOG_data_buffer[288-i*60-j-1];
+                    }
+                    
+                    // Create log type message
+                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, tmpBuffer, 60);
+                    
+                    // Store message inside EEPROM
+                    EEPROM_storeLogMessage(log_message, 60);
+                }
+
                 // Set over threshold flag
                 IMU_over_threshold_flag = 1;
             }
             
             // Reset the FIFO to enable next ISR occurrences
             IMU_ResetFIFO();
+            
             // Reset flag interrupt flag
             IMU_interrupt_flag = 0;
         }   
