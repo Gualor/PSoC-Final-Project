@@ -406,13 +406,12 @@ void IMU_StoreFIFO(uint8_t *buffer)
         down_sampled_data[i*3 + 2] = high_reg_data[(i*3)*2 + 2];
     }
 
-    UART_PutArray(down_sampled_data, 48);
     // Copy the first 5 FIFO in the next positions of the buffer, in order to free the first position to the new incoming FIFO
-    memcpy(&IMU_LOG_data_buffer[LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED], IMU_LOG_data_buffer, (LIS3DH_BYTES_IN_LOG_BUFFER - LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED));
+    memcpy(&IMU_log_queue[LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED], IMU_log_queue, (LIS3DH_BYTES_IN_LOG_BUFFER - LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED));
     
     
     // Copy the new FIFO in the first place of the buffer
-    memcpy(&IMU_LOG_data_buffer, down_sampled_data, LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED);
+    memcpy(&IMU_log_queue, down_sampled_data, LIS3DH_BYTES_IN_FIFO_DOWNSAMPLED);
 
 
 }

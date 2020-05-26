@@ -37,7 +37,6 @@ int main(void)
     // Enable all SPI Master
     SPIM_IMU_Start();
     SPIM_EEPROM_Start();
-    
     CyDelay(10);
     
     // Setup all registers via SPI to LIS3DH
@@ -74,7 +73,10 @@ int main(void)
     
     // Define send flag
     uint8_t send_flag = 0;
- 
+
+    // Uncomment this to erase EEPROM memory
+    EEPROM_resetMemory();
+    
     // Main loop
     for(;;)
     {   
@@ -92,11 +94,11 @@ int main(void)
                 // Drive LED blue channel based on flag
                 RGB_sendFlagNotify(send_flag);
             }
-            
+
             // Save send flag inside EEPROM
             EEPROM_saveSendFlag(send_flag);
 
-            // TODO: IMU_Start()
+            // TODO: IMU_Start()   
         }
         
         // External ISR occurence
@@ -121,9 +123,8 @@ int main(void)
             // Over threshold event occured
             else
             {   
-
-                // Get unique ID number
-                uint8_t log_id = LOG_getID();
+                // Get sequential ID number
+                uint8_t log_id = EEPROM_retrieveLogCount();
                 
                 // Read LIS3DH interrupt register
                 uint8_t int_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
@@ -134,17 +135,21 @@ int main(void)
                 for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
                 {
                     uint8_t tmpBuffer[60];
-                    for (uint8_t j=0; j<60; j++)
-                    {
-                        // Get current batch of data
-                        tmpBuffer[j] = IMU_LOG_data_buffer[288-i*60-j-1];
-                    }
+                    memset(tmpBuffer, 0xAA, 60);
+                    
+                    // TODO: GET BATCH OF DATA
                     
                     // Create log type message
-                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, tmpBuffer, 60);
+                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, tmpBuffer);
                     
                     // Store message inside EEPROM
-                    EEPROM_storeLogMessage(log_message, 60);
+                    EEPROM_storeLogMessage(log_message);
+                    
+                    // Get page of first log
+                    log_t asd = EEPROM_retrieveLogMessage(log_id, i);
+                    
+                    // Send message via uart
+                    LOG_sendData(&asd);
                 }
 
                 // Set over threshold flag

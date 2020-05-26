@@ -25,7 +25,7 @@
     
     uint8_t IMU_DataBuffer[LIS3DH_BYTES_IN_FIFO];
     
-    uint8_t IMU_LOG_data_buffer[LIS3DH_BYTES_IN_LOG_BUFFER];
+    uint8_t IMU_log_queue[LIS3DH_BYTES_IN_LOG_BUFFER];
     
 
      /*** ========= MACROS ========= ***/   

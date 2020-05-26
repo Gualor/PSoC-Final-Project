@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
   35              		.cfi_offset 14, -4
   21:Notifications.c ****     // If LED PWM is enabled
   22:Notifications.c ****     if (PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE)
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 2
 
 
   36              		.loc 1 22 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
   39:Notifications.c ****     }
   40:Notifications.c ****     
   41:Notifications.c ****     // Change PWM compare value
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 3
 
 
   42:Notifications.c ****     PWM_NOTIFY_WriteCompare(255);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  111 0016 08BD     		pop	{r3, pc}
  112              		.cfi_endproc
  113              	.LFE65:
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 4
 
 
  114              		.size	LED_Notify_Config, .-LED_Notify_Config
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  152              	.LVL12:
  153              	.L11:
   74:Notifications.c ****     
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 5
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 5
 
 
   75:Notifications.c ****     // Convert to unsigned 8-bit integer
@@ -298,24 +298,24 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  186              		.section	.debug_info,"",%progbits
  187              	.Ldebug_info0:
  188 0000 16020000 		.4byte	0x216
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 6
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 6
 
 
  189 0004 0400     		.2byte	0x4
  190 0006 00000000 		.4byte	.Ldebug_abbrev0
  191 000a 04       		.byte	0x4
  192 000b 01       		.uleb128 0x1
- 193 000c 24010000 		.4byte	.LASF31
+ 193 000c A0000000 		.4byte	.LASF31
  194 0010 0C       		.byte	0xc
- 195 0011 B2010000 		.4byte	.LASF32
- 196 0015 4C000000 		.4byte	.LASF33
+ 195 0011 2E010000 		.4byte	.LASF32
+ 196 0015 0A020000 		.4byte	.LASF33
  197 0019 00000000 		.4byte	.Ldebug_ranges0+0
  198 001d 00000000 		.4byte	0
  199 0021 00000000 		.4byte	.Ldebug_line0
  200 0025 02       		.uleb128 0x2
  201 0026 01       		.byte	0x1
  202 0027 06       		.byte	0x6
- 203 0028 BA020000 		.4byte	.LASF0
+ 203 0028 D2020000 		.4byte	.LASF0
  204 002c 03       		.uleb128 0x3
  205 002d 00000000 		.4byte	.LASF2
  206 0031 02       		.byte	0x2
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  209 0037 02       		.uleb128 0x2
  210 0038 01       		.byte	0x1
  211 0039 08       		.byte	0x8
- 212 003a 16010000 		.4byte	.LASF1
+ 212 003a 92000000 		.4byte	.LASF1
  213 003e 03       		.uleb128 0x3
  214 003f 19000000 		.4byte	.LASF3
  215 0043 02       		.byte	0x2
@@ -333,11 +333,11 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  218 0049 02       		.uleb128 0x2
  219 004a 02       		.byte	0x2
  220 004b 05       		.byte	0x5
- 221 004c 7E020000 		.4byte	.LASF4
+ 221 004c 00020000 		.4byte	.LASF4
  222 0050 02       		.uleb128 0x2
  223 0051 02       		.byte	0x2
  224 0052 07       		.byte	0x7
- 225 0053 D4010000 		.4byte	.LASF5
+ 225 0053 50010000 		.4byte	.LASF5
  226 0057 03       		.uleb128 0x3
  227 0058 42000000 		.4byte	.LASF6
  228 005c 02       		.byte	0x2
@@ -346,22 +346,22 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  231 0062 02       		.uleb128 0x2
  232 0063 04       		.byte	0x4
  233 0064 05       		.byte	0x5
- 234 0065 8E020000 		.4byte	.LASF7
+ 234 0065 A6020000 		.4byte	.LASF7
  235 0069 02       		.uleb128 0x2
  236 006a 04       		.byte	0x4
  237 006b 07       		.byte	0x7
- 238 006c C2010000 		.4byte	.LASF8
+ 238 006c 3E010000 		.4byte	.LASF8
  239 0070 02       		.uleb128 0x2
  240 0071 08       		.byte	0x8
  241 0072 05       		.byte	0x5
- 242 0073 63020000 		.4byte	.LASF9
+ 242 0073 E5010000 		.4byte	.LASF9
  243 0077 02       		.uleb128 0x2
  244 0078 08       		.byte	0x8
  245 0079 07       		.byte	0x7
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 7
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 7
 
 
- 246 007a 27020000 		.4byte	.LASF10
+ 246 007a A3010000 		.4byte	.LASF10
  247 007e 04       		.uleb128 0x4
  248 007f 04       		.byte	0x4
  249 0080 05       		.byte	0x5
@@ -369,56 +369,56 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  251 0085 02       		.uleb128 0x2
  252 0086 04       		.byte	0x4
  253 0087 07       		.byte	0x7
- 254 0088 1A020000 		.4byte	.LASF11
+ 254 0088 96010000 		.4byte	.LASF11
  255 008c 03       		.uleb128 0x3
- 256 008d 3E020000 		.4byte	.LASF12
+ 256 008d BA010000 		.4byte	.LASF12
  257 0091 03       		.byte	0x3
  258 0092 18       		.byte	0x18
  259 0093 2C000000 		.4byte	0x2c
  260 0097 03       		.uleb128 0x3
- 261 0098 46020000 		.4byte	.LASF13
+ 261 0098 C2010000 		.4byte	.LASF13
  262 009c 03       		.byte	0x3
  263 009d 20       		.byte	0x20
  264 009e 3E000000 		.4byte	0x3e
  265 00a2 03       		.uleb128 0x3
- 266 00a3 F8000000 		.4byte	.LASF14
+ 266 00a3 74000000 		.4byte	.LASF14
  267 00a7 03       		.byte	0x3
  268 00a8 2C       		.byte	0x2c
  269 00a9 57000000 		.4byte	0x57
  270 00ad 05       		.uleb128 0x5
- 271 00ae 88020000 		.4byte	.LASF15
+ 271 00ae CA010000 		.4byte	.LASF15
  272 00b2 04       		.byte	0x4
  273 00b3 E401     		.2byte	0x1e4
  274 00b5 37000000 		.4byte	0x37
  275 00b9 02       		.uleb128 0x2
  276 00ba 04       		.byte	0x4
  277 00bb 04       		.byte	0x4
- 278 00bc 00010000 		.4byte	.LASF16
+ 278 00bc 7C000000 		.4byte	.LASF16
  279 00c0 02       		.uleb128 0x2
  280 00c1 08       		.byte	0x8
  281 00c2 04       		.byte	0x4
- 282 00c3 F4010000 		.4byte	.LASF17
+ 282 00c3 70010000 		.4byte	.LASF17
  283 00c7 02       		.uleb128 0x2
  284 00c8 01       		.byte	0x1
  285 00c9 08       		.byte	0x8
- 286 00ca 79020000 		.4byte	.LASF18
+ 286 00ca FB010000 		.4byte	.LASF18
  287 00ce 02       		.uleb128 0x2
  288 00cf 08       		.byte	0x8
  289 00d0 04       		.byte	0x4
- 290 00d1 4E020000 		.4byte	.LASF19
+ 290 00d1 D0010000 		.4byte	.LASF19
  291 00d5 02       		.uleb128 0x2
  292 00d6 04       		.byte	0x4
  293 00d7 07       		.byte	0x7
- 294 00d8 5A020000 		.4byte	.LASF20
+ 294 00d8 DC010000 		.4byte	.LASF20
  295 00dc 06       		.uleb128 0x6
- 296 00dd E8000000 		.4byte	.LASF21
+ 296 00dd 64000000 		.4byte	.LASF21
  297 00e1 01       		.byte	0x1
  298 00e2 13       		.byte	0x13
  299 00e3 00000000 		.4byte	.LFB63
  300 00e7 12000000 		.4byte	.LFE63-.LFB63
  301 00eb 01       		.uleb128 0x1
  302 00ec 9C       		.byte	0x9c
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 8
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 8
 
 
  303 00ed 04010000 		.4byte	0x104
@@ -430,7 +430,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  309 00ff ED010000 		.4byte	0x1ed
  310 0103 00       		.byte	0
  311 0104 06       		.uleb128 0x6
- 312 0105 97020000 		.4byte	.LASF22
+ 312 0105 AF020000 		.4byte	.LASF22
  313 0109 01       		.byte	0x1
  314 010a 20       		.byte	0x20
  315 010b 00000000 		.4byte	.LFB64
@@ -456,7 +456,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  335 013a 00       		.byte	0
  336 013b 00       		.byte	0
  337 013c 06       		.uleb128 0x6
- 338 013d A8020000 		.4byte	.LASF23
+ 338 013d C0020000 		.4byte	.LASF23
  339 0141 01       		.byte	0x1
  340 0142 30       		.byte	0x30
  341 0143 00000000 		.4byte	.LFB65
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  357 016e 50       		.byte	0x50
  358 016f 02       		.uleb128 0x2
  359 0170 08       		.byte	0x8
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 9
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 9
 
 
  360 0171 7F       		.byte	0x7f
@@ -495,7 +495,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  371 0188 9C       		.byte	0x9c
  372 0189 D1010000 		.4byte	0x1d1
  373 018d 0B       		.uleb128 0xb
- 374 018e 71020000 		.4byte	.LASF35
+ 374 018e F3010000 		.4byte	.LASF35
  375 0192 01       		.byte	0x1
  376 0193 44       		.byte	0x44
  377 0194 8C000000 		.4byte	0x8c
@@ -507,13 +507,13 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  383 01a3 97000000 		.4byte	0x97
  384 01a7 21000000 		.4byte	.LLST1
  385 01ab 0D       		.uleb128 0xd
- 386 01ac FB010000 		.4byte	.LASF24
+ 386 01ac 77010000 		.4byte	.LASF24
  387 01b0 01       		.byte	0x1
  388 01b1 4C       		.byte	0x4c
  389 01b2 8C000000 		.4byte	0x8c
  390 01b6 3F000000 		.4byte	.LLST2
  391 01ba 0E       		.uleb128 0xe
- 392 01bb 15020000 		.4byte	.LASF25
+ 392 01bb 91010000 		.4byte	.LASF25
  393 01bf 01       		.byte	0x1
  394 01c0 4F       		.byte	0x4f
  395 01c1 8C000000 		.4byte	0x8c
@@ -524,7 +524,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  400 01cc 0E020000 		.4byte	0x20e
  401 01d0 00       		.byte	0
  402 01d1 0F       		.uleb128 0xf
- 403 01d2 E7010000 		.4byte	.LASF36
+ 403 01d2 63010000 		.4byte	.LASF36
  404 01d6 07       		.byte	0x7
  405 01d7 1207     		.2byte	0x712
  406 01d9 DD010000 		.4byte	0x1dd
@@ -536,26 +536,26 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  412 01eb 05       		.byte	0x5
  413 01ec 9D       		.byte	0x9d
  414 01ed 11       		.uleb128 0x11
- 415 01ee 06010000 		.4byte	.LASF27
- 416 01f2 06010000 		.4byte	.LASF27
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 10
+ 415 01ee 82000000 		.4byte	.LASF27
+ 416 01f2 82000000 		.4byte	.LASF27
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 10
 
 
  417 01f6 05       		.byte	0x5
  418 01f7 93       		.byte	0x93
  419 01f8 11       		.uleb128 0x11
- 420 01f9 C6020000 		.4byte	.LASF28
- 421 01fd C6020000 		.4byte	.LASF28
+ 420 01f9 DE020000 		.4byte	.LASF28
+ 421 01fd DE020000 		.4byte	.LASF28
  422 0201 05       		.byte	0x5
  423 0202 92       		.byte	0x92
  424 0203 11       		.uleb128 0x11
- 425 0204 D0000000 		.4byte	.LASF29
- 426 0208 D0000000 		.4byte	.LASF29
+ 425 0204 4C000000 		.4byte	.LASF29
+ 426 0208 4C000000 		.4byte	.LASF29
  427 020c 05       		.byte	0x5
  428 020d C3       		.byte	0xc3
  429 020e 11       		.uleb128 0x11
- 430 020f 03020000 		.4byte	.LASF30
- 431 0213 03020000 		.4byte	.LASF30
+ 430 020f 7F010000 		.4byte	.LASF30
+ 431 0213 7F010000 		.4byte	.LASF30
  432 0217 06       		.byte	0x6
  433 0218 55       		.byte	0x55
  434 0219 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  471 0022 0E       		.uleb128 0xe
  472 0023 3A       		.uleb128 0x3a
  473 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 11
 
 
  474 0025 3B       		.uleb128 0x3b
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  528 005c 00       		.byte	0
  529 005d 07       		.uleb128 0x7
  530 005e 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 12
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 12
 
 
  531 0061 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  585 009d 00       		.byte	0
  586 009e 03       		.uleb128 0x3
  587 009f 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 13
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 13
 
 
  588 00a0 3A       		.uleb128 0x3a
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  642 00d6 00       		.byte	0
  643 00d7 0F       		.uleb128 0xf
  644 00d8 34       		.uleb128 0x34
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 14
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 14
 
 
  645 00d9 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  699 0019 00000000 		.4byte	0
  700 001d 00000000 		.4byte	0
  701              	.LLST1:
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 15
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 15
 
 
  702 0021 08000000 		.4byte	.LVL9
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  752              	.LASF2:
  753 0000 5F5F7569 		.ascii	"__uint8_t\000"
  753      6E74385F 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 16
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 16
 
 
  753      7400
@@ -921,178 +921,181 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 1
  761 0042 5F5F696E 		.ascii	"__int32_t\000"
  761      7433325F 
  761      7400
- 762              	.LASF33:
- 763 004c 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
- 763      73657273 
- 763      5C4D616E 
- 763      755C4465 
- 763      736B746F 
- 764 007a 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
- 764      31393230 
- 764      5F49495F 
- 764      48575F46 
- 764      494E414C 
- 765 00ab 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
- 765      5F46494E 
- 765      414C5F43 
- 765      41525A41 
- 765      4E494741 
- 766              	.LASF29:
- 767 00d0 50574D5F 		.ascii	"PWM_NOTIFY_WriteCompare\000"
- 767      4E4F5449 
- 767      46595F57 
- 767      72697465 
- 767      436F6D70 
- 768              	.LASF21:
- 769 00e8 4C45445F 		.ascii	"LED_Notify_Stop\000"
- 769      4E6F7469 
- 769      66795F53 
- 769      746F7000 
- 770              	.LASF14:
- 771 00f8 696E7433 		.ascii	"int32_t\000"
- 771      325F7400 
- 772              	.LASF16:
- 773 0100 666C6F61 		.ascii	"float\000"
- 773      7400
- 774              	.LASF27:
- 775 0106 50574D5F 		.ascii	"PWM_NOTIFY_Stop\000"
- 775      4E4F5449 
- 775      46595F53 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 17
+ 762              	.LASF29:
+ 763 004c 50574D5F 		.ascii	"PWM_NOTIFY_WriteCompare\000"
+ 763      4E4F5449 
+ 763      46595F57 
+ 763      72697465 
+ 763      436F6D70 
+ 764              	.LASF21:
+ 765 0064 4C45445F 		.ascii	"LED_Notify_Stop\000"
+ 765      4E6F7469 
+ 765      66795F53 
+ 765      746F7000 
+ 766              	.LASF14:
+ 767 0074 696E7433 		.ascii	"int32_t\000"
+ 767      325F7400 
+ 768              	.LASF16:
+ 769 007c 666C6F61 		.ascii	"float\000"
+ 769      7400
+ 770              	.LASF27:
+ 771 0082 50574D5F 		.ascii	"PWM_NOTIFY_Stop\000"
+ 771      4E4F5449 
+ 771      46595F53 
+ 771      746F7000 
+ 772              	.LASF1:
+ 773 0092 756E7369 		.ascii	"unsigned char\000"
+ 773      676E6564 
+ 773      20636861 
+ 773      7200
+ 774              	.LASF31:
+ 775 00a0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 775      43313120 
+ 775      352E342E 
+ 775      31203230 
+ 775      31363036 
+ 776 00d3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 776      20726576 
+ 776      6973696F 
+ 776      6E203233 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 17
 
 
- 775      746F7000 
- 776              	.LASF1:
- 777 0116 756E7369 		.ascii	"unsigned char\000"
- 777      676E6564 
- 777      20636861 
- 777      7200
- 778              	.LASF31:
- 779 0124 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 779      43313120 
- 779      352E342E 
- 779      31203230 
- 779      31363036 
- 780 0157 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 780      20726576 
- 780      6973696F 
- 780      6E203233 
- 780      37373135 
- 781 018a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 781      66756E63 
- 781      74696F6E 
- 781      2D736563 
- 781      74696F6E 
- 782              	.LASF32:
- 783 01b2 4E6F7469 		.ascii	"Notifications.c\000"
- 783      66696361 
- 783      74696F6E 
- 783      732E6300 
- 784              	.LASF8:
- 785 01c2 6C6F6E67 		.ascii	"long unsigned int\000"
- 785      20756E73 
- 785      69676E65 
- 785      6420696E 
- 785      7400
- 786              	.LASF5:
- 787 01d4 73686F72 		.ascii	"short unsigned int\000"
- 787      7420756E 
- 787      7369676E 
- 787      65642069 
- 787      6E7400
- 788              	.LASF36:
- 789 01e7 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 789      52784275 
- 789      66666572 
- 789      00
- 790              	.LASF17:
- 791 01f4 646F7562 		.ascii	"double\000"
- 791      6C6500
- 792              	.LASF24:
- 793 01fb 706F745F 		.ascii	"pot_val\000"
- 793      76616C00 
- 794              	.LASF30:
- 795 0203 4144435F 		.ascii	"ADC_DELSIG_Read16\000"
- 795      44454C53 
- 795      49475F52 
- 795      65616431 
- 795      3600
- 796              	.LASF25:
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 18
+ 776      37373135 
+ 777 0106 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 777      66756E63 
+ 777      74696F6E 
+ 777      2D736563 
+ 777      74696F6E 
+ 778              	.LASF32:
+ 779 012e 4E6F7469 		.ascii	"Notifications.c\000"
+ 779      66696361 
+ 779      74696F6E 
+ 779      732E6300 
+ 780              	.LASF8:
+ 781 013e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 781      20756E73 
+ 781      69676E65 
+ 781      6420696E 
+ 781      7400
+ 782              	.LASF5:
+ 783 0150 73686F72 		.ascii	"short unsigned int\000"
+ 783      7420756E 
+ 783      7369676E 
+ 783      65642069 
+ 783      6E7400
+ 784              	.LASF36:
+ 785 0163 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 785      52784275 
+ 785      66666572 
+ 785      00
+ 786              	.LASF17:
+ 787 0170 646F7562 		.ascii	"double\000"
+ 787      6C6500
+ 788              	.LASF24:
+ 789 0177 706F745F 		.ascii	"pot_val\000"
+ 789      76616C00 
+ 790              	.LASF30:
+ 791 017f 4144435F 		.ascii	"ADC_DELSIG_Read16\000"
+ 791      44454C53 
+ 791      49475F52 
+ 791      65616431 
+ 791      3600
+ 792              	.LASF25:
+ 793 0191 666C6167 		.ascii	"flag\000"
+ 793      00
+ 794              	.LASF11:
+ 795 0196 756E7369 		.ascii	"unsigned int\000"
+ 795      676E6564 
+ 795      20696E74 
+ 795      00
+ 796              	.LASF10:
+ 797 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 797      206C6F6E 
+ 797      6720756E 
+ 797      7369676E 
+ 797      65642069 
+ 798              	.LASF12:
+ 799 01ba 75696E74 		.ascii	"uint8_t\000"
+ 799      385F7400 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 18
 
 
- 797 0215 666C6167 		.ascii	"flag\000"
- 797      00
- 798              	.LASF11:
- 799 021a 756E7369 		.ascii	"unsigned int\000"
- 799      676E6564 
- 799      20696E74 
- 799      00
- 800              	.LASF10:
- 801 0227 6C6F6E67 		.ascii	"long long unsigned int\000"
- 801      206C6F6E 
- 801      6720756E 
- 801      7369676E 
- 801      65642069 
- 802              	.LASF12:
- 803 023e 75696E74 		.ascii	"uint8_t\000"
- 803      385F7400 
- 804              	.LASF13:
- 805 0246 696E7431 		.ascii	"int16_t\000"
- 805      365F7400 
- 806              	.LASF19:
- 807 024e 6C6F6E67 		.ascii	"long double\000"
- 807      20646F75 
- 807      626C6500 
- 808              	.LASF20:
- 809 025a 73697A65 		.ascii	"sizetype\000"
- 809      74797065 
- 809      00
- 810              	.LASF9:
- 811 0263 6C6F6E67 		.ascii	"long long int\000"
- 811      206C6F6E 
- 811      6720696E 
- 811      7400
- 812              	.LASF35:
- 813 0271 6F6C6446 		.ascii	"oldFlag\000"
- 813      6C616700 
- 814              	.LASF18:
- 815 0279 63686172 		.ascii	"char\000"
- 815      00
- 816              	.LASF4:
- 817 027e 73686F72 		.ascii	"short int\000"
- 817      7420696E 
- 817      7400
- 818              	.LASF15:
- 819 0288 75696E74 		.ascii	"uint8\000"
- 819      3800
- 820              	.LASF7:
- 821 028e 6C6F6E67 		.ascii	"long int\000"
- 821      20696E74 
- 821      00
- 822              	.LASF22:
- 823 0297 4C45445F 		.ascii	"LED_Notify_Start\000"
- 823      4E6F7469 
- 823      66795F53 
- 823      74617274 
- 823      00
- 824              	.LASF23:
- 825 02a8 4C45445F 		.ascii	"LED_Notify_Config\000"
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\cc60JaGa.s 			page 19
+ 800              	.LASF13:
+ 801 01c2 696E7431 		.ascii	"int16_t\000"
+ 801      365F7400 
+ 802              	.LASF15:
+ 803 01ca 75696E74 		.ascii	"uint8\000"
+ 803      3800
+ 804              	.LASF19:
+ 805 01d0 6C6F6E67 		.ascii	"long double\000"
+ 805      20646F75 
+ 805      626C6500 
+ 806              	.LASF20:
+ 807 01dc 73697A65 		.ascii	"sizetype\000"
+ 807      74797065 
+ 807      00
+ 808              	.LASF9:
+ 809 01e5 6C6F6E67 		.ascii	"long long int\000"
+ 809      206C6F6E 
+ 809      6720696E 
+ 809      7400
+ 810              	.LASF35:
+ 811 01f3 6F6C6446 		.ascii	"oldFlag\000"
+ 811      6C616700 
+ 812              	.LASF18:
+ 813 01fb 63686172 		.ascii	"char\000"
+ 813      00
+ 814              	.LASF4:
+ 815 0200 73686F72 		.ascii	"short int\000"
+ 815      7420696E 
+ 815      7400
+ 816              	.LASF33:
+ 817 020a 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 817      73657273 
+ 817      5C4C6F72 
+ 817      795C4465 
+ 817      736B746F 
+ 818 0238 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 818      65735C50 
+ 818      536F432D 
+ 818      46696E61 
+ 818      6C2D5072 
+ 819 0269 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 819      415F4755 
+ 819      414C4E49 
+ 819      4552415C 
+ 819      41593139 
+ 820 029b 49455241 		.ascii	"IERA.cydsn\000"
+ 820      2E637964 
+ 820      736E00
+ 821              	.LASF7:
+ 822 02a6 6C6F6E67 		.ascii	"long int\000"
+ 822      20696E74 
+ 822      00
+ 823              	.LASF22:
+ 824 02af 4C45445F 		.ascii	"LED_Notify_Start\000"
+ 824      4E6F7469 
+ 824      66795F53 
+ 824      74617274 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc5fqc2w.s 			page 19
 
 
- 825      4E6F7469 
- 825      66795F43 
- 825      6F6E6669 
- 825      6700
- 826              	.LASF0:
- 827 02ba 7369676E 		.ascii	"signed char\000"
- 827      65642063 
- 827      68617200 
- 828              	.LASF28:
- 829 02c6 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
- 829      4E4F5449 
- 829      46595F53 
- 829      74617274 
- 829      00
- 830              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 824      00
+ 825              	.LASF23:
+ 826 02c0 4C45445F 		.ascii	"LED_Notify_Config\000"
+ 826      4E6F7469 
+ 826      66795F43 
+ 826      6F6E6669 
+ 826      6700
+ 827              	.LASF0:
+ 828 02d2 7369676E 		.ascii	"signed char\000"
+ 828      65642063 
+ 828      68617200 
+ 829              	.LASF28:
+ 830 02de 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
+ 830      4E4F5449 
+ 830      46595F53 
+ 830      74617274 
+ 830      00
+ 831              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

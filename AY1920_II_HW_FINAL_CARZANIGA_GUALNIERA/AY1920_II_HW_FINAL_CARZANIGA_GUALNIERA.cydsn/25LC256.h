@@ -127,32 +127,95 @@
     */
     void EEPROM_waitForWriteComplete(void);
 
-
-    //////////////////////////////////////////////////////////////////
+    /*
+     * Save start/stop state bit into the EEPROM.
+     */
     void EEPROM_saveStartStopState(uint8_t state);
 
+    /*
+     * Retrieve start/stop state bit from the EEPROM.
+     */
     uint8_t EEPROM_retrieveStartStopState(void);
-
+    
+    /*
+     * Save configuration mode flag into the EEPROM.
+     */
     void EEPROM_saveConfigFlag(uint8_t flag);
-
+    
+    /*
+     * Retrieve configuration mode flag from the EEPROM.
+     */
     uint8_t EEPROM_retrieveConfigFlag(void);
 
+    /*
+     * Save send flag into the EEPROM.
+     */
     void EEPROM_saveSendFlag(uint8_t flag);
 
+    /*
+     * Retrieve configuration mode flag from the EEPROM.
+     */
     uint8_t EEPROM_retrieveSendFlag(void);
     
+    /*
+     * Save send flag into the EEPROM.
+     */
     void EEPROM_saveResetFlag(uint8_t flag);
     
+    /*
+     * Retrieve configuration mode flag from the EEPROM.
+     */
     uint8_t EEPROM_retrieveResetFlag(void);
 
+    /*
+     * Read number of writte pages currently stored in the EEPROM.
+     */
     uint16_t EEPROM_retrieveLogPages(void);
-
+    
+    /*
+     * Read number of logs currently stored in the EEPROM.
+     */
+    uint8_t EEPROM_retrieveLogCount(void);
+    
+    /*
+     * Increment by 1 number of logs of the log control register.
+     */
     void EEPROM_incrementLogCounter(void);
 
-    void EEPROM_storeLogBuffer(uint8_t* dataPtr, uint8_t nBytes);
+    /*
+     * Store log data buffer inside first unoccupied memory page
+     * inside the EEPROM. Writing a data buffer of size greater 
+     * than page size will be prevented.
+     */
+    void EEPROM_storeLogData(uint8_t* dataPtr);
+
+    /*
+     * Store log type messages of 64 bytes inside first
+     * unoccupied memory page.
+     */
+    void EEPROM_storeLogMessage(log_t message);
     
-    void EEPROM_storeLogMessage(log_t message, uint8_t dataSize);
-    //////////////////////////////////////////////////////////////////////
+    /*
+     * Find the address of a log stored in memory
+     * given its identification number.
+     */
+    uint16_t EEPROM_findLogID(uint8_t logID);
+
+    /*
+     * Retrieve all log data contained inside a page.
+     */
+    void EEPROM_retrieveLogData(uint8_t* dataRX, uint8_t logID, uint8_t pageIndex);
+
+    /*
+     * Retrieve a single log type message contained in a page.
+     */
+    log_t EEPROM_retrieveLogMessage(uint8_t logID, uint8_t pageIndex);
+    
+    /*
+     * Overwrite all EEPROM memory with zeros and set reset flag inside
+     * control register psoc status.
+     */
+    void EEPROM_resetMemory(void);
     
 #endif
 

@@ -1,5 +1,5 @@
 -- Project:   AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
--- Generated: 05/25/2020 16:36:14
+-- Generated: 05/26/2020 22:20:21
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -825,10 +825,10 @@ BEGIN
             dsi_glb_div => open,
             dclk_glb_0 => \ADC_DELSIG:Net_93\,
             dclk_0 => \ADC_DELSIG:Net_93_local\,
-            dclk_glb_1 => \SPIM_IMU:Net_276\,
-            dclk_1 => \SPIM_IMU:Net_276_local\,
-            dclk_glb_2 => \SPIM_EEPROM:Net_276\,
-            dclk_2 => \SPIM_EEPROM:Net_276_local\,
+            dclk_glb_1 => \SPIM_EEPROM:Net_276\,
+            dclk_1 => \SPIM_EEPROM:Net_276_local\,
+            dclk_glb_2 => \SPIM_IMU:Net_276\,
+            dclk_2 => \SPIM_IMU:Net_276_local\,
             dclk_glb_3 => \UART:Net_9\,
             dclk_3 => \UART:Net_9_local\,
             aclk_glb_0 => \ADC_DELSIG:Net_488\,

@@ -134,7 +134,7 @@ uint8_t SPI_EEPROM_Interface_tradeByte(uint8_t byte)
 	
 	/* Wait for TX */
     while( !(SPIM_EEPROM_ReadTxStatus() & SPIM_EEPROM_STS_BYTE_COMPLETE) );
-
+    
 	/* Read the RX Buffer */
 	uint8_t data = SPIM_EEPROM_ReadRxData();
 	

@@ -15,7 +15,6 @@
     
     /* Project dependencies. */
     #include "project.h"
-    #include "25LC256.h"
     
     /* Useful constants definition. */
     #define LOG_MESSAGE_HEADER_BYTE  4
@@ -32,10 +31,13 @@
     } log_t;
     
     /* Function prototypes. */
-    log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr, uint8_t nBytes);
-    void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t nBytes);
+    log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr);
+    void LOG_insertPayload(log_t* msg, uint8_t* dataPtr);
     uint16_t LOG_getTimestamp(void);
     uint8_t LOG_getID(void);
+    void LOG_packMessage(log_t* message, uint8_t* buffer);
+    void LOG_unpackMessage(uint8_t* buffer, log_t* message);
+    void LOG_sendData(log_t* message);
     
 #endif
 

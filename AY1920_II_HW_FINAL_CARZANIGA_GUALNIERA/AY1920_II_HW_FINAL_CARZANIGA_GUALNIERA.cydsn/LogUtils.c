@@ -39,7 +39,7 @@
 /*
  * Create a single log message with 60 bytes of max payload. 
  */
-log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr, uint8_t nBytes)
+log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr)
 {
     // Create log type message
     log_t message;
@@ -54,7 +54,7 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* d
     message.timestamp = time;
     
     // Insert data payload
-    LOG_insertPayload(&message, dataPtr, nBytes);
+    LOG_insertPayload(&message, dataPtr);
     
     return message;
 }
@@ -62,10 +62,10 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* d
 /*
  * Insert data payload into log data structure.
  */
-void LOG_insertPayload(log_t* msg, uint8_t* dataPtr, uint8_t nBytes)
+void LOG_insertPayload(log_t* msg, uint8_t* dataPtr)
 {
     // Copy payload inside data field
-    memcpy(msg->data, dataPtr, nBytes);
+    memcpy(msg->data, dataPtr, LOG_MESSAGE_DATA_BYTE);
 }
 
 /*
@@ -78,15 +78,45 @@ uint16_t LOG_getTimestamp(void)
 }
 
 /*
- * Get identification number.
- */ 
-uint8_t LOG_getID(void)
+ * Unpack log type message inside uint8 buffer.
+ */
+void LOG_unpackMessage(uint8_t* buffer, log_t* message)
 {
-    // Get number of log pages
-    uint16_t nPages = EEPROM_retrieveLogPages();
+    // Updack header
+    buffer[0] = message->logID;
+    buffer[1] = message->intReg;
+    buffer[2] = (message->timestamp & 0xFF);
+    buffer[3] = ((message->timestamp >> 8) & 0xFF);
     
-    // Get unique sequential ID
-    return (uint8_t)(nPages / LOG_PAGES_PER_EVENT);
+    // Unpack payload
+    memcpy(&buffer[4], message->data, LOG_MESSAGE_DATA_BYTE);
+}
+
+/*
+ * Pack buffer inside log type message.
+ */
+void LOG_packMessage(log_t* message, uint8_t* buffer)
+{
+    // Pack header
+    message->logID = buffer[0];
+    message->intReg = buffer[1];
+    message->timestamp = ((buffer[3]<<8) | buffer[2]);
+    
+    // Pack payload
+    memcpy(message->data, &buffer[4], LOG_MESSAGE_DATA_BYTE);
+}
+
+/*
+ * Send log message via UART.
+ */
+void LOG_sendData(log_t* message)
+{
+    // Unpack message inside buffer
+    uint8_t buffer[LOG_MESSAGE_TOT_BYTE];
+    LOG_unpackMessage(buffer, message);
+    
+    // Send buffer via UART
+    UART_PutArray(buffer, LOG_MESSAGE_TOT_BYTE);
 }
 
 /* [] END OF FILE */

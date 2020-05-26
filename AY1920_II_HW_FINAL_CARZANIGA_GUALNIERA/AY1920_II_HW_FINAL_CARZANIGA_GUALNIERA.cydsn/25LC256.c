@@ -242,7 +242,7 @@ uint8_t EEPROM_retrieveResetFlag(void)
 }
 
 /*
- * Read number of logs currently stored in the EEPROM.
+ * Read number of writte pages currently stored in the EEPROM.
  */
 uint16_t EEPROM_retrieveLogPages(void)
 {
@@ -255,15 +255,27 @@ uint16_t EEPROM_retrieveLogPages(void)
 }
 
 /*
+ * Read number of logs currently stored in the EEPROM.
+ */
+uint8_t EEPROM_retrieveLogCount(void)
+{
+    // Read log pages count
+    uint16_t page_count = EEPROM_retrieveLogPages();
+    
+    // Return log count
+    return (uint8_t)(page_count / LOG_PAGES_PER_EVENT);
+}
+
+/*
  * Increment by 1 number of logs of the log control register.
  */
-void EEPROM_incrementLogCounter()
+void EEPROM_incrementLogCounter(void)
 {
     // Read number of already written pages
     uint16_t reg_count = EEPROM_retrieveLogPages();
     
     // Avoid variable overflow
-    if (reg_count < sizeof(uint16_t))
+    if (reg_count < SPI_EEPROM_PAGE_COUNT)
     {
         // Increment counter
         reg_count++;
@@ -284,47 +296,93 @@ void EEPROM_incrementLogCounter()
  * inside the EEPROM. Writing a data buffer of size greater 
  * than page size will be prevented.
  */
-void EEPROM_storeLogData(uint8_t* dataPtr, uint8_t nBytes)
+void EEPROM_storeLogData(uint8_t* dataPtr)
 {
-    // Check page boundary
-    if (nBytes <= SPI_EEPROM_PAGE_SIZE)
-    {
-        // Check how many log pages are currently stored
-        uint16_t page_count = EEPROM_retrieveLogPages();
+    // Check how many log pages are currently stored
+    uint16_t page_count = EEPROM_retrieveLogPages();
+
+    // Compute first available address 
+    uint16_t page_addr = LOG_DATA_BASE_ADDR + page_count * SPI_EEPROM_PAGE_SIZE;
     
-        // Compute first available address 
-        uint16_t page_addr = LOG_DATA_BASE_ADDR + page_count * SPI_EEPROM_PAGE_SIZE;
-        
-        // Check if address is valid
-        if (page_addr <= SPI_EEPROM_SIZE_BYTE - SPI_EEPROM_PAGE_SIZE)
-        {
-            // Write EEPROM page
-            EEPROM_writePage(page_addr, dataPtr, nBytes);
-            EEPROM_waitForWriteComplete();
-        }
-    }
+    // Check if address is valid
+    if (page_addr <= SPI_EEPROM_SIZE_BYTE - SPI_EEPROM_PAGE_SIZE)
+    {
+        // Write EEPROM page
+        EEPROM_writePage(page_addr, dataPtr, SPI_EEPROM_PAGE_SIZE);
+        EEPROM_waitForWriteComplete();
+    } 
 }
 
 /*
  * Store log type messages of 64 bytes inside first
  * unoccupied memory page.
  */
-void EEPROM_storeLogMessage(log_t message, uint8_t dataSize)
+void EEPROM_storeLogMessage(log_t message)
 {
     uint8_t buffer[64];
     
     // Updack struct and place data inside buffer
-    buffer[0] = message.logID;
-    buffer[1] = message.intReg;
-    buffer[2] = (message.timestamp | 0xFF);
-    buffer[3] = ((message.timestamp >> 8) | 0xFF);
-    memcpy(message.data, &buffer[4], dataSize);
+    LOG_unpackMessage(buffer, &message);
     
-    // Store buffer in memory (size = header + payload)
-    EEPROM_storeLogData(buffer, LOG_MESSAGE_HEADER_BYTE + dataSize);
+    // Store buffer in memory
+    EEPROM_storeLogData(buffer);
     
     // Increment number of written pages
     EEPROM_incrementLogCounter();
+}
+
+/*
+ * Find the address of a log stored in memory
+ * given its identification number.
+ */
+uint16_t EEPROM_findLogID(uint8_t logID)
+{
+    // Scan every header of each page
+    uint16_t addrPtr = LOG_DATA_BASE_ADDR;
+    while(EEPROM_readByte(addrPtr) != logID)
+    {
+        // Increment to next header address
+        addrPtr += SPI_EEPROM_PAGE_SIZE;
+        
+        // Check if address exeeds memory
+        if (addrPtr >= SPI_EEPROM_SIZE_BYTE)
+        {
+            // Return invalid address
+            return 0xFFFF;
+        }
+    }
+    
+    // If log ID has been found return address
+    return addrPtr;
+}
+
+/*
+ * Retrieve all log data contained inside a page.
+ */
+void EEPROM_retrieveLogData(uint8_t* dataRX, uint8_t logID, uint8_t pageIndex)
+{
+    // Compute page address
+    uint16_t page_addr = EEPROM_findLogID(logID) + pageIndex*SPI_EEPROM_PAGE_SIZE;
+    
+    // Retrieve 64 byte of data
+    EEPROM_readPage(page_addr, dataRX, SPI_EEPROM_PAGE_SIZE);
+}
+
+/*
+ * Retrieve a single log type message contained in a page.
+ */
+log_t EEPROM_retrieveLogMessage(uint8_t logID, uint8_t pageIndex)
+{
+    // Read 64 byte from page
+    uint8_t buffer[SPI_EEPROM_PAGE_SIZE];
+    EEPROM_retrieveLogData(buffer, logID, pageIndex);
+    
+    // Pack buffer inside log type message
+    log_t msgRX;
+    LOG_packMessage(&msgRX, buffer);
+    
+    // Return log message
+    return msgRX;
 }
 
 /*
@@ -335,7 +393,7 @@ void EEPROM_resetMemory(void)
 {
     // Fill up buffer with zeros
     uint8_t resetBuffer[SPI_EEPROM_PAGE_SIZE];
-    memset(resetBuffer, 0, SPI_EEPROM_PAGE_SIZE);
+    memset(resetBuffer, 0x00, SPI_EEPROM_PAGE_SIZE);
     
     // First available address
     uint16_t page_addr = 0x0000;
@@ -343,16 +401,20 @@ void EEPROM_resetMemory(void)
     // Reset all pages
     for (uint16_t i=0; i<SPI_EEPROM_PAGE_COUNT; i++)
     {
+        // Reset page
+        EEPROM_writePage(page_addr, resetBuffer, SPI_EEPROM_PAGE_SIZE);
+        EEPROM_waitForWriteComplete();
+        
         // Compute next page address
         page_addr += SPI_EEPROM_PAGE_SIZE;
         
-        // Reset page
-        EEPROM_writePage(page_addr, resetBuffer, SPI_EEPROM_PAGE_SIZE);
+        // Wait 5 ms
+        CyDelay(5);
     }
     
     // Set reset flag inside control register
     EEPROM_saveResetFlag(1);
-    
+    CyDelay(5);
 }
 
 /* [] END OF FILE */
