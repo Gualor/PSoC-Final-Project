@@ -17,7 +17,6 @@
 #include "LED_Driver.h"
 #include "LogUtils.h"
 #include "25LC256.h"
-#include "LIS3DH.h"
 #include "stdio.h"
 
 /* Global variables. */
@@ -116,6 +115,9 @@ int main(void)
                 //Send data read from FIFO via UART
                 IMU_DataSend(IMU_DataBuffer);
                 
+                // Reset the FIFO to enable next ISR occurrences
+                IMU_ResetFIFO();
+                
                 // Drive RGB LED with IMU data
                 RGB_Driver(IMU_DataBuffer); 
             }
@@ -123,24 +125,43 @@ int main(void)
             // Over threshold event occured
             else
             {   
+                // Declare int_reg variable to store the last event occurred later in the log
+                uint8_t int_reg;
+                
+                // Capture all the duration of the overthreshold event (avoid multiple ISR incoming for the same event)
+                while((int_reg = IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
+                {
+                    // Check if there are data available during the overthreshold event, in order to not lose them
+                    if((IMU_ReadByte(LIS3DH_FIFO_SRC_REG)) & (LIS3DH_FIFO_SRC_REG_OVR_MASK))
+                    {
+                        // Read data via SPI from IMU
+                        IMU_ReadFIFO(IMU_DataBuffer);
+                        
+                        // Store the read FIFO in the LOG buffer
+                        IMU_StoreFIFO(IMU_DataBuffer);
+                        
+                        // Reset the FIFO to enable next ISR occurrences
+                        IMU_ResetFIFO();
+                        
+                    }       
+                }
+                
                 // Get sequential ID number
                 uint8_t log_id = EEPROM_retrieveLogCount();
-                
-                // Read LIS3DH interrupt register
-                uint8_t int_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
                 
                 // Get timestamp in seconds from boot
                 uint16_t timestamp = LOG_getTimestamp();
                 
                 for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
                 {
-                    uint8_t tmpBuffer[60];
-                    memset(tmpBuffer, 0xAA, 60);
+                    uint8_t payload[LOG_MESSAGE_DATA_BYTE];
+               
                     
-                    // TODO: GET BATCH OF DATA
+                    // Get payload of 60 bytes from the IMU queue
+                    IMU_getPayload(payload, i);
                     
                     // Create log type message
-                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, tmpBuffer);
+                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, payload);
                     
                     // Store message inside EEPROM
                     EEPROM_storeLogMessage(log_message);
@@ -151,17 +172,18 @@ int main(void)
                     // Send message via uart
                     LOG_sendData(&asd);
                 }
-
-                // Set over threshold flag
-                IMU_over_threshold_flag = 1;
             }
-            
-            // Reset the FIFO to enable next ISR occurrences
-            IMU_ResetFIFO();
             
             // Reset flag interrupt flag
             IMU_interrupt_flag = 0;
-        }   
+        }
+        
+        // Control to flush the outliers interrupt from overthreshold events 
+        if((IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
+        {
+            //UART_PutChar('O');
+        }
+        
     }
     
     return 0;

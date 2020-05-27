@@ -102,7 +102,7 @@
     #define LIS3DH_CTRL_REG3_I1_IA1_OVERRUN 0x42
 
     /**
-    *   \brief Hex value to enable interrupt on pin INT1 when overrun occurs
+    *   \brief Hex value to disable interrupt on pin INT1
     */
     #define LIS3DH_CTRL_REG3_NULL 0x00
 
@@ -226,7 +226,9 @@
     */
     //#define LIS3DH_INT1_DURATION_VALUE 0x0A // @ 200Hx ODR --> 5 ms every lsb --> 50ms total
     
-    #define LIS3DH_INT1_DURATION_VALUE 0x04 // @ 200Hx ODR --> 5 ms every lsb --> 20ms total
+    //#define LIS3DH_INT1_DURATION_VALUE 0x04 // @ 200Hx ODR --> 5 ms every lsb --> 20ms total
+    
+    #define LIS3DH_INT1_DURATION_VALUE 0x14 // @ 200Hx ODR --> 5 ms every lsb --> 100ms total
 
 
 
@@ -242,7 +244,13 @@
     
     void IMU_StoreFIFO(uint8_t *buffer);
     
+    void IMU_getPayload(uint8_t *messagge, uint8_t index);
+    
     void IMU_ResetFIFO(void);
+    
+    void IMU_StartISR(void);
+    
+    void IMU_StopISR(void);
     
     /** ====== User-level Functions ====== **/
 
@@ -261,24 +269,6 @@
     * @param[out]: 8-bit (unsigned byte) value to write in the memory location.
     */
     void IMU_WriteByte(uint8_t address, uint8_t dataByte);
-
-    /*
-    * @brief Read 1+ bytes from memory.
-    *
-    * @param[in]: 16-bit memory address to from read.
-    * @param[out]: uint8_t* pointer to the output data (cast operation required for different data type).
-    * @param[in]: Number of bytes to read.
-    *
-    */
-    void IMU_ReadMultyByte(uint8_t address, uint8_t* dataRX, uint8_t nBytes);
-     
-    /*
-    * @brief Write 1+ bytes from memory.
-    *
-    * @param[in]: 16-bit memory address to write to.
-    * @param[in]: uint8_t* pointer to the input data (max 64 bytes).
-    */
-    void IMU_WriteMultyByte(uint8_t address, uint8_t* data, uint8_t nBytes);
     
 #endif
 

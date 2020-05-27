@@ -1,4 +1,4 @@
---------------- Rebuild Started: 05/25/2020 16:36:03 Project: AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 05/27/2020 00:17:36 Project: AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o"
@@ -73,6 +73,8 @@ Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_DELSIG_AMux.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_DELSIG_Ext_CP_Clk.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_DELSIG_IRQ.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_DELSIG_theACLK.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.hex"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.elf"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.map"
 Deleting file ".\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.cycdx"
 Deleting file ".\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.svd"
@@ -101,13 +103,6 @@ API Generation...
 Dependency Generation...
 Cleanup...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
-main.c: In function 'main':
-main.c:129:26: warning: unused variable 'page_cnt_reg' [-Wunused-variable]
-                 uint16_t page_cnt_reg = EEPROM_retrieveLogPages();
-                          ^
-main.c:126:25: warning: unused variable 'int1_src_reg' [-Wunused-variable]
-                 uint8_t int1_src_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
-                         ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/InterruptRoutines.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c InterruptRoutines.c -o .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/SPI_Interface.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c SPI_Interface.c -o .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/25LC256.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c 25LC256.c -o .\CortexM3\ARM_GCC_541\Debug\25LC256.o
@@ -189,6 +184,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S C:\Users\Manu\Desktop\github\PSoC-Final-Project\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.elf
-Flash used: 13592 of 262144 bytes (5.2%).
-SRAM used: 3225 of 65536 bytes (4.9%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 05/25/2020 16:37:02 ---------------
+Flash used: 14920 of 262144 bytes (5.7%).
+SRAM used: 3217 of 65536 bytes (4.9%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Rebuild Succeeded: 05/27/2020 00:18:26 ---------------

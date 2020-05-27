@@ -75,7 +75,10 @@ CY_ISR(CUSTOM_ISR_START)
 {   
     // Toggle start/stop state
     if (button_state == START_MODE)
-    {
+    {   
+        // Start data acquisition
+        IMU_StartISR();
+        
         // Enter stop mode
         button_state = STOP_MODE;
         
@@ -84,9 +87,13 @@ CY_ISR(CUSTOM_ISR_START)
         
         // Turn on-board LED off
         LED_Notify_Stop();
+
     }
     else if (button_state == STOP_MODE)
     {
+        // Stop acquiring data
+        IMU_StopISR();
+        
         // Enter start mode
         button_state = START_MODE;
         

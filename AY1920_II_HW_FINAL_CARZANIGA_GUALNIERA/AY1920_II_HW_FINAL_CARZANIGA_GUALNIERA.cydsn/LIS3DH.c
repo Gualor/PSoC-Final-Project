@@ -80,7 +80,7 @@ void IMU_RegistersSetup()
     
     // Write
     /* Prepare the TX packet */
-    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_IA1_OVERRUN};
+    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_NULL};
 	/* Nothing to RX... */
 	temp = 0;
 	
@@ -332,58 +332,17 @@ void IMU_WriteByte(uint8_t address, uint8_t dataByte)
 	    
 }
 
-void IMU_ReadMultyByte(uint8_t address, uint8_t* dataRX, uint8_t nBytes) 
-{
-    
-     // LIS3DH bit set to read and auto increment address to read
-    address =  address | LIS3DH_READ_BIT | LIS3DH_AUTO_INCREMENT_ADDRESS;
-    
-	/* Prepare the TX data packet: instructon + address */
-	/* Read the nBytes */
-	SPI_IMU_Interface_Multi_RW(&address, 1, dataRX,  nBytes);
-	
-	
-		
-}
-
-
-void IMU_WriteMultyByte(uint8_t address, uint8_t* data, uint8_t nBytes) 
-{
-    
-    // Auto increment bit address to write
-    address |= LIS3DH_AUTO_INCREMENT_ADDRESS;
-    
-	uint8_t dataTX[1+nBytes];
-    dataTX[0] = address;
-    /* Copy the input data in the memory */
-	memcpy(&dataTX[1], data, nBytes);
-
-	/* Nothing to RX... */
-	uint8_t temp = 0;
-    
-	/* Read the nBytes */
-	SPI_IMU_Interface_Multi_RW(dataTX, nBytes, &temp, 0);
-		
-}
-
 
 void IMU_ReadFIFO(uint8_t *buffer)
-{   
-    //UART_PutChar(SPI_IMU_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
-    
-    // Obtain the number of unread samples in the FIFO throuh masking the FIFO src reg
-    //uint8_t dataToRead = (SPI_IMU_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG) & LIS3DH_FIFO_DATA_TO_READ);
-    
-    //UART_PutChar(dataToRead);
+{       
+    // Address of low X register
 	uint8_t dataTX = LIS3DH_READ_OUT_X_L;
   
     // Read one level of the FIFO at the time (6 bytes)
     for(int i = 0; i < 32 ; i++)
     {              
         SPI_IMU_Interface_Multi_RW(&dataTX, 1, &buffer[i*6], LIS3DH_FIFO_BYTES_IN_LEVEL);
-        //UART_PutChar(IMU_ReadByte(LIS3DH_FIFO_SRC_REG));
-    }
-    //UART_PutChar(SPI_IMU_Interface_ReadByte(LIS3DH_READ_FIFO_SRC_REG));
+    }  
 }
 
 void IMU_StoreFIFO(uint8_t *buffer)
@@ -416,23 +375,48 @@ void IMU_StoreFIFO(uint8_t *buffer)
 
 }
 
-
+/*
+ * Get data payload from the IMU queue.
+ */
+void IMU_getPayload(uint8_t *messagge, uint8_t index)
+{
+    // from 0 index to 1 index base
+    index = index+1;
+    if(index == 5)
+    {
+        memset(messagge, 0, 60);
+        memcpy(messagge, IMU_log_queue, 48);
+    }
+    else
+    {
+        memcpy(messagge, &IMU_log_queue[288 - index*60], 60);
+    }
+}
 
 void IMU_DataSend(uint8_t *buffer)
 {
-    uint8_t DataBuffer[8];
-    DataBuffer[0] = 0xA0;
-    DataBuffer[7] = 0xC0;
-
+    uint8_t DataSend[5];
+    DataSend[0] = 0xA0;
+    DataSend[4] = 0xC0;
     
-    // Send uart 6 registers at time
+    // Buffer storing only high registers read from the IMU (8 bit configuration, low power mode)
+    uint8_t high_reg_data[LIS3DH_BYTES_IN_FIFO_HIGH_REG];
+    
+     // Save only high registers 
+    for(uint8_t i = 0; i < LIS3DH_BYTES_IN_FIFO_HIGH_REG; i++)
+    {
+        high_reg_data[i] = buffer[i*2 +1];
+    }
+
+    // Send 3 registers at time via UART
     for(int i = 0; i < 32 ; i++)
-    {              
-        for(int j = 1; j < 7; j++)
+    {   
+        // First and last position of DataSend array already initialized, need to loop only from position 1 to 3
+        for(int j = 1; j < 4; j++)
         {   
-            DataBuffer[j] = buffer[i*6 + j-1];
+            DataSend[j] = high_reg_data[i*3 + j-1];
         }
-        UART_PutArray(DataBuffer, 8);
+        UART_PutArray(DataSend, 5);
     }
 }
 
@@ -452,7 +436,29 @@ void IMU_ResetFIFO()
     uint8_t FIFOTX[2] = {LIS3DH_FIFO_CTRL_REG, LIS3DH_FIFO_CTRL_REG_FIFO_MODE};
 	temp = 0;
 	SPI_IMU_Interface_Multi_RW(FIFOTX, 2, &temp, 0);
-   
+}
+
+void IMU_StopISR(void)
+{    
+    /* Prepare the TX packet with reg address and NULL value to stop ISR occurrences*/
+    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_NULL};
+	/* Nothing to RX... */
+	uint8_t temp = 0;
+	
+	
+	SPI_IMU_Interface_Multi_RW(CTRL3TX, 2, &temp, 0);
+    
+}
+
+void IMU_StartISR(void)
+{
+    
+    /* Prepare the TX packet with reg address and previous ISR settings bit */
+    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_IA1_OVERRUN};
+	/* Nothing to RX... */
+	uint8_t temp = 0;
+	
+	SPI_IMU_Interface_Multi_RW(CTRL3TX, 2, &temp, 0);
     
 }
 

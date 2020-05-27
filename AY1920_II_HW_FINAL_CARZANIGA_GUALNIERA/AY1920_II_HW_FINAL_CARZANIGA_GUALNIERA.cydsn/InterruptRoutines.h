@@ -15,6 +15,7 @@
     /* Include project dependencies. */
     #include "project.h"
     #include "25LC256.h"
+    #include "LIS3DH.h"
     #include "Notifications.h"
     
     /* State machine type. */
@@ -29,10 +30,9 @@
     CY_ISR_PROTO(CUSTOM_ISR_START);
     CY_ISR_PROTO(CUSTOM_ISR_IMU);
     
-    /* LIS3DH state flags. */
+    /* LIS3DH interruot flag. */
     volatile uint8_t IMU_interrupt_flag;
-    volatile uint8_t IMU_data_ready_flag;       
-    volatile uint8_t IMU_over_threshold_flag;
+
     
     /* Internal state variable. */
     volatile button_t button_state;
