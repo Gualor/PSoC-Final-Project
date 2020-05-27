@@ -1,5 +1,5 @@
 -- Project:   AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
--- Generated: 05/27/2020 00:17:44
+-- Generated: 05/27/2020 16:42:31
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -57,7 +57,6 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL Net_17855 : bit;
     SIGNAL Net_18163 : bit;
     SIGNAL Net_18727 : bit;
-    SIGNAL Net_18731 : bit;
     SIGNAL Net_18733 : bit;
     ATTRIBUTE udbclken_assigned OF Net_18733 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_18733 : SIGNAL IS true;
@@ -100,6 +99,7 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE udbclken_assigned OF Net_29105 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_29105 : SIGNAL IS true;
     SIGNAL Net_29105_local : bit;
+    SIGNAL Net_29290 : bit;
     SIGNAL ONBOARD_LED(0)__PA : bit;
     SIGNAL POT_PIN(0)__PA : bit;
     SIGNAL RED_PIN(0)__PA : bit;
@@ -163,7 +163,6 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     SIGNAL \PWM_B:PWMUDB:status_2\ : bit;
     SIGNAL \PWM_B:PWMUDB:status_3\ : bit;
     SIGNAL \PWM_B:PWMUDB:tc_i\ : bit;
-    SIGNAL \PWM_NOTIFY:PWMUDB:cmp1_eq\ : bit;
     SIGNAL \PWM_NOTIFY:PWMUDB:cmp1_less\ : bit;
     SIGNAL \PWM_NOTIFY:PWMUDB:control_0\ : bit;
     SIGNAL \PWM_NOTIFY:PWMUDB:control_1\ : bit;
@@ -388,7 +387,7 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:prevCompare2\ : LABEL IS "macrocell27";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_0\ : LABEL IS "macrocell28";
     ATTRIBUTE lib_model OF \PWM_RG:PWMUDB:status_1\ : LABEL IS "macrocell29";
-    ATTRIBUTE lib_model OF Net_18731 : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF Net_29290 : LABEL IS "macrocell30";
     ATTRIBUTE lib_model OF Net_18163 : LABEL IS "macrocell31";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:runmode_enable\ : LABEL IS "macrocell32";
     ATTRIBUTE lib_model OF \PWM_B:PWMUDB:prevCompare1\ : LABEL IS "macrocell33";
@@ -825,10 +824,10 @@ BEGIN
             dsi_glb_div => open,
             dclk_glb_0 => \ADC_DELSIG:Net_93\,
             dclk_0 => \ADC_DELSIG:Net_93_local\,
-            dclk_glb_1 => \SPIM_EEPROM:Net_276\,
-            dclk_1 => \SPIM_EEPROM:Net_276_local\,
-            dclk_glb_2 => \SPIM_IMU:Net_276\,
-            dclk_2 => \SPIM_IMU:Net_276_local\,
+            dclk_glb_1 => \SPIM_IMU:Net_276\,
+            dclk_1 => \SPIM_IMU:Net_276_local\,
+            dclk_glb_2 => \SPIM_EEPROM:Net_276\,
+            dclk_2 => \SPIM_EEPROM:Net_276_local\,
             dclk_glb_3 => \UART:Net_9\,
             dclk_3 => \UART:Net_9_local\,
             aclk_glb_0 => \ADC_DELSIG:Net_488\,
@@ -852,7 +851,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "98012a64-82d4-425a-8ac5-6703c96dc3d9",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -944,7 +943,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "e851a3b9-efb8-48be-bbb8-b303b216c393",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -1021,7 +1020,7 @@ BEGIN
         PORT MAP(
             pa_out => RED_PIN(0)__PA,
             oe => open,
-            pin_input => Net_18731,
+            pin_input => Net_29290,
             pad_out => RED_PIN(0)_PAD,
             pad_in => RED_PIN(0)_PAD,
             in_clock => open,
@@ -1036,7 +1035,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "b8a23720-2d2c-4d66-ac61-d3fcd0077017",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -3078,7 +3077,6 @@ BEGIN
             clock => Net_29105,
             cs_addr_2 => \PWM_NOTIFY:PWMUDB:tc_i\,
             cs_addr_1 => \PWM_NOTIFY:PWMUDB:runmode_enable\,
-            ce0_comb => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
             cl0_comb => \PWM_NOTIFY:PWMUDB:cmp1_less\,
             z0_comb => \PWM_NOTIFY:PWMUDB:tc_i\,
             f1_blk_stat_comb => \PWM_NOTIFY:PWMUDB:status_3\,
@@ -3514,14 +3512,14 @@ BEGIN
             main_0 => \PWM_RG:PWMUDB:prevCompare2\,
             main_1 => \PWM_RG:PWMUDB:cmp2_less\);
 
-    Net_18731:macrocell
+    Net_29290:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
-            q => Net_18731,
+            q => Net_29290,
             clock_0 => Net_18733,
             main_0 => \PWM_RG:PWMUDB:runmode_enable\,
             main_1 => \PWM_RG:PWMUDB:cmp1_less\);
@@ -3809,19 +3807,18 @@ BEGIN
 
     \PWM_NOTIFY:PWMUDB:prevCompare1\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * !main_1)",
+            eqn_main => "(main_0)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
         PORT MAP(
             q => \PWM_NOTIFY:PWMUDB:prevCompare1\,
             clock_0 => Net_29105,
-            main_0 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
-            main_1 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
+            main_0 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
 
     \PWM_NOTIFY:PWMUDB:status_0\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1) + (!main_0 * main_2)",
+            eqn_main => "(!main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
@@ -3829,12 +3826,11 @@ BEGIN
             q => \PWM_NOTIFY:PWMUDB:status_0\,
             clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:prevCompare1\,
-            main_1 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
-            main_2 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
+            main_1 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
 
     Net_19647:macrocell
         GENERIC MAP(
-            eqn_main => "(main_0 * main_1) + (main_0 * main_2)",
+            eqn_main => "(main_0 * main_1)",
             regmode => 1,
             clk_inv => '0',
             clken_mode => 1)
@@ -3842,8 +3838,7 @@ BEGIN
             q => Net_19647,
             clock_0 => Net_29105,
             main_0 => \PWM_NOTIFY:PWMUDB:runmode_enable\,
-            main_1 => \PWM_NOTIFY:PWMUDB:cmp1_eq\,
-            main_2 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
+            main_1 => \PWM_NOTIFY:PWMUDB:cmp1_less\);
 
     Net_23914:macrocell
         GENERIC MAP(

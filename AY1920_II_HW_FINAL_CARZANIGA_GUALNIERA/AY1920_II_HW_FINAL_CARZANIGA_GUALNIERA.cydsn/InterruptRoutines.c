@@ -76,42 +76,50 @@ CY_ISR(CUSTOM_ISR_START)
     // Toggle start/stop state
     if (button_state == START_MODE)
     {   
-        // Start data acquisition
-        IMU_StartISR();
-        
-        // Enter stop mode
-        button_state = STOP_MODE;
-        
         // Save stop bit inside EEPROM
         EEPROM_saveStartStopState(0);
         
+        // Turn RGB LED off
+        RGB_Stop();
+        
         // Turn on-board LED off
         LED_Notify_Stop();
-
+                
+        // Update button state
+        button_state = STOP_MODE;
     }
     else if (button_state == STOP_MODE)
     {
-        // Stop acquiring data
-        IMU_StopISR();
-        
-        // Enter start mode
-        button_state = START_MODE;
-        
         // Save start bit inside EEPROM
         EEPROM_saveStartStopState(1);
         
+        // Turn RGB LED on
+        RGB_Start();
+        
         // Turn on-board LED on
         LED_Notify_Start();
+                
+        // Update button state
+        button_state = START_MODE;
     }
 }
 
 /*
- * ISR function that notify incoming external ISR from LIS3DH FIFO overrun.
+ * ISR function that notify incoming external ISR from LIS3DH.
  */
 CY_ISR(CUSTOM_ISR_IMU)
 {
-    // Notify main of LIS3DH interrupt occurrence
-    IMU_interrupt_flag = 1;
+    // IMU interrupt data overrun event handler
+    if (IMU_ReadByte(LIS3DH_FIFO_SRC_REG) & LIS3DH_FIFO_SRC_REG_OVR_MASK)
+    {
+        IMU_data_ready_flag = 1;
+    }
+    
+    // IMU interrupt over threshold event handler
+    if (IMU_ReadByte(LIS3DH_INT1_SRC) & LIS3DH_INT1_SRC_IA_MASK)
+    {
+        IMU_over_threshold_flag = 1;
+    }
 }
 
 /* [] END OF FILE */

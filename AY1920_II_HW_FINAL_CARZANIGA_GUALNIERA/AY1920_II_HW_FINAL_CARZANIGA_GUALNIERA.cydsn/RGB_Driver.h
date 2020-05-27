@@ -6,10 +6,10 @@
  * ========================================
 */
 
-#ifndef __LED_DRIVER_H__
+#ifndef __RGB_DRIVER_H__
     
     /* Header guard. */
-    #define __LED_DRIVER_H__
+    #define __RGB_DRIVER_H__
     
     /* Project dependendcies. */
     #include "project.h"
@@ -19,6 +19,7 @@
     #define PWM_CYCLE_LENGTH    255
     
     /* LED driver utility functions. */
+    void RGB_Init(void);
     void RGB_Stop(void);
     void RGB_Start(void);
     void RGB_Driver(uint8_t* dataPtr);

@@ -80,7 +80,7 @@ void IMU_RegistersSetup()
     
     // Write
     /* Prepare the TX packet */
-    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_NULL};
+    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_IA1_OVERRUN};
 	/* Nothing to RX... */
 	temp = 0;
 	

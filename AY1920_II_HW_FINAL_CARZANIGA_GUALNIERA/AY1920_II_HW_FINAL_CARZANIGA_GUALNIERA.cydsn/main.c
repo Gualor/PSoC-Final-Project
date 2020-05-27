@@ -14,7 +14,7 @@
 /* Project dependencies. */
 #include "InterruptRoutines.h"
 #include "SPI_Interface.h"
-#include "LED_Driver.h"
+#include "RGB_Driver.h"
 #include "LogUtils.h"
 #include "25LC256.h"
 #include "stdio.h"
@@ -26,7 +26,7 @@ char bufferUART[100];
  * Main function designated to setup stuff.
  */
 int main(void)
-{    
+{   
     // Enable global interrupts
     CyGlobalIntEnable;
     
@@ -58,14 +58,15 @@ int main(void)
     // Initialize ADC
     ADC_DELSIG_Start();
     
-    // Initialize LED RGB
-    RGB_Start();
-    
+    // Initliazide RGB LED
+    RGB_Init();
+
     // Initialize button state
     button_state = STOP_MODE;
     
-    // Initialize IMU data flag
-    IMU_interrupt_flag = 0;
+    // Initialize IMU flags
+    IMU_data_ready_flag = 0;
+    IMU_over_threshold_flag = 0;
 
     // End of setup
     CyDelay(10);
@@ -79,111 +80,102 @@ int main(void)
     // Main loop
     for(;;)
     {   
-        // Enter configuration mode
-        if (button_state == CONFIG_MODE)
+        // Board state handler
+        switch (button_state)
         {
-            // TODO: IMU_Stop()
-            
-            // While in configuration mode
-            while(EEPROM_retrieveConfigFlag() == 1)
-            {
-                // Assign new send flag based on knob
-                send_flag = POT_Read_Value(send_flag);
+            case STOP_MODE:
                 
-                // Drive LED blue channel based on flag
-                RGB_sendFlagNotify(send_flag);
-            }
+                // Do nothing
+                break;
+            
+            case START_MODE:
+                
+                // Drive LED based on IMU data
+                RGB_Driver(IMU_DataBuffer);
+                break;
+     
+            case CONFIG_MODE:
+                
+                // Turn RGB LED on
+                RGB_Start();
+                
+                // Change send flag to send IMU data over UART
+                while(EEPROM_retrieveConfigFlag() == 1)
+                {
+                    // Assign new send flag based on knob
+                    send_flag = POT_Read_Value(send_flag);
+                    
+                    // Drive LED blue channel based on flag
+                    RGB_sendFlagNotify(send_flag);
+                }
+                RGB_Stop();
 
-            // Save send flag inside EEPROM
-            EEPROM_saveSendFlag(send_flag);
-
-            // TODO: IMU_Start()   
+                // Save send flag inside EEPROM
+                EEPROM_saveSendFlag(send_flag);
+                break;  
         }
         
-        // External ISR occurence
-        if(IMU_interrupt_flag == 1)
-        {   
-            // Check if ISR has been triggered by FIFO data overrun
-            if((IMU_ReadByte(LIS3DH_FIFO_SRC_REG)) & (LIS3DH_FIFO_SRC_REG_OVR_MASK))
+        // IMU ISR FIFO data overrun event
+        if (IMU_data_ready_flag == 1)
+        {
+            // Read data via SPI from IMU
+            IMU_ReadFIFO(IMU_DataBuffer);
+            
+            // Store the read FIFO in the LOG buffer
+            IMU_StoreFIFO(IMU_DataBuffer);
+            
+            // Check EEPROM if send flag is set
+            if (EEPROM_retrieveSendFlag() == 1)
             {
-                // Read data via SPI from IMU
-                IMU_ReadFIFO(IMU_DataBuffer);
-                
-                // Store the read FIFO in the LOG buffer
-                IMU_StoreFIFO(IMU_DataBuffer);
-    
                 //Send data read from FIFO via UART
                 IMU_DataSend(IMU_DataBuffer);
-                
-                // Reset the FIFO to enable next ISR occurrences
-                IMU_ResetFIFO();
-                
-                // Drive RGB LED with IMU data
-                RGB_Driver(IMU_DataBuffer); 
             }
+
+            // Reset the FIFO to enable next ISR occurrences
+            IMU_ResetFIFO();
             
-            // Over threshold event occured
-            else
-            {   
-                // Declare int_reg variable to store the last event occurred later in the log
-                uint8_t int_reg;
-                
-                // Capture all the duration of the overthreshold event (avoid multiple ISR incoming for the same event)
-                while((int_reg = IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
-                {
-                    // Check if there are data available during the overthreshold event, in order to not lose them
-                    if((IMU_ReadByte(LIS3DH_FIFO_SRC_REG)) & (LIS3DH_FIFO_SRC_REG_OVR_MASK))
-                    {
-                        // Read data via SPI from IMU
-                        IMU_ReadFIFO(IMU_DataBuffer);
-                        
-                        // Store the read FIFO in the LOG buffer
-                        IMU_StoreFIFO(IMU_DataBuffer);
-                        
-                        // Reset the FIFO to enable next ISR occurrences
-                        IMU_ResetFIFO();
-                        
-                    }       
-                }
-                
-                // Get sequential ID number
-                uint8_t log_id = EEPROM_retrieveLogCount();
-                
-                // Get timestamp in seconds from boot
-                uint16_t timestamp = LOG_getTimestamp();
-                
-                for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
-                {
-                    uint8_t payload[LOG_MESSAGE_DATA_BYTE];
-               
-                    
-                    // Get payload of 60 bytes from the IMU queue
-                    IMU_getPayload(payload, i);
-                    
-                    // Create log type message
-                    log_t log_message = LOG_createMessage(log_id, timestamp, int_reg, payload);
-                    
-                    // Store message inside EEPROM
-                    EEPROM_storeLogMessage(log_message);
-                    
-                    // Get page of first log
-                    log_t asd = EEPROM_retrieveLogMessage(log_id, i);
-                    
-                    // Send message via uart
-                    LOG_sendData(&asd);
-                }
-            }
-            
-            // Reset flag interrupt flag
-            IMU_interrupt_flag = 0;
+            // End of IMU data reading
+            IMU_data_ready_flag = 0;
         }
         
-        // Control to flush the outliers interrupt from overthreshold events 
-        if((IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK))
-        {
-            //UART_PutChar('O');
-        }
-        
+        // IMU ISR over threshold event
+        if (IMU_over_threshold_flag == 1)
+        {   
+            // Capture all over threshold event's interrupts
+            uint8_t int_reg;
+            while((int_reg = IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK));
+            
+            // Get sequential ID number
+            uint8_t log_id = EEPROM_retrieveLogCount();
+            
+            // Get timestamp in seconds from boot
+            uint16_t timestamp = LOG_getTimestamp();
+            
+            for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
+            {        
+                // Get payload of 60 bytes from the IMU queue
+                uint8_t payload[LOG_MESSAGE_DATA_BYTE];
+                IMU_getPayload(payload, i);
+                
+                // Create log type message
+                log_t log_message = LOG_createMessage(log_id, int_reg, timestamp, payload);
+                
+                // Store message inside EEPROM
+                EEPROM_storeLogMessage(log_message);
+                
+                // Get page of first log
+                log_t asd = EEPROM_retrieveLogMessage(log_id, i);
+                
+                // Send message via uart
+                //LOG_sendData(&asd);
+            }
+            
+            // End of over threshold event
+            IMU_over_threshold_flag = 0;
+            
+            // Reset the FIFO to enable new ISR occurrences
+            IMU_ResetFIFO();
+        }   
     }
     
     return 0;

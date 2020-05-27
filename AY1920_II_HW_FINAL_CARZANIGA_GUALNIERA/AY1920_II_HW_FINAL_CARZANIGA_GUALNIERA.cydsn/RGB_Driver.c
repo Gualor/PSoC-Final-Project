@@ -37,7 +37,7 @@
 */
 
 /* Project dependencies. */
-#include "LED_Driver.h"
+#include "RGB_Driver.h"
 
 /*
  * Drive LED RGB by setting PWM duty cycles based
@@ -74,27 +74,58 @@ void RGB_sendFlagNotify(uint8_t flag)
 }
 
 /*
- * Start RGB pulse width modulators.
+ * Initialize RGB pulse width modulators with configured
+ * settings.
  */
-void RGB_Start(void)
+void RGB_Init(void)
 {
-    // Enable red/green PWM
-    PWM_RG_Start();
+    // Initialize red/green PWM
+    PWM_RG_Init();
     
-    // Enable blue PWM
-    PWM_B_Start();
+    // Initialize blue PWM
+    PWM_B_Init();
 }
 
 /*
- * Stop RGB pulse width modulators.
+ * Start RGB pulse width modulators if not already running,
+ * do nothing otherwise.
+ */
+void RGB_Start(void)
+{
+    // Check if enable bit isn't already set
+    if (!(PWM_RG_ReadControlRegister() & PWM_RG_CTRL_ENABLE))
+    {
+        // Enable red/green PWM
+        PWM_RG_Start();
+    }
+    
+    // Check if enable bit isn't already set
+    if (!(PWM_B_ReadControlRegister() & PWM_B_CTRL_ENABLE))
+    {
+        // Enable blue PWM
+        PWM_B_Start();
+    }
+}
+
+/*
+ * Stop RGB pulse width modulators if not already paused,
+ * do nothing otherwise.
  */
 void RGB_Stop(void)
 {
-    // Disable red/green PWM
-    PWM_RG_Stop();
+    // Check if enable bit is already set
+    if (PWM_RG_ReadControlRegister() & PWM_RG_CTRL_ENABLE)
+    {
+        // Disable red/green PWM
+        PWM_RG_Stop();
+    }
     
-    // Disable blue PWM
-    PWM_B_Stop();
+    // Check if enable bit is already set
+    if (PWM_B_ReadControlRegister() & PWM_B_CTRL_ENABLE)
+    {
+        // Disable blue PWM
+        PWM_B_Stop();
+    }
 }
 
 /*
