@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
   28:Generated_Source\PSoC5/MAIN_TIMER.c **** 
   29:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
   30:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_Init
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 2
 
 
   31:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
   85:Generated_Source\PSoC5/MAIN_TIMER.c ****             #if (CY_PSOC5A)
   86:Generated_Source\PSoC5/MAIN_TIMER.c ****                 /* Set the default Run Mode of the Timer to Continuous */
   87:Generated_Source\PSoC5/MAIN_TIMER.c ****                 MAIN_TIMER_CONTROL2 |= MAIN_TIMER_CTRL_MODE_PULSEWIDTH;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 3
 
 
   88:Generated_Source\PSoC5/MAIN_TIMER.c ****             #endif /* Set Continuous Run Mode in CONTROL2 for PSoC5A */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  142:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_interruptState = CyEnterCriticalSection();
  143:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  144:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Use the interrupt output of the status register for IRQ output */
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 4
 
 
  145:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_STATUS_AUX_CTRL |= MAIN_TIMER_STATUS_ACTL_INT_EN_MASK;
@@ -226,46 +226,36 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  182:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Globally Enable the Fixed Function Block chosen */
  183:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (MAIN_TIMER_UsingFixedFunction)
  184:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_GLOBAL_ENABLE |= MAIN_TIMER_BLOCK_EN_MASK;
-  33              		.loc 1 184 0
-  34 0000 084A     		ldr	r2, .L2
-  35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  36 0004 43F00203 		orr	r3, r3, #2
-  37 0008 1370     		strb	r3, [r2]
  185:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_GLOBAL_STBY_ENABLE |= MAIN_TIMER_BLOCK_STBY_EN_MASK;
-  38              		.loc 1 185 0
-  39 000a 1032     		adds	r2, r2, #16
-  40 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  41 000e 43F00203 		orr	r3, r3, #2
-  42 0012 1370     		strb	r3, [r2]
  186:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Set Enable bit for enabling Fixed function timer*/
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 5
-
-
  187:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  188:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Remove assignment if control register is removed */
  189:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED || MAIN_TIMER_UsingFixedFunction)
  190:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL |= MAIN_TIMER_CTRL_ENABLE;
-  43              		.loc 1 190 0
-  44 0014 02F65932 		addw	r2, r2, #2905
-  45 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  46 001a 43F00103 		orr	r3, r3, #1
-  47 001e 1370     		strb	r3, [r2]
-  48 0020 7047     		bx	lr
-  49              	.L3:
-  50 0022 00BF     		.align	2
-  51              	.L2:
-  52 0024 A3430040 		.word	1073759139
-  53              		.cfi_endproc
-  54              	.LFE1:
-  55              		.size	MAIN_TIMER_Enable, .-MAIN_TIMER_Enable
-  56              		.section	.text.MAIN_TIMER_Stop,"ax",%progbits
-  57              		.align	2
-  58              		.global	MAIN_TIMER_Stop
-  59              		.thumb
-  60              		.thumb_func
-  61              		.type	MAIN_TIMER_Stop, %function
-  62              	MAIN_TIMER_Stop:
-  63              	.LFB3:
+  33              		.loc 1 190 0
+  34 0000 024A     		ldr	r2, .L2
+  35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  36 0004 43F08003 		orr	r3, r3, #128
+  37 0008 1370     		strb	r3, [r2]
+  38 000a 7047     		bx	lr
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 5
+
+
+  39              	.L3:
+  40              		.align	2
+  41              	.L2:
+  42 000c 77640040 		.word	1073767543
+  43              		.cfi_endproc
+  44              	.LFE1:
+  45              		.size	MAIN_TIMER_Enable, .-MAIN_TIMER_Enable
+  46              		.section	.text.MAIN_TIMER_Stop,"ax",%progbits
+  47              		.align	2
+  48              		.global	MAIN_TIMER_Stop
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	MAIN_TIMER_Stop, %function
+  52              	MAIN_TIMER_Stop:
+  53              	.LFB3:
  191:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Remove assignment if control register is removed */
  192:Generated_Source\PSoC5/MAIN_TIMER.c **** }
  193:Generated_Source\PSoC5/MAIN_TIMER.c **** 
@@ -298,9 +288,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  220:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  221:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_initVar = 1u;   /* Clear this bit for Initialization */
  222:Generated_Source\PSoC5/MAIN_TIMER.c ****     }
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 6
-
-
  223:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  224:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Enable the Timer */
  225:Generated_Source\PSoC5/MAIN_TIMER.c ****     MAIN_TIMER_Enable();
@@ -311,6 +298,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  230:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_Stop
  231:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
  232:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 6
+
+
  233:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
  234:Generated_Source\PSoC5/MAIN_TIMER.c **** *  The stop function halts the timer, but does not change any modes or disable
  235:Generated_Source\PSoC5/MAIN_TIMER.c **** *  interrupts.
@@ -327,60 +317,50 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  246:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  247:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_Stop(void) 
  248:Generated_Source\PSoC5/MAIN_TIMER.c **** {
-  64              		.loc 1 248 0
-  65              		.cfi_startproc
-  66              		@ args = 0, pretend = 0, frame = 0
-  67              		@ frame_needed = 0, uses_anonymous_args = 0
-  68              		@ link register save eliminated.
+  54              		.loc 1 248 0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
  249:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Disable Timer */
  250:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(!MAIN_TIMER_UDB_CONTROL_REG_REMOVED || MAIN_TIMER_UsingFixedFunction)
  251:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL &= ((uint8)(~MAIN_TIMER_CTRL_ENABLE));
-  69              		.loc 1 251 0
-  70 0000 084A     		ldr	r2, .L5
-  71 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  72 0004 03F0FE03 		and	r3, r3, #254
-  73 0008 1370     		strb	r3, [r2]
+  59              		.loc 1 251 0
+  60 0000 024A     		ldr	r2, .L5
+  61 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  62 0004 03F07F03 		and	r3, r3, #127
+  63 0008 1370     		strb	r3, [r2]
+  64 000a 7047     		bx	lr
+  65              	.L6:
+  66              		.align	2
+  67              	.L5:
+  68 000c 77640040 		.word	1073767543
+  69              		.cfi_endproc
+  70              	.LFE3:
+  71              		.size	MAIN_TIMER_Stop, .-MAIN_TIMER_Stop
+  72              		.section	.text.MAIN_TIMER_SetInterruptMode,"ax",%progbits
+  73              		.align	2
+  74              		.global	MAIN_TIMER_SetInterruptMode
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	MAIN_TIMER_SetInterruptMode, %function
+  78              	MAIN_TIMER_SetInterruptMode:
+  79              	.LFB4:
  252:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Remove assignment if control register is removed */
  253:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  254:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Globally disable the Fixed Function Block chosen */
  255:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (MAIN_TIMER_UsingFixedFunction)
  256:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_GLOBAL_ENABLE &= ((uint8)(~MAIN_TIMER_BLOCK_EN_MASK));
-  74              		.loc 1 256 0
-  75 000a A2F66932 		subw	r2, r2, #2921
-  76 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  77 0010 03F0FD03 		and	r3, r3, #253
-  78 0014 1370     		strb	r3, [r2]
  257:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_GLOBAL_STBY_ENABLE &= ((uint8)(~MAIN_TIMER_BLOCK_STBY_EN_MASK));
-  79              		.loc 1 257 0
-  80 0016 1032     		adds	r2, r2, #16
-  81 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  82 001a 03F0FD03 		and	r3, r3, #253
-  83 001e 1370     		strb	r3, [r2]
-  84 0020 7047     		bx	lr
-  85              	.L6:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 7
-
-
-  86 0022 00BF     		.align	2
-  87              	.L5:
-  88 0024 0C4F0040 		.word	1073762060
-  89              		.cfi_endproc
-  90              	.LFE3:
-  91              		.size	MAIN_TIMER_Stop, .-MAIN_TIMER_Stop
-  92              		.section	.text.MAIN_TIMER_SetInterruptMode,"ax",%progbits
-  93              		.align	2
-  94              		.global	MAIN_TIMER_SetInterruptMode
-  95              		.thumb
-  96              		.thumb_func
-  97              		.type	MAIN_TIMER_SetInterruptMode, %function
-  98              	MAIN_TIMER_SetInterruptMode:
-  99              	.LFB4:
  258:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
  259:Generated_Source\PSoC5/MAIN_TIMER.c **** }
  260:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  261:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  262:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
  263:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_SetInterruptMode
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 7
+
+
  264:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
  265:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  266:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
@@ -398,35 +378,32 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  278:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  279:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SetInterruptMode(uint8 interruptMode) 
  280:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 100              		.loc 1 280 0
- 101              		.cfi_startproc
- 102              		@ args = 0, pretend = 0, frame = 0
- 103              		@ frame_needed = 0, uses_anonymous_args = 0
- 104              		@ link register save eliminated.
- 105              	.LVL0:
+  80              		.loc 1 280 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85              	.LVL0:
  281:Generated_Source\PSoC5/MAIN_TIMER.c ****     MAIN_TIMER_STATUS_MASK = interruptMode;
- 106              		.loc 1 281 0
- 107 0000 014B     		ldr	r3, .L8
- 108 0002 1870     		strb	r0, [r3]
- 109 0004 7047     		bx	lr
- 110              	.L9:
- 111 0006 00BF     		.align	2
- 112              	.L8:
- 113 0008 0F4F0040 		.word	1073762063
- 114              		.cfi_endproc
- 115              	.LFE4:
- 116              		.size	MAIN_TIMER_SetInterruptMode, .-MAIN_TIMER_SetInterruptMode
- 117              		.section	.text.MAIN_TIMER_SoftwareCapture,"ax",%progbits
- 118              		.align	2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 8
-
-
- 119              		.global	MAIN_TIMER_SoftwareCapture
- 120              		.thumb
- 121              		.thumb_func
- 122              		.type	MAIN_TIMER_SoftwareCapture, %function
- 123              	MAIN_TIMER_SoftwareCapture:
- 124              	.LFB5:
+  86              		.loc 1 281 0
+  87 0000 014B     		ldr	r3, .L8
+  88 0002 1870     		strb	r0, [r3]
+  89 0004 7047     		bx	lr
+  90              	.L9:
+  91 0006 00BF     		.align	2
+  92              	.L8:
+  93 0008 84640040 		.word	1073767556
+  94              		.cfi_endproc
+  95              	.LFE4:
+  96              		.size	MAIN_TIMER_SetInterruptMode, .-MAIN_TIMER_SetInterruptMode
+  97              		.section	.text.MAIN_TIMER_SoftwareCapture,"ax",%progbits
+  98              		.align	2
+  99              		.global	MAIN_TIMER_SoftwareCapture
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	MAIN_TIMER_SoftwareCapture, %function
+ 103              	MAIN_TIMER_SoftwareCapture:
+ 104              	.LFB5:
  282:Generated_Source\PSoC5/MAIN_TIMER.c **** }
  283:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  284:Generated_Source\PSoC5/MAIN_TIMER.c **** 
@@ -441,6 +418,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  293:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
  294:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  295:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 8
+
+
  296:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
  297:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  298:Generated_Source\PSoC5/MAIN_TIMER.c **** * Side Effects:
@@ -449,38 +429,35 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  301:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  302:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SoftwareCapture(void) 
  303:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 125              		.loc 1 303 0
- 126              		.cfi_startproc
- 127              		@ args = 0, pretend = 0, frame = 0
- 128              		@ frame_needed = 0, uses_anonymous_args = 0
- 129              		@ link register save eliminated.
+ 105              		.loc 1 303 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		@ link register save eliminated.
  304:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Generate a software capture by reading the counter register */
  305:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(MAIN_TIMER_UsingFixedFunction)
  306:Generated_Source\PSoC5/MAIN_TIMER.c ****         (void)CY_GET_REG16(MAIN_TIMER_COUNTER_LSB_PTR);
- 130              		.loc 1 306 0
- 131 0000 014B     		ldr	r3, .L11
- 132 0002 1B88     		ldrh	r3, [r3]
- 133 0004 7047     		bx	lr
- 134              	.L12:
- 135 0006 00BF     		.align	2
- 136              	.L11:
- 137 0008 124F0040 		.word	1073762066
- 138              		.cfi_endproc
- 139              	.LFE5:
- 140              		.size	MAIN_TIMER_SoftwareCapture, .-MAIN_TIMER_SoftwareCapture
- 141              		.section	.text.MAIN_TIMER_ReadStatusRegister,"ax",%progbits
- 142              		.align	2
- 143              		.global	MAIN_TIMER_ReadStatusRegister
- 144              		.thumb
- 145              		.thumb_func
- 146              		.type	MAIN_TIMER_ReadStatusRegister, %function
- 147              	MAIN_TIMER_ReadStatusRegister:
- 148              	.LFB6:
  307:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
  308:Generated_Source\PSoC5/MAIN_TIMER.c ****         (void)CY_GET_REG8(MAIN_TIMER_COUNTER_LSB_PTR_8BIT);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 9
-
-
+ 110              		.loc 1 308 0
+ 111 0000 014B     		ldr	r3, .L11
+ 112 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 113 0004 7047     		bx	lr
+ 114              	.L12:
+ 115 0006 00BF     		.align	2
+ 116              	.L11:
+ 117 0008 04640040 		.word	1073767428
+ 118              		.cfi_endproc
+ 119              	.LFE5:
+ 120              		.size	MAIN_TIMER_SoftwareCapture, .-MAIN_TIMER_SoftwareCapture
+ 121              		.section	.text.MAIN_TIMER_ReadStatusRegister,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	MAIN_TIMER_ReadStatusRegister
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	MAIN_TIMER_ReadStatusRegister, %function
+ 127              	MAIN_TIMER_ReadStatusRegister:
+ 128              	.LFB6:
  309:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif/* (MAIN_TIMER_UsingFixedFunction) */
  310:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Capture Data is now in the FIFO */
  311:Generated_Source\PSoC5/MAIN_TIMER.c **** }
@@ -501,46 +478,46 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  326:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
  327:Generated_Source\PSoC5/MAIN_TIMER.c **** *  The contents of the status register
  328:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 9
+
+
  329:Generated_Source\PSoC5/MAIN_TIMER.c **** * Side Effects:
  330:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Status register bits may be clear on read.
  331:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  332:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  333:Generated_Source\PSoC5/MAIN_TIMER.c **** uint8   MAIN_TIMER_ReadStatusRegister(void) 
  334:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 149              		.loc 1 334 0
- 150              		.cfi_startproc
- 151              		@ args = 0, pretend = 0, frame = 0
- 152              		@ frame_needed = 0, uses_anonymous_args = 0
- 153              		@ link register save eliminated.
+ 129              		.loc 1 334 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
  335:Generated_Source\PSoC5/MAIN_TIMER.c ****     return (MAIN_TIMER_STATUS);
- 154              		.loc 1 335 0
- 155 0000 014B     		ldr	r3, .L14
- 156 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 134              		.loc 1 335 0
+ 135 0000 014B     		ldr	r3, .L14
+ 136 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  336:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 157              		.loc 1 336 0
- 158 0004 7047     		bx	lr
- 159              	.L15:
- 160 0006 00BF     		.align	2
- 161              	.L14:
- 162 0008 0F4F0040 		.word	1073762063
- 163              		.cfi_endproc
- 164              	.LFE6:
- 165              		.size	MAIN_TIMER_ReadStatusRegister, .-MAIN_TIMER_ReadStatusRegister
- 166              		.section	.text.MAIN_TIMER_ReadControlRegister,"ax",%progbits
- 167              		.align	2
- 168              		.global	MAIN_TIMER_ReadControlRegister
- 169              		.thumb
- 170              		.thumb_func
- 171              		.type	MAIN_TIMER_ReadControlRegister, %function
- 172              	MAIN_TIMER_ReadControlRegister:
- 173              	.LFB7:
+ 137              		.loc 1 336 0
+ 138 0004 7047     		bx	lr
+ 139              	.L15:
+ 140 0006 00BF     		.align	2
+ 141              	.L14:
+ 142 0008 64640040 		.word	1073767524
+ 143              		.cfi_endproc
+ 144              	.LFE6:
+ 145              		.size	MAIN_TIMER_ReadStatusRegister, .-MAIN_TIMER_ReadStatusRegister
+ 146              		.section	.text.MAIN_TIMER_ReadControlRegister,"ax",%progbits
+ 147              		.align	2
+ 148              		.global	MAIN_TIMER_ReadControlRegister
+ 149              		.thumb
+ 150              		.thumb_func
+ 151              		.type	MAIN_TIMER_ReadControlRegister, %function
+ 152              	MAIN_TIMER_ReadControlRegister:
+ 153              	.LFB7:
  337:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  338:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  339:Generated_Source\PSoC5/MAIN_TIMER.c **** #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) /* Remove API if control register is unused */
  340:Generated_Source\PSoC5/MAIN_TIMER.c **** 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 10
-
-
  341:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  342:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
  343:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_ReadControlRegister
@@ -558,37 +535,40 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  355:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  356:Generated_Source\PSoC5/MAIN_TIMER.c **** uint8 MAIN_TIMER_ReadControlRegister(void) 
  357:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 174              		.loc 1 357 0
- 175              		.cfi_startproc
- 176              		@ args = 0, pretend = 0, frame = 0
- 177              		@ frame_needed = 0, uses_anonymous_args = 0
- 178              		@ link register save eliminated.
+ 154              		.loc 1 357 0
+ 155              		.cfi_startproc
+ 156              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 10
+
+
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
  358:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) 
  359:Generated_Source\PSoC5/MAIN_TIMER.c ****         return ((uint8)MAIN_TIMER_CONTROL);
- 179              		.loc 1 359 0
- 180 0000 014B     		ldr	r3, .L17
- 181 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 159              		.loc 1 359 0
+ 160 0000 014B     		ldr	r3, .L17
+ 161 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  360:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
  361:Generated_Source\PSoC5/MAIN_TIMER.c ****         return (0);
  362:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) */
  363:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 182              		.loc 1 363 0
- 183 0004 7047     		bx	lr
- 184              	.L18:
- 185 0006 00BF     		.align	2
- 186              	.L17:
- 187 0008 0C4F0040 		.word	1073762060
- 188              		.cfi_endproc
- 189              	.LFE7:
- 190              		.size	MAIN_TIMER_ReadControlRegister, .-MAIN_TIMER_ReadControlRegister
- 191              		.section	.text.MAIN_TIMER_WriteControlRegister,"ax",%progbits
- 192              		.align	2
- 193              		.global	MAIN_TIMER_WriteControlRegister
- 194              		.thumb
- 195              		.thumb_func
- 196              		.type	MAIN_TIMER_WriteControlRegister, %function
- 197              	MAIN_TIMER_WriteControlRegister:
- 198              	.LFB8:
+ 162              		.loc 1 363 0
+ 163 0004 7047     		bx	lr
+ 164              	.L18:
+ 165 0006 00BF     		.align	2
+ 166              	.L17:
+ 167 0008 77640040 		.word	1073767543
+ 168              		.cfi_endproc
+ 169              	.LFE7:
+ 170              		.size	MAIN_TIMER_ReadControlRegister, .-MAIN_TIMER_ReadControlRegister
+ 171              		.section	.text.MAIN_TIMER_WriteControlRegister,"ax",%progbits
+ 172              		.align	2
+ 173              		.global	MAIN_TIMER_WriteControlRegister
+ 174              		.thumb
+ 175              		.thumb_func
+ 176              		.type	MAIN_TIMER_WriteControlRegister, %function
+ 177              	MAIN_TIMER_WriteControlRegister:
+ 178              	.LFB8:
  364:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  365:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  366:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
@@ -598,9 +578,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  370:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
  371:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Sets the bit-field of the control register.
  372:Generated_Source\PSoC5/MAIN_TIMER.c **** *
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 11
-
-
  373:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
  374:Generated_Source\PSoC5/MAIN_TIMER.c **** *  control: The contents of the control register
  375:Generated_Source\PSoC5/MAIN_TIMER.c **** *
@@ -609,33 +586,36 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  378:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
  379:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_WriteControlRegister(uint8 control) 
  380:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 199              		.loc 1 380 0
- 200              		.cfi_startproc
- 201              		@ args = 0, pretend = 0, frame = 0
- 202              		@ frame_needed = 0, uses_anonymous_args = 0
- 203              		@ link register save eliminated.
- 204              	.LVL1:
+ 179              		.loc 1 380 0
+ 180              		.cfi_startproc
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 184              	.LVL1:
  381:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) 
  382:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL = control;
- 205              		.loc 1 382 0
- 206 0000 014B     		ldr	r3, .L20
- 207 0002 1870     		strb	r0, [r3]
- 208 0004 7047     		bx	lr
- 209              	.L21:
- 210 0006 00BF     		.align	2
- 211              	.L20:
- 212 0008 0C4F0040 		.word	1073762060
- 213              		.cfi_endproc
- 214              	.LFE8:
- 215              		.size	MAIN_TIMER_WriteControlRegister, .-MAIN_TIMER_WriteControlRegister
- 216              		.section	.text.MAIN_TIMER_ReadPeriod,"ax",%progbits
- 217              		.align	2
- 218              		.global	MAIN_TIMER_ReadPeriod
- 219              		.thumb
- 220              		.thumb_func
- 221              		.type	MAIN_TIMER_ReadPeriod, %function
- 222              	MAIN_TIMER_ReadPeriod:
- 223              	.LFB9:
+ 185              		.loc 1 382 0
+ 186 0000 014B     		ldr	r3, .L20
+ 187 0002 1870     		strb	r0, [r3]
+ 188 0004 7047     		bx	lr
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 11
+
+
+ 189              	.L21:
+ 190 0006 00BF     		.align	2
+ 191              	.L20:
+ 192 0008 77640040 		.word	1073767543
+ 193              		.cfi_endproc
+ 194              	.LFE8:
+ 195              		.size	MAIN_TIMER_WriteControlRegister, .-MAIN_TIMER_WriteControlRegister
+ 196              		.section	.text.MAIN_TIMER_ReadPeriod,"ax",%progbits
+ 197              		.align	2
+ 198              		.global	MAIN_TIMER_ReadPeriod
+ 199              		.thumb
+ 200              		.thumb_func
+ 201              		.type	MAIN_TIMER_ReadPeriod, %function
+ 202              	MAIN_TIMER_ReadPeriod:
+ 203              	.LFB9:
  383:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
  384:Generated_Source\PSoC5/MAIN_TIMER.c ****         control = 0u;
  385:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) */
@@ -658,43 +638,42 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  402:Generated_Source\PSoC5/MAIN_TIMER.c **** *  The present value of the counter.
  403:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  404:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 12
-
-
- 405:Generated_Source\PSoC5/MAIN_TIMER.c **** uint16 MAIN_TIMER_ReadPeriod(void) 
+ 405:Generated_Source\PSoC5/MAIN_TIMER.c **** uint32 MAIN_TIMER_ReadPeriod(void) 
  406:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 224              		.loc 1 406 0
- 225              		.cfi_startproc
- 226              		@ args = 0, pretend = 0, frame = 0
- 227              		@ frame_needed = 0, uses_anonymous_args = 0
- 228              		@ link register save eliminated.
+ 204              		.loc 1 406 0
+ 205              		.cfi_startproc
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208              		@ link register save eliminated.
  407:Generated_Source\PSoC5/MAIN_TIMER.c ****    #if(MAIN_TIMER_UsingFixedFunction)
- 408:Generated_Source\PSoC5/MAIN_TIMER.c ****        return ((uint16)CY_GET_REG16(MAIN_TIMER_PERIOD_LSB_PTR));
- 229              		.loc 1 408 0
- 230 0000 014B     		ldr	r3, .L23
- 231 0002 1888     		ldrh	r0, [r3]
+ 408:Generated_Source\PSoC5/MAIN_TIMER.c ****        return ((uint32)CY_GET_REG16(MAIN_TIMER_PERIOD_LSB_PTR));
  409:Generated_Source\PSoC5/MAIN_TIMER.c ****    #else
- 410:Generated_Source\PSoC5/MAIN_TIMER.c ****        return (CY_GET_REG16(MAIN_TIMER_PERIOD_LSB_PTR));
+ 410:Generated_Source\PSoC5/MAIN_TIMER.c ****        return (CY_GET_REG32(MAIN_TIMER_PERIOD_LSB_PTR));
+ 209              		.loc 1 410 0
+ 210 0000 014B     		ldr	r3, .L23
+ 211 0002 1868     		ldr	r0, [r3]
  411:Generated_Source\PSoC5/MAIN_TIMER.c ****    #endif /* (MAIN_TIMER_UsingFixedFunction) */
  412:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 232              		.loc 1 412 0
- 233 0004 80B2     		uxth	r0, r0
- 234 0006 7047     		bx	lr
- 235              	.L24:
- 236              		.align	2
- 237              	.L23:
- 238 0008 104F0040 		.word	1073762064
- 239              		.cfi_endproc
- 240              	.LFE9:
- 241              		.size	MAIN_TIMER_ReadPeriod, .-MAIN_TIMER_ReadPeriod
- 242              		.section	.text.MAIN_TIMER_WritePeriod,"ax",%progbits
- 243              		.align	2
- 244              		.global	MAIN_TIMER_WritePeriod
- 245              		.thumb
- 246              		.thumb_func
- 247              		.type	MAIN_TIMER_WritePeriod, %function
- 248              	MAIN_TIMER_WritePeriod:
- 249              	.LFB10:
+ 212              		.loc 1 412 0
+ 213 0004 7047     		bx	lr
+ 214              	.L24:
+ 215 0006 00BF     		.align	2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 12
+
+
+ 216              	.L23:
+ 217 0008 24640040 		.word	1073767460
+ 218              		.cfi_endproc
+ 219              	.LFE9:
+ 220              		.size	MAIN_TIMER_ReadPeriod, .-MAIN_TIMER_ReadPeriod
+ 221              		.section	.text.MAIN_TIMER_WritePeriod,"ax",%progbits
+ 222              		.align	2
+ 223              		.global	MAIN_TIMER_WritePeriod
+ 224              		.thumb
+ 225              		.thumb_func
+ 226              		.type	MAIN_TIMER_WritePeriod, %function
+ 227              	MAIN_TIMER_WritePeriod:
+ 228              	.LFB10:
  413:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  414:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  415:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
@@ -713,41 +692,41 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  428:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
  429:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  430:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
- 431:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_WritePeriod(uint16 period) 
+ 431:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_WritePeriod(uint32 period) 
  432:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 250              		.loc 1 432 0
- 251              		.cfi_startproc
- 252              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 13
-
-
- 253              		@ frame_needed = 0, uses_anonymous_args = 0
- 254              		@ link register save eliminated.
- 255              	.LVL2:
+ 229              		.loc 1 432 0
+ 230              		.cfi_startproc
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234              	.LVL2:
  433:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(MAIN_TIMER_UsingFixedFunction)
  434:Generated_Source\PSoC5/MAIN_TIMER.c ****         uint16 period_temp = (uint16)period;
  435:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG16(MAIN_TIMER_PERIOD_LSB_PTR, period_temp);
- 256              		.loc 1 435 0
- 257 0000 014B     		ldr	r3, .L26
- 258 0002 1880     		strh	r0, [r3]	@ movhi
- 259 0004 7047     		bx	lr
- 260              	.L27:
- 261 0006 00BF     		.align	2
- 262              	.L26:
- 263 0008 104F0040 		.word	1073762064
- 264              		.cfi_endproc
- 265              	.LFE10:
- 266              		.size	MAIN_TIMER_WritePeriod, .-MAIN_TIMER_WritePeriod
- 267              		.section	.text.MAIN_TIMER_ReadCapture,"ax",%progbits
- 268              		.align	2
- 269              		.global	MAIN_TIMER_ReadCapture
- 270              		.thumb
- 271              		.thumb_func
- 272              		.type	MAIN_TIMER_ReadCapture, %function
- 273              	MAIN_TIMER_ReadCapture:
- 274              	.LFB11:
  436:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
- 437:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG16(MAIN_TIMER_PERIOD_LSB_PTR, period);
+ 437:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG32(MAIN_TIMER_PERIOD_LSB_PTR, period);
+ 235              		.loc 1 437 0
+ 236 0000 014B     		ldr	r3, .L26
+ 237 0002 1860     		str	r0, [r3]
+ 238 0004 7047     		bx	lr
+ 239              	.L27:
+ 240 0006 00BF     		.align	2
+ 241              	.L26:
+ 242 0008 24640040 		.word	1073767460
+ 243              		.cfi_endproc
+ 244              	.LFE10:
+ 245              		.size	MAIN_TIMER_WritePeriod, .-MAIN_TIMER_WritePeriod
+ 246              		.section	.text.MAIN_TIMER_ReadCapture,"ax",%progbits
+ 247              		.align	2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 13
+
+
+ 248              		.global	MAIN_TIMER_ReadCapture
+ 249              		.thumb
+ 250              		.thumb_func
+ 251              		.type	MAIN_TIMER_ReadCapture, %function
+ 252              	MAIN_TIMER_ReadCapture:
+ 253              	.LFB11:
  438:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed functi
  439:Generated_Source\PSoC5/MAIN_TIMER.c **** }
  440:Generated_Source\PSoC5/MAIN_TIMER.c **** 
@@ -766,43 +745,42 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  453:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Present Capture value.
  454:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  455:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
- 456:Generated_Source\PSoC5/MAIN_TIMER.c **** uint16 MAIN_TIMER_ReadCapture(void) 
+ 456:Generated_Source\PSoC5/MAIN_TIMER.c **** uint32 MAIN_TIMER_ReadCapture(void) 
  457:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 275              		.loc 1 457 0
- 276              		.cfi_startproc
- 277              		@ args = 0, pretend = 0, frame = 0
- 278              		@ frame_needed = 0, uses_anonymous_args = 0
- 279              		@ link register save eliminated.
+ 254              		.loc 1 457 0
+ 255              		.cfi_startproc
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258              		@ link register save eliminated.
  458:Generated_Source\PSoC5/MAIN_TIMER.c ****    #if(MAIN_TIMER_UsingFixedFunction)
- 459:Generated_Source\PSoC5/MAIN_TIMER.c ****        return ((uint16)CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
- 280              		.loc 1 459 0
- 281 0000 014B     		ldr	r3, .L29
- 282 0002 1888     		ldrh	r0, [r3]
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 14
-
-
+ 459:Generated_Source\PSoC5/MAIN_TIMER.c ****        return ((uint32)CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
  460:Generated_Source\PSoC5/MAIN_TIMER.c ****    #else
- 461:Generated_Source\PSoC5/MAIN_TIMER.c ****        return (CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
+ 461:Generated_Source\PSoC5/MAIN_TIMER.c ****        return (CY_GET_REG32(MAIN_TIMER_CAPTURE_LSB_PTR));
+ 259              		.loc 1 461 0
+ 260 0000 014B     		ldr	r3, .L29
+ 261 0002 1868     		ldr	r0, [r3]
  462:Generated_Source\PSoC5/MAIN_TIMER.c ****    #endif /* (MAIN_TIMER_UsingFixedFunction) */
  463:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 283              		.loc 1 463 0
- 284 0004 80B2     		uxth	r0, r0
- 285 0006 7047     		bx	lr
- 286              	.L30:
- 287              		.align	2
- 288              	.L29:
- 289 0008 144F0040 		.word	1073762068
- 290              		.cfi_endproc
- 291              	.LFE11:
- 292              		.size	MAIN_TIMER_ReadCapture, .-MAIN_TIMER_ReadCapture
- 293              		.section	.text.MAIN_TIMER_WriteCounter,"ax",%progbits
- 294              		.align	2
- 295              		.global	MAIN_TIMER_WriteCounter
- 296              		.thumb
- 297              		.thumb_func
- 298              		.type	MAIN_TIMER_WriteCounter, %function
- 299              	MAIN_TIMER_WriteCounter:
- 300              	.LFB12:
+ 262              		.loc 1 463 0
+ 263 0004 7047     		bx	lr
+ 264              	.L30:
+ 265 0006 00BF     		.align	2
+ 266              	.L29:
+ 267 0008 44640040 		.word	1073767492
+ 268              		.cfi_endproc
+ 269              	.LFE11:
+ 270              		.size	MAIN_TIMER_ReadCapture, .-MAIN_TIMER_ReadCapture
+ 271              		.section	.text.MAIN_TIMER_WriteCounter,"ax",%progbits
+ 272              		.align	2
+ 273              		.global	MAIN_TIMER_WriteCounter
+ 274              		.thumb
+ 275              		.thumb_func
+ 276              		.type	MAIN_TIMER_WriteCounter, %function
+ 277              	MAIN_TIMER_WriteCounter:
+ 278              	.LFB12:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 14
+
+
  464:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  465:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  466:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
@@ -819,181 +797,50 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  477:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
  478:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  479:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
- 480:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_WriteCounter(uint16 counter) 
+ 480:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_WriteCounter(uint32 counter) 
  481:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 301              		.loc 1 481 0
- 302              		.cfi_startproc
- 303              		@ args = 0, pretend = 0, frame = 0
- 304              		@ frame_needed = 0, uses_anonymous_args = 0
- 305              		@ link register save eliminated.
- 306              	.LVL3:
+ 279              		.loc 1 481 0
+ 280              		.cfi_startproc
+ 281              		@ args = 0, pretend = 0, frame = 0
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283              		@ link register save eliminated.
+ 284              	.LVL3:
  482:Generated_Source\PSoC5/MAIN_TIMER.c ****    #if(MAIN_TIMER_UsingFixedFunction)
  483:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* This functionality is removed until a FixedFunction HW update to
  484:Generated_Source\PSoC5/MAIN_TIMER.c ****          * allow this register to be written
  485:Generated_Source\PSoC5/MAIN_TIMER.c ****          */
  486:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG16(MAIN_TIMER_COUNTER_LSB_PTR, (uint16)counter);
- 307              		.loc 1 486 0
- 308 0000 014B     		ldr	r3, .L32
- 309 0002 1880     		strh	r0, [r3]	@ movhi
- 310 0004 7047     		bx	lr
- 311              	.L33:
- 312 0006 00BF     		.align	2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 15
-
-
- 313              	.L32:
- 314 0008 124F0040 		.word	1073762066
- 315              		.cfi_endproc
- 316              	.LFE12:
- 317              		.size	MAIN_TIMER_WriteCounter, .-MAIN_TIMER_WriteCounter
- 318              		.section	.text.MAIN_TIMER_Init,"ax",%progbits
- 319              		.align	2
- 320              		.global	MAIN_TIMER_Init
- 321              		.thumb
- 322              		.thumb_func
- 323              		.type	MAIN_TIMER_Init, %function
- 324              	MAIN_TIMER_Init:
- 325              	.LFB0:
-  44:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(!MAIN_TIMER_UsingFixedFunction)
- 326              		.loc 1 44 0
- 327              		.cfi_startproc
- 328              		@ args = 0, pretend = 0, frame = 0
- 329              		@ frame_needed = 0, uses_anonymous_args = 0
- 330 0000 08B5     		push	{r3, lr}
- 331              		.cfi_def_cfa_offset 8
- 332              		.cfi_offset 3, -8
- 333              		.cfi_offset 14, -4
-  52:Generated_Source\PSoC5/MAIN_TIMER.c **** 
- 334              		.loc 1 52 0
- 335 0002 164A     		ldr	r2, .L36
- 336 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 337 0006 03F00103 		and	r3, r3, #1
- 338 000a 1370     		strb	r3, [r2]
-  60:Generated_Source\PSoC5/MAIN_TIMER.c ****         #endif /* CONTROL3 register exists only in PSoC3 OR PSoC5LP */
- 339              		.loc 1 60 0
- 340 000c 0232     		adds	r2, r2, #2
- 341 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 342 0010 03F0FC03 		and	r3, r3, #252
- 343 0014 1370     		strb	r3, [r2]
- 106:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_RT1 |= MAIN_TIMER_SYNC;
- 344              		.loc 1 106 0
- 345 0016 124B     		ldr	r3, .L36+4
- 346 0018 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 347 001a 02F0CF02 		and	r2, r2, #207
- 348 001e 1A70     		strb	r2, [r3]
- 107:Generated_Source\PSoC5/MAIN_TIMER.c **** 
- 349              		.loc 1 107 0
- 350 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 351 0022 42F03002 		orr	r2, r2, #48
- 352 0026 1A70     		strb	r2, [r3]
- 110:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_RT1 |= MAIN_TIMER_SYNCDSI_EN;
- 353              		.loc 1 110 0
- 354 0028 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 355 002a 02F0F002 		and	r2, r2, #240
- 356 002e 1A70     		strb	r2, [r3]
- 111:Generated_Source\PSoC5/MAIN_TIMER.c **** 
- 357              		.loc 1 111 0
- 358 0030 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 359 0032 42F00F02 		orr	r2, r2, #15
- 360 0036 1A70     		strb	r2, [r3]
- 114:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Configuring registers of fixed function implementation */
- 361              		.loc 1 114 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 16
-
-
- 362 0038 0A4A     		ldr	r2, .L36+8
- 363 003a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 364 003c 43F00103 		orr	r3, r3, #1
- 365 0040 1370     		strb	r3, [r2]
- 118:Generated_Source\PSoC5/MAIN_TIMER.c ****     MAIN_TIMER_WriteCounter(MAIN_TIMER_INIT_PERIOD);
- 366              		.loc 1 118 0
- 367 0042 4FF6FF70 		movw	r0, #65535
- 368 0046 FFF7FEFF 		bl	MAIN_TIMER_WritePeriod
- 369              	.LVL4:
- 119:Generated_Source\PSoC5/MAIN_TIMER.c **** 
- 370              		.loc 1 119 0
- 371 004a 4FF6FF70 		movw	r0, #65535
- 372 004e FFF7FEFF 		bl	MAIN_TIMER_WriteCounter
- 373              	.LVL5:
- 162:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 374              		.loc 1 162 0
- 375 0052 0020     		movs	r0, #0
- 376 0054 FFF7FEFF 		bl	MAIN_TIMER_SetInterruptMode
- 377              	.LVL6:
- 378 0058 08BD     		pop	{r3, pc}
- 379              	.L37:
- 380 005a 00BF     		.align	2
- 381              	.L36:
- 382 005c 0C4F0040 		.word	1073762060
- 383 0060 174F0040 		.word	1073762071
- 384 0064 0D4F0040 		.word	1073762061
- 385              		.cfi_endproc
- 386              	.LFE0:
- 387              		.size	MAIN_TIMER_Init, .-MAIN_TIMER_Init
- 388              		.section	.text.MAIN_TIMER_Start,"ax",%progbits
- 389              		.align	2
- 390              		.global	MAIN_TIMER_Start
- 391              		.thumb
- 392              		.thumb_func
- 393              		.type	MAIN_TIMER_Start, %function
- 394              	MAIN_TIMER_Start:
- 395              	.LFB2:
- 216:Generated_Source\PSoC5/MAIN_TIMER.c ****     if(MAIN_TIMER_initVar == 0u)
- 396              		.loc 1 216 0
- 397              		.cfi_startproc
- 398              		@ args = 0, pretend = 0, frame = 0
- 399              		@ frame_needed = 0, uses_anonymous_args = 0
- 400 0000 08B5     		push	{r3, lr}
- 401              		.cfi_def_cfa_offset 8
- 402              		.cfi_offset 3, -8
- 403              		.cfi_offset 14, -4
- 217:Generated_Source\PSoC5/MAIN_TIMER.c ****     {
- 404              		.loc 1 217 0
- 405 0002 054B     		ldr	r3, .L41
- 406 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 407 0006 23B9     		cbnz	r3, .L39
- 219:Generated_Source\PSoC5/MAIN_TIMER.c **** 
- 408              		.loc 1 219 0
- 409 0008 FFF7FEFF 		bl	MAIN_TIMER_Init
- 410              	.LVL7:
- 221:Generated_Source\PSoC5/MAIN_TIMER.c ****     }
- 411              		.loc 1 221 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 17
-
-
- 412 000c 0122     		movs	r2, #1
- 413 000e 024B     		ldr	r3, .L41
- 414 0010 1A70     		strb	r2, [r3]
- 415              	.L39:
- 225:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 416              		.loc 1 225 0
- 417 0012 FFF7FEFF 		bl	MAIN_TIMER_Enable
- 418              	.LVL8:
- 419 0016 08BD     		pop	{r3, pc}
- 420              	.L42:
- 421              		.align	2
- 422              	.L41:
- 423 0018 00000000 		.word	.LANCHOR0
- 424              		.cfi_endproc
- 425              	.LFE2:
- 426              		.size	MAIN_TIMER_Start, .-MAIN_TIMER_Start
- 427              		.section	.text.MAIN_TIMER_ReadCounter,"ax",%progbits
- 428              		.align	2
- 429              		.global	MAIN_TIMER_ReadCounter
- 430              		.thumb
- 431              		.thumb_func
- 432              		.type	MAIN_TIMER_ReadCounter, %function
- 433              	MAIN_TIMER_ReadCounter:
- 434              	.LFB13:
  487:Generated_Source\PSoC5/MAIN_TIMER.c ****         
  488:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
- 489:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG16(MAIN_TIMER_COUNTER_LSB_PTR, counter);
+ 489:Generated_Source\PSoC5/MAIN_TIMER.c ****         CY_SET_REG32(MAIN_TIMER_COUNTER_LSB_PTR, counter);
+ 285              		.loc 1 489 0
+ 286 0000 014B     		ldr	r3, .L32
+ 287 0002 1860     		str	r0, [r3]
+ 288 0004 7047     		bx	lr
+ 289              	.L33:
+ 290 0006 00BF     		.align	2
+ 291              	.L32:
+ 292 0008 04640040 		.word	1073767428
+ 293              		.cfi_endproc
+ 294              	.LFE12:
+ 295              		.size	MAIN_TIMER_WriteCounter, .-MAIN_TIMER_WriteCounter
+ 296              		.section	.text.MAIN_TIMER_ReadCounter,"ax",%progbits
+ 297              		.align	2
+ 298              		.global	MAIN_TIMER_ReadCounter
+ 299              		.thumb
+ 300              		.thumb_func
+ 301              		.type	MAIN_TIMER_ReadCounter, %function
+ 302              	MAIN_TIMER_ReadCounter:
+ 303              	.LFB13:
  490:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fix
  491:Generated_Source\PSoC5/MAIN_TIMER.c **** }
  492:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  493:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  494:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
  495:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_ReadCounter
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 15
+
+
  496:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
  497:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  498:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
@@ -1006,981 +853,1466 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 1
  505:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Present compare value.
  506:Generated_Source\PSoC5/MAIN_TIMER.c **** *
  507:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
- 508:Generated_Source\PSoC5/MAIN_TIMER.c **** uint16 MAIN_TIMER_ReadCounter(void) 
+ 508:Generated_Source\PSoC5/MAIN_TIMER.c **** uint32 MAIN_TIMER_ReadCounter(void) 
  509:Generated_Source\PSoC5/MAIN_TIMER.c **** {
- 435              		.loc 1 509 0
- 436              		.cfi_startproc
- 437              		@ args = 0, pretend = 0, frame = 0
- 438              		@ frame_needed = 0, uses_anonymous_args = 0
- 439              		@ link register save eliminated.
+ 304              		.loc 1 509 0
+ 305              		.cfi_startproc
+ 306              		@ args = 0, pretend = 0, frame = 0
+ 307              		@ frame_needed = 0, uses_anonymous_args = 0
+ 308              		@ link register save eliminated.
  510:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Force capture by reading Accumulator */
  511:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Must first do a software capture to be able to read the counter */
  512:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
  513:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(MAIN_TIMER_UsingFixedFunction)
  514:Generated_Source\PSoC5/MAIN_TIMER.c ****         (void)CY_GET_REG16(MAIN_TIMER_COUNTER_LSB_PTR);
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 18
-
-
- 440              		.loc 1 514 0
- 441 0000 024B     		ldr	r3, .L44
- 442 0002 1B88     		ldrh	r3, [r3]
  515:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
  516:Generated_Source\PSoC5/MAIN_TIMER.c ****         (void)CY_GET_REG8(MAIN_TIMER_COUNTER_LSB_PTR_8BIT);
+ 309              		.loc 1 516 0
+ 310 0000 024B     		ldr	r3, .L35
+ 311 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  517:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif/* (MAIN_TIMER_UsingFixedFunction) */
  518:Generated_Source\PSoC5/MAIN_TIMER.c **** 
  519:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
  520:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(MAIN_TIMER_UsingFixedFunction)
- 521:Generated_Source\PSoC5/MAIN_TIMER.c ****         return ((uint16)CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
- 443              		.loc 1 521 0
- 444 0004 024B     		ldr	r3, .L44+4
- 445 0006 1888     		ldrh	r0, [r3]
+ 521:Generated_Source\PSoC5/MAIN_TIMER.c ****         return ((uint32)CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
  522:Generated_Source\PSoC5/MAIN_TIMER.c ****     #else
- 523:Generated_Source\PSoC5/MAIN_TIMER.c ****         return (CY_GET_REG16(MAIN_TIMER_CAPTURE_LSB_PTR));
+ 523:Generated_Source\PSoC5/MAIN_TIMER.c ****         return (CY_GET_REG32(MAIN_TIMER_CAPTURE_LSB_PTR));
+ 312              		.loc 1 523 0
+ 313 0004 024B     		ldr	r3, .L35+4
+ 314 0006 1868     		ldr	r0, [r3]
  524:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* (MAIN_TIMER_UsingFixedFunction) */
  525:Generated_Source\PSoC5/MAIN_TIMER.c **** }
- 446              		.loc 1 525 0
- 447 0008 80B2     		uxth	r0, r0
- 448 000a 7047     		bx	lr
- 449              	.L45:
- 450              		.align	2
- 451              	.L44:
- 452 000c 124F0040 		.word	1073762066
- 453 0010 144F0040 		.word	1073762068
- 454              		.cfi_endproc
- 455              	.LFE13:
- 456              		.size	MAIN_TIMER_ReadCounter, .-MAIN_TIMER_ReadCounter
- 457              		.global	MAIN_TIMER_initVar
- 458              		.bss
- 459              		.set	.LANCHOR0,. + 0
- 460              		.type	MAIN_TIMER_initVar, %object
- 461              		.size	MAIN_TIMER_initVar, 1
- 462              	MAIN_TIMER_initVar:
- 463 0000 00       		.space	1
- 464              		.text
- 465              	.Letext0:
- 466              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 467              		.section	.debug_info,"",%progbits
- 468              	.Ldebug_info0:
- 469 0000 8F020000 		.4byte	0x28f
- 470 0004 0400     		.2byte	0x4
- 471 0006 00000000 		.4byte	.Ldebug_abbrev0
- 472 000a 04       		.byte	0x4
- 473 000b 01       		.uleb128 0x1
- 474 000c D6000000 		.4byte	.LASF36
- 475 0010 0C       		.byte	0xc
- 476 0011 54020000 		.4byte	.LASF37
- 477 0015 C7020000 		.4byte	.LASF38
- 478 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 479 001d 00000000 		.4byte	0
- 480 0021 00000000 		.4byte	.Ldebug_line0
- 481 0025 02       		.uleb128 0x2
- 482 0026 01       		.byte	0x1
- 483 0027 06       		.byte	0x6
- 484 0028 93030000 		.4byte	.LASF0
- 485 002c 02       		.uleb128 0x2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 19
+ 315              		.loc 1 525 0
+ 316 0008 7047     		bx	lr
+ 317              	.L36:
+ 318 000a 00BF     		.align	2
+ 319              	.L35:
+ 320 000c 04640040 		.word	1073767428
+ 321 0010 44640040 		.word	1073767492
+ 322              		.cfi_endproc
+ 323              	.LFE13:
+ 324              		.size	MAIN_TIMER_ReadCounter, .-MAIN_TIMER_ReadCounter
+ 325              		.section	.text.MAIN_TIMER_ClearFIFO,"ax",%progbits
+ 326              		.align	2
+ 327              		.global	MAIN_TIMER_ClearFIFO
+ 328              		.thumb
+ 329              		.thumb_func
+ 330              		.type	MAIN_TIMER_ClearFIFO, %function
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 16
 
 
- 486 002d 01       		.byte	0x1
- 487 002e 08       		.byte	0x8
- 488 002f C8000000 		.4byte	.LASF1
- 489 0033 02       		.uleb128 0x2
- 490 0034 02       		.byte	0x2
- 491 0035 05       		.byte	0x5
- 492 0036 A1020000 		.4byte	.LASF2
- 493 003a 02       		.uleb128 0x2
- 494 003b 02       		.byte	0x2
- 495 003c 07       		.byte	0x7
- 496 003d 58000000 		.4byte	.LASF3
- 497 0041 02       		.uleb128 0x2
- 498 0042 04       		.byte	0x4
- 499 0043 05       		.byte	0x5
- 500 0044 63030000 		.4byte	.LASF4
- 501 0048 02       		.uleb128 0x2
- 502 0049 04       		.byte	0x4
- 503 004a 07       		.byte	0x7
- 504 004b 69010000 		.4byte	.LASF5
- 505 004f 02       		.uleb128 0x2
- 506 0050 08       		.byte	0x8
- 507 0051 05       		.byte	0x5
- 508 0052 46020000 		.4byte	.LASF6
- 509 0056 02       		.uleb128 0x2
- 510 0057 08       		.byte	0x8
- 511 0058 07       		.byte	0x7
- 512 0059 F3010000 		.4byte	.LASF7
- 513 005d 03       		.uleb128 0x3
- 514 005e 04       		.byte	0x4
- 515 005f 05       		.byte	0x5
- 516 0060 696E7400 		.ascii	"int\000"
- 517 0064 02       		.uleb128 0x2
- 518 0065 04       		.byte	0x4
- 519 0066 07       		.byte	0x7
- 520 0067 B6010000 		.4byte	.LASF8
- 521 006b 04       		.uleb128 0x4
- 522 006c 7B010000 		.4byte	.LASF9
- 523 0070 02       		.byte	0x2
- 524 0071 E401     		.2byte	0x1e4
- 525 0073 2C000000 		.4byte	0x2c
- 526 0077 04       		.uleb128 0x4
- 527 0078 90010000 		.4byte	.LASF10
- 528 007c 02       		.byte	0x2
- 529 007d E501     		.2byte	0x1e5
- 530 007f 3A000000 		.4byte	0x3a
- 531 0083 02       		.uleb128 0x2
- 532 0084 04       		.byte	0x4
- 533 0085 04       		.byte	0x4
- 534 0086 A2000000 		.4byte	.LASF11
- 535 008a 02       		.uleb128 0x2
- 536 008b 08       		.byte	0x8
- 537 008c 04       		.byte	0x4
- 538 008d 89010000 		.4byte	.LASF12
- 539 0091 02       		.uleb128 0x2
- 540 0092 01       		.byte	0x1
- 541 0093 08       		.byte	0x8
- 542 0094 6C030000 		.4byte	.LASF13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 20
+ 331              	MAIN_TIMER_ClearFIFO:
+ 332              	.LFB14:
+ 526:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 527:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 528:Generated_Source\PSoC5/MAIN_TIMER.c **** #if(!MAIN_TIMER_UsingFixedFunction) /* UDB Specific Functions */
+ 529:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 530:Generated_Source\PSoC5/MAIN_TIMER.c ****     
+ 531:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 532:Generated_Source\PSoC5/MAIN_TIMER.c ****  * The functions below this point are only available using the UDB
+ 533:Generated_Source\PSoC5/MAIN_TIMER.c ****  * implementation.  If a feature is selected, then the API is enabled.
+ 534:Generated_Source\PSoC5/MAIN_TIMER.c ****  ******************************************************************************/
+ 535:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 536:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 537:Generated_Source\PSoC5/MAIN_TIMER.c **** #if (MAIN_TIMER_SoftwareCaptureMode)
+ 538:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 539:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 540:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 541:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_SetCaptureMode
+ 542:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 543:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 544:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 545:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function sets the capture mode to either rising or falling edge.
+ 546:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 547:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 548:Generated_Source\PSoC5/MAIN_TIMER.c **** *  captureMode: This parameter sets the capture mode of the UDB capture feature
+ 549:Generated_Source\PSoC5/MAIN_TIMER.c **** *  The parameter values are defined using the
+ 550:Generated_Source\PSoC5/MAIN_TIMER.c **** *  #define MAIN_TIMER__B_TIMER__CM_NONE 0
+ 551:Generated_Source\PSoC5/MAIN_TIMER.c **** #define MAIN_TIMER__B_TIMER__CM_RISINGEDGE 1
+ 552:Generated_Source\PSoC5/MAIN_TIMER.c **** #define MAIN_TIMER__B_TIMER__CM_FALLINGEDGE 2
+ 553:Generated_Source\PSoC5/MAIN_TIMER.c **** #define MAIN_TIMER__B_TIMER__CM_EITHEREDGE 3
+ 554:Generated_Source\PSoC5/MAIN_TIMER.c **** #define MAIN_TIMER__B_TIMER__CM_SOFTWARE 4
+ 555:Generated_Source\PSoC5/MAIN_TIMER.c ****  identifiers
+ 556:Generated_Source\PSoC5/MAIN_TIMER.c **** *  The following are the possible values of the parameter
+ 557:Generated_Source\PSoC5/MAIN_TIMER.c **** *  MAIN_TIMER__B_TIMER__CM_NONE        - Set Capture mode to None
+ 558:Generated_Source\PSoC5/MAIN_TIMER.c **** *  MAIN_TIMER__B_TIMER__CM_RISINGEDGE  - Rising edge of Capture input
+ 559:Generated_Source\PSoC5/MAIN_TIMER.c **** *  MAIN_TIMER__B_TIMER__CM_FALLINGEDGE - Falling edge of Capture input
+ 560:Generated_Source\PSoC5/MAIN_TIMER.c **** *  MAIN_TIMER__B_TIMER__CM_EITHEREDGE  - Either edge of Capture input
+ 561:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 562:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 563:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 564:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 565:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 566:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SetCaptureMode(uint8 captureMode) 
+ 567:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 568:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* This must only set to two bits of the control register associated */
+ 569:Generated_Source\PSoC5/MAIN_TIMER.c ****     captureMode = ((uint8)((uint8)captureMode << MAIN_TIMER_CTRL_CAP_MODE_SHIFT));
+ 570:Generated_Source\PSoC5/MAIN_TIMER.c ****     captureMode &= (MAIN_TIMER_CTRL_CAP_MODE_MASK);
+ 571:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 572:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED)
+ 573:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Clear the Current Setting */
+ 574:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL &= ((uint8)(~MAIN_TIMER_CTRL_CAP_MODE_MASK));
+ 575:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 576:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Write The New Setting */
+ 577:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL |= captureMode;
+ 578:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) */
+ 579:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 580:Generated_Source\PSoC5/MAIN_TIMER.c **** #endif /* Remove API if Capture Mode is not Software Controlled */
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 17
 
 
- 543 0098 04       		.uleb128 0x4
- 544 0099 64010000 		.4byte	.LASF14
- 545 009d 02       		.byte	0x2
- 546 009e 8E02     		.2byte	0x28e
- 547 00a0 A4000000 		.4byte	0xa4
- 548 00a4 05       		.uleb128 0x5
- 549 00a5 6B000000 		.4byte	0x6b
- 550 00a9 04       		.uleb128 0x4
- 551 00aa 00000000 		.4byte	.LASF15
- 552 00ae 02       		.byte	0x2
- 553 00af 8F02     		.2byte	0x28f
- 554 00b1 B5000000 		.4byte	0xb5
- 555 00b5 05       		.uleb128 0x5
- 556 00b6 77000000 		.4byte	0x77
- 557 00ba 02       		.uleb128 0x2
- 558 00bb 08       		.byte	0x8
- 559 00bc 04       		.byte	0x4
- 560 00bd 71030000 		.4byte	.LASF16
- 561 00c1 02       		.uleb128 0x2
- 562 00c2 04       		.byte	0x4
- 563 00c3 07       		.byte	0x7
- 564 00c4 16020000 		.4byte	.LASF17
- 565 00c8 06       		.uleb128 0x6
- 566 00c9 C3010000 		.4byte	.LASF18
- 567 00cd 01       		.byte	0x1
- 568 00ce B4       		.byte	0xb4
- 569 00cf 00000000 		.4byte	.LFB1
- 570 00d3 28000000 		.4byte	.LFE1-.LFB1
- 571 00d7 01       		.uleb128 0x1
- 572 00d8 9C       		.byte	0x9c
- 573 00d9 06       		.uleb128 0x6
- 574 00da 19000000 		.4byte	.LASF19
- 575 00de 01       		.byte	0x1
- 576 00df F7       		.byte	0xf7
- 577 00e0 00000000 		.4byte	.LFB3
- 578 00e4 28000000 		.4byte	.LFE3-.LFB3
- 579 00e8 01       		.uleb128 0x1
- 580 00e9 9C       		.byte	0x9c
- 581 00ea 07       		.uleb128 0x7
- 582 00eb AB020000 		.4byte	.LASF23
- 583 00ef 01       		.byte	0x1
- 584 00f0 1701     		.2byte	0x117
- 585 00f2 00000000 		.4byte	.LFB4
- 586 00f6 0C000000 		.4byte	.LFE4-.LFB4
- 587 00fa 01       		.uleb128 0x1
- 588 00fb 9C       		.byte	0x9c
- 589 00fc 0F010000 		.4byte	0x10f
- 590 0100 08       		.uleb128 0x8
- 591 0101 78020000 		.4byte	.LASF25
- 592 0105 01       		.byte	0x1
- 593 0106 1701     		.2byte	0x117
- 594 0108 6B000000 		.4byte	0x6b
- 595 010c 01       		.uleb128 0x1
- 596 010d 50       		.byte	0x50
- 597 010e 00       		.byte	0
- 598 010f 09       		.uleb128 0x9
- 599 0110 86020000 		.4byte	.LASF20
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 21
+ 581:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 582:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 583:Generated_Source\PSoC5/MAIN_TIMER.c **** #if (MAIN_TIMER_SoftwareTriggerMode)
+ 584:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 585:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 586:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 587:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_SetTriggerMode
+ 588:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 589:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 590:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 591:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function sets the trigger input mode
+ 592:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 593:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 594:Generated_Source\PSoC5/MAIN_TIMER.c **** *  triggerMode: Pass one of the pre-defined Trigger Modes (except Software)
+ 595:Generated_Source\PSoC5/MAIN_TIMER.c ****     #define MAIN_TIMER__B_TIMER__TM_NONE 0x00u
+ 596:Generated_Source\PSoC5/MAIN_TIMER.c ****     #define MAIN_TIMER__B_TIMER__TM_RISINGEDGE 0x04u
+ 597:Generated_Source\PSoC5/MAIN_TIMER.c ****     #define MAIN_TIMER__B_TIMER__TM_FALLINGEDGE 0x08u
+ 598:Generated_Source\PSoC5/MAIN_TIMER.c ****     #define MAIN_TIMER__B_TIMER__TM_EITHEREDGE 0x0Cu
+ 599:Generated_Source\PSoC5/MAIN_TIMER.c ****     #define MAIN_TIMER__B_TIMER__TM_SOFTWARE 0x10u
+ 600:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 601:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 602:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 603:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 604:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 605:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SetTriggerMode(uint8 triggerMode) 
+ 606:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 607:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* This must only set to two bits of the control register associated */
+ 608:Generated_Source\PSoC5/MAIN_TIMER.c ****     triggerMode &= MAIN_TIMER_CTRL_TRIG_MODE_MASK;
+ 609:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 610:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed
+ 611:Generated_Source\PSoC5/MAIN_TIMER.c ****     
+ 612:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Clear the Current Setting */
+ 613:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL &= ((uint8)(~MAIN_TIMER_CTRL_TRIG_MODE_MASK));
+ 614:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 615:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Write The New Setting */
+ 616:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL |= (triggerMode | MAIN_TIMER__B_TIMER__TM_SOFTWARE);
+ 617:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Remove code section if control register is not used */
+ 618:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 619:Generated_Source\PSoC5/MAIN_TIMER.c **** #endif /* Remove API if Trigger Mode is not Software Controlled */
+ 620:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 621:Generated_Source\PSoC5/MAIN_TIMER.c **** #if (MAIN_TIMER_EnableTriggerMode)
+ 622:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 623:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 624:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 625:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_EnableTrigger
+ 626:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 627:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 628:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 629:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Sets the control bit enabling Hardware Trigger mode
+ 630:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 631:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 632:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 633:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 634:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 635:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 636:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 637:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 18
 
 
- 600 0114 01       		.byte	0x1
- 601 0115 2E01     		.2byte	0x12e
- 602 0117 00000000 		.4byte	.LFB5
- 603 011b 0C000000 		.4byte	.LFE5-.LFB5
- 604 011f 01       		.uleb128 0x1
- 605 0120 9C       		.byte	0x9c
- 606 0121 0A       		.uleb128 0xa
- 607 0122 D5010000 		.4byte	.LASF21
- 608 0126 01       		.byte	0x1
- 609 0127 4D01     		.2byte	0x14d
- 610 0129 6B000000 		.4byte	0x6b
- 611 012d 00000000 		.4byte	.LFB6
- 612 0131 0C000000 		.4byte	.LFE6-.LFB6
- 613 0135 01       		.uleb128 0x1
- 614 0136 9C       		.byte	0x9c
- 615 0137 0A       		.uleb128 0xa
- 616 0138 97010000 		.4byte	.LASF22
- 617 013c 01       		.byte	0x1
- 618 013d 6401     		.2byte	0x164
- 619 013f 6B000000 		.4byte	0x6b
- 620 0143 00000000 		.4byte	.LFB7
- 621 0147 0C000000 		.4byte	.LFE7-.LFB7
- 622 014b 01       		.uleb128 0x1
- 623 014c 9C       		.byte	0x9c
- 624 014d 07       		.uleb128 0x7
- 625 014e 82000000 		.4byte	.LASF24
- 626 0152 01       		.byte	0x1
- 627 0153 7B01     		.2byte	0x17b
- 628 0155 00000000 		.4byte	.LFB8
- 629 0159 0C000000 		.4byte	.LFE8-.LFB8
- 630 015d 01       		.uleb128 0x1
- 631 015e 9C       		.byte	0x9c
- 632 015f 72010000 		.4byte	0x172
- 633 0163 08       		.uleb128 0x8
- 634 0164 81010000 		.4byte	.LASF26
- 635 0168 01       		.byte	0x1
- 636 0169 7B01     		.2byte	0x17b
- 637 016b 6B000000 		.4byte	0x6b
- 638 016f 01       		.uleb128 0x1
- 639 0170 50       		.byte	0x50
- 640 0171 00       		.byte	0
- 641 0172 0A       		.uleb128 0xa
- 642 0173 7D030000 		.4byte	.LASF27
- 643 0177 01       		.byte	0x1
- 644 0178 9501     		.2byte	0x195
- 645 017a 77000000 		.4byte	0x77
- 646 017e 00000000 		.4byte	.LFB9
- 647 0182 0C000000 		.4byte	.LFE9-.LFB9
- 648 0186 01       		.uleb128 0x1
- 649 0187 9C       		.byte	0x9c
- 650 0188 07       		.uleb128 0x7
- 651 0189 6B000000 		.4byte	.LASF28
- 652 018d 01       		.byte	0x1
- 653 018e AF01     		.2byte	0x1af
- 654 0190 00000000 		.4byte	.LFB10
- 655 0194 0C000000 		.4byte	.LFE10-.LFB10
- 656 0198 01       		.uleb128 0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 22
+ 638:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_EnableTrigger(void) 
+ 639:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 640:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED)   /* Remove assignment if control register is removed
+ 641:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL |= MAIN_TIMER_CTRL_TRIG_EN;
+ 642:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Remove code section if control register is not used */
+ 643:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 644:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 645:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 646:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 647:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_DisableTrigger
+ 648:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 649:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 650:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 651:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Clears the control bit enabling Hardware Trigger mode
+ 652:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 653:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 654:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 655:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 656:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 657:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 658:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 659:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 660:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_DisableTrigger(void) 
+ 661:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 662:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED )   /* Remove assignment if control register is remove
+ 663:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL &= ((uint8)(~MAIN_TIMER_CTRL_TRIG_EN));
+ 664:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Remove code section if control register is not used */
+ 665:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 666:Generated_Source\PSoC5/MAIN_TIMER.c **** #endif /* Remove API is Trigger Mode is set to None */
+ 667:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 668:Generated_Source\PSoC5/MAIN_TIMER.c **** #if(MAIN_TIMER_InterruptOnCaptureCount)
+ 669:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 670:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 671:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 672:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_SetInterruptCount
+ 673:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 674:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 675:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 676:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function sets the capture count before an interrupt is triggered.
+ 677:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 678:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 679:Generated_Source\PSoC5/MAIN_TIMER.c **** *  interruptCount:  A value between 0 and 3 is valid.  If the value is 0, then
+ 680:Generated_Source\PSoC5/MAIN_TIMER.c **** *                   an interrupt will occur each time a capture occurs.
+ 681:Generated_Source\PSoC5/MAIN_TIMER.c **** *                   A value of 1 to 3 will cause the interrupt
+ 682:Generated_Source\PSoC5/MAIN_TIMER.c **** *                   to delay by the same number of captures.
+ 683:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 684:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 685:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 686:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 687:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 688:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SetInterruptCount(uint8 interruptCount) 
+ 689:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 690:Generated_Source\PSoC5/MAIN_TIMER.c ****     /* This must only set to two bits of the control register associated */
+ 691:Generated_Source\PSoC5/MAIN_TIMER.c ****     interruptCount &= MAIN_TIMER_CTRL_INTCNT_MASK;
+ 692:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 693:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED)
+ 694:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Clear the Current Setting */
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 19
 
 
- 657 0199 9C       		.byte	0x9c
- 658 019a BB010000 		.4byte	0x1bb
- 659 019e 08       		.uleb128 0x8
- 660 019f 51000000 		.4byte	.LASF29
- 661 01a3 01       		.byte	0x1
- 662 01a4 AF01     		.2byte	0x1af
- 663 01a6 77000000 		.4byte	0x77
- 664 01aa 01       		.uleb128 0x1
- 665 01ab 50       		.byte	0x50
- 666 01ac 0B       		.uleb128 0xb
- 667 01ad 0A020000 		.4byte	.LASF39
- 668 01b1 01       		.byte	0x1
- 669 01b2 B201     		.2byte	0x1b2
- 670 01b4 77000000 		.4byte	0x77
- 671 01b8 01       		.uleb128 0x1
- 672 01b9 50       		.byte	0x50
- 673 01ba 00       		.byte	0
- 674 01bb 0A       		.uleb128 0xa
- 675 01bc 1F020000 		.4byte	.LASF30
- 676 01c0 01       		.byte	0x1
- 677 01c1 C801     		.2byte	0x1c8
- 678 01c3 77000000 		.4byte	0x77
- 679 01c7 00000000 		.4byte	.LFB11
- 680 01cb 0C000000 		.4byte	.LFE11-.LFB11
- 681 01cf 01       		.uleb128 0x1
- 682 01d0 9C       		.byte	0x9c
- 683 01d1 07       		.uleb128 0x7
- 684 01d2 B0000000 		.4byte	.LASF31
- 685 01d6 01       		.byte	0x1
- 686 01d7 E001     		.2byte	0x1e0
- 687 01d9 00000000 		.4byte	.LFB12
- 688 01dd 0C000000 		.4byte	.LFE12-.LFB12
- 689 01e1 01       		.uleb128 0x1
- 690 01e2 9C       		.byte	0x9c
- 691 01e3 F6010000 		.4byte	0x1f6
- 692 01e7 08       		.uleb128 0x8
- 693 01e8 A8000000 		.4byte	.LASF32
- 694 01ec 01       		.byte	0x1
- 695 01ed E001     		.2byte	0x1e0
- 696 01ef 77000000 		.4byte	0x77
- 697 01f3 01       		.uleb128 0x1
- 698 01f4 50       		.byte	0x50
- 699 01f5 00       		.byte	0
- 700 01f6 0C       		.uleb128 0xc
- 701 01f7 36020000 		.4byte	.LASF33
- 702 01fb 01       		.byte	0x1
- 703 01fc 2B       		.byte	0x2b
- 704 01fd 00000000 		.4byte	.LFB0
- 705 0201 68000000 		.4byte	.LFE0-.LFB0
- 706 0205 01       		.uleb128 0x1
- 707 0206 9C       		.byte	0x9c
- 708 0207 43020000 		.4byte	0x243
- 709 020b 0D       		.uleb128 0xd
- 710 020c 4A000000 		.4byte	.LVL4
- 711 0210 88010000 		.4byte	0x188
- 712 0214 1F020000 		.4byte	0x21f
- 713 0218 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 23
+ 695:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL &= ((uint8)(~MAIN_TIMER_CTRL_INTCNT_MASK));
+ 696:Generated_Source\PSoC5/MAIN_TIMER.c ****         /* Write The New Setting */
+ 697:Generated_Source\PSoC5/MAIN_TIMER.c ****         MAIN_TIMER_CONTROL |= interruptCount;
+ 698:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* (!MAIN_TIMER_UDB_CONTROL_REG_REMOVED) */
+ 699:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 700:Generated_Source\PSoC5/MAIN_TIMER.c **** #endif /* MAIN_TIMER_InterruptOnCaptureCount */
+ 701:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 702:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 703:Generated_Source\PSoC5/MAIN_TIMER.c **** #if (MAIN_TIMER_UsingHWCaptureCounter)
+ 704:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 705:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 706:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 707:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_SetCaptureCount
+ 708:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 709:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 710:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 711:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function sets the capture count
+ 712:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 713:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 714:Generated_Source\PSoC5/MAIN_TIMER.c **** *  captureCount: A value between 2 and 127 inclusive is valid.  A value of 1
+ 715:Generated_Source\PSoC5/MAIN_TIMER.c **** *                to 127 will cause the interrupt to delay by the same number of
+ 716:Generated_Source\PSoC5/MAIN_TIMER.c **** *                captures.
+ 717:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 718:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 719:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 720:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 721:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 722:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_SetCaptureCount(uint8 captureCount) 
+ 723:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 724:Generated_Source\PSoC5/MAIN_TIMER.c ****     MAIN_TIMER_CAP_COUNT = captureCount;
+ 725:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 726:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 727:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 728:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 729:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_ReadCaptureCount
+ 730:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ 731:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 732:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 733:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function reads the capture count setting
+ 734:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 735:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 736:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 737:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 738:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 739:Generated_Source\PSoC5/MAIN_TIMER.c **** *  Returns the Capture Count Setting
+ 740:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 741:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 742:Generated_Source\PSoC5/MAIN_TIMER.c **** uint8 MAIN_TIMER_ReadCaptureCount(void) 
+ 743:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 744:Generated_Source\PSoC5/MAIN_TIMER.c ****     return ((uint8)MAIN_TIMER_CAP_COUNT);
+ 745:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 746:Generated_Source\PSoC5/MAIN_TIMER.c **** #endif /* MAIN_TIMER_UsingHWCaptureCounter */
+ 747:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 748:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 749:Generated_Source\PSoC5/MAIN_TIMER.c **** /*******************************************************************************
+ 750:Generated_Source\PSoC5/MAIN_TIMER.c **** * Function Name: MAIN_TIMER_ClearFIFO
+ 751:Generated_Source\PSoC5/MAIN_TIMER.c **** ********************************************************************************
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 20
 
 
- 714 0219 01       		.uleb128 0x1
- 715 021a 50       		.byte	0x50
- 716 021b 02       		.uleb128 0x2
- 717 021c 09       		.byte	0x9
- 718 021d FF       		.byte	0xff
- 719 021e 00       		.byte	0
- 720 021f 0D       		.uleb128 0xd
- 721 0220 52000000 		.4byte	.LVL5
- 722 0224 D1010000 		.4byte	0x1d1
- 723 0228 33020000 		.4byte	0x233
- 724 022c 0E       		.uleb128 0xe
- 725 022d 01       		.uleb128 0x1
- 726 022e 50       		.byte	0x50
- 727 022f 02       		.uleb128 0x2
- 728 0230 09       		.byte	0x9
- 729 0231 FF       		.byte	0xff
- 730 0232 00       		.byte	0
- 731 0233 0F       		.uleb128 0xf
- 732 0234 58000000 		.4byte	.LVL6
- 733 0238 EA000000 		.4byte	0xea
- 734 023c 0E       		.uleb128 0xe
- 735 023d 01       		.uleb128 0x1
- 736 023e 50       		.byte	0x50
- 737 023f 01       		.uleb128 0x1
- 738 0240 30       		.byte	0x30
- 739 0241 00       		.byte	0
- 740 0242 00       		.byte	0
- 741 0243 0C       		.uleb128 0xc
- 742 0244 40000000 		.4byte	.LASF34
- 743 0248 01       		.byte	0x1
- 744 0249 D7       		.byte	0xd7
- 745 024a 00000000 		.4byte	.LFB2
- 746 024e 1C000000 		.4byte	.LFE2-.LFB2
- 747 0252 01       		.uleb128 0x1
- 748 0253 9C       		.byte	0x9c
- 749 0254 6B020000 		.4byte	0x26b
- 750 0258 10       		.uleb128 0x10
- 751 0259 0C000000 		.4byte	.LVL7
- 752 025d F6010000 		.4byte	0x1f6
- 753 0261 10       		.uleb128 0x10
- 754 0262 16000000 		.4byte	.LVL8
- 755 0266 C8000000 		.4byte	0xc8
- 756 026a 00       		.byte	0
- 757 026b 0A       		.uleb128 0xa
- 758 026c 29000000 		.4byte	.LASF35
- 759 0270 01       		.byte	0x1
- 760 0271 FC01     		.2byte	0x1fc
- 761 0273 77000000 		.4byte	0x77
- 762 0277 00000000 		.4byte	.LFB13
- 763 027b 14000000 		.4byte	.LFE13-.LFB13
- 764 027f 01       		.uleb128 0x1
- 765 0280 9C       		.byte	0x9c
- 766 0281 11       		.uleb128 0x11
- 767 0282 06000000 		.4byte	.LASF40
- 768 0286 01       		.byte	0x1
- 769 0287 1A       		.byte	0x1a
- 770 0288 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 24
+ 752:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 753:Generated_Source\PSoC5/MAIN_TIMER.c **** * Summary:
+ 754:Generated_Source\PSoC5/MAIN_TIMER.c **** *  This function clears all capture data from the capture FIFO
+ 755:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 756:Generated_Source\PSoC5/MAIN_TIMER.c **** * Parameters:
+ 757:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 758:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 759:Generated_Source\PSoC5/MAIN_TIMER.c **** * Return:
+ 760:Generated_Source\PSoC5/MAIN_TIMER.c **** *  void
+ 761:Generated_Source\PSoC5/MAIN_TIMER.c **** *
+ 762:Generated_Source\PSoC5/MAIN_TIMER.c **** *******************************************************************************/
+ 763:Generated_Source\PSoC5/MAIN_TIMER.c **** void MAIN_TIMER_ClearFIFO(void) 
+ 764:Generated_Source\PSoC5/MAIN_TIMER.c **** {
+ 333              		.loc 1 764 0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337 0000 08B5     		push	{r3, lr}
+ 338              		.cfi_def_cfa_offset 8
+ 339              		.cfi_offset 3, -8
+ 340              		.cfi_offset 14, -4
+ 765:Generated_Source\PSoC5/MAIN_TIMER.c ****     while(0u != (MAIN_TIMER_ReadStatusRegister() & MAIN_TIMER_STATUS_FIFONEMP))
+ 341              		.loc 1 765 0
+ 342 0002 01E0     		b	.L38
+ 343              	.L39:
+ 766:Generated_Source\PSoC5/MAIN_TIMER.c ****     {
+ 767:Generated_Source\PSoC5/MAIN_TIMER.c ****         (void)MAIN_TIMER_ReadCapture();
+ 344              		.loc 1 767 0
+ 345 0004 FFF7FEFF 		bl	MAIN_TIMER_ReadCapture
+ 346              	.LVL4:
+ 347              	.L38:
+ 765:Generated_Source\PSoC5/MAIN_TIMER.c ****     while(0u != (MAIN_TIMER_ReadStatusRegister() & MAIN_TIMER_STATUS_FIFONEMP))
+ 348              		.loc 1 765 0
+ 349 0008 FFF7FEFF 		bl	MAIN_TIMER_ReadStatusRegister
+ 350              	.LVL5:
+ 351 000c 10F0080F 		tst	r0, #8
+ 352 0010 F8D1     		bne	.L39
+ 768:Generated_Source\PSoC5/MAIN_TIMER.c ****     }
+ 769:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 353              		.loc 1 769 0
+ 354 0012 08BD     		pop	{r3, pc}
+ 355              		.cfi_endproc
+ 356              	.LFE14:
+ 357              		.size	MAIN_TIMER_ClearFIFO, .-MAIN_TIMER_ClearFIFO
+ 358              		.section	.text.MAIN_TIMER_Init,"ax",%progbits
+ 359              		.align	2
+ 360              		.global	MAIN_TIMER_Init
+ 361              		.thumb
+ 362              		.thumb_func
+ 363              		.type	MAIN_TIMER_Init, %function
+ 364              	MAIN_TIMER_Init:
+ 365              	.LFB0:
+  44:Generated_Source\PSoC5/MAIN_TIMER.c ****     #if(!MAIN_TIMER_UsingFixedFunction)
+ 366              		.loc 1 44 0
+ 367              		.cfi_startproc
+ 368              		@ args = 0, pretend = 0, frame = 0
+ 369              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 21
 
 
- 771 028c 05       		.uleb128 0x5
- 772 028d 03       		.byte	0x3
- 773 028e 00000000 		.4byte	MAIN_TIMER_initVar
- 774 0292 00       		.byte	0
- 775              		.section	.debug_abbrev,"",%progbits
- 776              	.Ldebug_abbrev0:
- 777 0000 01       		.uleb128 0x1
- 778 0001 11       		.uleb128 0x11
- 779 0002 01       		.byte	0x1
- 780 0003 25       		.uleb128 0x25
- 781 0004 0E       		.uleb128 0xe
- 782 0005 13       		.uleb128 0x13
- 783 0006 0B       		.uleb128 0xb
- 784 0007 03       		.uleb128 0x3
- 785 0008 0E       		.uleb128 0xe
- 786 0009 1B       		.uleb128 0x1b
- 787 000a 0E       		.uleb128 0xe
- 788 000b 55       		.uleb128 0x55
- 789 000c 17       		.uleb128 0x17
- 790 000d 11       		.uleb128 0x11
- 791 000e 01       		.uleb128 0x1
- 792 000f 10       		.uleb128 0x10
- 793 0010 17       		.uleb128 0x17
- 794 0011 00       		.byte	0
- 795 0012 00       		.byte	0
- 796 0013 02       		.uleb128 0x2
- 797 0014 24       		.uleb128 0x24
- 798 0015 00       		.byte	0
- 799 0016 0B       		.uleb128 0xb
- 800 0017 0B       		.uleb128 0xb
- 801 0018 3E       		.uleb128 0x3e
- 802 0019 0B       		.uleb128 0xb
- 803 001a 03       		.uleb128 0x3
- 804 001b 0E       		.uleb128 0xe
- 805 001c 00       		.byte	0
- 806 001d 00       		.byte	0
- 807 001e 03       		.uleb128 0x3
- 808 001f 24       		.uleb128 0x24
- 809 0020 00       		.byte	0
- 810 0021 0B       		.uleb128 0xb
- 811 0022 0B       		.uleb128 0xb
- 812 0023 3E       		.uleb128 0x3e
- 813 0024 0B       		.uleb128 0xb
- 814 0025 03       		.uleb128 0x3
- 815 0026 08       		.uleb128 0x8
- 816 0027 00       		.byte	0
- 817 0028 00       		.byte	0
- 818 0029 04       		.uleb128 0x4
- 819 002a 16       		.uleb128 0x16
- 820 002b 00       		.byte	0
- 821 002c 03       		.uleb128 0x3
- 822 002d 0E       		.uleb128 0xe
- 823 002e 3A       		.uleb128 0x3a
- 824 002f 0B       		.uleb128 0xb
- 825 0030 3B       		.uleb128 0x3b
- 826 0031 05       		.uleb128 0x5
- 827 0032 49       		.uleb128 0x49
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 25
+ 370 0000 08B5     		push	{r3, lr}
+ 371              		.cfi_def_cfa_offset 8
+ 372              		.cfi_offset 3, -8
+ 373              		.cfi_offset 14, -4
+ 118:Generated_Source\PSoC5/MAIN_TIMER.c ****     MAIN_TIMER_WriteCounter(MAIN_TIMER_INIT_PERIOD);
+ 374              		.loc 1 118 0
+ 375 0002 4FF0FF30 		mov	r0, #-1
+ 376 0006 FFF7FEFF 		bl	MAIN_TIMER_WritePeriod
+ 377              	.LVL6:
+ 119:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 378              		.loc 1 119 0
+ 379 000a 4FF0FF30 		mov	r0, #-1
+ 380 000e FFF7FEFF 		bl	MAIN_TIMER_WriteCounter
+ 381              	.LVL7:
+ 142:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 382              		.loc 1 142 0
+ 383 0012 FFF7FEFF 		bl	CyEnterCriticalSection
+ 384              	.LVL8:
+ 145:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 385              		.loc 1 145 0
+ 386 0016 064A     		ldr	r2, .L43
+ 387 0018 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 388 001a 43F01003 		orr	r3, r3, #16
+ 389 001e 1370     		strb	r3, [r2]
+ 148:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 390              		.loc 1 148 0
+ 391 0020 FFF7FEFF 		bl	CyExitCriticalSection
+ 392              	.LVL9:
+ 159:Generated_Source\PSoC5/MAIN_TIMER.c ****     #endif /* Configure additional features of UDB implementation */
+ 393              		.loc 1 159 0
+ 394 0024 FFF7FEFF 		bl	MAIN_TIMER_ClearFIFO
+ 395              	.LVL10:
+ 162:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 396              		.loc 1 162 0
+ 397 0028 0020     		movs	r0, #0
+ 398 002a FFF7FEFF 		bl	MAIN_TIMER_SetInterruptMode
+ 399              	.LVL11:
+ 400 002e 08BD     		pop	{r3, pc}
+ 401              	.L44:
+ 402              		.align	2
+ 403              	.L43:
+ 404 0030 94640040 		.word	1073767572
+ 405              		.cfi_endproc
+ 406              	.LFE0:
+ 407              		.size	MAIN_TIMER_Init, .-MAIN_TIMER_Init
+ 408              		.section	.text.MAIN_TIMER_Start,"ax",%progbits
+ 409              		.align	2
+ 410              		.global	MAIN_TIMER_Start
+ 411              		.thumb
+ 412              		.thumb_func
+ 413              		.type	MAIN_TIMER_Start, %function
+ 414              	MAIN_TIMER_Start:
+ 415              	.LFB2:
+ 216:Generated_Source\PSoC5/MAIN_TIMER.c ****     if(MAIN_TIMER_initVar == 0u)
+ 416              		.loc 1 216 0
+ 417              		.cfi_startproc
+ 418              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 22
 
 
- 828 0033 13       		.uleb128 0x13
- 829 0034 00       		.byte	0
- 830 0035 00       		.byte	0
- 831 0036 05       		.uleb128 0x5
- 832 0037 35       		.uleb128 0x35
- 833 0038 00       		.byte	0
- 834 0039 49       		.uleb128 0x49
- 835 003a 13       		.uleb128 0x13
- 836 003b 00       		.byte	0
- 837 003c 00       		.byte	0
- 838 003d 06       		.uleb128 0x6
- 839 003e 2E       		.uleb128 0x2e
- 840 003f 00       		.byte	0
- 841 0040 3F       		.uleb128 0x3f
- 842 0041 19       		.uleb128 0x19
- 843 0042 03       		.uleb128 0x3
- 844 0043 0E       		.uleb128 0xe
- 845 0044 3A       		.uleb128 0x3a
- 846 0045 0B       		.uleb128 0xb
- 847 0046 3B       		.uleb128 0x3b
- 848 0047 0B       		.uleb128 0xb
- 849 0048 27       		.uleb128 0x27
- 850 0049 19       		.uleb128 0x19
- 851 004a 11       		.uleb128 0x11
- 852 004b 01       		.uleb128 0x1
- 853 004c 12       		.uleb128 0x12
- 854 004d 06       		.uleb128 0x6
- 855 004e 40       		.uleb128 0x40
- 856 004f 18       		.uleb128 0x18
- 857 0050 9742     		.uleb128 0x2117
- 858 0052 19       		.uleb128 0x19
- 859 0053 00       		.byte	0
- 860 0054 00       		.byte	0
- 861 0055 07       		.uleb128 0x7
- 862 0056 2E       		.uleb128 0x2e
- 863 0057 01       		.byte	0x1
- 864 0058 3F       		.uleb128 0x3f
- 865 0059 19       		.uleb128 0x19
- 866 005a 03       		.uleb128 0x3
- 867 005b 0E       		.uleb128 0xe
- 868 005c 3A       		.uleb128 0x3a
- 869 005d 0B       		.uleb128 0xb
- 870 005e 3B       		.uleb128 0x3b
- 871 005f 05       		.uleb128 0x5
- 872 0060 27       		.uleb128 0x27
- 873 0061 19       		.uleb128 0x19
- 874 0062 11       		.uleb128 0x11
- 875 0063 01       		.uleb128 0x1
- 876 0064 12       		.uleb128 0x12
- 877 0065 06       		.uleb128 0x6
- 878 0066 40       		.uleb128 0x40
- 879 0067 18       		.uleb128 0x18
- 880 0068 9742     		.uleb128 0x2117
- 881 006a 19       		.uleb128 0x19
- 882 006b 01       		.uleb128 0x1
- 883 006c 13       		.uleb128 0x13
- 884 006d 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 26
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420 0000 08B5     		push	{r3, lr}
+ 421              		.cfi_def_cfa_offset 8
+ 422              		.cfi_offset 3, -8
+ 423              		.cfi_offset 14, -4
+ 217:Generated_Source\PSoC5/MAIN_TIMER.c ****     {
+ 424              		.loc 1 217 0
+ 425 0002 054B     		ldr	r3, .L48
+ 426 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 427 0006 23B9     		cbnz	r3, .L46
+ 219:Generated_Source\PSoC5/MAIN_TIMER.c **** 
+ 428              		.loc 1 219 0
+ 429 0008 FFF7FEFF 		bl	MAIN_TIMER_Init
+ 430              	.LVL12:
+ 221:Generated_Source\PSoC5/MAIN_TIMER.c ****     }
+ 431              		.loc 1 221 0
+ 432 000c 0122     		movs	r2, #1
+ 433 000e 024B     		ldr	r3, .L48
+ 434 0010 1A70     		strb	r2, [r3]
+ 435              	.L46:
+ 225:Generated_Source\PSoC5/MAIN_TIMER.c **** }
+ 436              		.loc 1 225 0
+ 437 0012 FFF7FEFF 		bl	MAIN_TIMER_Enable
+ 438              	.LVL13:
+ 439 0016 08BD     		pop	{r3, pc}
+ 440              	.L49:
+ 441              		.align	2
+ 442              	.L48:
+ 443 0018 00000000 		.word	.LANCHOR0
+ 444              		.cfi_endproc
+ 445              	.LFE2:
+ 446              		.size	MAIN_TIMER_Start, .-MAIN_TIMER_Start
+ 447              		.global	MAIN_TIMER_initVar
+ 448              		.bss
+ 449              		.set	.LANCHOR0,. + 0
+ 450              		.type	MAIN_TIMER_initVar, %object
+ 451              		.size	MAIN_TIMER_initVar, 1
+ 452              	MAIN_TIMER_initVar:
+ 453 0000 00       		.space	1
+ 454              		.text
+ 455              	.Letext0:
+ 456              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 457              		.file 3 "Generated_Source\\PSoC5\\CyLib.h"
+ 458              		.section	.debug_info,"",%progbits
+ 459              	.Ldebug_info0:
+ 460 0000 EA020000 		.4byte	0x2ea
+ 461 0004 0400     		.2byte	0x4
+ 462 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 463 000a 04       		.byte	0x4
+ 464 000b 01       		.uleb128 0x1
+ 465 000c D8010000 		.4byte	.LASF39
+ 466 0010 0C       		.byte	0xc
+ 467 0011 A4020000 		.4byte	.LASF40
+ 468 0015 17030000 		.4byte	.LASF41
+ 469 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 470 001d 00000000 		.4byte	0
+ 471 0021 00000000 		.4byte	.Ldebug_line0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 23
 
 
- 885 006e 00       		.byte	0
- 886 006f 08       		.uleb128 0x8
- 887 0070 05       		.uleb128 0x5
- 888 0071 00       		.byte	0
- 889 0072 03       		.uleb128 0x3
- 890 0073 0E       		.uleb128 0xe
- 891 0074 3A       		.uleb128 0x3a
- 892 0075 0B       		.uleb128 0xb
- 893 0076 3B       		.uleb128 0x3b
- 894 0077 05       		.uleb128 0x5
- 895 0078 49       		.uleb128 0x49
- 896 0079 13       		.uleb128 0x13
- 897 007a 02       		.uleb128 0x2
- 898 007b 18       		.uleb128 0x18
- 899 007c 00       		.byte	0
- 900 007d 00       		.byte	0
- 901 007e 09       		.uleb128 0x9
- 902 007f 2E       		.uleb128 0x2e
- 903 0080 00       		.byte	0
- 904 0081 3F       		.uleb128 0x3f
- 905 0082 19       		.uleb128 0x19
- 906 0083 03       		.uleb128 0x3
- 907 0084 0E       		.uleb128 0xe
- 908 0085 3A       		.uleb128 0x3a
- 909 0086 0B       		.uleb128 0xb
- 910 0087 3B       		.uleb128 0x3b
- 911 0088 05       		.uleb128 0x5
- 912 0089 27       		.uleb128 0x27
- 913 008a 19       		.uleb128 0x19
- 914 008b 11       		.uleb128 0x11
- 915 008c 01       		.uleb128 0x1
- 916 008d 12       		.uleb128 0x12
- 917 008e 06       		.uleb128 0x6
- 918 008f 40       		.uleb128 0x40
- 919 0090 18       		.uleb128 0x18
- 920 0091 9742     		.uleb128 0x2117
- 921 0093 19       		.uleb128 0x19
- 922 0094 00       		.byte	0
- 923 0095 00       		.byte	0
- 924 0096 0A       		.uleb128 0xa
- 925 0097 2E       		.uleb128 0x2e
- 926 0098 00       		.byte	0
- 927 0099 3F       		.uleb128 0x3f
- 928 009a 19       		.uleb128 0x19
- 929 009b 03       		.uleb128 0x3
- 930 009c 0E       		.uleb128 0xe
- 931 009d 3A       		.uleb128 0x3a
- 932 009e 0B       		.uleb128 0xb
- 933 009f 3B       		.uleb128 0x3b
- 934 00a0 05       		.uleb128 0x5
- 935 00a1 27       		.uleb128 0x27
- 936 00a2 19       		.uleb128 0x19
- 937 00a3 49       		.uleb128 0x49
- 938 00a4 13       		.uleb128 0x13
- 939 00a5 11       		.uleb128 0x11
- 940 00a6 01       		.uleb128 0x1
- 941 00a7 12       		.uleb128 0x12
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 27
+ 472 0025 02       		.uleb128 0x2
+ 473 0026 01       		.byte	0x1
+ 474 0027 06       		.byte	0x6
+ 475 0028 E3030000 		.4byte	.LASF0
+ 476 002c 02       		.uleb128 0x2
+ 477 002d 01       		.byte	0x1
+ 478 002e 08       		.byte	0x8
+ 479 002f C7000000 		.4byte	.LASF1
+ 480 0033 02       		.uleb128 0x2
+ 481 0034 02       		.byte	0x2
+ 482 0035 05       		.byte	0x5
+ 483 0036 F1020000 		.4byte	.LASF2
+ 484 003a 02       		.uleb128 0x2
+ 485 003b 02       		.byte	0x2
+ 486 003c 07       		.byte	0x7
+ 487 003d 58000000 		.4byte	.LASF3
+ 488 0041 02       		.uleb128 0x2
+ 489 0042 04       		.byte	0x4
+ 490 0043 05       		.byte	0x5
+ 491 0044 B3030000 		.4byte	.LASF4
+ 492 0048 02       		.uleb128 0x2
+ 493 0049 04       		.byte	0x4
+ 494 004a 07       		.byte	0x7
+ 495 004b F2000000 		.4byte	.LASF5
+ 496 004f 02       		.uleb128 0x2
+ 497 0050 08       		.byte	0x8
+ 498 0051 05       		.byte	0x5
+ 499 0052 96020000 		.4byte	.LASF6
+ 500 0056 02       		.uleb128 0x2
+ 501 0057 08       		.byte	0x8
+ 502 0058 07       		.byte	0x7
+ 503 0059 B0000000 		.4byte	.LASF7
+ 504 005d 03       		.uleb128 0x3
+ 505 005e 04       		.byte	0x4
+ 506 005f 05       		.byte	0x5
+ 507 0060 696E7400 		.ascii	"int\000"
+ 508 0064 02       		.uleb128 0x2
+ 509 0065 04       		.byte	0x4
+ 510 0066 07       		.byte	0x7
+ 511 0067 85010000 		.4byte	.LASF8
+ 512 006b 04       		.uleb128 0x4
+ 513 006c 04010000 		.4byte	.LASF9
+ 514 0070 02       		.byte	0x2
+ 515 0071 E401     		.2byte	0x1e4
+ 516 0073 2C000000 		.4byte	0x2c
+ 517 0077 04       		.uleb128 0x4
+ 518 0078 48010000 		.4byte	.LASF10
+ 519 007c 02       		.byte	0x2
+ 520 007d E601     		.2byte	0x1e6
+ 521 007f 48000000 		.4byte	0x48
+ 522 0083 02       		.uleb128 0x2
+ 523 0084 04       		.byte	0x4
+ 524 0085 04       		.byte	0x4
+ 525 0086 A2000000 		.4byte	.LASF11
+ 526 008a 02       		.uleb128 0x2
+ 527 008b 08       		.byte	0x8
+ 528 008c 04       		.byte	0x4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 24
 
 
- 942 00a8 06       		.uleb128 0x6
- 943 00a9 40       		.uleb128 0x40
- 944 00aa 18       		.uleb128 0x18
- 945 00ab 9742     		.uleb128 0x2117
- 946 00ad 19       		.uleb128 0x19
- 947 00ae 00       		.byte	0
- 948 00af 00       		.byte	0
- 949 00b0 0B       		.uleb128 0xb
- 950 00b1 34       		.uleb128 0x34
- 951 00b2 00       		.byte	0
- 952 00b3 03       		.uleb128 0x3
- 953 00b4 0E       		.uleb128 0xe
- 954 00b5 3A       		.uleb128 0x3a
- 955 00b6 0B       		.uleb128 0xb
- 956 00b7 3B       		.uleb128 0x3b
- 957 00b8 05       		.uleb128 0x5
- 958 00b9 49       		.uleb128 0x49
- 959 00ba 13       		.uleb128 0x13
- 960 00bb 02       		.uleb128 0x2
- 961 00bc 18       		.uleb128 0x18
- 962 00bd 00       		.byte	0
- 963 00be 00       		.byte	0
- 964 00bf 0C       		.uleb128 0xc
- 965 00c0 2E       		.uleb128 0x2e
- 966 00c1 01       		.byte	0x1
- 967 00c2 3F       		.uleb128 0x3f
- 968 00c3 19       		.uleb128 0x19
- 969 00c4 03       		.uleb128 0x3
- 970 00c5 0E       		.uleb128 0xe
- 971 00c6 3A       		.uleb128 0x3a
- 972 00c7 0B       		.uleb128 0xb
- 973 00c8 3B       		.uleb128 0x3b
- 974 00c9 0B       		.uleb128 0xb
- 975 00ca 27       		.uleb128 0x27
- 976 00cb 19       		.uleb128 0x19
- 977 00cc 11       		.uleb128 0x11
- 978 00cd 01       		.uleb128 0x1
- 979 00ce 12       		.uleb128 0x12
- 980 00cf 06       		.uleb128 0x6
- 981 00d0 40       		.uleb128 0x40
- 982 00d1 18       		.uleb128 0x18
- 983 00d2 9742     		.uleb128 0x2117
- 984 00d4 19       		.uleb128 0x19
- 985 00d5 01       		.uleb128 0x1
- 986 00d6 13       		.uleb128 0x13
- 987 00d7 00       		.byte	0
- 988 00d8 00       		.byte	0
- 989 00d9 0D       		.uleb128 0xd
- 990 00da 898201   		.uleb128 0x4109
- 991 00dd 01       		.byte	0x1
- 992 00de 11       		.uleb128 0x11
- 993 00df 01       		.uleb128 0x1
- 994 00e0 31       		.uleb128 0x31
- 995 00e1 13       		.uleb128 0x13
- 996 00e2 01       		.uleb128 0x1
- 997 00e3 13       		.uleb128 0x13
- 998 00e4 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 28
+ 529 008d 2C010000 		.4byte	.LASF12
+ 530 0091 02       		.uleb128 0x2
+ 531 0092 01       		.byte	0x1
+ 532 0093 08       		.byte	0x8
+ 533 0094 BC030000 		.4byte	.LASF13
+ 534 0098 04       		.uleb128 0x4
+ 535 0099 ED000000 		.4byte	.LASF14
+ 536 009d 02       		.byte	0x2
+ 537 009e 8E02     		.2byte	0x28e
+ 538 00a0 A4000000 		.4byte	0xa4
+ 539 00a4 05       		.uleb128 0x5
+ 540 00a5 6B000000 		.4byte	0x6b
+ 541 00a9 04       		.uleb128 0x4
+ 542 00aa 17000000 		.4byte	.LASF15
+ 543 00ae 02       		.byte	0x2
+ 544 00af 9002     		.2byte	0x290
+ 545 00b1 B5000000 		.4byte	0xb5
+ 546 00b5 05       		.uleb128 0x5
+ 547 00b6 77000000 		.4byte	0x77
+ 548 00ba 02       		.uleb128 0x2
+ 549 00bb 08       		.byte	0x8
+ 550 00bc 04       		.byte	0x4
+ 551 00bd C1030000 		.4byte	.LASF16
+ 552 00c1 02       		.uleb128 0x2
+ 553 00c2 04       		.byte	0x4
+ 554 00c3 07       		.byte	0x7
+ 555 00c4 66020000 		.4byte	.LASF17
+ 556 00c8 06       		.uleb128 0x6
+ 557 00c9 92010000 		.4byte	.LASF18
+ 558 00cd 01       		.byte	0x1
+ 559 00ce B4       		.byte	0xb4
+ 560 00cf 00000000 		.4byte	.LFB1
+ 561 00d3 10000000 		.4byte	.LFE1-.LFB1
+ 562 00d7 01       		.uleb128 0x1
+ 563 00d8 9C       		.byte	0x9c
+ 564 00d9 06       		.uleb128 0x6
+ 565 00da 30000000 		.4byte	.LASF19
+ 566 00de 01       		.byte	0x1
+ 567 00df F7       		.byte	0xf7
+ 568 00e0 00000000 		.4byte	.LFB3
+ 569 00e4 10000000 		.4byte	.LFE3-.LFB3
+ 570 00e8 01       		.uleb128 0x1
+ 571 00e9 9C       		.byte	0x9c
+ 572 00ea 07       		.uleb128 0x7
+ 573 00eb FB020000 		.4byte	.LASF23
+ 574 00ef 01       		.byte	0x1
+ 575 00f0 1701     		.2byte	0x117
+ 576 00f2 00000000 		.4byte	.LFB4
+ 577 00f6 0C000000 		.4byte	.LFE4-.LFB4
+ 578 00fa 01       		.uleb128 0x1
+ 579 00fb 9C       		.byte	0x9c
+ 580 00fc 0F010000 		.4byte	0x10f
+ 581 0100 08       		.uleb128 0x8
+ 582 0101 C8020000 		.4byte	.LASF25
+ 583 0105 01       		.byte	0x1
+ 584 0106 1701     		.2byte	0x117
+ 585 0108 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 25
 
 
- 999 00e5 00       		.byte	0
- 1000 00e6 0E       		.uleb128 0xe
- 1001 00e7 8A8201   		.uleb128 0x410a
- 1002 00ea 00       		.byte	0
- 1003 00eb 02       		.uleb128 0x2
- 1004 00ec 18       		.uleb128 0x18
- 1005 00ed 9142     		.uleb128 0x2111
- 1006 00ef 18       		.uleb128 0x18
- 1007 00f0 00       		.byte	0
- 1008 00f1 00       		.byte	0
- 1009 00f2 0F       		.uleb128 0xf
- 1010 00f3 898201   		.uleb128 0x4109
- 1011 00f6 01       		.byte	0x1
- 1012 00f7 11       		.uleb128 0x11
- 1013 00f8 01       		.uleb128 0x1
- 1014 00f9 31       		.uleb128 0x31
- 1015 00fa 13       		.uleb128 0x13
- 1016 00fb 00       		.byte	0
- 1017 00fc 00       		.byte	0
- 1018 00fd 10       		.uleb128 0x10
- 1019 00fe 898201   		.uleb128 0x4109
- 1020 0101 00       		.byte	0
- 1021 0102 11       		.uleb128 0x11
- 1022 0103 01       		.uleb128 0x1
- 1023 0104 31       		.uleb128 0x31
- 1024 0105 13       		.uleb128 0x13
- 1025 0106 00       		.byte	0
- 1026 0107 00       		.byte	0
- 1027 0108 11       		.uleb128 0x11
- 1028 0109 34       		.uleb128 0x34
- 1029 010a 00       		.byte	0
- 1030 010b 03       		.uleb128 0x3
- 1031 010c 0E       		.uleb128 0xe
- 1032 010d 3A       		.uleb128 0x3a
- 1033 010e 0B       		.uleb128 0xb
- 1034 010f 3B       		.uleb128 0x3b
- 1035 0110 0B       		.uleb128 0xb
- 1036 0111 49       		.uleb128 0x49
- 1037 0112 13       		.uleb128 0x13
- 1038 0113 3F       		.uleb128 0x3f
- 1039 0114 19       		.uleb128 0x19
- 1040 0115 02       		.uleb128 0x2
- 1041 0116 18       		.uleb128 0x18
- 1042 0117 00       		.byte	0
- 1043 0118 00       		.byte	0
- 1044 0119 00       		.byte	0
- 1045              		.section	.debug_aranges,"",%progbits
- 1046 0000 84000000 		.4byte	0x84
- 1047 0004 0200     		.2byte	0x2
- 1048 0006 00000000 		.4byte	.Ldebug_info0
- 1049 000a 04       		.byte	0x4
- 1050 000b 00       		.byte	0
- 1051 000c 0000     		.2byte	0
- 1052 000e 0000     		.2byte	0
- 1053 0010 00000000 		.4byte	.LFB1
- 1054 0014 28000000 		.4byte	.LFE1-.LFB1
- 1055 0018 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 29
+ 586 010c 01       		.uleb128 0x1
+ 587 010d 50       		.byte	0x50
+ 588 010e 00       		.byte	0
+ 589 010f 09       		.uleb128 0x9
+ 590 0110 D6020000 		.4byte	.LASF20
+ 591 0114 01       		.byte	0x1
+ 592 0115 2E01     		.2byte	0x12e
+ 593 0117 00000000 		.4byte	.LFB5
+ 594 011b 0C000000 		.4byte	.LFE5-.LFB5
+ 595 011f 01       		.uleb128 0x1
+ 596 0120 9C       		.byte	0x9c
+ 597 0121 0A       		.uleb128 0xa
+ 598 0122 A4010000 		.4byte	.LASF21
+ 599 0126 01       		.byte	0x1
+ 600 0127 4D01     		.2byte	0x14d
+ 601 0129 6B000000 		.4byte	0x6b
+ 602 012d 00000000 		.4byte	.LFB6
+ 603 0131 0C000000 		.4byte	.LFE6-.LFB6
+ 604 0135 01       		.uleb128 0x1
+ 605 0136 9C       		.byte	0x9c
+ 606 0137 0A       		.uleb128 0xa
+ 607 0138 4F010000 		.4byte	.LASF22
+ 608 013c 01       		.byte	0x1
+ 609 013d 6401     		.2byte	0x164
+ 610 013f 6B000000 		.4byte	0x6b
+ 611 0143 00000000 		.4byte	.LFB7
+ 612 0147 0C000000 		.4byte	.LFE7-.LFB7
+ 613 014b 01       		.uleb128 0x1
+ 614 014c 9C       		.byte	0x9c
+ 615 014d 07       		.uleb128 0x7
+ 616 014e 82000000 		.4byte	.LASF24
+ 617 0152 01       		.byte	0x1
+ 618 0153 7B01     		.2byte	0x17b
+ 619 0155 00000000 		.4byte	.LFB8
+ 620 0159 0C000000 		.4byte	.LFE8-.LFB8
+ 621 015d 01       		.uleb128 0x1
+ 622 015e 9C       		.byte	0x9c
+ 623 015f 72010000 		.4byte	0x172
+ 624 0163 08       		.uleb128 0x8
+ 625 0164 0A010000 		.4byte	.LASF26
+ 626 0168 01       		.byte	0x1
+ 627 0169 7B01     		.2byte	0x17b
+ 628 016b 6B000000 		.4byte	0x6b
+ 629 016f 01       		.uleb128 0x1
+ 630 0170 50       		.byte	0x50
+ 631 0171 00       		.byte	0
+ 632 0172 0A       		.uleb128 0xa
+ 633 0173 CD030000 		.4byte	.LASF27
+ 634 0177 01       		.byte	0x1
+ 635 0178 9501     		.2byte	0x195
+ 636 017a 77000000 		.4byte	0x77
+ 637 017e 00000000 		.4byte	.LFB9
+ 638 0182 0C000000 		.4byte	.LFE9-.LFB9
+ 639 0186 01       		.uleb128 0x1
+ 640 0187 9C       		.byte	0x9c
+ 641 0188 07       		.uleb128 0x7
+ 642 0189 6B000000 		.4byte	.LASF28
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 26
 
 
- 1056 001c 28000000 		.4byte	.LFE3-.LFB3
- 1057 0020 00000000 		.4byte	.LFB4
- 1058 0024 0C000000 		.4byte	.LFE4-.LFB4
- 1059 0028 00000000 		.4byte	.LFB5
- 1060 002c 0C000000 		.4byte	.LFE5-.LFB5
- 1061 0030 00000000 		.4byte	.LFB6
- 1062 0034 0C000000 		.4byte	.LFE6-.LFB6
- 1063 0038 00000000 		.4byte	.LFB7
- 1064 003c 0C000000 		.4byte	.LFE7-.LFB7
- 1065 0040 00000000 		.4byte	.LFB8
- 1066 0044 0C000000 		.4byte	.LFE8-.LFB8
- 1067 0048 00000000 		.4byte	.LFB9
- 1068 004c 0C000000 		.4byte	.LFE9-.LFB9
- 1069 0050 00000000 		.4byte	.LFB10
- 1070 0054 0C000000 		.4byte	.LFE10-.LFB10
- 1071 0058 00000000 		.4byte	.LFB11
- 1072 005c 0C000000 		.4byte	.LFE11-.LFB11
- 1073 0060 00000000 		.4byte	.LFB12
- 1074 0064 0C000000 		.4byte	.LFE12-.LFB12
- 1075 0068 00000000 		.4byte	.LFB0
- 1076 006c 68000000 		.4byte	.LFE0-.LFB0
- 1077 0070 00000000 		.4byte	.LFB2
- 1078 0074 1C000000 		.4byte	.LFE2-.LFB2
- 1079 0078 00000000 		.4byte	.LFB13
- 1080 007c 14000000 		.4byte	.LFE13-.LFB13
- 1081 0080 00000000 		.4byte	0
- 1082 0084 00000000 		.4byte	0
- 1083              		.section	.debug_ranges,"",%progbits
- 1084              	.Ldebug_ranges0:
- 1085 0000 00000000 		.4byte	.LFB1
- 1086 0004 28000000 		.4byte	.LFE1
- 1087 0008 00000000 		.4byte	.LFB3
- 1088 000c 28000000 		.4byte	.LFE3
- 1089 0010 00000000 		.4byte	.LFB4
- 1090 0014 0C000000 		.4byte	.LFE4
- 1091 0018 00000000 		.4byte	.LFB5
- 1092 001c 0C000000 		.4byte	.LFE5
- 1093 0020 00000000 		.4byte	.LFB6
- 1094 0024 0C000000 		.4byte	.LFE6
- 1095 0028 00000000 		.4byte	.LFB7
- 1096 002c 0C000000 		.4byte	.LFE7
- 1097 0030 00000000 		.4byte	.LFB8
- 1098 0034 0C000000 		.4byte	.LFE8
- 1099 0038 00000000 		.4byte	.LFB9
- 1100 003c 0C000000 		.4byte	.LFE9
- 1101 0040 00000000 		.4byte	.LFB10
- 1102 0044 0C000000 		.4byte	.LFE10
- 1103 0048 00000000 		.4byte	.LFB11
- 1104 004c 0C000000 		.4byte	.LFE11
- 1105 0050 00000000 		.4byte	.LFB12
- 1106 0054 0C000000 		.4byte	.LFE12
- 1107 0058 00000000 		.4byte	.LFB0
- 1108 005c 68000000 		.4byte	.LFE0
- 1109 0060 00000000 		.4byte	.LFB2
- 1110 0064 1C000000 		.4byte	.LFE2
- 1111 0068 00000000 		.4byte	.LFB13
- 1112 006c 14000000 		.4byte	.LFE13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 30
+ 643 018d 01       		.byte	0x1
+ 644 018e AF01     		.2byte	0x1af
+ 645 0190 00000000 		.4byte	.LFB10
+ 646 0194 0C000000 		.4byte	.LFE10-.LFB10
+ 647 0198 01       		.uleb128 0x1
+ 648 0199 9C       		.byte	0x9c
+ 649 019a AD010000 		.4byte	0x1ad
+ 650 019e 08       		.uleb128 0x8
+ 651 019f 51000000 		.4byte	.LASF29
+ 652 01a3 01       		.byte	0x1
+ 653 01a4 AF01     		.2byte	0x1af
+ 654 01a6 77000000 		.4byte	0x77
+ 655 01aa 01       		.uleb128 0x1
+ 656 01ab 50       		.byte	0x50
+ 657 01ac 00       		.byte	0
+ 658 01ad 0A       		.uleb128 0xa
+ 659 01ae 6F020000 		.4byte	.LASF30
+ 660 01b2 01       		.byte	0x1
+ 661 01b3 C801     		.2byte	0x1c8
+ 662 01b5 77000000 		.4byte	0x77
+ 663 01b9 00000000 		.4byte	.LFB11
+ 664 01bd 0C000000 		.4byte	.LFE11-.LFB11
+ 665 01c1 01       		.uleb128 0x1
+ 666 01c2 9C       		.byte	0x9c
+ 667 01c3 07       		.uleb128 0x7
+ 668 01c4 D5000000 		.4byte	.LASF31
+ 669 01c8 01       		.byte	0x1
+ 670 01c9 E001     		.2byte	0x1e0
+ 671 01cb 00000000 		.4byte	.LFB12
+ 672 01cf 0C000000 		.4byte	.LFE12-.LFB12
+ 673 01d3 01       		.uleb128 0x1
+ 674 01d4 9C       		.byte	0x9c
+ 675 01d5 E8010000 		.4byte	0x1e8
+ 676 01d9 08       		.uleb128 0x8
+ 677 01da A8000000 		.4byte	.LASF32
+ 678 01de 01       		.byte	0x1
+ 679 01df E001     		.2byte	0x1e0
+ 680 01e1 77000000 		.4byte	0x77
+ 681 01e5 01       		.uleb128 0x1
+ 682 01e6 50       		.byte	0x50
+ 683 01e7 00       		.byte	0
+ 684 01e8 0A       		.uleb128 0xa
+ 685 01e9 00000000 		.4byte	.LASF33
+ 686 01ed 01       		.byte	0x1
+ 687 01ee FC01     		.2byte	0x1fc
+ 688 01f0 77000000 		.4byte	0x77
+ 689 01f4 00000000 		.4byte	.LFB13
+ 690 01f8 14000000 		.4byte	.LFE13-.LFB13
+ 691 01fc 01       		.uleb128 0x1
+ 692 01fd 9C       		.byte	0x9c
+ 693 01fe 07       		.uleb128 0x7
+ 694 01ff 33010000 		.4byte	.LASF34
+ 695 0203 01       		.byte	0x1
+ 696 0204 FB02     		.2byte	0x2fb
+ 697 0206 00000000 		.4byte	.LFB14
+ 698 020a 14000000 		.4byte	.LFE14-.LFB14
+ 699 020e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 27
 
 
- 1113 0070 00000000 		.4byte	0
- 1114 0074 00000000 		.4byte	0
- 1115              		.section	.debug_line,"",%progbits
- 1116              	.Ldebug_line0:
- 1117 0000 54010000 		.section	.debug_str,"MS",%progbits,1
- 1117      02004700 
- 1117      00000201 
- 1117      FB0E0D00 
- 1117      01010101 
- 1118              	.LASF15:
- 1119 0000 72656731 		.ascii	"reg16\000"
- 1119      3600
- 1120              	.LASF40:
- 1121 0006 4D41494E 		.ascii	"MAIN_TIMER_initVar\000"
- 1121      5F54494D 
- 1121      45525F69 
- 1121      6E697456 
- 1121      617200
- 1122              	.LASF19:
- 1123 0019 4D41494E 		.ascii	"MAIN_TIMER_Stop\000"
- 1123      5F54494D 
- 1123      45525F53 
- 1123      746F7000 
- 1124              	.LASF35:
- 1125 0029 4D41494E 		.ascii	"MAIN_TIMER_ReadCounter\000"
- 1125      5F54494D 
- 1125      45525F52 
- 1125      65616443 
- 1125      6F756E74 
- 1126              	.LASF34:
- 1127 0040 4D41494E 		.ascii	"MAIN_TIMER_Start\000"
- 1127      5F54494D 
- 1127      45525F53 
- 1127      74617274 
- 1127      00
- 1128              	.LASF29:
- 1129 0051 70657269 		.ascii	"period\000"
- 1129      6F6400
- 1130              	.LASF3:
- 1131 0058 73686F72 		.ascii	"short unsigned int\000"
- 1131      7420756E 
- 1131      7369676E 
- 1131      65642069 
- 1131      6E7400
- 1132              	.LASF28:
- 1133 006b 4D41494E 		.ascii	"MAIN_TIMER_WritePeriod\000"
- 1133      5F54494D 
- 1133      45525F57 
- 1133      72697465 
- 1133      50657269 
- 1134              	.LASF24:
- 1135 0082 4D41494E 		.ascii	"MAIN_TIMER_WriteControlRegister\000"
- 1135      5F54494D 
- 1135      45525F57 
- 1135      72697465 
- 1135      436F6E74 
- 1136              	.LASF11:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 31
+ 700 020f 9C       		.byte	0x9c
+ 701 0210 27020000 		.4byte	0x227
+ 702 0214 0B       		.uleb128 0xb
+ 703 0215 08000000 		.4byte	.LVL4
+ 704 0219 AD010000 		.4byte	0x1ad
+ 705 021d 0B       		.uleb128 0xb
+ 706 021e 0C000000 		.4byte	.LVL5
+ 707 0222 21010000 		.4byte	0x121
+ 708 0226 00       		.byte	0
+ 709 0227 0C       		.uleb128 0xc
+ 710 0228 86020000 		.4byte	.LASF35
+ 711 022c 01       		.byte	0x1
+ 712 022d 2B       		.byte	0x2b
+ 713 022e 00000000 		.4byte	.LFB0
+ 714 0232 34000000 		.4byte	.LFE0-.LFB0
+ 715 0236 01       		.uleb128 0x1
+ 716 0237 9C       		.byte	0x9c
+ 717 0238 9E020000 		.4byte	0x29e
+ 718 023c 0D       		.uleb128 0xd
+ 719 023d 12010000 		.4byte	.LASF42
+ 720 0241 01       		.byte	0x1
+ 721 0242 2F       		.byte	0x2f
+ 722 0243 6B000000 		.4byte	0x6b
+ 723 0247 00000000 		.4byte	.LLST0
+ 724 024b 0E       		.uleb128 0xe
+ 725 024c 0A000000 		.4byte	.LVL6
+ 726 0250 88010000 		.4byte	0x188
+ 727 0254 5F020000 		.4byte	0x25f
+ 728 0258 0F       		.uleb128 0xf
+ 729 0259 01       		.uleb128 0x1
+ 730 025a 50       		.byte	0x50
+ 731 025b 02       		.uleb128 0x2
+ 732 025c 09       		.byte	0x9
+ 733 025d FF       		.byte	0xff
+ 734 025e 00       		.byte	0
+ 735 025f 0E       		.uleb128 0xe
+ 736 0260 12000000 		.4byte	.LVL7
+ 737 0264 C3010000 		.4byte	0x1c3
+ 738 0268 73020000 		.4byte	0x273
+ 739 026c 0F       		.uleb128 0xf
+ 740 026d 01       		.uleb128 0x1
+ 741 026e 50       		.byte	0x50
+ 742 026f 02       		.uleb128 0x2
+ 743 0270 09       		.byte	0x9
+ 744 0271 FF       		.byte	0xff
+ 745 0272 00       		.byte	0
+ 746 0273 0B       		.uleb128 0xb
+ 747 0274 16000000 		.4byte	.LVL8
+ 748 0278 D7020000 		.4byte	0x2d7
+ 749 027c 0B       		.uleb128 0xb
+ 750 027d 24000000 		.4byte	.LVL9
+ 751 0281 E2020000 		.4byte	0x2e2
+ 752 0285 0B       		.uleb128 0xb
+ 753 0286 28000000 		.4byte	.LVL10
+ 754 028a FE010000 		.4byte	0x1fe
+ 755 028e 10       		.uleb128 0x10
+ 756 028f 2E000000 		.4byte	.LVL11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 28
 
 
- 1137 00a2 666C6F61 		.ascii	"float\000"
- 1137      7400
- 1138              	.LASF32:
- 1139 00a8 636F756E 		.ascii	"counter\000"
- 1139      74657200 
- 1140              	.LASF31:
- 1141 00b0 4D41494E 		.ascii	"MAIN_TIMER_WriteCounter\000"
- 1141      5F54494D 
- 1141      45525F57 
- 1141      72697465 
- 1141      436F756E 
- 1142              	.LASF1:
- 1143 00c8 756E7369 		.ascii	"unsigned char\000"
- 1143      676E6564 
- 1143      20636861 
- 1143      7200
- 1144              	.LASF36:
- 1145 00d6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1145      43313120 
- 1145      352E342E 
- 1145      31203230 
- 1145      31363036 
- 1146 0109 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1146      20726576 
- 1146      6973696F 
- 1146      6E203233 
- 1146      37373135 
- 1147 013c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1147      66756E63 
- 1147      74696F6E 
- 1147      2D736563 
- 1147      74696F6E 
- 1148              	.LASF14:
- 1149 0164 72656738 		.ascii	"reg8\000"
- 1149      00
- 1150              	.LASF5:
- 1151 0169 6C6F6E67 		.ascii	"long unsigned int\000"
- 1151      20756E73 
- 1151      69676E65 
- 1151      6420696E 
- 1151      7400
- 1152              	.LASF9:
- 1153 017b 75696E74 		.ascii	"uint8\000"
- 1153      3800
- 1154              	.LASF26:
- 1155 0181 636F6E74 		.ascii	"control\000"
- 1155      726F6C00 
- 1156              	.LASF12:
- 1157 0189 646F7562 		.ascii	"double\000"
- 1157      6C6500
- 1158              	.LASF10:
- 1159 0190 75696E74 		.ascii	"uint16\000"
- 1159      313600
- 1160              	.LASF22:
- 1161 0197 4D41494E 		.ascii	"MAIN_TIMER_ReadControlRegister\000"
- 1161      5F54494D 
- 1161      45525F52 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 32
+ 757 0293 EA000000 		.4byte	0xea
+ 758 0297 0F       		.uleb128 0xf
+ 759 0298 01       		.uleb128 0x1
+ 760 0299 50       		.byte	0x50
+ 761 029a 01       		.uleb128 0x1
+ 762 029b 30       		.byte	0x30
+ 763 029c 00       		.byte	0
+ 764 029d 00       		.byte	0
+ 765 029e 0C       		.uleb128 0xc
+ 766 029f 40000000 		.4byte	.LASF36
+ 767 02a3 01       		.byte	0x1
+ 768 02a4 D7       		.byte	0xd7
+ 769 02a5 00000000 		.4byte	.LFB2
+ 770 02a9 1C000000 		.4byte	.LFE2-.LFB2
+ 771 02ad 01       		.uleb128 0x1
+ 772 02ae 9C       		.byte	0x9c
+ 773 02af C6020000 		.4byte	0x2c6
+ 774 02b3 0B       		.uleb128 0xb
+ 775 02b4 0C000000 		.4byte	.LVL12
+ 776 02b8 27020000 		.4byte	0x227
+ 777 02bc 0B       		.uleb128 0xb
+ 778 02bd 16000000 		.4byte	.LVL13
+ 779 02c1 C8000000 		.4byte	0xc8
+ 780 02c5 00       		.byte	0
+ 781 02c6 11       		.uleb128 0x11
+ 782 02c7 1D000000 		.4byte	.LASF43
+ 783 02cb 01       		.byte	0x1
+ 784 02cc 1A       		.byte	0x1a
+ 785 02cd 6B000000 		.4byte	0x6b
+ 786 02d1 05       		.uleb128 0x5
+ 787 02d2 03       		.byte	0x3
+ 788 02d3 00000000 		.4byte	MAIN_TIMER_initVar
+ 789 02d7 12       		.uleb128 0x12
+ 790 02d8 6E010000 		.4byte	.LASF37
+ 791 02dc 6E010000 		.4byte	.LASF37
+ 792 02e0 03       		.byte	0x3
+ 793 02e1 7D       		.byte	0x7d
+ 794 02e2 12       		.uleb128 0x12
+ 795 02e3 C2010000 		.4byte	.LASF38
+ 796 02e7 C2010000 		.4byte	.LASF38
+ 797 02eb 03       		.byte	0x3
+ 798 02ec 7E       		.byte	0x7e
+ 799 02ed 00       		.byte	0
+ 800              		.section	.debug_abbrev,"",%progbits
+ 801              	.Ldebug_abbrev0:
+ 802 0000 01       		.uleb128 0x1
+ 803 0001 11       		.uleb128 0x11
+ 804 0002 01       		.byte	0x1
+ 805 0003 25       		.uleb128 0x25
+ 806 0004 0E       		.uleb128 0xe
+ 807 0005 13       		.uleb128 0x13
+ 808 0006 0B       		.uleb128 0xb
+ 809 0007 03       		.uleb128 0x3
+ 810 0008 0E       		.uleb128 0xe
+ 811 0009 1B       		.uleb128 0x1b
+ 812 000a 0E       		.uleb128 0xe
+ 813 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 29
 
 
- 1161      65616443 
- 1161      6F6E7472 
- 1162              	.LASF8:
- 1163 01b6 756E7369 		.ascii	"unsigned int\000"
- 1163      676E6564 
- 1163      20696E74 
- 1163      00
- 1164              	.LASF18:
- 1165 01c3 4D41494E 		.ascii	"MAIN_TIMER_Enable\000"
- 1165      5F54494D 
- 1165      45525F45 
- 1165      6E61626C 
- 1165      6500
- 1166              	.LASF21:
- 1167 01d5 4D41494E 		.ascii	"MAIN_TIMER_ReadStatusRegister\000"
- 1167      5F54494D 
- 1167      45525F52 
- 1167      65616453 
- 1167      74617475 
- 1168              	.LASF7:
- 1169 01f3 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1169      206C6F6E 
- 1169      6720756E 
- 1169      7369676E 
- 1169      65642069 
- 1170              	.LASF39:
- 1171 020a 70657269 		.ascii	"period_temp\000"
- 1171      6F645F74 
- 1171      656D7000 
- 1172              	.LASF17:
- 1173 0216 73697A65 		.ascii	"sizetype\000"
- 1173      74797065 
- 1173      00
- 1174              	.LASF30:
- 1175 021f 4D41494E 		.ascii	"MAIN_TIMER_ReadCapture\000"
- 1175      5F54494D 
- 1175      45525F52 
- 1175      65616443 
- 1175      61707475 
- 1176              	.LASF33:
- 1177 0236 4D41494E 		.ascii	"MAIN_TIMER_Init\000"
- 1177      5F54494D 
- 1177      45525F49 
- 1177      6E697400 
- 1178              	.LASF6:
- 1179 0246 6C6F6E67 		.ascii	"long long int\000"
- 1179      206C6F6E 
- 1179      6720696E 
- 1179      7400
- 1180              	.LASF37:
- 1181 0254 47656E65 		.ascii	"Generated_Source\\PSoC5\\MAIN_TIMER.c\000"
- 1181      72617465 
- 1181      645F536F 
- 1181      75726365 
- 1181      5C50536F 
- 1182              	.LASF25:
- 1183 0278 696E7465 		.ascii	"interruptMode\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 33
+ 814 000c 17       		.uleb128 0x17
+ 815 000d 11       		.uleb128 0x11
+ 816 000e 01       		.uleb128 0x1
+ 817 000f 10       		.uleb128 0x10
+ 818 0010 17       		.uleb128 0x17
+ 819 0011 00       		.byte	0
+ 820 0012 00       		.byte	0
+ 821 0013 02       		.uleb128 0x2
+ 822 0014 24       		.uleb128 0x24
+ 823 0015 00       		.byte	0
+ 824 0016 0B       		.uleb128 0xb
+ 825 0017 0B       		.uleb128 0xb
+ 826 0018 3E       		.uleb128 0x3e
+ 827 0019 0B       		.uleb128 0xb
+ 828 001a 03       		.uleb128 0x3
+ 829 001b 0E       		.uleb128 0xe
+ 830 001c 00       		.byte	0
+ 831 001d 00       		.byte	0
+ 832 001e 03       		.uleb128 0x3
+ 833 001f 24       		.uleb128 0x24
+ 834 0020 00       		.byte	0
+ 835 0021 0B       		.uleb128 0xb
+ 836 0022 0B       		.uleb128 0xb
+ 837 0023 3E       		.uleb128 0x3e
+ 838 0024 0B       		.uleb128 0xb
+ 839 0025 03       		.uleb128 0x3
+ 840 0026 08       		.uleb128 0x8
+ 841 0027 00       		.byte	0
+ 842 0028 00       		.byte	0
+ 843 0029 04       		.uleb128 0x4
+ 844 002a 16       		.uleb128 0x16
+ 845 002b 00       		.byte	0
+ 846 002c 03       		.uleb128 0x3
+ 847 002d 0E       		.uleb128 0xe
+ 848 002e 3A       		.uleb128 0x3a
+ 849 002f 0B       		.uleb128 0xb
+ 850 0030 3B       		.uleb128 0x3b
+ 851 0031 05       		.uleb128 0x5
+ 852 0032 49       		.uleb128 0x49
+ 853 0033 13       		.uleb128 0x13
+ 854 0034 00       		.byte	0
+ 855 0035 00       		.byte	0
+ 856 0036 05       		.uleb128 0x5
+ 857 0037 35       		.uleb128 0x35
+ 858 0038 00       		.byte	0
+ 859 0039 49       		.uleb128 0x49
+ 860 003a 13       		.uleb128 0x13
+ 861 003b 00       		.byte	0
+ 862 003c 00       		.byte	0
+ 863 003d 06       		.uleb128 0x6
+ 864 003e 2E       		.uleb128 0x2e
+ 865 003f 00       		.byte	0
+ 866 0040 3F       		.uleb128 0x3f
+ 867 0041 19       		.uleb128 0x19
+ 868 0042 03       		.uleb128 0x3
+ 869 0043 0E       		.uleb128 0xe
+ 870 0044 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 30
 
 
- 1183      72727570 
- 1183      744D6F64 
- 1183      6500
- 1184              	.LASF20:
- 1185 0286 4D41494E 		.ascii	"MAIN_TIMER_SoftwareCapture\000"
- 1185      5F54494D 
- 1185      45525F53 
- 1185      6F667477 
- 1185      61726543 
- 1186              	.LASF2:
- 1187 02a1 73686F72 		.ascii	"short int\000"
- 1187      7420696E 
- 1187      7400
- 1188              	.LASF23:
- 1189 02ab 4D41494E 		.ascii	"MAIN_TIMER_SetInterruptMode\000"
- 1189      5F54494D 
- 1189      45525F53 
- 1189      6574496E 
- 1189      74657272 
- 1190              	.LASF38:
- 1191 02c7 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 1191      73657273 
- 1191      5C4C6F72 
- 1191      795C4465 
- 1191      736B746F 
- 1192 02f5 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
- 1192      65735C50 
- 1192      536F432D 
- 1192      46696E61 
- 1192      6C2D5072 
- 1193 0326 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 1193      415F4755 
- 1193      414C4E49 
- 1193      4552415C 
- 1193      41593139 
- 1194 0358 49455241 		.ascii	"IERA.cydsn\000"
- 1194      2E637964 
- 1194      736E00
- 1195              	.LASF4:
- 1196 0363 6C6F6E67 		.ascii	"long int\000"
- 1196      20696E74 
- 1196      00
- 1197              	.LASF13:
- 1198 036c 63686172 		.ascii	"char\000"
- 1198      00
- 1199              	.LASF16:
- 1200 0371 6C6F6E67 		.ascii	"long double\000"
- 1200      20646F75 
- 1200      626C6500 
- 1201              	.LASF27:
- 1202 037d 4D41494E 		.ascii	"MAIN_TIMER_ReadPeriod\000"
- 1202      5F54494D 
- 1202      45525F52 
- 1202      65616450 
- 1202      6572696F 
- 1203              	.LASF0:
- 1204 0393 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc9ybbXv.s 			page 34
+ 871 0045 0B       		.uleb128 0xb
+ 872 0046 3B       		.uleb128 0x3b
+ 873 0047 0B       		.uleb128 0xb
+ 874 0048 27       		.uleb128 0x27
+ 875 0049 19       		.uleb128 0x19
+ 876 004a 11       		.uleb128 0x11
+ 877 004b 01       		.uleb128 0x1
+ 878 004c 12       		.uleb128 0x12
+ 879 004d 06       		.uleb128 0x6
+ 880 004e 40       		.uleb128 0x40
+ 881 004f 18       		.uleb128 0x18
+ 882 0050 9742     		.uleb128 0x2117
+ 883 0052 19       		.uleb128 0x19
+ 884 0053 00       		.byte	0
+ 885 0054 00       		.byte	0
+ 886 0055 07       		.uleb128 0x7
+ 887 0056 2E       		.uleb128 0x2e
+ 888 0057 01       		.byte	0x1
+ 889 0058 3F       		.uleb128 0x3f
+ 890 0059 19       		.uleb128 0x19
+ 891 005a 03       		.uleb128 0x3
+ 892 005b 0E       		.uleb128 0xe
+ 893 005c 3A       		.uleb128 0x3a
+ 894 005d 0B       		.uleb128 0xb
+ 895 005e 3B       		.uleb128 0x3b
+ 896 005f 05       		.uleb128 0x5
+ 897 0060 27       		.uleb128 0x27
+ 898 0061 19       		.uleb128 0x19
+ 899 0062 11       		.uleb128 0x11
+ 900 0063 01       		.uleb128 0x1
+ 901 0064 12       		.uleb128 0x12
+ 902 0065 06       		.uleb128 0x6
+ 903 0066 40       		.uleb128 0x40
+ 904 0067 18       		.uleb128 0x18
+ 905 0068 9742     		.uleb128 0x2117
+ 906 006a 19       		.uleb128 0x19
+ 907 006b 01       		.uleb128 0x1
+ 908 006c 13       		.uleb128 0x13
+ 909 006d 00       		.byte	0
+ 910 006e 00       		.byte	0
+ 911 006f 08       		.uleb128 0x8
+ 912 0070 05       		.uleb128 0x5
+ 913 0071 00       		.byte	0
+ 914 0072 03       		.uleb128 0x3
+ 915 0073 0E       		.uleb128 0xe
+ 916 0074 3A       		.uleb128 0x3a
+ 917 0075 0B       		.uleb128 0xb
+ 918 0076 3B       		.uleb128 0x3b
+ 919 0077 05       		.uleb128 0x5
+ 920 0078 49       		.uleb128 0x49
+ 921 0079 13       		.uleb128 0x13
+ 922 007a 02       		.uleb128 0x2
+ 923 007b 18       		.uleb128 0x18
+ 924 007c 00       		.byte	0
+ 925 007d 00       		.byte	0
+ 926 007e 09       		.uleb128 0x9
+ 927 007f 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 31
 
 
- 1204      65642063 
- 1204      68617200 
- 1205              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 928 0080 00       		.byte	0
+ 929 0081 3F       		.uleb128 0x3f
+ 930 0082 19       		.uleb128 0x19
+ 931 0083 03       		.uleb128 0x3
+ 932 0084 0E       		.uleb128 0xe
+ 933 0085 3A       		.uleb128 0x3a
+ 934 0086 0B       		.uleb128 0xb
+ 935 0087 3B       		.uleb128 0x3b
+ 936 0088 05       		.uleb128 0x5
+ 937 0089 27       		.uleb128 0x27
+ 938 008a 19       		.uleb128 0x19
+ 939 008b 11       		.uleb128 0x11
+ 940 008c 01       		.uleb128 0x1
+ 941 008d 12       		.uleb128 0x12
+ 942 008e 06       		.uleb128 0x6
+ 943 008f 40       		.uleb128 0x40
+ 944 0090 18       		.uleb128 0x18
+ 945 0091 9742     		.uleb128 0x2117
+ 946 0093 19       		.uleb128 0x19
+ 947 0094 00       		.byte	0
+ 948 0095 00       		.byte	0
+ 949 0096 0A       		.uleb128 0xa
+ 950 0097 2E       		.uleb128 0x2e
+ 951 0098 00       		.byte	0
+ 952 0099 3F       		.uleb128 0x3f
+ 953 009a 19       		.uleb128 0x19
+ 954 009b 03       		.uleb128 0x3
+ 955 009c 0E       		.uleb128 0xe
+ 956 009d 3A       		.uleb128 0x3a
+ 957 009e 0B       		.uleb128 0xb
+ 958 009f 3B       		.uleb128 0x3b
+ 959 00a0 05       		.uleb128 0x5
+ 960 00a1 27       		.uleb128 0x27
+ 961 00a2 19       		.uleb128 0x19
+ 962 00a3 49       		.uleb128 0x49
+ 963 00a4 13       		.uleb128 0x13
+ 964 00a5 11       		.uleb128 0x11
+ 965 00a6 01       		.uleb128 0x1
+ 966 00a7 12       		.uleb128 0x12
+ 967 00a8 06       		.uleb128 0x6
+ 968 00a9 40       		.uleb128 0x40
+ 969 00aa 18       		.uleb128 0x18
+ 970 00ab 9742     		.uleb128 0x2117
+ 971 00ad 19       		.uleb128 0x19
+ 972 00ae 00       		.byte	0
+ 973 00af 00       		.byte	0
+ 974 00b0 0B       		.uleb128 0xb
+ 975 00b1 898201   		.uleb128 0x4109
+ 976 00b4 00       		.byte	0
+ 977 00b5 11       		.uleb128 0x11
+ 978 00b6 01       		.uleb128 0x1
+ 979 00b7 31       		.uleb128 0x31
+ 980 00b8 13       		.uleb128 0x13
+ 981 00b9 00       		.byte	0
+ 982 00ba 00       		.byte	0
+ 983 00bb 0C       		.uleb128 0xc
+ 984 00bc 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 32
+
+
+ 985 00bd 01       		.byte	0x1
+ 986 00be 3F       		.uleb128 0x3f
+ 987 00bf 19       		.uleb128 0x19
+ 988 00c0 03       		.uleb128 0x3
+ 989 00c1 0E       		.uleb128 0xe
+ 990 00c2 3A       		.uleb128 0x3a
+ 991 00c3 0B       		.uleb128 0xb
+ 992 00c4 3B       		.uleb128 0x3b
+ 993 00c5 0B       		.uleb128 0xb
+ 994 00c6 27       		.uleb128 0x27
+ 995 00c7 19       		.uleb128 0x19
+ 996 00c8 11       		.uleb128 0x11
+ 997 00c9 01       		.uleb128 0x1
+ 998 00ca 12       		.uleb128 0x12
+ 999 00cb 06       		.uleb128 0x6
+ 1000 00cc 40       		.uleb128 0x40
+ 1001 00cd 18       		.uleb128 0x18
+ 1002 00ce 9742     		.uleb128 0x2117
+ 1003 00d0 19       		.uleb128 0x19
+ 1004 00d1 01       		.uleb128 0x1
+ 1005 00d2 13       		.uleb128 0x13
+ 1006 00d3 00       		.byte	0
+ 1007 00d4 00       		.byte	0
+ 1008 00d5 0D       		.uleb128 0xd
+ 1009 00d6 34       		.uleb128 0x34
+ 1010 00d7 00       		.byte	0
+ 1011 00d8 03       		.uleb128 0x3
+ 1012 00d9 0E       		.uleb128 0xe
+ 1013 00da 3A       		.uleb128 0x3a
+ 1014 00db 0B       		.uleb128 0xb
+ 1015 00dc 3B       		.uleb128 0x3b
+ 1016 00dd 0B       		.uleb128 0xb
+ 1017 00de 49       		.uleb128 0x49
+ 1018 00df 13       		.uleb128 0x13
+ 1019 00e0 02       		.uleb128 0x2
+ 1020 00e1 17       		.uleb128 0x17
+ 1021 00e2 00       		.byte	0
+ 1022 00e3 00       		.byte	0
+ 1023 00e4 0E       		.uleb128 0xe
+ 1024 00e5 898201   		.uleb128 0x4109
+ 1025 00e8 01       		.byte	0x1
+ 1026 00e9 11       		.uleb128 0x11
+ 1027 00ea 01       		.uleb128 0x1
+ 1028 00eb 31       		.uleb128 0x31
+ 1029 00ec 13       		.uleb128 0x13
+ 1030 00ed 01       		.uleb128 0x1
+ 1031 00ee 13       		.uleb128 0x13
+ 1032 00ef 00       		.byte	0
+ 1033 00f0 00       		.byte	0
+ 1034 00f1 0F       		.uleb128 0xf
+ 1035 00f2 8A8201   		.uleb128 0x410a
+ 1036 00f5 00       		.byte	0
+ 1037 00f6 02       		.uleb128 0x2
+ 1038 00f7 18       		.uleb128 0x18
+ 1039 00f8 9142     		.uleb128 0x2111
+ 1040 00fa 18       		.uleb128 0x18
+ 1041 00fb 00       		.byte	0
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 33
+
+
+ 1042 00fc 00       		.byte	0
+ 1043 00fd 10       		.uleb128 0x10
+ 1044 00fe 898201   		.uleb128 0x4109
+ 1045 0101 01       		.byte	0x1
+ 1046 0102 11       		.uleb128 0x11
+ 1047 0103 01       		.uleb128 0x1
+ 1048 0104 31       		.uleb128 0x31
+ 1049 0105 13       		.uleb128 0x13
+ 1050 0106 00       		.byte	0
+ 1051 0107 00       		.byte	0
+ 1052 0108 11       		.uleb128 0x11
+ 1053 0109 34       		.uleb128 0x34
+ 1054 010a 00       		.byte	0
+ 1055 010b 03       		.uleb128 0x3
+ 1056 010c 0E       		.uleb128 0xe
+ 1057 010d 3A       		.uleb128 0x3a
+ 1058 010e 0B       		.uleb128 0xb
+ 1059 010f 3B       		.uleb128 0x3b
+ 1060 0110 0B       		.uleb128 0xb
+ 1061 0111 49       		.uleb128 0x49
+ 1062 0112 13       		.uleb128 0x13
+ 1063 0113 3F       		.uleb128 0x3f
+ 1064 0114 19       		.uleb128 0x19
+ 1065 0115 02       		.uleb128 0x2
+ 1066 0116 18       		.uleb128 0x18
+ 1067 0117 00       		.byte	0
+ 1068 0118 00       		.byte	0
+ 1069 0119 12       		.uleb128 0x12
+ 1070 011a 2E       		.uleb128 0x2e
+ 1071 011b 00       		.byte	0
+ 1072 011c 3F       		.uleb128 0x3f
+ 1073 011d 19       		.uleb128 0x19
+ 1074 011e 3C       		.uleb128 0x3c
+ 1075 011f 19       		.uleb128 0x19
+ 1076 0120 6E       		.uleb128 0x6e
+ 1077 0121 0E       		.uleb128 0xe
+ 1078 0122 03       		.uleb128 0x3
+ 1079 0123 0E       		.uleb128 0xe
+ 1080 0124 3A       		.uleb128 0x3a
+ 1081 0125 0B       		.uleb128 0xb
+ 1082 0126 3B       		.uleb128 0x3b
+ 1083 0127 0B       		.uleb128 0xb
+ 1084 0128 00       		.byte	0
+ 1085 0129 00       		.byte	0
+ 1086 012a 00       		.byte	0
+ 1087              		.section	.debug_loc,"",%progbits
+ 1088              	.Ldebug_loc0:
+ 1089              	.LLST0:
+ 1090 0000 16000000 		.4byte	.LVL8
+ 1091 0004 23000000 		.4byte	.LVL9-1
+ 1092 0008 0100     		.2byte	0x1
+ 1093 000a 50       		.byte	0x50
+ 1094 000b 00000000 		.4byte	0
+ 1095 000f 00000000 		.4byte	0
+ 1096              		.section	.debug_aranges,"",%progbits
+ 1097 0000 8C000000 		.4byte	0x8c
+ 1098 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 34
+
+
+ 1099 0006 00000000 		.4byte	.Ldebug_info0
+ 1100 000a 04       		.byte	0x4
+ 1101 000b 00       		.byte	0
+ 1102 000c 0000     		.2byte	0
+ 1103 000e 0000     		.2byte	0
+ 1104 0010 00000000 		.4byte	.LFB1
+ 1105 0014 10000000 		.4byte	.LFE1-.LFB1
+ 1106 0018 00000000 		.4byte	.LFB3
+ 1107 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1108 0020 00000000 		.4byte	.LFB4
+ 1109 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1110 0028 00000000 		.4byte	.LFB5
+ 1111 002c 0C000000 		.4byte	.LFE5-.LFB5
+ 1112 0030 00000000 		.4byte	.LFB6
+ 1113 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1114 0038 00000000 		.4byte	.LFB7
+ 1115 003c 0C000000 		.4byte	.LFE7-.LFB7
+ 1116 0040 00000000 		.4byte	.LFB8
+ 1117 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1118 0048 00000000 		.4byte	.LFB9
+ 1119 004c 0C000000 		.4byte	.LFE9-.LFB9
+ 1120 0050 00000000 		.4byte	.LFB10
+ 1121 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1122 0058 00000000 		.4byte	.LFB11
+ 1123 005c 0C000000 		.4byte	.LFE11-.LFB11
+ 1124 0060 00000000 		.4byte	.LFB12
+ 1125 0064 0C000000 		.4byte	.LFE12-.LFB12
+ 1126 0068 00000000 		.4byte	.LFB13
+ 1127 006c 14000000 		.4byte	.LFE13-.LFB13
+ 1128 0070 00000000 		.4byte	.LFB14
+ 1129 0074 14000000 		.4byte	.LFE14-.LFB14
+ 1130 0078 00000000 		.4byte	.LFB0
+ 1131 007c 34000000 		.4byte	.LFE0-.LFB0
+ 1132 0080 00000000 		.4byte	.LFB2
+ 1133 0084 1C000000 		.4byte	.LFE2-.LFB2
+ 1134 0088 00000000 		.4byte	0
+ 1135 008c 00000000 		.4byte	0
+ 1136              		.section	.debug_ranges,"",%progbits
+ 1137              	.Ldebug_ranges0:
+ 1138 0000 00000000 		.4byte	.LFB1
+ 1139 0004 10000000 		.4byte	.LFE1
+ 1140 0008 00000000 		.4byte	.LFB3
+ 1141 000c 10000000 		.4byte	.LFE3
+ 1142 0010 00000000 		.4byte	.LFB4
+ 1143 0014 0C000000 		.4byte	.LFE4
+ 1144 0018 00000000 		.4byte	.LFB5
+ 1145 001c 0C000000 		.4byte	.LFE5
+ 1146 0020 00000000 		.4byte	.LFB6
+ 1147 0024 0C000000 		.4byte	.LFE6
+ 1148 0028 00000000 		.4byte	.LFB7
+ 1149 002c 0C000000 		.4byte	.LFE7
+ 1150 0030 00000000 		.4byte	.LFB8
+ 1151 0034 0C000000 		.4byte	.LFE8
+ 1152 0038 00000000 		.4byte	.LFB9
+ 1153 003c 0C000000 		.4byte	.LFE9
+ 1154 0040 00000000 		.4byte	.LFB10
+ 1155 0044 0C000000 		.4byte	.LFE10
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 35
+
+
+ 1156 0048 00000000 		.4byte	.LFB11
+ 1157 004c 0C000000 		.4byte	.LFE11
+ 1158 0050 00000000 		.4byte	.LFB12
+ 1159 0054 0C000000 		.4byte	.LFE12
+ 1160 0058 00000000 		.4byte	.LFB13
+ 1161 005c 14000000 		.4byte	.LFE13
+ 1162 0060 00000000 		.4byte	.LFB14
+ 1163 0064 14000000 		.4byte	.LFE14
+ 1164 0068 00000000 		.4byte	.LFB0
+ 1165 006c 34000000 		.4byte	.LFE0
+ 1166 0070 00000000 		.4byte	.LFB2
+ 1167 0074 1C000000 		.4byte	.LFE2
+ 1168 0078 00000000 		.4byte	0
+ 1169 007c 00000000 		.4byte	0
+ 1170              		.section	.debug_line,"",%progbits
+ 1171              	.Ldebug_line0:
+ 1172 0000 71010000 		.section	.debug_str,"MS",%progbits,1
+ 1172      02005200 
+ 1172      00000201 
+ 1172      FB0E0D00 
+ 1172      01010101 
+ 1173              	.LASF33:
+ 1174 0000 4D41494E 		.ascii	"MAIN_TIMER_ReadCounter\000"
+ 1174      5F54494D 
+ 1174      45525F52 
+ 1174      65616443 
+ 1174      6F756E74 
+ 1175              	.LASF15:
+ 1176 0017 72656733 		.ascii	"reg32\000"
+ 1176      3200
+ 1177              	.LASF43:
+ 1178 001d 4D41494E 		.ascii	"MAIN_TIMER_initVar\000"
+ 1178      5F54494D 
+ 1178      45525F69 
+ 1178      6E697456 
+ 1178      617200
+ 1179              	.LASF19:
+ 1180 0030 4D41494E 		.ascii	"MAIN_TIMER_Stop\000"
+ 1180      5F54494D 
+ 1180      45525F53 
+ 1180      746F7000 
+ 1181              	.LASF36:
+ 1182 0040 4D41494E 		.ascii	"MAIN_TIMER_Start\000"
+ 1182      5F54494D 
+ 1182      45525F53 
+ 1182      74617274 
+ 1182      00
+ 1183              	.LASF29:
+ 1184 0051 70657269 		.ascii	"period\000"
+ 1184      6F6400
+ 1185              	.LASF3:
+ 1186 0058 73686F72 		.ascii	"short unsigned int\000"
+ 1186      7420756E 
+ 1186      7369676E 
+ 1186      65642069 
+ 1186      6E7400
+ 1187              	.LASF28:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 36
+
+
+ 1188 006b 4D41494E 		.ascii	"MAIN_TIMER_WritePeriod\000"
+ 1188      5F54494D 
+ 1188      45525F57 
+ 1188      72697465 
+ 1188      50657269 
+ 1189              	.LASF24:
+ 1190 0082 4D41494E 		.ascii	"MAIN_TIMER_WriteControlRegister\000"
+ 1190      5F54494D 
+ 1190      45525F57 
+ 1190      72697465 
+ 1190      436F6E74 
+ 1191              	.LASF11:
+ 1192 00a2 666C6F61 		.ascii	"float\000"
+ 1192      7400
+ 1193              	.LASF32:
+ 1194 00a8 636F756E 		.ascii	"counter\000"
+ 1194      74657200 
+ 1195              	.LASF7:
+ 1196 00b0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1196      206C6F6E 
+ 1196      6720756E 
+ 1196      7369676E 
+ 1196      65642069 
+ 1197              	.LASF1:
+ 1198 00c7 756E7369 		.ascii	"unsigned char\000"
+ 1198      676E6564 
+ 1198      20636861 
+ 1198      7200
+ 1199              	.LASF31:
+ 1200 00d5 4D41494E 		.ascii	"MAIN_TIMER_WriteCounter\000"
+ 1200      5F54494D 
+ 1200      45525F57 
+ 1200      72697465 
+ 1200      436F756E 
+ 1201              	.LASF14:
+ 1202 00ed 72656738 		.ascii	"reg8\000"
+ 1202      00
+ 1203              	.LASF5:
+ 1204 00f2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1204      20756E73 
+ 1204      69676E65 
+ 1204      6420696E 
+ 1204      7400
+ 1205              	.LASF9:
+ 1206 0104 75696E74 		.ascii	"uint8\000"
+ 1206      3800
+ 1207              	.LASF26:
+ 1208 010a 636F6E74 		.ascii	"control\000"
+ 1208      726F6C00 
+ 1209              	.LASF42:
+ 1210 0112 4D41494E 		.ascii	"MAIN_TIMER_interruptState\000"
+ 1210      5F54494D 
+ 1210      45525F69 
+ 1210      6E746572 
+ 1210      72757074 
+ 1211              	.LASF12:
+ 1212 012c 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 37
+
+
+ 1212      6C6500
+ 1213              	.LASF34:
+ 1214 0133 4D41494E 		.ascii	"MAIN_TIMER_ClearFIFO\000"
+ 1214      5F54494D 
+ 1214      45525F43 
+ 1214      6C656172 
+ 1214      4649464F 
+ 1215              	.LASF10:
+ 1216 0148 75696E74 		.ascii	"uint32\000"
+ 1216      333200
+ 1217              	.LASF22:
+ 1218 014f 4D41494E 		.ascii	"MAIN_TIMER_ReadControlRegister\000"
+ 1218      5F54494D 
+ 1218      45525F52 
+ 1218      65616443 
+ 1218      6F6E7472 
+ 1219              	.LASF37:
+ 1220 016e 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1220      74657243 
+ 1220      72697469 
+ 1220      63616C53 
+ 1220      65637469 
+ 1221              	.LASF8:
+ 1222 0185 756E7369 		.ascii	"unsigned int\000"
+ 1222      676E6564 
+ 1222      20696E74 
+ 1222      00
+ 1223              	.LASF18:
+ 1224 0192 4D41494E 		.ascii	"MAIN_TIMER_Enable\000"
+ 1224      5F54494D 
+ 1224      45525F45 
+ 1224      6E61626C 
+ 1224      6500
+ 1225              	.LASF21:
+ 1226 01a4 4D41494E 		.ascii	"MAIN_TIMER_ReadStatusRegister\000"
+ 1226      5F54494D 
+ 1226      45525F52 
+ 1226      65616453 
+ 1226      74617475 
+ 1227              	.LASF38:
+ 1228 01c2 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1228      69744372 
+ 1228      69746963 
+ 1228      616C5365 
+ 1228      6374696F 
+ 1229              	.LASF39:
+ 1230 01d8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1230      43313120 
+ 1230      352E342E 
+ 1230      31203230 
+ 1230      31363036 
+ 1231 020b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1231      20726576 
+ 1231      6973696F 
+ 1231      6E203233 
+ 1231      37373135 
+ 1232 023e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 38
+
+
+ 1232      66756E63 
+ 1232      74696F6E 
+ 1232      2D736563 
+ 1232      74696F6E 
+ 1233              	.LASF17:
+ 1234 0266 73697A65 		.ascii	"sizetype\000"
+ 1234      74797065 
+ 1234      00
+ 1235              	.LASF30:
+ 1236 026f 4D41494E 		.ascii	"MAIN_TIMER_ReadCapture\000"
+ 1236      5F54494D 
+ 1236      45525F52 
+ 1236      65616443 
+ 1236      61707475 
+ 1237              	.LASF35:
+ 1238 0286 4D41494E 		.ascii	"MAIN_TIMER_Init\000"
+ 1238      5F54494D 
+ 1238      45525F49 
+ 1238      6E697400 
+ 1239              	.LASF6:
+ 1240 0296 6C6F6E67 		.ascii	"long long int\000"
+ 1240      206C6F6E 
+ 1240      6720696E 
+ 1240      7400
+ 1241              	.LASF40:
+ 1242 02a4 47656E65 		.ascii	"Generated_Source\\PSoC5\\MAIN_TIMER.c\000"
+ 1242      72617465 
+ 1242      645F536F 
+ 1242      75726365 
+ 1242      5C50536F 
+ 1243              	.LASF25:
+ 1244 02c8 696E7465 		.ascii	"interruptMode\000"
+ 1244      72727570 
+ 1244      744D6F64 
+ 1244      6500
+ 1245              	.LASF20:
+ 1246 02d6 4D41494E 		.ascii	"MAIN_TIMER_SoftwareCapture\000"
+ 1246      5F54494D 
+ 1246      45525F53 
+ 1246      6F667477 
+ 1246      61726543 
+ 1247              	.LASF2:
+ 1248 02f1 73686F72 		.ascii	"short int\000"
+ 1248      7420696E 
+ 1248      7400
+ 1249              	.LASF23:
+ 1250 02fb 4D41494E 		.ascii	"MAIN_TIMER_SetInterruptMode\000"
+ 1250      5F54494D 
+ 1250      45525F53 
+ 1250      6574496E 
+ 1250      74657272 
+ 1251              	.LASF41:
+ 1252 0317 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 1252      73657273 
+ 1252      5C4C6F72 
+ 1252      795C4465 
+ 1252      736B746F 
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccfXqeaA.s 			page 39
+
+
+ 1253 0345 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 1253      65735C50 
+ 1253      536F432D 
+ 1253      46696E61 
+ 1253      6C2D5072 
+ 1254 0376 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 1254      415F4755 
+ 1254      414C4E49 
+ 1254      4552415C 
+ 1254      41593139 
+ 1255 03a8 49455241 		.ascii	"IERA.cydsn\000"
+ 1255      2E637964 
+ 1255      736E00
+ 1256              	.LASF4:
+ 1257 03b3 6C6F6E67 		.ascii	"long int\000"
+ 1257      20696E74 
+ 1257      00
+ 1258              	.LASF13:
+ 1259 03bc 63686172 		.ascii	"char\000"
+ 1259      00
+ 1260              	.LASF16:
+ 1261 03c1 6C6F6E67 		.ascii	"long double\000"
+ 1261      20646F75 
+ 1261      626C6500 
+ 1262              	.LASF27:
+ 1263 03cd 4D41494E 		.ascii	"MAIN_TIMER_ReadPeriod\000"
+ 1263      5F54494D 
+ 1263      45525F52 
+ 1263      65616450 
+ 1263      6572696F 
+ 1264              	.LASF0:
+ 1265 03e3 7369676E 		.ascii	"signed char\000"
+ 1265      65642063 
+ 1265      68617200 
+ 1266              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

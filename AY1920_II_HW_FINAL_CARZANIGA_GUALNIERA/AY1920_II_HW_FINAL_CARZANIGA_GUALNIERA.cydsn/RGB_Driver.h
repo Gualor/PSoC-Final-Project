@@ -17,11 +17,11 @@
     
     /* Useful constants. */
     #define PWM_CYCLE_LENGTH    255
+    #define PWM_COMPARE_STOP    0
     
     /* LED driver utility functions. */
     void RGB_Init(void);
     void RGB_Stop(void);
-    void RGB_Start(void);
     void RGB_Driver(uint8_t* dataPtr);
     void RGB_sendFlagNotify(uint8_t flag);
     void RGB_dataProcess(uint8_t* dataPtr);

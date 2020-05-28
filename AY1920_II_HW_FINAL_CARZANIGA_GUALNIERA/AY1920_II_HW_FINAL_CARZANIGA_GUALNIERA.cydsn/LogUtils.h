@@ -20,7 +20,8 @@
     #define LOG_MESSAGE_HEADER_BYTE  4
     #define LOG_MESSAGE_DATA_BYTE   60
     #define LOG_MESSAGE_TOT_BYTE    64
-    #define LOG_TIMER_OVERFLOW      65535
+    #define LOG_TICK_PER_SECOND     1000
+    #define LOG_TIMER_OVERFLOW      0xFFFFFFFF
     
     /* Log message type. */
     typedef struct {

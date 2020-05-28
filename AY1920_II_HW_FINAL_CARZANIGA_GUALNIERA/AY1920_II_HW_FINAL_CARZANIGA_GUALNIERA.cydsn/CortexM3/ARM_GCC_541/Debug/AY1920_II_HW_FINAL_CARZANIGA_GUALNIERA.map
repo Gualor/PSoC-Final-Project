@@ -3,9 +3,9 @@ Archive member included to satisfy reference by file (symbol)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
                               .\CortexM3\ARM_GCC_541\Debug\main.o (ISR_CONFIG_StartEx)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                              .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o (PWM_RG_Stop)
+                              .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o (PWM_RG_WriteCompare1)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                              .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o (PWM_B_Stop)
+                              .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o (PWM_B_WriteCompare)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
                               .\CortexM3\ARM_GCC_541\Debug\main.o (ISR_START_StartEx)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
@@ -41,7 +41,7 @@ Archive member included to satisfy reference by file (symbol)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
                               .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o) (SPIM_EEPROM_IntClock_Start)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                              .\CortexM3\ARM_GCC_541\Debug\main.o (MAIN_TIMER_Start)
+                              .\CortexM3\ARM_GCC_541\Debug\LogUtils.o (MAIN_TIMER_ReadCounter)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
                               .\CortexM3\ARM_GCC_541\Debug\main.o (ADC_DELSIG_Start)
 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
@@ -241,23 +241,21 @@ Discarded input sections
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .text.PWM_RG_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .text.PWM_RG_ReadCounter
                 0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .text.PWM_RG_WriteControlRegister
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .text.PWM_RG_ReadCompare1
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .text.PWM_RG_ReadCompare2
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .text.PWM_RG_ReadPeriod
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .text.PWM_B_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
  .text.PWM_B_ReadCounter
                 0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
  .text.PWM_B_WriteControlRegister
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .text.PWM_B_ReadCompare
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
  .text.PWM_B_ReadPeriod
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
@@ -321,7 +319,7 @@ Discarded input sections
  .text.UART_ClearTxBuffer
                 0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
  .text.UART_SendBreak
-                0x00000000       0x58 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
  .text.UART_SetTxAddressMode
                 0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
@@ -619,7 +617,7 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
  .text.SPIM_IMU_Stop
-                0x00000000       0x34 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
  .text.SPIM_IMU_SetTxInterruptMode
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
  .text.SPIM_IMU_SetRxInterruptMode
@@ -711,18 +709,14 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text.MAIN_TIMER_Stop
-                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text.MAIN_TIMER_SoftwareCapture
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
- .text.MAIN_TIMER_ReadStatusRegister
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text.MAIN_TIMER_ReadControlRegister
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text.MAIN_TIMER_WriteControlRegister
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text.MAIN_TIMER_ReadPeriod
-                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
- .text.MAIN_TIMER_ReadCapture
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .text.ADC_DELSIG_Stop
@@ -1025,7 +1019,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x3658
+.text           0x00000000     0x3630
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -1042,793 +1036,801 @@ END GROUP
                 0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000028       0x5c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .text.main     0x00000084      0x16c .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.main     0x00000084      0x168 .\CortexM3\ARM_GCC_541\Debug\main.o
                 0x00000084                main
  .text.CUSTOM_ISR_CONFIG
-                0x000001f0       0x58 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
-                0x000001f0                CUSTOM_ISR_CONFIG
+                0x000001ec       0x58 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+                0x000001ec                CUSTOM_ISR_CONFIG
  .text.CUSTOM_ISR_START
-                0x00000248       0x48 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
-                0x00000248                CUSTOM_ISR_START
+                0x00000244       0x40 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+                0x00000244                CUSTOM_ISR_START
  .text.CUSTOM_ISR_IMU
-                0x00000290       0x30 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
-                0x00000290                CUSTOM_ISR_IMU
+                0x00000284       0x30 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+                0x00000284                CUSTOM_ISR_IMU
  .text.SPI_IMU_Interface_ReadByte
-                0x000002c0       0x34 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x000002c0                SPI_IMU_Interface_ReadByte
+                0x000002b4       0x34 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x000002b4                SPI_IMU_Interface_ReadByte
  .text.SPI_IMU_Interface_Multi_RW
-                0x000002f4       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x000002f4                SPI_IMU_Interface_Multi_RW
+                0x000002e8       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x000002e8                SPI_IMU_Interface_Multi_RW
  .text.SPI_EEPROM_Interface_tradeByte
-                0x000003ac       0x2c .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x000003ac                SPI_EEPROM_Interface_tradeByte
+                0x000003a0       0x2c .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x000003a0                SPI_EEPROM_Interface_tradeByte
  .text.SPI_EEPROM_Interface_ReadByte
-                0x000003d8       0x34 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x000003d8                SPI_EEPROM_Interface_ReadByte
+                0x000003cc       0x34 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x000003cc                SPI_EEPROM_Interface_ReadByte
  .text.SPI_EEPROM_Interface_Multi_RW
-                0x0000040c       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x0000040c                SPI_EEPROM_Interface_Multi_RW
+                0x00000400       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x00000400                SPI_EEPROM_Interface_Multi_RW
  .text.EEPROM_readStatus
-                0x000004c4        0xc .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000004c4                EEPROM_readStatus
+                0x000004b8        0xc .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000004b8                EEPROM_readStatus
  .text.EEPROM_writeEnable
-                0x000004d0        0xc .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000004d0                EEPROM_writeEnable
+                0x000004c4        0xc .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000004c4                EEPROM_writeEnable
  .text.EEPROM_readByte
-                0x000004dc       0x30 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000004dc                EEPROM_readByte
+                0x000004d0       0x30 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000004d0                EEPROM_readByte
  .text.EEPROM_writeByte
-                0x0000050c       0x38 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x0000050c                EEPROM_writeByte
+                0x00000500       0x38 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000500                EEPROM_writeByte
  .text.EEPROM_readPage
-                0x00000544       0x24 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000544                EEPROM_readPage
+                0x00000538       0x24 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000538                EEPROM_readPage
  .text.EEPROM_writePage
-                0x00000568       0x5c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000568                EEPROM_writePage
+                0x0000055c       0x5c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x0000055c                EEPROM_writePage
  .text.EEPROM_waitForWriteComplete
-                0x000005c4       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000005c4                EEPROM_waitForWriteComplete
+                0x000005b8       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000005b8                EEPROM_waitForWriteComplete
  .text.EEPROM_saveStartStopState
-                0x000005d4       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000005d4                EEPROM_saveStartStopState
+                0x000005c8       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000005c8                EEPROM_saveStartStopState
  .text.EEPROM_retrieveStartStopState
-                0x000005fc       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000005fc                EEPROM_retrieveStartStopState
+                0x000005f0       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000005f0                EEPROM_retrieveStartStopState
  .text.EEPROM_saveConfigFlag
-                0x0000060c       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x0000060c                EEPROM_saveConfigFlag
+                0x00000600       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000600                EEPROM_saveConfigFlag
  .text.EEPROM_retrieveConfigFlag
-                0x00000634       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000634                EEPROM_retrieveConfigFlag
+                0x00000628       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000628                EEPROM_retrieveConfigFlag
  .text.EEPROM_saveSendFlag
-                0x00000644       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000644                EEPROM_saveSendFlag
+                0x00000638       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000638                EEPROM_saveSendFlag
  .text.EEPROM_retrieveSendFlag
-                0x0000066c       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x0000066c                EEPROM_retrieveSendFlag
+                0x00000660       0x10 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000660                EEPROM_retrieveSendFlag
  .text.EEPROM_saveResetFlag
-                0x0000067c       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x0000067c                EEPROM_saveResetFlag
+                0x00000670       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000670                EEPROM_saveResetFlag
  .text.EEPROM_retrieveLogPages
-                0x000006a4       0x18 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000006a4                EEPROM_retrieveLogPages
+                0x00000698       0x18 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000698                EEPROM_retrieveLogPages
  .text.EEPROM_retrieveLogCount
-                0x000006bc       0x18 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000006bc                EEPROM_retrieveLogCount
+                0x000006b0       0x18 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000006b0                EEPROM_retrieveLogCount
  .text.EEPROM_incrementLogCounter
-                0x000006d4       0x30 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000006d4                EEPROM_incrementLogCounter
+                0x000006c8       0x30 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000006c8                EEPROM_incrementLogCounter
  .text.EEPROM_storeLogData
-                0x00000704       0x24 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000704                EEPROM_storeLogData
+                0x000006f8       0x24 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000006f8                EEPROM_storeLogData
  .text.EEPROM_storeLogMessage
-                0x00000728       0x2c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000728                EEPROM_storeLogMessage
+                0x0000071c       0x2c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x0000071c                EEPROM_storeLogMessage
  .text.EEPROM_findLogID
-                0x00000754       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000754                EEPROM_findLogID
+                0x00000748       0x28 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000748                EEPROM_findLogID
  .text.EEPROM_retrieveLogData
-                0x0000077c       0x1c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x0000077c                EEPROM_retrieveLogData
+                0x00000770       0x1c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x00000770                EEPROM_retrieveLogData
  .text.EEPROM_retrieveLogMessage
-                0x00000798       0x38 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x00000798                EEPROM_retrieveLogMessage
+                0x0000078c       0x38 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x0000078c                EEPROM_retrieveLogMessage
  .text.EEPROM_resetMemory
-                0x000007d0       0x48 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
-                0x000007d0                EEPROM_resetMemory
- .text.RGB_Init
-                0x00000818        0xc .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000818                RGB_Init
- .text.RGB_Start
-                0x00000824       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000824                RGB_Start
+                0x000007c4       0x48 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+                0x000007c4                EEPROM_resetMemory
  .text.RGB_Stop
-                0x00000844       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000844                RGB_Stop
+                0x0000080c       0x28 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x0000080c                RGB_Stop
+ .text.RGB_Init
+                0x00000834       0x24 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000834                RGB_Init
  .text.PWM_Driver
-                0x00000864       0x18 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000864                PWM_Driver
+                0x00000858       0x18 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000858                PWM_Driver
  .text.RGB_sendFlagNotify
-                0x0000087c       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x0000087c                RGB_sendFlagNotify
+                0x00000870       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000870                RGB_sendFlagNotify
  .text.Moving_Average
-                0x0000089c       0x68 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x0000089c                Moving_Average
+                0x00000890       0x68 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000890                Moving_Average
  .text.Absolute_Value
-                0x00000904        0xc .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000904                Absolute_Value
+                0x000008f8        0xc .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x000008f8                Absolute_Value
  .text.RGB_dataProcess
-                0x00000910       0x30 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000910                RGB_dataProcess
+                0x00000904       0x2c .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000904                RGB_dataProcess
  .text.RGB_Driver
-                0x00000940       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                0x00000940                RGB_Driver
+                0x00000930       0x20 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000930                RGB_Driver
  .text.IMU_ReadByte
-                0x00000960        0xc .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000960                IMU_ReadByte
+                0x00000950        0xc .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000950                IMU_ReadByte
  .text.IMU_RegistersSetup
-                0x0000096c      0x394 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x0000096c                IMU_RegistersSetup
+                0x0000095c      0x394 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x0000095c                IMU_RegistersSetup
  .text.IMU_ReadFIFO
-                0x00000d00       0x30 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000d00                IMU_ReadFIFO
+                0x00000cf0       0x30 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000cf0                IMU_ReadFIFO
  .text.IMU_StoreFIFO
-                0x00000d30       0x90 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000d30                IMU_StoreFIFO
+                0x00000d20       0x90 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000d20                IMU_StoreFIFO
  .text.IMU_getPayload
-                0x00000dc0       0x74 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000dc0                IMU_getPayload
+                0x00000db0       0x74 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000db0                IMU_getPayload
  .text.IMU_DataSend
-                0x00000e34       0x64 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000e34                IMU_DataSend
+                0x00000e24       0x64 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000e24                IMU_DataSend
  .text.IMU_ResetFIFO
-                0x00000e98       0x48 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
-                0x00000e98                IMU_ResetFIFO
+                0x00000e88       0x48 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00000e88                IMU_ResetFIFO
  .text.LED_Notify_Stop
-                0x00000ee0       0x14 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
-                0x00000ee0                LED_Notify_Stop
+                0x00000ed0       0x14 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+                0x00000ed0                LED_Notify_Stop
  .text.LED_Notify_Start
-                0x00000ef4       0x18 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
-                0x00000ef4                LED_Notify_Start
+                0x00000ee4       0x18 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+                0x00000ee4                LED_Notify_Start
  .text.LED_Notify_Config
-                0x00000f0c       0x18 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
-                0x00000f0c                LED_Notify_Config
+                0x00000efc       0x18 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+                0x00000efc                LED_Notify_Config
  .text.POT_Read_Value
-                0x00000f24       0x2c .\CortexM3\ARM_GCC_541\Debug\Notifications.o
-                0x00000f24                POT_Read_Value
+                0x00000f14       0x2c .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+                0x00000f14                POT_Read_Value
  .text.LOG_insertPayload
-                0x00000f50       0x30 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                0x00000f50                LOG_insertPayload
+                0x00000f40       0x30 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00000f40                LOG_insertPayload
  .text.LOG_createMessage
-                0x00000f80       0x3c .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                0x00000f80                LOG_createMessage
+                0x00000f70       0x3c .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00000f70                LOG_createMessage
  .text.LOG_getTimestamp
-                0x00000fbc        0xc .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                0x00000fbc                LOG_getTimestamp
+                0x00000fac       0x18 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00000fac                LOG_getTimestamp
  .text.LOG_unpackMessage
-                0x00000fc8       0x44 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                0x00000fc8                LOG_unpackMessage
+                0x00000fc4       0x44 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00000fc4                LOG_unpackMessage
  .text.LOG_packMessage
-                0x0000100c       0x44 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                0x0000100c                LOG_packMessage
+                0x00001008       0x44 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00001008                LOG_packMessage
  .text.CyClockStartupError
-                0x00001050        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000104c        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cfg_write_bytes32
-                0x00001054       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00001050       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x00001088       0x40 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00001084       0x40 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x000010c8        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000010c4        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x000010d4        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000010d0        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x000010dc      0x130 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000010d8      0x130 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ADC_DELSIG_AMux_Set
-                0x0000120c       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x0000120c                ADC_DELSIG_AMux_Set
+                0x00001208       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00001208                ADC_DELSIG_AMux_Set
  .text.ADC_DELSIG_AMux_Unset
-                0x00001228       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00001228                ADC_DELSIG_AMux_Unset
+                0x00001224       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00001224                ADC_DELSIG_AMux_Unset
  .text.cyfitter_cfg
-                0x00001244      0x14c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00001244                cyfitter_cfg
+                0x00001240      0x148 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00001240                cyfitter_cfg
  .text.IntDefaultHandler
-                0x00001390       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00001390                IntDefaultHandler
- .text._sbrk    0x000013a0       0x30 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000013a0                _sbrk
- .text.Start_c  0x000013d0       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000013d0                Start_c
+                0x00001388       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00001388                IntDefaultHandler
+ .text._sbrk    0x00001398       0x30 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00001398                _sbrk
+ .text.Start_c  0x000013c8       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000013c8                Start_c
  .text.initialize_psoc
-                0x0000141c       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x0000141c                initialize_psoc
+                0x00001414       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00001414                initialize_psoc
  .text.ISR_CONFIG_SetVector
-                0x00001484        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
-                0x00001484                ISR_CONFIG_SetVector
+                0x0000147c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x0000147c                ISR_CONFIG_SetVector
  .text.ISR_CONFIG_SetPriority
-                0x00001490       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
-                0x00001490                ISR_CONFIG_SetPriority
+                0x00001488       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x00001488                ISR_CONFIG_SetPriority
  .text.ISR_CONFIG_Enable
-                0x000014a0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
-                0x000014a0                ISR_CONFIG_Enable
+                0x00001498        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x00001498                ISR_CONFIG_Enable
  .text.ISR_CONFIG_Disable
-                0x000014ac        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
-                0x000014ac                ISR_CONFIG_Disable
+                0x000014a4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x000014a4                ISR_CONFIG_Disable
  .text.ISR_CONFIG_StartEx
-                0x000014b8       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
-                0x000014b8                ISR_CONFIG_StartEx
+                0x000014b0       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x000014b0                ISR_CONFIG_StartEx
  .text.PWM_RG_Enable
-                0x000014d4       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x000014d4                PWM_RG_Enable
- .text.PWM_RG_Stop
-                0x000014e4       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x000014e4                PWM_RG_Stop
+                0x000014cc       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000014cc                PWM_RG_Enable
  .text.PWM_RG_WriteCounter
-                0x000014f4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x000014f4                PWM_RG_WriteCounter
+                0x000014dc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000014dc                PWM_RG_WriteCounter
  .text.PWM_RG_WritePeriod
-                0x00001500        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001500                PWM_RG_WritePeriod
+                0x000014e8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000014e8                PWM_RG_WritePeriod
  .text.PWM_RG_WriteCompare1
-                0x0000150c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x0000150c                PWM_RG_WriteCompare1
+                0x000014f4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000014f4                PWM_RG_WriteCompare1
  .text.PWM_RG_WriteCompare2
-                0x00001518        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001518                PWM_RG_WriteCompare2
+                0x00001500        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x00001500                PWM_RG_WriteCompare2
  .text.PWM_RG_SetInterruptMode
-                0x00001524        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001524                PWM_RG_SetInterruptMode
+                0x0000150c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x0000150c                PWM_RG_SetInterruptMode
  .text.PWM_RG_ReadStatusRegister
-                0x00001530        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001530                PWM_RG_ReadStatusRegister
+                0x00001518        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x00001518                PWM_RG_ReadStatusRegister
  .text.PWM_RG_ReadControlRegister
-                0x0000153c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x0000153c                PWM_RG_ReadControlRegister
+                0x00001524        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x00001524                PWM_RG_ReadControlRegister
  .text.PWM_RG_ReadCapture
-                0x00001548        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001548                PWM_RG_ReadCapture
+                0x00001530        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x00001530                PWM_RG_ReadCapture
  .text.PWM_RG_ClearFIFO
-                0x00001554       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001554                PWM_RG_ClearFIFO
+                0x0000153c       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x0000153c                PWM_RG_ClearFIFO
  .text.PWM_RG_Init
-                0x00001568       0x58 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x00001568                PWM_RG_Init
+                0x00001550       0x58 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x00001550                PWM_RG_Init
  .text.PWM_RG_Start
-                0x000015c0       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
-                0x000015c0                PWM_RG_Start
+                0x000015a8       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000015a8                PWM_RG_Start
+ .text.PWM_RG_ReadCompare1
+                0x000015c4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000015c4                PWM_RG_ReadCompare1
+ .text.PWM_RG_ReadCompare2
+                0x000015d0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000015d0                PWM_RG_ReadCompare2
  .text.PWM_B_Enable
                 0x000015dc       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
                 0x000015dc                PWM_B_Enable
- .text.PWM_B_Stop
-                0x000015ec       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x000015ec                PWM_B_Stop
  .text.PWM_B_WriteCounter
-                0x000015fc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x000015fc                PWM_B_WriteCounter
+                0x000015ec        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x000015ec                PWM_B_WriteCounter
  .text.PWM_B_WritePeriod
-                0x00001608        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001608                PWM_B_WritePeriod
+                0x000015f8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x000015f8                PWM_B_WritePeriod
  .text.PWM_B_WriteCompare
-                0x00001614        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001614                PWM_B_WriteCompare
+                0x00001604        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001604                PWM_B_WriteCompare
  .text.PWM_B_SetInterruptMode
-                0x00001620        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001620                PWM_B_SetInterruptMode
+                0x00001610        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001610                PWM_B_SetInterruptMode
  .text.PWM_B_ReadStatusRegister
-                0x0000162c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x0000162c                PWM_B_ReadStatusRegister
+                0x0000161c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x0000161c                PWM_B_ReadStatusRegister
  .text.PWM_B_ReadControlRegister
-                0x00001638        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001638                PWM_B_ReadControlRegister
+                0x00001628        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001628                PWM_B_ReadControlRegister
  .text.PWM_B_ReadCapture
-                0x00001644        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001644                PWM_B_ReadCapture
+                0x00001634        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001634                PWM_B_ReadCapture
  .text.PWM_B_ClearFIFO
-                0x00001650       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001650                PWM_B_ClearFIFO
+                0x00001640       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001640                PWM_B_ClearFIFO
  .text.PWM_B_Init
-                0x00001664       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x00001664                PWM_B_Init
+                0x00001654       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x00001654                PWM_B_Init
  .text.PWM_B_Start
-                0x000016b4       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
-                0x000016b4                PWM_B_Start
+                0x000016a4       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x000016a4                PWM_B_Start
+ .text.PWM_B_ReadCompare
+                0x000016c0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x000016c0                PWM_B_ReadCompare
  .text.ISR_START_SetVector
-                0x000016d0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
-                0x000016d0                ISR_START_SetVector
+                0x000016cc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x000016cc                ISR_START_SetVector
  .text.ISR_START_SetPriority
-                0x000016dc       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
-                0x000016dc                ISR_START_SetPriority
+                0x000016d8       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x000016d8                ISR_START_SetPriority
  .text.ISR_START_Enable
-                0x000016ec        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
-                0x000016ec                ISR_START_Enable
+                0x000016e8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x000016e8                ISR_START_Enable
  .text.ISR_START_Disable
-                0x000016f8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
-                0x000016f8                ISR_START_Disable
+                0x000016f4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x000016f4                ISR_START_Disable
  .text.ISR_START_StartEx
-                0x00001704       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
-                0x00001704                ISR_START_StartEx
+                0x00001700       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x00001700                ISR_START_StartEx
  .text.UART_Init
-                0x00001720       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
-                0x00001720                UART_Init
+                0x0000171c       0x2c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x0000171c                UART_Init
  .text.UART_Enable
-                0x00001748       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x00001748       0x38 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
                 0x00001748                UART_Enable
  .text.UART_Start
-                0x00001784       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
-                0x00001784                UART_Start
+                0x00001780       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x00001780                UART_Start
  .text.UART_PutChar
-                0x000017a0       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
-                0x000017a0                UART_PutChar
+                0x0000179c       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x0000179c                UART_PutChar
  .text.UART_PutString
-                0x000017b8       0x24 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
-                0x000017b8                UART_PutString
+                0x000017b4       0x24 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x000017b4                UART_PutString
  .text.UART_PutArray
-                0x000017dc       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
-                0x000017dc                UART_PutArray
+                0x000017d8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x000017d8                UART_PutArray
  .text.UART_IntClock_Start
-                0x00001804       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
-                0x00001804                UART_IntClock_Start
- .text.CyHalt   0x00001820        0x4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
-                0x00001820                CyHalt
- .text.CyDelay  0x00001824       0x2c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
-                0x00001824                CyDelay
+                0x00001800       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+                0x00001800                UART_IntClock_Start
+ .text.CyHalt   0x0000181c        0x4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x0000181c                CyHalt
+ .text.CyDelay  0x00001820       0x2c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x00001820                CyDelay
  .text.CyDelayUs
-                0x00001850       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
-                0x00001850                CyDelayUs
+                0x0000184c       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x0000184c                CyDelayUs
  .text.CyIntSetVector
-                0x00001864       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
-                0x00001864                CyIntSetVector
+                0x00001860       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x00001860                CyIntSetVector
  .text.CyIntSetPriority
-                0x0000188c       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
-                0x0000188c                CyIntSetPriority
+                0x00001888       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x00001888                CyIntSetPriority
  .text.BUTTON_TIMER_Enable
-                0x000018bc       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x000018bc                BUTTON_TIMER_Enable
+                0x000018b8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x000018b8                BUTTON_TIMER_Enable
  .text.BUTTON_TIMER_SetInterruptMode
-                0x000018e4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x000018e4                BUTTON_TIMER_SetInterruptMode
+                0x000018e0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x000018e0                BUTTON_TIMER_SetInterruptMode
  .text.BUTTON_TIMER_WritePeriod
-                0x000018f0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x000018f0                BUTTON_TIMER_WritePeriod
+                0x000018ec        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x000018ec                BUTTON_TIMER_WritePeriod
  .text.BUTTON_TIMER_WriteCounter
-                0x000018fc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x000018fc                BUTTON_TIMER_WriteCounter
+                0x000018f8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x000018f8                BUTTON_TIMER_WriteCounter
  .text.BUTTON_TIMER_Init
-                0x00001908       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x00001908                BUTTON_TIMER_Init
+                0x00001904       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x00001904                BUTTON_TIMER_Init
  .text.BUTTON_TIMER_Start
-                0x00001998       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
-                0x00001998                BUTTON_TIMER_Start
+                0x00001994       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x00001994                BUTTON_TIMER_Start
  .text.CS_IMU_Write
-                0x000019b4       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
-                0x000019b4                CS_IMU_Write
+                0x000019b0       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+                0x000019b0                CS_IMU_Write
  .text.CS_EEPROM_Write
-                0x000019cc       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
-                0x000019cc                CS_EEPROM_Write
+                0x000019c8       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+                0x000019c8                CS_EEPROM_Write
  .text.PWM_NOTIFY_Enable
-                0x000019e4       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x000019e4                PWM_NOTIFY_Enable
+                0x000019e0       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x000019e0                PWM_NOTIFY_Enable
  .text.PWM_NOTIFY_Stop
-                0x000019f4       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x000019f4                PWM_NOTIFY_Stop
+                0x000019f0       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x000019f0                PWM_NOTIFY_Stop
  .text.PWM_NOTIFY_WriteCounter
-                0x00001a04        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a04                PWM_NOTIFY_WriteCounter
+                0x00001a00        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a00                PWM_NOTIFY_WriteCounter
  .text.PWM_NOTIFY_WritePeriod
-                0x00001a10        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a10                PWM_NOTIFY_WritePeriod
+                0x00001a0c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a0c                PWM_NOTIFY_WritePeriod
  .text.PWM_NOTIFY_WriteCompare
-                0x00001a1c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a1c                PWM_NOTIFY_WriteCompare
+                0x00001a18        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a18                PWM_NOTIFY_WriteCompare
  .text.PWM_NOTIFY_SetInterruptMode
-                0x00001a28        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a28                PWM_NOTIFY_SetInterruptMode
+                0x00001a24        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a24                PWM_NOTIFY_SetInterruptMode
  .text.PWM_NOTIFY_ReadStatusRegister
-                0x00001a34        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a34                PWM_NOTIFY_ReadStatusRegister
+                0x00001a30        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a30                PWM_NOTIFY_ReadStatusRegister
  .text.PWM_NOTIFY_ReadControlRegister
-                0x00001a40        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a40                PWM_NOTIFY_ReadControlRegister
+                0x00001a3c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a3c                PWM_NOTIFY_ReadControlRegister
  .text.PWM_NOTIFY_ReadCapture
-                0x00001a4c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a4c                PWM_NOTIFY_ReadCapture
+                0x00001a48        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a48                PWM_NOTIFY_ReadCapture
  .text.PWM_NOTIFY_ClearFIFO
-                0x00001a58       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a58                PWM_NOTIFY_ClearFIFO
+                0x00001a54       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a54                PWM_NOTIFY_ClearFIFO
  .text.PWM_NOTIFY_Init
-                0x00001a6c       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001a6c                PWM_NOTIFY_Init
+                0x00001a68       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001a68                PWM_NOTIFY_Init
  .text.PWM_NOTIFY_Start
-                0x00001abc       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
-                0x00001abc                PWM_NOTIFY_Start
+                0x00001ab8       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00001ab8                PWM_NOTIFY_Start
  .text.CLICK_TIMER_Enable
-                0x00001ad8       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001ad8                CLICK_TIMER_Enable
+                0x00001ad4       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001ad4                CLICK_TIMER_Enable
  .text.CLICK_TIMER_SetInterruptMode
-                0x00001ae8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001ae8                CLICK_TIMER_SetInterruptMode
+                0x00001ae4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001ae4                CLICK_TIMER_SetInterruptMode
  .text.CLICK_TIMER_ReadStatusRegister
-                0x00001af4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001af4                CLICK_TIMER_ReadStatusRegister
+                0x00001af0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001af0                CLICK_TIMER_ReadStatusRegister
  .text.CLICK_TIMER_WritePeriod
-                0x00001b00        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b00                CLICK_TIMER_WritePeriod
+                0x00001afc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001afc                CLICK_TIMER_WritePeriod
  .text.CLICK_TIMER_ReadCapture
-                0x00001b0c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b0c                CLICK_TIMER_ReadCapture
+                0x00001b08        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001b08                CLICK_TIMER_ReadCapture
  .text.CLICK_TIMER_WriteCounter
-                0x00001b18        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b18                CLICK_TIMER_WriteCounter
+                0x00001b14        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001b14                CLICK_TIMER_WriteCounter
  .text.CLICK_TIMER_ClearFIFO
-                0x00001b24       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b24                CLICK_TIMER_ClearFIFO
+                0x00001b20       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001b20                CLICK_TIMER_ClearFIFO
  .text.CLICK_TIMER_Init
-                0x00001b38       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b38                CLICK_TIMER_Init
+                0x00001b34       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001b34                CLICK_TIMER_Init
  .text.CLICK_TIMER_Start
-                0x00001b68       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
-                0x00001b68                CLICK_TIMER_Start
+                0x00001b64       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00001b64                CLICK_TIMER_Start
  .text.ISR_IMU_SetVector
-                0x00001b84        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
-                0x00001b84                ISR_IMU_SetVector
+                0x00001b80        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00001b80                ISR_IMU_SetVector
  .text.ISR_IMU_SetPriority
-                0x00001b90       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
-                0x00001b90                ISR_IMU_SetPriority
+                0x00001b8c       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00001b8c                ISR_IMU_SetPriority
  .text.ISR_IMU_Enable
-                0x00001ba0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
-                0x00001ba0                ISR_IMU_Enable
+                0x00001b9c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00001b9c                ISR_IMU_Enable
  .text.ISR_IMU_Disable
-                0x00001bac        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
-                0x00001bac                ISR_IMU_Disable
+                0x00001ba8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00001ba8                ISR_IMU_Disable
  .text.ISR_IMU_StartEx
-                0x00001bb8       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
-                0x00001bb8                ISR_IMU_StartEx
+                0x00001bb4       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00001bb4                ISR_IMU_StartEx
  .text.SPIM_IMU_EnableTxInt
-                0x00001bd4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001bd4                SPIM_IMU_EnableTxInt
+                0x00001bd0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001bd0                SPIM_IMU_EnableTxInt
  .text.SPIM_IMU_EnableRxInt
-                0x00001be0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001be0                SPIM_IMU_EnableRxInt
+                0x00001bdc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001bdc                SPIM_IMU_EnableRxInt
  .text.SPIM_IMU_Enable
-                0x00001bec       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001bec                SPIM_IMU_Enable
+                0x00001be8       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001be8                SPIM_IMU_Enable
  .text.SPIM_IMU_DisableTxInt
-                0x00001c28        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001c28                SPIM_IMU_DisableTxInt
+                0x00001c24        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001c24                SPIM_IMU_DisableTxInt
  .text.SPIM_IMU_DisableRxInt
-                0x00001c34        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001c34                SPIM_IMU_DisableRxInt
+                0x00001c30        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001c30                SPIM_IMU_DisableRxInt
  .text.SPIM_IMU_ReadTxStatus
-                0x00001c40       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001c40                SPIM_IMU_ReadTxStatus
+                0x00001c3c       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001c3c                SPIM_IMU_ReadTxStatus
  .text.SPIM_IMU_ReadRxStatus
-                0x00001c68       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001c68                SPIM_IMU_ReadRxStatus
+                0x00001c64       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001c64                SPIM_IMU_ReadRxStatus
  .text.SPIM_IMU_WriteTxData
-                0x00001c90       0xd4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001c90                SPIM_IMU_WriteTxData
+                0x00001c8c       0xd4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001c8c                SPIM_IMU_WriteTxData
  .text.SPIM_IMU_ReadRxData
-                0x00001d64       0x64 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001d64                SPIM_IMU_ReadRxData
+                0x00001d60       0x64 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001d60                SPIM_IMU_ReadRxData
  .text.SPIM_IMU_ClearRxBuffer
-                0x00001dc8       0x40 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001dc8                SPIM_IMU_ClearRxBuffer
+                0x00001dc4       0x40 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001dc4                SPIM_IMU_ClearRxBuffer
  .text.SPIM_IMU_ClearTxBuffer
-                0x00001e08       0x54 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001e08                SPIM_IMU_ClearTxBuffer
+                0x00001e04       0x54 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001e04                SPIM_IMU_ClearTxBuffer
  .text.SPIM_IMU_PutArray
-                0x00001e5c       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001e5c                SPIM_IMU_PutArray
+                0x00001e58       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001e58                SPIM_IMU_PutArray
  .text.SPIM_IMU_ClearFIFO
-                0x00001e7c       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001e7c                SPIM_IMU_ClearFIFO
+                0x00001e78       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001e78                SPIM_IMU_ClearFIFO
  .text.SPIM_IMU_Init
-                0x00001eb8       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001eb8                SPIM_IMU_Init
+                0x00001eb4       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001eb4                SPIM_IMU_Init
  .text.SPIM_IMU_Start
-                0x00001f48       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
-                0x00001f48                SPIM_IMU_Start
+                0x00001f44       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00001f44                SPIM_IMU_Start
  .text.SPIM_IMU_TX_ISR
-                0x00001f64       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
-                0x00001f64                SPIM_IMU_TX_ISR
+                0x00001f60       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+                0x00001f60                SPIM_IMU_TX_ISR
  .text.SPIM_IMU_RX_ISR
-                0x00002004       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
-                0x00002004                SPIM_IMU_RX_ISR
+                0x00002000       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+                0x00002000                SPIM_IMU_RX_ISR
  .text.SPIM_EEPROM_EnableTxInt
-                0x000020a4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x000020a4                SPIM_EEPROM_EnableTxInt
+                0x000020a0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x000020a0                SPIM_EEPROM_EnableTxInt
  .text.SPIM_EEPROM_EnableRxInt
-                0x000020b0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x000020b0                SPIM_EEPROM_EnableRxInt
+                0x000020ac        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x000020ac                SPIM_EEPROM_EnableRxInt
  .text.SPIM_EEPROM_Enable
-                0x000020bc       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x000020bc                SPIM_EEPROM_Enable
+                0x000020b8       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x000020b8                SPIM_EEPROM_Enable
  .text.SPIM_EEPROM_DisableTxInt
-                0x000020f8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x000020f8                SPIM_EEPROM_DisableTxInt
+                0x000020f4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x000020f4                SPIM_EEPROM_DisableTxInt
  .text.SPIM_EEPROM_DisableRxInt
-                0x00002104        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002104                SPIM_EEPROM_DisableRxInt
+                0x00002100        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002100                SPIM_EEPROM_DisableRxInt
  .text.SPIM_EEPROM_ReadTxStatus
-                0x00002110       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002110                SPIM_EEPROM_ReadTxStatus
+                0x0000210c       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x0000210c                SPIM_EEPROM_ReadTxStatus
  .text.SPIM_EEPROM_ReadRxStatus
-                0x00002138       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002138                SPIM_EEPROM_ReadRxStatus
+                0x00002134       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002134                SPIM_EEPROM_ReadRxStatus
  .text.SPIM_EEPROM_WriteTxData
-                0x00002160       0xd4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002160                SPIM_EEPROM_WriteTxData
+                0x0000215c       0xd4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x0000215c                SPIM_EEPROM_WriteTxData
  .text.SPIM_EEPROM_ReadRxData
-                0x00002234       0x64 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002234                SPIM_EEPROM_ReadRxData
+                0x00002230       0x64 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002230                SPIM_EEPROM_ReadRxData
  .text.SPIM_EEPROM_ClearRxBuffer
-                0x00002298       0x40 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002298                SPIM_EEPROM_ClearRxBuffer
+                0x00002294       0x40 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002294                SPIM_EEPROM_ClearRxBuffer
  .text.SPIM_EEPROM_ClearTxBuffer
-                0x000022d8       0x54 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x000022d8                SPIM_EEPROM_ClearTxBuffer
+                0x000022d4       0x54 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x000022d4                SPIM_EEPROM_ClearTxBuffer
  .text.SPIM_EEPROM_PutArray
-                0x0000232c       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x0000232c                SPIM_EEPROM_PutArray
+                0x00002328       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002328                SPIM_EEPROM_PutArray
  .text.SPIM_EEPROM_ClearFIFO
-                0x0000234c       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x0000234c                SPIM_EEPROM_ClearFIFO
+                0x00002348       0x3c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002348                SPIM_EEPROM_ClearFIFO
  .text.SPIM_EEPROM_Init
-                0x00002388       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002388                SPIM_EEPROM_Init
+                0x00002384       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002384                SPIM_EEPROM_Init
  .text.SPIM_EEPROM_Start
-                0x00002418       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
-                0x00002418                SPIM_EEPROM_Start
+                0x00002414       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00002414                SPIM_EEPROM_Start
  .text.SPIM_EEPROM_TX_ISR
-                0x00002434       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
-                0x00002434                SPIM_EEPROM_TX_ISR
+                0x00002430       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+                0x00002430                SPIM_EEPROM_TX_ISR
  .text.SPIM_EEPROM_RX_ISR
-                0x000024d4       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
-                0x000024d4                SPIM_EEPROM_RX_ISR
+                0x000024d0       0xa0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+                0x000024d0                SPIM_EEPROM_RX_ISR
  .text.SPIM_IMU_IntClock_Start
-                0x00002574       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
-                0x00002574                SPIM_IMU_IntClock_Start
+                0x00002570       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+                0x00002570                SPIM_IMU_IntClock_Start
  .text.SPIM_EEPROM_IntClock_Start
-                0x00002590       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
-                0x00002590                SPIM_EEPROM_IntClock_Start
+                0x0000258c       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+                0x0000258c                SPIM_EEPROM_IntClock_Start
  .text.MAIN_TIMER_Enable
-                0x000025ac       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x000025ac                MAIN_TIMER_Enable
+                0x000025a8       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025a8                MAIN_TIMER_Enable
  .text.MAIN_TIMER_SetInterruptMode
-                0x000025d4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x000025d4                MAIN_TIMER_SetInterruptMode
+                0x000025b8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025b8                MAIN_TIMER_SetInterruptMode
+ .text.MAIN_TIMER_ReadStatusRegister
+                0x000025c4        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025c4                MAIN_TIMER_ReadStatusRegister
  .text.MAIN_TIMER_WritePeriod
-                0x000025e0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x000025e0                MAIN_TIMER_WritePeriod
+                0x000025d0        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025d0                MAIN_TIMER_WritePeriod
+ .text.MAIN_TIMER_ReadCapture
+                0x000025dc        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025dc                MAIN_TIMER_ReadCapture
  .text.MAIN_TIMER_WriteCounter
-                0x000025ec        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x000025ec                MAIN_TIMER_WriteCounter
- .text.MAIN_TIMER_Init
-                0x000025f8       0x68 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x000025f8                MAIN_TIMER_Init
- .text.MAIN_TIMER_Start
-                0x00002660       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x00002660                MAIN_TIMER_Start
+                0x000025e8        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025e8                MAIN_TIMER_WriteCounter
  .text.MAIN_TIMER_ReadCounter
-                0x0000267c       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                0x0000267c                MAIN_TIMER_ReadCounter
+                0x000025f4       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x000025f4                MAIN_TIMER_ReadCounter
+ .text.MAIN_TIMER_ClearFIFO
+                0x00002608       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x00002608                MAIN_TIMER_ClearFIFO
+ .text.MAIN_TIMER_Init
+                0x0000261c       0x34 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x0000261c                MAIN_TIMER_Init
+ .text.MAIN_TIMER_Start
+                0x00002650       0x1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x00002650                MAIN_TIMER_Start
  .text.ADC_DELSIG_GainCompensation
-                0x00002690       0xdc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x0000266c       0xdc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .text.ADC_DELSIG_SetDSMRef0Reg
-                0x0000276c       0x4c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002748       0x4c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .text.ADC_DELSIG_InitConfig
-                0x000027b8       0xdc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002794       0xdc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .text.ADC_DELSIG_Init
-                0x00002894       0xc4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002894                ADC_DELSIG_Init
+                0x00002870       0xc4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002870                ADC_DELSIG_Init
  .text.ADC_DELSIG_Enable
-                0x00002958       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002958                ADC_DELSIG_Enable
+                0x00002934       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002934                ADC_DELSIG_Enable
  .text.ADC_DELSIG_Start
-                0x00002a30       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002a30                ADC_DELSIG_Start
+                0x00002a0c       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002a0c                ADC_DELSIG_Start
  .text.ADC_DELSIG_StartConvert
-                0x00002a58       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002a58                ADC_DELSIG_StartConvert
+                0x00002a34       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002a34                ADC_DELSIG_StartConvert
  .text.ADC_DELSIG_StopConvert
-                0x00002a68       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002a68                ADC_DELSIG_StopConvert
+                0x00002a44       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002a44                ADC_DELSIG_StopConvert
  .text.ADC_DELSIG_IsEndConversion
-                0x00002a78       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002a78                ADC_DELSIG_IsEndConversion
+                0x00002a54       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002a54                ADC_DELSIG_IsEndConversion
  .text.ADC_DELSIG_GetResult16
-                0x00002aa8       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002aa8                ADC_DELSIG_GetResult16
+                0x00002a84       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002a84                ADC_DELSIG_GetResult16
  .text.ADC_DELSIG_Read16
-                0x00002af8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
-                0x00002af8                ADC_DELSIG_Read16
+                0x00002ad4       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+                0x00002ad4                ADC_DELSIG_Read16
  .text.ADC_DELSIG_ISR1
-                0x00002b20        0x4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
-                0x00002b20                ADC_DELSIG_ISR1
+                0x00002afc        0x4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
+                0x00002afc                ADC_DELSIG_ISR1
  .text.ADC_DELSIG_AMux_Start
-                0x00002b24       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
-                0x00002b24                ADC_DELSIG_AMux_Start
+                0x00002b00       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+                0x00002b00                ADC_DELSIG_AMux_Start
  .text.ADC_DELSIG_AMux_Select
-                0x00002b44       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
-                0x00002b44                ADC_DELSIG_AMux_Select
+                0x00002b20       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+                0x00002b20                ADC_DELSIG_AMux_Select
  .text.ADC_DELSIG_Ext_CP_Clk_GetDividerRegister
-                0x00002b5c        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
-                0x00002b5c                ADC_DELSIG_Ext_CP_Clk_GetDividerRegister
+                0x00002b38        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+                0x00002b38                ADC_DELSIG_Ext_CP_Clk_GetDividerRegister
  .text.ADC_DELSIG_Ext_CP_Clk_SetModeRegister
-                0x00002b68       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
-                0x00002b68                ADC_DELSIG_Ext_CP_Clk_SetModeRegister
+                0x00002b44       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+                0x00002b44                ADC_DELSIG_Ext_CP_Clk_SetModeRegister
  .text.ADC_DELSIG_Ext_CP_Clk_GetSourceRegister
-                0x00002b7c       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
-                0x00002b7c                ADC_DELSIG_Ext_CP_Clk_GetSourceRegister
+                0x00002b58       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+                0x00002b58                ADC_DELSIG_Ext_CP_Clk_GetSourceRegister
  .text.ADC_DELSIG_Ext_CP_Clk_SetDividerRegister
-                0x00002b8c       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
-                0x00002b8c                ADC_DELSIG_Ext_CP_Clk_SetDividerRegister
+                0x00002b68       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+                0x00002b68                ADC_DELSIG_Ext_CP_Clk_SetDividerRegister
  .text.ADC_DELSIG_theACLK_GetDividerRegister
-                0x00002c64        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
-                0x00002c64                ADC_DELSIG_theACLK_GetDividerRegister
+                0x00002c40        0xc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+                0x00002c40                ADC_DELSIG_theACLK_GetDividerRegister
  .text.ADC_DELSIG_theACLK_SetModeRegister
-                0x00002c70       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
-                0x00002c70                ADC_DELSIG_theACLK_SetModeRegister
+                0x00002c4c       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+                0x00002c4c                ADC_DELSIG_theACLK_SetModeRegister
  .text.ADC_DELSIG_theACLK_GetSourceRegister
-                0x00002c84       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
-                0x00002c84                ADC_DELSIG_theACLK_GetSourceRegister
+                0x00002c60       0x10 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+                0x00002c60                ADC_DELSIG_theACLK_GetSourceRegister
  .text.ADC_DELSIG_theACLK_SetDividerRegister
-                0x00002c94       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
-                0x00002c94                ADC_DELSIG_theACLK_SetDividerRegister
- *fill*         0x00002d6c        0x4 
- .text          0x00002d70       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
-                0x00002d70                CyDelayCycles
-                0x00002d80                CyEnterCriticalSection
-                0x00002d88                CyExitCriticalSection
- .text.__errno  0x00002d90        0xc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00002d90                __errno
+                0x00002c70       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+                0x00002c70                ADC_DELSIG_theACLK_SetDividerRegister
+ .text          0x00002d48       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
+                0x00002d48                CyDelayCycles
+                0x00002d58                CyEnterCriticalSection
+                0x00002d60                CyExitCriticalSection
+ .text.__errno  0x00002d68        0xc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00002d68                __errno
  .text.__libc_init_array
-                0x00002d9c       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00002d9c                __libc_init_array
- .text.memcpy   0x00002de8       0x16 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x00002de8                memcpy
- .text.memset   0x00002dfe       0x10 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x00002dfe                memset
- *fill*         0x00002e0e        0x2 
- .text.sprintf  0x00002e10       0x48 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
-                0x00002e10                siprintf
-                0x00002e10                sprintf
+                0x00002d74       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x00002d74                __libc_init_array
+ .text.memcpy   0x00002dc0       0x16 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00002dc0                memcpy
+ .text.memset   0x00002dd6       0x10 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00002dd6                memset
+ *fill*         0x00002de6        0x2 
+ .text.sprintf  0x00002de8       0x48 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sprintf.o)
+                0x00002de8                siprintf
+                0x00002de8                sprintf
  .text.__ssputs_r
-                0x00002e58       0xb2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x00002e58                __ssputs_r
- *fill*         0x00002f0a        0x2 
+                0x00002e30       0xb2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00002e30                __ssputs_r
+ *fill*         0x00002ee2        0x2 
  .text._svfprintf_r
-                0x00002f0c      0x1e8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x00002f0c                _svfiprintf_r
-                0x00002f0c                _svfprintf_r
+                0x00002ee4      0x1e8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00002ee4                _svfiprintf_r
+                0x00002ee4                _svfprintf_r
  .text._printf_common
-                0x000030f4       0xec c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000030f4                _printf_common
+                0x000030cc       0xec c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000030cc                _printf_common
  .text._printf_i
-                0x000031e0      0x24c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000031e0                _printf_i
- .text.memchr   0x0000342c       0x1c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
-                0x0000342c                memchr
- .text.memmove  0x00003448       0x36 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
-                0x00003448                memmove
- *fill*         0x0000347e        0x2 
- .text._free_r  0x00003480       0x98 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x00003480                _free_r
+                0x000031b8      0x24c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000031b8                _printf_i
+ .text.memchr   0x00003404       0x1c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memchr-stub.o)
+                0x00003404                memchr
+ .text.memmove  0x00003420       0x36 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memmove.o)
+                0x00003420                memmove
+ *fill*         0x00003456        0x2 
+ .text._free_r  0x00003458       0x98 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x00003458                _free_r
  .text._malloc_r
-                0x00003518       0xbc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x00003518                _malloc_r
+                0x000034f0       0xbc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x000034f0                _malloc_r
  .text._realloc_r
-                0x000035d4       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x000035d4                _realloc_r
- .text._sbrk_r  0x00003620       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x00003620                _sbrk_r
+                0x000035ac       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x000035ac                _realloc_r
+ .text._sbrk_r  0x000035f8       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x000035f8                _sbrk_r
  .text.__malloc_lock
-                0x00003640        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x00003640                __malloc_lock
+                0x00003618        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x00003618                __malloc_lock
  .text.__malloc_unlock
-                0x00003642        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x00003642                __malloc_unlock
+                0x0000361a        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x0000361a                __malloc_unlock
  .text._malloc_usable_size_r
-                0x00003644       0x14 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x00003644                _malloc_usable_size_r
+                0x0000361c       0x14 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x0000361c                _malloc_usable_size_r
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00003658        0x0 linker stubs
+ .glue_7t       0x00003630        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00003658        0x0 linker stubs
+ .glue_7        0x00003630        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00003658        0x0 linker stubs
+ .vfp11_veneer  0x00003630        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00003658        0x0
- .v4_bx         0x00003658        0x0 linker stubs
+.v4_bx          0x00003630        0x0
+ .v4_bx         0x00003630        0x0 linker stubs
 
-.iplt           0x00003658        0x0
- .iplt          0x00003658        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x00003630        0x0
+ .iplt          0x00003630        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00003658        0x4
+.eh_frame       0x00003630        0x4
  *(.eh_frame)
- .eh_frame      0x00003658        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .eh_frame      0x00003658        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .eh_frame      0x00003630        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x00003630        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000365c                __exidx_end = .
+                0x00003634                __exidx_end = .
 
-.rodata         0x0000365c      0x3a4
+.rodata         0x00003634      0x394
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000365c       0x1e .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
- *fill*         0x0000367a        0x2 
+ .rodata        0x00003634       0x1e .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ *fill*         0x00003652        0x2 
  .rodata.str1.4
-                0x0000367c      0x2bc .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x00003654      0x2bc .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
                                 0x2b9 (size before relaxing)
- .rodata        0x00003938       0x5c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00003938                ADC_DELSIG_AMux__addrTable
-                0x00003940                ADC_DELSIG_AMux__maskTable
+ .rodata        0x00003910       0x4e .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00003910                ADC_DELSIG_AMux__addrTable
+                0x00003918                ADC_DELSIG_AMux__maskTable
  .rodata.str1.1
-                0x00003994        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x0000395e        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .rodata.str1.1
-                0x00003996       0x11 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x00003960       0x11 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x000039a7       0x22 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000039cc                . = ALIGN (0x4)
- *fill*         0x000039c9        0x3 
+                0x00003971       0x22 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00003994                . = ALIGN (0x4)
+ *fill*         0x00003993        0x1 
  *(.init)
- .init          0x000039cc        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x000039cc                _init
- .init          0x000039d0        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x000039d8                . = ALIGN (0x4)
-                0x000039d8                __preinit_array_start = .
+ .init          0x00003994        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00003994                _init
+ .init          0x00003998        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000039a0                . = ALIGN (0x4)
+                0x000039a0                __preinit_array_start = .
  *(.preinit_array)
-                0x000039d8                __preinit_array_end = .
-                0x000039d8                . = ALIGN (0x4)
-                0x000039d8                __init_array_start = .
+                0x000039a0                __preinit_array_end = .
+                0x000039a0                . = ALIGN (0x4)
+                0x000039a0                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000039d8        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .init_array    0x000039dc        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000039e0                __init_array_end = .
-                0x000039e0                . = ALIGN (0x4)
+ .init_array    0x000039a0        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x000039a4        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000039a8                __init_array_end = .
+                0x000039a8                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000039e0        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x000039e0                _fini
- .fini          0x000039e4        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x000039ec                . = ALIGN (0x4)
-                0x000039ec                __fini_array_start = .
+ .fini          0x000039a8        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x000039a8                _fini
+ .fini          0x000039ac        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000039b4                . = ALIGN (0x4)
+                0x000039b4                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000039ec        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .fini_array    0x000039b4        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000039f0                __fini_array_end = .
-                0x000039f0                . = ALIGN (0x4)
+                0x000039b8                __fini_array_end = .
+                0x000039b8                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000039f0                . = ALIGN (0x4)
+                0x000039b8                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000039f0                . = ALIGN (0x4)
-                0x000039f0                __cy_regions = .
-                0x000039f0        0x4 LONG 0x3a00 __cy_region_init_ram
-                0x000039f4        0x4 LONG 0x1fff80c8 __cy_region_start_data
-                0x000039f8        0x4 LONG 0x80 __cy_region_init_size_ram
-                0x000039fc        0x4 LONG 0x2d8 __cy_region_zero_size_ram
-                0x00003a00                __cy_regions_end = .
-                0x00003a00                . = ALIGN (0x8)
-                0x00003a00                _etext = .
+                0x000039b8                . = ALIGN (0x4)
+                0x000039b8                __cy_regions = .
+                0x000039b8        0x4 LONG 0x39c8 __cy_region_init_ram
+                0x000039bc        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x000039c0        0x4 LONG 0x80 __cy_region_init_size_ram
+                0x000039c4        0x4 LONG 0x2d8 __cy_region_zero_size_ram
+                0x000039c8                __cy_regions_end = .
+                0x000039c8                . = ALIGN (0x8)
+                0x000039c8                _etext = .
 
 .cy_checksum_exclude
-                0x00003a00        0x0
+                0x000039c8        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000       0xc0
@@ -1842,7 +1844,7 @@ END GROUP
  .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
                 0x1fff80c0                CyResetStatus
 
-.data           0x1fff80c8       0x80 load address 0x00003a00
+.data           0x1fff80c8       0x80 load address 0x000039c8
                 0x1fff80c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff80c8        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -1870,10 +1872,10 @@ END GROUP
  *(.ram)
                 0x1fff8148                _edata = .
 
-.igot.plt       0x1fff8148        0x0 load address 0x00003a80
+.igot.plt       0x1fff8148        0x0 load address 0x00003a48
  .igot.plt      0x1fff8148        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x1fff8148      0x2d8 load address 0x00003a80
+.bss            0x1fff8148      0x2d8 load address 0x00003a48
                 0x1fff8148                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -1954,11 +1956,11 @@ END GROUP
                 0x1fff8420                __end = .
                 0x1fff8420                PROVIDE (end, .)
                 0x1fff8420                PROVIDE (__bss_end__, .)
-                0x00003a00                __cy_region_init_ram = LOADADDR (.data)
+                0x000039c8                __cy_region_init_ram = LOADADDR (.data)
                 0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x000002d8                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8420       0x80 load address 0x00003a80
+.heap           0x1fff8420       0x80 load address 0x00003a48
                 0x1fff8420                . = _end
                 0x1fff84a0                . = (. + 0x80)
  *fill*         0x1fff8420       0x80 
@@ -1978,9 +1980,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000      0xaf8
+.cyconfigecc    0x80000000      0xd1c
  *(.cyconfigecc)
- .cyconfigecc   0x80000000      0xaf8 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0xd1c .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -2009,8 +2011,8 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00003a80        0x0 load address 0x9050000c
- .rel.iplt      0x00003a80        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x00003a48        0x0 load address 0x9050000c
+ .rel.iplt      0x00003a48        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -2041,61 +2043,61 @@ END GROUP
  .debug_aranges
                 0x00000098       0xd8 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
  .debug_aranges
-                0x00000170       0x60 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                0x00000170       0x58 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
  .debug_aranges
-                0x000001d0       0x68 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+                0x000001c8       0x68 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
  .debug_aranges
-                0x00000238       0x38 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+                0x00000230       0x38 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
  .debug_aranges
-                0x00000270       0x48 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                0x00000268       0x48 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
  .debug_aranges
-                0x000002b8       0x68 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002b0       0x68 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_aranges
-                0x00000320       0x18 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x00000318       0x18 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
  .debug_aranges
-                0x00000338       0x48 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000330       0x48 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
  .debug_aranges
-                0x00000380       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+                0x00000378       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
  .debug_aranges
-                0x00000400       0xa8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+                0x000003f8       0xa8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
  .debug_aranges
-                0x000004a8       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+                0x000004a0       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
  .debug_aranges
-                0x00000540       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+                0x00000538       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
  .debug_aranges
-                0x000005c0       0xf0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+                0x000005b8       0xf0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
  .debug_aranges
-                0x000006b0       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+                0x000006a8       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
  .debug_aranges
-                0x00000720      0x2a0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+                0x00000718      0x2a0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
  .debug_aranges
-                0x000009c0       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+                0x000009b8       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
  .debug_aranges
-                0x00000a58       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+                0x00000a50       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
  .debug_aranges
-                0x00000ae0       0x38 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+                0x00000ad8       0x38 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
  .debug_aranges
-                0x00000b18       0x38 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+                0x00000b10       0x38 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
  .debug_aranges
-                0x00000b50       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+                0x00000b48       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
  .debug_aranges
-                0x00000be8       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+                0x00000be0       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
  .debug_aranges
-                0x00000c78       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+                0x00000c70       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
  .debug_aranges
-                0x00000cf8       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+                0x00000cf0       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
  .debug_aranges
-                0x00000dd0       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+                0x00000dc8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
  .debug_aranges
-                0x00000df8       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+                0x00000df0       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
  .debug_aranges
-                0x00000ed0       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+                0x00000ec8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
  .debug_aranges
-                0x00000ef8       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+                0x00000ef0       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
  .debug_aranges
-                0x00000f68       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+                0x00000f60       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
  .debug_aranges
-                0x00000fd8       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                0x00000fd0       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .debug_aranges
                 0x00001060       0xe8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .debug_aranges
@@ -2116,50 +2118,50 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xb65b
+.debug_info     0x00000000     0xb69c
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x633 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x00000633      0x312 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
- .debug_info    0x00000945      0x678 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
- .debug_info    0x00000fbd      0xac8 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_info    0x00001a85      0x46e .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
- .debug_info    0x00001ef3      0xf66 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
- .debug_info    0x00002e59      0x21a .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_info    0x00003073      0x307 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_info    0x0000337a      0x6da .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00003a54      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00003b8d      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x00003f48      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_info    0x0000421a      0x381 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_info    0x0000459b      0x333 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_info    0x000048ce      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_info    0x00004ba0      0x60c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_info    0x000051ac      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_info    0x0000542f     0x1374 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_info    0x000067a3      0xa2a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_info    0x000071cd      0x293 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
- .debug_info    0x00007460      0x11f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_info    0x0000757f      0x11f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_info    0x0000769e      0x333 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_info    0x000079d1      0x2d1 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_info    0x00007ca2      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_info    0x00007f74      0x709 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_info    0x0000867d      0x18d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_info    0x0000880a      0x709 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_info    0x00008f13      0x18d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_info    0x000090a0      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_info    0x00009323      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_info    0x000095a6      0x293 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
- .debug_info    0x00009839      0xa1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
- .debug_info    0x0000a255       0xd3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
- .debug_info    0x0000a328      0x165 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
- .debug_info    0x0000a48d      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
- .debug_info    0x0000a710      0x2c4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
- .debug_info    0x0000a9d4       0xea .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
- .debug_info    0x0000aabe      0x64d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
- .debug_info    0x0000b10b      0x550 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
+ .debug_info    0x00000000      0x61f .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x0000061f      0x2f5 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+ .debug_info    0x00000914      0x678 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+ .debug_info    0x00000f8c      0xac8 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+ .debug_info    0x00001a54      0x470 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+ .debug_info    0x00001ec4      0xf66 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ .debug_info    0x00002e2a      0x21a .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+ .debug_info    0x00003044      0x32c .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_info    0x00003370      0x6c7 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00003a37      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00003b70      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00003f2b      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_info    0x000041fd      0x383 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_info    0x00004580      0x334 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_info    0x000048b4      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_info    0x00004b86      0x60c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_info    0x00005192      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_info    0x00005415     0x1374 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_info    0x00006789      0xa2a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_info    0x000071b3      0x293 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_info    0x00007446      0x11f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_info    0x00007565      0x11f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_info    0x00007684      0x333 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_info    0x000079b7      0x2d1 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_info    0x00007c88      0x2d2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_info    0x00007f5a      0x709 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_info    0x00008663      0x18d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_info    0x000087f0      0x709 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_info    0x00008ef9      0x18d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_info    0x00009086      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_info    0x00009309      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_info    0x0000958c      0x2ee .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_info    0x0000987a      0xa1c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+ .debug_info    0x0000a296       0xd3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
+ .debug_info    0x0000a369      0x165 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+ .debug_info    0x0000a4ce      0x283 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+ .debug_info    0x0000a751      0x2c4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+ .debug_info    0x0000aa15       0xea .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
+ .debug_info    0x0000aaff      0x64d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
+ .debug_info    0x0000b14c      0x550 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x311f
+.debug_abbrev   0x00000000     0x313f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x16f .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_abbrev  0x0000016f       0xfe .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
@@ -2168,82 +2170,82 @@ END GROUP
  .debug_abbrev  0x00000586      0x15c .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
  .debug_abbrev  0x000006e2      0x1a7 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
  .debug_abbrev  0x00000889      0x101 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_abbrev  0x0000098a      0x138 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_abbrev  0x00000ac2      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x00000cef       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00000d66      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_abbrev  0x00000f4e      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_abbrev  0x000010c1      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_abbrev  0x000011f4      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_abbrev  0x00001327      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_abbrev  0x0000149a      0x175 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_abbrev  0x0000160f      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_abbrev  0x00001748      0x254 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_abbrev  0x0000199c      0x1ab .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_abbrev  0x00001b47      0x11a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
- .debug_abbrev  0x00001c61       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_abbrev  0x00001cf1       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_abbrev  0x00001d81      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_abbrev  0x00001eb4      0x12b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_abbrev  0x00001fdf      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_abbrev  0x00002152      0x162 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_abbrev  0x000022b4       0x8a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_abbrev  0x0000233e      0x162 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_abbrev  0x000024a0       0x8a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_abbrev  0x0000252a      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_abbrev  0x00002663      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_abbrev  0x0000279c      0x11a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
- .debug_abbrev  0x000028b6      0x1cd .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
- .debug_abbrev  0x00002a83       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
- .debug_abbrev  0x00002ac5       0xb1 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
- .debug_abbrev  0x00002b76      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
- .debug_abbrev  0x00002caf      0x121 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
- .debug_abbrev  0x00002dd0       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00002de4      0x1a7 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
- .debug_abbrev  0x00002f8b      0x194 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
+ .debug_abbrev  0x0000098a      0x147 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_abbrev  0x00000ad1      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000cfe       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000d75      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x00000f5d      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_abbrev  0x000010d0      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_abbrev  0x00001203      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_abbrev  0x00001336      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_abbrev  0x000014a9      0x175 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_abbrev  0x0000161e      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_abbrev  0x00001757      0x254 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_abbrev  0x000019ab      0x1ab .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_abbrev  0x00001b56      0x11a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_abbrev  0x00001c70       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_abbrev  0x00001d00       0x90 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_abbrev  0x00001d90      0x133 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_abbrev  0x00001ec3      0x12b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_abbrev  0x00001fee      0x173 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_abbrev  0x00002161      0x162 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_abbrev  0x000022c3       0x8a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_abbrev  0x0000234d      0x162 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_abbrev  0x000024af       0x8a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_abbrev  0x00002539      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_abbrev  0x00002672      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_abbrev  0x000027ab      0x12b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_abbrev  0x000028d6      0x1cd .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+ .debug_abbrev  0x00002aa3       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
+ .debug_abbrev  0x00002ae5       0xb1 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+ .debug_abbrev  0x00002b96      0x139 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+ .debug_abbrev  0x00002ccf      0x121 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+ .debug_abbrev  0x00002df0       0x14 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00002e04      0x1a7 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
+ .debug_abbrev  0x00002fab      0x194 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
 
-.debug_line     0x00000000     0x4e2c
+.debug_line     0x00000000     0x4e30
  *(.debug_line)
- .debug_line    0x00000000      0x2b3 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x000002b3      0x202 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
- .debug_line    0x000004b5      0x293 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
- .debug_line    0x00000748      0x386 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_line    0x00000ace      0x281 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
- .debug_line    0x00000d4f      0x3a2 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
- .debug_line    0x000010f1      0x1d1 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_line    0x000012c2      0x1ef .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_line    0x000014b1      0x230 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x000016e1      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00001822      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x00001a56      0x137 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_line    0x00001b8d      0x1aa .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_line    0x00001d37      0x185 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_line    0x00001ebc      0x136 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_line    0x00001ff2      0x2bc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_line    0x000022ae      0x17c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_line    0x0000242a      0x816 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_line    0x00002c40      0x367 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_line    0x00002fa7      0x160 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
- .debug_line    0x00003107       0x93 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_line    0x0000319a       0x96 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_line    0x00003230      0x18a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_line    0x000033ba      0x176 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_line    0x00003530      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_line    0x00003664      0x2a2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_line    0x00003906       0xae .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_line    0x000039b4      0x2a8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_line    0x00003c5c       0xb4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_line    0x00003d10      0x180 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_line    0x00003e90      0x183 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_line    0x00004013      0x158 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
- .debug_line    0x0000416b      0x37f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
- .debug_line    0x000044ea       0x87 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
- .debug_line    0x00004571       0xb3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
- .debug_line    0x00004624      0x184 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
- .debug_line    0x000047a8      0x1a4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
- .debug_line    0x0000494c       0x66 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
- .debug_line    0x000049b2      0x21a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
- .debug_line    0x00004bcc      0x260 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
+ .debug_line    0x00000000      0x2b1 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000002b1      0x200 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+ .debug_line    0x000004b1      0x293 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+ .debug_line    0x00000744      0x386 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+ .debug_line    0x00000aca      0x26b .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+ .debug_line    0x00000d35      0x3a2 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ .debug_line    0x000010d7      0x1d1 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+ .debug_line    0x000012a8      0x1f0 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_line    0x00001498      0x230 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000016c8      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00001809      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00001a3d      0x137 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_line    0x00001b74      0x1aa .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_line    0x00001d1e      0x185 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_line    0x00001ea3      0x136 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_line    0x00001fd9      0x2bc .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_line    0x00002295      0x17c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_line    0x00002411      0x816 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_line    0x00002c27      0x367 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_line    0x00002f8e      0x160 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_line    0x000030ee       0x93 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_line    0x00003181       0x96 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_line    0x00003217      0x18a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_line    0x000033a1      0x176 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_line    0x00003517      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_line    0x0000364b      0x2a2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_line    0x000038ed       0xae .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_line    0x0000399b      0x2a8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_line    0x00003c43       0xb4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_line    0x00003cf7      0x180 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_line    0x00003e77      0x183 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_line    0x00003ffa      0x175 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_line    0x0000416f      0x37f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+ .debug_line    0x000044ee       0x87 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
+ .debug_line    0x00004575       0xb3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+ .debug_line    0x00004628      0x184 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+ .debug_line    0x000047ac      0x1a4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+ .debug_line    0x00004950       0x66 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyBootAsmGnu.o)
+ .debug_line    0x000049b6      0x21a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
+ .debug_line    0x00004bd0      0x260 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
 
 .debug_frame    0x00000000     0x3418
  *(.debug_frame)
@@ -2251,33 +2253,33 @@ END GROUP
  .debug_frame   0x00000044       0x64 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
  .debug_frame   0x000000a8       0xe0 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_frame   0x00000188      0x300 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_frame   0x00000488      0x118 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
- .debug_frame   0x000005a0      0x164 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
- .debug_frame   0x00000704       0x80 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_frame   0x00000784       0xe8 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_frame   0x0000086c      0x104 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_frame   0x00000970       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_frame   0x00000a28      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_frame   0x00000b2c      0x154 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_frame   0x00000c80      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_frame   0x00000db4      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_frame   0x00000eb8      0x250 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_frame   0x00001108       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_frame   0x000011e8      0x738 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_frame   0x00001920      0x1f8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_frame   0x00001b18      0x108 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
- .debug_frame   0x00001c20       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_frame   0x00001c70       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_frame   0x00001cc0      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_frame   0x00001df4      0x124 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_frame   0x00001f18      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_frame   0x0000201c      0x264 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_frame   0x00002280       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_frame   0x000022b0      0x260 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_frame   0x00002510       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_frame   0x00002540       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_frame   0x00002620       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_frame   0x00002700      0x108 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_frame   0x00000488       0xfc .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+ .debug_frame   0x00000584      0x164 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ .debug_frame   0x000006e8       0x80 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+ .debug_frame   0x00000768       0xe8 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_frame   0x00000850      0x104 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x00000954       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_frame   0x00000a0c      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_frame   0x00000b10      0x154 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_frame   0x00000c64      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_frame   0x00000d98      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_frame   0x00000e9c      0x250 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_frame   0x000010ec       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_frame   0x000011cc      0x738 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_frame   0x00001904      0x1f8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_frame   0x00001afc      0x108 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_frame   0x00001c04       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_frame   0x00001c54       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_frame   0x00001ca4      0x134 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_frame   0x00001dd8      0x124 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_frame   0x00001efc      0x104 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_frame   0x00002000      0x264 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_frame   0x00002264       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_frame   0x00002294      0x260 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_frame   0x000024f4       0x30 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_frame   0x00002524       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_frame   0x00002604       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_frame   0x000026e4      0x124 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .debug_frame   0x00002808      0x284 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .debug_frame   0x00002a8c       0x50 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
  .debug_frame   0x00002adc       0x64 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
@@ -2303,88 +2305,88 @@ END GROUP
  .debug_frame   0x0000339c       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-msizer.o)
  .debug_frame   0x000033bc       0x5c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 
-.debug_str      0x00000000     0x4059
+.debug_str      0x00000000     0x4091
  *(.debug_str)
- .debug_str     0x00000000      0x4d4 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x532 (size before relaxing)
- .debug_str     0x000004d4       0xdf .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
-                                0x394 (size before relaxing)
- .debug_str     0x000005b3      0x261 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+ .debug_str     0x00000000      0x4ca .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x528 (size before relaxing)
+ .debug_str     0x000004ca       0xf6 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
+                                0x398 (size before relaxing)
+ .debug_str     0x000005c0      0x261 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
                                 0x479 (size before relaxing)
- .debug_str     0x00000814      0x1dd .\CortexM3\ARM_GCC_541\Debug\25LC256.o
+ .debug_str     0x00000821      0x1dd .\CortexM3\ARM_GCC_541\Debug\25LC256.o
                                 0x597 (size before relaxing)
- .debug_str     0x000009f1      0x12f .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
-                                0x3b0 (size before relaxing)
- .debug_str     0x00000b20      0x122 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ .debug_str     0x000009fe      0x13b .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+                                0x3b2 (size before relaxing)
+ .debug_str     0x00000b39      0x122 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
                                 0x43d (size before relaxing)
- .debug_str     0x00000c42       0x8a .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+ .debug_str     0x00000c5b       0x8a .\CortexM3\ARM_GCC_541\Debug\Notifications.o
                                 0x2ef (size before relaxing)
- .debug_str     0x00000ccc       0x46 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
-                                0x2ec (size before relaxing)
- .debug_str     0x00000d12      0x20a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000ce5       0x59 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+                                0x30d (size before relaxing)
+ .debug_str     0x00000d3e      0x20a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x40c (size before relaxing)
- .debug_str     0x00000f1c       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000f48       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                                 0x23e (size before relaxing)
- .debug_str     0x00000f91      0x13e .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_str     0x00000fbd      0x13e .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
                                 0x364 (size before relaxing)
- .debug_str     0x000010cf      0x131 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_str     0x000010fb      0x131 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
                                 0x346 (size before relaxing)
- .debug_str     0x00001200      0x19a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_str     0x0000122c      0x18a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
                                 0x3e9 (size before relaxing)
- .debug_str     0x0000139a      0x116 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_str     0x000013b6      0x11a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
                                 0x3ab (size before relaxing)
- .debug_str     0x000014b0      0x10c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_str     0x000014d0      0x10c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
                                 0x338 (size before relaxing)
- .debug_str     0x000015bc      0x277 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_str     0x000015dc      0x277 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
                                 0x4cf (size before relaxing)
- .debug_str     0x00001833      0x183 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_str     0x00001853      0x183 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
                                 0x390 (size before relaxing)
- .debug_str     0x000019b6      0x7e3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_str     0x000019d6      0x7e3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
                                 0xaa1 (size before relaxing)
- .debug_str     0x00002199      0x365 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_str     0x000021b9      0x365 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
                                 0x78d (size before relaxing)
- .debug_str     0x000024fe      0x19a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_str     0x0000251e      0x19a .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
                                 0x3bf (size before relaxing)
- .debug_str     0x00002698       0x5e .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_str     0x000026b8       0x5e .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
                                 0x241 (size before relaxing)
- .debug_str     0x000026f6       0x5f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_str     0x00002716       0x5f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
                                 0x250 (size before relaxing)
- .debug_str     0x00002755      0x16c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_str     0x00002775      0x16c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
                                 0x40a (size before relaxing)
- .debug_str     0x000028c1      0x1b0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_str     0x000028e1      0x1b0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
                                 0x3f4 (size before relaxing)
- .debug_str     0x00002a71       0xf2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_str     0x00002a91       0xf2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
                                 0x31c (size before relaxing)
- .debug_str     0x00002b63      0x2ad .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_str     0x00002b83      0x2ad .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
                                 0x5d0 (size before relaxing)
- .debug_str     0x00002e10       0x46 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_str     0x00002e30       0x46 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
                                 0x309 (size before relaxing)
- .debug_str     0x00002e56      0x2e5 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_str     0x00002e76      0x2e5 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
                                 0x642 (size before relaxing)
- .debug_str     0x0000313b       0x4f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_str     0x0000315b       0x4f .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
                                 0x330 (size before relaxing)
- .debug_str     0x0000318a      0x160 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_str     0x000031aa      0x160 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
                                 0x3c0 (size before relaxing)
- .debug_str     0x000032ea      0x17e .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_str     0x0000330a      0x17e .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
                                 0x3e4 (size before relaxing)
- .debug_str     0x00003468      0x159 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
-                                0x39f (size before relaxing)
- .debug_str     0x000035c1      0x442 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+ .debug_str     0x00003488      0x188 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+                                0x3ef (size before relaxing)
+ .debug_str     0x00003610      0x42b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
                                 0x742 (size before relaxing)
- .debug_str     0x00003a03       0x68 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
+ .debug_str     0x00003a3b       0x68 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
                                 0x23d (size before relaxing)
- .debug_str     0x00003a6b       0x7b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+ .debug_str     0x00003aa3       0x7b .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
                                 0x28a (size before relaxing)
- .debug_str     0x00003ae6      0x170 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+ .debug_str     0x00003b1e      0x170 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
                                 0x3f0 (size before relaxing)
- .debug_str     0x00003c56      0x1a3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+ .debug_str     0x00003c8e      0x1a3 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
                                 0x41d (size before relaxing)
- .debug_str     0x00003df9      0x1b4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
+ .debug_str     0x00003e31      0x1b4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
                                 0x41a (size before relaxing)
- .debug_str     0x00003fad       0xac .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
+ .debug_str     0x00003fe5       0xac .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
                                 0x392 (size before relaxing)
 
-.debug_loc      0x00000000     0x3fd1
+.debug_loc      0x00000000     0x3fc8
  *(.debug_loc)
  .debug_loc     0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_loc     0x0000005c      0x2d8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
@@ -2392,34 +2394,35 @@ END GROUP
  .debug_loc     0x0000082a      0x16e .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
  .debug_loc     0x00000998      0x31e .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
  .debug_loc     0x00000cb6       0x52 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_loc     0x00000d08      0x1af .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_loc     0x00000eb7      0x2cb .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x00001182      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_loc     0x000012c6       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_loc     0x0000131c       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_loc     0x00001342       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_loc     0x00001368       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_loc     0x000013be      0x258 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_loc     0x00001616      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_loc     0x0000173e      0xa11 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_loc     0x0000214f      0x1e4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_loc     0x00002333       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_loc     0x00002375       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_loc     0x000023b7       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_loc     0x000023dd       0x13 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_loc     0x000023f0       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_loc     0x00002446      0x20d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_loc     0x00002653       0x74 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_loc     0x000026c7      0x20d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_loc     0x000028d4       0x74 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_loc     0x00002948      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_loc     0x00002a70      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_loc     0x00002b98      0x69d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
- .debug_loc     0x00003235       0x6c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
- .debug_loc     0x000032a1      0x12c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
- .debug_loc     0x000033cd      0x14d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
- .debug_loc     0x0000351a      0x3b2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
- .debug_loc     0x000038cc      0x705 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
+ .debug_loc     0x00000d08      0x1c2 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_loc     0x00000eca      0x29c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x00001166      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x000012aa       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_loc     0x00001300       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_loc     0x00001326       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_loc     0x0000134c       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_loc     0x000013a2      0x258 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_loc     0x000015fa      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_loc     0x00001722      0xa11 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_loc     0x00002133      0x1e4 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_loc     0x00002317       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_loc     0x00002359       0x42 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_loc     0x0000239b       0x26 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_loc     0x000023c1       0x13 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_loc     0x000023d4       0x56 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_loc     0x0000242a      0x20d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_loc     0x00002637       0x74 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_loc     0x000026ab      0x20d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_loc     0x000028b8       0x74 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_loc     0x0000292c      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_loc     0x00002a54      0x128 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_loc     0x00002b7c       0x13 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_loc     0x00002b8f      0x69d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
+ .debug_loc     0x0000322c       0x6c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)
+ .debug_loc     0x00003298      0x12c .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_Ext_CP_Clk.o)
+ .debug_loc     0x000033c4      0x14d .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_theACLK.o)
+ .debug_loc     0x00003511      0x3b2 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyFlash.o)
+ .debug_loc     0x000038c3      0x705 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -2430,33 +2433,33 @@ END GROUP
  .debug_ranges  0x00000010       0x20 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
  .debug_ranges  0x00000030       0x38 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_ranges  0x00000068       0xe0 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_ranges  0x00000148       0x68 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
- .debug_ranges  0x000001b0       0x70 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
- .debug_ranges  0x00000220       0x28 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
- .debug_ranges  0x00000248       0x38 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
- .debug_ranges  0x00000280       0x58 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_ranges  0x000002d8       0x38 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_ranges  0x00000310       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
- .debug_ranges  0x00000380       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
- .debug_ranges  0x00000418       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
- .debug_ranges  0x000004a0       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
- .debug_ranges  0x00000510       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
- .debug_ranges  0x000005f0       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
- .debug_ranges  0x00000650      0x290 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
- .debug_ranges  0x000008e0       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
- .debug_ranges  0x00000968       0x78 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
- .debug_ranges  0x000009e0       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
- .debug_ranges  0x00000a08       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
- .debug_ranges  0x00000a30       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
- .debug_ranges  0x00000ab8       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
- .debug_ranges  0x00000b38       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
- .debug_ranges  0x00000ba8       0xc8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
- .debug_ranges  0x00000c70       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
- .debug_ranges  0x00000c88       0xc8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
- .debug_ranges  0x00000d50       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
- .debug_ranges  0x00000d68       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
- .debug_ranges  0x00000dc8       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
- .debug_ranges  0x00000e28       0x78 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
+ .debug_ranges  0x00000148       0x60 .\CortexM3\ARM_GCC_541\Debug\RGB_Driver.o
+ .debug_ranges  0x000001a8       0x70 .\CortexM3\ARM_GCC_541\Debug\LIS3DH.o
+ .debug_ranges  0x00000218       0x28 .\CortexM3\ARM_GCC_541\Debug\Notifications.o
+ .debug_ranges  0x00000240       0x38 .\CortexM3\ARM_GCC_541\Debug\LogUtils.o
+ .debug_ranges  0x00000278       0x58 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x000002d0       0x38 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_ranges  0x00000308       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_CONFIG.o)
+ .debug_ranges  0x00000378       0x98 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_RG.o)
+ .debug_ranges  0x00000410       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_B.o)
+ .debug_ranges  0x00000498       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_START.o)
+ .debug_ranges  0x00000508       0xe0 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART.o)
+ .debug_ranges  0x000005e8       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(UART_IntClock.o)
+ .debug_ranges  0x00000648      0x290 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CyLib.o)
+ .debug_ranges  0x000008d8       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(cyPm.o)
+ .debug_ranges  0x00000960       0x78 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(BUTTON_TIMER.o)
+ .debug_ranges  0x000009d8       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_IMU.o)
+ .debug_ranges  0x00000a00       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CS_EEPROM.o)
+ .debug_ranges  0x00000a28       0x88 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(PWM_NOTIFY.o)
+ .debug_ranges  0x00000ab0       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(CLICK_TIMER.o)
+ .debug_ranges  0x00000b30       0x70 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ISR_IMU.o)
+ .debug_ranges  0x00000ba0       0xc8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU.o)
+ .debug_ranges  0x00000c68       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_INT.o)
+ .debug_ranges  0x00000c80       0xc8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM.o)
+ .debug_ranges  0x00000d48       0x18 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_INT.o)
+ .debug_ranges  0x00000d60       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_IMU_IntClock.o)
+ .debug_ranges  0x00000dc0       0x60 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(SPIM_EEPROM_IntClock.o)
+ .debug_ranges  0x00000e20       0x80 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(MAIN_TIMER.o)
  .debug_ranges  0x00000ea0       0xd8 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG.o)
  .debug_ranges  0x00000f78       0x28 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_INT.o)
  .debug_ranges  0x00000fa0       0x20 .\CortexM3\ARM_GCC_541\Debug\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.a(ADC_DELSIG_AMux.o)

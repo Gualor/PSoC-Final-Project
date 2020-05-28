@@ -74,7 +74,8 @@ void LOG_insertPayload(log_t* msg, uint8_t* dataPtr)
 uint16_t LOG_getTimestamp(void)
 {
     // Read time in seconds from boot up
-    return LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
+    uint32_t current_time = LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
+    return (uint16_t)(current_time/LOG_TICK_PER_SECOND);
 }
 
 /*

@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     May 27 2020 16:42:31
+#File Generated:     May 28 2020 12:36:41
 
 #Purpose:            
 
@@ -44,17 +44,17 @@ Phase 2
 Phase 3
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	24
+    Number of Combinational MCs 	:	25
     Number of Sequential MCs    	:	55
-    Number of DPs               	:	9
-    Number of Controls          	:	7
-    Number of Status            	:	10
+    Number of DPs               	:	13
+    Number of Controls          	:	8
+    Number of Status            	:	11
     Number of SyncCells         	:	0
     Number of count7cells       	:	3
 
 Device Utilization Summary after Packing
-    Macrocells                  :	79/192
-    UDBS                        :	13/24
+    Macrocells                  :	80/192
+    UDBS                        :	17/24
     IOs                         :	17/72
 
 
@@ -79,7 +79,7 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 19
+Number of clocks: 18
 Clock: ADC_DELSIG_Ext_CP_Clk | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_theACLK   | Frequency: N/A       | Target:   0.1 MHz
@@ -91,13 +91,12 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: MAIN_CLOCK           | Frequency: N/A       | Target:   0.0 MHz
-Clock: MAIN_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
+Clock: MAIN_CLOCK           | Frequency:  35.7 MHz | Target:   0.0 MHz
 Clock: NOTIFY_CLOCK         | Frequency:  58.5 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
-Clock: SPIM_EEPROM_IntClock | Frequency:  51.8 MHz | Target:   6.0 MHz
-Clock: SPIM_IMU_IntClock    | Frequency:  56.5 MHz | Target:   6.0 MHz
-Clock: UART_IntClock        | Frequency:  55.3 MHz | Target:   0.9 MHz
+Clock: PWM_CLOCK            | Frequency:  77.2 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  65.0 MHz | Target:   6.0 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  58.1 MHz | Target:   6.0 MHz
+Clock: UART_IntClock        | Frequency:  44.5 MHz | Target:   0.9 MHz
 Clock: \ADC_DELSIG:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -110,7 +109,7 @@ Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 19
+Number of clocks: 18
 Clock: ADC_DELSIG_Ext_CP_Clk | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_theACLK   | Frequency: N/A       | Target:   0.1 MHz
@@ -122,32 +121,31 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: MAIN_CLOCK           | Frequency: N/A       | Target:   0.0 MHz
-Clock: MAIN_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
+Clock: MAIN_CLOCK           | Frequency:  35.7 MHz | Target:   0.0 MHz
 Clock: NOTIFY_CLOCK         | Frequency:  53.4 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  85.3 MHz | Target:   0.1 MHz
-Clock: SPIM_EEPROM_IntClock | Frequency:  65.0 MHz | Target:   6.0 MHz
-Clock: SPIM_IMU_IntClock    | Frequency:  64.5 MHz | Target:   6.0 MHz
-Clock: UART_IntClock        | Frequency:  41.3 MHz | Target:   0.9 MHz
+Clock: PWM_CLOCK            | Frequency:  77.2 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  67.1 MHz | Target:   6.0 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  61.1 MHz | Target:   6.0 MHz
+Clock: UART_IntClock        | Frequency:  41.8 MHz | Target:   0.9 MHz
 Clock: \ADC_DELSIG:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 3.3 (sec)
+D2088: Phase 7, elapsed time : 3.7 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	24
+    Number of Combinational MCs 	:	25
     Number of Sequential MCs    	:	55
-    Number of DPs               	:	9
-    Number of Controls          	:	7
-    Number of Status            	:	10
+    Number of DPs               	:	13
+    Number of Controls          	:	8
+    Number of Status            	:	11
     Number of SyncCells         	:	0
     Number of count7cells       	:	3
     Number of IOs       	:	17
 
 Device Utilization Summary
-    Macrocells                  :	79/192
+    Macrocells                  :	80/192
     IOs                         :	17/72
 
 
@@ -164,25 +162,24 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 19
+Number of clocks: 18
 Clock: ADC_DELSIG_Ext_CP_Clk | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_Ext_CP_Clk(routed) | Frequency: N/A       | Target:  24.0 MHz
 Clock: ADC_DELSIG_theACLK   | Frequency: N/A       | Target:   0.1 MHz
 Clock: ADC_DELSIG_theACLK(fixed-function) | Frequency: N/A       | Target:   0.1 MHz
-Clock: BUTTON_CLOCK         | Frequency:  51.0 MHz | Target:   0.0 MHz
+Clock: BUTTON_CLOCK         | Frequency:  50.8 MHz | Target:   0.0 MHz
 Clock: BUTTON_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: MAIN_CLOCK           | Frequency: N/A       | Target:   0.0 MHz
-Clock: MAIN_CLOCK(fixed-function) | Frequency: N/A       | Target:   0.0 MHz
-Clock: NOTIFY_CLOCK         | Frequency:  77.2 MHz | Target:   0.0 MHz
-Clock: PWM_CLOCK            | Frequency:  75.3 MHz | Target:   0.1 MHz
-Clock: SPIM_EEPROM_IntClock | Frequency:  67.4 MHz | Target:   6.6 MHz
-Clock: SPIM_IMU_IntClock    | Frequency:  66.8 MHz | Target:   6.6 MHz
-Clock: UART_IntClock        | Frequency:  45.8 MHz | Target:   1.0 MHz
+Clock: MAIN_CLOCK           | Frequency:  35.7 MHz | Target:   0.0 MHz
+Clock: NOTIFY_CLOCK         | Frequency:  61.5 MHz | Target:   0.0 MHz
+Clock: PWM_CLOCK            | Frequency:  84.8 MHz | Target:   0.1 MHz
+Clock: SPIM_EEPROM_IntClock | Frequency:  64.5 MHz | Target:   6.6 MHz
+Clock: SPIM_IMU_IntClock    | Frequency:  65.0 MHz | Target:   6.6 MHz
+Clock: UART_IntClock        | Frequency:  39.4 MHz | Target:   1.0 MHz
 Clock: \ADC_DELSIG:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
 
 ======================================================================
@@ -194,5 +191,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 5.1 sec.
+I2076: Total run-time: 5.6 sec.
 

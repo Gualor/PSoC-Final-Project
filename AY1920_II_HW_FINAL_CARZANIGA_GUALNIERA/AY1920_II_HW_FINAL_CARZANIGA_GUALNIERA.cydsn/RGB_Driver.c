@@ -40,6 +40,55 @@
 #include "RGB_Driver.h"
 
 /*
+ * Initialize and start RGB pulse width modulators with 
+ * configured settings.
+ */
+void RGB_Init(void)
+{
+    // Check if enable bit isn't already set
+    if (!(PWM_RG_ReadControlRegister() & PWM_RG_CTRL_ENABLE))
+    {
+        // Enable red/green PWM
+        PWM_RG_Start();
+    }
+    
+    // Check if enable bit isn't already set
+    if (!(PWM_B_ReadControlRegister() & PWM_B_CTRL_ENABLE))
+    {
+        // Enable blue PWM
+        PWM_B_Start();
+    }
+    
+    // Turn LED off
+    RGB_Stop();
+}
+
+/*
+ * Stop RGB pulse width modulators if not already paused,
+ * do nothing otherwise.
+ */
+void RGB_Stop(void)
+{
+    // Turn off LED red channel 
+    if (PWM_RG_ReadCompare1() != PWM_COMPARE_STOP)
+    {
+        PWM_RG_WriteCompare1(PWM_COMPARE_STOP);
+    }
+    
+    // Turn off LED green channel 
+    if (PWM_RG_ReadCompare2() != PWM_COMPARE_STOP)
+    {
+        PWM_RG_WriteCompare2(PWM_COMPARE_STOP);
+    }
+    
+    // Turn off LED blue channel 
+    if (PWM_B_ReadCompare() != PWM_COMPARE_STOP)
+    {
+        PWM_B_WriteCompare(PWM_COMPARE_STOP);
+    }
+}
+
+/*
  * Drive LED RGB by setting PWM duty cycles based
  * on xyz-axes IMU data so that:
  * -> X value drives RED channel
@@ -66,66 +115,8 @@ void RGB_Driver(uint8_t* dataPtr)
 void RGB_sendFlagNotify(uint8_t flag)
 {
     // Drive blue channel only
-    uint8_t buffer[3];
-    buffer[0] = PWM_CYCLE_LENGTH;
-    buffer[1] = PWM_CYCLE_LENGTH - PWM_CYCLE_LENGTH * flag;
-    buffer[2] = PWM_CYCLE_LENGTH;
+    uint8_t buffer[3] = {0, PWM_CYCLE_LENGTH * flag, 0};
     PWM_Driver(buffer);
-}
-
-/*
- * Initialize RGB pulse width modulators with configured
- * settings.
- */
-void RGB_Init(void)
-{
-    // Initialize red/green PWM
-    PWM_RG_Init();
-    
-    // Initialize blue PWM
-    PWM_B_Init();
-}
-
-/*
- * Start RGB pulse width modulators if not already running,
- * do nothing otherwise.
- */
-void RGB_Start(void)
-{
-    // Check if enable bit isn't already set
-    if (!(PWM_RG_ReadControlRegister() & PWM_RG_CTRL_ENABLE))
-    {
-        // Enable red/green PWM
-        PWM_RG_Start();
-    }
-    
-    // Check if enable bit isn't already set
-    if (!(PWM_B_ReadControlRegister() & PWM_B_CTRL_ENABLE))
-    {
-        // Enable blue PWM
-        PWM_B_Start();
-    }
-}
-
-/*
- * Stop RGB pulse width modulators if not already paused,
- * do nothing otherwise.
- */
-void RGB_Stop(void)
-{
-    // Check if enable bit is already set
-    if (PWM_RG_ReadControlRegister() & PWM_RG_CTRL_ENABLE)
-    {
-        // Disable red/green PWM
-        PWM_RG_Stop();
-    }
-    
-    // Check if enable bit is already set
-    if (PWM_B_ReadControlRegister() & PWM_B_CTRL_ENABLE)
-    {
-        // Disable blue PWM
-        PWM_B_Stop();
-    }
 }
 
 /*
@@ -164,7 +155,7 @@ void RGB_dataProcess(uint8_t* dataPtr)
         dataPtr[i] *= 2;
         
         // Get negated value to drive common anode LED
-        dataPtr[i] = ~((uint8_t)dataPtr[i]);
+        dataPtr[i] = ((uint8_t)dataPtr[i]);
     }
 }
 

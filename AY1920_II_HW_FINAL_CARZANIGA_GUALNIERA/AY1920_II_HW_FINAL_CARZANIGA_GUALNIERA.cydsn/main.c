@@ -85,7 +85,8 @@ int main(void)
         {
             case STOP_MODE:
                 
-                // Do nothing
+                // Turn LED off
+                RGB_Stop();
                 break;
             
             case START_MODE:
@@ -96,9 +97,6 @@ int main(void)
      
             case CONFIG_MODE:
                 
-                // Turn RGB LED on
-                RGB_Start();
-                
                 // Change send flag to send IMU data over UART
                 while(EEPROM_retrieveConfigFlag() == 1)
                 {
@@ -108,7 +106,6 @@ int main(void)
                     // Drive LED blue channel based on flag
                     RGB_sendFlagNotify(send_flag);
                 }
-                RGB_Stop();
 
                 // Save send flag inside EEPROM
                 EEPROM_saveSendFlag(send_flag);

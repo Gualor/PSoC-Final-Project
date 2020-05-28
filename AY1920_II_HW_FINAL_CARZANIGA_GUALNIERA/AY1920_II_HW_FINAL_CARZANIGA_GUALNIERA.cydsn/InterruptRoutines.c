@@ -63,7 +63,7 @@ CY_ISR(CUSTOM_ISR_CONFIG)
         }
         
         // Disable ADC sampling 
-        ADC_DELSIG_StartConvert();
+        ADC_DELSIG_StopConvert();
     }
 }
 
@@ -78,10 +78,7 @@ CY_ISR(CUSTOM_ISR_START)
     {   
         // Save stop bit inside EEPROM
         EEPROM_saveStartStopState(0);
-        
-        // Turn RGB LED off
-        RGB_Stop();
-        
+
         // Turn on-board LED off
         LED_Notify_Stop();
                 
@@ -92,10 +89,7 @@ CY_ISR(CUSTOM_ISR_START)
     {
         // Save start bit inside EEPROM
         EEPROM_saveStartStopState(1);
-        
-        // Turn RGB LED on
-        RGB_Start();
-        
+
         // Turn on-board LED on
         LED_Notify_Start();
                 
