@@ -37,6 +37,7 @@
     
     /* Internal state variable. */
     volatile button_t button_state;
+    volatile uint8_t send_flag;
     
 #endif
 

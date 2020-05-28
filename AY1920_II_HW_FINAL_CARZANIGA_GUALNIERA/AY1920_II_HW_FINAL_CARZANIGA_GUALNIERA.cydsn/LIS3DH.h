@@ -34,7 +34,10 @@
     #define LIS3DH_READ_BIT 0b10000000
     #define LIS3DH_AUTO_INCREMENT_ADDRESS 0b01000000
     
-    
+    /**
+    * \brief Address of the read address of  WHO AM I REG
+    */
+    #define LIS3DH_RESET_REG  0x00
     
     /**
     * \brief Address of the read address of  WHO AM I REG
@@ -65,21 +68,18 @@
     *   \brief Address of the Control register 1
     */
     #define LIS3DH_CTRL_REG1 0x20
+    
+    #define LIS3DH_CTRL_REG1_STOP_XYZ   0x68
+      
+    /**
+    *   \brief Hex value to set low power mode to the accelerator and 200Hz data rate 0b0101 1111
+    */
+    #define LIS3DH_CTRL_REG1_START_XYZ  0x6F
 
     /**
     *   \brief Hex value to set low power mode to the accelerator and 100Hz data rate 0b0101 1111
     */
     #define LIS3DH_CTRL_REG1_LOW_POWER_MODE 0x5F
-    
-    /**
-    *   \brief Hex value to set low power mode to the accelerator and 200Hz data rate 0b0101 1111
-    */
-    #define LIS3DH_CTRL_REG1_LOW_POWER_MODE_200 0x6F
-    
-    /**
-    *   \brief Hex value to set low power mode to the accelerator and 400Hz data rate 0b0101 1111
-    */
-    #define LIS3DH_CTRL_REG1_LOW_POWER_MODE_400 0x7F
 
     /**
     *   \brief Hex value to set low power mode to the accelerator and 100Hz data rate 0b0101 1111
@@ -170,7 +170,7 @@
     *   \brief Address of the FIFO Control register 
     */
     #define LIS3DH_FIFO_SRC_REG 0x2F
-    
+
     /**
     *   \brief Binary mask to check if FIFO_SRC_REG has empyt bit set to 1
     */
@@ -191,10 +191,14 @@
     */
     #define LIS3DH_INT1_CFG 0x30
     
+    
+    #define LIS3DH_ITN1_CFG_DISABLE_EVENTS 0x00
+    
+    
     /**
     *   \brief Hex value to set isr on high events for all the 3 axis
     */
-    #define LIS3DH_INT1_CFG_HIGH_EVENTS 0x2A
+    #define LIS3DH_INT1_CFG_XYZ_HIGH_EVENTS 0x2A
     
     /**
     *   \brief Address of the INT1 SRC register 
@@ -235,6 +239,14 @@
     /*** ========= FUNCTION DECLARATIONS ========= ***/
 
     /** ====== Helper Functions ====== **/
+    
+    void IMU_Init(void);
+    
+    void IMU_Setup(void);
+    
+    void IMU_Stop(void);
+    
+    void IMU_Start(void);
 
     void IMU_RegistersSetup(void);
     

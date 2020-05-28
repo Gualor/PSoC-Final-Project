@@ -31,6 +31,12 @@ CY_ISR(CUSTOM_ISR_CONFIG)
     // Toggle configuration state
     if (button_state != CONFIG_MODE)
     {
+        // Stop IMU interrupt events
+        if (button_state == START_MODE)
+        {
+            IMU_Stop();
+        }
+
         // Enter configuration mode
         button_state = CONFIG_MODE;
         
@@ -39,9 +45,6 @@ CY_ISR(CUSTOM_ISR_CONFIG)
         
         // Blink on-board LED
         LED_Notify_Config();
-        
-        // Enable ADC sampling 
-        ADC_DELSIG_StartConvert();
     }
     else
     {
@@ -60,10 +63,13 @@ CY_ISR(CUSTOM_ISR_CONFIG)
         {
             // Turn on-board LED on
             LED_Notify_Start();
+            
+            // Restart IMU interrupt events
+            IMU_Start();
         }
-        
-        // Disable ADC sampling 
-        ADC_DELSIG_StopConvert();
+
+        // Save send flag inside EEPROM
+        EEPROM_saveSendFlag(send_flag);
     }
 }
 
@@ -76,6 +82,9 @@ CY_ISR(CUSTOM_ISR_START)
     // Toggle start/stop state
     if (button_state == START_MODE)
     {   
+        // Restart IMU interrupt events
+        IMU_Stop();
+        
         // Save stop bit inside EEPROM
         EEPROM_saveStartStopState(0);
 
@@ -86,7 +95,10 @@ CY_ISR(CUSTOM_ISR_START)
         button_state = STOP_MODE;
     }
     else if (button_state == STOP_MODE)
-    {
+    {   
+        // Restart IMU interrupt events
+        IMU_Start();
+        
         // Save start bit inside EEPROM
         EEPROM_saveStartStopState(1);
 

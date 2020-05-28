@@ -67,8 +67,15 @@ void LED_Notify_Config(void)
  */
 uint8_t POT_Read_Value(uint8_t oldFlag)
 {
-    // Read potentiometer value
+    // Start and wait for ADC conversion
+    ADC_DELSIG_StartConvert();
+    ADC_DELSIG_IsEndConversion(ADC_DELSIG_WAIT_FOR_RESULT);
+    
+    // Read and stop ADC conversion
     int16_t raw = ADC_DELSIG_Read16();
+    ADC_DELSIG_StopConvert();
+    
+    // Clip outside range values
     if (raw > 255) raw = 255;
     else if (raw < 0) raw = 0;
     

@@ -38,8 +38,8 @@ int main(void)
     SPIM_EEPROM_Start();
     CyDelay(10);
     
-    // Setup all registers via SPI to LIS3DH
-    IMU_RegistersSetup();
+    // Setup all LIS3DH registers
+    IMU_Init();
     
     // Enable external ISR from IMU
     ISR_IMU_StartEx(CUSTOM_ISR_IMU);
@@ -76,10 +76,10 @@ int main(void)
 
     // Uncomment this to erase EEPROM memory
     EEPROM_resetMemory();
-    
+    ADC_DELSIG_StartConvert();
     // Main loop
     for(;;)
-    {   
+    {   //UART_PutChar(IMU_ReadByte(LIS3DH_INT1_SRC));
         // Board state handler
         switch (button_state)
         {
@@ -97,21 +97,14 @@ int main(void)
      
             case CONFIG_MODE:
                 
-                // Change send flag to send IMU data over UART
-                while(EEPROM_retrieveConfigFlag() == 1)
-                {
-                    // Assign new send flag based on knob
-                    send_flag = POT_Read_Value(send_flag);
-                    
-                    // Drive LED blue channel based on flag
-                    RGB_sendFlagNotify(send_flag);
-                }
-
-                // Save send flag inside EEPROM
-                EEPROM_saveSendFlag(send_flag);
+                // Read knob value to set send flag
+                send_flag = POT_Read_Value(send_flag);
+                   
+                // Drive LED blue channel based on flag
+                RGB_sendFlagNotify(send_flag);
                 break;  
         }
-        
+
         // IMU ISR FIFO data overrun event
         if (IMU_data_ready_flag == 1)
         {
@@ -161,17 +154,17 @@ int main(void)
                 EEPROM_storeLogMessage(log_message);
                 
                 // Get page of first log
-                log_t asd = EEPROM_retrieveLogMessage(log_id, i);
+                log_t log_msg = EEPROM_retrieveLogMessage(log_id, i);
                 
                 // Send message via uart
-                //LOG_sendData(&asd);
+                LOG_sendData(&log_msg);
             }
-            
-            // End of over threshold event
-            IMU_over_threshold_flag = 0;
             
             // Reset the FIFO to enable new ISR occurrences
             IMU_ResetFIFO();
+            
+            // End of over threshold event
+            IMU_over_threshold_flag = 0;
         }   
     }
     
