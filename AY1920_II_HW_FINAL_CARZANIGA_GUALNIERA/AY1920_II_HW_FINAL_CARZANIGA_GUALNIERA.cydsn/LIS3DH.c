@@ -1,27 +1,53 @@
-/**
- * @file LIS3DH.c
- * @brief Functions required to interface with the SPI  LIS3DH ACCELEROMETER.
+/* ========================================
  * 
- * This c file contains the API functions to interface
- * with the SPI LIS3DH ACCELEROMETER.
+ * This c file contains the API functions to 
+ * interface with the LIS3DH ACCELEROMETER
+ * via SPI.
  *
+ * ========================================
 */
 
 #include "LIS3DH.h"
 
+/*******************************************************************************
+* Function Name: IMU_ReadByte
+********************************************************************************
+*
+* Summary:
+*   Read one byte from the specified address
+*
+* Parameters:  
+*   address: numeric value of the register to read
+*
+* Return:
+*   Byte read via SPI
+*
+*******************************************************************************/
 uint8_t IMU_ReadByte(uint8_t address) 
 {
     // LIS3DH bit set to read
     address |= LIS3DH_READ_BIT;
-	/* Prepare the TX data packet: instruction + address */
+	// Prepare the TX data packet: instruction + address 
 	uint8_t dataRX = SPI_IMU_Interface_ReadByte(address) ;
 	
 	return dataRX;
 }
 
-/* 
- * Setup IMU registers and enter in stop mode.
- */
+
+/*******************************************************************************
+* Function Name: IMU_Init
+********************************************************************************
+*
+* Summary:
+*   Setup IMU registers and enter in stop mode.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_Init(void)
 {
     // Reset all registers before setup
@@ -31,10 +57,21 @@ void IMU_Init(void)
     IMU_Stop();
 }
 
-/*
- * Initialize all IMU control registers to ensure
- * correct fuctioning of application.
- */
+
+/*******************************************************************************
+* Function Name: IMU_Setup
+********************************************************************************
+*
+* Summary:
+*   Initialize all IMU control registers to ensure correct fuctioning of application.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_Setup(void)
 {
     // Nothing to RX
@@ -70,11 +107,33 @@ void IMU_Setup(void)
     BUFFTX[0] = LIS3DH_INT1_CFG;
     BUFFTX[1] = LIS3DH_ITN1_CFG_DISABLE_EVENTS;
 	SPI_IMU_Interface_Multi_RW(BUFFTX, 2, &temp, 0);
+    
+    // Setup interrupt 1 threshold register
+    BUFFTX[0] = LIS3DH_INT1_THS;
+    BUFFTX[1] = LIS3DH_INT1_THS_VALUE;
+	SPI_IMU_Interface_Multi_RW(BUFFTX, 2, &temp, 0);
+    
+    // Setup interrupt 1 duration register
+    BUFFTX[0] = LIS3DH_INT1_DURATION;
+    BUFFTX[1] = LIS3DH_INT1_DURATION_VALUE;
+	SPI_IMU_Interface_Multi_RW(BUFFTX, 2, &temp, 0);
 }
 
-/*
- * Disable IMU data acquisition and related interrupts.
- */
+
+/*******************************************************************************
+* Function Name: IMU_Stop
+********************************************************************************
+*
+* Summary:
+*   Setup IMU registers in order to stop data sampling and interrupt events.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_Stop(void)
 {
     // Nothing to RX
@@ -107,9 +166,21 @@ void IMU_Stop(void)
 	SPI_IMU_Interface_Multi_RW(BUFFTX, 2, &temp, 0);
 }
 
-/*
- * Disable IMU data acquisition and related interrupts.
- */
+
+/*******************************************************************************
+* Function Name: IMU_Start
+********************************************************************************
+*
+* Summary:
+*   Setup IMU registers in order to start data sampling and interrupt events.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_Start(void)
 {
     // Nothing to RX
@@ -142,19 +213,21 @@ void IMU_Start(void)
 	SPI_IMU_Interface_Multi_RW(BUFFTX, 2, &temp, 0);
 }
 
-void IMU_WriteByte(uint8_t address, uint8_t dataByte) 
-{
-    
-	/* Prepare the TX packet */
-    uint8_t dataTX[2] = {address, dataByte};
-	/* Nothing to RX... */
-	uint8_t temp = 0;
-	
-	/* Write 1 byte to addr */
-	SPI_IMU_Interface_Multi_RW(dataTX, 2, &temp, 0);
-	    
-}
 
+/*******************************************************************************
+* Function Name: IMU_ReadFIFO
+********************************************************************************
+*
+* Summary:
+*   Read a full FIFO of 32 levels of data from IMU when overrun interrupt arrives.
+*
+* Parameters:  
+*   buffer: array to be filled with read data from SPI
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_ReadFIFO(uint8_t *buffer)
 {       
     // Address of low X register
@@ -167,6 +240,24 @@ void IMU_ReadFIFO(uint8_t *buffer)
     }  
 }
 
+
+/*******************************************************************************
+* Function Name: IMU_StoreFIFO
+********************************************************************************
+*
+* Summary:
+*   Store the last read FIFO in a local queue that contains 6 FIFO at time.
+*   The new incoming FIFO is inserted in the first position of this queue and
+*   consequently the others FIFO are shifted by one position downward.
+*   This queue allows to ensure a constant number of samplesto be stored in the EEPROM.
+*
+* Parameters:  
+*   buffer: array with raw data from IMU
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_StoreFIFO(uint8_t *buffer)
 {
     // Buffer storing only high registers read from the IMU (8 bit configuration, low power mode)
@@ -179,7 +270,7 @@ void IMU_StoreFIFO(uint8_t *buffer)
         high_reg_data[i] = buffer[i*2 +1];
     }
     
-    // Downsample from 96 values to 48 (from 32 levels of FIFO to 16)
+    // Downsample from 96 values to 48 (from 32 levels of FIFO to 16 levels)
     for(uint8_t i = 0; i < (LIS3DH_LEVELS_IN_FIFO/LIS3DH_DOWN_SAMPLE); i++)
     {
         down_sampled_data[i*3] = high_reg_data[(i*3)*2];
@@ -197,15 +288,35 @@ void IMU_StoreFIFO(uint8_t *buffer)
 
 }
 
-/*
- * Get data payload from the IMU queue.
- */
+
+/*******************************************************************************
+* Function Name: IMU_getPayload
+********************************************************************************
+*
+* Summary:
+*   Create the payload of the log to be saved in the EEPROM. It is composed of 
+*   60 bytes for each page, except the last one (fifth page) because by storing
+*   6 FIFO downsampled by 2, we have 288 bytes and 60*5 = 300 bytes, so this 
+*   function adds 12 bytes of 0 padding at the end of the last FIFO data to
+*   match precisely 5 page in the EEPROM.
+*
+* Parameters:  
+*   messagge: array to be filled qith 60 IMU data from queue
+*   index: page number to be stored
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_getPayload(uint8_t *messagge, uint8_t index)
 {
     // from 0 index to 1 index base
     index = index+1;
+    
+    // Check if it's the last page
     if(index == 5)
     {
+        // copy the last 48 bytes in the message and insert 0 in the last empty positions
         memset(messagge, 0, 60);
         memcpy(messagge, IMU_log_queue, 48);
     }
@@ -215,6 +326,22 @@ void IMU_getPayload(uint8_t *messagge, uint8_t index)
     }
 }
 
+
+/*******************************************************************************
+* Function Name: IMU_DataSend
+********************************************************************************
+*
+* Summary:
+*   Send burst of raw data(one FIFO) from IMU, considering only high register 
+*   for each axis because of low power mode selection.
+*
+* Parameters:  
+*   buffer: array to be sent over UART
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 void IMU_DataSend(uint8_t *buffer)
 {
     uint8_t DataSend[5];
@@ -242,7 +369,23 @@ void IMU_DataSend(uint8_t *buffer)
     }
 }
 
-void IMU_ResetFIFO()
+
+/*******************************************************************************
+* Function Name: IMU_ResetFIFO
+********************************************************************************
+*
+* Summary:
+*   Change mode from bypass to fifo in order to reset the FIFO and allow new
+*   incoming interrupts.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
+void IMU_ResetFIFO(void)
 {
     
     // Set bypass mode
@@ -258,30 +401,6 @@ void IMU_ResetFIFO()
     uint8_t FIFOTX[2] = {LIS3DH_FIFO_CTRL_REG, LIS3DH_FIFO_CTRL_REG_FIFO_MODE};
 	temp = 0;
 	SPI_IMU_Interface_Multi_RW(FIFOTX, 2, &temp, 0);
-}
-
-void IMU_StopISR(void)
-{    
-    /* Prepare the TX packet with reg address and NULL value to stop ISR occurrences*/
-    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_NULL};
-	/* Nothing to RX... */
-	uint8_t temp = 0;
-	
-	
-	SPI_IMU_Interface_Multi_RW(CTRL3TX, 2, &temp, 0);
-    
-}
-
-void IMU_StartISR(void)
-{
-    
-    /* Prepare the TX packet with reg address and previous ISR settings bit */
-    uint8_t CTRL3TX[2] = {LIS3DH_CTRL_REG3, LIS3DH_CTRL_REG3_I1_IA1_OVERRUN};
-	/* Nothing to RX... */
-	uint8_t temp = 0;
-	
-	SPI_IMU_Interface_Multi_RW(CTRL3TX, 2, &temp, 0);
-    
 }
 
 /* [] END OF FILE */

@@ -9,18 +9,61 @@
  * -> Serial monitor (UART)
  *
  * ========================================
+ *
+ * Driving of LED RGB and user inputs:
+ *
+ * The main logic behind the RGB driver is
+ * subdivided into 3 states:
+ * -> STOP_MODE: the LED is completely turned 
+ *    off.
+ * -> START_MODE: the LED is drived by processed
+ *    data coming from the IMU.
+ * -> CONFIG_MODE: only the blue channel of
+ *    the LED is driven and it is either on 
+ *    or off based on the send flag value.
+ *    When in config mode the user is able,
+ *    with the use of a potentiometer, to set
+ *    the send flag and allow transmission of
+ *    IMU data over UART.
+ *
+ * ========================================
+ *
+ * LIS3DH FIFO data reading:
+ * 
+ * This section is executed when the flag
+ * for the fifo data ready is set by a 
+ * custom ISR coming from the LIS3DH.
+ * The current 32 levels of the FIFO are 
+ * stored in a buffer for the drive of the 
+ * LED RGB, while a down-sampled copy of the
+ * data is stored in a queue. This is done in
+ * order to maintain a brief history of the
+ * data and be able to log it into the EEPROM
+ * when needed.
+ *
+ * ========================================
+ *
+ * LIS3DH over threshold event logging:
+ *
+ * This section is executed when the flag
+ * for the over threshold event is set by a
+ * custom ISR coming from the LIS3DH.
+ * A log type message is generated given the
+ * information about the event and the
+ * payload that is retrieved from IMU queue.
+ * Finally, the message is successfully 
+ * stored inside the EEPROM memory.
+ *
+ * ========================================
 */
 
 /* Project dependencies. */
 #include "InterruptRoutines.h"
-#include "SPI_Interface.h"
 #include "RGB_Driver.h"
 #include "LogUtils.h"
 #include "25LC256.h"
-#include "stdio.h"
+#include "LIS3DH.h"
 
-/* Global variables. */
-char bufferUART[100];
 
 /*
  * Main function designated to setup stuff.
@@ -61,25 +104,25 @@ int main(void)
     // Initliazide RGB LED
     RGB_Init();
 
+    // End of setup
+    CyDelay(10);
+    
     // Initialize button state
     button_state = STOP_MODE;
+    
+    // Initialize send flag
+    send_flag = 0;
     
     // Initialize IMU flags
     IMU_data_ready_flag = 0;
     IMU_over_threshold_flag = 0;
 
-    // End of setup
-    CyDelay(10);
-    
-    // Define send flag
-    uint8_t send_flag = 0;
-
     // Uncomment this to erase EEPROM memory
     EEPROM_resetMemory();
-    ADC_DELSIG_StartConvert();
+    
     // Main loop
     for(;;)
-    {   //UART_PutChar(IMU_ReadByte(LIS3DH_INT1_SRC));
+    {   
         // Board state handler
         switch (button_state)
         {
@@ -131,15 +174,17 @@ int main(void)
         // IMU ISR over threshold event
         if (IMU_over_threshold_flag == 1)
         {   
-            // Capture all over threshold event's interrupts
-            uint8_t int_reg;
-            while((int_reg = IMU_ReadByte(LIS3DH_INT1_SRC)) & (LIS3DH_INT1_SRC_IA_MASK));
-            
             // Get sequential ID number
             uint8_t log_id = EEPROM_retrieveLogCount();
             
+            // Get interrupt register with info about event
+            uint8_t int_reg = IMU_ReadByte(LIS3DH_INT1_SRC);
+            
             // Get timestamp in seconds from boot
             uint16_t timestamp = LOG_getTimestamp();
+            
+            // Capture all over threshold event's interrupts
+            while(IMU_ReadByte(LIS3DH_INT1_SRC) & (LIS3DH_INT1_SRC_IA_MASK));
             
             for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
             {        
@@ -153,11 +198,13 @@ int main(void)
                 // Store message inside EEPROM
                 EEPROM_storeLogMessage(log_message);
                 
+                /* Uncomment this to receive generated logs
                 // Get page of first log
                 log_t log_msg = EEPROM_retrieveLogMessage(log_id, i);
                 
                 // Send message via uart
                 LOG_sendData(&log_msg);
+                */
             }
             
             // Reset the FIFO to enable new ISR occurrences

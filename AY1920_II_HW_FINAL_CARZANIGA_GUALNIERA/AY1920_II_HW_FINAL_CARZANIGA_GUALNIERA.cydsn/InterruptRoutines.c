@@ -4,34 +4,35 @@
  * to link transitions between finite states 
  * and hardware events.
  *
- * CUSTOM_ISR_CONFIG: Triggered with a long 
- * press of 2 seconds of the on-board button, 
- * it toggles the configuration mode state and
- * save config flag inside EEPROM.
- * (Priotity level: 5)
- *
- * CUSTOM_ISR_START: Triggered with a double
- * click event (with time delta between clicks
- * less than 1s), it toggles the start/stop
- * state and save it inside the EEPROM.
- * (Priority level: 6)
- *
  * ========================================
 */
 
 /* Include project dependencies. */
 #include "InterruptRoutines.h"
 
-/*
- * ISR function that toggles configuration mode
- * and save state inside EEPROM.
- */
+
+/*******************************************************************************
+* Function Name: CUSTOM_ISR_CONFIG
+********************************************************************************
+*
+* Summary:
+*   Triggered with a long press of 2 seconds of the on-board button, 
+*   it toggles the configuration mode state and save config flag inside EEPROM.
+*   
+* Priotity level: 5
+*
+* Parameters:  
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 CY_ISR(CUSTOM_ISR_CONFIG)
 {   
     // Toggle configuration state
     if (button_state != CONFIG_MODE)
     {
-        // Stop IMU interrupt events
+        // Stop IMU interrupt events if was in START_MODE
         if (button_state == START_MODE)
         {
             IMU_Stop();
@@ -64,7 +65,7 @@ CY_ISR(CUSTOM_ISR_CONFIG)
             // Turn on-board LED on
             LED_Notify_Start();
             
-            // Restart IMU interrupt events
+            // Start IMU interrupt events
             IMU_Start();
         }
 
@@ -73,16 +74,29 @@ CY_ISR(CUSTOM_ISR_CONFIG)
     }
 }
 
-/* 
- * ISR function that implements start/stop functionality
- * and save state inside EEPROM.
- */
+
+/*******************************************************************************
+* Function Name: CUSTOM_ISR_START
+********************************************************************************
+*
+* Summary:
+*   Triggered with a double click event (with time delta between clicks less 
+*   than 1s), it toggles the start/stop state and save it inside the EEPROM.
+* 
+* Priority level: 6
+*
+* Parameters:  
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 CY_ISR(CUSTOM_ISR_START)
 {   
     // Toggle start/stop state
     if (button_state == START_MODE)
-    {   
-        // Restart IMU interrupt events
+    {
+        // Stop IMU interrupt events
         IMU_Stop();
         
         // Save stop bit inside EEPROM
@@ -95,8 +109,8 @@ CY_ISR(CUSTOM_ISR_START)
         button_state = STOP_MODE;
     }
     else if (button_state == STOP_MODE)
-    {   
-        // Restart IMU interrupt events
+    {
+        // Start IMU interrupt events
         IMU_Start();
         
         // Save start bit inside EEPROM
@@ -110,9 +124,22 @@ CY_ISR(CUSTOM_ISR_START)
     }
 }
 
-/*
- * ISR function that notify incoming external ISR from LIS3DH.
- */
+
+/*******************************************************************************
+* Function Name: CUSTOM_ISR_IMU
+********************************************************************************
+*
+* Summary:
+*   Set the flags based on which external interrupt occurs.
+* 
+* Priority level: 7
+*
+* Parameters:  
+*
+* Return:
+*   None
+*
+*******************************************************************************/
 CY_ISR(CUSTOM_ISR_IMU)
 {
     // IMU interrupt data overrun event handler

@@ -1,7 +1,7 @@
 /* ========================================
  *
  * This file contains all function definitions
- * to create and handle log messages.
+ * to create, handle and transmit log messages.
  *
  * A log message is used to store information
  * regarding IMU over threshold events and it
@@ -34,11 +34,26 @@
  * ========================================
 */
 
+
+/* Project dependencies. */
 #include "LogUtils.h"
 
-/*
- * Create a single log message with 60 bytes of max payload. 
- */
+
+/*******************************************************************************
+* Function Name: LOG_createMessage
+********************************************************************************
+*
+* Summary:
+*   Create and return a 64 bytes log type message which contains header of 4 bytes
+*   with all info about log occurrence and 60 bytes payload with IMU data.
+*
+* Parameters:  
+*   Log identification number, interrupt register content, timestamp, data pointer.
+*
+* Return:
+*   64-bit log data structure.
+*
+*******************************************************************************/
 log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr)
 {
     // Create log type message
@@ -59,18 +74,42 @@ log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* d
     return message;
 }
 
-/*
- * Insert data payload into log data structure.
- */
+
+/*******************************************************************************
+* Function Name: LOG_insertPayload
+********************************************************************************
+*
+* Summary:
+*   Insert IMU data payload inside data field of a log message type.
+*
+* Parameters:  
+*   Log type message pointer, data payload pointer.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LOG_insertPayload(log_t* msg, uint8_t* dataPtr)
 {
     // Copy payload inside data field
     memcpy(msg->data, dataPtr, LOG_MESSAGE_DATA_BYTE);
 }
 
-/*
- * Get timestamp in seconds since PSoC booting.
- */
+
+/*******************************************************************************
+* Function Name: LOG_getTimestamp
+********************************************************************************
+*
+* Summary:
+*   Get 16-bit timestamp in seconds from PSoC booting.
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   16-bit timestamp.
+*
+*******************************************************************************/
 uint16_t LOG_getTimestamp(void)
 {
     // Read time in seconds from boot up
@@ -78,9 +117,22 @@ uint16_t LOG_getTimestamp(void)
     return (uint16_t)(current_time/LOG_TICK_PER_SECOND);
 }
 
-/*
- * Unpack log type message inside uint8 buffer.
- */
+
+/*******************************************************************************
+* Function Name: LOG_unpackMessage
+********************************************************************************
+*
+* Summary:
+*   Unpack 64 bytes log type message inside pre-allocated uint8 data buffer 
+*   provided.
+*
+* Parameters:  
+*   Data buffer pointer, log type message pointer.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LOG_unpackMessage(uint8_t* buffer, log_t* message)
 {
     // Updack header
@@ -93,9 +145,21 @@ void LOG_unpackMessage(uint8_t* buffer, log_t* message)
     memcpy(&buffer[4], message->data, LOG_MESSAGE_DATA_BYTE);
 }
 
-/*
- * Pack buffer inside log type message.
- */
+
+/*******************************************************************************
+* Function Name: LOG_packMessage
+********************************************************************************
+*
+* Summary:
+*   Pack 64 bytes data buffer inside pre-allocated log type message provided.
+*
+* Parameters:  
+*   Log type message pointer, data buffer pointer.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LOG_packMessage(log_t* message, uint8_t* buffer)
 {
     // Pack header
@@ -107,9 +171,21 @@ void LOG_packMessage(log_t* message, uint8_t* buffer)
     memcpy(message->data, &buffer[4], LOG_MESSAGE_DATA_BYTE);
 }
 
-/*
- * Send log message via UART.
- */
+
+/*******************************************************************************
+* Function Name: LOG_sendData
+********************************************************************************
+*
+* Summary:
+*   Send 64 bytes log type message over UART.
+*
+* Parameters:  
+*   Log type message pointer.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LOG_sendData(log_t* message)
 {
     // Unpack message inside buffer

@@ -16,7 +16,6 @@
     #include "project.h"
     #include "25LC256.h"
     #include "LIS3DH.h"
-    #include "RGB_Driver.h"
     #include "Notifications.h"
     
     /* State machine type. */

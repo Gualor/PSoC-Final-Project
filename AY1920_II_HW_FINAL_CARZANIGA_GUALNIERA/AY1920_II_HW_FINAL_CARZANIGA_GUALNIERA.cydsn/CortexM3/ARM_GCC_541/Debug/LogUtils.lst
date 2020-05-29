@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 1
 
 
    1              		.syntax unified
@@ -31,7 +31,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
    1:LogUtils.c    **** /* ========================================
    2:LogUtils.c    ****  *
    3:LogUtils.c    ****  * This file contains all function definitions
-   4:LogUtils.c    ****  * to create and handle log messages.
+   4:LogUtils.c    ****  * to create, handle and transmit log messages.
    5:LogUtils.c    ****  *
    6:LogUtils.c    ****  * A log message is used to store information
    7:LogUtils.c    ****  * regarding IMU over threshold events and it
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   28:LogUtils.c    ****  *            occurrence
   29:LogUtils.c    ****  *
   30:LogUtils.c    ****  * Data: inertial measurement data, organized
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 2
 
 
   31:LogUtils.c    ****  *       in row of 3 axis value X, Y, Z for a
@@ -67,37 +67,67 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   34:LogUtils.c    ****  * ========================================
   35:LogUtils.c    **** */
   36:LogUtils.c    **** 
-  37:LogUtils.c    **** #include "LogUtils.h"
-  38:LogUtils.c    **** 
-  39:LogUtils.c    **** /*
-  40:LogUtils.c    ****  * Create a single log message with 60 bytes of max payload. 
-  41:LogUtils.c    ****  */
-  42:LogUtils.c    **** log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr)
-  43:LogUtils.c    **** {
-  44:LogUtils.c    ****     // Create log type message
-  45:LogUtils.c    ****     log_t message;
-  46:LogUtils.c    ****     
-  47:LogUtils.c    ****     // Assign log id number
-  48:LogUtils.c    ****     message.logID = logID;
-  49:LogUtils.c    ****     
-  50:LogUtils.c    ****     // Assign interrupt register
-  51:LogUtils.c    ****     message.intReg = intReg;
-  52:LogUtils.c    ****     
-  53:LogUtils.c    ****     // Assign logging timestamp
-  54:LogUtils.c    ****     message.timestamp = time;
-  55:LogUtils.c    ****     
-  56:LogUtils.c    ****     // Insert data payload
-  57:LogUtils.c    ****     LOG_insertPayload(&message, dataPtr);
-  58:LogUtils.c    ****     
-  59:LogUtils.c    ****     return message;
-  60:LogUtils.c    **** }
-  61:LogUtils.c    **** 
-  62:LogUtils.c    **** /*
-  63:LogUtils.c    ****  * Insert data payload into log data structure.
-  64:LogUtils.c    ****  */
-  65:LogUtils.c    **** void LOG_insertPayload(log_t* msg, uint8_t* dataPtr)
-  66:LogUtils.c    **** {
-  28              		.loc 1 66 0
+  37:LogUtils.c    **** 
+  38:LogUtils.c    **** /* Project dependencies. */
+  39:LogUtils.c    **** #include "LogUtils.h"
+  40:LogUtils.c    **** 
+  41:LogUtils.c    **** 
+  42:LogUtils.c    **** /*******************************************************************************
+  43:LogUtils.c    **** * Function Name: LOG_createMessage
+  44:LogUtils.c    **** ********************************************************************************
+  45:LogUtils.c    **** *
+  46:LogUtils.c    **** * Summary:
+  47:LogUtils.c    **** *   Create and return a 64 bytes log type message which contains header of 4 bytes
+  48:LogUtils.c    **** *   with all info about log occurrence and 60 bytes payload with IMU data.
+  49:LogUtils.c    **** *
+  50:LogUtils.c    **** * Parameters:  
+  51:LogUtils.c    **** *   Log identification number, interrupt register content, timestamp, data pointer.
+  52:LogUtils.c    **** *
+  53:LogUtils.c    **** * Return:
+  54:LogUtils.c    **** *   64-bit log data structure.
+  55:LogUtils.c    **** *
+  56:LogUtils.c    **** *******************************************************************************/
+  57:LogUtils.c    **** log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr)
+  58:LogUtils.c    **** {
+  59:LogUtils.c    ****     // Create log type message
+  60:LogUtils.c    ****     log_t message;
+  61:LogUtils.c    ****     
+  62:LogUtils.c    ****     // Assign log id number
+  63:LogUtils.c    ****     message.logID = logID;
+  64:LogUtils.c    ****     
+  65:LogUtils.c    ****     // Assign interrupt register
+  66:LogUtils.c    ****     message.intReg = intReg;
+  67:LogUtils.c    ****     
+  68:LogUtils.c    ****     // Assign logging timestamp
+  69:LogUtils.c    ****     message.timestamp = time;
+  70:LogUtils.c    ****     
+  71:LogUtils.c    ****     // Insert data payload
+  72:LogUtils.c    ****     LOG_insertPayload(&message, dataPtr);
+  73:LogUtils.c    ****     
+  74:LogUtils.c    ****     return message;
+  75:LogUtils.c    **** }
+  76:LogUtils.c    **** 
+  77:LogUtils.c    **** 
+  78:LogUtils.c    **** /*******************************************************************************
+  79:LogUtils.c    **** * Function Name: LOG_insertPayload
+  80:LogUtils.c    **** ********************************************************************************
+  81:LogUtils.c    **** *
+  82:LogUtils.c    **** * Summary:
+  83:LogUtils.c    **** *   Insert IMU data payload inside data field of a log message type.
+  84:LogUtils.c    **** *
+  85:LogUtils.c    **** * Parameters:  
+  86:LogUtils.c    **** *   Log type message pointer, data payload pointer.
+  87:LogUtils.c    **** *
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 3
+
+
+  88:LogUtils.c    **** * Return:
+  89:LogUtils.c    **** *   None.
+  90:LogUtils.c    **** *
+  91:LogUtils.c    **** *******************************************************************************/
+  92:LogUtils.c    **** void LOG_insertPayload(log_t* msg, uint8_t* dataPtr)
+  93:LogUtils.c    **** {
+  28              		.loc 1 93 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -108,9 +138,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   36              		.cfi_offset 4, -12
   37              		.cfi_offset 5, -8
   38              		.cfi_offset 6, -4
-  67:LogUtils.c    ****     // Copy payload inside data field
-  68:LogUtils.c    ****     memcpy(msg->data, dataPtr, LOG_MESSAGE_DATA_BYTE);
-  39              		.loc 1 68 0
+  94:LogUtils.c    ****     // Copy payload inside data field
+  95:LogUtils.c    ****     memcpy(msg->data, dataPtr, LOG_MESSAGE_DATA_BYTE);
+  39              		.loc 1 95 0
   40 0002 0B46     		mov	r3, r1
   41 0004 0430     		adds	r0, r0, #4
   42              	.LVL1:
@@ -118,9 +148,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   44              	.LVL2:
   45              	.L2:
   46 0008 1E68     		ldr	r6, [r3]	@ unaligned
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 3
-
-
   47 000a 5D68     		ldr	r5, [r3, #4]	@ unaligned
   48 000c 9C68     		ldr	r4, [r3, #8]	@ unaligned
   49 000e DA68     		ldr	r2, [r3, #12]	@ unaligned
@@ -139,8 +166,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   62 0026 0160     		str	r1, [r0]	@ unaligned
   63 0028 4260     		str	r2, [r0, #4]	@ unaligned
   64 002a 8360     		str	r3, [r0, #8]	@ unaligned
-  69:LogUtils.c    **** }
-  65              		.loc 1 69 0
+  96:LogUtils.c    **** }
+  65              		.loc 1 96 0
   66 002c 70BC     		pop	{r4, r5, r6}
   67              		.cfi_restore 6
   68              		.cfi_restore 5
@@ -151,6 +178,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   73              	.LFE64:
   74              		.size	LOG_insertPayload, .-LOG_insertPayload
   75              		.section	.text.LOG_createMessage,"ax",%progbits
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 4
+
+
   76              		.align	2
   77              		.global	LOG_createMessage
   78              		.thumb
@@ -158,8 +188,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   80              		.type	LOG_createMessage, %function
   81              	LOG_createMessage:
   82              	.LFB63:
-  43:LogUtils.c    ****     // Create log type message
-  83              		.loc 1 43 0
+  58:LogUtils.c    ****     // Create log type message
+  83              		.loc 1 58 0
   84              		.cfi_startproc
   85              		@ args = 4, pretend = 0, frame = 64
   86              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -174,28 +204,25 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
   95 0002 91B0     		sub	sp, sp, #68
   96              		.cfi_def_cfa_offset 88
   97 0004 0746     		mov	r7, r0
-  48:LogUtils.c    ****     
-  98              		.loc 1 48 0
+  63:LogUtils.c    ****     
+  98              		.loc 1 63 0
   99 0006 8DF80010 		strb	r1, [sp]
-  51:LogUtils.c    ****     
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 4
-
-
- 100              		.loc 1 51 0
+  66:LogUtils.c    ****     
+ 100              		.loc 1 66 0
  101 000a 8DF80120 		strb	r2, [sp, #1]
-  54:LogUtils.c    ****     
- 102              		.loc 1 54 0
+  69:LogUtils.c    ****     
+ 102              		.loc 1 69 0
  103 000e ADF80230 		strh	r3, [sp, #2]	@ movhi
-  57:LogUtils.c    ****     
- 104              		.loc 1 57 0
+  72:LogUtils.c    ****     
+ 104              		.loc 1 72 0
  105 0012 1699     		ldr	r1, [sp, #88]
  106              	.LVL5:
  107 0014 6846     		mov	r0, sp
  108              	.LVL6:
  109 0016 FFF7FEFF 		bl	LOG_insertPayload
  110              	.LVL7:
-  59:LogUtils.c    **** }
- 111              		.loc 1 59 0
+  74:LogUtils.c    **** }
+ 111              		.loc 1 74 0
  112 001a 6C46     		mov	r4, sp
  113 001c 3D46     		mov	r5, r7
  114 001e 0DF1400E 		add	lr, sp, #64
@@ -210,8 +237,11 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  123 0030 1035     		adds	r5, r5, #16
  124 0032 7645     		cmp	r6, lr
  125 0034 F5D1     		bne	.L5
-  60:LogUtils.c    **** 
- 126              		.loc 1 60 0
+  75:LogUtils.c    **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 5
+
+
+ 126              		.loc 1 75 0
  127 0036 3846     		mov	r0, r7
  128 0038 11B0     		add	sp, sp, #68
  129              		.cfi_def_cfa_offset 20
@@ -228,37 +258,49 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  140              		.type	LOG_getTimestamp, %function
  141              	LOG_getTimestamp:
  142              	.LFB65:
-  70:LogUtils.c    **** 
-  71:LogUtils.c    **** /*
-  72:LogUtils.c    ****  * Get timestamp in seconds since PSoC booting.
-  73:LogUtils.c    ****  */
-  74:LogUtils.c    **** uint16_t LOG_getTimestamp(void)
-  75:LogUtils.c    **** {
- 143              		.loc 1 75 0
+  97:LogUtils.c    **** 
+  98:LogUtils.c    **** 
+  99:LogUtils.c    **** /*******************************************************************************
+ 100:LogUtils.c    **** * Function Name: LOG_getTimestamp
+ 101:LogUtils.c    **** ********************************************************************************
+ 102:LogUtils.c    **** *
+ 103:LogUtils.c    **** * Summary:
+ 104:LogUtils.c    **** *   Get 16-bit timestamp in seconds from PSoC booting.
+ 105:LogUtils.c    **** *
+ 106:LogUtils.c    **** * Parameters:  
+ 107:LogUtils.c    **** *   None
+ 108:LogUtils.c    **** *
+ 109:LogUtils.c    **** * Return:
+ 110:LogUtils.c    **** *   16-bit timestamp.
+ 111:LogUtils.c    **** *
+ 112:LogUtils.c    **** *******************************************************************************/
+ 113:LogUtils.c    **** uint16_t LOG_getTimestamp(void)
+ 114:LogUtils.c    **** {
+ 143              		.loc 1 114 0
  144              		.cfi_startproc
  145              		@ args = 0, pretend = 0, frame = 0
  146              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 5
-
-
  147 0000 08B5     		push	{r3, lr}
  148              		.cfi_def_cfa_offset 8
  149              		.cfi_offset 3, -8
  150              		.cfi_offset 14, -4
-  76:LogUtils.c    ****     // Read time in seconds from boot up
-  77:LogUtils.c    ****     uint32_t current_time = LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
- 151              		.loc 1 77 0
+ 115:LogUtils.c    ****     // Read time in seconds from boot up
+ 116:LogUtils.c    ****     uint32_t current_time = LOG_TIMER_OVERFLOW - MAIN_TIMER_ReadCounter();
+ 151              		.loc 1 116 0
  152 0002 FFF7FEFF 		bl	MAIN_TIMER_ReadCounter
  153              	.LVL8:
  154 0006 C043     		mvns	r0, r0
  155              	.LVL9:
-  78:LogUtils.c    ****     return (uint16_t)(current_time/LOG_TICK_PER_SECOND);
- 156              		.loc 1 78 0
+ 117:LogUtils.c    ****     return (uint16_t)(current_time/LOG_TICK_PER_SECOND);
+ 156              		.loc 1 117 0
  157 0008 024B     		ldr	r3, .L9
  158 000a A3FB0030 		umull	r3, r0, r3, r0
  159              	.LVL10:
-  79:LogUtils.c    **** }
- 160              		.loc 1 79 0
+ 118:LogUtils.c    **** }
+ 160              		.loc 1 118 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 6
+
+
  161 000e C0F38F10 		ubfx	r0, r0, #6, #16
  162 0012 08BD     		pop	{r3, pc}
  163              	.L10:
@@ -276,13 +318,26 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  175              		.type	LOG_unpackMessage, %function
  176              	LOG_unpackMessage:
  177              	.LFB66:
-  80:LogUtils.c    **** 
-  81:LogUtils.c    **** /*
-  82:LogUtils.c    ****  * Unpack log type message inside uint8 buffer.
-  83:LogUtils.c    ****  */
-  84:LogUtils.c    **** void LOG_unpackMessage(uint8_t* buffer, log_t* message)
-  85:LogUtils.c    **** {
- 178              		.loc 1 85 0
+ 119:LogUtils.c    **** 
+ 120:LogUtils.c    **** 
+ 121:LogUtils.c    **** /*******************************************************************************
+ 122:LogUtils.c    **** * Function Name: LOG_unpackMessage
+ 123:LogUtils.c    **** ********************************************************************************
+ 124:LogUtils.c    **** *
+ 125:LogUtils.c    **** * Summary:
+ 126:LogUtils.c    **** *   Unpack 64 bytes log type message inside pre-allocated uint8 data buffer 
+ 127:LogUtils.c    **** *   provided.
+ 128:LogUtils.c    **** *
+ 129:LogUtils.c    **** * Parameters:  
+ 130:LogUtils.c    **** *   Data buffer pointer, log type message pointer.
+ 131:LogUtils.c    **** *
+ 132:LogUtils.c    **** * Return:
+ 133:LogUtils.c    **** *   None.
+ 134:LogUtils.c    **** *
+ 135:LogUtils.c    **** *******************************************************************************/
+ 136:LogUtils.c    **** void LOG_unpackMessage(uint8_t* buffer, log_t* message)
+ 137:LogUtils.c    **** {
+ 178              		.loc 1 137 0
  179              		.cfi_startproc
  180              		@ args = 0, pretend = 0, frame = 0
  181              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -293,31 +348,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  186              		.cfi_offset 4, -12
  187              		.cfi_offset 5, -8
  188              		.cfi_offset 6, -4
-  86:LogUtils.c    ****     // Updack header
-  87:LogUtils.c    ****     buffer[0] = message->logID;
- 189              		.loc 1 87 0
+ 138:LogUtils.c    ****     // Updack header
+ 139:LogUtils.c    ****     buffer[0] = message->logID;
+ 189              		.loc 1 139 0
  190 0002 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  191 0004 0370     		strb	r3, [r0]
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 6
-
-
-  88:LogUtils.c    ****     buffer[1] = message->intReg;
- 192              		.loc 1 88 0
+ 140:LogUtils.c    ****     buffer[1] = message->intReg;
+ 192              		.loc 1 140 0
  193 0006 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
  194 0008 4370     		strb	r3, [r0, #1]
-  89:LogUtils.c    ****     buffer[2] = (message->timestamp & 0xFF);
- 195              		.loc 1 89 0
+ 141:LogUtils.c    ****     buffer[2] = (message->timestamp & 0xFF);
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 7
+
+
+ 195              		.loc 1 141 0
  196 000a 4B88     		ldrh	r3, [r1, #2]
  197 000c 8370     		strb	r3, [r0, #2]
-  90:LogUtils.c    ****     buffer[3] = ((message->timestamp >> 8) & 0xFF);
- 198              		.loc 1 90 0
+ 142:LogUtils.c    ****     buffer[3] = ((message->timestamp >> 8) & 0xFF);
+ 198              		.loc 1 142 0
  199 000e 4B88     		ldrh	r3, [r1, #2]
  200 0010 1B0A     		lsrs	r3, r3, #8
  201 0012 C370     		strb	r3, [r0, #3]
-  91:LogUtils.c    ****     
-  92:LogUtils.c    ****     // Unpack payload
-  93:LogUtils.c    ****     memcpy(&buffer[4], message->data, LOG_MESSAGE_DATA_BYTE);
- 202              		.loc 1 93 0
+ 143:LogUtils.c    ****     
+ 144:LogUtils.c    ****     // Unpack payload
+ 145:LogUtils.c    ****     memcpy(&buffer[4], message->data, LOG_MESSAGE_DATA_BYTE);
+ 202              		.loc 1 145 0
  203 0014 0B1D     		adds	r3, r1, #4
  204 0016 0430     		adds	r0, r0, #4
  205              	.LVL12:
@@ -343,8 +398,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  225 0038 0160     		str	r1, [r0]	@ unaligned
  226 003a 4260     		str	r2, [r0, #4]	@ unaligned
  227 003c 8360     		str	r3, [r0, #8]	@ unaligned
-  94:LogUtils.c    **** }
- 228              		.loc 1 94 0
+ 146:LogUtils.c    **** }
+ 228              		.loc 1 146 0
  229 003e 70BC     		pop	{r4, r5, r6}
  230              		.cfi_restore 6
  231              		.cfi_restore 5
@@ -358,20 +413,32 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  239              		.align	2
  240              		.global	LOG_packMessage
  241              		.thumb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 7
-
-
  242              		.thumb_func
  243              		.type	LOG_packMessage, %function
  244              	LOG_packMessage:
  245              	.LFB67:
-  95:LogUtils.c    **** 
-  96:LogUtils.c    **** /*
-  97:LogUtils.c    ****  * Pack buffer inside log type message.
-  98:LogUtils.c    ****  */
-  99:LogUtils.c    **** void LOG_packMessage(log_t* message, uint8_t* buffer)
- 100:LogUtils.c    **** {
- 246              		.loc 1 100 0
+ 147:LogUtils.c    **** 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 8
+
+
+ 148:LogUtils.c    **** 
+ 149:LogUtils.c    **** /*******************************************************************************
+ 150:LogUtils.c    **** * Function Name: LOG_packMessage
+ 151:LogUtils.c    **** ********************************************************************************
+ 152:LogUtils.c    **** *
+ 153:LogUtils.c    **** * Summary:
+ 154:LogUtils.c    **** *   Pack 64 bytes data buffer inside pre-allocated log type message provided.
+ 155:LogUtils.c    **** *
+ 156:LogUtils.c    **** * Parameters:  
+ 157:LogUtils.c    **** *   Log type message pointer, data buffer pointer.
+ 158:LogUtils.c    **** *
+ 159:LogUtils.c    **** * Return:
+ 160:LogUtils.c    **** *   None.
+ 161:LogUtils.c    **** *
+ 162:LogUtils.c    **** *******************************************************************************/
+ 163:LogUtils.c    **** void LOG_packMessage(log_t* message, uint8_t* buffer)
+ 164:LogUtils.c    **** {
+ 246              		.loc 1 164 0
  247              		.cfi_startproc
  248              		@ args = 0, pretend = 0, frame = 0
  249              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -382,25 +449,25 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  254              		.cfi_offset 4, -12
  255              		.cfi_offset 5, -8
  256              		.cfi_offset 6, -4
- 101:LogUtils.c    ****     // Pack header
- 102:LogUtils.c    ****     message->logID = buffer[0];
- 257              		.loc 1 102 0
+ 165:LogUtils.c    ****     // Pack header
+ 166:LogUtils.c    ****     message->logID = buffer[0];
+ 257              		.loc 1 166 0
  258 0002 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  259 0004 0370     		strb	r3, [r0]
- 103:LogUtils.c    ****     message->intReg = buffer[1];
- 260              		.loc 1 103 0
+ 167:LogUtils.c    ****     message->intReg = buffer[1];
+ 260              		.loc 1 167 0
  261 0006 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
  262 0008 4370     		strb	r3, [r0, #1]
- 104:LogUtils.c    ****     message->timestamp = ((buffer[3]<<8) | buffer[2]);
- 263              		.loc 1 104 0
+ 168:LogUtils.c    ****     message->timestamp = ((buffer[3]<<8) | buffer[2]);
+ 263              		.loc 1 168 0
  264 000a CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
  265 000c 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
  266 000e 43EA0223 		orr	r3, r3, r2, lsl #8
  267 0012 4380     		strh	r3, [r0, #2]	@ movhi
- 105:LogUtils.c    ****     
- 106:LogUtils.c    ****     // Pack payload
- 107:LogUtils.c    ****     memcpy(message->data, &buffer[4], LOG_MESSAGE_DATA_BYTE);
- 268              		.loc 1 107 0
+ 169:LogUtils.c    ****     
+ 170:LogUtils.c    ****     // Pack payload
+ 171:LogUtils.c    ****     memcpy(message->data, &buffer[4], LOG_MESSAGE_DATA_BYTE);
+ 268              		.loc 1 171 0
  269 0014 0B1D     		adds	r3, r1, #4
  270 0016 0430     		adds	r0, r0, #4
  271              	.LVL16:
@@ -411,6 +478,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  276 001c 5D68     		ldr	r5, [r3, #4]	@ unaligned
  277 001e 9C68     		ldr	r4, [r3, #8]	@ unaligned
  278 0020 DA68     		ldr	r2, [r3, #12]	@ unaligned
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 9
+
+
  279 0022 0660     		str	r6, [r0]	@ unaligned
  280 0024 4560     		str	r5, [r0, #4]	@ unaligned
  281 0026 8460     		str	r4, [r0, #8]	@ unaligned
@@ -418,9 +488,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  283 002a 1033     		adds	r3, r3, #16
  284 002c 1030     		adds	r0, r0, #16
  285 002e 8B42     		cmp	r3, r1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 8
-
-
  286 0030 F3D1     		bne	.L15
  287 0032 1968     		ldr	r1, [r3]	@ unaligned
  288              	.LVL18:
@@ -429,8 +496,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  291 0038 0160     		str	r1, [r0]	@ unaligned
  292 003a 4260     		str	r2, [r0, #4]	@ unaligned
  293 003c 8360     		str	r3, [r0, #8]	@ unaligned
- 108:LogUtils.c    **** }
- 294              		.loc 1 108 0
+ 172:LogUtils.c    **** }
+ 294              		.loc 1 172 0
  295 003e 70BC     		pop	{r4, r5, r6}
  296              		.cfi_restore 6
  297              		.cfi_restore 5
@@ -448,44 +515,56 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  309              		.type	LOG_sendData, %function
  310              	LOG_sendData:
  311              	.LFB68:
- 109:LogUtils.c    **** 
- 110:LogUtils.c    **** /*
- 111:LogUtils.c    ****  * Send log message via UART.
- 112:LogUtils.c    ****  */
- 113:LogUtils.c    **** void LOG_sendData(log_t* message)
- 114:LogUtils.c    **** {
- 312              		.loc 1 114 0
+ 173:LogUtils.c    **** 
+ 174:LogUtils.c    **** 
+ 175:LogUtils.c    **** /*******************************************************************************
+ 176:LogUtils.c    **** * Function Name: LOG_sendData
+ 177:LogUtils.c    **** ********************************************************************************
+ 178:LogUtils.c    **** *
+ 179:LogUtils.c    **** * Summary:
+ 180:LogUtils.c    **** *   Send 64 bytes log type message over UART.
+ 181:LogUtils.c    **** *
+ 182:LogUtils.c    **** * Parameters:  
+ 183:LogUtils.c    **** *   Log type message pointer.
+ 184:LogUtils.c    **** *
+ 185:LogUtils.c    **** * Return:
+ 186:LogUtils.c    **** *   None.
+ 187:LogUtils.c    **** *
+ 188:LogUtils.c    **** *******************************************************************************/
+ 189:LogUtils.c    **** void LOG_sendData(log_t* message)
+ 190:LogUtils.c    **** {
+ 312              		.loc 1 190 0
  313              		.cfi_startproc
  314              		@ args = 0, pretend = 0, frame = 64
  315              		@ frame_needed = 0, uses_anonymous_args = 0
  316              	.LVL19:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 10
+
+
  317 0000 00B5     		push	{lr}
  318              		.cfi_def_cfa_offset 4
  319              		.cfi_offset 14, -4
  320 0002 91B0     		sub	sp, sp, #68
  321              		.cfi_def_cfa_offset 72
- 115:LogUtils.c    ****     // Unpack message inside buffer
- 116:LogUtils.c    ****     uint8_t buffer[LOG_MESSAGE_TOT_BYTE];
- 117:LogUtils.c    ****     LOG_unpackMessage(buffer, message);
- 322              		.loc 1 117 0
+ 191:LogUtils.c    ****     // Unpack message inside buffer
+ 192:LogUtils.c    ****     uint8_t buffer[LOG_MESSAGE_TOT_BYTE];
+ 193:LogUtils.c    ****     LOG_unpackMessage(buffer, message);
+ 322              		.loc 1 193 0
  323 0004 0146     		mov	r1, r0
  324 0006 6846     		mov	r0, sp
  325              	.LVL20:
  326 0008 FFF7FEFF 		bl	LOG_unpackMessage
  327              	.LVL21:
- 118:LogUtils.c    ****     
- 119:LogUtils.c    ****     // Send buffer via UART
- 120:LogUtils.c    ****     UART_PutArray(buffer, LOG_MESSAGE_TOT_BYTE);
- 328              		.loc 1 120 0
+ 194:LogUtils.c    ****     
+ 195:LogUtils.c    ****     // Send buffer via UART
+ 196:LogUtils.c    ****     UART_PutArray(buffer, LOG_MESSAGE_TOT_BYTE);
+ 328              		.loc 1 196 0
  329 000c 4021     		movs	r1, #64
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 9
-
-
  330 000e 6846     		mov	r0, sp
  331 0010 FFF7FEFF 		bl	UART_PutArray
  332              	.LVL22:
- 121:LogUtils.c    **** }
- 333              		.loc 1 121 0
+ 197:LogUtils.c    **** }
+ 333              		.loc 1 197 0
  334 0014 11B0     		add	sp, sp, #68
  335              		.cfi_def_cfa_offset 4
  336              		@ sp needed
@@ -508,17 +587,20 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  353 0006 00000000 		.4byte	.Ldebug_abbrev0
  354 000a 04       		.byte	0x4
  355 000b 01       		.uleb128 0x1
- 356 000c 95000000 		.4byte	.LASF40
+ 356 000c 19010000 		.4byte	.LASF40
  357 0010 0C       		.byte	0xc
  358 0011 08000000 		.4byte	.LASF41
- 359 0015 23010000 		.4byte	.LASF42
+ 359 0015 63000000 		.4byte	.LASF42
  360 0019 00000000 		.4byte	.Ldebug_ranges0+0
  361 001d 00000000 		.4byte	0
  362 0021 00000000 		.4byte	.Ldebug_line0
  363 0025 02       		.uleb128 0x2
  364 0026 01       		.byte	0x1
  365 0027 06       		.byte	0x6
- 366 0028 F0020000 		.4byte	.LASF0
+ 366 0028 D8020000 		.4byte	.LASF0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 11
+
+
  367 002c 03       		.uleb128 0x3
  368 002d 13000000 		.4byte	.LASF3
  369 0031 02       		.byte	0x2
@@ -527,23 +609,20 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  372 0037 02       		.uleb128 0x2
  373 0038 01       		.byte	0x1
  374 0039 08       		.byte	0x8
- 375 003a 87000000 		.4byte	.LASF1
+ 375 003a 0B010000 		.4byte	.LASF1
  376 003e 02       		.uleb128 0x2
  377 003f 02       		.byte	0x2
  378 0040 05       		.byte	0x5
- 379 0041 B8020000 		.4byte	.LASF2
+ 379 0041 A0020000 		.4byte	.LASF2
  380 0045 03       		.uleb128 0x3
- 381 0046 07020000 		.4byte	.LASF4
+ 381 0046 EF010000 		.4byte	.LASF4
  382 004a 02       		.byte	0x2
  383 004b 2B       		.byte	0x2b
  384 004c 50000000 		.4byte	0x50
  385 0050 02       		.uleb128 0x2
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 10
-
-
  386 0051 02       		.byte	0x2
  387 0052 07       		.byte	0x7
- 388 0053 D9010000 		.4byte	.LASF5
+ 388 0053 C1010000 		.4byte	.LASF5
  389 0057 03       		.uleb128 0x3
  390 0058 53000000 		.4byte	.LASF6
  391 005c 02       		.byte	0x2
@@ -552,24 +631,24 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  394 0062 02       		.uleb128 0x2
  395 0063 04       		.byte	0x4
  396 0064 05       		.byte	0x5
- 397 0065 DB020000 		.4byte	.LASF7
+ 397 0065 C3020000 		.4byte	.LASF7
  398 0069 03       		.uleb128 0x3
- 399 006a 19020000 		.4byte	.LASF8
+ 399 006a 01020000 		.4byte	.LASF8
  400 006e 02       		.byte	0x2
  401 006f 41       		.byte	0x41
  402 0070 74000000 		.4byte	0x74
  403 0074 02       		.uleb128 0x2
  404 0075 04       		.byte	0x4
  405 0076 07       		.byte	0x7
- 406 0077 C7010000 		.4byte	.LASF9
+ 406 0077 AF010000 		.4byte	.LASF9
  407 007b 02       		.uleb128 0x2
  408 007c 08       		.byte	0x8
  409 007d 05       		.byte	0x5
- 410 007e 98020000 		.4byte	.LASF10
+ 410 007e 80020000 		.4byte	.LASF10
  411 0082 02       		.uleb128 0x2
  412 0083 08       		.byte	0x8
  413 0084 07       		.byte	0x7
- 414 0085 59020000 		.4byte	.LASF11
+ 414 0085 41020000 		.4byte	.LASF11
  415 0089 04       		.uleb128 0x4
  416 008a 04       		.byte	0x4
  417 008b 05       		.byte	0x5
@@ -577,75 +656,78 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  419 0090 02       		.uleb128 0x2
  420 0091 04       		.byte	0x4
  421 0092 07       		.byte	0x7
- 422 0093 4C020000 		.4byte	.LASF12
+ 422 0093 34020000 		.4byte	.LASF12
  423 0097 03       		.uleb128 0x3
- 424 0098 70020000 		.4byte	.LASF13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 12
+
+
+ 424 0098 58020000 		.4byte	.LASF13
  425 009c 03       		.byte	0x3
  426 009d 18       		.byte	0x18
  427 009e 2C000000 		.4byte	0x2c
  428 00a2 03       		.uleb128 0x3
- 429 00a3 C9020000 		.4byte	.LASF14
+ 429 00a3 B1020000 		.4byte	.LASF14
  430 00a7 03       		.byte	0x3
  431 00a8 24       		.byte	0x24
  432 00a9 45000000 		.4byte	0x45
  433 00ad 03       		.uleb128 0x3
- 434 00ae 6D000000 		.4byte	.LASF15
+ 434 00ae F1000000 		.4byte	.LASF15
  435 00b2 03       		.byte	0x3
  436 00b3 2C       		.byte	0x2c
  437 00b4 57000000 		.4byte	0x57
  438 00b8 03       		.uleb128 0x3
- 439 00b9 D2020000 		.4byte	.LASF16
+ 439 00b9 BA020000 		.4byte	.LASF16
  440 00bd 03       		.byte	0x3
  441 00be 30       		.byte	0x30
  442 00bf 69000000 		.4byte	0x69
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 11
-
-
  443 00c3 02       		.uleb128 0x2
  444 00c4 04       		.byte	0x4
  445 00c5 04       		.byte	0x4
- 446 00c6 75000000 		.4byte	.LASF17
+ 446 00c6 F9000000 		.4byte	.LASF17
  447 00ca 02       		.uleb128 0x2
  448 00cb 08       		.byte	0x8
  449 00cc 04       		.byte	0x4
- 450 00cd 12020000 		.4byte	.LASF18
+ 450 00cd FA010000 		.4byte	.LASF18
  451 00d1 02       		.uleb128 0x2
  452 00d2 01       		.byte	0x1
  453 00d3 08       		.byte	0x8
- 454 00d4 A6020000 		.4byte	.LASF19
+ 454 00d4 8E020000 		.4byte	.LASF19
  455 00d8 02       		.uleb128 0x2
  456 00d9 08       		.byte	0x8
  457 00da 04       		.byte	0x4
- 458 00db E4020000 		.4byte	.LASF20
+ 458 00db CC020000 		.4byte	.LASF20
  459 00df 02       		.uleb128 0x2
  460 00e0 04       		.byte	0x4
  461 00e1 07       		.byte	0x7
- 462 00e2 8F020000 		.4byte	.LASF21
+ 462 00e2 77020000 		.4byte	.LASF21
  463 00e6 05       		.uleb128 0x5
  464 00e7 40       		.byte	0x40
  465 00e8 04       		.byte	0x4
  466 00e9 1B       		.byte	0x1b
  467 00ea 1F010000 		.4byte	0x11f
  468 00ee 06       		.uleb128 0x6
- 469 00ef 46020000 		.4byte	.LASF22
+ 469 00ef 2E020000 		.4byte	.LASF22
  470 00f3 04       		.byte	0x4
  471 00f4 1C       		.byte	0x1c
  472 00f5 97000000 		.4byte	0x97
  473 00f9 00       		.byte	0
  474 00fa 06       		.uleb128 0x6
- 475 00fb 80000000 		.4byte	.LASF23
+ 475 00fb 04010000 		.4byte	.LASF23
  476 00ff 04       		.byte	0x4
  477 0100 1D       		.byte	0x1d
  478 0101 97000000 		.4byte	0x97
  479 0105 01       		.byte	0x1
  480 0106 06       		.uleb128 0x6
- 481 0107 63000000 		.4byte	.LASF24
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 13
+
+
+ 481 0107 E7000000 		.4byte	.LASF24
  482 010b 04       		.byte	0x4
  483 010c 1E       		.byte	0x1e
  484 010d A2000000 		.4byte	0xa2
  485 0111 02       		.byte	0x2
  486 0112 06       		.uleb128 0x6
- 487 0113 7B000000 		.4byte	.LASF25
+ 487 0113 FF000000 		.4byte	.LASF25
  488 0117 04       		.byte	0x4
  489 0118 1F       		.byte	0x1f
  490 0119 1F010000 		.4byte	0x11f
@@ -658,18 +740,15 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  497 0129 DF000000 		.4byte	0xdf
  498 012d 3B       		.byte	0x3b
  499 012e 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 12
-
-
  500 012f 03       		.uleb128 0x3
  501 0130 5D000000 		.4byte	.LASF26
  502 0134 04       		.byte	0x4
  503 0135 20       		.byte	0x20
  504 0136 E6000000 		.4byte	0xe6
  505 013a 09       		.uleb128 0x9
- 506 013b 7D020000 		.4byte	.LASF33
+ 506 013b 65020000 		.4byte	.LASF33
  507 013f 01       		.byte	0x1
- 508 0140 41       		.byte	0x41
+ 508 0140 5C       		.byte	0x5c
  509 0141 00000000 		.4byte	.LFB64
  510 0145 30000000 		.4byte	.LFE64-.LFB64
  511 0149 01       		.uleb128 0x1
@@ -678,13 +757,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  514 014f 0A       		.uleb128 0xa
  515 0150 6D736700 		.ascii	"msg\000"
  516 0154 01       		.byte	0x1
- 517 0155 41       		.byte	0x41
+ 517 0155 5C       		.byte	0x5c
  518 0156 6E010000 		.4byte	0x16e
  519 015a 00000000 		.4byte	.LLST0
  520 015e 0B       		.uleb128 0xb
- 521 015f BF010000 		.4byte	.LASF27
+ 521 015f A7010000 		.4byte	.LASF27
  522 0163 01       		.byte	0x1
- 523 0164 41       		.byte	0x41
+ 523 0164 5C       		.byte	0x5c
  524 0165 74010000 		.4byte	0x174
  525 0169 2E000000 		.4byte	.LLST1
  526 016d 00       		.byte	0
@@ -697,38 +776,38 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  533 017a 0D       		.uleb128 0xd
  534 017b 41000000 		.4byte	.LASF29
  535 017f 01       		.byte	0x1
- 536 0180 2A       		.byte	0x2a
+ 536 0180 39       		.byte	0x39
  537 0181 2F010000 		.4byte	0x12f
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 14
+
+
  538 0185 00000000 		.4byte	.LFB63
  539 0189 3C000000 		.4byte	.LFE63-.LFB63
  540 018d 01       		.uleb128 0x1
  541 018e 9C       		.byte	0x9c
  542 018f F5010000 		.4byte	0x1f5
  543 0193 0B       		.uleb128 0xb
- 544 0194 46020000 		.4byte	.LASF22
+ 544 0194 2E020000 		.4byte	.LASF22
  545 0198 01       		.byte	0x1
- 546 0199 2A       		.byte	0x2a
+ 546 0199 39       		.byte	0x39
  547 019a 97000000 		.4byte	0x97
  548 019e 5C000000 		.4byte	.LLST2
  549 01a2 0B       		.uleb128 0xb
- 550 01a3 80000000 		.4byte	.LASF23
+ 550 01a3 04010000 		.4byte	.LASF23
  551 01a7 01       		.byte	0x1
- 552 01a8 2A       		.byte	0x2a
+ 552 01a8 39       		.byte	0x39
  553 01a9 97000000 		.4byte	0x97
  554 01ad 89000000 		.4byte	.LLST3
  555 01b1 0B       		.uleb128 0xb
- 556 01b2 78020000 		.4byte	.LASF28
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 13
-
-
+ 556 01b2 60020000 		.4byte	.LASF28
  557 01b6 01       		.byte	0x1
- 558 01b7 2A       		.byte	0x2a
+ 558 01b7 39       		.byte	0x39
  559 01b8 A2000000 		.4byte	0xa2
  560 01bc AA000000 		.4byte	.LLST4
  561 01c0 0E       		.uleb128 0xe
- 562 01c1 BF010000 		.4byte	.LASF27
+ 562 01c1 A7010000 		.4byte	.LASF27
  563 01c5 01       		.byte	0x1
- 564 01c6 2A       		.byte	0x2a
+ 564 01c6 39       		.byte	0x39
  565 01c7 74010000 		.4byte	0x174
  566 01cb 02       		.uleb128 0x2
  567 01cc 91       		.byte	0x91
@@ -736,7 +815,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  569 01ce 0F       		.uleb128 0xf
  570 01cf 00000000 		.4byte	.LASF31
  571 01d3 01       		.byte	0x1
- 572 01d4 2D       		.byte	0x2d
+ 572 01d4 3C       		.byte	0x3c
  573 01d5 2F010000 		.4byte	0x12f
  574 01d9 03       		.uleb128 0x3
  575 01da 91       		.byte	0x91
@@ -759,10 +838,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  592 01f2 06       		.byte	0x6
  593 01f3 00       		.byte	0
  594 01f4 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 15
+
+
  595 01f5 0D       		.uleb128 0xd
- 596 01f6 FC020000 		.4byte	.LASF30
+ 596 01f6 E4020000 		.4byte	.LASF30
  597 01fa 01       		.byte	0x1
- 598 01fb 4A       		.byte	0x4a
+ 598 01fb 71       		.byte	0x71
  599 01fc A2000000 		.4byte	0xa2
  600 0200 00000000 		.4byte	.LFB65
  601 0204 18000000 		.4byte	.LFE65-.LFB65
@@ -772,42 +854,39 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  605 020e 12       		.uleb128 0x12
  606 020f 34000000 		.4byte	.LASF32
  607 0213 01       		.byte	0x1
- 608 0214 4D       		.byte	0x4d
+ 608 0214 74       		.byte	0x74
  609 0215 B8000000 		.4byte	0xb8
  610 0219 CB000000 		.4byte	.LLST5
  611 021d 13       		.uleb128 0x13
  612 021e 06000000 		.4byte	.LVL8
  613 0222 15030000 		.4byte	0x315
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 14
-
-
  614 0226 00       		.byte	0
  615 0227 09       		.uleb128 0x9
- 616 0228 24020000 		.4byte	.LASF34
+ 616 0228 0C020000 		.4byte	.LASF34
  617 022c 01       		.byte	0x1
- 618 022d 54       		.byte	0x54
+ 618 022d 88       		.byte	0x88
  619 022e 00000000 		.4byte	.LFB66
  620 0232 42000000 		.4byte	.LFE66-.LFB66
  621 0236 01       		.uleb128 0x1
  622 0237 9C       		.byte	0x9c
  623 0238 5B020000 		.4byte	0x25b
  624 023c 0B       		.uleb128 0xb
- 625 023d C2020000 		.4byte	.LASF35
+ 625 023d AA020000 		.4byte	.LASF35
  626 0241 01       		.byte	0x1
- 627 0242 54       		.byte	0x54
+ 627 0242 88       		.byte	0x88
  628 0243 74010000 		.4byte	0x174
  629 0247 DE000000 		.4byte	.LLST6
  630 024b 0B       		.uleb128 0xb
  631 024c 00000000 		.4byte	.LASF31
  632 0250 01       		.byte	0x1
- 633 0251 54       		.byte	0x54
+ 633 0251 88       		.byte	0x88
  634 0252 6E010000 		.4byte	0x16e
  635 0256 0C010000 		.4byte	.LLST7
  636 025a 00       		.byte	0
  637 025b 09       		.uleb128 0x9
- 638 025c 36020000 		.4byte	.LASF36
+ 638 025c 1E020000 		.4byte	.LASF36
  639 0260 01       		.byte	0x1
- 640 0261 63       		.byte	0x63
+ 640 0261 A3       		.byte	0xa3
  641 0262 00000000 		.4byte	.LFB67
  642 0266 42000000 		.4byte	.LFE67-.LFB67
  643 026a 01       		.uleb128 0x1
@@ -816,20 +895,23 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  646 0270 0B       		.uleb128 0xb
  647 0271 00000000 		.4byte	.LASF31
  648 0275 01       		.byte	0x1
- 649 0276 63       		.byte	0x63
+ 649 0276 A3       		.byte	0xa3
  650 0277 6E010000 		.4byte	0x16e
  651 027b 3A010000 		.4byte	.LLST8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 16
+
+
  652 027f 0B       		.uleb128 0xb
- 653 0280 C2020000 		.4byte	.LASF35
+ 653 0280 AA020000 		.4byte	.LASF35
  654 0284 01       		.byte	0x1
- 655 0285 63       		.byte	0x63
+ 655 0285 A3       		.byte	0xa3
  656 0286 74010000 		.4byte	0x174
  657 028a 68010000 		.4byte	.LLST9
  658 028e 00       		.byte	0
  659 028f 09       		.uleb128 0x9
- 660 0290 AB020000 		.4byte	.LASF37
+ 660 0290 93020000 		.4byte	.LASF37
  661 0294 01       		.byte	0x1
- 662 0295 71       		.byte	0x71
+ 662 0295 BD       		.byte	0xbd
  663 0296 00000000 		.4byte	.LFB68
  664 029a 1A000000 		.4byte	.LFE68-.LFB68
  665 029e 01       		.uleb128 0x1
@@ -838,16 +920,13 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  668 02a4 0B       		.uleb128 0xb
  669 02a5 00000000 		.4byte	.LASF31
  670 02a9 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 15
-
-
- 671 02aa 71       		.byte	0x71
+ 671 02aa BD       		.byte	0xbd
  672 02ab 6E010000 		.4byte	0x16e
  673 02af 96010000 		.4byte	.LLST10
  674 02b3 0F       		.uleb128 0xf
- 675 02b4 C2020000 		.4byte	.LASF35
+ 675 02b4 AA020000 		.4byte	.LASF35
  676 02b8 01       		.byte	0x1
- 677 02b9 74       		.byte	0x74
+ 677 02b9 C0       		.byte	0xc0
  678 02ba F4020000 		.4byte	0x2f4
  679 02be 03       		.uleb128 0x3
  680 02bf 91       		.byte	0x91
@@ -879,6 +958,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  706 02e9 02       		.uleb128 0x2
  707 02ea 7D       		.byte	0x7d
  708 02eb 00       		.sleb128 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 17
+
+
  709 02ec 11       		.uleb128 0x11
  710 02ed 01       		.uleb128 0x1
  711 02ee 51       		.byte	0x51
@@ -895,12 +977,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  722 0302 3F       		.byte	0x3f
  723 0303 00       		.byte	0
  724 0304 15       		.uleb128 0x15
- 725 0305 FA010000 		.4byte	.LASF43
+ 725 0305 E2010000 		.4byte	.LASF43
  726 0309 07       		.byte	0x7
  727 030a 1207     		.2byte	0x712
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 16
-
-
  728 030c 10030000 		.4byte	0x310
  729 0310 16       		.uleb128 0x16
  730 0311 AD000000 		.4byte	0xad
@@ -910,8 +989,8 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  734 031e 05       		.byte	0x5
  735 031f 69       		.byte	0x69
  736 0320 17       		.uleb128 0x17
- 737 0321 EC010000 		.4byte	.LASF39
- 738 0325 EC010000 		.4byte	.LASF39
+ 737 0321 D4010000 		.4byte	.LASF39
+ 738 0325 D4010000 		.4byte	.LASF39
  739 0329 06       		.byte	0x6
  740 032a 8C       		.byte	0x8c
  741 032b 00       		.byte	0
@@ -939,6 +1018,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  763 0013 02       		.uleb128 0x2
  764 0014 24       		.uleb128 0x24
  765 0015 00       		.byte	0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 18
+
+
  766 0016 0B       		.uleb128 0xb
  767 0017 0B       		.uleb128 0xb
  768 0018 3E       		.uleb128 0x3e
@@ -958,9 +1040,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  782 0026 0B       		.uleb128 0xb
  783 0027 49       		.uleb128 0x49
  784 0028 13       		.uleb128 0x13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 17
-
-
  785 0029 00       		.byte	0
  786 002a 00       		.byte	0
  787 002b 04       		.uleb128 0x4
@@ -999,6 +1078,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  820 004c 49       		.uleb128 0x49
  821 004d 13       		.uleb128 0x13
  822 004e 38       		.uleb128 0x38
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 19
+
+
  823 004f 0B       		.uleb128 0xb
  824 0050 00       		.byte	0
  825 0051 00       		.byte	0
@@ -1018,9 +1100,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  839 005f 13       		.uleb128 0x13
  840 0060 2F       		.uleb128 0x2f
  841 0061 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 18
-
-
  842 0062 00       		.byte	0
  843 0063 00       		.byte	0
  844 0064 09       		.uleb128 0x9
@@ -1059,6 +1138,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  877 0086 0B       		.uleb128 0xb
  878 0087 49       		.uleb128 0x49
  879 0088 13       		.uleb128 0x13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 20
+
+
  880 0089 02       		.uleb128 0x2
  881 008a 17       		.uleb128 0x17
  882 008b 00       		.byte	0
@@ -1078,9 +1160,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  896 0099 17       		.uleb128 0x17
  897 009a 00       		.byte	0
  898 009b 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 19
-
-
  899 009c 0C       		.uleb128 0xc
  900 009d 0F       		.uleb128 0xf
  901 009e 00       		.byte	0
@@ -1119,6 +1198,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  934 00c0 00       		.byte	0
  935 00c1 0E       		.uleb128 0xe
  936 00c2 05       		.uleb128 0x5
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 21
+
+
  937 00c3 00       		.byte	0
  938 00c4 03       		.uleb128 0x3
  939 00c5 0E       		.uleb128 0xe
@@ -1138,9 +1220,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  953 00d3 03       		.uleb128 0x3
  954 00d4 0E       		.uleb128 0xe
  955 00d5 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 20
-
-
  956 00d6 0B       		.uleb128 0xb
  957 00d7 3B       		.uleb128 0x3b
  958 00d8 0B       		.uleb128 0xb
@@ -1179,6 +1258,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  991 00fe 0B       		.uleb128 0xb
  992 00ff 49       		.uleb128 0x49
  993 0100 13       		.uleb128 0x13
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 22
+
+
  994 0101 02       		.uleb128 0x2
  995 0102 17       		.uleb128 0x17
  996 0103 00       		.byte	0
@@ -1198,9 +1280,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1010 0115 11       		.uleb128 0x11
  1011 0116 01       		.uleb128 0x1
  1012 0117 31       		.uleb128 0x31
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 21
-
-
  1013 0118 13       		.uleb128 0x13
  1014 0119 01       		.uleb128 0x1
  1015 011a 13       		.uleb128 0x13
@@ -1239,6 +1318,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1048 013b 19       		.uleb128 0x19
  1049 013c 6E       		.uleb128 0x6e
  1050 013d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 23
+
+
  1051 013e 03       		.uleb128 0x3
  1052 013f 0E       		.uleb128 0xe
  1053 0140 3A       		.uleb128 0x3a
@@ -1258,9 +1340,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1067 000b 06000000 		.4byte	.LVL1
  1068 000f 08000000 		.4byte	.LVL2
  1069 0013 0300     		.2byte	0x3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 22
-
-
  1070 0015 70       		.byte	0x70
  1071 0016 7C       		.sleb128 -4
  1072 0017 9F       		.byte	0x9f
@@ -1299,6 +1378,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1105 0064 0100     		.2byte	0x1
  1106 0066 51       		.byte	0x51
  1107 0067 14000000 		.4byte	.LVL5
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 24
+
+
  1108 006b 19000000 		.4byte	.LVL7-1
  1109 006f 0200     		.2byte	0x2
  1110 0071 7D       		.byte	0x7d
@@ -1318,9 +1400,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1124 0091 0100     		.2byte	0x1
  1125 0093 52       		.byte	0x52
  1126 0094 19000000 		.4byte	.LVL7-1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 23
-
-
  1127 0098 3C000000 		.4byte	.LFE63
  1128 009c 0400     		.2byte	0x4
  1129 009e F3       		.byte	0xf3
@@ -1359,6 +1438,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1162 00ed 1A000000 		.4byte	.LVL13
  1163 00f1 0300     		.2byte	0x3
  1164 00f3 70       		.byte	0x70
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 25
+
+
  1165 00f4 7C       		.sleb128 -4
  1166 00f5 9F       		.byte	0x9f
  1167 00f6 1A000000 		.4byte	.LVL13
@@ -1378,9 +1460,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1181 0117 1A000000 		.4byte	.LVL13
  1182 011b 34000000 		.4byte	.LVL14
  1183 011f 0300     		.2byte	0x3
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 24
-
-
  1184 0121 71       		.byte	0x71
  1185 0122 4C       		.sleb128 -52
  1186 0123 9F       		.byte	0x9f
@@ -1419,6 +1498,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1219 0170 0100     		.2byte	0x1
  1220 0172 51       		.byte	0x51
  1221 0173 1A000000 		.4byte	.LVL17
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 26
+
+
  1222 0177 34000000 		.4byte	.LVL18
  1223 017b 0300     		.2byte	0x3
  1224 017d 71       		.byte	0x71
@@ -1438,9 +1520,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1238 019a 08000000 		.4byte	.LVL20
  1239 019e 0100     		.2byte	0x1
  1240 01a0 50       		.byte	0x50
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 25
-
-
  1241 01a1 08000000 		.4byte	.LVL20
  1242 01a5 0B000000 		.4byte	.LVL21-1
  1243 01a9 0100     		.2byte	0x1
@@ -1479,6 +1558,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1276              		.section	.debug_ranges,"",%progbits
  1277              	.Ldebug_ranges0:
  1278 0000 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 27
+
+
  1279 0004 30000000 		.4byte	.LFE64
  1280 0008 00000000 		.4byte	.LFB63
  1281 000c 3C000000 		.4byte	.LFE63
@@ -1498,9 +1580,6 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1294      02006B01 
  1294      00000201 
  1294      FB0E0D00 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 26
-
-
  1294      01010101 
  1295              	.LASF31:
  1296 0000 6D657373 		.ascii	"message\000"
@@ -1537,192 +1616,192 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 1
  1309              	.LASF26:
  1310 005d 6C6F675F 		.ascii	"log_t\000"
  1310      7400
- 1311              	.LASF24:
- 1312 0063 74696D65 		.ascii	"timestamp\000"
- 1312      7374616D 
- 1312      7000
- 1313              	.LASF15:
- 1314 006d 696E7433 		.ascii	"int32_t\000"
- 1314      325F7400 
- 1315              	.LASF17:
- 1316 0075 666C6F61 		.ascii	"float\000"
- 1316      7400
- 1317              	.LASF25:
- 1318 007b 64617461 		.ascii	"data\000"
- 1318      00
- 1319              	.LASF23:
- 1320 0080 696E7452 		.ascii	"intReg\000"
- 1320      656700
- 1321              	.LASF1:
- 1322 0087 756E7369 		.ascii	"unsigned char\000"
- 1322      676E6564 
- 1322      20636861 
- 1322      7200
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 27
+ 1311              	.LASF42:
+ 1312 0063 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 28
 
 
- 1323              	.LASF40:
- 1324 0095 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1324      43313120 
- 1324      352E342E 
- 1324      31203230 
- 1324      31363036 
- 1325 00c8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1325      20726576 
- 1325      6973696F 
- 1325      6E203233 
- 1325      37373135 
- 1326 00fb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1326      66756E63 
- 1326      74696F6E 
- 1326      2D736563 
- 1326      74696F6E 
- 1327              	.LASF42:
- 1328 0123 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 1328      73657273 
- 1328      5C4C6F72 
- 1328      795C4465 
- 1328      736B746F 
- 1329 0151 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
- 1329      65735C50 
- 1329      536F432D 
- 1329      46696E61 
- 1329      6C2D5072 
- 1330 0182 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 1330      415F4755 
- 1330      414C4E49 
- 1330      4552415C 
- 1330      41593139 
- 1331 01b4 49455241 		.ascii	"IERA.cydsn\000"
- 1331      2E637964 
- 1331      736E00
- 1332              	.LASF27:
- 1333 01bf 64617461 		.ascii	"dataPtr\000"
- 1333      50747200 
- 1334              	.LASF9:
- 1335 01c7 6C6F6E67 		.ascii	"long unsigned int\000"
- 1335      20756E73 
- 1335      69676E65 
- 1335      6420696E 
- 1335      7400
- 1336              	.LASF5:
- 1337 01d9 73686F72 		.ascii	"short unsigned int\000"
- 1337      7420756E 
- 1337      7369676E 
- 1337      65642069 
- 1337      6E7400
- 1338              	.LASF39:
- 1339 01ec 55415254 		.ascii	"UART_PutArray\000"
- 1339      5F507574 
- 1339      41727261 
- 1339      7900
- 1340              	.LASF43:
- 1341 01fa 49544D5F 		.ascii	"ITM_RxBuffer\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 28
+ 1312      73657273 
+ 1312      5C4D616E 
+ 1312      755C4465 
+ 1312      736B746F 
+ 1313 0091 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 1313      31393230 
+ 1313      5F49495F 
+ 1313      48575F46 
+ 1313      494E414C 
+ 1314 00c2 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 1314      5F46494E 
+ 1314      414C5F43 
+ 1314      41525A41 
+ 1314      4E494741 
+ 1315              	.LASF24:
+ 1316 00e7 74696D65 		.ascii	"timestamp\000"
+ 1316      7374616D 
+ 1316      7000
+ 1317              	.LASF15:
+ 1318 00f1 696E7433 		.ascii	"int32_t\000"
+ 1318      325F7400 
+ 1319              	.LASF17:
+ 1320 00f9 666C6F61 		.ascii	"float\000"
+ 1320      7400
+ 1321              	.LASF25:
+ 1322 00ff 64617461 		.ascii	"data\000"
+ 1322      00
+ 1323              	.LASF23:
+ 1324 0104 696E7452 		.ascii	"intReg\000"
+ 1324      656700
+ 1325              	.LASF1:
+ 1326 010b 756E7369 		.ascii	"unsigned char\000"
+ 1326      676E6564 
+ 1326      20636861 
+ 1326      7200
+ 1327              	.LASF40:
+ 1328 0119 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1328      43313120 
+ 1328      352E342E 
+ 1328      31203230 
+ 1328      31363036 
+ 1329 014c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1329      20726576 
+ 1329      6973696F 
+ 1329      6E203233 
+ 1329      37373135 
+ 1330 017f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1330      66756E63 
+ 1330      74696F6E 
+ 1330      2D736563 
+ 1330      74696F6E 
+ 1331              	.LASF27:
+ 1332 01a7 64617461 		.ascii	"dataPtr\000"
+ 1332      50747200 
+ 1333              	.LASF9:
+ 1334 01af 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1334      20756E73 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 29
 
 
- 1341      52784275 
- 1341      66666572 
- 1341      00
- 1342              	.LASF4:
- 1343 0207 5F5F7569 		.ascii	"__uint16_t\000"
- 1343      6E743136 
- 1343      5F7400
- 1344              	.LASF18:
- 1345 0212 646F7562 		.ascii	"double\000"
- 1345      6C6500
- 1346              	.LASF8:
- 1347 0219 5F5F7569 		.ascii	"__uint32_t\000"
- 1347      6E743332 
- 1347      5F7400
- 1348              	.LASF34:
- 1349 0224 4C4F475F 		.ascii	"LOG_unpackMessage\000"
- 1349      756E7061 
- 1349      636B4D65 
- 1349      73736167 
- 1349      6500
- 1350              	.LASF36:
- 1351 0236 4C4F475F 		.ascii	"LOG_packMessage\000"
- 1351      7061636B 
- 1351      4D657373 
- 1351      61676500 
- 1352              	.LASF22:
- 1353 0246 6C6F6749 		.ascii	"logID\000"
- 1353      4400
- 1354              	.LASF12:
- 1355 024c 756E7369 		.ascii	"unsigned int\000"
- 1355      676E6564 
- 1355      20696E74 
- 1355      00
- 1356              	.LASF11:
- 1357 0259 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1357      206C6F6E 
- 1357      6720756E 
- 1357      7369676E 
- 1357      65642069 
- 1358              	.LASF13:
- 1359 0270 75696E74 		.ascii	"uint8_t\000"
- 1359      385F7400 
- 1360              	.LASF28:
- 1361 0278 74696D65 		.ascii	"time\000"
- 1361      00
- 1362              	.LASF33:
- 1363 027d 4C4F475F 		.ascii	"LOG_insertPayload\000"
- 1363      696E7365 
- 1363      72745061 
- 1363      796C6F61 
- 1363      6400
- 1364              	.LASF21:
- 1365 028f 73697A65 		.ascii	"sizetype\000"
- 1365      74797065 
- 1365      00
- 1366              	.LASF10:
- 1367 0298 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc74Palq.s 			page 29
+ 1334      69676E65 
+ 1334      6420696E 
+ 1334      7400
+ 1335              	.LASF5:
+ 1336 01c1 73686F72 		.ascii	"short unsigned int\000"
+ 1336      7420756E 
+ 1336      7369676E 
+ 1336      65642069 
+ 1336      6E7400
+ 1337              	.LASF39:
+ 1338 01d4 55415254 		.ascii	"UART_PutArray\000"
+ 1338      5F507574 
+ 1338      41727261 
+ 1338      7900
+ 1339              	.LASF43:
+ 1340 01e2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1340      52784275 
+ 1340      66666572 
+ 1340      00
+ 1341              	.LASF4:
+ 1342 01ef 5F5F7569 		.ascii	"__uint16_t\000"
+ 1342      6E743136 
+ 1342      5F7400
+ 1343              	.LASF18:
+ 1344 01fa 646F7562 		.ascii	"double\000"
+ 1344      6C6500
+ 1345              	.LASF8:
+ 1346 0201 5F5F7569 		.ascii	"__uint32_t\000"
+ 1346      6E743332 
+ 1346      5F7400
+ 1347              	.LASF34:
+ 1348 020c 4C4F475F 		.ascii	"LOG_unpackMessage\000"
+ 1348      756E7061 
+ 1348      636B4D65 
+ 1348      73736167 
+ 1348      6500
+ 1349              	.LASF36:
+ 1350 021e 4C4F475F 		.ascii	"LOG_packMessage\000"
+ 1350      7061636B 
+ 1350      4D657373 
+ 1350      61676500 
+ 1351              	.LASF22:
+ 1352 022e 6C6F6749 		.ascii	"logID\000"
+ 1352      4400
+ 1353              	.LASF12:
+ 1354 0234 756E7369 		.ascii	"unsigned int\000"
+ 1354      676E6564 
+ 1354      20696E74 
+ 1354      00
+ 1355              	.LASF11:
+ 1356 0241 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1356      206C6F6E 
+ 1356      6720756E 
+ 1356      7369676E 
+ 1356      65642069 
+ 1357              	.LASF13:
+ 1358 0258 75696E74 		.ascii	"uint8_t\000"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 30
 
 
- 1367      206C6F6E 
- 1367      6720696E 
- 1367      7400
- 1368              	.LASF19:
- 1369 02a6 63686172 		.ascii	"char\000"
- 1369      00
- 1370              	.LASF37:
- 1371 02ab 4C4F475F 		.ascii	"LOG_sendData\000"
- 1371      73656E64 
- 1371      44617461 
- 1371      00
- 1372              	.LASF2:
- 1373 02b8 73686F72 		.ascii	"short int\000"
- 1373      7420696E 
- 1373      7400
- 1374              	.LASF35:
- 1375 02c2 62756666 		.ascii	"buffer\000"
- 1375      657200
- 1376              	.LASF14:
- 1377 02c9 75696E74 		.ascii	"uint16_t\000"
- 1377      31365F74 
- 1377      00
- 1378              	.LASF16:
- 1379 02d2 75696E74 		.ascii	"uint32_t\000"
- 1379      33325F74 
- 1379      00
- 1380              	.LASF7:
- 1381 02db 6C6F6E67 		.ascii	"long int\000"
- 1381      20696E74 
- 1381      00
- 1382              	.LASF20:
- 1383 02e4 6C6F6E67 		.ascii	"long double\000"
- 1383      20646F75 
- 1383      626C6500 
- 1384              	.LASF0:
- 1385 02f0 7369676E 		.ascii	"signed char\000"
- 1385      65642063 
- 1385      68617200 
- 1386              	.LASF30:
- 1387 02fc 4C4F475F 		.ascii	"LOG_getTimestamp\000"
- 1387      67657454 
- 1387      696D6573 
- 1387      74616D70 
- 1387      00
- 1388              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1358      385F7400 
+ 1359              	.LASF28:
+ 1360 0260 74696D65 		.ascii	"time\000"
+ 1360      00
+ 1361              	.LASF33:
+ 1362 0265 4C4F475F 		.ascii	"LOG_insertPayload\000"
+ 1362      696E7365 
+ 1362      72745061 
+ 1362      796C6F61 
+ 1362      6400
+ 1363              	.LASF21:
+ 1364 0277 73697A65 		.ascii	"sizetype\000"
+ 1364      74797065 
+ 1364      00
+ 1365              	.LASF10:
+ 1366 0280 6C6F6E67 		.ascii	"long long int\000"
+ 1366      206C6F6E 
+ 1366      6720696E 
+ 1366      7400
+ 1367              	.LASF19:
+ 1368 028e 63686172 		.ascii	"char\000"
+ 1368      00
+ 1369              	.LASF37:
+ 1370 0293 4C4F475F 		.ascii	"LOG_sendData\000"
+ 1370      73656E64 
+ 1370      44617461 
+ 1370      00
+ 1371              	.LASF2:
+ 1372 02a0 73686F72 		.ascii	"short int\000"
+ 1372      7420696E 
+ 1372      7400
+ 1373              	.LASF35:
+ 1374 02aa 62756666 		.ascii	"buffer\000"
+ 1374      657200
+ 1375              	.LASF14:
+ 1376 02b1 75696E74 		.ascii	"uint16_t\000"
+ 1376      31365F74 
+ 1376      00
+ 1377              	.LASF16:
+ 1378 02ba 75696E74 		.ascii	"uint32_t\000"
+ 1378      33325F74 
+ 1378      00
+ 1379              	.LASF7:
+ 1380 02c3 6C6F6E67 		.ascii	"long int\000"
+ 1380      20696E74 
+ 1380      00
+ 1381              	.LASF20:
+ 1382 02cc 6C6F6E67 		.ascii	"long double\000"
+ 1382      20646F75 
+ 1382      626C6500 
+ 1383              	.LASF0:
+ 1384 02d8 7369676E 		.ascii	"signed char\000"
+ 1384      65642063 
+ 1384      68617200 
+ 1385              	.LASF30:
+ 1386 02e4 4C4F475F 		.ascii	"LOG_getTimestamp\000"
+ 1386      67657454 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccZKtW6G.s 			page 31
+
+
+ 1386      696D6573 
+ 1386      74616D70 
+ 1386      00
+ 1387              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

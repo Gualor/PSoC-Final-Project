@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 1
 
 
    1              		.syntax unified
@@ -30,25 +30,42 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   27              		.file 1 "Notifications.c"
    1:Notifications.c **** /* ========================================
    2:Notifications.c ****  *
-   3:Notifications.c ****  * Copyright YOUR COMPANY, THE YEAR
-   4:Notifications.c ****  * All Rights Reserved
-   5:Notifications.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
-   6:Notifications.c ****  *
-   7:Notifications.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
-   8:Notifications.c ****  * WHICH IS THE PROPERTY OF your company.
+   3:Notifications.c ****  * This file contains utility functions
+   4:Notifications.c ****  * used for visually notify the user of the
+   5:Notifications.c ****  * internal state of the firmware by driving
+   6:Notifications.c ****  * the PSoC on-board LED, as well as taking 
+   7:Notifications.c ****  * user inputs throught a potentiometer to
+   8:Notifications.c ****  * set a logical flag used inside the main.
    9:Notifications.c ****  *
   10:Notifications.c ****  * ========================================
   11:Notifications.c **** */
   12:Notifications.c **** 
-  13:Notifications.c **** /* Include dependencies. */
-  14:Notifications.c **** #include "Notifications.h"
-  15:Notifications.c **** 
-  16:Notifications.c **** /*
-  17:Notifications.c ****  * Notify stop mode by turning on-board LED off.
-  18:Notifications.c ****  */
-  19:Notifications.c **** void LED_Notify_Stop(void)
-  20:Notifications.c **** {
-  28              		.loc 1 20 0
+  13:Notifications.c **** 
+  14:Notifications.c **** /* Project dependencies. */
+  15:Notifications.c **** #include "Notifications.h"
+  16:Notifications.c **** 
+  17:Notifications.c **** 
+  18:Notifications.c **** /*******************************************************************************
+  19:Notifications.c **** * Function Name: LED_Notify_Stop
+  20:Notifications.c **** ********************************************************************************
+  21:Notifications.c **** *
+  22:Notifications.c **** * Summary:
+  23:Notifications.c **** *   Notify visually when internal state is set to stop mode by turning PSoC 
+  24:Notifications.c **** *   on-board LED off.
+  25:Notifications.c **** *
+  26:Notifications.c **** * Parameters:  
+  27:Notifications.c **** *   None.
+  28:Notifications.c **** *
+  29:Notifications.c **** * Return:
+  30:Notifications.c **** *   None.
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 2
+
+
+  31:Notifications.c **** *
+  32:Notifications.c **** *******************************************************************************/
+  33:Notifications.c **** void LED_Notify_Stop(void)
+  34:Notifications.c **** {
+  28              		.loc 1 34 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -56,20 +73,17 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-  21:Notifications.c ****     // If LED PWM is enabled
-  22:Notifications.c ****     if (PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE)
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 2
-
-
-  36              		.loc 1 22 0
+  35:Notifications.c ****     // If LED PWM is enabled
+  36:Notifications.c ****     if (PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE)
+  36              		.loc 1 36 0
   37 0002 FFF7FEFF 		bl	PWM_NOTIFY_ReadControlRegister
   38              	.LVL0:
   39 0006 10F0800F 		tst	r0, #128
   40 000a 01D0     		beq	.L1
-  23:Notifications.c ****     {
-  24:Notifications.c ****         // Disable PWM
-  25:Notifications.c ****         PWM_NOTIFY_Stop();
-  41              		.loc 1 25 0
+  37:Notifications.c ****     {
+  38:Notifications.c ****         // Disable PWM
+  39:Notifications.c ****         PWM_NOTIFY_Stop();
+  41              		.loc 1 39 0
   42 000c FFF7FEFF 		bl	PWM_NOTIFY_Stop
   43              	.LVL1:
   44              	.L1:
@@ -85,15 +99,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   54              		.type	LED_Notify_Start, %function
   55              	LED_Notify_Start:
   56              	.LFB64:
-  26:Notifications.c ****     }
-  27:Notifications.c **** }
-  28:Notifications.c **** 
-  29:Notifications.c **** /*
-  30:Notifications.c ****  * Notify start mode by turning on-board LED on.
-  31:Notifications.c ****  */
-  32:Notifications.c **** void LED_Notify_Start(void)
-  33:Notifications.c **** {
-  57              		.loc 1 33 0
+  40:Notifications.c ****     }
+  41:Notifications.c **** }
+  42:Notifications.c **** 
+  43:Notifications.c **** 
+  44:Notifications.c **** /*******************************************************************************
+  45:Notifications.c **** * Function Name: LED_Notify_Start
+  46:Notifications.c **** ********************************************************************************
+  47:Notifications.c **** *
+  48:Notifications.c **** * Summary:
+  49:Notifications.c **** *   Notify visually when internal state is set to stop mode by turning PSoC 
+  50:Notifications.c **** *   on-board LED on.
+  51:Notifications.c **** *
+  52:Notifications.c **** * Parameters:  
+  53:Notifications.c **** *   None.
+  54:Notifications.c **** *
+  55:Notifications.c **** * Return:
+  56:Notifications.c **** *   None.
+  57:Notifications.c **** *
+  58:Notifications.c **** *******************************************************************************/
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 3
+
+
+  59:Notifications.c **** void LED_Notify_Start(void)
+  60:Notifications.c **** {
+  57              		.loc 1 60 0
   58              		.cfi_startproc
   59              		@ args = 0, pretend = 0, frame = 0
   60              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -101,28 +131,25 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   62              		.cfi_def_cfa_offset 8
   63              		.cfi_offset 3, -8
   64              		.cfi_offset 14, -4
-  34:Notifications.c ****     // If LED PWM is not enabled
-  35:Notifications.c ****     if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
-  65              		.loc 1 35 0
+  61:Notifications.c ****     // If LED PWM is not enabled
+  62:Notifications.c ****     if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
+  65              		.loc 1 62 0
   66 0002 FFF7FEFF 		bl	PWM_NOTIFY_ReadControlRegister
   67              	.LVL2:
   68 0006 10F0800F 		tst	r0, #128
   69 000a 01D1     		bne	.L5
-  36:Notifications.c ****     {
-  37:Notifications.c ****         // Enable PWM
-  38:Notifications.c ****         PWM_NOTIFY_Start();
-  70              		.loc 1 38 0
+  63:Notifications.c ****     {
+  64:Notifications.c ****         // Enable PWM
+  65:Notifications.c ****         PWM_NOTIFY_Start();
+  70              		.loc 1 65 0
   71 000c FFF7FEFF 		bl	PWM_NOTIFY_Start
   72              	.LVL3:
   73              	.L5:
-  39:Notifications.c ****     }
-  40:Notifications.c ****     
-  41:Notifications.c ****     // Change PWM compare value
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 3
-
-
-  42:Notifications.c ****     PWM_NOTIFY_WriteCompare(255);
-  74              		.loc 1 42 0
+  66:Notifications.c ****     }
+  67:Notifications.c ****     
+  68:Notifications.c ****     // Change PWM compare value
+  69:Notifications.c ****     PWM_NOTIFY_WriteCompare(255);
+  74              		.loc 1 69 0
   75 0010 FF20     		movs	r0, #255
   76 0012 FFF7FEFF 		bl	PWM_NOTIFY_WriteCompare
   77              	.LVL4:
@@ -138,14 +165,30 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   87              		.type	LED_Notify_Config, %function
   88              	LED_Notify_Config:
   89              	.LFB65:
-  43:Notifications.c **** }
-  44:Notifications.c **** 
-  45:Notifications.c **** /*
-  46:Notifications.c ****  * Notify config mode by blinking on-board LED.
-  47:Notifications.c ****  */
-  48:Notifications.c **** void LED_Notify_Config(void)
-  49:Notifications.c **** {
-  90              		.loc 1 49 0
+  70:Notifications.c **** }
+  71:Notifications.c **** 
+  72:Notifications.c **** 
+  73:Notifications.c **** /*******************************************************************************
+  74:Notifications.c **** * Function Name: LED_Notify_Config
+  75:Notifications.c **** ********************************************************************************
+  76:Notifications.c **** *
+  77:Notifications.c **** * Summary:
+  78:Notifications.c **** *   Notify visually when internal state is set to stop mode by making PSoC 
+  79:Notifications.c **** *   on-board LED blink at 1Hz frequency.
+  80:Notifications.c **** *
+  81:Notifications.c **** * Parameters:  
+  82:Notifications.c **** *   None.
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 4
+
+
+  83:Notifications.c **** *
+  84:Notifications.c **** * Return:
+  85:Notifications.c **** *   None.
+  86:Notifications.c **** *
+  87:Notifications.c **** *******************************************************************************/
+  88:Notifications.c **** void LED_Notify_Config(void)
+  89:Notifications.c **** {
+  90              		.loc 1 89 0
   91              		.cfi_startproc
   92              		@ args = 0, pretend = 0, frame = 0
   93              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -153,34 +196,31 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
   95              		.cfi_def_cfa_offset 8
   96              		.cfi_offset 3, -8
   97              		.cfi_offset 14, -4
-  50:Notifications.c ****     // If LED PWM is not enabled
-  51:Notifications.c ****     if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
-  98              		.loc 1 51 0
+  90:Notifications.c ****     // If LED PWM is not enabled
+  91:Notifications.c ****     if (!(PWM_NOTIFY_ReadControlRegister() & PWM_NOTIFY_CTRL_ENABLE))
+  98              		.loc 1 91 0
   99 0002 FFF7FEFF 		bl	PWM_NOTIFY_ReadControlRegister
  100              	.LVL5:
  101 0006 10F0800F 		tst	r0, #128
  102 000a 01D1     		bne	.L8
-  52:Notifications.c ****     {
-  53:Notifications.c ****         // Enable PWM
-  54:Notifications.c ****         PWM_NOTIFY_Start();
- 103              		.loc 1 54 0
+  92:Notifications.c ****     {
+  93:Notifications.c ****         // Enable PWM
+  94:Notifications.c ****         PWM_NOTIFY_Start();
+ 103              		.loc 1 94 0
  104 000c FFF7FEFF 		bl	PWM_NOTIFY_Start
  105              	.LVL6:
  106              	.L8:
-  55:Notifications.c ****     }
-  56:Notifications.c ****     
-  57:Notifications.c ****     // Change PWM compare value
-  58:Notifications.c ****     PWM_NOTIFY_WriteCompare(127);
- 107              		.loc 1 58 0
+  95:Notifications.c ****     }
+  96:Notifications.c ****     
+  97:Notifications.c ****     // Change PWM compare value
+  98:Notifications.c ****     PWM_NOTIFY_WriteCompare(127);
+ 107              		.loc 1 98 0
  108 0010 7F20     		movs	r0, #127
  109 0012 FFF7FEFF 		bl	PWM_NOTIFY_WriteCompare
  110              	.LVL7:
  111 0016 08BD     		pop	{r3, pc}
  112              		.cfi_endproc
  113              	.LFE65:
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 4
-
-
  114              		.size	LED_Notify_Config, .-LED_Notify_Config
  115              		.section	.text.POT_Read_Value,"ax",%progbits
  116              		.align	2
@@ -190,18 +230,35 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  120              		.type	POT_Read_Value, %function
  121              	POT_Read_Value:
  122              	.LFB66:
-  59:Notifications.c **** }
-  60:Notifications.c **** 
-  61:Notifications.c **** /*
-  62:Notifications.c ****  * Read user input value through potentiometer sampling
-  63:Notifications.c ****  * to set a logic flag:
-  64:Notifications.c ****  * 0%->24%:     0
-  65:Notifications.c ****  * 25%->50%:    don't change
-  66:Notifications.c ****  * 51&->100%:   1
-  67:Notifications.c ****  */
-  68:Notifications.c **** uint8_t POT_Read_Value(uint8_t oldFlag)
-  69:Notifications.c **** {
- 123              		.loc 1 69 0
+  99:Notifications.c **** }
+ 100:Notifications.c **** 
+ 101:Notifications.c **** 
+ 102:Notifications.c **** /*******************************************************************************
+ 103:Notifications.c **** * Function Name: POT_Read_Value
+ 104:Notifications.c **** ********************************************************************************
+ 105:Notifications.c **** *
+ 106:Notifications.c **** * Summary:
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 5
+
+
+ 107:Notifications.c **** *   Read user input potentiometer value from ADC delta sigma and process it to 
+ 108:Notifications.c **** *   be either 1 or 0 according to the folliwing potentiomenter range mapping:
+ 109:Notifications.c **** *   +--------------------------+
+ 110:Notifications.c **** *   | 0%->24%   :            0 |
+ 111:Notifications.c **** *   | 25%->50%  : don't change |
+ 112:Notifications.c **** *   | 51%->100% :            1 |
+ 113:Notifications.c **** *   +--------------------------+
+ 114:Notifications.c **** *
+ 115:Notifications.c **** * Parameters:  
+ 116:Notifications.c **** *   Previous flag value.
+ 117:Notifications.c **** *
+ 118:Notifications.c **** * Return:
+ 119:Notifications.c **** *   New flag value.
+ 120:Notifications.c **** *
+ 121:Notifications.c **** *******************************************************************************/
+ 122:Notifications.c **** uint8_t POT_Read_Value(uint8_t oldFlag)
+ 123:Notifications.c **** {
+ 123              		.loc 1 123 0
  124              		.cfi_startproc
  125              		@ args = 0, pretend = 0, frame = 0
  126              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -213,98 +270,98 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  132              		.cfi_offset 5, -8
  133              		.cfi_offset 14, -4
  134 0002 0546     		mov	r5, r0
-  70:Notifications.c ****     // Start and wait for ADC conversion
-  71:Notifications.c ****     ADC_DELSIG_StartConvert();
- 135              		.loc 1 71 0
+ 124:Notifications.c ****     // Start and wait for ADC conversion
+ 125:Notifications.c ****     ADC_DELSIG_StartConvert();
+ 135              		.loc 1 125 0
  136 0004 FFF7FEFF 		bl	ADC_DELSIG_StartConvert
  137              	.LVL9:
-  72:Notifications.c ****     ADC_DELSIG_IsEndConversion(ADC_DELSIG_WAIT_FOR_RESULT);
- 138              		.loc 1 72 0
+ 126:Notifications.c ****     ADC_DELSIG_IsEndConversion(ADC_DELSIG_WAIT_FOR_RESULT);
+ 138              		.loc 1 126 0
  139 0008 0020     		movs	r0, #0
  140 000a FFF7FEFF 		bl	ADC_DELSIG_IsEndConversion
  141              	.LVL10:
-  73:Notifications.c ****     
-  74:Notifications.c ****     // Read and stop ADC conversion
-  75:Notifications.c ****     int16_t raw = ADC_DELSIG_Read16();
- 142              		.loc 1 75 0
+ 127:Notifications.c ****     
+ 128:Notifications.c ****     // Read and stop ADC conversion
+ 129:Notifications.c ****     int16_t raw = ADC_DELSIG_Read16();
+ 142              		.loc 1 129 0
  143 000e FFF7FEFF 		bl	ADC_DELSIG_Read16
  144              	.LVL11:
  145 0012 0446     		mov	r4, r0
  146              	.LVL12:
-  76:Notifications.c ****     ADC_DELSIG_StopConvert();
- 147              		.loc 1 76 0
+ 130:Notifications.c ****     ADC_DELSIG_StopConvert();
+ 147              		.loc 1 130 0
  148 0014 FFF7FEFF 		bl	ADC_DELSIG_StopConvert
  149              	.LVL13:
-  77:Notifications.c ****     
-  78:Notifications.c ****     // Clip outside range values
-  79:Notifications.c ****     if (raw > 255) raw = 255;
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 5
-
-
- 150              		.loc 1 79 0
+ 131:Notifications.c ****     
+ 132:Notifications.c ****     // Clip outside range values
+ 133:Notifications.c ****     if (raw > 255) raw = 255;
+ 150              		.loc 1 133 0
  151 0018 FF2C     		cmp	r4, #255
  152 001a 02DC     		bgt	.L13
-  80:Notifications.c ****     else if (raw < 0) raw = 0;
- 153              		.loc 1 80 0
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 6
+
+
+ 134:Notifications.c ****     else if (raw < 0) raw = 0;
+ 153              		.loc 1 134 0
  154 001c 002C     		cmp	r4, #0
  155 001e 03DA     		bge	.L11
  156 0020 01E0     		b	.L14
  157              	.L13:
-  79:Notifications.c ****     else if (raw < 0) raw = 0;
- 158              		.loc 1 79 0
+ 133:Notifications.c ****     else if (raw < 0) raw = 0;
+ 158              		.loc 1 133 0
  159 0022 FF24     		movs	r4, #255
  160              	.LVL14:
  161 0024 00E0     		b	.L11
  162              	.LVL15:
  163              	.L14:
- 164              		.loc 1 80 0
+ 164              		.loc 1 134 0
  165 0026 0024     		movs	r4, #0
  166              	.LVL16:
  167              	.L11:
-  81:Notifications.c ****     
-  82:Notifications.c ****     // Convert to unsigned 8-bit integer
-  83:Notifications.c ****     uint8_t pot_val = (uint8_t)(raw & 0xFF);
- 168              		.loc 1 83 0
+ 135:Notifications.c ****     
+ 136:Notifications.c ****     // Convert to unsigned 8-bit integer
+ 137:Notifications.c ****     uint8_t pot_val = (uint8_t)(raw & 0xFF);
+ 168              		.loc 1 137 0
  169 0028 E4B2     		uxtb	r4, r4
  170              	.LVL17:
-  84:Notifications.c ****     
-  85:Notifications.c ****     // Set flag based on read value
-  86:Notifications.c ****     uint8_t flag;
-  87:Notifications.c ****     if (pot_val < (POT_MID_RANGE - POT_DEAD_BAND))
- 171              		.loc 1 87 0
+ 138:Notifications.c ****     
+ 139:Notifications.c ****     // Set flag based on read value
+ 140:Notifications.c ****     uint8_t flag;
+ 141:Notifications.c ****     if (pot_val < (POT_MID_RANGE - POT_DEAD_BAND))
+ 171              		.loc 1 141 0
  172 002a 3F2C     		cmp	r4, #63
  173 002c 03D9     		bls	.L15
-  88:Notifications.c ****     {
-  89:Notifications.c ****         flag = 0;
-  90:Notifications.c ****     }
-  91:Notifications.c ****     else if (pot_val > (POT_MID_RANGE + POT_DEAD_BAND))
- 174              		.loc 1 91 0
+ 142:Notifications.c ****     {
+ 143:Notifications.c ****         flag = 0;
+ 144:Notifications.c ****     }
+ 145:Notifications.c ****     else if (pot_val > (POT_MID_RANGE + POT_DEAD_BAND))
+ 174              		.loc 1 145 0
  175 002e BE2C     		cmp	r4, #190
  176 0030 02D9     		bls	.L12
-  92:Notifications.c ****     {
-  93:Notifications.c ****         flag = 1;
- 177              		.loc 1 93 0
+ 146:Notifications.c ****     {
+ 147:Notifications.c ****         flag = 1;
+ 177              		.loc 1 147 0
  178 0032 0125     		movs	r5, #1
  179 0034 00E0     		b	.L12
  180              	.L15:
-  89:Notifications.c ****     }
- 181              		.loc 1 89 0
+ 143:Notifications.c ****     }
+ 181              		.loc 1 143 0
  182 0036 0025     		movs	r5, #0
  183              	.L12:
  184              	.LVL18:
-  94:Notifications.c ****     }
-  95:Notifications.c ****     else
-  96:Notifications.c ****     {
-  97:Notifications.c ****         flag = oldFlag;
-  98:Notifications.c ****     }
-  99:Notifications.c ****     
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 6
+ 148:Notifications.c ****     }
+ 149:Notifications.c ****     else
+ 150:Notifications.c ****     {
+ 151:Notifications.c ****         flag = oldFlag;
+ 152:Notifications.c ****     }
+ 153:Notifications.c ****     
+ 154:Notifications.c ****     // Return new flag
+ 155:Notifications.c ****     return flag;
+ 156:Notifications.c **** }
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 7
 
 
- 100:Notifications.c ****     // Return new flag
- 101:Notifications.c ****     return flag;
- 102:Notifications.c **** }
- 185              		.loc 1 102 0
+ 185              		.loc 1 156 0
  186 0038 2846     		mov	r0, r5
  187 003a 38BD     		pop	{r3, r4, r5, pc}
  188              		.cfi_endproc
@@ -325,17 +382,17 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  203 0006 00000000 		.4byte	.Ldebug_abbrev0
  204 000a 04       		.byte	0x4
  205 000b 01       		.uleb128 0x1
- 206 000c B7000000 		.4byte	.LASF34
+ 206 000c 3B010000 		.4byte	.LASF34
  207 0010 0C       		.byte	0xc
- 208 0011 45010000 		.4byte	.LASF35
- 209 0015 54020000 		.4byte	.LASF36
+ 208 0011 C9010000 		.4byte	.LASF35
+ 209 0015 63000000 		.4byte	.LASF36
  210 0019 00000000 		.4byte	.Ldebug_ranges0+0
  211 001d 00000000 		.4byte	0
  212 0021 00000000 		.4byte	.Ldebug_line0
  213 0025 02       		.uleb128 0x2
  214 0026 01       		.byte	0x1
  215 0027 06       		.byte	0x6
- 216 0028 1C030000 		.4byte	.LASF0
+ 216 0028 04030000 		.4byte	.LASF0
  217 002c 03       		.uleb128 0x3
  218 002d 00000000 		.4byte	.LASF2
  219 0031 02       		.byte	0x2
@@ -344,7 +401,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  222 0037 02       		.uleb128 0x2
  223 0038 01       		.byte	0x1
  224 0039 08       		.byte	0x8
- 225 003a A9000000 		.4byte	.LASF1
+ 225 003a 2D010000 		.4byte	.LASF1
  226 003e 03       		.uleb128 0x3
  227 003f 19000000 		.4byte	.LASF3
  228 0043 02       		.byte	0x2
@@ -353,35 +410,35 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  231 0049 02       		.uleb128 0x2
  232 004a 02       		.byte	0x2
  233 004b 05       		.byte	0x5
- 234 004c 4A020000 		.4byte	.LASF4
+ 234 004c C8020000 		.4byte	.LASF4
  235 0050 02       		.uleb128 0x2
  236 0051 02       		.byte	0x2
  237 0052 07       		.byte	0x7
- 238 0053 67010000 		.4byte	.LASF5
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 7
-
-
+ 238 0053 EB010000 		.4byte	.LASF5
  239 0057 03       		.uleb128 0x3
  240 0058 42000000 		.4byte	.LASF6
  241 005c 02       		.byte	0x2
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 8
+
+
  242 005d 3F       		.byte	0x3f
  243 005e 62000000 		.4byte	0x62
  244 0062 02       		.uleb128 0x2
  245 0063 04       		.byte	0x4
  246 0064 05       		.byte	0x5
- 247 0065 F0020000 		.4byte	.LASF7
+ 247 0065 D8020000 		.4byte	.LASF7
  248 0069 02       		.uleb128 0x2
  249 006a 04       		.byte	0x4
  250 006b 07       		.byte	0x7
- 251 006c 55010000 		.4byte	.LASF8
+ 251 006c D9010000 		.4byte	.LASF8
  252 0070 02       		.uleb128 0x2
  253 0071 08       		.byte	0x8
  254 0072 05       		.byte	0x5
- 255 0073 2F020000 		.4byte	.LASF9
+ 255 0073 AD020000 		.4byte	.LASF9
  256 0077 02       		.uleb128 0x2
  257 0078 08       		.byte	0x8
  258 0079 07       		.byte	0x7
- 259 007a BA010000 		.4byte	.LASF10
+ 259 007a 3E020000 		.4byte	.LASF10
  260 007e 04       		.uleb128 0x4
  261 007f 04       		.byte	0x4
  262 0080 05       		.byte	0x5
@@ -389,54 +446,54 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  264 0085 02       		.uleb128 0x2
  265 0086 04       		.byte	0x4
  266 0087 07       		.byte	0x7
- 267 0088 AD010000 		.4byte	.LASF11
+ 267 0088 31020000 		.4byte	.LASF11
  268 008c 03       		.uleb128 0x3
- 269 008d D1010000 		.4byte	.LASF12
+ 269 008d 55020000 		.4byte	.LASF12
  270 0091 03       		.byte	0x3
  271 0092 18       		.byte	0x18
  272 0093 2C000000 		.4byte	0x2c
  273 0097 03       		.uleb128 0x3
- 274 0098 D9010000 		.4byte	.LASF13
+ 274 0098 5D020000 		.4byte	.LASF13
  275 009c 03       		.byte	0x3
  276 009d 20       		.byte	0x20
  277 009e 3E000000 		.4byte	0x3e
  278 00a2 03       		.uleb128 0x3
- 279 00a3 8B000000 		.4byte	.LASF14
+ 279 00a3 0F010000 		.4byte	.LASF14
  280 00a7 03       		.byte	0x3
  281 00a8 2C       		.byte	0x2c
  282 00a9 57000000 		.4byte	0x57
  283 00ad 05       		.uleb128 0x5
- 284 00ae E1010000 		.4byte	.LASF15
+ 284 00ae D2020000 		.4byte	.LASF15
  285 00b2 04       		.byte	0x4
  286 00b3 E401     		.2byte	0x1e4
  287 00b5 37000000 		.4byte	0x37
  288 00b9 02       		.uleb128 0x2
  289 00ba 04       		.byte	0x4
  290 00bb 04       		.byte	0x4
- 291 00bc 93000000 		.4byte	.LASF16
+ 291 00bc 17010000 		.4byte	.LASF16
  292 00c0 02       		.uleb128 0x2
  293 00c1 08       		.byte	0x8
  294 00c2 04       		.byte	0x4
- 295 00c3 87010000 		.4byte	.LASF17
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 8
-
-
+ 295 00c3 0B020000 		.4byte	.LASF17
  296 00c7 02       		.uleb128 0x2
  297 00c8 01       		.byte	0x1
  298 00c9 08       		.byte	0x8
- 299 00ca 45020000 		.4byte	.LASF18
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 9
+
+
+ 299 00ca C3020000 		.4byte	.LASF18
  300 00ce 02       		.uleb128 0x2
  301 00cf 08       		.byte	0x8
  302 00d0 04       		.byte	0x4
- 303 00d1 FF010000 		.4byte	.LASF19
+ 303 00d1 7D020000 		.4byte	.LASF19
  304 00d5 02       		.uleb128 0x2
  305 00d6 04       		.byte	0x4
  306 00d7 07       		.byte	0x7
- 307 00d8 0B020000 		.4byte	.LASF20
+ 307 00d8 89020000 		.4byte	.LASF20
  308 00dc 06       		.uleb128 0x6
- 309 00dd 7B000000 		.4byte	.LASF21
+ 309 00dd FF000000 		.4byte	.LASF21
  310 00e1 01       		.byte	0x1
- 311 00e2 13       		.byte	0x13
+ 311 00e2 21       		.byte	0x21
  312 00e3 00000000 		.4byte	.LFB63
  313 00e7 12000000 		.4byte	.LFE63-.LFB63
  314 00eb 01       		.uleb128 0x1
@@ -450,9 +507,9 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  322 00ff 10020000 		.4byte	0x210
  323 0103 00       		.byte	0
  324 0104 06       		.uleb128 0x6
- 325 0105 F9020000 		.4byte	.LASF22
+ 325 0105 E1020000 		.4byte	.LASF22
  326 0109 01       		.byte	0x1
- 327 010a 20       		.byte	0x20
+ 327 010a 3B       		.byte	0x3b
  328 010b 00000000 		.4byte	.LFB64
  329 010f 18000000 		.4byte	.LFE64-.LFB64
  330 0113 01       		.uleb128 0x1
@@ -476,14 +533,14 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  348 013a 00       		.byte	0
  349 013b 00       		.byte	0
  350 013c 06       		.uleb128 0x6
- 351 013d 0A030000 		.4byte	.LASF23
+ 351 013d F2020000 		.4byte	.LASF23
  352 0141 01       		.byte	0x1
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 9
-
-
- 353 0142 30       		.byte	0x30
+ 353 0142 58       		.byte	0x58
  354 0143 00000000 		.4byte	.LFB65
  355 0147 18000000 		.4byte	.LFE65-.LFB65
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 10
+
+
  356 014b 01       		.uleb128 0x1
  357 014c 9C       		.byte	0x9c
  358 014d 74010000 		.4byte	0x174
@@ -507,7 +564,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  376 0174 0A       		.uleb128 0xa
  377 0175 0A000000 		.4byte	.LASF37
  378 0179 01       		.byte	0x1
- 379 017a 44       		.byte	0x44
+ 379 017a 7A       		.byte	0x7a
  380 017b 8C000000 		.4byte	0x8c
  381 017f 00000000 		.4byte	.LFB66
  382 0183 3C000000 		.4byte	.LFE66-.LFB66
@@ -515,35 +572,35 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  384 0188 9C       		.byte	0x9c
  385 0189 F4010000 		.4byte	0x1f4
  386 018d 0B       		.uleb128 0xb
- 387 018e 3D020000 		.4byte	.LASF38
+ 387 018e BB020000 		.4byte	.LASF38
  388 0192 01       		.byte	0x1
- 389 0193 44       		.byte	0x44
+ 389 0193 7A       		.byte	0x7a
  390 0194 8C000000 		.4byte	0x8c
  391 0198 00000000 		.4byte	.LLST0
  392 019c 0C       		.uleb128 0xc
  393 019d 72617700 		.ascii	"raw\000"
  394 01a1 01       		.byte	0x1
- 395 01a2 4B       		.byte	0x4b
+ 395 01a2 81       		.byte	0x81
  396 01a3 97000000 		.4byte	0x97
  397 01a7 21000000 		.4byte	.LLST1
  398 01ab 0D       		.uleb128 0xd
- 399 01ac 8E010000 		.4byte	.LASF24
+ 399 01ac 12020000 		.4byte	.LASF24
  400 01b0 01       		.byte	0x1
- 401 01b1 53       		.byte	0x53
+ 401 01b1 89       		.byte	0x89
  402 01b2 8C000000 		.4byte	0x8c
  403 01b6 01       		.uleb128 0x1
  404 01b7 54       		.byte	0x54
  405 01b8 0D       		.uleb128 0xd
- 406 01b9 A8010000 		.4byte	.LASF25
+ 406 01b9 2C020000 		.4byte	.LASF25
  407 01bd 01       		.byte	0x1
- 408 01be 56       		.byte	0x56
+ 408 01be 8C       		.byte	0x8c
  409 01bf 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 10
-
-
  410 01c3 01       		.uleb128 0x1
  411 01c4 55       		.byte	0x55
  412 01c5 07       		.uleb128 0x7
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 11
+
+
  413 01c6 08000000 		.4byte	.LVL9
  414 01ca 31020000 		.4byte	0x231
  415 01ce 0E       		.uleb128 0xe
@@ -564,7 +621,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  430 01ef 52020000 		.4byte	0x252
  431 01f3 00       		.byte	0
  432 01f4 0F       		.uleb128 0xf
- 433 01f5 7A010000 		.4byte	.LASF39
+ 433 01f5 FE010000 		.4byte	.LASF39
  434 01f9 07       		.byte	0x7
  435 01fa 1207     		.2byte	0x712
  436 01fc 00020000 		.4byte	0x200
@@ -576,36 +633,36 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  442 020e 05       		.byte	0x5
  443 020f 9D       		.byte	0x9d
  444 0210 11       		.uleb128 0x11
- 445 0211 99000000 		.4byte	.LASF27
- 446 0215 99000000 		.4byte	.LASF27
+ 445 0211 1D010000 		.4byte	.LASF27
+ 446 0215 1D010000 		.4byte	.LASF27
  447 0219 05       		.byte	0x5
  448 021a 93       		.byte	0x93
  449 021b 11       		.uleb128 0x11
- 450 021c 28030000 		.4byte	.LASF28
- 451 0220 28030000 		.4byte	.LASF28
+ 450 021c 10030000 		.4byte	.LASF28
+ 451 0220 10030000 		.4byte	.LASF28
  452 0224 05       		.byte	0x5
  453 0225 92       		.byte	0x92
  454 0226 11       		.uleb128 0x11
- 455 0227 63000000 		.4byte	.LASF29
- 456 022b 63000000 		.4byte	.LASF29
+ 455 0227 E7000000 		.4byte	.LASF29
+ 456 022b E7000000 		.4byte	.LASF29
  457 022f 05       		.byte	0x5
  458 0230 C3       		.byte	0xc3
  459 0231 11       		.uleb128 0x11
- 460 0232 E7010000 		.4byte	.LASF30
- 461 0236 E7010000 		.4byte	.LASF30
+ 460 0232 65020000 		.4byte	.LASF30
+ 461 0236 65020000 		.4byte	.LASF30
  462 023a 06       		.byte	0x6
  463 023b 3D       		.byte	0x3d
  464 023c 11       		.uleb128 0x11
- 465 023d 14020000 		.4byte	.LASF31
- 466 0241 14020000 		.4byte	.LASF31
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 11
-
-
+ 465 023d 92020000 		.4byte	.LASF31
+ 466 0241 92020000 		.4byte	.LASF31
  467 0245 06       		.byte	0x6
  468 0246 3F       		.byte	0x3f
  469 0247 11       		.uleb128 0x11
- 470 0248 96010000 		.4byte	.LASF32
- 471 024c 96010000 		.4byte	.LASF32
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 12
+
+
+ 470 0248 1A020000 		.4byte	.LASF32
+ 471 024c 1A020000 		.4byte	.LASF32
  472 0250 06       		.byte	0x6
  473 0251 55       		.byte	0x55
  474 0252 11       		.uleb128 0x11
@@ -658,12 +715,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  521 0027 49       		.uleb128 0x49
  522 0028 13       		.uleb128 0x13
  523 0029 00       		.byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 12
-
-
  524 002a 00       		.byte	0
  525 002b 04       		.uleb128 0x4
  526 002c 24       		.uleb128 0x24
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 13
+
+
  527 002d 00       		.byte	0
  528 002e 0B       		.uleb128 0xb
  529 002f 0B       		.uleb128 0xb
@@ -718,12 +775,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  578 0063 01       		.uleb128 0x1
  579 0064 31       		.uleb128 0x31
  580 0065 13       		.uleb128 0x13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 13
-
-
  581 0066 00       		.byte	0
  582 0067 00       		.byte	0
  583 0068 08       		.uleb128 0x8
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 14
+
+
  584 0069 898201   		.uleb128 0x4109
  585 006c 01       		.byte	0x1
  586 006d 11       		.uleb128 0x11
@@ -778,12 +835,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  635 00a2 3B       		.uleb128 0x3b
  636 00a3 0B       		.uleb128 0xb
  637 00a4 49       		.uleb128 0x49
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 14
-
-
  638 00a5 13       		.uleb128 0x13
  639 00a6 02       		.uleb128 0x2
  640 00a7 17       		.uleb128 0x17
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 15
+
+
  641 00a8 00       		.byte	0
  642 00a9 00       		.byte	0
  643 00aa 0C       		.uleb128 0xc
@@ -838,12 +895,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  692 00dd 05       		.uleb128 0x5
  693 00de 49       		.uleb128 0x49
  694 00df 13       		.uleb128 0x13
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 15
-
-
  695 00e0 3F       		.uleb128 0x3f
  696 00e1 19       		.uleb128 0x19
  697 00e2 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 16
+
+
  698 00e3 19       		.uleb128 0x19
  699 00e4 00       		.byte	0
  700 00e5 00       		.byte	0
@@ -898,12 +955,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  749 0034 0100     		.2byte	0x1
  750 0036 54       		.byte	0x54
  751 0037 00000000 		.4byte	0
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 16
-
-
  752 003b 00000000 		.4byte	0
  753              		.section	.debug_aranges,"",%progbits
  754 0000 34000000 		.4byte	0x34
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 17
+
+
  755 0004 0200     		.2byte	0x2
  756 0006 00000000 		.4byte	.Ldebug_info0
  757 000a 04       		.byte	0x4
@@ -934,7 +991,7 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  782 0024 00000000 		.4byte	0
  783              		.section	.debug_line,"",%progbits
  784              	.Ldebug_line0:
- 785 0000 D0010000 		.section	.debug_str,"MS",%progbits,1
+ 785 0000 D1010000 		.section	.debug_str,"MS",%progbits,1
  785      02007501 
  785      00000201 
  785      FB0E0D00 
@@ -958,12 +1015,12 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  793      46595F52 
  793      65616443 
  793      6F6E7472 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 17
-
-
  794              	.LASF6:
  795 0042 5F5F696E 		.ascii	"__int32_t\000"
  795      7433325F 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 18
+
+
  795      7400
  796              	.LASF33:
  797 004c 4144435F 		.ascii	"ADC_DELSIG_StopConvert\000"
@@ -971,193 +1028,190 @@ ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 1
  797      49475F53 
  797      746F7043 
  797      6F6E7665 
- 798              	.LASF29:
- 799 0063 50574D5F 		.ascii	"PWM_NOTIFY_WriteCompare\000"
- 799      4E4F5449 
- 799      46595F57 
- 799      72697465 
- 799      436F6D70 
- 800              	.LASF21:
- 801 007b 4C45445F 		.ascii	"LED_Notify_Stop\000"
- 801      4E6F7469 
- 801      66795F53 
- 801      746F7000 
- 802              	.LASF14:
- 803 008b 696E7433 		.ascii	"int32_t\000"
- 803      325F7400 
- 804              	.LASF16:
- 805 0093 666C6F61 		.ascii	"float\000"
- 805      7400
- 806              	.LASF27:
- 807 0099 50574D5F 		.ascii	"PWM_NOTIFY_Stop\000"
- 807      4E4F5449 
- 807      46595F53 
- 807      746F7000 
- 808              	.LASF1:
- 809 00a9 756E7369 		.ascii	"unsigned char\000"
- 809      676E6564 
- 809      20636861 
- 809      7200
- 810              	.LASF34:
- 811 00b7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 811      43313120 
- 811      352E342E 
- 811      31203230 
- 811      31363036 
- 812 00ea 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 812      20726576 
- 812      6973696F 
- 812      6E203233 
- 812      37373135 
- 813 011d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 813      66756E63 
- 813      74696F6E 
- 813      2D736563 
- 813      74696F6E 
- 814              	.LASF35:
- 815 0145 4E6F7469 		.ascii	"Notifications.c\000"
- 815      66696361 
- 815      74696F6E 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 18
+ 798              	.LASF36:
+ 799 0063 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
+ 799      73657273 
+ 799      5C4D616E 
+ 799      755C4465 
+ 799      736B746F 
+ 800 0091 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
+ 800      31393230 
+ 800      5F49495F 
+ 800      48575F46 
+ 800      494E414C 
+ 801 00c2 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
+ 801      5F46494E 
+ 801      414C5F43 
+ 801      41525A41 
+ 801      4E494741 
+ 802              	.LASF29:
+ 803 00e7 50574D5F 		.ascii	"PWM_NOTIFY_WriteCompare\000"
+ 803      4E4F5449 
+ 803      46595F57 
+ 803      72697465 
+ 803      436F6D70 
+ 804              	.LASF21:
+ 805 00ff 4C45445F 		.ascii	"LED_Notify_Stop\000"
+ 805      4E6F7469 
+ 805      66795F53 
+ 805      746F7000 
+ 806              	.LASF14:
+ 807 010f 696E7433 		.ascii	"int32_t\000"
+ 807      325F7400 
+ 808              	.LASF16:
+ 809 0117 666C6F61 		.ascii	"float\000"
+ 809      7400
+ 810              	.LASF27:
+ 811 011d 50574D5F 		.ascii	"PWM_NOTIFY_Stop\000"
+ 811      4E4F5449 
+ 811      46595F53 
+ 811      746F7000 
+ 812              	.LASF1:
+ 813 012d 756E7369 		.ascii	"unsigned char\000"
+ 813      676E6564 
+ 813      20636861 
+ 813      7200
+ 814              	.LASF34:
+ 815 013b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 815      43313120 
+ 815      352E342E 
+ 815      31203230 
+ 815      31363036 
+ 816 016e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 19
 
 
- 815      732E6300 
- 816              	.LASF8:
- 817 0155 6C6F6E67 		.ascii	"long unsigned int\000"
- 817      20756E73 
- 817      69676E65 
- 817      6420696E 
- 817      7400
- 818              	.LASF5:
- 819 0167 73686F72 		.ascii	"short unsigned int\000"
- 819      7420756E 
- 819      7369676E 
- 819      65642069 
- 819      6E7400
- 820              	.LASF39:
- 821 017a 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 821      52784275 
- 821      66666572 
- 821      00
- 822              	.LASF17:
- 823 0187 646F7562 		.ascii	"double\000"
- 823      6C6500
- 824              	.LASF24:
- 825 018e 706F745F 		.ascii	"pot_val\000"
- 825      76616C00 
- 826              	.LASF32:
- 827 0196 4144435F 		.ascii	"ADC_DELSIG_Read16\000"
- 827      44454C53 
- 827      49475F52 
- 827      65616431 
- 827      3600
- 828              	.LASF25:
- 829 01a8 666C6167 		.ascii	"flag\000"
- 829      00
- 830              	.LASF11:
- 831 01ad 756E7369 		.ascii	"unsigned int\000"
- 831      676E6564 
- 831      20696E74 
- 831      00
- 832              	.LASF10:
- 833 01ba 6C6F6E67 		.ascii	"long long unsigned int\000"
- 833      206C6F6E 
- 833      6720756E 
- 833      7369676E 
- 833      65642069 
- 834              	.LASF12:
- 835 01d1 75696E74 		.ascii	"uint8_t\000"
- 835      385F7400 
- 836              	.LASF13:
- 837 01d9 696E7431 		.ascii	"int16_t\000"
- 837      365F7400 
- 838              	.LASF15:
- 839 01e1 75696E74 		.ascii	"uint8\000"
- 839      3800
- 840              	.LASF30:
- 841 01e7 4144435F 		.ascii	"ADC_DELSIG_StartConvert\000"
- 841      44454C53 
- 841      49475F53 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 19
+ 816      20726576 
+ 816      6973696F 
+ 816      6E203233 
+ 816      37373135 
+ 817 01a1 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 817      66756E63 
+ 817      74696F6E 
+ 817      2D736563 
+ 817      74696F6E 
+ 818              	.LASF35:
+ 819 01c9 4E6F7469 		.ascii	"Notifications.c\000"
+ 819      66696361 
+ 819      74696F6E 
+ 819      732E6300 
+ 820              	.LASF8:
+ 821 01d9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 821      20756E73 
+ 821      69676E65 
+ 821      6420696E 
+ 821      7400
+ 822              	.LASF5:
+ 823 01eb 73686F72 		.ascii	"short unsigned int\000"
+ 823      7420756E 
+ 823      7369676E 
+ 823      65642069 
+ 823      6E7400
+ 824              	.LASF39:
+ 825 01fe 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 825      52784275 
+ 825      66666572 
+ 825      00
+ 826              	.LASF17:
+ 827 020b 646F7562 		.ascii	"double\000"
+ 827      6C6500
+ 828              	.LASF24:
+ 829 0212 706F745F 		.ascii	"pot_val\000"
+ 829      76616C00 
+ 830              	.LASF32:
+ 831 021a 4144435F 		.ascii	"ADC_DELSIG_Read16\000"
+ 831      44454C53 
+ 831      49475F52 
+ 831      65616431 
+ 831      3600
+ 832              	.LASF25:
+ 833 022c 666C6167 		.ascii	"flag\000"
+ 833      00
+ 834              	.LASF11:
+ 835 0231 756E7369 		.ascii	"unsigned int\000"
+ 835      676E6564 
+ 835      20696E74 
+ 835      00
+ 836              	.LASF10:
+ 837 023e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 837      206C6F6E 
+ 837      6720756E 
+ 837      7369676E 
+ 837      65642069 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 20
 
 
- 841      74617274 
- 841      436F6E76 
- 842              	.LASF19:
- 843 01ff 6C6F6E67 		.ascii	"long double\000"
- 843      20646F75 
- 843      626C6500 
- 844              	.LASF20:
- 845 020b 73697A65 		.ascii	"sizetype\000"
- 845      74797065 
- 845      00
- 846              	.LASF31:
- 847 0214 4144435F 		.ascii	"ADC_DELSIG_IsEndConversion\000"
- 847      44454C53 
- 847      49475F49 
- 847      73456E64 
- 847      436F6E76 
- 848              	.LASF9:
- 849 022f 6C6F6E67 		.ascii	"long long int\000"
- 849      206C6F6E 
- 849      6720696E 
- 849      7400
- 850              	.LASF38:
- 851 023d 6F6C6446 		.ascii	"oldFlag\000"
- 851      6C616700 
- 852              	.LASF18:
- 853 0245 63686172 		.ascii	"char\000"
- 853      00
- 854              	.LASF4:
- 855 024a 73686F72 		.ascii	"short int\000"
- 855      7420696E 
- 855      7400
- 856              	.LASF36:
- 857 0254 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
- 857      73657273 
- 857      5C4C6F72 
- 857      795C4465 
- 857      736B746F 
- 858 0282 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
- 858      65735C50 
- 858      536F432D 
- 858      46696E61 
- 858      6C2D5072 
- 859 02b3 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
- 859      415F4755 
- 859      414C4E49 
- 859      4552415C 
- 859      41593139 
- 860 02e5 49455241 		.ascii	"IERA.cydsn\000"
- 860      2E637964 
- 860      736E00
- 861              	.LASF7:
- 862 02f0 6C6F6E67 		.ascii	"long int\000"
- 862      20696E74 
- 862      00
- 863              	.LASF22:
- 864 02f9 4C45445F 		.ascii	"LED_Notify_Start\000"
- 864      4E6F7469 
-ARM GAS  C:\Users\Lory\AppData\Local\Temp\cc8Q8vZp.s 			page 20
+ 838              	.LASF12:
+ 839 0255 75696E74 		.ascii	"uint8_t\000"
+ 839      385F7400 
+ 840              	.LASF13:
+ 841 025d 696E7431 		.ascii	"int16_t\000"
+ 841      365F7400 
+ 842              	.LASF30:
+ 843 0265 4144435F 		.ascii	"ADC_DELSIG_StartConvert\000"
+ 843      44454C53 
+ 843      49475F53 
+ 843      74617274 
+ 843      436F6E76 
+ 844              	.LASF19:
+ 845 027d 6C6F6E67 		.ascii	"long double\000"
+ 845      20646F75 
+ 845      626C6500 
+ 846              	.LASF20:
+ 847 0289 73697A65 		.ascii	"sizetype\000"
+ 847      74797065 
+ 847      00
+ 848              	.LASF31:
+ 849 0292 4144435F 		.ascii	"ADC_DELSIG_IsEndConversion\000"
+ 849      44454C53 
+ 849      49475F49 
+ 849      73456E64 
+ 849      436F6E76 
+ 850              	.LASF9:
+ 851 02ad 6C6F6E67 		.ascii	"long long int\000"
+ 851      206C6F6E 
+ 851      6720696E 
+ 851      7400
+ 852              	.LASF38:
+ 853 02bb 6F6C6446 		.ascii	"oldFlag\000"
+ 853      6C616700 
+ 854              	.LASF18:
+ 855 02c3 63686172 		.ascii	"char\000"
+ 855      00
+ 856              	.LASF4:
+ 857 02c8 73686F72 		.ascii	"short int\000"
+ 857      7420696E 
+ 857      7400
+ 858              	.LASF15:
+ 859 02d2 75696E74 		.ascii	"uint8\000"
+ 859      3800
+ 860              	.LASF7:
+ 861 02d8 6C6F6E67 		.ascii	"long int\000"
+ 861      20696E74 
+ 861      00
+ 862              	.LASF22:
+ 863 02e1 4C45445F 		.ascii	"LED_Notify_Start\000"
+ 863      4E6F7469 
+ 863      66795F53 
+ 863      74617274 
+ 863      00
+ 864              	.LASF23:
+ 865 02f2 4C45445F 		.ascii	"LED_Notify_Config\000"
+ 865      4E6F7469 
+ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccrj2qDg.s 			page 21
 
 
- 864      66795F53 
- 864      74617274 
- 864      00
- 865              	.LASF23:
- 866 030a 4C45445F 		.ascii	"LED_Notify_Config\000"
- 866      4E6F7469 
- 866      66795F43 
- 866      6F6E6669 
- 866      6700
- 867              	.LASF0:
- 868 031c 7369676E 		.ascii	"signed char\000"
- 868      65642063 
- 868      68617200 
- 869              	.LASF28:
- 870 0328 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
- 870      4E4F5449 
- 870      46595F53 
- 870      74617274 
- 870      00
- 871              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 865      66795F43 
+ 865      6F6E6669 
+ 865      6700
+ 866              	.LASF0:
+ 867 0304 7369676E 		.ascii	"signed char\000"
+ 867      65642063 
+ 867      68617200 
+ 868              	.LASF28:
+ 869 0310 50574D5F 		.ascii	"PWM_NOTIFY_Start\000"
+ 869      4E4F5449 
+ 869      46595F53 
+ 869      74617274 
+ 869      00
+ 870              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

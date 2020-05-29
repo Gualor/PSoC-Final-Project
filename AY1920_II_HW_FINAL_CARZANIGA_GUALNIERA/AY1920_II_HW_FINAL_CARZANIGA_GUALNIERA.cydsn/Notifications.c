@@ -1,21 +1,35 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * This file contains utility functions
+ * used for visually notify the user of the
+ * internal state of the firmware by driving
+ * the PSoC on-board LED, as well as taking 
+ * user inputs throught a potentiometer to
+ * set a logical flag used inside the main.
  *
  * ========================================
 */
 
-/* Include dependencies. */
+
+/* Project dependencies. */
 #include "Notifications.h"
 
-/*
- * Notify stop mode by turning on-board LED off.
- */
+
+/*******************************************************************************
+* Function Name: LED_Notify_Stop
+********************************************************************************
+*
+* Summary:
+*   Notify visually when internal state is set to stop mode by turning PSoC 
+*   on-board LED off.
+*
+* Parameters:  
+*   None.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LED_Notify_Stop(void)
 {
     // If LED PWM is enabled
@@ -26,9 +40,22 @@ void LED_Notify_Stop(void)
     }
 }
 
-/*
- * Notify start mode by turning on-board LED on.
- */
+
+/*******************************************************************************
+* Function Name: LED_Notify_Start
+********************************************************************************
+*
+* Summary:
+*   Notify visually when internal state is set to stop mode by turning PSoC 
+*   on-board LED on.
+*
+* Parameters:  
+*   None.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LED_Notify_Start(void)
 {
     // If LED PWM is not enabled
@@ -42,9 +69,22 @@ void LED_Notify_Start(void)
     PWM_NOTIFY_WriteCompare(255);
 }
 
-/*
- * Notify config mode by blinking on-board LED.
- */
+
+/*******************************************************************************
+* Function Name: LED_Notify_Config
+********************************************************************************
+*
+* Summary:
+*   Notify visually when internal state is set to stop mode by making PSoC 
+*   on-board LED blink at 1Hz frequency.
+*
+* Parameters:  
+*   None.
+*
+* Return:
+*   None.
+*
+*******************************************************************************/
 void LED_Notify_Config(void)
 {
     // If LED PWM is not enabled
@@ -58,13 +98,27 @@ void LED_Notify_Config(void)
     PWM_NOTIFY_WriteCompare(127);
 }
 
-/*
- * Read user input value through potentiometer sampling
- * to set a logic flag:
- * 0%->24%:     0
- * 25%->50%:    don't change
- * 51&->100%:   1
- */
+
+/*******************************************************************************
+* Function Name: POT_Read_Value
+********************************************************************************
+*
+* Summary:
+*   Read user input potentiometer value from ADC delta sigma and process it to 
+*   be either 1 or 0 according to the folliwing potentiomenter range mapping:
+*   +--------------------------+
+*   | 0%->24%   :            0 |
+*   | 25%->50%  : don't change |
+*   | 51%->100% :            1 |
+*   +--------------------------+
+*
+* Parameters:  
+*   Previous flag value.
+*
+* Return:
+*   New flag value.
+*
+*******************************************************************************/
 uint8_t POT_Read_Value(uint8_t oldFlag)
 {
     // Start and wait for ADC conversion
