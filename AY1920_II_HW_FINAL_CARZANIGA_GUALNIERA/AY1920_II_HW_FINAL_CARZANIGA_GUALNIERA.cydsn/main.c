@@ -76,39 +76,37 @@ int main(void)
     // Enable UART communication
     UART_Start();
     
-    // Enable all SPI Master
+    // Enable all SPI modules
     SPIM_IMU_Start();
     SPIM_EEPROM_Start();
     CyDelay(10);
-    
-    // Setup all LIS3DH registers
-    IMU_Init();
-    
-    // Enable external ISR from IMU
-    ISR_IMU_StartEx(CUSTOM_ISR_IMU);
-    
-    // Enable configuration mode ISR
-    ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
-    
-    // Enable start/stop mode ISR
-    ISR_START_StartEx(CUSTOM_ISR_START);
 
-    // Initialize timers 
+    // Initialize all timers 
     BUTTON_TIMER_Start();
     CLICK_TIMER_Start();
     MAIN_TIMER_Start();
     
     // Initialize ADC
     ADC_DELSIG_Start();
+ 
+    // Setup all LIS3DH registers
+    IMU_Init();
     
     // Initliazide RGB LED
     RGB_Init();
+    
+    // Enable all ISRs
+    ISR_CONFIG_StartEx(CUSTOM_ISR_CONFIG);
+    ISR_START_StartEx(CUSTOM_ISR_START);
+    ISR_IMU_StartEx(CUSTOM_ISR_IMU);
+    ISR_RX_StartEx(CUSTOM_ISR_RX);
 
     // End of setup
     CyDelay(10);
     
     // Initialize button state
     button_state = STOP_MODE;
+    EEPROM_saveStartStopState(0);
     
     // Initialize send flag
     send_flag = 0;
@@ -118,7 +116,7 @@ int main(void)
     IMU_over_threshold_flag = 0;
 
     // Uncomment this to erase EEPROM memory
-    EEPROM_resetMemory();
+    //EEPROM_resetMemory();
     
     // Main loop
     for(;;)
@@ -197,14 +195,6 @@ int main(void)
                 
                 // Store message inside EEPROM
                 EEPROM_storeLogMessage(log_message);
-                
-                /* Uncomment this to receive generated logs
-                // Get page of first log
-                log_t log_msg = EEPROM_retrieveLogMessage(log_id, i);
-                
-                // Send message via uart
-                LOG_sendData(&log_msg);
-                */
             }
             
             // Reset the FIFO to enable new ISR occurrences

@@ -1,6 +1,6 @@
 // ======================================================================
 // AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v generated from TopDesign.cysch
-// 05/29/2020 at 16:46
+// 05/30/2020 at 10:58
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -917,7 +917,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_UART_v2_50\B_UART_v2_50.v"
 `endif
 
-// UART_v2_50(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=0, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=false, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART, CY_INSTANCE_SHORT_NAME=UART, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=UART, )
+// UART_v2_50(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, Enable_RX=1, Enable_RXIntInterrupt=0, Enable_TX=1, Enable_TXIntInterrupt=0, EnableHWAddress=0, EnIntRXInterrupt=false, EnIntTXInterrupt=false, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=true, InternalClock=true, InternalClockToleranceMinus=3.93736842105263, InternalClockTolerancePlus=3.93736842105263, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=false, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=4, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=4, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_API_CALLBACK_HEADER_INCLUDE=#include "cyapicallbacks.h", CY_COMMENT=, CY_COMPONENT_NAME=UART_v2_50, CY_CONFIG_TITLE=UART, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=UART, CY_INSTANCE_SHORT_NAME=UART, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=50, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.3, INSTANCE_NAME=UART, )
 module UART_v2_50_7 (
     cts_n,
     tx,
@@ -1008,7 +1008,7 @@ module UART_v2_50_7 (
     defparam BUART.ParityTypeSw = 0;
     defparam BUART.RXAddressMode = 0;
     defparam BUART.RXEnable = 1;
-    defparam BUART.RXStatusIntEnable = 0;
+    defparam BUART.RXStatusIntEnable = 1;
     defparam BUART.TXBitClkGenDP = 1;
     defparam BUART.TXEnable = 1;
     defparam BUART.Use23Polling = 1;
@@ -1346,7 +1346,6 @@ module top ;
           wire  Net_29043;
           wire  Net_29042;
           wire  Net_29041;
-          wire  Net_29040;
           wire  Net_29039;
           wire  Net_29038;
           wire  Net_29037;
@@ -1387,112 +1386,112 @@ module top ;
           wire  Net_28605;
           wire  Net_28604;
           wire  Net_19;
-    electrical  Net_29281;
-    electrical  Net_29280;
-    electrical  Net_29279;
-    electrical  Net_29278;
-    electrical  Net_29277;
-    electrical [1:0] Net_29276;
-    electrical  Net_29275;
-    electrical  Net_29274;
-    electrical  Net_29273;
-    electrical  Net_29272;
-    electrical  Net_29271;
-    electrical  Net_29270;
-    electrical  Net_29269;
-    electrical  Net_29268;
-    electrical  Net_29267;
-    electrical  Net_29266;
-    electrical  Net_29265;
-    electrical  Net_29264;
-    electrical  Net_29263;
-    electrical  Net_29262;
-    electrical  Net_29261;
-    electrical  Net_29260;
-    electrical  Net_29259;
-    electrical  Net_29258;
-    electrical  Net_29257;
-    electrical  Net_29256;
-    electrical  Net_29255;
-    electrical  Net_29254;
-    electrical  Net_29253;
-    electrical  Net_29252;
-    electrical  Net_29251;
-    electrical  Net_29250;
-    electrical  Net_29249;
-    electrical  Net_29248;
-    electrical  Net_29247;
-    electrical  Net_29246;
-    electrical  Net_29245;
-    electrical  Net_29244;
-    electrical  Net_29243;
-    electrical  Net_29242;
-    electrical  Net_29241;
-    electrical  Net_29240;
-    electrical  Net_29239;
-    electrical  Net_29238;
-    electrical  Net_29237;
-    electrical  Net_29236;
-    electrical  Net_29235;
+    electrical  Net_29466;
+    electrical  Net_29465;
+    electrical  Net_29464;
+    electrical  Net_29463;
+    electrical  Net_29462;
+    electrical [1:0] Net_29461;
+    electrical  Net_29460;
+    electrical  Net_29459;
+    electrical  Net_29458;
+    electrical  Net_29457;
+    electrical  Net_29456;
+    electrical  Net_29455;
+    electrical  Net_29454;
+    electrical  Net_29453;
+    electrical  Net_29452;
+    electrical  Net_29451;
+    electrical  Net_29450;
+    electrical  Net_29449;
+    electrical  Net_29448;
+    electrical  Net_29447;
+    electrical  Net_29446;
+    electrical  Net_29445;
+    electrical  Net_29444;
+    electrical  Net_29443;
+    electrical  Net_29442;
+    electrical  Net_29441;
+    electrical  Net_29440;
+    electrical  Net_29439;
+    electrical  Net_29438;
+    electrical  Net_29437;
+    electrical  Net_29436;
+    electrical  Net_29435;
+    electrical  Net_29434;
+    electrical  Net_29433;
+    electrical  Net_29432;
+    electrical  Net_29431;
+    electrical  Net_29430;
+    electrical  Net_29429;
+    electrical  Net_29428;
+    electrical  Net_29427;
+    electrical  Net_29426;
+    electrical  Net_29425;
+    electrical  Net_29424;
+    electrical  Net_29423;
+    electrical  Net_29422;
+    electrical  Net_29421;
+    electrical  Net_29420;
           wire  Net_28372;
           wire  Net_28371;
           wire  Net_28370;
           wire  Net_28369;
           wire  Net_28368;
           wire  Net_28367;
-    electrical  Net_29234;
-    electrical  Net_29233;
-    electrical  Net_29232;
-    electrical  Net_29231;
-    electrical  Net_29230;
-    electrical [1:0] Net_29229;
-    electrical  Net_29228;
-    electrical  Net_29227;
-    electrical  Net_29226;
-    electrical  Net_29225;
-    electrical  Net_29224;
-    electrical  Net_29223;
-    electrical  Net_29222;
-    electrical  Net_29221;
-    electrical  Net_29220;
-    electrical  Net_29219;
-    electrical  Net_29218;
-    electrical  Net_29217;
-    electrical  Net_29216;
-    electrical  Net_29215;
-    electrical  Net_29214;
-    electrical  Net_29213;
-    electrical  Net_29212;
-    electrical  Net_29211;
-    electrical  Net_29210;
-    electrical  Net_29209;
-    electrical  Net_29208;
-    electrical  Net_29207;
-    electrical  Net_29206;
-    electrical  Net_29205;
-    electrical  Net_29204;
-    electrical  Net_29203;
-    electrical  Net_29202;
-    electrical  Net_29201;
-    electrical  Net_29200;
-    electrical  Net_29199;
-    electrical  Net_29198;
-    electrical  Net_29197;
-    electrical  Net_29196;
-    electrical  Net_29195;
-    electrical  Net_29194;
-    electrical  Net_29193;
-    electrical  Net_29192;
-    electrical  Net_29191;
-    electrical  Net_29190;
-    electrical  Net_29189;
-    electrical  Net_29188;
-    electrical  Net_29187;
-    electrical  Net_29186;
-    electrical  Net_29185;
-    electrical  Net_29184;
-    electrical  Net_29183;
-    electrical  Net_29182;
+    electrical  Net_29419;
+    electrical  Net_29418;
+    electrical  Net_29417;
+    electrical  Net_29416;
+    electrical  Net_29415;
+    electrical [1:0] Net_29414;
+    electrical  Net_29413;
+    electrical  Net_29412;
+    electrical  Net_29411;
+    electrical  Net_29410;
+    electrical  Net_29409;
+    electrical  Net_29408;
+    electrical  Net_29407;
+    electrical  Net_29406;
+    electrical  Net_29405;
+    electrical  Net_29404;
+    electrical  Net_29403;
+    electrical  Net_29402;
+    electrical  Net_29401;
+    electrical  Net_29400;
+    electrical  Net_29399;
+    electrical  Net_29398;
+    electrical  Net_29397;
+    electrical  Net_29396;
+    electrical  Net_29395;
+    electrical  Net_29394;
+    electrical  Net_29393;
+    electrical  Net_29392;
+    electrical  Net_29391;
+    electrical  Net_29390;
+    electrical  Net_29389;
+    electrical  Net_29388;
+    electrical  Net_29387;
+    electrical  Net_29386;
+    electrical  Net_29385;
+    electrical  Net_29384;
+    electrical  Net_29383;
+    electrical  Net_29382;
+    electrical  Net_29381;
+    electrical  Net_29380;
+    electrical  Net_29379;
+    electrical  Net_29378;
+    electrical  Net_29377;
+    electrical  Net_29376;
+    electrical  Net_29375;
+    electrical  Net_29374;
+    electrical  Net_29373;
+    electrical  Net_29372;
+    electrical  Net_29371;
+    electrical  Net_29370;
+    electrical  Net_29369;
+    electrical  Net_29368;
+    electrical  Net_29367;
           wire  Net_28075;
           wire  Net_28074;
           wire  Net_28073;
@@ -1515,64 +1514,67 @@ module top ;
           wire  Net_18327;
           wire  Net_18326;
           wire  Net_19075;
-    electrical  Net_29181;
-    electrical  Net_29180;
-    electrical  Net_29179;
-    electrical  Net_29178;
-    electrical  Net_29177;
-    electrical [1:0] Net_29176;
-    electrical  Net_29175;
-    electrical  Net_29174;
-    electrical  Net_29173;
-    electrical  Net_29172;
-    electrical  Net_29171;
-    electrical  Net_29170;
-    electrical  Net_29169;
-    electrical  Net_29168;
-    electrical  Net_29167;
-    electrical  Net_29166;
-    electrical  Net_29165;
-    electrical  Net_29164;
-    electrical  Net_29163;
-    electrical  Net_29162;
-    electrical  Net_29161;
-    electrical  Net_29160;
-    electrical  Net_29159;
-    electrical  Net_29158;
-    electrical  Net_29157;
-    electrical  Net_29156;
-    electrical  Net_29155;
-    electrical  Net_29154;
-    electrical  Net_29153;
-    electrical  Net_29152;
-    electrical  Net_29151;
-    electrical  Net_29150;
-    electrical  Net_29149;
-    electrical  Net_29148;
-    electrical  Net_29147;
-    electrical  Net_29146;
-    electrical  Net_29145;
-    electrical  Net_29144;
-    electrical  Net_29143;
-    electrical  Net_29142;
-    electrical  Net_29141;
-    electrical  Net_29140;
-    electrical  Net_29139;
-    electrical  Net_29138;
-    electrical  Net_29137;
-    electrical  Net_29136;
-    electrical  Net_29135;
-    electrical  Net_29134;
-    electrical  Net_29133;
-    electrical  Net_29132;
-    electrical  Net_29131;
-    electrical  Net_29130;
-    electrical  Net_29129;
-    electrical  Net_29128;
-    electrical  Net_29127;
-    electrical  Net_29126;
-    electrical  Net_29125;
+    electrical  Net_29366;
+    electrical  Net_29365;
+    electrical  Net_29364;
+    electrical  Net_29363;
+    electrical  Net_29362;
+    electrical [1:0] Net_29361;
+    electrical  Net_29360;
+    electrical  Net_29359;
+    electrical  Net_29358;
+    electrical  Net_29357;
+    electrical  Net_29356;
+    electrical  Net_29355;
+    electrical  Net_29354;
+    electrical  Net_29353;
+    electrical  Net_29352;
+    electrical  Net_29351;
+    electrical  Net_29350;
+    electrical  Net_29349;
+    electrical  Net_29348;
+    electrical  Net_29347;
+    electrical  Net_29346;
+    electrical  Net_29345;
+    electrical  Net_29344;
+    electrical  Net_29343;
+    electrical  Net_29342;
+    electrical  Net_29341;
+    electrical  Net_29340;
+    electrical  Net_29339;
+    electrical  Net_29338;
+    electrical  Net_29337;
+    electrical  Net_29336;
+    electrical  Net_29335;
+    electrical  Net_29334;
+    electrical  Net_29333;
+    electrical  Net_29332;
+    electrical  Net_29331;
+    electrical  Net_29330;
+    electrical  Net_29329;
+    electrical  Net_29328;
+    electrical  Net_29327;
+    electrical  Net_29326;
+    electrical  Net_29325;
+    electrical  Net_29324;
+    electrical  Net_29323;
+    electrical  Net_29322;
+    electrical  Net_29321;
+    electrical  Net_29320;
+    electrical  Net_29319;
+    electrical  Net_29318;
+    electrical  Net_29317;
+    electrical  Net_29316;
+    electrical  Net_29315;
+    electrical  Net_29314;
+    electrical  Net_29313;
+    electrical  Net_29312;
+    electrical  Net_29311;
+    electrical  Net_29310;
           wire  Net_28374;
+    electrical  Net_29045;
+    electrical  Net_29469;
+          wire  Net_29468;
           wire  Net_17093;
           wire  Net_17104;
           wire  Net_18727;
@@ -1594,8 +1596,6 @@ module top ;
           wire  Net_18733;
           wire  Net_29047;
           wire  Net_29049;
-    electrical  Net_29046;
-    electrical  Net_29045;
     electrical  Net_28990;
     electrical  Net_29021;
           wire  Net_29029;
@@ -1650,64 +1650,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_1 (
         .connect({
-            Net_29125,
-            Net_29126,
-            Net_29127,
-            Net_29128,
-            Net_29129,
-            Net_29130,
-            Net_29131,
-            Net_29132,
-            Net_29173,
-            Net_29172,
-            Net_29171,
-            Net_29158,
-            Net_29159,
-            Net_29160,
-            Net_29161,
-            Net_29162,
-            Net_29163,
-            Net_29164,
-            Net_29165,
-            Net_29170,
-            Net_29169,
-            Net_29168,
-            Net_29133,
-            Net_29134,
-            Net_29135,
-            Net_29136,
-            Net_29137,
-            Net_29138,
-            Net_29167,
-            Net_29166,
-            Net_29157,
-            Net_29156,
+            Net_29310,
+            Net_29311,
+            Net_29312,
+            Net_29313,
+            Net_29314,
+            Net_29315,
+            Net_29316,
+            Net_29317,
+            Net_29358,
+            Net_29357,
+            Net_29356,
+            Net_29343,
+            Net_29344,
+            Net_29345,
+            Net_29346,
+            Net_29347,
+            Net_29348,
+            Net_29349,
+            Net_29350,
+            Net_29355,
+            Net_29354,
+            Net_29353,
+            Net_29318,
+            Net_29319,
+            Net_29320,
+            Net_29321,
+            Net_29322,
+            Net_29323,
+            Net_29352,
+            Net_29351,
+            Net_29342,
+            Net_29341,
             Net_22256,
-            Net_29155,
-            Net_29154,
-            Net_29153,
-            Net_29152,
-            Net_29151,
-            Net_29139,
-            Net_29140,
-            Net_29141,
-            Net_29142,
-            Net_29143,
-            Net_29144,
-            Net_29145,
-            Net_29146,
-            Net_29177,
-            Net_29178,
-            Net_29179,
-            Net_29180,
-            Net_29181,
-            Net_29149,
-            Net_29175,
-            Net_29147,
-            Net_29148,
-            Net_29150,
-            Net_29174,
-            Net_29176[1:0]
+            Net_29340,
+            Net_29339,
+            Net_29338,
+            Net_29337,
+            Net_29336,
+            Net_29324,
+            Net_29325,
+            Net_29326,
+            Net_29327,
+            Net_29328,
+            Net_29329,
+            Net_29330,
+            Net_29331,
+            Net_29362,
+            Net_29363,
+            Net_29364,
+            Net_29365,
+            Net_29366,
+            Net_29334,
+            Net_29360,
+            Net_29332,
+            Net_29333,
+            Net_29335,
+            Net_29359,
+            Net_29361[1:0]
         })
     );
     defparam KIT_059_1.comp_name = "KIT_059_v1_0";
@@ -1772,64 +1772,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_2 (
         .connect({
-            Net_29182,
-            Net_29183,
-            Net_29184,
-            Net_29185,
-            Net_29186,
-            Net_29187,
-            Net_29188,
-            Net_29189,
-            Net_29226,
-            Net_29225,
-            Net_29224,
-            Net_29211,
-            Net_29212,
-            Net_29213,
-            Net_29214,
-            Net_29215,
-            Net_29216,
-            Net_29217,
-            Net_29218,
-            Net_29223,
-            Net_29222,
-            Net_29221,
-            Net_29190,
-            Net_29191,
-            Net_29192,
-            Net_29193,
-            Net_29194,
-            Net_29195,
-            Net_29220,
-            Net_29219,
-            Net_29210,
+            Net_29367,
+            Net_29368,
+            Net_29369,
+            Net_29370,
+            Net_29371,
+            Net_29372,
+            Net_29373,
+            Net_29374,
+            Net_29411,
+            Net_29410,
+            Net_29409,
+            Net_29396,
+            Net_29397,
+            Net_29398,
+            Net_29399,
+            Net_29400,
+            Net_29401,
+            Net_29402,
+            Net_29403,
+            Net_29408,
+            Net_29407,
+            Net_29406,
+            Net_29375,
+            Net_29376,
+            Net_29377,
+            Net_29378,
+            Net_29379,
+            Net_29380,
+            Net_29405,
+            Net_29404,
+            Net_29395,
             Net_18671,
-            Net_29209,
-            Net_29208,
-            Net_29207,
-            Net_29206,
-            Net_29205,
-            Net_29204,
-            Net_29196,
-            Net_29197,
-            Net_29198,
+            Net_29394,
+            Net_29393,
+            Net_29392,
+            Net_29391,
+            Net_29390,
+            Net_29389,
+            Net_29381,
+            Net_29382,
+            Net_29383,
             Net_29111,
-            Net_29199,
+            Net_29384,
             Net_29288,
             Net_29306,
             Net_29309,
-            Net_29230,
-            Net_29231,
-            Net_29232,
-            Net_29233,
-            Net_29234,
-            Net_29202,
-            Net_29228,
-            Net_29200,
-            Net_29201,
-            Net_29203,
-            Net_29227,
-            Net_29229[1:0]
+            Net_29415,
+            Net_29416,
+            Net_29417,
+            Net_29418,
+            Net_29419,
+            Net_29387,
+            Net_29413,
+            Net_29385,
+            Net_29386,
+            Net_29388,
+            Net_29412,
+            Net_29414[1:0]
         })
     );
     defparam KIT_059_2.comp_name = "KIT_059_v1_0";
@@ -2255,64 +2255,64 @@ module top ;
 
     cy_annotation_universal_v1_0 KIT_059_4 (
         .connect({
-            Net_29235,
-            Net_29236,
-            Net_29237,
-            Net_29238,
-            Net_29239,
+            Net_29420,
+            Net_29421,
+            Net_29422,
+            Net_29423,
+            Net_29424,
             Net_28991,
             Net_28992,
-            Net_29240,
-            Net_29273,
-            Net_29272,
-            Net_29271,
-            Net_29265,
-            Net_29266,
+            Net_29425,
+            Net_29458,
+            Net_29457,
+            Net_29456,
+            Net_29450,
+            Net_29451,
             Net_28986,
             Net_23,
             Net_29001,
-            Net_29267,
-            Net_29046,
+            Net_29452,
+            Net_29469,
             Net_29045,
-            Net_29270,
-            Net_29269,
-            Net_29268,
-            Net_29241,
-            Net_29242,
-            Net_29243,
-            Net_29244,
-            Net_29245,
-            Net_29246,
+            Net_29455,
+            Net_29454,
+            Net_29453,
+            Net_29426,
+            Net_29427,
+            Net_29428,
+            Net_29429,
+            Net_29430,
+            Net_29431,
             Net_28988,
             Net_28987,
             Net_29021,
-            Net_29264,
-            Net_29263,
-            Net_29262,
+            Net_29449,
+            Net_29448,
+            Net_29447,
             Net_28990,
-            Net_29261,
-            Net_29260,
-            Net_29259,
-            Net_29247,
-            Net_29248,
-            Net_29249,
-            Net_29250,
-            Net_29251,
-            Net_29252,
-            Net_29253,
-            Net_29254,
-            Net_29277,
-            Net_29278,
-            Net_29279,
-            Net_29280,
-            Net_29281,
-            Net_29257,
-            Net_29275,
-            Net_29255,
-            Net_29256,
-            Net_29258,
-            Net_29274,
-            Net_29276[1:0]
+            Net_29446,
+            Net_29445,
+            Net_29444,
+            Net_29432,
+            Net_29433,
+            Net_29434,
+            Net_29435,
+            Net_29436,
+            Net_29437,
+            Net_29438,
+            Net_29439,
+            Net_29462,
+            Net_29463,
+            Net_29464,
+            Net_29465,
+            Net_29466,
+            Net_29442,
+            Net_29460,
+            Net_29440,
+            Net_29441,
+            Net_29443,
+            Net_29459,
+            Net_29461[1:0]
         })
     );
     defparam KIT_059_4.comp_name = "KIT_059_v1_0";
@@ -3206,7 +3206,7 @@ module top ;
         .reset(1'b0),
         .rx(Net_29038),
         .tx_interrupt(Net_29039),
-        .rx_interrupt(Net_29040),
+        .rx_interrupt(Net_29468),
         .tx_data(Net_29041),
         .tx_clk(Net_29042),
         .rx_data(Net_29043),
@@ -3365,7 +3365,7 @@ module top ;
 		  .io({tmpIO_0__RX_PIN_net[0:0]}),
 		  .siovref(tmpSIOVREF__RX_PIN_net),
 		  .interrupt({tmpINTERRUPT_0__RX_PIN_net[0:0]}),
-		  .annotation({Net_29046}),
+		  .annotation({Net_29469}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -3530,6 +3530,13 @@ module top ;
     defparam PWR_3.comp_name = "Power_v1_0";
     defparam PWR_3.port_names = "T1";
     defparam PWR_3.width = 1;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b00))
+		ISR_RX
+		 (.int_signal(Net_29468));
+
 
 
 

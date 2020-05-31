@@ -70,6 +70,7 @@
 #include "ADC_DELSIG.h"
 #include "POT_PIN_aliases.h"
 #include "POT_PIN.h"
+#include "ISR_RX.h"
 #include "SPIM_IMU_IntClock.h"
 #include "SPIM_EEPROM_IntClock.h"
 #include "UART_IntClock.h"

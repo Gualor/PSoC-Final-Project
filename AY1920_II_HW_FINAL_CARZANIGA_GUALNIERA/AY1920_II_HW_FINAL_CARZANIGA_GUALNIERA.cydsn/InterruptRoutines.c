@@ -22,6 +22,7 @@
 * Priotity level: 5
 *
 * Parameters:  
+*   None
 *
 * Return:
 *   None
@@ -86,6 +87,7 @@ CY_ISR(CUSTOM_ISR_CONFIG)
 * Priority level: 6
 *
 * Parameters:  
+*   None
 *
 * Return:
 *   None
@@ -135,6 +137,7 @@ CY_ISR(CUSTOM_ISR_START)
 * Priority level: 7
 *
 * Parameters:  
+*   None
 *
 * Return:
 *   None
@@ -152,6 +155,92 @@ CY_ISR(CUSTOM_ISR_IMU)
     if (IMU_ReadByte(LIS3DH_INT1_SRC) & LIS3DH_INT1_SRC_IA_MASK)
     {
         IMU_over_threshold_flag = 1;
+    }
+}
+
+
+/*******************************************************************************
+* Function Name: CUSTOM_ISR_RX
+********************************************************************************
+*
+* Summary:
+*   Execute valid operation codes sent remotely via UART in order to read/write
+*   from/to the EEPROM memory:
+*   +--------------------------------------------------------------------------+
+*   | Operation codes:                                                         |
+*   | -> UART_RX_RESET_MEMORY     :   Erase all 512 memory pages               |
+*   | -> UART_RX_NUMBER_OF_LOGS   :   Send number of logs currently stored     |
+*   | -> UART_RX_READ_CTRL_REG    :   Send psoc control register content       |
+*   | -> UART_RX_SEND_LOG_ID      :   Send log message corresponding to ID     |
+*   +--------------------------------------------------------------------------+
+*   
+* Priority level: 7
+*
+* Parameters:  
+*   None
+*
+* Return:
+*   None
+*
+*******************************************************************************/
+CY_ISR(CUSTOM_ISR_RX)
+{
+    // Read operation code received over UART
+    uint8_t op_code = UART_GetChar();
+    CyDelay(1);
+    
+    // Execute intruction
+    switch (op_code)
+    {   
+        case (UART_RX_RESET_MEMORY):
+        {
+            // Erase all EEPROM log pages
+            EEPROM_resetMemory();
+            
+            // Notify that operation is complete
+            UART_PutChar(UART_RX_OPERATION_ACK);
+            break;
+        }
+        
+        case (UART_RX_NUMBER_OF_LOGS):
+        {
+            // Read current log counter value
+            uint8_t log_count = EEPROM_retrieveLogCount();
+            
+            // Send byte over UART
+            UART_PutChar(log_count);
+            break;
+        }   
+        
+        case (UART_RX_READ_CTRL_REG):
+        {
+            // Read control register content
+            uint8_t ctrl_reg = EEPROM_readByte(CTRL_REG_PSOC_STATUS);
+            
+            // Send byte over UART
+            UART_PutChar(ctrl_reg);
+            break;
+        }
+        
+        case (UART_RX_SEND_LOG_ID):
+        {
+            // Get desired log ID
+            uint8_t log_id = UART_GetChar();
+
+            // Allocate memory for log type
+            log_t log_page;
+                
+            // Cycle over all log pages
+            for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
+            {   
+                // Retrieve log page from EEPROM
+                log_page = EEPROM_retrieveLogMessage(log_id, i);
+                
+                // Send log page over UART
+                LOG_sendData(&log_page);
+            }
+            break;
+        }
     }
 }
 

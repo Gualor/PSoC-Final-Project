@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
   28:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** * Summary:
   29:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** *     Save the current user configuration
   30:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** *
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 2
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 2
 
 
   31:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** * Parameters:
@@ -110,7 +110,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
   51              		.align	2
   52              	.L3:
   53 0018 00000000 		.word	.LANCHOR0
-  54 001c 80640040 		.word	1073767552
+  54 001c 83640040 		.word	1073767555
   55              		.cfi_endproc
   56              	.LFE0:
   57              		.size	CLICK_TIMER_SaveConfig, .-CLICK_TIMER_SaveConfig
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
   59              		.align	2
   60              		.global	CLICK_TIMER_RestoreConfig
   61              		.thumb
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 3
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 3
 
 
   62              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
   87:Generated_Source\PSoC5/CLICK_TIMER_PM.c ****         #if(!CLICK_TIMER_UDB_CONTROL_REG_REMOVED)
   88:Generated_Source\PSoC5/CLICK_TIMER_PM.c ****             CLICK_TIMER_WriteControlRegister(CLICK_TIMER_backup.TimerControlRegister);
   83              		.loc 1 88 0
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 4
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 4
 
 
   84 0010 E078     		ldrb	r0, [r4, #3]	@ zero_extendqisi2
@@ -189,7 +189,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
   89              		.align	2
   90              	.L7:
   91 0018 00000000 		.word	.LANCHOR0
-  92 001c 80640040 		.word	1073767552
+  92 001c 83640040 		.word	1073767555
   93              		.cfi_endproc
   94              	.LFE1:
   95              		.size	CLICK_TIMER_RestoreConfig, .-CLICK_TIMER_RestoreConfig
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  115:Generated_Source\PSoC5/CLICK_TIMER_PM.c ****         /* Save Counter's enable state */
  116:Generated_Source\PSoC5/CLICK_TIMER_PM.c ****         if(CLICK_TIMER_CTRL_ENABLE == (CLICK_TIMER_CONTROL & CLICK_TIMER_CTRL_ENABLE))
  112              		.loc 1 116 0
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 5
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 5
 
 
  113 0002 084B     		ldr	r3, .L13
@@ -278,7 +278,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  135              	.L14:
  136              		.align	2
  137              	.L13:
- 138 0024 70640040 		.word	1073767536
+ 138 0024 73640040 		.word	1073767539
  139 0028 00000000 		.word	.LANCHOR0
  140              		.cfi_endproc
  141              	.LFE2:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  133:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** * Function Name: CLICK_TIMER_Wakeup
  134:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** ********************************************************************************
  135:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** *
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 6
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 6
 
 
  136:Generated_Source\PSoC5/CLICK_TIMER_PM.c **** * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  184              	CLICK_TIMER_backup:
  185 0000 00000000 		.space	4
  186              		.text
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 7
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 7
 
 
  187              	.Letext0:
@@ -371,45 +371,45 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  194 0006 00000000 		.4byte	.Ldebug_abbrev0
  195 000a 04       		.byte	0x4
  196 000b 01       		.uleb128 0x1
- 197 000c 50010000 		.4byte	.LASF31
+ 197 000c DF000000 		.4byte	.LASF31
  198 0010 0C       		.byte	0xc
- 199 0011 14010000 		.4byte	.LASF32
- 200 0015 74000000 		.4byte	.LASF33
+ 199 0011 A3000000 		.4byte	.LASF32
+ 200 0015 56020000 		.4byte	.LASF33
  201 0019 00000000 		.4byte	.Ldebug_ranges0+0
  202 001d 00000000 		.4byte	0
  203 0021 00000000 		.4byte	.Ldebug_line0
  204 0025 02       		.uleb128 0x2
  205 0026 01       		.byte	0x1
  206 0027 06       		.byte	0x6
- 207 0028 01030000 		.4byte	.LASF0
+ 207 0028 2C030000 		.4byte	.LASF0
  208 002c 02       		.uleb128 0x2
  209 002d 01       		.byte	0x1
  210 002e 08       		.byte	0x8
- 211 002f 42010000 		.4byte	.LASF1
+ 211 002f D1000000 		.4byte	.LASF1
  212 0033 02       		.uleb128 0x2
  213 0034 02       		.byte	0x2
  214 0035 05       		.byte	0x5
- 215 0036 BD020000 		.4byte	.LASF2
+ 215 0036 4C020000 		.4byte	.LASF2
  216 003a 02       		.uleb128 0x2
  217 003b 02       		.byte	0x2
  218 003c 07       		.byte	0x7
- 219 003d 0D030000 		.4byte	.LASF3
+ 219 003d 74000000 		.4byte	.LASF3
  220 0041 02       		.uleb128 0x2
  221 0042 04       		.byte	0x4
  222 0043 05       		.byte	0x5
- 223 0044 DA020000 		.4byte	.LASF4
+ 223 0044 05030000 		.4byte	.LASF4
  224 0048 02       		.uleb128 0x2
  225 0049 04       		.byte	0x4
  226 004a 07       		.byte	0x7
- 227 004b E3010000 		.4byte	.LASF5
+ 227 004b 72010000 		.4byte	.LASF5
  228 004f 02       		.uleb128 0x2
  229 0050 08       		.byte	0x8
  230 0051 05       		.byte	0x5
- 231 0052 90020000 		.4byte	.LASF6
+ 231 0052 1F020000 		.4byte	.LASF6
  232 0056 02       		.uleb128 0x2
  233 0057 08       		.byte	0x8
  234 0058 07       		.byte	0x7
- 235 0059 44020000 		.4byte	.LASF7
+ 235 0059 D3010000 		.4byte	.LASF7
  236 005d 03       		.uleb128 0x3
  237 005e 04       		.byte	0x4
  238 005f 05       		.byte	0x5
@@ -417,29 +417,29 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  240 0064 02       		.uleb128 0x2
  241 0065 04       		.byte	0x4
  242 0066 07       		.byte	0x7
- 243 0067 37020000 		.4byte	.LASF8
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 8
+ 243 0067 C6010000 		.4byte	.LASF8
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 8
 
 
  244 006b 04       		.uleb128 0x4
- 245 006c F5010000 		.4byte	.LASF12
+ 245 006c 84010000 		.4byte	.LASF12
  246 0070 02       		.byte	0x2
  247 0071 E401     		.2byte	0x1e4
  248 0073 2C000000 		.4byte	0x2c
  249 0077 02       		.uleb128 0x2
  250 0078 04       		.byte	0x4
  251 0079 04       		.byte	0x4
- 252 007a 3C010000 		.4byte	.LASF9
+ 252 007a CB000000 		.4byte	.LASF9
  253 007e 02       		.uleb128 0x2
  254 007f 08       		.byte	0x8
  255 0080 04       		.byte	0x4
- 256 0081 30020000 		.4byte	.LASF10
+ 256 0081 BF010000 		.4byte	.LASF10
  257 0085 02       		.uleb128 0x2
  258 0086 01       		.byte	0x1
  259 0087 08       		.byte	0x8
- 260 0088 9E020000 		.4byte	.LASF11
+ 260 0088 2D020000 		.4byte	.LASF11
  261 008c 04       		.uleb128 0x4
- 262 008d DE010000 		.4byte	.LASF13
+ 262 008d 6D010000 		.4byte	.LASF13
  263 0091 02       		.byte	0x2
  264 0092 8E02     		.2byte	0x28e
  265 0094 98000000 		.4byte	0x98
@@ -448,11 +448,11 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  268 009d 02       		.uleb128 0x2
  269 009e 08       		.byte	0x8
  270 009f 04       		.byte	0x4
- 271 00a0 F5020000 		.4byte	.LASF14
+ 271 00a0 20030000 		.4byte	.LASF14
  272 00a4 02       		.uleb128 0x2
  273 00a5 04       		.byte	0x4
  274 00a6 07       		.byte	0x7
- 275 00a7 87020000 		.4byte	.LASF15
+ 275 00a7 16020000 		.4byte	.LASF15
  276 00ab 06       		.uleb128 0x6
  277 00ac 04       		.byte	0x4
  278 00ad 03       		.byte	0x3
@@ -465,20 +465,20 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  285 00ba 6B000000 		.4byte	0x6b
  286 00be 00       		.byte	0
  287 00bf 07       		.uleb128 0x7
- 288 00c0 0B010000 		.4byte	.LASF17
+ 288 00c0 9A000000 		.4byte	.LASF17
  289 00c4 03       		.byte	0x3
  290 00c5 48       		.byte	0x48
  291 00c6 6B000000 		.4byte	0x6b
  292 00ca 01       		.byte	0x1
  293 00cb 07       		.uleb128 0x7
- 294 00cc 20030000 		.4byte	.LASF18
+ 294 00cc 38030000 		.4byte	.LASF18
  295 00d0 03       		.byte	0x3
  296 00d1 49       		.byte	0x49
  297 00d2 6B000000 		.4byte	0x6b
  298 00d6 02       		.byte	0x2
  299 00d7 07       		.uleb128 0x7
- 300 00d8 1B020000 		.4byte	.LASF19
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 9
+ 300 00d8 AA010000 		.4byte	.LASF19
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 9
 
 
  301 00dc 03       		.byte	0x3
@@ -492,7 +492,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  309 00ea 53       		.byte	0x53
  310 00eb AB000000 		.4byte	0xab
  311 00ef 09       		.uleb128 0x9
- 312 00f0 33030000 		.4byte	.LASF21
+ 312 00f0 4B030000 		.4byte	.LASF21
  313 00f4 01       		.byte	0x1
  314 00f5 2B       		.byte	0x2b
  315 00f6 00000000 		.4byte	.LFB0
@@ -508,7 +508,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  325 0112 AB010000 		.4byte	0x1ab
  326 0116 00       		.byte	0
  327 0117 09       		.uleb128 0x9
- 328 0118 A3020000 		.4byte	.LASF22
+ 328 0118 32020000 		.4byte	.LASF22
  329 011c 01       		.byte	0x1
  330 011d 4D       		.byte	0x4d
  331 011e 00000000 		.4byte	.LFB1
@@ -524,7 +524,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  341 013a C1010000 		.4byte	0x1c1
  342 013e 00       		.byte	0
  343 013f 09       		.uleb128 0x9
- 344 0140 E3020000 		.4byte	.LASF23
+ 344 0140 0E030000 		.4byte	.LASF23
  345 0144 01       		.byte	0x1
  346 0145 70       		.byte	0x70
  347 0146 00000000 		.4byte	.LFB2
@@ -538,12 +538,12 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  355 015d 0A       		.uleb128 0xa
  356 015e 22000000 		.4byte	.LVL5
  357 0162 EF000000 		.4byte	0xef
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 10
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 10
 
 
  358 0166 00       		.byte	0
  359 0167 09       		.uleb128 0x9
- 360 0168 C7020000 		.4byte	.LASF24
+ 360 0168 F2020000 		.4byte	.LASF24
  361 016c 01       		.byte	0x1
  362 016d 96       		.byte	0x96
  363 016e 00000000 		.4byte	.LFB3
@@ -559,7 +559,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  373 018a D7010000 		.4byte	0x1d7
  374 018e 00       		.byte	0
  375 018f 0B       		.uleb128 0xb
- 376 0190 F8000000 		.4byte	.LASF34
+ 376 0190 87000000 		.4byte	.LASF34
  377 0194 01       		.byte	0x1
  378 0195 15       		.byte	0x15
  379 0196 E4000000 		.4byte	0xe4
@@ -572,13 +572,13 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  386 01a9 03       		.byte	0x3
  387 01aa 69       		.byte	0x69
  388 01ab 0C       		.uleb128 0xc
- 389 01ac FB010000 		.4byte	.LASF26
- 390 01b0 FB010000 		.4byte	.LASF26
+ 389 01ac 8A010000 		.4byte	.LASF26
+ 390 01b0 8A010000 		.4byte	.LASF26
  391 01b4 03       		.byte	0x3
  392 01b5 63       		.byte	0x63
  393 01b6 0C       		.uleb128 0xc
- 394 01b7 6E020000 		.4byte	.LASF27
- 395 01bb 6E020000 		.4byte	.LASF27
+ 394 01b7 FD010000 		.4byte	.LASF27
+ 395 01bb FD010000 		.4byte	.LASF27
  396 01bf 03       		.byte	0x3
  397 01c0 6A       		.byte	0x6a
  398 01c1 0C       		.uleb128 0xc
@@ -592,13 +592,13 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  406 01d5 03       		.byte	0x3
  407 01d6 5B       		.byte	0x5b
  408 01d7 0C       		.uleb128 0xc
- 409 01d8 5B020000 		.4byte	.LASF30
- 410 01dc 5B020000 		.4byte	.LASF30
+ 409 01d8 EA010000 		.4byte	.LASF30
+ 410 01dc EA010000 		.4byte	.LASF30
  411 01e0 03       		.byte	0x3
  412 01e1 8B       		.byte	0x8b
  413 01e2 00       		.byte	0
  414              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 11
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 11
 
 
  415              	.Ldebug_abbrev0:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  469 0035 00       		.byte	0
  470 0036 05       		.uleb128 0x5
  471 0037 35       		.uleb128 0x35
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 12
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 12
 
 
  472 0038 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  526 006e 0B       		.uleb128 0xb
  527 006f 3B       		.uleb128 0x3b
  528 0070 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 13
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 13
 
 
  529 0071 27       		.uleb128 0x27
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  583 00aa 00       		.byte	0
  584 00ab 00       		.byte	0
  585              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 14
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 14
 
 
  586 0000 34000000 		.4byte	0x34
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  624              	.LASF28:
  625 0042 434C4943 		.ascii	"CLICK_TIMER_WriteControlRegister\000"
  625      4B5F5449 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 15
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 15
 
 
  625      4D45525F 
@@ -850,183 +850,186 @@ ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 1
  627      4D45525F 
  627      53746F70 
  627      00
- 628              	.LASF33:
- 629 0074 433A5C55 		.ascii	"C:\\Users\\Manu\\Desktop\\github\\PSoC-Final-Projec"
- 629      73657273 
- 629      5C4D616E 
- 629      755C4465 
- 629      736B746F 
- 630 00a2 745C4159 		.ascii	"t\\AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA\\AY1920_I"
- 630      31393230 
- 630      5F49495F 
- 630      48575F46 
- 630      494E414C 
- 631 00d3 495F4857 		.ascii	"I_HW_FINAL_CARZANIGA_GUALNIERA.cydsn\000"
- 631      5F46494E 
- 631      414C5F43 
- 631      41525A41 
- 631      4E494741 
- 632              	.LASF34:
- 633 00f8 434C4943 		.ascii	"CLICK_TIMER_backup\000"
- 633      4B5F5449 
- 633      4D45525F 
- 633      6261636B 
- 633      757000
- 634              	.LASF17:
- 635 010b 54696D65 		.ascii	"TimerUdb\000"
- 635      72556462 
- 635      00
- 636              	.LASF32:
- 637 0114 47656E65 		.ascii	"Generated_Source\\PSoC5\\CLICK_TIMER_PM.c\000"
- 637      72617465 
- 637      645F536F 
- 637      75726365 
- 637      5C50536F 
- 638              	.LASF9:
- 639 013c 666C6F61 		.ascii	"float\000"
- 639      7400
- 640              	.LASF1:
- 641 0142 756E7369 		.ascii	"unsigned char\000"
- 641      676E6564 
- 641      20636861 
- 641      7200
- 642              	.LASF31:
- 643 0150 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 643      43313120 
- 643      352E342E 
- 643      31203230 
- 643      31363036 
- 644 0183 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 644      20726576 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 16
+ 628              	.LASF3:
+ 629 0074 73686F72 		.ascii	"short unsigned int\000"
+ 629      7420756E 
+ 629      7369676E 
+ 629      65642069 
+ 629      6E7400
+ 630              	.LASF34:
+ 631 0087 434C4943 		.ascii	"CLICK_TIMER_backup\000"
+ 631      4B5F5449 
+ 631      4D45525F 
+ 631      6261636B 
+ 631      757000
+ 632              	.LASF17:
+ 633 009a 54696D65 		.ascii	"TimerUdb\000"
+ 633      72556462 
+ 633      00
+ 634              	.LASF32:
+ 635 00a3 47656E65 		.ascii	"Generated_Source\\PSoC5\\CLICK_TIMER_PM.c\000"
+ 635      72617465 
+ 635      645F536F 
+ 635      75726365 
+ 635      5C50536F 
+ 636              	.LASF9:
+ 637 00cb 666C6F61 		.ascii	"float\000"
+ 637      7400
+ 638              	.LASF1:
+ 639 00d1 756E7369 		.ascii	"unsigned char\000"
+ 639      676E6564 
+ 639      20636861 
+ 639      7200
+ 640              	.LASF31:
+ 641 00df 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 641      43313120 
+ 641      352E342E 
+ 641      31203230 
+ 641      31363036 
+ 642 0112 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 642      20726576 
+ 642      6973696F 
+ 642      6E203233 
+ 642      37373135 
+ 643 0145 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 643      66756E63 
+ 643      74696F6E 
+ 643      2D736563 
+ 643      74696F6E 
+ 644              	.LASF13:
+ 645 016d 72656738 		.ascii	"reg8\000"
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 16
 
 
- 644      6973696F 
- 644      6E203233 
- 644      37373135 
- 645 01b6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 645      66756E63 
- 645      74696F6E 
- 645      2D736563 
- 645      74696F6E 
- 646              	.LASF13:
- 647 01de 72656738 		.ascii	"reg8\000"
- 647      00
- 648              	.LASF5:
- 649 01e3 6C6F6E67 		.ascii	"long unsigned int\000"
- 649      20756E73 
- 649      69676E65 
- 649      6420696E 
- 649      7400
- 650              	.LASF12:
- 651 01f5 75696E74 		.ascii	"uint8\000"
- 651      3800
- 652              	.LASF26:
- 653 01fb 434C4943 		.ascii	"CLICK_TIMER_ReadControlRegister\000"
- 653      4B5F5449 
- 653      4D45525F 
- 653      52656164 
- 653      436F6E74 
- 654              	.LASF19:
- 655 021b 54696D65 		.ascii	"TimerControlRegister\000"
- 655      72436F6E 
- 655      74726F6C 
- 655      52656769 
- 655      73746572 
- 656              	.LASF10:
- 657 0230 646F7562 		.ascii	"double\000"
- 657      6C6500
- 658              	.LASF8:
- 659 0237 756E7369 		.ascii	"unsigned int\000"
- 659      676E6564 
- 659      20696E74 
- 659      00
- 660              	.LASF7:
- 661 0244 6C6F6E67 		.ascii	"long long unsigned int\000"
- 661      206C6F6E 
- 661      6720756E 
- 661      7369676E 
- 661      65642069 
- 662              	.LASF30:
- 663 025b 434C4943 		.ascii	"CLICK_TIMER_Enable\000"
+ 645      00
+ 646              	.LASF5:
+ 647 0172 6C6F6E67 		.ascii	"long unsigned int\000"
+ 647      20756E73 
+ 647      69676E65 
+ 647      6420696E 
+ 647      7400
+ 648              	.LASF12:
+ 649 0184 75696E74 		.ascii	"uint8\000"
+ 649      3800
+ 650              	.LASF26:
+ 651 018a 434C4943 		.ascii	"CLICK_TIMER_ReadControlRegister\000"
+ 651      4B5F5449 
+ 651      4D45525F 
+ 651      52656164 
+ 651      436F6E74 
+ 652              	.LASF19:
+ 653 01aa 54696D65 		.ascii	"TimerControlRegister\000"
+ 653      72436F6E 
+ 653      74726F6C 
+ 653      52656769 
+ 653      73746572 
+ 654              	.LASF10:
+ 655 01bf 646F7562 		.ascii	"double\000"
+ 655      6C6500
+ 656              	.LASF8:
+ 657 01c6 756E7369 		.ascii	"unsigned int\000"
+ 657      676E6564 
+ 657      20696E74 
+ 657      00
+ 658              	.LASF7:
+ 659 01d3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 659      206C6F6E 
+ 659      6720756E 
+ 659      7369676E 
+ 659      65642069 
+ 660              	.LASF30:
+ 661 01ea 434C4943 		.ascii	"CLICK_TIMER_Enable\000"
+ 661      4B5F5449 
+ 661      4D45525F 
+ 661      456E6162 
+ 661      6C6500
+ 662              	.LASF27:
+ 663 01fd 434C4943 		.ascii	"CLICK_TIMER_WriteCounter\000"
  663      4B5F5449 
  663      4D45525F 
- 663      456E6162 
- 663      6C6500
- 664              	.LASF27:
- 665 026e 434C4943 		.ascii	"CLICK_TIMER_WriteCounter\000"
- 665      4B5F5449 
- 665      4D45525F 
- 665      57726974 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 17
+ 663      57726974 
+ 663      65436F75 
+ 664              	.LASF15:
+ 665 0216 73697A65 		.ascii	"sizetype\000"
+ 665      74797065 
+ 665      00
+ 666              	.LASF6:
+ 667 021f 6C6F6E67 		.ascii	"long long int\000"
+ 667      206C6F6E 
+ 667      6720696E 
+ 667      7400
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 17
 
 
- 665      65436F75 
- 666              	.LASF15:
- 667 0287 73697A65 		.ascii	"sizetype\000"
- 667      74797065 
- 667      00
- 668              	.LASF6:
- 669 0290 6C6F6E67 		.ascii	"long long int\000"
- 669      206C6F6E 
- 669      6720696E 
- 669      7400
- 670              	.LASF11:
- 671 029e 63686172 		.ascii	"char\000"
- 671      00
- 672              	.LASF22:
- 673 02a3 434C4943 		.ascii	"CLICK_TIMER_RestoreConfig\000"
- 673      4B5F5449 
- 673      4D45525F 
- 673      52657374 
- 673      6F726543 
- 674              	.LASF2:
- 675 02bd 73686F72 		.ascii	"short int\000"
- 675      7420696E 
- 675      7400
- 676              	.LASF24:
- 677 02c7 434C4943 		.ascii	"CLICK_TIMER_Wakeup\000"
- 677      4B5F5449 
- 677      4D45525F 
- 677      57616B65 
- 677      757000
- 678              	.LASF4:
- 679 02da 6C6F6E67 		.ascii	"long int\000"
- 679      20696E74 
- 679      00
- 680              	.LASF23:
- 681 02e3 434C4943 		.ascii	"CLICK_TIMER_Sleep\000"
- 681      4B5F5449 
- 681      4D45525F 
- 681      536C6565 
- 681      7000
- 682              	.LASF14:
- 683 02f5 6C6F6E67 		.ascii	"long double\000"
- 683      20646F75 
- 683      626C6500 
- 684              	.LASF0:
- 685 0301 7369676E 		.ascii	"signed char\000"
- 685      65642063 
- 685      68617200 
- 686              	.LASF3:
- 687 030d 73686F72 		.ascii	"short unsigned int\000"
- 687      7420756E 
- 687      7369676E 
- 687      65642069 
- 687      6E7400
- 688              	.LASF18:
- 689 0320 496E7465 		.ascii	"InterruptMaskValue\000"
- 689      72727570 
- 689      744D6173 
-ARM GAS  C:\Users\Manu\AppData\Local\Temp\ccetCsAj.s 			page 18
+ 668              	.LASF11:
+ 669 022d 63686172 		.ascii	"char\000"
+ 669      00
+ 670              	.LASF22:
+ 671 0232 434C4943 		.ascii	"CLICK_TIMER_RestoreConfig\000"
+ 671      4B5F5449 
+ 671      4D45525F 
+ 671      52657374 
+ 671      6F726543 
+ 672              	.LASF2:
+ 673 024c 73686F72 		.ascii	"short int\000"
+ 673      7420696E 
+ 673      7400
+ 674              	.LASF33:
+ 675 0256 433A5C55 		.ascii	"C:\\Users\\Lory\\Desktop\\info_projects\\git_reposi"
+ 675      73657273 
+ 675      5C4C6F72 
+ 675      795C4465 
+ 675      736B746F 
+ 676 0284 746F7269 		.ascii	"tories\\PSoC-Final-Project\\AY1920_II_HW_FINAL_CARZ"
+ 676      65735C50 
+ 676      536F432D 
+ 676      46696E61 
+ 676      6C2D5072 
+ 677 02b5 414E4947 		.ascii	"ANIGA_GUALNIERA\\AY1920_II_HW_FINAL_CARZANIGA_GUALN"
+ 677      415F4755 
+ 677      414C4E49 
+ 677      4552415C 
+ 677      41593139 
+ 678 02e7 49455241 		.ascii	"IERA.cydsn\000"
+ 678      2E637964 
+ 678      736E00
+ 679              	.LASF24:
+ 680 02f2 434C4943 		.ascii	"CLICK_TIMER_Wakeup\000"
+ 680      4B5F5449 
+ 680      4D45525F 
+ 680      57616B65 
+ 680      757000
+ 681              	.LASF4:
+ 682 0305 6C6F6E67 		.ascii	"long int\000"
+ 682      20696E74 
+ 682      00
+ 683              	.LASF23:
+ 684 030e 434C4943 		.ascii	"CLICK_TIMER_Sleep\000"
+ 684      4B5F5449 
+ 684      4D45525F 
+ 684      536C6565 
+ 684      7000
+ 685              	.LASF14:
+ 686 0320 6C6F6E67 		.ascii	"long double\000"
+ 686      20646F75 
+ 686      626C6500 
+ 687              	.LASF0:
+ 688 032c 7369676E 		.ascii	"signed char\000"
+ 688      65642063 
+ 688      68617200 
+ 689              	.LASF18:
+ARM GAS  C:\Users\Lory\AppData\Local\Temp\ccgr33yb.s 			page 18
 
 
- 689      6B56616C 
- 689      756500
- 690              	.LASF21:
- 691 0333 434C4943 		.ascii	"CLICK_TIMER_SaveConfig\000"
- 691      4B5F5449 
- 691      4D45525F 
- 691      53617665 
- 691      436F6E66 
- 692              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 690 0338 496E7465 		.ascii	"InterruptMaskValue\000"
+ 690      72727570 
+ 690      744D6173 
+ 690      6B56616C 
+ 690      756500
+ 691              	.LASF21:
+ 692 034b 434C4943 		.ascii	"CLICK_TIMER_SaveConfig\000"
+ 692      4B5F5449 
+ 692      4D45525F 
+ 692      53617665 
+ 692      436F6E66 
+ 693              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

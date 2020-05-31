@@ -2,7 +2,7 @@
 --	Conversion of AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri May 29 16:46:10 2020
+--	Sat May 30 10:58:13 2020
 --
 
 USE cypress.cypress.all;
@@ -16,64 +16,64 @@ SIGNAL Net_27453 : bit;
 SIGNAL Net_19465 : bit;
 TERMINAL Net_28802 : bit;
 TERMINAL Net_22256 : bit;
-TERMINAL Net_29125 : bit;
-TERMINAL Net_29126 : bit;
-TERMINAL Net_29127 : bit;
-TERMINAL Net_29128 : bit;
-TERMINAL Net_29129 : bit;
-TERMINAL Net_29130 : bit;
-TERMINAL Net_29131 : bit;
-TERMINAL Net_29132 : bit;
-TERMINAL Net_29173 : bit;
-TERMINAL Net_29172 : bit;
-TERMINAL Net_29171 : bit;
-TERMINAL Net_29158 : bit;
-TERMINAL Net_29159 : bit;
-TERMINAL Net_29160 : bit;
-TERMINAL Net_29161 : bit;
-TERMINAL Net_29162 : bit;
-TERMINAL Net_29163 : bit;
-TERMINAL Net_29164 : bit;
-TERMINAL Net_29165 : bit;
-TERMINAL Net_29170 : bit;
-TERMINAL Net_29169 : bit;
-TERMINAL Net_29168 : bit;
-TERMINAL Net_29133 : bit;
-TERMINAL Net_29134 : bit;
-TERMINAL Net_29135 : bit;
-TERMINAL Net_29136 : bit;
-TERMINAL Net_29137 : bit;
-TERMINAL Net_29138 : bit;
-TERMINAL Net_29167 : bit;
-TERMINAL Net_29166 : bit;
-TERMINAL Net_29157 : bit;
-TERMINAL Net_29156 : bit;
-TERMINAL Net_29155 : bit;
-TERMINAL Net_29154 : bit;
-TERMINAL Net_29153 : bit;
-TERMINAL Net_29152 : bit;
-TERMINAL Net_29151 : bit;
-TERMINAL Net_29139 : bit;
-TERMINAL Net_29140 : bit;
-TERMINAL Net_29141 : bit;
-TERMINAL Net_29142 : bit;
-TERMINAL Net_29143 : bit;
-TERMINAL Net_29144 : bit;
-TERMINAL Net_29145 : bit;
-TERMINAL Net_29146 : bit;
-TERMINAL Net_29177 : bit;
-TERMINAL Net_29178 : bit;
-TERMINAL Net_29179 : bit;
-TERMINAL Net_29180 : bit;
-TERMINAL Net_29181 : bit;
-TERMINAL Net_29149 : bit;
-TERMINAL Net_29175 : bit;
-TERMINAL Net_29147 : bit;
-TERMINAL Net_29148 : bit;
-TERMINAL Net_29150 : bit;
-TERMINAL Net_29174 : bit;
-TERMINAL Net_29176_1 : bit;
-TERMINAL Net_29176_0 : bit;
+TERMINAL Net_29310 : bit;
+TERMINAL Net_29311 : bit;
+TERMINAL Net_29312 : bit;
+TERMINAL Net_29313 : bit;
+TERMINAL Net_29314 : bit;
+TERMINAL Net_29315 : bit;
+TERMINAL Net_29316 : bit;
+TERMINAL Net_29317 : bit;
+TERMINAL Net_29358 : bit;
+TERMINAL Net_29357 : bit;
+TERMINAL Net_29356 : bit;
+TERMINAL Net_29343 : bit;
+TERMINAL Net_29344 : bit;
+TERMINAL Net_29345 : bit;
+TERMINAL Net_29346 : bit;
+TERMINAL Net_29347 : bit;
+TERMINAL Net_29348 : bit;
+TERMINAL Net_29349 : bit;
+TERMINAL Net_29350 : bit;
+TERMINAL Net_29355 : bit;
+TERMINAL Net_29354 : bit;
+TERMINAL Net_29353 : bit;
+TERMINAL Net_29318 : bit;
+TERMINAL Net_29319 : bit;
+TERMINAL Net_29320 : bit;
+TERMINAL Net_29321 : bit;
+TERMINAL Net_29322 : bit;
+TERMINAL Net_29323 : bit;
+TERMINAL Net_29352 : bit;
+TERMINAL Net_29351 : bit;
+TERMINAL Net_29342 : bit;
+TERMINAL Net_29341 : bit;
+TERMINAL Net_29340 : bit;
+TERMINAL Net_29339 : bit;
+TERMINAL Net_29338 : bit;
+TERMINAL Net_29337 : bit;
+TERMINAL Net_29336 : bit;
+TERMINAL Net_29324 : bit;
+TERMINAL Net_29325 : bit;
+TERMINAL Net_29326 : bit;
+TERMINAL Net_29327 : bit;
+TERMINAL Net_29328 : bit;
+TERMINAL Net_29329 : bit;
+TERMINAL Net_29330 : bit;
+TERMINAL Net_29331 : bit;
+TERMINAL Net_29362 : bit;
+TERMINAL Net_29363 : bit;
+TERMINAL Net_29364 : bit;
+TERMINAL Net_29365 : bit;
+TERMINAL Net_29366 : bit;
+TERMINAL Net_29334 : bit;
+TERMINAL Net_29360 : bit;
+TERMINAL Net_29332 : bit;
+TERMINAL Net_29333 : bit;
+TERMINAL Net_29335 : bit;
+TERMINAL Net_29359 : bit;
+TERMINAL Net_29361_1 : bit;
+TERMINAL Net_29361_0 : bit;
 SIGNAL Net_18733 : bit;
 SIGNAL \PWM_RG:PWMUDB:km_run\ : bit;
 SIGNAL \PWM_RG:PWMUDB:min_kill_reg\ : bit;
@@ -782,65 +782,65 @@ SIGNAL \PWM_B:Net_107\ : bit;
 SIGNAL \PWM_B:Net_114\ : bit;
 TERMINAL Net_29303 : bit;
 TERMINAL Net_18047 : bit;
-TERMINAL Net_29182 : bit;
-TERMINAL Net_29183 : bit;
-TERMINAL Net_29184 : bit;
-TERMINAL Net_29185 : bit;
-TERMINAL Net_29186 : bit;
-TERMINAL Net_29187 : bit;
-TERMINAL Net_29188 : bit;
-TERMINAL Net_29189 : bit;
-TERMINAL Net_29226 : bit;
-TERMINAL Net_29225 : bit;
-TERMINAL Net_29224 : bit;
-TERMINAL Net_29211 : bit;
-TERMINAL Net_29212 : bit;
-TERMINAL Net_29213 : bit;
-TERMINAL Net_29214 : bit;
-TERMINAL Net_29215 : bit;
-TERMINAL Net_29216 : bit;
-TERMINAL Net_29217 : bit;
-TERMINAL Net_29218 : bit;
-TERMINAL Net_29223 : bit;
-TERMINAL Net_29222 : bit;
-TERMINAL Net_29221 : bit;
-TERMINAL Net_29190 : bit;
-TERMINAL Net_29191 : bit;
-TERMINAL Net_29192 : bit;
-TERMINAL Net_29193 : bit;
-TERMINAL Net_29194 : bit;
-TERMINAL Net_29195 : bit;
-TERMINAL Net_29220 : bit;
-TERMINAL Net_29219 : bit;
-TERMINAL Net_29210 : bit;
+TERMINAL Net_29367 : bit;
+TERMINAL Net_29368 : bit;
+TERMINAL Net_29369 : bit;
+TERMINAL Net_29370 : bit;
+TERMINAL Net_29371 : bit;
+TERMINAL Net_29372 : bit;
+TERMINAL Net_29373 : bit;
+TERMINAL Net_29374 : bit;
+TERMINAL Net_29411 : bit;
+TERMINAL Net_29410 : bit;
+TERMINAL Net_29409 : bit;
+TERMINAL Net_29396 : bit;
+TERMINAL Net_29397 : bit;
+TERMINAL Net_29398 : bit;
+TERMINAL Net_29399 : bit;
+TERMINAL Net_29400 : bit;
+TERMINAL Net_29401 : bit;
+TERMINAL Net_29402 : bit;
+TERMINAL Net_29403 : bit;
+TERMINAL Net_29408 : bit;
+TERMINAL Net_29407 : bit;
+TERMINAL Net_29406 : bit;
+TERMINAL Net_29375 : bit;
+TERMINAL Net_29376 : bit;
+TERMINAL Net_29377 : bit;
+TERMINAL Net_29378 : bit;
+TERMINAL Net_29379 : bit;
+TERMINAL Net_29380 : bit;
+TERMINAL Net_29405 : bit;
+TERMINAL Net_29404 : bit;
+TERMINAL Net_29395 : bit;
 TERMINAL Net_18671 : bit;
-TERMINAL Net_29209 : bit;
-TERMINAL Net_29208 : bit;
-TERMINAL Net_29207 : bit;
-TERMINAL Net_29206 : bit;
-TERMINAL Net_29205 : bit;
-TERMINAL Net_29204 : bit;
-TERMINAL Net_29196 : bit;
-TERMINAL Net_29197 : bit;
-TERMINAL Net_29198 : bit;
+TERMINAL Net_29394 : bit;
+TERMINAL Net_29393 : bit;
+TERMINAL Net_29392 : bit;
+TERMINAL Net_29391 : bit;
+TERMINAL Net_29390 : bit;
+TERMINAL Net_29389 : bit;
+TERMINAL Net_29381 : bit;
+TERMINAL Net_29382 : bit;
+TERMINAL Net_29383 : bit;
 TERMINAL Net_29111 : bit;
-TERMINAL Net_29199 : bit;
+TERMINAL Net_29384 : bit;
 TERMINAL Net_29288 : bit;
 TERMINAL Net_29306 : bit;
 TERMINAL Net_29309 : bit;
-TERMINAL Net_29230 : bit;
-TERMINAL Net_29231 : bit;
-TERMINAL Net_29232 : bit;
-TERMINAL Net_29233 : bit;
-TERMINAL Net_29234 : bit;
-TERMINAL Net_29202 : bit;
-TERMINAL Net_29228 : bit;
-TERMINAL Net_29200 : bit;
-TERMINAL Net_29201 : bit;
-TERMINAL Net_29203 : bit;
-TERMINAL Net_29227 : bit;
-TERMINAL Net_29229_1 : bit;
-TERMINAL Net_29229_0 : bit;
+TERMINAL Net_29415 : bit;
+TERMINAL Net_29416 : bit;
+TERMINAL Net_29417 : bit;
+TERMINAL Net_29418 : bit;
+TERMINAL Net_29419 : bit;
+TERMINAL Net_29387 : bit;
+TERMINAL Net_29413 : bit;
+TERMINAL Net_29385 : bit;
+TERMINAL Net_29386 : bit;
+TERMINAL Net_29388 : bit;
+TERMINAL Net_29412 : bit;
+TERMINAL Net_29414_1 : bit;
+TERMINAL Net_29414_0 : bit;
 TERMINAL Net_29304 : bit;
 TERMINAL Net_29307 : bit;
 SIGNAL tmpOE__GREEN_PIN_net_0 : bit;
@@ -1187,65 +1187,65 @@ SIGNAL \CLICK_TIMER:TimerUDB:sT8:timerdp:f1_blk_stat_reg\ : bit;
 ATTRIBUTE port_state_att of \CLICK_TIMER:TimerUDB:sT8:timerdp:f1_blk_stat_reg\:SIGNAL IS 2;
 SIGNAL \CLICK_TIMER:Net_102\ : bit;
 SIGNAL \CLICK_TIMER:Net_266\ : bit;
-TERMINAL Net_29235 : bit;
-TERMINAL Net_29236 : bit;
-TERMINAL Net_29237 : bit;
-TERMINAL Net_29238 : bit;
-TERMINAL Net_29239 : bit;
+TERMINAL Net_29420 : bit;
+TERMINAL Net_29421 : bit;
+TERMINAL Net_29422 : bit;
+TERMINAL Net_29423 : bit;
+TERMINAL Net_29424 : bit;
 TERMINAL Net_28991 : bit;
 TERMINAL Net_28992 : bit;
-TERMINAL Net_29240 : bit;
-TERMINAL Net_29273 : bit;
-TERMINAL Net_29272 : bit;
-TERMINAL Net_29271 : bit;
-TERMINAL Net_29265 : bit;
-TERMINAL Net_29266 : bit;
+TERMINAL Net_29425 : bit;
+TERMINAL Net_29458 : bit;
+TERMINAL Net_29457 : bit;
+TERMINAL Net_29456 : bit;
+TERMINAL Net_29450 : bit;
+TERMINAL Net_29451 : bit;
 TERMINAL Net_28986 : bit;
 TERMINAL Net_23 : bit;
 TERMINAL Net_29001 : bit;
-TERMINAL Net_29267 : bit;
-TERMINAL Net_29046 : bit;
+TERMINAL Net_29452 : bit;
+TERMINAL Net_29469 : bit;
 TERMINAL Net_29045 : bit;
-TERMINAL Net_29270 : bit;
-TERMINAL Net_29269 : bit;
-TERMINAL Net_29268 : bit;
-TERMINAL Net_29241 : bit;
-TERMINAL Net_29242 : bit;
-TERMINAL Net_29243 : bit;
-TERMINAL Net_29244 : bit;
-TERMINAL Net_29245 : bit;
-TERMINAL Net_29246 : bit;
+TERMINAL Net_29455 : bit;
+TERMINAL Net_29454 : bit;
+TERMINAL Net_29453 : bit;
+TERMINAL Net_29426 : bit;
+TERMINAL Net_29427 : bit;
+TERMINAL Net_29428 : bit;
+TERMINAL Net_29429 : bit;
+TERMINAL Net_29430 : bit;
+TERMINAL Net_29431 : bit;
 TERMINAL Net_28988 : bit;
 TERMINAL Net_28987 : bit;
 TERMINAL Net_29021 : bit;
-TERMINAL Net_29264 : bit;
-TERMINAL Net_29263 : bit;
-TERMINAL Net_29262 : bit;
+TERMINAL Net_29449 : bit;
+TERMINAL Net_29448 : bit;
+TERMINAL Net_29447 : bit;
 TERMINAL Net_28990 : bit;
-TERMINAL Net_29261 : bit;
-TERMINAL Net_29260 : bit;
-TERMINAL Net_29259 : bit;
-TERMINAL Net_29247 : bit;
-TERMINAL Net_29248 : bit;
-TERMINAL Net_29249 : bit;
-TERMINAL Net_29250 : bit;
-TERMINAL Net_29251 : bit;
-TERMINAL Net_29252 : bit;
-TERMINAL Net_29253 : bit;
-TERMINAL Net_29254 : bit;
-TERMINAL Net_29277 : bit;
-TERMINAL Net_29278 : bit;
-TERMINAL Net_29279 : bit;
-TERMINAL Net_29280 : bit;
-TERMINAL Net_29281 : bit;
-TERMINAL Net_29257 : bit;
-TERMINAL Net_29275 : bit;
-TERMINAL Net_29255 : bit;
-TERMINAL Net_29256 : bit;
-TERMINAL Net_29258 : bit;
-TERMINAL Net_29274 : bit;
-TERMINAL Net_29276_1 : bit;
-TERMINAL Net_29276_0 : bit;
+TERMINAL Net_29446 : bit;
+TERMINAL Net_29445 : bit;
+TERMINAL Net_29444 : bit;
+TERMINAL Net_29432 : bit;
+TERMINAL Net_29433 : bit;
+TERMINAL Net_29434 : bit;
+TERMINAL Net_29435 : bit;
+TERMINAL Net_29436 : bit;
+TERMINAL Net_29437 : bit;
+TERMINAL Net_29438 : bit;
+TERMINAL Net_29439 : bit;
+TERMINAL Net_29462 : bit;
+TERMINAL Net_29463 : bit;
+TERMINAL Net_29464 : bit;
+TERMINAL Net_29465 : bit;
+TERMINAL Net_29466 : bit;
+TERMINAL Net_29442 : bit;
+TERMINAL Net_29460 : bit;
+TERMINAL Net_29440 : bit;
+TERMINAL Net_29441 : bit;
+TERMINAL Net_29443 : bit;
+TERMINAL Net_29459 : bit;
+TERMINAL Net_29461_1 : bit;
+TERMINAL Net_29461_0 : bit;
 SIGNAL tmpOE__MISO_IMU_net_0 : bit;
 SIGNAL Net_19 : bit;
 SIGNAL tmpIO_0__MISO_IMU_net_0 : bit;
@@ -1924,7 +1924,7 @@ SIGNAL Net_29033 : bit;
 SIGNAL \UART:BUART:txn\ : bit;
 SIGNAL Net_29039 : bit;
 SIGNAL \UART:BUART:tx_interrupt_out\ : bit;
-SIGNAL Net_29040 : bit;
+SIGNAL Net_29468 : bit;
 SIGNAL \UART:BUART:rx_interrupt_out\ : bit;
 SIGNAL \UART:BUART:tx_state_1\ : bit;
 SIGNAL \UART:BUART:tx_state_0\ : bit;
@@ -3098,21 +3098,21 @@ KIT_059_1:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_29125, Net_29126, Net_29127, Net_29128,
-			Net_29129, Net_29130, Net_29131, Net_29132,
-			Net_29173, Net_29172, Net_29171, Net_29158,
-			Net_29159, Net_29160, Net_29161, Net_29162,
-			Net_29163, Net_29164, Net_29165, Net_29170,
-			Net_29169, Net_29168, Net_29133, Net_29134,
-			Net_29135, Net_29136, Net_29137, Net_29138,
-			Net_29167, Net_29166, Net_29157, Net_29156,
-			Net_22256, Net_29155, Net_29154, Net_29153,
-			Net_29152, Net_29151, Net_29139, Net_29140,
-			Net_29141, Net_29142, Net_29143, Net_29144,
-			Net_29145, Net_29146, Net_29177, Net_29178,
-			Net_29179, Net_29180, Net_29181, Net_29149,
-			Net_29175, Net_29147, Net_29148, Net_29150,
-			Net_29174, Net_29176_1, Net_29176_0));
+	PORT MAP(connect=>(Net_29310, Net_29311, Net_29312, Net_29313,
+			Net_29314, Net_29315, Net_29316, Net_29317,
+			Net_29358, Net_29357, Net_29356, Net_29343,
+			Net_29344, Net_29345, Net_29346, Net_29347,
+			Net_29348, Net_29349, Net_29350, Net_29355,
+			Net_29354, Net_29353, Net_29318, Net_29319,
+			Net_29320, Net_29321, Net_29322, Net_29323,
+			Net_29352, Net_29351, Net_29342, Net_29341,
+			Net_22256, Net_29340, Net_29339, Net_29338,
+			Net_29337, Net_29336, Net_29324, Net_29325,
+			Net_29326, Net_29327, Net_29328, Net_29329,
+			Net_29330, Net_29331, Net_29362, Net_29363,
+			Net_29364, Net_29365, Net_29366, Net_29334,
+			Net_29360, Net_29332, Net_29333, Net_29335,
+			Net_29359, Net_29361_1, Net_29361_0));
 PWM_CLOCK:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"7ec52678-bf3a-4e40-936f-cd1e471837ac",
@@ -3370,21 +3370,21 @@ KIT_059_2:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_29182, Net_29183, Net_29184, Net_29185,
-			Net_29186, Net_29187, Net_29188, Net_29189,
-			Net_29226, Net_29225, Net_29224, Net_29211,
-			Net_29212, Net_29213, Net_29214, Net_29215,
-			Net_29216, Net_29217, Net_29218, Net_29223,
-			Net_29222, Net_29221, Net_29190, Net_29191,
-			Net_29192, Net_29193, Net_29194, Net_29195,
-			Net_29220, Net_29219, Net_29210, Net_18671,
-			Net_29209, Net_29208, Net_29207, Net_29206,
-			Net_29205, Net_29204, Net_29196, Net_29197,
-			Net_29198, Net_29111, Net_29199, Net_29288,
-			Net_29306, Net_29309, Net_29230, Net_29231,
-			Net_29232, Net_29233, Net_29234, Net_29202,
-			Net_29228, Net_29200, Net_29201, Net_29203,
-			Net_29227, Net_29229_1, Net_29229_0));
+	PORT MAP(connect=>(Net_29367, Net_29368, Net_29369, Net_29370,
+			Net_29371, Net_29372, Net_29373, Net_29374,
+			Net_29411, Net_29410, Net_29409, Net_29396,
+			Net_29397, Net_29398, Net_29399, Net_29400,
+			Net_29401, Net_29402, Net_29403, Net_29408,
+			Net_29407, Net_29406, Net_29375, Net_29376,
+			Net_29377, Net_29378, Net_29379, Net_29380,
+			Net_29405, Net_29404, Net_29395, Net_18671,
+			Net_29394, Net_29393, Net_29392, Net_29391,
+			Net_29390, Net_29389, Net_29381, Net_29382,
+			Net_29383, Net_29111, Net_29384, Net_29288,
+			Net_29306, Net_29309, Net_29415, Net_29416,
+			Net_29417, Net_29418, Net_29419, Net_29387,
+			Net_29413, Net_29385, Net_29386, Net_29388,
+			Net_29412, Net_29414_1, Net_29414_0));
 PWR_4:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"Power_v1_0",
 		port_names=>"T1",
@@ -3837,21 +3837,21 @@ KIT_059_4:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"KIT_059_v1_0",
 		port_names=>"P_00, P_01, P_02, P_03, P_04, P_05, P_06, P_07, P_10, P_11, P_12, P_120, P_121, P_122, P_123, P_124, P_125, P_126, P_127, P_13, P_14, P_15, P_150, P_151, P_152, P_153, P_154, P_155, P_16, P_17, P_20, P_21, P_22, P_23, P_24, P_25, P_26, P_27, P_30, P_31, P_32, P_33, P_34, P_35, P_36, P_37, P_59, P_60, P_61, P_62, P_63, P_GND_0, P_GND_1, P_GND_3, P_RST_0, P_VDD_0, P_VDDIO, USB_1_1, USB_1_0",
 		width=>59)
-	PORT MAP(connect=>(Net_29235, Net_29236, Net_29237, Net_29238,
-			Net_29239, Net_28991, Net_28992, Net_29240,
-			Net_29273, Net_29272, Net_29271, Net_29265,
-			Net_29266, Net_28986, Net_23, Net_29001,
-			Net_29267, Net_29046, Net_29045, Net_29270,
-			Net_29269, Net_29268, Net_29241, Net_29242,
-			Net_29243, Net_29244, Net_29245, Net_29246,
-			Net_28988, Net_28987, Net_29021, Net_29264,
-			Net_29263, Net_29262, Net_28990, Net_29261,
-			Net_29260, Net_29259, Net_29247, Net_29248,
-			Net_29249, Net_29250, Net_29251, Net_29252,
-			Net_29253, Net_29254, Net_29277, Net_29278,
-			Net_29279, Net_29280, Net_29281, Net_29257,
-			Net_29275, Net_29255, Net_29256, Net_29258,
-			Net_29274, Net_29276_1, Net_29276_0));
+	PORT MAP(connect=>(Net_29420, Net_29421, Net_29422, Net_29423,
+			Net_29424, Net_28991, Net_28992, Net_29425,
+			Net_29458, Net_29457, Net_29456, Net_29450,
+			Net_29451, Net_28986, Net_23, Net_29001,
+			Net_29452, Net_29469, Net_29045, Net_29455,
+			Net_29454, Net_29453, Net_29426, Net_29427,
+			Net_29428, Net_29429, Net_29430, Net_29431,
+			Net_28988, Net_28987, Net_29021, Net_29449,
+			Net_29448, Net_29447, Net_28990, Net_29446,
+			Net_29445, Net_29444, Net_29432, Net_29433,
+			Net_29434, Net_29435, Net_29436, Net_29437,
+			Net_29438, Net_29439, Net_29462, Net_29463,
+			Net_29464, Net_29465, Net_29466, Net_29442,
+			Net_29460, Net_29440, Net_29441, Net_29443,
+			Net_29459, Net_29461_1, Net_29461_0));
 MISO_IMU:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
 		drive_mode=>"001",
@@ -5288,7 +5288,7 @@ MISO_EEPROM:cy_psoc3_pins_v1_10
 		clock=>\UART:BUART:clock_op\,
 		status=>(Net_19465, \UART:BUART:rx_status_5\, \UART:BUART:rx_status_4\, \UART:BUART:rx_status_3\,
 			\UART:BUART:rx_status_2\, Net_19465, Net_19465),
-		interrupt=>\UART:BUART:rx_interrupt_out\);
+		interrupt=>Net_29468);
 TX_PIN:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"6504d8e0-fb7b-483b-80ce-c18f6d19679c",
 		drive_mode=>"110",
@@ -5421,7 +5421,7 @@ RX_PIN:cy_psoc3_pins_v1_10
 		analog=>(open),
 		io=>(tmpIO_0__RX_PIN_net_0),
 		siovref=>(tmpSIOVREF__RX_PIN_net_0),
-		annotation=>Net_29046,
+		annotation=>Net_29469,
 		in_clock=>Net_19465,
 		in_clock_en=>one,
 		in_reset=>Net_19465,
@@ -6007,6 +6007,10 @@ PWR_3:cy_annotation_universal_v1_0
 		port_names=>"T1",
 		width=>1)
 	PORT MAP(connect=>Net_29303);
+ISR_RX:cy_isr_v1_0
+	GENERIC MAP(int_type=>"00",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_29468);
 \PWM_RG:PWMUDB:min_kill_reg\:cy_dsrff
 	PORT MAP(d=>one,
 		s=>Net_19465,

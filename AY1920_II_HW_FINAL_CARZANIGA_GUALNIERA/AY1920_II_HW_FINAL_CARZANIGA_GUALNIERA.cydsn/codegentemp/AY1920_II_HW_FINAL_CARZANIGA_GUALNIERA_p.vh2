@@ -1,5 +1,5 @@
 -- Project:   AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA
--- Generated: 05/29/2020 16:46:12
+-- Generated: 05/30/2020 10:58:14
 -- PSoC Creator  4.3
 
 ENTITY AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
@@ -101,6 +101,7 @@ ARCHITECTURE __DEFAULT__ OF AY1920_II_HW_FINAL_CARZANIGA_GUALNIERA IS
     ATTRIBUTE global_signal OF Net_29105 : SIGNAL IS true;
     SIGNAL Net_29105_local : bit;
     SIGNAL Net_29290 : bit;
+    SIGNAL Net_29468 : bit;
     SIGNAL ONBOARD_LED(0)__PA : bit;
     SIGNAL POT_PIN(0)__PA : bit;
     SIGNAL RED_PIN(0)__PA : bit;
@@ -3459,7 +3460,8 @@ BEGIN
             status_3 => \UART:BUART:rx_status_3\,
             status_2 => open,
             status_1 => open,
-            status_0 => open);
+            status_0 => open,
+            interrupt => Net_29468);
 
     \MAIN_TIMER:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\:controlcell
         GENERIC MAP(
@@ -3756,6 +3758,14 @@ BEGIN
             ext_start => __ONE__,
             modrst => \ADC_DELSIG:mod_reset\,
             interrupt => Net_29101);
+
+    ISR_RX:interrupt
+        GENERIC MAP(
+            int_type => "00",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_29468,
+            clock => ClockBlock_BUS_CLK);
 
     \PWM_RG:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(

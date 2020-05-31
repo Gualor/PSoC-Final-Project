@@ -716,7 +716,7 @@ log_t EEPROM_retrieveLogMessage(uint8_t logID, uint8_t pageIndex)
 ********************************************************************************
 *
 * Summary:
-*   Overwrite all EEPROM memory with zeros and set reset flag inside
+*   Overwrite all EEPROM log memory with zeros and set reset flag inside
 *   control register psoc status.
 *
 * Parameters:  
@@ -736,7 +736,7 @@ void EEPROM_resetMemory(void)
     uint16_t page_addr = 0x0000;
     
     // Reset all pages
-    for (uint16_t i=0; i<SPI_EEPROM_PAGE_COUNT; i++)
+    for (uint16_t i=1; i<SPI_EEPROM_PAGE_COUNT; i++)
     {
         // Reset page
         EEPROM_writePage(page_addr, resetBuffer, SPI_EEPROM_PAGE_SIZE);
