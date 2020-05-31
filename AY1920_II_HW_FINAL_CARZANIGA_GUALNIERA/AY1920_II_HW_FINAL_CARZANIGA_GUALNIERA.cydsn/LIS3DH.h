@@ -116,12 +116,12 @@
     /* Hex value for the threshold of each IMU axis. */
     #define LIS3DH_INT1_THS_VALUE 0x64  //@+-2G FSR ---> 1 LSB = 16mG ---> 0x64 ---> 1.6G
     
+    
     /* Address of the INT1 DURATION register. */
     #define LIS3DH_INT1_DURATION 0x33
     
     /* Hex value for the time duration of an overthreshold event. */ 
     #define LIS3DH_INT1_DURATION_VALUE 0x14 // @ 200Hx ODR --> 5 ms every lsb --> 100ms total
-
 
     /* LIS3DH function prototype declaration. */
 

@@ -182,8 +182,8 @@ int main(void)
             uint16_t timestamp = LOG_getTimestamp();
             
             // Capture all over threshold event's interrupts
-            while(IMU_ReadByte(LIS3DH_INT1_SRC) & (LIS3DH_INT1_SRC_IA_MASK));
-            
+            while(IMU_ReadByte(LIS3DH_INT1_SRC) & (LIS3DH_INT1_SRC_IA_MASK)){}
+  
             for (uint8_t i=0; i<LOG_PAGES_PER_EVENT; i++)
             {        
                 // Get payload of 60 bytes from the IMU queue
