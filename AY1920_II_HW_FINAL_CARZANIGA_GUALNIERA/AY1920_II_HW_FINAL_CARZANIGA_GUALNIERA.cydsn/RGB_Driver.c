@@ -1,38 +1,20 @@
 /* ========================================
  *
  * This file contains utility functions used
- * to drive the RGB LED based on IMU data as
- * well as the PSoC on-board LED used for
- * user notifications.
+ * to drive the RGB LED with different
+ * modalities based on the internal state:
  *
- * RGB_Driver: high level function that enable
- * LED driving based on IMU data coming from 
- * LIS3DH IMU.
+ * -> STOP MODE: the RGB LED is completely 
+ *    turned off.
+ * 
+ * -> START MODE: the driving of the LED
+ *    is based on IMU data by mapping XYZ
+ *    values to RGB values.
  *
- * RGB_Start: initialize and start both PWM_RG
- * and PWM_B to drive the RGB LED.
- *
- * RGB_Stop: Disable both PWM_RG and PWM_B
- * turning off the RGB LED.
- *
- * PWM_Driver: set the PWM compare values 
- * to change the duty cycles of all LED channels.
- *
- * IMU_Data_Process: map raw IMU data to cover
- * the full range of the LED by taking the
- * absolute value of each axis, doubling it
- * and negate the RGB value to drive common
- * anode LED.
- *
- * Absolute_value: light weight abs function
- * that does not use conditional statements.
- *
- * LED_Notify: based on the internal state,
- * commute the on-board LED blinking pattern
- * to notify the user of the current mode:
- * -> STOP_MODE: LED off
- * -> START_MODE: LED on
- * -> CONFIG_MODE: LED blink
+ * -> CONFIG MODE only the blue channel
+ *    of the LED is driven and it is either
+ *    turn on or off based con the logical
+ *    value of a flag.
  *
  * ========================================
 */

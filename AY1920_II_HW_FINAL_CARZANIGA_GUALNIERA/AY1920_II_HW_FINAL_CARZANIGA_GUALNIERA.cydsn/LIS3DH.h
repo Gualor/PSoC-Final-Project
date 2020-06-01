@@ -9,6 +9,7 @@
 
 /* Header guard */
 #ifndef __LIS3DH_H__
+    
     #define __LIS3DH_H__
 
     /* Include required libraries. */
@@ -30,7 +31,6 @@
     
     /* Array that acts like a queue storing 6 FIFO at time*/
     uint8_t IMU_log_queue[LIS3DH_BYTES_IN_LOG_BUFFER];
-      
     
     /* Binary mask to set the read bit in the instruction to be sent. */
     #define LIS3DH_READ_BIT 0b10000000
@@ -116,7 +116,6 @@
     /* Hex value for the threshold of each IMU axis. */
     #define LIS3DH_INT1_THS_VALUE 0x64  //@+-2G FSR ---> 1 LSB = 16mG ---> 0x64 ---> 1.6G
     
-    
     /* Address of the INT1 DURATION register. */
     #define LIS3DH_INT1_DURATION 0x33
     
@@ -139,8 +138,8 @@
     void IMU_StoreFIFO(uint8_t *buffer);
     void IMU_getPayload(uint8_t *messagge, uint8_t index);
     void IMU_ResetFIFO(void);
-
     
 #endif
+
 
 /* [] END OF FILE */

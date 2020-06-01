@@ -1,13 +1,16 @@
 /* ========================================
  * 
  * This c file contains the API functions to 
- * interface with the LIS3DH ACCELEROMETER
+ * interface with the LIS3DH accelerometer
  * via SPI.
  *
  * ========================================
 */
 
+
+/* Project dependencies. */
 #include "LIS3DH.h"
+
 
 /*******************************************************************************
 * Function Name: IMU_ReadByte

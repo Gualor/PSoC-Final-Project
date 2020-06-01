@@ -7,12 +7,13 @@
  * ========================================
 */
 
+
+/* Header guard. */
 #ifndef __INTERRUPT_ROUTINES_H__
     
-    /* Header guard. */
     #define __INTERRUPT_ROUTINES_H__
     
-    /* Include project dependencies. */
+    /* Project dependencies. */
     #include "project.h"
     #include "25LC256.h"
     #include "LIS3DH.h"
@@ -31,13 +32,7 @@
         START_MODE,
         CONFIG_MODE
     } button_t;
-    
-    /* ISR functions prototypes. */
-    CY_ISR_PROTO(CUSTOM_ISR_CONFIG);
-    CY_ISR_PROTO(CUSTOM_ISR_START);
-    CY_ISR_PROTO(CUSTOM_ISR_IMU);
-    CY_ISR_PROTO(CUSTOM_ISR_RX);
-    
+
     /* LIS3DH interrupt flags. */
     volatile uint8_t IMU_data_ready_flag;
     volatile uint8_t IMU_over_threshold_flag;
@@ -46,6 +41,13 @@
     volatile button_t button_state;
     volatile uint8_t send_flag;
     
+    /* ISR functions prototype declaration. */
+    CY_ISR_PROTO(CUSTOM_ISR_CONFIG);
+    CY_ISR_PROTO(CUSTOM_ISR_START);
+    CY_ISR_PROTO(CUSTOM_ISR_IMU);
+    CY_ISR_PROTO(CUSTOM_ISR_RX);
+    
 #endif
+
 
 /* [] END OF FILE */

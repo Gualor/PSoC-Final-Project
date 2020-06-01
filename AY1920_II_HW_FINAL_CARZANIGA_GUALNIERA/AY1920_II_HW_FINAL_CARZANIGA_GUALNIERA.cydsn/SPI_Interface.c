@@ -1,12 +1,14 @@
 /* ========================================
  * 
  * This source code file contains macros and 
- * functions to interface with the SPI Master of the PSoC.
+ * functions to interface with the SPI Master
+ * of the PSoC.
  *
  * ========================================
 */
 
 
+/* Project dependencies. */
 #include "SPI_Interface.h"
 
 

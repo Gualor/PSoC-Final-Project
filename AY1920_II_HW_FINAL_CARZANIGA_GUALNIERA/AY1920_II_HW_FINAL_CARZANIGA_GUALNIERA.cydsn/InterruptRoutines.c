@@ -1,13 +1,22 @@
 /* ========================================
  *
- * This file contains ISR functions needed
- * to link transitions between finite states 
- * and hardware events.
+ * This file contains ISR function definitions.
+ * In this application ISRs are used for
+ * various purposes:
+ *
+ * 1) Link internal finite states with 
+ *    hardware events.
+ *
+ * 2) Handle LIS3DH external interrupts.
+ *
+ * 3) Execution of remote commands sent over
+ *    UART to read/write to the EEPROM memory.
  *
  * ========================================
 */
 
-/* Include project dependencies. */
+
+/* Project dependencies. */
 #include "InterruptRoutines.h"
 
 

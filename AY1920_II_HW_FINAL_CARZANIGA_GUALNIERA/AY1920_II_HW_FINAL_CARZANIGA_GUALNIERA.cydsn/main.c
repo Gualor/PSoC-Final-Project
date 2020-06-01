@@ -57,6 +57,7 @@
  * ========================================
 */
 
+
 /* Project dependencies. */
 #include "InterruptRoutines.h"
 #include "RGB_Driver.h"
@@ -65,9 +66,7 @@
 #include "LIS3DH.h"
 
 
-/*
- * Main function designated to setup stuff.
- */
+/* Main function definition. */
 int main(void)
 {   
     // Enable global interrupts

@@ -9,9 +9,10 @@
  * ========================================
 */
 
+
+/* Header guard. */
 #ifndef __NOTIFICATIONS_H__
     
-    /* Header guard. */
     #define __NOTIFICATIONS_H__
     
     /* Project dependencies. */
@@ -26,13 +27,11 @@
     
     /* Function prototypes. */
     void LED_Notify_Stop(void);
-    
     void LED_Notify_Start(void);
-    
     void LED_Notify_Config(void);
-    
     uint8_t POT_Read_Value(uint8_t oldFlag);
 
 #endif
+
 
 /* [] END OF FILE */

@@ -7,9 +7,10 @@
  * ========================================
 */
 
+
+/* Header guard. */
 #ifndef __25LC256_H__
     
-    /* Header guard. */
     #define __25LC256_H__
 
     /* Project dependencies. */
@@ -60,55 +61,36 @@
     #define CTRL_REG_PSOC_SET_CONFIG        ((uint8_t) 0x01u << CTRL_REG_PSOC_CONFIG_MODE_SHIFT)
     #define CTRL_REG_PSOC_SET_SEND_FLAG     ((uint8_t) 0x01u << CTRL_REG_PSOC_SEND_FLAG_SHIFT)
     #define CTRL_REG_PSOC_SET_RESET_FLAG    ((uint8_t) 0x01u << CTRL_REG_PSOC_RESET_FLAG_SHIFT)
-
-    /* Function prototypes. */
+ 
+    /* General read/write functions. */
     uint8_t EEPROM_readStatus(void);
-
     void EEPROM_writeEnable(void);
-
     uint8_t EEPROM_readByte(uint16_t addr);
-
     void EEPROM_writeByte(uint16_t addr, uint8_t dataByte);
-
     void EEPROM_readPage(uint16_t addr, uint8_t* dataRX, uint8_t nBytes);
-
-    void EEPROM_writePage(uint16_t addr, uint8_t* data, uint8_t nBytes);
-
+    void EEPROM_writePage(uint16_t addr, uint8_t* data, uint8_t nBytes); 
     void EEPROM_waitForWriteComplete(void);
 
+    /* Task-specific read/write functions. */
     void EEPROM_saveStartStopState(uint8_t state);
-
     uint8_t EEPROM_retrieveStartStopState(void);
-
     void EEPROM_saveConfigFlag(uint8_t flag);
-
     uint8_t EEPROM_retrieveConfigFlag(void);
-
     void EEPROM_saveSendFlag(uint8_t flag);
-
     uint8_t EEPROM_retrieveSendFlag(void);
-
     void EEPROM_saveResetFlag(uint8_t flag);
-
     uint8_t EEPROM_retrieveResetFlag(void);
-
     uint16_t EEPROM_retrieveLogPages(void);
-
     uint8_t EEPROM_retrieveLogCount(void);
-
     void EEPROM_incrementLogCounter(void);
-
-    void EEPROM_storeLogData(uint8_t* dataPtr);
-
-    void EEPROM_storeLogMessage(log_t message);
-
-    uint16_t EEPROM_findLogID(uint8_t logID);
-
-    void EEPROM_retrieveLogData(uint8_t* dataRX, uint8_t logID, uint8_t pageIndex);
-
-    log_t EEPROM_retrieveLogMessage(uint8_t logID, uint8_t pageIndex);
-
     void EEPROM_resetMemory(void);
+    
+    /* Log type data read/write functions. */
+    void EEPROM_storeLogData(uint8_t* dataPtr);
+    void EEPROM_storeLogMessage(log_t message);
+    uint16_t EEPROM_findLogID(uint8_t logID);
+    void EEPROM_retrieveLogData(uint8_t* dataRX, uint8_t logID, uint8_t pageIndex);
+    log_t EEPROM_retrieveLogMessage(uint8_t logID, uint8_t pageIndex);
 
 #endif
 

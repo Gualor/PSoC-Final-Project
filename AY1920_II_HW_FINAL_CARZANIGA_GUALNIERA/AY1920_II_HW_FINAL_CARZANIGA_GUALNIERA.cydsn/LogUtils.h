@@ -8,9 +8,10 @@
  * ========================================
 */
 
+
+/* Header guard. */
 #ifndef __LOG_UTILS_H__
     
-    /* Header guard. */
     #define __LOG_UTILS_H__
     
     /* Project dependencies. */
@@ -31,17 +32,12 @@
         uint8_t data[LOG_MESSAGE_DATA_BYTE];
     } log_t;
     
-    /* Function prototypes. */
-    log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr);
-    
+    /* Function prototype declaration. */
+    log_t LOG_createMessage(uint8_t logID, uint8_t intReg, uint16_t time, uint8_t* dataPtr);  
     void LOG_insertPayload(log_t* msg, uint8_t* dataPtr);
-    
-    uint16_t LOG_getTimestamp(void);
-    
-    void LOG_unpackMessage(uint8_t* buffer, log_t* message);
-    
+    uint16_t LOG_getTimestamp(void); 
+    void LOG_unpackMessage(uint8_t* buffer, log_t* message); 
     void LOG_packMessage(log_t* message, uint8_t* buffer);
-    
     void LOG_sendData(log_t* message);
     
 #endif
