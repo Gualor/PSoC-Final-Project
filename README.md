@@ -5,15 +5,14 @@ Electronic Technologies and Biosensors Laboratory<br>A.Y. 2019/2020 – II Semes
 <br>
 
 # PSoC Final Project
+<p float="right" width=50%>
+<b>Project #2:</b> Variant 2
+</p>
+
 <p float="left" width=50%>
 <b>Group #6:</b><br>
 Manuel Carzaniga<br>
 Lorenzo Gualniera<br>
-</p>
-
-<p float="right" width=50%>
-<b>Project #2:</b><br>
-Variant 2
 </p>
 
 In this project, students have to design and develop a system that controls the blinking frequency of an RGB LED based on the data read from the LIS3DH (3-axis accelerometer). Each channel of the sensor should control one color of the LED.
@@ -45,7 +44,6 @@ Power supply components:
 <img src="images/breadboard.jpg" alt="Top design project 1">
 </p>
 
-
 >Soldered battery powered version:
 
 <p align="center">
@@ -57,12 +55,8 @@ Power supply components:
 </p>
 
 ## Finite State Machine
-
-<p align="center">
-<img src="images/state_machine.png" alt="stat">
-</p>
-
 There are 3 main internal states:
+
 * *STOP MODE*: 
   - LIS3DH data acquisition is stopped
   - On-board notification LED is turned off
@@ -78,6 +72,10 @@ There are 3 main internal states:
   - User input is taken through the knob of a potentiomenter sampled by an ADC
   - RGB LED blue channel only is driven by the logical value of the flag set by the knob
   - Exiting this mode will resume the previous state
+  
+<p align="center">
+<img src="images/state_machine.png" alt="stat">
+</p>
 
 ## Button controls:
 Transitions between internal states, such as start, stop and configuration, are handled with either a quick double click or a long pression of the PSoC on-board button. The logic behind the button functioning has been designed completely in hardware in the top design of PSoC creator, as shown in the next schematic:
@@ -151,7 +149,7 @@ As an extra feature, a simple python script for debugging the EEPROM memory, wit
         </p>
 
     - N = request number of logs stored in the EEPROM.
-    >Before request a specific log, you have to request the number of stored log
+    >Before requesting a specific log, you must first request the number of stored log at least once. This is done in order to check for bad log ID requests. 
 
 ## Demo
 
@@ -162,4 +160,4 @@ As an extra feature, a simple python script for debugging the EEPROM memory, wit
 
 ## Disclaimer
 - The python script should be supported on all major operating systems (windows, macOS, Linux), but it was tested on windows machines only.
-- The python script is unable to work properly if the UART communication is flodded (i.e when the verbose flag *SEND_FLAG* is set to one allowing the IMU data transmission used for serial plotting).
+- The python script is unable to work properly if the UART communication is flodded (i.e when the verbose flag *SEND_FLAG* is set to 1 allowing the IMU data transmission used for serial plotting).
