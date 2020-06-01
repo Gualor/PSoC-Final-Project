@@ -161,5 +161,5 @@ As an extra feature, a simple python script for debugging the EEPROM memory, wit
 
 
 ## Disclaimer
-- This script should be supported on all major operating systems (windows, macOS, Linux), but it was tested on windows machines only.
-- This script is unable to work properly if the UART communication is flodded (i.e when the verbose flag *SEND_FLAG* is set to one allowing the IMU data transmission used for serial plotting).
+- The python script should be supported on all major operating systems (windows, macOS, Linux), but it was tested on windows machines only.
+- The python script is unable to work properly if the UART communication is flodded (i.e when the verbose flag *SEND_FLAG* is set to one allowing the IMU data transmission used for serial plotting).
